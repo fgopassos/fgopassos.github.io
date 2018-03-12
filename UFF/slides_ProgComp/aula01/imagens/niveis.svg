@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100.53122mm"
+   width="98.632072mm"
    height="85.437325mm"
-   viewBox="0 0 356.21298 302.73068"
+   viewBox="0 0 349.48372 302.73068"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="270.88179"
-     inkscape:cy="41.473666"
+     inkscape:cx="188.00221"
+     inkscape:cy="39.453364"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -56,10 +56,10 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-80.984047,-184.56062)">
+     transform="translate(-80.64225,-184.56061)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="85.302261"
        y="241.5406"
        id="text4136"
@@ -68,10 +68,10 @@
          id="tspan4138"
          x="85.302261"
          y="241.5406"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:'Roboto Medium'">Máquina</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:arial;-inkscape-font-specification:arial">Máquina</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="82.241333"
        y="477.4968"
        id="text4136-0"
@@ -80,10 +80,10 @@
          id="tspan4138-3"
          x="82.241333"
          y="477.4968"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:'Roboto Medium'">Alto nível</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:arial;-inkscape-font-specification:arial">Alto nível</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="80.593422"
        y="369.58981"
        id="text4168"
@@ -92,110 +92,103 @@
          id="tspan4170"
          x="80.593422"
          y="369.58981"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:roboto;-inkscape-font-specification:'roboto Medium'">Assembly</tspan></text>
-    <g
-       id="g4184"
-       transform="translate(34.345187,-32.013802)">
-      <rect
-         y="217.07442"
-         x="256.88986"
-         height="98.994949"
-         width="98.994949"
-         id="rect4172"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4174"
-         y="239.98009"
-         x="266.60645"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           y="239.98009"
-           x="266.60645"
-           id="tspan4176"
-           sodipodi:role="line">01001100</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           id="tspan4178"
-           y="261.8551"
-           x="266.60645"
-           sodipodi:role="line">10100011</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           id="tspan4180"
-           y="283.73007"
-           x="266.60645"
-           sodipodi:role="line">11100000</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           id="tspan4182"
-           y="305.60507"
-           x="266.60645"
-           sodipodi:role="line">00000111</tspan></text>
-    </g>
-    <g
-       id="g4253"
-       transform="translate(-87.572149,57.886253)">
-      <rect
-         y="255.35185"
-         x="332.34018"
-         height="98.994949"
-         width="191.92899"
-         id="rect4172-7"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4174-9"
-         y="278.061"
-         x="341.96252"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           y="278.061"
-           x="341.96252"
-           sodipodi:role="line"
-           id="tspan4234">mov  $60, %rax</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           y="299.936"
-           x="341.96252"
-           sodipodi:role="line"
-           id="tspan4238">xor    %rdi, %rdi</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           y="321.811"
-           x="341.96252"
-           sodipodi:role="line"
-           id="tspan4240">syscall </tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           y="343.686"
-           x="341.96252"
-           sodipodi:role="line"
-           id="tspan4242">.ascii  &quot;Hello, world\n&quot;</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           y="365.561"
-           x="341.96252"
-           sodipodi:role="line"
-           id="tspan4244" /></text>
-    </g>
-    <g
-       id="g4318"
-       transform="translate(55.364451,0.11452028)">
-      <rect
-         y="449.30112"
-         x="201.02034"
-         height="37.375645"
-         width="168.69547"
-         id="rect4172-4"
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4174-2"
-         y="472.97919"
-         x="211.13406"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:25px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:17.5px;font-family:roboto;-inkscape-font-specification:'roboto Medium'"
-           id="tspan4182-9"
-           y="472.97919"
-           x="211.13406"
-           sodipodi:role="line">print('Hello, world')</tspan></text>
-    </g>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:arial;-inkscape-font-specification:arial">Assembly</tspan></text>
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.99999982;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4172"
+       width="97.984795"
+       height="112.12694"
+       x="291.23505"
+       y="185.06061" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="301.26688"
+       y="203.86823"
+       id="text4174"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4176"
+         x="301.26688"
+         y="203.86823"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">01001100</tspan><tspan
+         sodipodi:role="line"
+         x="301.26688"
+         y="225.74323"
+         id="tspan4178"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">10100011</tspan><tspan
+         sodipodi:role="line"
+         x="301.26688"
+         y="247.61823"
+         id="tspan4180"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">11100000</tspan><tspan
+         sodipodi:role="line"
+         x="301.26688"
+         y="269.49323"
+         id="tspan4182"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">00000111</tspan><tspan
+         sodipodi:role="line"
+         x="301.26688"
+         y="291.36823"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial"
+         id="tspan4174">...</tspan></text>
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4172-7"
+       width="184.85793"
+       height="98.994949"
+       x="244.76805"
+       y="313.2381" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="253.40979"
+       y="335.55417"
+       id="text4174-9"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4234"
+         sodipodi:role="line"
+         x="253.40979"
+         y="335.55417"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">mov  $60, %rax</tspan><tspan
+         id="tspan4238"
+         sodipodi:role="line"
+         x="253.40979"
+         y="357.42917"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">xor    %rdi, %rdi</tspan><tspan
+         id="tspan4240"
+         sodipodi:role="line"
+         x="253.40979"
+         y="379.30417"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">syscall </tspan><tspan
+         id="tspan4242"
+         sodipodi:role="line"
+         x="253.40979"
+         y="401.17917"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">.ascii  &quot;Hello, world\n&quot;</tspan><tspan
+         id="tspan4244"
+         sodipodi:role="line"
+         x="253.40979"
+         y="423.05417"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial" /></text>
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4172-4"
+       width="160.61424"
+       height="37.375645"
+       x="256.3848"
+       y="449.41565" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="264.69669"
+       y="472.93137"
+       id="text4174-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="264.69669"
+         y="472.93137"
+         id="tspan4182-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:arial;-inkscape-font-specification:arial">print('Hello, world')</tspan></text>
   </g>
 </svg>
