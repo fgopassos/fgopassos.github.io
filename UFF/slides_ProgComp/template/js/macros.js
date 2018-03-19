@@ -100,7 +100,7 @@ remark.macros.cover = function() {
   var logo = args[3];
 
   ret += '<span class="cover-slide-logo"><img src="' + logo + '"></img></span>';
-  ret += '<div style="width: 90%; position: absolute; top: 60%; left: 5%; color: #FFF; text-align: center;">';
+  ret += '<div style="width: 90%; position: absolute; top: 50%; left: 5%; color: #FFF; text-align: center;">';
   ret += '<table class="cover-slide-table">';
   ret += '  <tr>';
   ret += '    <td style="width: 50%; padding-right: 2%;"><hr style="border: 0; border-top: 2px solid #FFF;"></td>';
