@@ -100,7 +100,7 @@ remark.macros.cover = function() {
   var logo = args[3];
 
   ret += '<span class="cover-slide-logo"><img src="' + logo + '"></img></span>';
-  ret += '<div style="width: 90%; position: absolute; top: 50%; left: 5%; color: #FFF; text-align: center;">';
+  ret += '<div style="width: 90%; position: absolute; top: 60%; left: 5%; color: #FFF; text-align: center;">';
   ret += '<table class="cover-slide-table">';
   ret += '  <tr>';
   ret += '    <td style="width: 50%; padding-right: 2%;"><hr style="border: 0; border-top: 2px solid #FFF;"></td>';
@@ -114,4 +114,205 @@ remark.macros.cover = function() {
   ret += '</div>';
 
   return ret;
+}
+
+// ![:translate](md)
+// Translates the markdown passed as argument to html.
+remark.macros.translate = function() {
+
+    console.log(window.remark.convert(this));
+    return window.remark.convert(this);
+}
+
+// ![:dagre width, height](graphDefinition)
+remark.macros.dagre = function(width, height) {
+
+    var g = graphlibDot.read(this);
+    g.graph().marginx = 20;
+    g.graph().marginy = 20;
+
+    if (typeof window.dagreGraphs === 'undefined') window.dagreGraphs = [];
+    var idx = window.dagreGraphs.push(g) - 1;
+
+    return '<svg idx="' + idx + '" height="' + height + '" width="' + width + '"><g/></svg>';
+}
+
+remark.macros.tableEx = function() {
+
+    var src = this;
+
+    var token = {
+      pipe : 1,
+      plus : 2,
+      minus: 3,
+      colon: 4,
+      semiColon : 5,
+      openBracket : 6,
+      closeBracket : 7,
+      text : 8,
+      classId: 9,
+      eol : 10,
+      eof : 11
+    };
+
+    var isLetter = function(c) {
+      return c.toLowerCase() != c.toUpperCase();
+    }
+
+    var isNumber = function(c) {
+      return c.match(/[a-z]/i);
+    }
+
+    var nextToken = function(src, start) {
+
+      var i = start;
+      var end = src.length;
+      var state = 0;
+      var secToken = "";
+
+      while (i < end) {
+
+        var ch = src.charAt(i);
+
+        switch(state) {
+
+          case 0:
+
+            // One char tokens.
+            if (ch == '|') return {where: i + 1, token: token.pipe, secToken: null};
+            if (ch == '+') return {where: i + 1, token: token.plus, secToken: null};
+            if (ch == '-') return {where: i + 1, token: token.minus, secToken: null};
+            if (ch == ':') return {where: i + 1, token: token.colon, secToken: null};
+            if (ch == ';') return {where: i + 1, token: token.semiColon, secToken: null};
+            if (ch == '{') return {where: i + 1, token: token.openBracket, secToken: null};
+            if (ch == '}') return {where: i + 1, token: token.closeBracket, secToken: null};
+            if (ch == '\n') return {where: i + 1, token: token.eol, secToken: null};
+
+            // Perhaps windows line break.
+            if (ch == '\r') {
+
+              state = 1;
+              break ;
+            }
+
+            // If we got thus far, it is either an identifier or text. Either
+            // way, we need to store the actual string as a secondary token.
+            secToken = secToken + ch;
+
+            // Identifier or text
+            if (isLetter(ch)) {
+
+              state = 2;
+              break ;
+            }
+
+            // Anything else: text.
+            state = 3;
+
+          case 1:
+
+            // Windows line-break
+            if (ch == '\n') return {where: i + 1, token: token.eol, tokSec: null};
+
+            // Anything else: text
+            secToken = secToken + ch;
+            state = 3;
+            break ;
+
+          case 2:
+
+            // End of an identifier. We are cheating a little bit here, knowing
+            // that in the syntatic grammar identifiers are always followed by
+            // '}' or ':'. Any changes to the syntatic grammar must be reflected
+            // here.
+            if (ch == '}' || ch == ':') {
+
+              // Remeber: ch is not part of the current token (it belogs to the
+              // next). So we return the adequate value of where.
+              return {where: i, token: token.classId, tokSec: secToken};
+            }
+
+
+            // Still seems to be an identifier.
+            if (isLetter(ch) || isNumber(ch) || ch == '-' || ch == '_') {
+
+              secToken = secToken + ch;
+              break ;
+            }
+
+            // If we got here, then it must not be an identifier. It is certainly
+            // text, but it may have ended here. Check for a bunch of other
+            // characters.
+            if (ch == '|' || ch == '+' || ch == '+' || ch == '-' || ch == ':' || ch == ';' || ch == '{' || ch == '}' || ch == '\n' || ch == '\r') {
+
+              return {where: i, token: token.text, secToken: null};
+            }
+
+            // Well, it is a text that keeps going. Update secondary token and
+            // migrate to the state that handles text. Care must be taken with
+            // escaped special chars. There is a special state to handle those.
+            if (ch == '\\') state = 4;
+            else state = 3;
+
+            secToken = secToken + ch;
+            break ;
+
+          case 3:
+
+            // It is certainly text, but it may have ended here. Check for a
+            // bunch of other characters.
+            if (ch == '|' || ch == '+' || ch == '+' || ch == '-' || ch == ':' || ch == ';' || ch == '{' || ch == '}' || ch == '\n' || ch == '\r') {
+
+              return {where: i, token: token.text, secToken: null};
+            }
+
+            // More text to come. Again, we take special care of escaped chars.
+            if (ch == '\\') state = 4;
+            else state = 3;
+
+            secToken = secToken + ch;
+            break ;
+
+          case 4:
+
+            // This is a dummy sub-state of the text token search. We only get
+            // here after a backslash (which only happens within text). Our only
+            // job here is to update the secondary token and check if ch is
+            // another backslash or anything else.
+            if (ch != '\\') state = 3;
+
+            secToken = secToken + ch;
+            break ;
+        }
+
+        i = i + 1;
+      }
+
+      return {where: i, token: token.eof, tokSec: null};
+    }
+
+    var tokenInfo;
+    var i = 0;
+    var state = 0;
+
+    while (true) {
+
+      tokenInfo = nextToken(src, i);
+      i = tokenInfo.where;
+
+        switch (state) {
+
+          case 0:
+
+            if (tokenInfo.token == token.eof) {
+              // Empty table specification. Nothing to output.
+
+              return ;
+            }
+
+            if (tokenInfo.token == token.pipe)
+            break;
+
+        }
+    }
 }
