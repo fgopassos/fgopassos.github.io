@@ -79,27 +79,39 @@ slideTitle: Google Blockly Code: Repetições
 - No Blockly Code há blocos de repetição.
 - Veremos aqui os blocos em:
     - Laços &rarr; repita $N$ vezes
-    - Laços &rarr; repita-enquanto (Enquanto)
     - Laços &rarr; contar-com (Para-faça)
+    - Laços &rarr; repita-enquanto (Enquanto)
 
 ![:column 30%](
 .center[![:imageS width:70%;](imagens/repita-n-vezes.png\)]
-)
-
-![:column 30%](
-.center[![:imageS width:70%;](imagens/repita-enquanto.png\)]
 )
 
 ![:column 40%](
 .center[![:imageS width:100%;](imagens/contar-com.png\)]
 )
 
+![:column 30%](
+.center[![:imageS width:70%;](imagens/repita-enquanto.png\)]
+)
+
+---
+
+slideTitle: Tipos de Repetições
+
+#### São classificadas em dois tipos:
+
+- Repetição definida
+  - Quando é indicado o valor exato de repetições.
+- Repetição indefinida
+  - Quando o número de repetições não é determinado.
+  - Depende de condição.
+
 ---
 
 class: section-slide
 layout: false
 
-# Programação Visual: Expressões Lógicas
+# Programação Visual: Repetições Definidas
 
 ---
 
@@ -107,6 +119,72 @@ template: conteudo
 layout: true
 
 ---
+
+slideTitle: Blockly Code: Repetições Definidas
+
+- Considere o exemplo: faça um algoritmo que leia 3 valores inteiros e os escreva na tela.
+  - Podemos escrever um algoritmo que use uma variável A e execute os seguintes passos:
+
+.center[![:imageS width:80%;](imagens/ex_sem_repeticao.png)]
+
+---
+
+slideTitle: Blockly Code: Repetições Definidas (II)
+
+- Se quiséssemos ler e escrever 6 valores, então teríamos:
+
+.center[![:imageS width:80%;](imagens/ex_sem_repeticao2.png)]
+
+---
+
+slideTitle: Blockly Code: repita-n-vezes
+
+- Percebemos, claramente, uma sequência de passos repetida.
+- Podemos usar uma estrutura de passos para repetir a leitura e impressão de dados.
+- No nosso exemplo, podemos usar o bloco *repita-n-vezes*:
+
+.center[![:imageS width:90%;](imagens/ex_repeticao.png)]
+
+---
+
+slideTitle: Blockly Code: contar-com
+
+- Uma alternativa é usar o bloco *contar-com* (para-faça):
+  - Ele precisa de uma variável que chamamos de **índice** da repetição.
+  - Esta variável é *i*, mas pode ser alterada para qualquer outro nome.
+    - É criada automaticamente, quando o bloco de repetição é inserido.
+
+.center[![:imageS width:90%;](imagens/ex_repeticao_for.png)]
+
+---
+
+slideTitle: Blockly Code: contar-com (II)
+
+- Bloco chamado de **para-faça (*for*)**, na maioria das linguagens.
+- Apresenta:
+  - índice
+  - valor de início
+  - valor de fim
+  - valor de incremento do índice
+
+---
+
+slideTitle: Blockly Code: contar-com (III)
+
+- Este bloco é especialmente útil quando precisamos do índice para a programação.
+- Por exemplo, poderíamos querer imprimir o número da repetição da entrada do número:
+
+.center[![:imageS width:95%;](imagens/ex_repeticao_for2.png)]
+
+---
+
+slideTitle: Blockly Code: Usos do contar-com
+
+- Cáculos de somatórios, produtórios, ...
+  - Qualquer expressão que usa índice.
+- Exemplo: calcular o somatório $\sum_{i=0}^{n}i$, onde $n$ é entrada do programa.
+
+
 
     </textarea>
 

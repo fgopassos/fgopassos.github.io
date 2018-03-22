@@ -6,10 +6,10 @@ then
 	exit 1
 fi
 
-command -v node &> /dev/null
+command -v nodejs &> /dev/null
 if [ $? -ne 0 ]
 then
-	echo "This script depends on nodejs, but it could not be found on your system."
+	echo "This script depends on phantomjs, but it could not be found on your system."
 	exit 2
 fi
 
@@ -30,7 +30,11 @@ then
 fi
 
 mkdir /tmp/pdf-out
-NODE_PATH=/Users/fernanda/node_modules node $(dirname $0)/rasterize3.js ${URL}
+for i in $(eval echo "{1..$PAGES}"); do
+	#NODE_PATH=/usr/lib/node_modules nodejs $(dirname $0)/rasterize3.js ${URL} /tmp/pdf-out/${i}.pdf 908 681
+	NODE_PATH=/usr/lib/node_modules nodejs $(dirname $0)/rasterize3.js "${URL}#${i}" /tmp/pdf-out/${i}.pdf 1200 751
+done
 
-mv /tmp/pdf-out/out.pdf ${OUT}
+pdftk /tmp/pdf-out/{1..$PAGES}.pdf cat output ${OUT}
+
 rm -r /tmp/pdf-out

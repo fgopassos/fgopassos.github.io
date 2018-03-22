@@ -6,7 +6,7 @@ then
 	exit 1
 fi
 
-command -v ~/Downloads/phantomjs-2.1.1-macosx/bin/phantomjs &> /dev/null
+command -v phantomjs &> /dev/null
 if [ $? -ne 0 ]
 then
 	echo "This script depends on phantomjs, but it could not be found on your system."
@@ -26,7 +26,7 @@ OUT=$3
 
 if [[ $URL != "http"* ]]
 then
-	URL="file://"$(readlink $URL)
+	URL="file://"$(realpath $URL)
 fi
 
 mkdir /tmp/pdf-out
@@ -34,7 +34,7 @@ for i in $(eval echo "{1..$PAGES}"); do
   #echo "Generating page $i..."
   #phantomjs $(dirname $0)/rasterize.js ${URL}#${i} /tmp/pdf-out/${i}.png "1200px*900px"
   echo $(dirname $0)/rasterize.js ${URL}#${i} /tmp/pdf-out/${i}.png "1200px*900px"
-done | xargs -L 1 -P 4 ~/Downloads/phantomjs-2.1.1-macosx/bin/phantomjs
+done | xargs -l -P 4 phantomjs
 
 convert $(eval echo "/tmp/pdf-out/{1..$PAGES}.png") ${OUT}
-#rm -r /tmp/pdf-out
+rm -r /tmp/pdf-out
