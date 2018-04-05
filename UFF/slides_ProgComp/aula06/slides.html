@@ -20,7 +20,7 @@ class: cover-slide
 
 ![:cover](
 Programação de Computadores
-Aula 5: Programação Visual - Repetições (parte 2)
+Aula 5: Programação Visual - Repetições Indefinidas
 Fernanda Passos
 ../template/img/logo.svg
 )
@@ -29,7 +29,7 @@ Fernanda Passos
 
 class: section-slide
 
-# Programação Visual: Repetições Aninhadas
+# Programação Visual: Repetição Indefinida
 
 ---
 
@@ -40,189 +40,6 @@ name: conteudo
 .title[
 {{slideTitle}}
 <hr>]
-
----
-
-slideTitle: Estruturas de Repetição
-
-- Também são estruturas que mudam o controle da execução.
-- Em programação, .alert[**repetições**] servem repetir um conjunto de blocos.
-    - Quantas vezes for especificado.
-    - Também chamados de blocos de .alert[iteração] ou .alert[loops].
-- Existem alguns tipos de estruturas de repetição:
-    - Repita-até (*repeat*)
-    - Para-faça (*for*)
-    - Enquanto-faça (*while*)
-- Vamos ver exemplos no Google Blockly Game.
-
-<!--
-.center[![:imageS width:40%;](imagens/criar_variavel.png)]
--->
-
----
-
-slideTitle: Google Blockly Game: Repetições
-
-- Podemos notar repetições no jogo do Labirinto (*Maze*).
-    - O personagem deve caminhar pelo caminho disponível até chegar no ponto final.
-- Experimente jogar os níveis 3, 4 e 5.
-    - Deve-se indicar quantas vezes repetir na estrutura "repita-até".
-- Acesse: https://blockly-games.appspot.com/maze?lang=pt-br&level=3
-- O jogo da Tartaruga (*Turtle*) também faz uso desta estrutura.
-    - Os desenhos devem ser feitos na tela seguindo traços básicos que devem ser repetidos.
-- Experimente jogar os níveis 1, 2, 3 e 4.
-- Acesse: https://blockly-games.appspot.com/turtle?lang=pt-br&level=1
-
----
-
-slideTitle: Google Blockly Code: Repetições
-
-- No Blockly Code há blocos de repetição.
-- Veremos aqui os blocos em:
-    - Laços &rarr; repita $N$ vezes
-    - Laços &rarr; contar-com (Para-faça)
-    - Laços &rarr; repita-enquanto (Enquanto)
-
-![:column 30%](
-.center[![:imageS width:70%;](imagens/repita-n-vezes.png\)]
-)
-
-![:column 40%](
-.center[![:imageS width:100%;](imagens/contar-com.png\)]
-)
-
-![:column 30%](
-.center[![:imageS width:70%;](imagens/repita-enquanto.png\)]
-)
-
----
-
-slideTitle: Tipos de Repetições
-
-#### São classificadas em dois tipos:
-
-- Repetição definida
-  - Quando é indicado o valor exato de repetições.
-- Repetição indefinida
-  - Quando o número de repetições não é determinado.
-  - Depende de condição.
-
----
-
-class: section-slide
-layout: false
-
-# Programação Visual: Repetições Definidas
-
----
-
-template: conteudo
-layout: true
-
----
-
-slideTitle: Blockly Code: Repetições Definidas
-
-- Considere o exemplo: faça um algoritmo que leia 3 valores inteiros e os escreva na tela.
-  - Podemos escrever um algoritmo que use uma variável A e execute os seguintes passos:
-
-.center[![:imageS width:80%;](imagens/ex_sem_repeticao.png)]
-
----
-
-slideTitle: Blockly Code: Repetições Definidas (II)
-
-- Se quiséssemos ler e escrever 6 valores, então teríamos:
-
-.center[![:imageS width:80%;](imagens/ex_sem_repeticao2.png)]
-
----
-
-slideTitle: Blockly Code: repita-n-vezes
-
-- Percebemos, claramente, uma sequência de passos repetida.
-- Podemos usar uma estrutura de passos para repetir a leitura e impressão de dados.
-- No nosso exemplo, podemos usar o bloco *repita-n-vezes*:
-
-.center[![:imageS width:90%;](imagens/ex_repeticao.png)]
-
----
-
-slideTitle: Blockly Code: contar-com
-
-- Uma alternativa é usar o bloco *contar-com* (para-faça):
-  - Ele precisa de uma variável que chamamos de **índice** da repetição.
-  - Esta variável é *i*, mas pode ser alterada para qualquer outro nome.
-    - É criada automaticamente, quando o bloco de repetição é inserido.
-
-.center[![:imageS width:90%;](imagens/ex_repeticao_for.png)]
-
----
-
-slideTitle: Blockly Code: contar-com (II)
-
-- Bloco chamado de **para-faça (*for*)**, na maioria das linguagens.
-- Apresenta:
-  - índice: uma variável especial
-  - valor de início do índice
-  - valor de fim do índice
-  - valor de incremento do índice (a cada repetição)
-
-.center[![:imageS width:80%;](imagens/contar-com2.png)]
-
----
-
-slideTitle: Blockly Code: contar-com (III)
-
-- Este bloco é especialmente útil quando precisamos do índice para a programação.
-- Por exemplo, poderíamos querer imprimir o número da repetição da entrada do número:
-
-.center[![:imageS width:95%;](imagens/ex_repeticao_for2.png)]
-
----
-
-slideTitle: Blockly Code: Usos do contar-com
-
-- Cáculos de somatórios, produtórios, ...
-  - Qualquer expressão que usa índice.
-- Exemplo: calcular o somatório $\sum_{i=1}^{n}i$, onde $n$ é entrada do programa.
-  - Na solução abaixo, usamos o índice $i$ para realizar o somatório.
-
-.center[![:imageS width:80%;](imagens/ex_somatorio.png)]
-
----
-
-slideTitle: Blockly Code: Equivalência entre Contar-com e Repita-n-vezes
-
-.center[
-![:imageS width:50%;](imagens/contar-com_eq.png)
-<br><span style="font-size:50px"> .alert[&#8661;] </span><br>
-![:imageS width:50%;](imagens/repita-n-vezes_eq.png)
-]
-
----
-
-slideTitle: Exercício I
-
-#### Resolva as questões abaixo no Google Blockly Code.
-
-1. Escreva um algoritmo que obtenha 5 números do usuário e imprima o somatório deles.
-1. Faça um algoritmo que obtenha 10 números inteiros e calcule o somatório dos pares.
-1. Faça um algoritmo que obtenha 5 números inteiros e informe o maior deles.
-1. Escreva um algoritmo que calcule o somatório $\sum_1^n \frac{(i-1)^2}{i}$.
-1. Escrever um algoritmo que imprima o fatorial de um dado $n$ inteiro positivo.
-
----
-
-class: section-slide
-layout: false
-
-# Programação Visual: Repetições Indefinidas
-
----
-
-template: conteudo
-layout: true
 
 ---
 
@@ -328,7 +145,7 @@ slideTitle: Repetição Definida vs. Indefinida
 
 ---
 
-slideTitle: Exercícios (II)
+slideTitle: Exercício I
 
 #### Resolva as seguintes questões no Google Blockly Code.
 
@@ -339,6 +156,80 @@ slideTitle: Exercícios (II)
 1. Escreva um programa que leia números até que a multiplicação entre eles seja maior que um limite previamente lido do usuário.
 1. Escreva um programa que leia dois números $P$ e $N$. $P$ é uma porcentagem e seu valor deve estar entre 0 e 100. $N$ é um número qualquer ao qual deseja-se calcular a porcentagem $P$.
 1. Escreva um programa que conte quantas vezes é necessário jogar dois dados de 6 faces para que a soma delas seja 9.
+
+---
+
+class: section-slide
+layout: false
+
+# Programação Visual: Repetições Aninhadas
+
+---
+
+template: conteudo
+layout: true
+
+---
+
+slideTitle: Estruturas de Repetição Aninhadas
+
+- Podemos aninhar qualquer estrutura em uma estrutura de repetição.
+    - Blocos de comandos;
+    - Blocos de controle condicional;
+    - .alert[**Blocos de repetição]**.
+    - ...
+- Vamos ver exemplos no Google Blockly Game.
+
+<!--
+.center[![:imageS width:40%;](imagens/criar_variavel.png)]
+-->
+
+---
+
+slideTitle: Google Blockly Game: Repetições Aninhadas
+
+- O jogo da Tartaruga (*Turtle*) faz aninhamento de blocos de repetição.
+- Experimente jogar os níveis 5 e 6.
+- Acesse: https://blockly-games.appspot.com/turtle?lang=pt-br&level=5
+- No jogo do Labirinto (*Maze*) há blocos condicionais dentro de blocos de repetição.
+    - Uso do bloco "se caminho à".
+    - Níveis finais requerem aninhamentos mais profundos.
+- Experimente jogar os níveis de 6 e 7.
+    - Acesse: https://blockly-games.appspot.com/maze?lang=pt-br&level=6
+
+---
+
+slideTitle: Blockly Code: Repetição Aninhadas
+
+- No Blockly Code podemos fazer o mesmo.
+- Repetições aninhadas geralmente servem para:
+    - Trabalhar com 2 ou mais dimensões;
+    - Trabalhar com matrizes bidimensionais e tabelas (veremos mais a frente em Python);
+        - Ou ainda, matrizes 3D, com três níveis de repetição.
+        - Ou ainda, mutidimensionais.
+    - Realizar permutações (veremos mais a frente em Python);
+    - ...
+
+---
+
+slideTitle: Blockly Code: Repetição Aninhadas (II)
+
+- Exemplo: Calcular:
+    .center[![:imageS width:20%;](imagens/sum_sum.png)]
+<!--  $\displaystyle\sum_{j=1}^{n} \sum_{i=1}^{m} i \times j$ -->
+    - Isto é: ($1\times 1 + 1 \times 2 + ... + 1 \times m$) + ($2\times 1 + 2 \times 2 + ... + 2 \times m$) + ... + ($n \times 1 + n \times 2 + ... + n \times m$)
+
+.center[![:imageS width:95%;](imagens/ex_aninhamento.png)]
+
+---
+
+slideTitle: Exercício II
+
+#### Resolva as questões abaixo no Google Blockly Code.
+
+1. 
+1. Calcule o fatorial de vários números obtidos do usuário. A entrada termina quando o usuário digitar -1 (ou qual outro número negativo).
+
 
 
     </textarea>
