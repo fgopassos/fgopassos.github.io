@@ -207,24 +207,38 @@ slideTitle: Exercício I
 #### Resolva as questões abaixo no Google Blockly Code.
 
 1. Escreva um algoritmo que obtenha 5 números do usuário e imprima o somatório deles.
-1. Faça um algoritmo que obtenha 10 números inteiros e calcule o somatório dos pares. Se nenhum número par for inserido, o valor da soma deve ser 0.
+1. Faça um algoritmo que obtenha 10 números inteiros e calcule o somatório dos pares.
 1. Faça um algoritmo que obtenha 5 números inteiros e informe o maior deles.
-1. Escreva um algoritmo que calcule o somatório $\sum_1^n \frac{(i-1)^2}{i}$.
-1. Escrever um algoritmo que imprima o fatorial de um dado $n$ inteiro positivo.
 
 ---
 
 slideTitle: Variáveis Acumulativas
 
 - São bastante usadas em repetições.
+  - Inclusive, fizemos isso no exercício anterior.
 - Servem para:
   - realizar alguma contagem
   - somar valores em série
   - multiplicar valores em série
   - ...
+
+---
+
+slideTitle: Blockly Code: Variáveis Acumulativas
+
 - Exemplo: indicar quantos números ímpares foram lidos do usuário em um total de 10 amostras.
 
-.center[![:imageS width:80%;](imagens/ex_contagem.png)]
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#2ziedr">.center[![:imageS width:80%;](imagens/ex_contagem.png)]</a>
+
+---
+
+slideTitle: Exercício II
+
+#### Resolva as questões abaixo no Google Blockly Code.
+
+1. Escreva um algoritmo que calcule o somatório $\sum_1^n \frac{(i-1)^2}{i}$.
+1. Escreva um algoritmo que obtenha um número natural e indique se ele é primo. Isto é, o número é apenas divisível por 1 e ele mesmo.
+1. Escrever um algoritmo que imprima o fatorial de um dado $n$ inteiro positivo.
 
 ---
 
@@ -232,13 +246,42 @@ slideTitle: Blockly Code: Imprimir Séries
 
 - Em repetições, imprimir séries pode ser muito útil.
 - Por exemplo, imprimir:
-  - números de 1 a 6: 1, 2, 3, 4, 5, 6
-  - números pares no intervalo de 1 a 10: 2, 4, 6, 8, 10
-  - números primos no intervalo de 1 a 10: 2, 3, 5, 7
+  - números de 1 a 6: .alert[1, 2, 3, 4, 5, 6]
+  - números pares no intervalo de 1 a 10: .alert[2, 4, 6, 8, 10]
+  - números primos no intervalo de 1 a 10: .alert[2, 3, 5, 7]
 - Para fazer isso no Blockly Code, podemos:
   - Imprimir um valor em cada janela.
       - Muitas janelas, dependendo do tamanho da série.
   - .alert[Agrupar os valores em uma variável de texto e imprimir em uma única janela].
+
+---
+
+slideTitle: Blockly Code: Imprimir Séries (II)
+
+- Agrupando valores de uma série:
+  - Exemplo: números de 1 a 10.
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#fahn3p">
+  .center[![:imageS width:60%;](imagens/ex_imprimir_serie.png)]
+</a>
+
+
+
+- Resultado do exemplo acima:
+
+.center[![:imageS width:25%;](imagens/saida_imprimir_serie.png)]
+
+
+---
+
+slideTitle: Exercício III
+
+#### Resolva as questões abaixo no Google Blockly Code.
+
+1. Imprima os números pares de 1 até 20.
+1. Imprima os números ímpares no intervalo de 1 a $n$ (inclusive). $n$ deve ser previamente obtido do usuário.
+1. Imprima os números primos no intervalo de 1 a $n$ (inclusive). $n$ deve ser previamente obtido do usuário.
+
 
     </textarea>
 
