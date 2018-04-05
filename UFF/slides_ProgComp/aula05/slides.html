@@ -20,7 +20,7 @@ class: cover-slide
 
 ![:cover](
 Programação de Computadores
-Aula 5: Programação Visual - Repetições
+Aula 5: Programação Visual - Repetições Definidas
 Fernanda Passos
 ../template/img/logo.svg
 )
@@ -207,139 +207,38 @@ slideTitle: Exercício I
 #### Resolva as questões abaixo no Google Blockly Code.
 
 1. Escreva um algoritmo que obtenha 5 números do usuário e imprima o somatório deles.
-1. Faça um algoritmo que obtenha 10 números inteiros e calcule o somatório dos pares.
+1. Faça um algoritmo que obtenha 10 números inteiros e calcule o somatório dos pares. Se nenhum número par for inserido, o valor da soma deve ser 0.
 1. Faça um algoritmo que obtenha 5 números inteiros e informe o maior deles.
 1. Escreva um algoritmo que calcule o somatório $\sum_1^n \frac{(i-1)^2}{i}$.
 1. Escrever um algoritmo que imprima o fatorial de um dado $n$ inteiro positivo.
 
 ---
 
-class: section-slide
-layout: false
+slideTitle: Variáveis Acumulativas
 
-# Programação Visual: Repetições Indefinidas
+- São bastante usadas em repetições.
+- Servem para:
+  - realizar alguma contagem
+  - somar valores em série
+  - multiplicar valores em série
+  - ...
+- Exemplo: indicar quantos números ímpares foram lidos do usuário em um total de 10 amostras.
 
----
-
-template: conteudo
-layout: true
-
----
-
-slideTitle: Repetição Indefinida
-
-- É aquela em que o limite da repetição é definido por uma .alert[**expressão lógica**].
-  - Isto é, não é conhecida *a priori* pois depende do valor da expressão que é calculado a cada repetição.
-- No início de cada repetição (*loop*), a .alert[**condição é testada**]:
-  - Se valor da expressão lógica é .alert[**verdadeiro**], executa os blocos internos.
-  - Se valor da expressão lógica é .alert[**falso**], termina o bloco sem executar.
-- Estrutura bastante utilizada em programação.
-  - Chamado de .alert["enquanto" (*while*)].
+.center[![:imageS width:80%;](imagens/ex_contagem.png)]
 
 ---
 
-slideTitle: Blockly Code: Repetição Indefinida
+slideTitle: Blockly Code: Imprimir Séries
 
-- No Google Blockly Code, usamos o bloco em:
-  - Laços &rarr; repita-enquanto
-
-.center[![:imageS width:25%;](imagens/repita-enquanto.png)]
-
----
-
-slideTitle: Blockly Code: Uso de Repetição Indefinida
-
-- .alert[Problema:] Determinar quantas vezes um dado de 6 faces precisa ser jogado para acertar um número $n$ de entrada.
-  - Precisamos de:
-      - uma variável para guardar $n$ lido do usuário;
-      - outra variável para ser a $face$ do dado sorteada;
-      - um $contador$.
-  - Executar os passos:
-      - Obter $n$.
-      - Jogar o dado e guardar valor na variável $face$.
-      - Contar 1.
-      - Enquanto $n$ for diferente de $face$, continuar jogando e cotando.
-      - Ao final, imprimir o contador.
-
----
-
-slideTitle: Uso de Repetição Indefinida: Solução Parcial
-
-- Solução parcial no Blockly Code:
-  - mas falta um detalhe importante!
-
-.center[![:imageS width:90%;](imagens/dados_sol1.png)]
-
----
-
-slideTitle: Uso de Repetição Indefinida: Solução Final
-
-- Verificar se o valor de $n$ corresponde a uma face possível do dado.
-  - Caso contrário, repetição nunca termina (*loop* infinito)!
-
-.center[![:imageS width:90%;](imagens/dados_sol2.png)]
-
----
-
-slideTitle: Mais Uso de Repetição Indefinida
-
-- Fazer com que um programa permita como entrada um valor em um intervalo.
-  - Por exemplo, entrar somente com valores positivos.
-
-.center[![:imageS width:95%;](imagens/ex_intervalo.png)]
-
----
-
-slideTitle: Mais Uso de Repetição Indefinida (II)
-
-- Calcular o fatorial de um número positivo $n$.
-
-.center[![:imageS width:95%;](imagens/ex_intervalo2.png)]
-
----
-
-slideTitle: Outro Uso de Repetição Indefinida
-
-- Ler números/textos até ser digitada uma *flag*.
-    - *Flags* são valores que indicam o fim da repetição.
-- Por exemplo, um programa que faz eco. Ele deve ler um texto e imprimir na tela até que que o texto "sair" (*flag*) seja digitado.
-
-.center[![:imageS width:95%;](imagens/ex_flag.png)]
-
----
-
-slideTitle: Outro Uso de Repetição Indefinida (II)
-
-- Exemplo 2: Somar todos os números lidos até que um número negativo seja digitado.
-
-.center[![:imageS width:95%;](imagens/ex_flag2.png)]
-
----
-
-slideTitle: Repetição Definida vs. Indefinida
-
-- Tudo que é feito com a repetição definida pode ser feito com a indefinida.
-
-.center[
-![:imageS width:50%;](imagens/contar-com_eq.png)
-<br><span style="font-size:50px"> .alert[&#8661;] </span><br>
-![:imageS width:50%;](imagens/repita-enquanto_eq.png)
-]
-
----
-
-slideTitle: Exercícios (II)
-
-#### Resolva as seguintes questões no Google Blockly Code.
-
-1. Escreva 3 versões de um programa que calcule $b^e$, onde $e$ é inteiro, usando **multiplicações sucessivas**.
-    - Versão 1: usando bloco repita-n-vezes.
-    - Versão 2: usando bloco contar-com (*for*).
-    - Versão 3: usando bloco repita-enquanto (while).
-1. Escreva um programa que leia números até que a multiplicação entre eles seja maior que um limite previamente lido do usuário.
-1. Escreva um programa que leia dois números $P$ e $N$. $P$ é uma porcentagem e seu valor deve estar entre 0 e 100. $N$ é um número qualquer ao qual deseja-se calcular a porcentagem $P$.
-1. Escreva um programa que conte quantas vezes é necessário jogar dois dados de 6 faces para que a soma delas seja 9.
-
+- Em repetições, imprimir séries pode ser muito útil.
+- Por exemplo, imprimir:
+  - números de 1 a 6: 1, 2, 3, 4, 5, 6
+  - números pares no intervalo de 1 a 10: 2, 4, 6, 8, 10
+  - números primos no intervalo de 1 a 10: 2, 3, 5, 7
+- Para fazer isso no Blockly Code, podemos:
+  - Imprimir um valor em cada janela.
+      - Muitas janelas, dependendo do tamanho da série.
+  - .alert[Agrupar os valores em uma variável de texto e imprimir em uma única janela].
 
     </textarea>
 
