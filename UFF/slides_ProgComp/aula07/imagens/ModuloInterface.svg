@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="106.12775mm"
+   height="151.67989mm"
+   viewBox="0 0 376.04322 537.44841"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ModuloInterface.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="-44.309401"
+     inkscape:cy="475.15041"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1280"
+     inkscape:window-height="975"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-146.91502,-101.14628)">
+    <rect
+       style="opacity:1;fill:#93ac9d;fill-opacity:1;stroke:#000000;stroke-width:1.49999988;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4136"
+       width="374.03125"
+       height="193.9493"
+       x="147.98737"
+       y="248.28078" />
+    <path
+       id="path4684"
+       d="m 318.51015,157.48428 c 0,0 -31.154,-9.214 -32.58,-9.54 -1.524,-0.348 -3.384,-1.417 -6.003,1.096 -4.331,4.154 -0.838,8.985 -0.838,8.985 l 50.58,64.62 c 0,0 2.643,3.146 6.12,2.7 2.62,-0.336 4.021,-2.103 7.866,-7.186 3.756,-4.964 47.214,-60.133 47.214,-60.133 0,0 2.697,-3.448 0.541,-6.84 -2.816,-4.43 -7.561,-3.24 -7.561,-3.24 l -32.581,9.54 3.24,-55.62 -39.238,0 3.24,55.618"
+       inkscape:connector-curvature="0"
+       style="fill:#008080;stroke:#000000;stroke-width:1.44000006" />
+    <path
+       id="path4684-6"
+       d="m 318.51016,518.91869 c 0,0 -31.154,-9.214 -32.58,-9.54 -1.524,-0.348 -3.384,-1.417 -6.003,1.096 -4.331,4.154 -0.838,8.985 -0.838,8.985 l 50.58,64.62 c 0,0 2.643,3.146 6.12,2.7 2.62,-0.336 4.021,-2.103 7.866,-7.186 3.756,-4.964 47.21399,-60.133 47.21399,-60.133 0,0 2.697,-3.448 0.541,-6.84 -2.816,-4.43 -7.561,-3.24 -7.561,-3.24 l -32.58099,9.54 3.24,-55.62 -39.238,0 3.24,55.618"
+       inkscape:connector-curvature="0"
+       style="fill:#008080;stroke:#000000;stroke-width:1.44000006" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="290.53345"
+       y="363.43817"
+       id="text4726"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4728"
+         x="290.53345"
+         y="363.43817"
+         style="font-size:25px">Módulo</tspan></text>
+    <g
+       id="g4761"
+       transform="translate(-18,-22)">
+      <rect
+         y="270.50415"
+         x="165.66502"
+         height="36.36549"
+         width="163.64471"
+         id="rect4138"
+         style="opacity:1;fill:#b7c8be;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4730"
+         y="294.84689"
+         x="192.85292"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:17.5px"
+           y="294.84689"
+           x="192.85292"
+           sodipodi:role="line"
+           id="tspan4781">Parâmetro 1</tspan></text>
+    </g>
+    <g
+       id="g4766"
+       transform="translate(4,-22)">
+      <rect
+         y="270.50415"
+         x="354.56354"
+         height="36.36549"
+         width="163.64471"
+         id="rect4138-3"
+         style="opacity:1;fill:#b7c8be;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4730-3"
+         y="294.84689"
+         x="378.54895"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:17.5px"
+           y="294.84689"
+           x="378.54895"
+           id="tspan4732-5"
+           sodipodi:role="line">Parâmetro N</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="324.26239"
+       y="268.05191"
+       id="text4771"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4773"
+         x="324.26239"
+         y="268.05191"
+         style="font-size:22.5px">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman';letter-spacing:0px;word-spacing:0px;fill:#005544;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="335.0574"
+       y="612.36218"
+       id="text4775"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4777"
+         x="335.0574"
+         y="612.36218"
+         style="font-size:17.5px;text-align:center;text-anchor:middle;fill:#005544">Valor Retornado</tspan><tspan
+         sodipodi:role="line"
+         x="335.0574"
+         y="634.23718"
+         id="tspan4779"
+         style="font-size:17.5px;text-align:center;text-anchor:middle;fill:#005544">(opcional)</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programação de Computadores: Aula 6</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../template/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/general.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/code.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/cover.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/section.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/elements.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/table.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/block.css">
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: cover-slide
+
+![:cover](
+Programação de Computadores
+Aula 5: Programação Visual - Funções
+Fernanda Passos
+../template/img/logo.svg
+)
+
+---
+
+class: section-slide
+
+# Funções e Modularização
+
+---
+
+class: middle
+layout: true
+name: conteudo
+
+.title[
+{{slideTitle}}
+<hr>]
+
+---
+
+slideTitle: Módulos
+
+![:block](Definição:
+- Módulos agrupam semanticamente trechos de algoritmos.
+  - Isto é, são subsequências de comandos que juntos fazem algum sentido.
+)
+- Basicamente, existem dois tipos de módulos:
+  - Funções
+  - Procedimentos
+
+---
+
+slideTitle: Interface de Módulos
+
+#### Interface de entrada:
+
+- Maneira de passar dados externos para dentro do módulo.
+- Esta interface é definida por .alert[parâmetros formais].
+  - Também chamados de .alert[argumentos].
+  - Tais parâmetros são entradas para o módulo.
+
+#### Interface de saída:
+  - Através do .alert[retorno] de um valor.
+
+---
+
+slideTitle: Interface de Módulos (II)
+
+.col-2[
+- Fluxo de execução:
+  - O módulo recebe os valores dos parâmetros (se houver);
+  - Realiza cálculos sobre eles; e
+  - Retorna um resultado (se houver).
+]
+.col-2[
+.center[![:imageS width:70%;](imagens/ModuloInterface.svg)]
+]
+
+---
+
+slideTitle: Criação e Uso de Módulos
+
+#### Duas etapas importantes:
+1. Declaração:
+  - indicar nome,
+  - parâmetros (se houver),
+  - retorno (se houver) e
+  - passos de execução.
+2. Chamada:
+  - ativação do módulo no fluxo principal.
+  - Quando chamado, fluxo principal desvia para a execução do módulo.
+  - Depois retorna para o ponto em que estava.
+
+---
+
+slideTitle: Tipos de Módulos
+
+#### Função:
+  - Retorna valor.
+  - Serve para calcular algo que se espera uma resposta como retorno.
+      - Mesma ideia das funções matemáticas.
+  - Exemplos: calcular a raiz quadrada de um número; calcular a ocorrência da palavra “eu” em
+um texto.
+#### Procedimento:
+  - Não retorna valor.
+  - Servem para oncentrar a execução de um algoritmo sem retorno.
+  - Geralmente, computa-se algo e o resultado já é exibido no procedimento.
+  - Exemplos: imprimir a tabuada de 3; imprimir uma matriz.
+
+---
+
+slideTitle: Blockly Code: Declaração de Módulos
+
+- No Google Blockly Code, funções são declaradas por:
+
+.center[![:imageS width:35%;](imagens/funcao.png)]
+
+- Procedimentos são declarados por:
+
+.center[![:imageS width:40%;](imagens/procedimento.png)]
+
+---
+
+slideTitle: Blockly Code: Uso de Módulos
+
+- Usando a função previamente declarada:
+
+.center[![:imageS width:20%;](imagens/uso_funcao.png)]
+
+- Usando o procedimento previamente declarada:
+
+.center[![:imageS width:25%;](imagens/uso_procedimento.png)]
+
+---
+
+slideTitle: Blockly Code: Exemplo de Função
+
+- Função que retorna o fatorial de 5.
+
+.center[![:imageS width:50%;](imagens/ex_dec_fatorial5.png)]
+
+- Chamando a função e imprimindo o seu valor de retorno:
+
+.center[![:imageS width:50%;](imagens/ex_uso_fatorial5.png)]
+
+---
+
+slideTitle: Blockly Code: Exemplo de Procedimento
+
+- Procedimento que imprime os 20 primeiros números naturais múltiplos de 5.
+
+<a target="_blank" href="
+https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#ow4wjq">
+.center[![:imageS width:60%;](imagens/ex_dec_multiplos5.png)]
+</a>
+
+- Chamando a função e imprimindo o seu valor de retorno:
+
+<a target="_blank" href="
+https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#ow4wjq">
+.center[![:imageS width:20%;](imagens/ex_uso_multiplos5.png)]
+</a>
+
+---
+
+slideTitle: Exercício I
+
+#### Resolva as questões abaixo no Google Blockly Code.
+
+1. Escreva uma função que calcule o resultado da expressão $\sqrt{8} + 5^7 - 3^9$. Imprima o valor de retorno dela.
+1. Escreva um procedimento que imprima todos os 5 primeiros números naturais múltiplos de 5 e 7 simultaneamente.
+
+---
+
+slideTitle: Blockly Code: Parâmetros
+
+- E se quiséssemos escrever uma função para calcular o fatorial de um número qualquer?
+    - Um dado número $n$.
+- Ou ainda um procedimento que que mostre os múltiplos de 5 e 7 em um dado intervalo?
+    - Um intervalo entre $x$ e $y$.
+- Nestes casos, devemos usar os .alert[**parâmetros**].
+    - Interface de entrada.
+
+---
+
+slideTitle: Blockly Code: Parâmetros (II)
+
+- Basta arrastar o bloco do parâmetro no lado esquerdo para montar no lado direito.
+
+.center[![:imageS width:50%;](imagens/inserir_parametros.png)]
+
+---
+
+slideTitle: Blockly Code: Parâmetros (III)
+
+- Por exemplo, calcular o fatorial de $n$.
+
+.center[![:imageS width:50%;](imagens/inserir_parametros_fatorial.png)]
+
+- Repare que aparece na declaração da função o "com: n".
+    - "n" é o parâmetro.
+
+---
+
+slideTitle: Blockly Code: Parâmetros (III)
+
+- Por exemplo, calcular o fatorial de $n$.
+
+.center[![:imageS width:50%;](imagens/inserir_parametros_fatorial.png)]
+
+- Repare que aparece na declaração da função o "com: n".
+    - "n" é o parâmetro.
+
+---
+
+slideTitle: Blockly Code: Parâmetros (IV)
+
+- E para chamar a função fatorial, usamos:
+
+.center[![:imageS width:20%;](imagens/ex_uso_fatorial.png)]
+
+- Deve ter:
+    - o encaixe de entrada (na frente)
+    - o encaixe de retorno (atrás), como toda função
+
+---
+
+slideTitle: Blockly Code: Parâmetros (V)
+
+- O corpo da função pode ser:
+    - Isto é, o que ela faz.
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#pxwa8w">
+.center[![:imageS width:60%;](imagens/ex_dec_fatorial.png)]
+</a>
+
+---
+
+slideTitle: Blockly Code: Parâmetros (V)
+
+- E agora podemos usar a função como quisermos.
+- Por exemplo, apenas pedir um número e imprimir o valor do fatorial:
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#pxwa8w">
+.center[![:imageS width:75%;](imagens/ex_imprime_fatorial.png)]
+</a>
+
+---
+
+slideTitle: Blockly Code: Parâmetros (VI)
+
+- Ou ainda, calcular alguma expressão, como o número de combinações de $p$ em um conjunto de $n$ elementos.
+$$C_{n,p} = \frac{n!}{p!(n-p)!}$$
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#oz5q3x">
+.center[![:imageS width:90%;](imagens/ex_uso_combinacao.png)]
+</a>
+
+---
+
+slideTitle: Exercício (II)
+
+- #### Resolva as questões abaixo no Google Blockly Code.
+
+1. Escreva uma função que calcule o menor valor entre 3 números. Imprima o valor de retorno dela.
+1. Escreva um procedimento que imprima os múltiplos de 7 ou 11 em um dado intervalo de $m$ a $n$.
+
+---
+
+slideTitle: Por Que Usar Módulos?
+
+1. Evitar repetição de comandos de um programa.
+1. Dividir e estruturar o código de um programa em partes fechadas e logicamente coerentes.
+1. Aumentar a legibilidade do código de um programa.
+1. Melhorar verificação e correção do código de um programa.
+
+---
+
+slideTitle: Repetição de Comandos
+
+- Considere o problema: Escrever um programa que imprima os 5 primeiros múltiplos de 7 .alert[ou] 9 nos intervalos:
+  - de 0 a 100;
+  - de 500 a 600;
+  - de 900 a 1000.
+- As ações para este problema são:
+  - Imprimir os 5 primeiros múltiplos de 7 ou 9 no intervalo de 0 a 100;
+  - Imprimir os 5 primeiros múltiplos de 7 ou 9 no intervalo de 500 a 600;
+  - Imprimir os 5 primeiros múltiplos de 7 ou 9 no intervalo de 900 a 1000;
+- Repare que algumas as são repetidas.
+    - Apenas muda-se o parâmetro da ação.
+- Podemos criar um único módulo para imprimir os 5 primeiros múltiplos.
+  - E chamá-lo 3 vezes.
+
+---
+
+slideTitle: Repetição de Comandos (II)
+
+- Sem função:
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#ricksr">
+.center[![:imageS width:50%;](imagens/ex1_multiplos.png)]
+</a>
+
+
+---
+
+slideTitle: Repetição de Comandos (III)
+
+- Com função:
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#kbt85f">
+.center[![:imageS width:75%;](imagens/ex2_multiplos.png)]
+</a>
+
+---
+
+slideTitle: Organização
+
+- Considere o problema: deseja-se ler dois lados de um retângulo e calcular a sua área, o seu perímetro e o comprimento de sua diagonal.
+- Ações:
+    - obter ladoA, ladoB;
+    - calcular a área usando ladoA e ladoB;
+    - calcular o perímetro usando ladoA e ladoB;
+    - calcular o comprimento da diagonal usando ladoA e ladoB;
+    - imprimir os resultados.
+- Para dividir o algoritmo em partes logicamente coerentes, podemos criar um módulo para cada ação.
+    - Melhora a organização do algoritmo.
+
+---
+
+slideTitle: Organização (II)
+
+- Programa principal:
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#dm6nkn">
+.center[![:imageS width:60%;](imagens/ex_chamada_retangulo.png)]
+</a>
+
+---
+
+slideTitle: Organização (III)
+
+- Declaração das funções:
+
+<a target="_blank" href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#dm6nkn">
+.center[![:imageS width:70%;](imagens/ex_funcoes_retangulo.png)]
+</a>
+
+---
+
+slideTitle: Legibilidade
+
+- Quando criamos módulos, devemos nomeá-los.
+  - Seu nome é um *identificador* do módulo.
+  - Segue a mesma regra de construção de nomes de variáveis.
+- Geralmente, os nomes são de acordo com a sua ação.
+  - .alert[Funções]: é comum dar apenas o nome do que está se calculando.
+      - Exemplos: area, perimetro, fatorial.
+  - .alert[Procedimentos]: é comum o nome ser usado com um verbo junto.
+      - Exemplos: mostrar_multiplos, imprimir_primos.
+- Isto facilita a leitura do algoritmo (.alert[legibilidade]):
+  - Aproxima da nossa linguagem e
+  - Deixa a parte mais complexa dentro do módulo.
+
+---
+
+slideTitle: Verificação e Correção
+
+- Permite a .alert[verificação e correção] de um programa em etapas.
+	- Cada módulo deve produzir seu resultado independentemente.
+	- O programa em si é a combinação de módulos.
+- Ajuda na verificação de erros:
+  - Se o módulo não funciona como o previsto, o erro fica concentrado nele.
+- Ajuda na abstração:
+  - Um módulo tem sua funcionalidade, parâmetros e valores de retorno pré-definidos.
+  - Dado que ele é correto, podemos nos concentrar em desenvolver outras partes do código.
+
+---
+
+slideTitle: Exercício (III)
+
+#### Resolva as questões abaixo no Google Blockly Code.
+
+1. Escreva uma função que indique se um número é ou não é primo. Ela deve retornar um valor lógico (verdadeiro ou falso) e não deve imprimir nada.
+1. Escreva um procedimento para imprimir (na mesma janela) todos os números primos entre $m$ e $n$.
+  - Use a função escrita em 1.
+1. Escreva um programa que peça que o usuário digite um intervalo até que ele esteja correto (isto é, $m \leq n$ e $m$ e $n$ sejam 0 ou positivos). Em seguida, chame o procedimento criado em 2.
+
+    </textarea>
+
+    <script src="../template/js/remark-latest.min.js" type="text/javascript"></script>
+    <script src="../template/js/macros.js" type="text/javascript"></script>
+    <script src="../template/js/callbacks.js" type="text/javascript"></script>
+    <script src="../template/js/katex.min.js"></script>
+    <script src="../template/js/auto-render.min.js"></script>
+    <link rel="stylesheet" href="../template/css/katex.min.css">
+    <script type="text/javascript">
+      var renderMath = function() {
+        renderMathInElement(document.body, {delimiters: [
+           {left: "$$", right: "$$", display: true},
+           {left: "$", right: "$", display: false},
+           {left: "\\[", right: "\\]", display: true},
+           {left: "\\(", right: "\\)", display: false},
+        ]});
+      }
+      var slideshow = remark.create({highlightStyle: "github", highlightLines: "true", highlightSpans: "true", slideNumberFormat: onSlideCallback}, renderMath);
+
+      slideshow.on('afterShowSlide', function (s) {
+
+          var slide = document.getElementsByClassName('remark-visible')[0];
+          var iframeList = slide.getElementsByClassName('scaled-frame-md');
+
+          var i;
+          for (i = 0; i < iframeList.length; i++) {
+
+              var iframe = iframeList[i];
+
+              if (typeof iframe.attributes.after !== 'undefined') continue ;
+
+              var src = iframe.src;
+              iframe.src = '';
+              iframe.src = src;
+
+              var att = document.createAttribute("after");
+              att.value = 'true';
+              iframe.attributes.setNamedItem(att);
+          }
+
+      });
+    </script>
+</body>
+</html>
