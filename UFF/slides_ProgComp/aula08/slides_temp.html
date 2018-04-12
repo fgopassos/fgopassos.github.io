@@ -158,7 +158,7 @@ escreva a;
 
 ---
 
-slideTitle: Pseudocódigo e Blockly Code (IV)
+slideTitle: Pseudocódigo e Blockly Code (V)
 
 #### Atribuição:
 
@@ -177,15 +177,122 @@ escreva a;
 .center[![:imageS width:90%;](imagens/ex_atribuicao.png)]
 ]
 
-- A seta indica a direção da atribuição e a variável que recebe o valor fica sempre na esquerda.
+- A seta indica a direção da atribuição.
+- A variável que recebe o valor fica sempre na esquerda.
 
 ---
 
-slideTitle: Pseudocódigo e Blockly Code (IV)
+slideTitle: Pseudocódigo e Blockly Code (VI)
 
 #### Expressões lógicas:
 
+- Também herdam símbolos da matemática.
+- Uso de parênteses permite a indicar explicitamente as precedências.
+
+```python
+a ← 3;
+b ← ((a < 5) e (a > 2)) ou (a = 0);
+escreva b;
+```
+
+![:imageS width:85%;](imagens/ex_expressao_logica.png)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (VII)
+
+#### Expressões lógicas:
+
+- Precedência:
+  - Primeiro, resolve os parênteses
+  - Depois, as expressões relacionais (=, ≠, >, <, ≥, ≤)
+  - Depois, a negação lógica (não)
+  - Por último, conjunção (e) e disjunção (ou)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (VIII)
+
+#### Comando de Saída:
+
+.col-3[
+```python
+a ← 3;
+escreva a;
+```
+]
+
+.col-3[
+```python
+a ← 3;
+imprime a;
+```
+]
+
+.col-3[
+.center[![:imageS width:70%;](imagens/ex_imprime.png)]
+]
+
+#### Comando de Entrada:
+
+![:column 47%](
+```python
+escreva "Entre com a:";
+leia a;
+imprime a;
+```
+)
+
+![:column 6%]( &nbsp; )
+
+![:column 47%](
+```python
+a ← leia "Entre com a:";
+escreva a;
+```
+)
+
+.center[![:imageS width:70%;](imagens/ex_leia.png)]
+
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (IX)
+
 #### Comando se-faça-senão:
+
+![:column 40%](
+```python
+escreva "Entre com a:";
+leia a;
+se (a ≥ 0\) então
+  escreva a, "é positivo";
+fim-se
+```
+
+<br>
+
+```python
+escreva "Entre com a:";
+leia a;
+se (a ≥ 0\) então
+  escreva a, "é positivo";
+senão
+  escreva a, "é negativo";
+fim-se
+```
+)
+
+![:column 60%](
+<br>
+.center[![:imageS width:90%;](imagens/ex_se.png\)]
+<br><br><br>
+.center[![:imageS width:90%;](imagens/ex_se-senao.png\)]
+)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (IX)
 
 #### Comando para-faça (contar-com):
 
@@ -195,7 +302,8 @@ slideTitle: Pseudocódigo e Blockly Code (IV)
 
 slideTitle: Exercício I
 
-#### Resolva as questões abaixo no Google Blockly Code.
+#### Resolva as questões escrevendo em um papel (ou digitando em um editor de texto qualquer).
+- Depois, use o Google Blockly Code para verificar se está correto.
 
 1. Escreva uma função que calcule o resultado da expressão $\sqrt{8} + 5^7 - 3^9$. Imprima o valor de retorno dela.
 1. Escreva um procedimento que imprima todos os 5 primeiros números naturais múltiplos de 5 e 7 simultaneamente.
