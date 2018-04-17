@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programação de Computadores: Aula 8</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../template/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/general.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/code.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/cover.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/section.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/elements.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/table.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/block.css">
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: cover-slide
+
+![:cover](
+Programação de Computadores
+Aula 8: Pseudocódigo
+Fernanda Passos
+../template/img/logo.svg
+)
+
+---
+
+class: section-slide
+
+# Pseudocódigo
+
+---
+
+class: middle
+layout: true
+name: conteudo
+
+.title[
+{{slideTitle}}
+<hr>]
+
+---
+
+slideTitle: Pseudocódigo
+
+![:block](Definição:
+- Forma de escrever em manuscrito um algoritmo.
+- "Falso código".
+)
+- Apresenta uma sintaxe (forma de escrita) bem definida.
+    - Assim como qualquer linguagem.
+    - Como, por exemplo, os blocos do Google Blockly Code.
+- Não é prático desenhar os blocos em papel...
+    - Mas a conversão entre eles é simples.
+    - E mais livre!
+
+---
+
+slideTitle: Pseudocódigo (II)
+
+- O importante é deixar claro o uso das as estruturas utilizadas e o que elas estão fazendo.
+    - Para que tenham o mesmo papel dos blocos do Blockly Code.
+- É necessário:
+    - Definir exatamente os blocos.
+        - "O que está dentro do quê".
+    - Indicar corretamente as estruturas conforme as linguagens de programação.
+        - Se é um "se-faça";
+        - um "se-faça-senão";
+        - um "para-faça" (ou "contar-com");
+        - um "enquanto" (ou "repita-enquanto");
+        - ...
+    - Nas expressões, indicar a ordem de precedência com parênteses.
+    - entre outros...
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code
+
+#### Sequência de comandos:
+
+- São representados um após o outro, linha por linha, de cima para baixo.
+- Exemplo:
+
+.col-2[
+```python
+a ← 3;
+escreva a;
+```
+]
+
+.col-2[
+.center[![:imageS width:45%;](imagens/ex_sequencia.png)]
+]
+
+- O uso de ponto e vírgula no final é opcional.
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (II)
+
+#### Expressões aritméticas:
+
+- Os símbolos podem ser os mesmos do Blockly Code.
+    - Às vezes troca-se o '×' por '*' e '÷' por '/'.
+- Usa-se parênteses ou as regras de precedência para indicar a ordem de execução.
+- Exemplo:
+
+![:column 35%](
+```python
+a ← -(3 + 11\) × 2^2 / 7;
+escreva a;
+```
+)
+
+![:column 65%](
+<br>
+.center[![:imageS width:90%;](imagens/ex_expressao.png\)]
+)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (III)
+
+#### Expressões aritméticas:
+
+- A regra de precedência é similar a da matemática:
+    - Primeiro, avaliam-se os .alert[parênteses],
+    - Depois, os .alert[sinais negativos],
+    - Depois, .alert[potências, divisões e multiplicações],
+    - Depois, .alert[adições e subtrações].
+- Blocos como raiz quadrada, resto de divisão, inteiro aleatório, podem ser substituídos por:
+    - raiz quadrada de x: pela função `raiz(x)` ou simplesmente $\sqrt{x}$.
+    - resto da divisão de x por y: por `x mod y` ou `x % y`.
+    - inteiro aleatório entre x e y: pela função `inteiro_aleatorio(x, y)`.
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (IV)
+
+#### Variáveis:
+
+- É comum em pseudocódigo .alert[declarar variáveis].
+    - Isto significa indicar o tipo e o nome dela.
+    - Não há declara de variáveis no Blockly Code.
+- Os tipos básicos são:
+    - inteiro, real, lógico, caractere e string (ou texto).
+- Exemplo:
+```python
+real a;
+inteiro b;
+b ← 11;
+a ← -(3 + b) × 2^2 / 7;
+escreva a;
+```
+- Como Python é uma linguagem com tipagem dinâmica, as **declarações serão opcionais**.
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (V)
+
+#### Atribuição:
+
+- A atribuição de valor a uma variável (definir) pode ser:
+
+.col-2[
+```python
+a ← 3;
+b ← raiz(36);
+a ← a + b + 1;
+escreva a;
+```
+]
+
+.col-2[
+.center[![:imageS width:90%;](imagens/ex_atribuicao.png)]
+]
+
+- A seta indica a direção da atribuição.
+- A variável que recebe o valor fica sempre na esquerda.
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (VI)
+
+#### Expressões lógicas:
+
+- Também herdam símbolos da matemática.
+- Uso de parênteses permite a indicar explicitamente as precedências.
+
+```python
+a ← 3;
+b ← ((a < 5) e (a > 2)) ou (a = 0);
+escreva b;
+```
+
+![:imageS width:85%;](imagens/ex_expressao_logica.png)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (VII)
+
+#### Expressões lógicas:
+
+- Precedência:
+  - Primeiro, resolve os parênteses
+  - Depois, as expressões relacionais (=, ≠, >, <, ≥, ≤)
+  - Depois, a negação lógica (não)
+  - Por último, conjunção (e) e disjunção (ou)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (VIII)
+
+#### Comando de Saída:
+
+.col-3[
+```python
+a ← 3;
+escreva a;
+```
+]
+
+.col-3[
+```python
+a ← 3;
+imprime a;
+```
+]
+
+.col-3[
+.center[![:imageS width:70%;](imagens/ex_imprime.png)]
+]
+
+#### Comando de Entrada:
+
+![:column 47%](
+```python
+escreva "Entre com a:";
+leia a;
+imprime a;
+```
+)
+
+![:column 6%]( &nbsp; )
+
+![:column 47%](
+```python
+a ← leia "Entre com a:";
+escreva a;
+```
+)
+
+.center[![:imageS width:70%;](imagens/ex_leia.png)]
+
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (IX)
+
+#### Comando se-faça-senão:
+
+![:column 40%](
+```python
+escreva "Entre com a:";
+leia a;
+se (a ≥ 0\) então
+  escreva a, "é positivo";
+fim-se
+```
+
+<br>
+
+```python
+escreva "Entre com a:";
+leia a;
+se (a ≥ 0\) então
+  escreva a, "é positivo";
+senão
+  escreva a, "é negativo";
+fim-se
+```
+)
+
+![:column 60%](
+<br>
+.center[![:imageS width:90%;](imagens/ex_se.png\)]
+<br><br><br>
+.center[![:imageS width:90%;](imagens/ex_se-senao.png\)]
+)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (X)
+
+#### Comando se-faça-senão (com várias condições):
+
+![:column 42%](
+```python
+escreva "Entre com a:";
+leia a;
+se (a > 0\) então
+    escreva a, "é positivo";
+senão se (a = 0\) então
+    escreva a, "é valor nulo";
+senão
+    escreva a, "é negativo";
+fim-se
+```
+)
+
+![:column 58%](
+<br>
+.center[![:imageS width:95%;](imagens/ex_se-senao_niveis.png\)]
+)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (XI)
+
+#### Comando repita (repita-n-vezes):
+- Não é muito usado em pseudocódigo.
+
+![:column 35%](
+```python
+escreva "Entre com n:";
+leia n;
+soma ← 0;
+i ← 1;
+repita n vezes
+    soma ← soma + i;
+    i ← i + 1;
+fim-repita
+escreva soma;
+```
+)
+
+![:column 65%](
+<br>
+.center[![:imageS width:95%;](imagens/ex_repita.png\)]
+)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (XII)
+
+#### Comando para-faça (contar-com):
+
+```python
+escreva "Entre com n:";
+leia n;
+soma ← 0;
+para i ← 1 até n faça
+    soma ← soma + i;
+fim-para
+escreva soma;
+```
+<br>
+![:imageS width:75%;](imagens/ex_para-faca.png)
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (XIII)
+
+#### Comando enquanto (repita-enquanto):
+
+```python
+preco ← -1
+p ← -1
+enquanto (preco < 0 ou não(p ≥ 0 e p ≤ 100)) faça
+    escreva "Entre com o preço (R$):";
+    leia preco;
+    escreva "Entre com a porcentagem:";
+    leia p;
+fim-enquanto
+escreva p, "% de ", preco, " é R$: ", preco × p / 100;
+```
+
+<a href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#5cu3tk" target="_blank">
+![:imageS width:75%;](imagens/ex_enquanto.png)
+</a>
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (XIV)
+
+#### Função (declaração):
+
+```python
+função fatorial(n)
+    fat ← 1
+    para i ← 2 até n faça
+        fat ← fat × i
+    fim-para
+    retorna(fat)
+fim-função
+```
+
+<a href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#wac9qz" target="_blank">
+![:imageS width:55%;](imagens/ex_funcao.png)
+</a>
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (XV)
+
+#### Função (chamada):
+
+```python
+escreva "Fatorial: entre com n:";
+leia n;
+se (n < 0) então
+    escreva "Não é possível calcular fatorial de número negativo!"
+senão
+    escreva n, "!: ", fatorial(n);
+```
+
+<a href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#wac9qz" target="_blank">
+![:imageS width:75%;](imagens/ex_funcao-chamada.png)
+</a>
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (XVI)
+
+#### Procedimento (declaração):
+
+```python
+procedimento mostrarPares(ini, fim)
+    para i ← ini até fim faça
+        se (i mod 2 = 0) então
+            escreva " ", i;
+        fim-se
+    fim-para
+fim-procedimento
+```
+
+<a href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#wac9qz" target="_blank">
+![:imageS width:55%;](imagens/ex_procedimento.png)
+</a>
+
+---
+
+slideTitle: Pseudocódigo e Blockly Code (XVII)
+
+#### Procedimento (chamada):
+
+```python
+escreva "Entre com o intervalo:";
+leia ini, fim;
+se (ini > 0 e ini ≤ fim) então
+    mostrarPares(ini, fim);
+fim-se
+```
+
+<a href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#wac9qz" target="_blank">
+![:imageS width:75%;](imagens/ex_procedimento-chamada.png)
+</a>
+
+---
+
+slideTitle: Exercício Resolvido
+
+1. Escreva um algoritmo que leia um número inteiro e calcule a soma de seus dígitos. Por exemplo, para 1234 o resultado deve se 1+2+3+4 = 10.
+
+.center[![:imageS width:60%;](imagens/exSomaDigitos.svg)]
+
+- Ações para um dado $n$:
+    - Dividir repetidamente o quociente por 10 e acumular em $soma$ o resto da divisão.
+        - Quociente inicial é $n$.
+    - Critétio de parada:
+        - Quando quociente for 0.
+
+---
+
+slideTitle: Exercício Resolvido - Solução
+
+1. Escreva um algoritmo que leia um número inteiro e calcule a soma de seus dígitos. Por exemplo, para 1234 o resultado deve se 1+2+3+4 = 10.
+
+- Solução:
+
+``` python
+escreva "Entre com n:";
+leia n;
+soma ← 0;
+quociente ← n;
+enquanto quociente > 0 faça
+    resto ← quociente mod 10;
+    soma ← soma + resto;
+    quociente ← quociente / 10;
+fim-enquanto
+escreva soma;
+```
+
+---
+
+slideTitle: Exercício I
+
+#### Resolva as questões abaixo em pseudocódigo.
+- Depois, use o Blockly Code para verificar se está correto.
+
+1. Escreva um algoritmo que leia 10 números e indique qual é o maior deles.
+    - Dica: use uma variável para guardar o maior valor, iniciando ele com o primeiro número que o usuário digitar.
+2. Faça um algoritmo que o usuário informa um número inteiro positivo e o algoritmo verifica se ele é um número triangular. Um número é triangular quando ele é o resultado do produto de três números consecutivos. Exemplo: 24 = 2 × 3 × 4.
+    - Dica: faça $c \leftarrow (m+2) \times (m+1) \times m$ enquanto $c < n$ (para $m$ começando em 1). Ao final, se $c = n$ então $n$ é triangular.
+
+---
+
+class: section-slide
+layout: false
+
+# Teste de Mesa
+
+---
+
+template: conteudo
+layout: true
+
+---
+
+slideTitle: Testar Algoritmo
+
+- Já falamos sobre testar algoritmos.
+- No Google Blockly Code, podemos executar e verificar se o resultado é aquele esperado.
+- Testamos normalmente limites e alguns valores intermediários.
+- Muitas vezes não é possível testar tudo.
+    - Infinitos valores!
+- Por exemplo, verificar se o algoritmo do fatorial está correto.
+    - Testar para limites: -1, 0, 1.
+    - Valores intermediários (fáceis de calcular): 4, 5.
+    - Um número grande (20?)...
+        - Mas cuidado, pode ser que o Blockly Code não consiga representar o resultado!
+
+---
+
+slideTitle: Teste de Mesa
+
+- Nada mais é que testar seu algoritmo no papel.
+    - Sem uso do computador!
+    - Sem tentativa e erro!
+- Também chamado de método Chinês.
+- É necessário um método (metodologia)!
+- Método comum é construir .alert[tabela]:
+    - Anotar valores de **todas as variáveis** a cada execução de linha do código.
+    - Para .alert[**repetição**]: anotar valores de todas as variáveis a cada iteração.
+        - Qual o valor das varáveis ao final da repetição?
+    - No caso de .alert[**função ou procedimento**], testar dentro dos módulos primeiramente.
+        - Depois, testar a chamada.
+
+---
+
+slideTitle: Teste de Mesa - Exemplo 1
+
+![:column 45%;](
+```Python
+N1 ← 4.5;
+N2 ← 6.7;
+N3 ← 8.1;
+media ← (N1 + N2 + N3\)/3;
+```
+)
+
+![:column 5%;](<br>)
+
+![:column 50%;](
+Linha | N1 | N2 | N3 | media
+------|:--:|:--:|:--:|:------:
+1     | 4.5| -  | -  | -
+2     | 4.5| 6.7| -  | -
+3     | 4.5| 6.7| 8.1| -
+4     | 4.5| 6.7| 8.1| 6.43
+)
+
+---
+
+slideTitle: Teste de Mesa - Exemplo 2
+
+![:column 45%;](
+```Python
+a ← 1;
+b ← -4;
+c ← 16;
+leia x;
+y ← a*x*x + b*x +c;
+leia x;
+y ← a*x*x + b*x +c;
+leia x;
+y ← a*x*x + b*x +c;
+```
+- Testar entrada: 0, 1 e 2.
+)
+
+![:column 5%;](<br>)
+
+![:column 50%;](
+Linha | a  | b  | c  | x  | y
+------|:--:|:--:|:--:|:--:|:--:
+1     | 1  | -  | -  | -  | -
+2     | 1  | -4 | -  | -  | -
+3     | 1  | -4 | 16 | -  | -
+4     | 1  | -4 | 16 | 0  | -
+5     | 1  | -4 | 16 | 0  | 16
+6     | 1  | -4 | 16 | 1  | 16
+7     | 1  | -4 | 16 | 1  | 13
+8     | 1  | -4 | 16 | 2  | 13
+9     | 1  | -4 | 16 | 2  | 12
+)
+
+---
+
+slideTitle: Teste de Mesa - Exemplo 3
+
+![:column 45%;](
+```python
+função maior(a, b, c\)
+    se (a > b e a > c\) então
+        m ← a;
+    senão se (b > c\) então
+        m ← b;
+    senão
+        m ← c;
+    fim-se
+    retorna(m\);
+fim-função
+```
+)
+
+![:column 5%;](<br>)
+
+![:column 50%;](
+Linha | a  | b  | c  | m
+------|:--:|:--:|:--:|:--:
+1     | 1  | 4  | 3  | -
+2     | 1  | 4  | 3  | -
+4     | 1  | 4  | 3  | -
+5     | 1  | 4  | 3  | 4
+8     | 1  | 4  | 3  | 4
+
+- Ok, 4 é o valor esperado.
+)
+
+---
+
+slideTitle: Teste de Mesa - Exemplo 4
+
+- No caso de repetição, fazer separado iteração por iteração.
+    - Obter estado das variáveis ao término de cada iteração.
+
+![:column 50%;](
+```python
+escreva "Fatorial: Entre com n:"
+leia n;
+se (n > 0\) então
+    fat = 1;
+    para i ← 2 até n faça
+        fat ← fat × 1;
+    fim-para
+    escreva n, "! = ", fat;
+senão
+    escreva "Não é possível calcular!";
+fim-se
+```
+
+- Exemplo de entrada: 5
+)
+
+![:column 5%;](<br>)
+
+![:column 45%;](
+Iteração | n  | fat | i
+------|:--:|:---:|:--:
+Antes | 5  | 1   | -
+1     | 5  | 2   | 2
+2     | 5  | 6   | 3
+3     | 5  | 24  | 4
+4     | 5  | 120 | 5
+)
+
+---
+
+slideTitle: Teste de Mesa - Exemplo 5
+
+![:column 50%;](
+```python
+escreva "Primos: Entre com n:"
+leia n;
+cont ← 0;
+para i ← 2 até n-1 faça
+    se (n mod i = 0\) então
+        cont ← cont + 1;
+    fim-se
+fim-para
+se (cont = 0\) então
+    escreva n, " é primo";
+senão
+    escreva n, " não é primo";
+fim-se
+```
+
+- Exemplo de entrada: 9
+)
+
+![:column 5%;](<br>)
+
+![:column 45%;](
+Iteração | n  | cont | i
+------|:--:|:---:|:--:
+Antes | 9  | 0   | -
+1     | 9  | 0   | 2
+2     | 9  | 1   | 3
+3     | 9  | 1   | 4
+4     | 9  | 1   | 5
+5     | 9  | 1   | 6
+6     | 9  | 1   | 7
+7     | 9  | 1   | 8
+)
+
+---
+
+slideTitle: Teste de Mesa - Exemplo 6
+
+![:column 51%;](
+```python
+escreva "Entre com n:"
+leia n;
+soma ← 0;
+enquanto n < soma faça
+    se (n mod 3 = 0\) então
+        soma ← soma + 2;
+    fim-se
+    se (n mod 7 = 0\) então
+        soma ← soma + 1;
+    fim-se
+    n ← n - 1;
+fim-enquanto
+escreva "n: ", n, " e soma: ", soma;
+```
+
+- Exemplo de entrada: 10
+)
+
+![:column 5%;](<br>)
+
+![:column 44%;](
+Iteração | n  | soma
+------|:--:|:---:
+Antes | 10 | 0
+1     | 9  | 0
+2     | 8  | 2
+3     | 7  | 2
+4     | 6  | 3
+5     | 5  | 5
+6     | 4  | 5
+)
+
+---
+
+slideTitle: Exercício Resolvido (Teste de Mesa)
+
+![:column 45%;](
+```python
+escreva "Entre com n:";
+leia n;
+soma ← 0;
+quociente ← n;
+enquanto quociente > 0 faça
+    resto ← quociente mod 10;
+    soma ← soma + resto;
+    quociente ← quociente / 10;
+fim-enquanto
+escreva soma;
+```
+)
+
+![:column 5%;](<br>)
+
+![:column 50%;](
+Iter. | n  | quoc. | resto | soma
+---------|:--:|:---------:|:-----:|:----:
+Antes    | 1435 | 1435    | -     | 0
+1        | 1435 | 143     | 5     | 5
+2        | 1435 | 14      | 3     | 8
+3        | 1435 | 1       | 4     | 12
+4        | 1435 | 0       | 1     | 13
+)
+
+- <a href="https://blockly-demo.appspot.com/static/demos/code/index.html?lang=pt-br#rr6mpn" target="_blank"> Solução no Google Blockly Code.</a>
+
+---
+
+slideTitle: Exercício II
+
+#### Faça o teste de mesa para os seguintes algoritmos:
+
+![:column 45%;](
+```python
+leia x;
+y ← x^2 - 2x + 1;
+x ← y;
+y ← x^2 - 2x + 1;
+x ← y;
+y ← x^2 - 2x + 1;
+escreva y;
+```
+- Teste para os valores: 0, 1, 2.
+)
+
+![:column 5%;](<br>)
+
+![:column 45%;](
+```python
+leia x;
+m ← x;
+contador ← 0;
+enquanto (contador < 5\) faça
+    m ← m + 1;
+    se (m mod 7 = 0\) então
+        contador ← contador + 1;
+    fim-se
+fim-enquanto
+escreva m;
+```
+- Teste para os valores: 10, 30.
+)
+
+    </textarea>
+
+    <script src="../template/js/remark-latest.min.js" type="text/javascript"></script>
+    <script src="../template/js/macros.js" type="text/javascript"></script>
+    <script src="../template/js/callbacks.js" type="text/javascript"></script>
+    <script src="../template/js/katex.min.js"></script>
+    <script src="../template/js/auto-render.min.js"></script>
+    <link rel="stylesheet" href="../template/css/katex.min.css">
+    <script type="text/javascript">
+      var renderMath = function() {
+        renderMathInElement(document.body, {delimiters: [
+           {left: "$$", right: "$$", display: true},
+           {left: "$", right: "$", display: false},
+           {left: "\\[", right: "\\]", display: true},
+           {left: "\\(", right: "\\)", display: false},
+        ]});
+      }
+      var slideshow = remark.create({highlightStyle: "github", highlightLines: "true", highlightSpans: "true", slideNumberFormat: onSlideCallback}, renderMath);
+
+      slideshow.on('afterShowSlide', function (s) {
+
+          var slide = document.getElementsByClassName('remark-visible')[0];
+          var iframeList = slide.getElementsByClassName('scaled-frame-md');
+
+          var i;
+          for (i = 0; i < iframeList.length; i++) {
+
+              var iframe = iframeList[i];
+
+              if (typeof iframe.attributes.after !== 'undefined') continue ;
+
+              var src = iframe.src;
+              iframe.src = '';
+              iframe.src = src;
+
+              var att = document.createAttribute("after");
+              att.value = 'true';
+              iframe.attributes.setNamedItem(att);
+          }
+
+      });
+    </script>
+</body>
+</html>
