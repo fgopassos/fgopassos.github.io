@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programação de Computadores: Aula 9</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../template/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/general.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/code.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/cover.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/section.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/elements.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/table.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/block.css">
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: cover-slide
+
+![:cover](
+Programação de Computadores
+Aula 9: Introdução à Linguagem Python
+Fernanda Passos
+../template/img/logo.svg
+)
+
+---
+
+class: section-slide
+
+# Linguagens de Programação
+
+---
+
+class: middle
+layout: true
+name: conteudo
+
+.title[
+{{slideTitle}}
+<hr>]
+
+---
+
+slideTitle: Linguagens de Programação
+
+![:block](Definição:
+- É um instrumento utilizado para se escrever programas de computadores.
+- Isto é, conjuntos de instruções a serem seguidas pelo computador para realizar um determinado processo.
+)
+- Quem computa as instruções?
+    - O processador.
+- E como ele funciona?
+
+---
+
+slideTitle: Arquitetura Simplificada de um Computador
+
+- Programa e dados são armazenados em memória!
+
+.center[![:imageS width:55%;](imagens/Von_Neumann_moderna.jpg)]
+
+---
+
+slideTitle: Alguns Componentes Importantes do Computador
+
+- .alert[Processador:]
+    - Unidade de Controle: interpreta e controla a execução de instruções.
+    - Unidade Lógica e Aritmética: executa operações lógicas e aritméticas sobre dados.
+    - Registradores: guardam dados e instruções de uso imediato.
+- .alert[Memória Principal:]
+    - do tipo RAM (*Random Access Memory*) e volátil.
+    - Armazena dados e programa.
+- .alert[Dispositivos de Entrada e Saı́da – E/S] (*Input and Output – I/O*):
+    - Entrada: teclado, mouse, touchscreen, scanner.
+    - Saı́da: vı́deo, impressora.
+    - Entrada e Saı́da: memória secundária (HD, pendrive), interface de rede.
+
+---
+
+slideTitle: Níveis de Linguagem
+
+
+#### Nível mais baixo:
+- .alert[Linguagem de máquina]:
+    - Apenas "0's e 1's".
+    - É o que o computador entende e cada tipo de processador tem a sua.
+    - Muito difícil de programar!
+
+.center[![:imageS width:65%;](imagens/ling_maquina.png)]
+
+---
+
+slideTitle: Níveis de Linguagem (II)
+
+#### Nível Intermediário:
+
+- .alert[Linguagem de montagem (*Assembly*)]:
+    - Intermediária, mas próxima da linguagem de máquina.
+    - Precisa de um montador.
+    - Cada tipo de processador tem a sua.
+    - Também difícil de programar!
+    - Exemplo:
+
+![:column 10%;](<br>)
+
+![:column 50%;](
+```Assembly
+MOV &1 3
+MOV &2 5
+ADD &0 &1 &2
+```
+)
+
+---
+
+slideTitle: Níveis de Linguagem (III)
+
+#### Alto Nível:
+
+- Várias Linguagens de Programação.
+    - Mais próxima da linguagem humana.
+    - Exemplos: Python, C, Java, Fortran ...
+    - Precisa de um programa especial para tradução!
+
+![:column 38%;](
+```Python
+print ("Olá mundo!"\)
+```
+```C
+#include <stdio.h>
+int main(\){
+    printf("Olá mundo!\n"\);
+    return(0\);
+}
+```
+)
+
+![:column 2%;](<br>)
+
+![:column 60%;](
+```Java
+public class OlaMundo{
+    public static void main(String[] args\){
+        System.out.println("Olá mundo!"\);
+    }
+}
+```
+
+```Fortran
+program OlaMundo
+   print *, "Olá mundo!"
+end program OlaMundo
+```
+)
+
+---
+
+slideTitle: Tradução
+
+- .alert[Compilação:]
+    - Tradução integral, gerando código binário final (executável).
+    - Exemplos de linguagem: C, Pascal, Fortran, ...
+- .alert[Interpretação:]
+    - Tradução de trechos de código por vez para binário.
+    - Exemplos de linguagem: Python, Prolog, ...
+
+.center[![:imageS width:60%;](imagens/compilacaoXinterpretacao.jpg)]
+
+---
+
+class: section-slide
+layout: false
+
+# Python
+
+---
+
+template: conteudo
+layout: true
+
+---
+
+slideTitle: Linguagem Python
+
+<a href="https://python.org/" target="_blank">.center[![:imageS width:40%;](imagens/Python_logo.svg)]</a>
+
+- Linguagem de alto nível criada por Guido van Rossum em 1991.
+- Características:
+    - Interpretada: trechos de códigos são traduzidos por vez.
+    - Imperativa: comandos são ações.
+    - Suporta orientação a objetos: abstração de dados.
+    - Tipagem dinâmica e forte:
+        - Não há declaração e tipo de variáveis é definido em tempo de execução.
+        - *Duck typing: "If it walks like a duck and it quacks like a duck, then it must be a duck."*
+        - É forte porque exibe tipo do valor igual ao tipo da variável.
+
+---
+
+slideTitle: Versões da Linguagem Python
+
+- .alert[Versão 2:]
+    - Ainda usada, pois existem programas escritos nela!
+- .alert[Versão 3:]
+    - Mais usada atualmente.
+    - **Iremos utilizá-la**.
+- Versões 2 e 3 não são compatíveis!
+    - São diferentes!
+    - Atenção ao ver exemplos pela Internet.
+    - Como diferenciar?
+        - Geralmente pelo comando de print, se tiver.
+        - Python 2 usa `print "Olá."`
+        - Python 3 usa `print ("Olá.")`
+
+---
+
+slideTitle: Instalando Python 3
+
+- Pode ser apenas instalado o interpretador de Python.
+    - Escreve diretamente nele ou executa em linha de comando.
+    - No Windows, é instalado o interpretador IDLE (*prompt*).
+- Uso de IDE (Ambiente de Desenvolvimento Integrado):
+    - Editor de texto com interpretador embutido, além de outras ferramentas.
+    - <a href="https://www.jetbrains.com/pycharm-edu/" target="_blank">PyCharm Edu</a> é um exemplo.
+    - **Iremos utilizá-lo**.
+    - Instalar: basta baixar e seguir os passos de instalação.
+
+<a href="https://www.jetbrains.com/pycharm-edu" target="_blank">.center[![:imageS width:20%;](imagens/pycharm-edu_logo.png)]</a>
+
+---
+
+slideTitle: Usando PyCharm Edu
+
+- Escolha o modo "learner".
+- Crie um projeto:
+    - Sugestão de nome no lab: "Seu_nome".
+    - Sugestão de nome em casa: "Aprendendo".
+- File > New: escolha "Python File".
+    - Dê um nome com final .py
+    - .py é a extensão do arquivo em Python.
+- Digite no editor de texto:
+    ```Python
+    print("Meu primeiro programa em Python.")
+    ```
+    - Clique em ![:imageS width:2%;](imagens/play.png) para executar os comandos.
+    - Resposta é exibida na caixa de texto abaixo.
+
+---
+
+slideTitle: Usando PyCharm Edu
+
+.center[![:imageS width:95%;](imagens/pycharm-edu_tela.png)]
+
+---
+
+class: section-slide
+layout: false
+
+# Introdução à Linguagem Python
+
+---
+
+template: conteudo
+layout: true
+
+---
+
+slideTitle: Introdução
+
+- A linguagem Python possui sua sintaxe bem definida.
+- Coisas em Python são referidas como .alert[objetos].
+    - Constantes, Variáveis, listas, tuplas, dicionários...
+    - Veremos com detalhes cada um deles em aulas futuras.
+- Possui diversos módulos (bibliotecas):
+    - coleção de objetos e funções já prontas.
+    - Uso do comando `import` para incluir um módulo.
+    - Por exemplo, para matemática:
+        ```Python
+        import math
+        ```
+
+---
+
+slideTitle: Entendendo Erros em Python
+
+- Qualquer interpretador de Python é capaz de acusar erros de sintaxe.
+- Exemplo: suponha que você escreveu o seguinte código:
+```Python
+prit("Olá")
+```
+- Podemos perceber que o comando `print` está escrito errado.
+- A mensagem de execução do comando será:
+
+<pre class="nova" style="font-size:16px; font-family: 'Roboto', Roboto, mono; color:red;">
+Traceback (most recent call last):
+  File "C:/Users/Passos/PycharmProjects/Aprendendo/olaMundo.py", line 1, in ...
+    prit("Olá Mundo!")
+NameError: name 'prit' is not defined
+
+Process finished with exit code 1
+</pre>
+
+---
+
+slideTitle: Usando Console do PyCharm Edu
+
+- View > Tools Windows > Python Console
+- Serve para digitar um comando por vez.
+    - Script: interpretação por comando.
+    - A cada *enter*, o resultado da operação (se houver) é mostrado.
+- Util para testar pequenos algoritmos.
+- Experimente realizar operações matemáticas:
+    - `5 + 2`
+    - `3 * 6`
+    - `100/20`
+- Repare que o resultado aparece logo abaixo.
+
+---
+
+slideTitle: Constantes em Python
+
+- Numéricas:
+    - Inteiro (int)
+        - Exemplos: 1, 43, -52, 2018, 364567
+    - Real (float)
+        - Uso de ponto ao invés de vírgula como separador decimal.
+        - float vem de *floating point* (ponto flutuante).
+        - Exemplos: 0.5, 3.1415..., 8.0, -1000.761, 79.0001
+    - Complexo (complex)
+        - Números Complexos.
+        - Exemplos: 4+2j, 2.9+2.1j, -7.32+0.3j, 8-100j
+
+---
+
+slideTitle: Constantes em Python (II)
+
+- String (str)
+    - Representa texto.
+    - Entre aspas simples ou duplas.
+    - Exemplos: "Olá", "a", 'Bom dia!', " ", ""
+- Lógica (bool)
+    - bool vem de booleano (Lógica de Boole)
+    - Dois exemplos apenas: True e False
+        - Primeiras letras são maiúsculas
+
+    </textarea>
+
+    <script src="../template/js/remark-latest.min.js" type="text/javascript"></script>
+    <script src="../template/js/macros.js" type="text/javascript"></script>
+    <script src="../template/js/callbacks.js" type="text/javascript"></script>
+    <script src="../template/js/katex.min.js"></script>
+    <script src="../template/js/auto-render.min.js"></script>
+    <link rel="stylesheet" href="../template/css/katex.min.css">
+    <script type="text/javascript">
+      var renderMath = function() {
+        renderMathInElement(document.body, {delimiters: [
+           {left: "$$", right: "$$", display: true},
+           {left: "$", right: "$", display: false},
+           {left: "\\[", right: "\\]", display: true},
+           {left: "\\(", right: "\\)", display: false},
+        ]});
+      }
+      var slideshow = remark.create({highlightStyle: "github", highlightLines: "true", highlightSpans: "true", slideNumberFormat: onSlideCallback}, renderMath);
+
+      slideshow.on('afterShowSlide', function (s) {
+
+          var slide = document.getElementsByClassName('remark-visible')[0];
+          var iframeList = slide.getElementsByClassName('scaled-frame-md');
+
+          var i;
+          for (i = 0; i < iframeList.length; i++) {
+
+              var iframe = iframeList[i];
+
+              if (typeof iframe.attributes.after !== 'undefined') continue ;
+
+              var src = iframe.src;
+              iframe.src = '';
+              iframe.src = src;
+
+              var att = document.createAttribute("after");
+              att.value = 'true';
+              iframe.attributes.setNamedItem(att);
+          }
+
+      });
+    </script>
+</body>
+</html>
