@@ -1,4 +1,9 @@
-// Image with style. Any list of css properties is valid. Usage example:
+// ![:latex width](content)
+remark.macros.latex = function() {
+
+    return this;
+}
+
 // ![:imageS width:50%;opacity:0.7](image.jpg)
 remark.macros.imageS = function (style) {
   var url = this;
