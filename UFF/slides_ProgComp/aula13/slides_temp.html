@@ -46,31 +46,469 @@ name: conteudo
 slideTitle: Definição de Listas em Python
 
 ![:block]( Definição:
-Uma lista (*list*\) em Python é uma coleção ordenada de valores.
+Uma lista (*list*\) em Python é uma coleção ordenada de valores modificáveis.
 )
 - Usada para representar conjuntos.
 - Vetores: coleção ordenada de valores de mesmo tipo.
     - Conhecidos também como *arrays*.
 - Matrizes: vetor bidimensional.
 - Matrizes multidimensionais...
+- Valores podem ser modificados a qualquer momento.
 
 ---
 
-slideTitle: Sequência de Repetição
+slideTitle: Representação de Listas em Python
 
-- Repetição é feita em .alert[**sequência de valores**] explícita.
-- Sequência de qualquer valor, não necessariamente números.
-- Algumas formas de se especificar uma sequência:
-    - (1, 4, 5)
-    - ("a", "e", "i", "o", "u")
-    - (1, "dois", 7.9, -1)
+- .alert[**Listas**] são representadas entre colchetes.
+- Cada elemento da lista é separado por vírgula.
+- Seus elementos podem ser de qualquer tipo e misturados.
 - Exemplo:
+
+```Python
+lista = [1, 2.3, 'A', 'a casa', False]
+```
+
+---
+
+slideTitle: Criação de uma Lista
+
+- Criando lista com elementos previamente conhecidos:
+
+```Python
+l1 = [10, 20, 30, 40, 50]
+```
+
+- Criando lista vazia:
+
+```Python
+l2 = []
+```
+
+---
+
+slideTitle: Imprimir Toda a Lista
+
+- Simples e fácil!
+```Python
+L = ['a', 'b', 'c', 'd', 'e']
+print(L)
+```
+- Saída:
+
+```
+>>>['a', 'b', 'c', 'd', 'e']
+```
+
+---
+
+slideTitle: Operador de Acesso
+
+- Dada uma lista, podemos acessar seus elementos um por um.
+- Todo elemento de uma lista tem um índice associado.
+  - Este índice sempre começa em 0.
+
+<br>
+.center[![:imageS width:40%;](imagens/lista_ind.svg)]
+
+- O acesso é feito via este índice.
+
+---
+
+slideTitle: Operador de Acesso (II)
+
+.center[![:imageS width:35%;](imagens/lista_ind.svg)]
+- Por exemplo, imprimir o primeiro elemento:
+```Python
+print(L[0])
+```
+- Outro exemplo: somar o primeiro e o último elemento:
+
+.col-3[
+```Python
+soma = L[0] + L[4]
+print(soma)
+```
+]
+.col-3[<br>.center[ou]]
+.col-3[
+```Python
+print(L[0] + L[4])
+```
+]
+
+---
+
+slideTitle: Operador de Acesso (III)
+
+- O que acontece quando acessamos um elemento em posição da lista que não existe?
+- Por exemplo, na lista `l = [10, 20, 30, 40, 50]`:
+    - Acessar elemento na posição 5 (ou 6, 7,...).
+        - Ex.: `print(l[5])`
+- Isto ocasionará um erro!
+
+<pre style="font-size:14pt; color:red;">
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    IndexError: list index out of range
+</pre>
+
+---
+
+slideTitle: Operador de Acesso (IV)
+
+- Podemos .alert[**alterar**] o valor de um elemento da lista.
+- Exemplo 1: mudar o valor do segundo elemento para 15.
+
+![:column 4%](<br>)
+```Python
+l = [10, 20, 30, 40, 50] # criação da lista l.
+l[1] = 15 # alteração do segundo elemento.
+print(l) # impressão da lista l.
+```
+
+![:column 5%](<br>)
+```
+[10, 15, 30, 40, 50]
+```
+
+- Exemplo 2: mudar o valor do terceiro elemento para 'a'.
+
+![:column 4%](<br><br>)
+```Python
+l = [10, 20, 30, 40, 50]
+l[2] = 'a'
+print(l)
+```
+
+![:column 5%](<br><br>)
+```
+[10, 20, 'a', 40, 50]
+```
+
+---
+
+slideTitle: Tamanho de uma Lista
+
+- Para capturar o tamanho de uma lista, existe a função `len`.
+- Exemplo de uso:
+
+![:column 4%](<br><br>)
+```Python
+lista = [1, 22, 5, -1, 9, -6, 14, 17]
+print(len(lista))
+```
+- A saída será:
+
+![:column 5%](<br><br>)
+```
+8
+```
+
+---
+
+slideTitle: Remover Elemento de Lista
+
+- Função `del` remove elemento especificando sua posição.
+- Exemplo de uso:
+
+```Python
+lista = [1, 22, 5, -1, 9, -6, 14, 17]
+del lista[3]
+print(lista)
+```
+- A saída será:
+
+```
+[1, 22, 5, 9, -6, 14, 17]
+```
+
+- `del` serve para apagar uma lista também.
+```Python
+del lista
+```
+
+---
+
+slideTitle: Exercícios (I)
+
+#### Responda:
+
+1. Suponha que você tenha uma lista que varia de tamanho.
+    - Qual comando você usaria para imprimir o seu último elemento?
+
+#### Escreve um programa em Python que:
+
+1. Crie uma lista contendo todas as vogais.
+1. Troque a primeira vogal com a última e a a segunda com a penúltima.
+    - O que aconteceu com a lista?
+
+---
+
+slideTitle: Pertinência em Lista
+
+- O comando `in` pode ser usando para verificar se um elemento está em uma lista.
+- Uso:
+```Python
+>>> elemento in lista
+```
+- Retorna `True` ou `False`.
+- Exemplo de uso:
+
+```Python
+lista = [3, 5, 7, 8, 12, 15]
+if 8 in lista:
+    print(8, "está na lista")
+else:
+    print(8, "não está na lista")
+```
+
+---
+
+slideTitle: Iterar em Lista
+
+- Podemos usar um índice variando de 0 a tamanho da lista.
+    - Depois, acessar cada elemento na repetição.
+- Exemplo:
+
+```Python
+lista = [3, 5, 7, 8, 12, 15]
+for i in range(len(lista)):
+    print(lista[i])
+```
+
+---
+
+slideTitle: Iterar em Lista (II)
+
+- Outra forma: usar o operador `in` em um `for`.
+    - A faixa de valores do `for` é a própria lista.
+    - A variável de índice do `for` passa a ser o elemento.
+    - Portanto, acessa-se o elemento **diretamente** por esta variável.
+- Exemplo:
+
+```Python
+lista = [3, 5, 7, 8, 12, 15]
+for elem in lista:
+    print(elem)
+```
+
+---
+
+slideTitle: Exercícios (II)
+
+#### Escreve um programa em Python que:
+
+1. Crie um conjunto com os seguintes elementos: {1, 4, 5, 3, 6, 7, 16, 11, 15}.
+2. Imprima os números múltiplos de 3 deste conjunto.
+3. Modifique a lista para que todos os números pares sejam alterados para suas metades.
+4. Remova da lista todos os múltiplos de 5 usando a função `del`.
+
+---
+
+slideTitle: Índices Negativos
+
+- Em Python é possível acessar posições da lista através de índices negativos.
+- A correspondência é vista na figura:
+
+.center[![:imageS width:60%;](imagens/lista_ind_neg.svg)]
+
+- Experimente criar uma lista e acessar a posição -1 ou outro valor negativo.
+    - O menor valor possível é `-len(lista)`.
+
+---
+
+slideTitle: Operador de Concatenação
+
+- Para juntar duas listas, usamos o operador de soma `+`.
+- Exemplo:
+```Python
+lista1 = [1, 2, 3]
+lista2 = ['a', 'b', 'c', 'd']
+print(lista1 + lista2)
+```
+- Resultado:
+```
+[1, 2, 3, 'a', 'b', 'c', 'd']
+```
+
+---
+
+slideTitle: Operador de Multiplicação
+
+- O operador de multiplicação `*` serve para realizar cópias concatenadas de uma lista.
+    - Exemplo:
     ```Python
-    for k in (1, "dois", 7.9, -1):
-        print(k)
+    lista = [1, 2, 3]
+    print(3*lista)
     ```
-    - São 4 repetições e em cada uma delas k terá o valor da sequência.
-        - Primeiro 1, depois "dois", depois 7.9 e depois -1.
+    - Resultado:
+    ```
+    [1, 2, 3, 1, 2, 3, 1, 2, 3]
+    ```
+- Útil para inicializar uma lista.
+    - Exemplo: Criar uma lista de 10 inteiros iniciados com 0.
+```Python
+lista = 10*[0]
+print(lista)
+```
+
+---
+
+slideTitle: Algumas Funções sobre Lista
+
+- `min`: retorna o menor valor de uma lista.
+- `max`: retorna o maior valor de uma lista.
+- `sum`: retorna a soma dos valores de uma lista.
+- Exemplo:
+
+![:column 8%](<br><br>)
+```Python
+lista = [1, 4, 7, 5, -7, 12]
+print(min(lista))
+print(max(lista))
+print(sum(lista))
+```
+- Saída:
+
+![:column 10%](<br><br>)
+```
+-7
+12
+22
+```
+
+---
+
+slideTitle: Alguns Métodos de Lista
+
+- Método `append`: adiciona um elemento ao final da lista.
+
+```Python
+lista = [1, 4, 7]
+lista.append(2)
+print(lista)
+```
+
+```
+[1, 4, 7, 2]
+```
+
+- Método `pop`: remove e retorna o último elemento da lista.
+
+```Python
+lista = [1, 4, 7]
+x = lista.pop()
+print(x, lista)
+```
+
+```
+7 [1, 4]
+```
+
+---
+
+slideTitle: Alguns Métodos de Lista (II)
+
+- Método `insert`: insere um elemento na lista em uma posição específica.
+
+```Python
+lista = [1, 4, 7]
+lista.insert(1, 2)
+print(lista)
+```
+
+```
+[1, 2, 4, 7]
+```
+
+- Método `remove`: remove a primeira ocorrência de um dado elemento da lista.
+
+```Python
+lista = [1, 4, 7, 3, 4]
+lista.remove(4)
+print(lista)
+```
+
+```
+[1, 7, 3, 4]
+```
+
+---
+
+slideTitle: Alguns Métodos de Lista (III)
+
+- Método `count`: retorna quantos de um dado elemento há numa lista.
+```Python
+lista = [1, 4, 7, 3, 4]
+print("Há", lista.count(4), "número(s) 4 na lista.")
+```
+
+```
+Há 2 número(s) 4 na lista.
+```
+
+- Método `reverse`: inverte uma lista (modifica a lista).
+```Python
+lista = [1, 4, 7, 3, 4]
+lista.reverse()
+print(lista)
+```
+
+```
+[4, 3, 7, 4, 1]
+```
+
+---
+
+slideTitle: Alguns Métodos de Lista (III)
+
+- Método `sort`: ordena crescentemente uma lista (modifica a lista).
+```Python
+lista = [1, 4, 7, 3, 4]
+lista.sort()
+print(lista)
+```
+
+```
+[1, 3, 4, 4, 7]
+```
+
+- Para ordenar decrescentemente, usar argumento `reverse=True`:
+
+```Python
+lista = [1, 4, 7, 3, 4]
+lista.sort(reverse=True)
+print(lista)
+```
+
+```
+[7, 4, 4, 3, 1]
+```
+
+---
+
+slideTitle: Exercícios (III)
+
+#### Sem executar, indique o resultado das impressões do código abaixo.
+
+```Python
+lista = [1, -4, 10, 13, 6]
+for i in range(3, 7):
+    lista.append(i)
+print(lista)
+lista.sort()
+print(lista)
+lista.insert(6, 9)
+print(lista)
+lista.remove(10)
+print(lista)
+lista.remove(6)
+print(lista)
+lista.reverse()
+print(lista)
+```
+
+- Ao final, execute o programa em um interpretador de Python para verificar sua resposta.
 
 ---
 
@@ -86,174 +524,62 @@ layout: true
 
 ---
 
-slideTitle: Range
+slideTitle: Vetores
 
-- O comando `range` de Python permite especificar faixa de valores numéricos.
-- Apresenta os seguintes parâmetros (nesta ordem):
-    - **início** (opcional): indica o início da sequência inclusive.
-    - **fim** (obrigatório): indica o fim da sequência (não inclusive).
-    - **incremento** (opcional): indica o incremento da sequência.
-- Exemplo:
-    ```Python
-    for k in range(5):
-        print(k)
-    ```
-    - k varia em {0, 1, 2, 3, 4} em cada repetição.
-
----
-
-slideTitle: Range (II)
-
-#### Exemplo com início especificado:
+- Vetor ou *array* é um conjunto de elementos do mesmo tipo.
+- Por exemplo:
+    - um vetor de inteiros - `vet1 = [1, 2, 3, 6]`
+    - um vetor de lógicos - `vet2 = [True, False, True]`
+- Também chamado de matriz unidimensional.
+- Em Python, podemos usar listas para representar.
 
 ```Python
-for k in range(4, 10):
-    print(k)
-```
-- k varia em {4, 5, 6, 7, 8, 9} em cada repetição.
-#### Exemplo com início e incremento especificados:
-
-```Python
-for k in range(4, 10, 2):
-    print(k)
-```
-- k varia em {4, 6, 8} em cada repetição.
-
----
-
-slideTitle: Exemplo de Uso do for
-
-- Programa que imprime os números pares entre m e n.
-    ```Python
-    m = int(input("Entre com o primeiro valor do intervalo: "))
-    n = int(input("Entre com o segundo valor do intervalo: "))
-    for i in range(m, n):
-        if i % 2 == 0:
-            print(i)
-    ```
-
----
-
-slideTitle: Imprimindo Séries
-
-- No exemplo do slide anterior, o print imprime linha por linha.
-- Em Python, podemos imprimir a série em uma mesma linha de diversas maneiras.
-- Veremos duas delas:
-    - Concatenando strings e imprimindo o resultado no final.
-    - Suprimindo quebra de linha do comando print.
-
----
-
-slideTitle: Concatenando Strings
-
-- Para juntar (concatenar) strings, basta usar o sinal `+` entre strings.
-- Para converter um número em string, usar:
-    - `str(número)`
-
-```Python
-m = int(input("Entre com o primeiro valor do intervalo: "))
-n = int(input("Entre com o segundo valor do intervalo: "))
-texto = ''
-for i in range(m, n):
-    if i % 2 == 0:
-        texto = texto + ' ' + str(i)
-print(texto)
+vetor = [2.0, 4.1, 3.3, 5.7]
+print(vetor)
 ```
 
-- Note que deve haver um espaço entre o texto anterior e o valor de i.
-- Saída para m = 1 e n = 10: `2 4 6 8 `
+---
+
+slideTitle: Matrizes
+
+- Matriz multidimensional é um conjunto multidimensional de elementos do mesmo tipo.
+    - Matriz unidimensional é um vetor.
+    - Matriz bidimensional corresponde às matrizes comuns na matemática.
+
+$$\begin{array}{ccc}
+1 & 3 & -1\\
+0 & 2 & 1
+\end{array}$$
+
+- Em Python, é possível representar matrizes através de lista de listas.
 
 ---
 
-slideTitle: Suprimindo Quebra de Linha
+slideTitle: Lista como Elemento de uma Lista
 
-- O comando print permite especificar parâmetros opcionais.
-- Um deles é o `end=`.
-    - Uso: `print('texto', end='')`
-    - Indica qual(is) caractere(s) de finalização da string.
-    - Por padrão, é a quebra de linha (cujo código é '\n').
-- Se `end` é igualado a `' '` (espaço), a quebra de linha é substituída por um espaço.
-
-```Python
-m = int(input("Entre com o primeiro valor do intervalo: "))
-n = int(input("Entre com o segundo valor do intervalo: "))
-for i in range(m, n):
-    if i % 2 == 0:
-        print(i, end=' ')
-print() # Para quebrar linha no final apenas
-```
-- Saída para m = 1 e n = 10: `2 4 6 8 `
-
----
-
-slideTitle: Exercício I
-
-#### Faça programas em Python para:
-
-1. Escrever o resultado do produtório de 10 números obtidos do usuário.
-1. Faça um programa para calcular a série de Fibonacci para um número informado pelo usuário, sendo Fib(n) = Fib(n-1) + Fib(n-2). Como base tem-se que Fib(0) = 0 e Fib(1) = 1. Por exemplo, caso o usuário informe o número 9, o resultado seria: 0, 1, 1, 2, 3, 5,  8, 13, 21, 34.
-1. Indicar se um dado n é primo (divisível apenas por 1 e ele mesmo).
-
----
-
-slideTitle: Repetição Indefinida em Python
-
-- Comando `while`.
-- Similar ao uso em pseudocódigo.
-- Sintaxe:
-    ```Python
-    while condição:
-        # Bloco que será repetido enquanto condição é verdadeira.
-    ```
-    - Note que o afastamento da margem esquerda determina o bloco.
-
----
-
-slideTitle: Repetição Indefinida em Python (II)
-
+- Uma lista também pode ser um elemento de uma lista.
 - Exemplo:
 
 ```Python
-x = int(input("Entre com um número: "))
-while x >= 0:
-    print(x)
-    x = x - 1
-print("Fim!")
+lista1 = [0, 1]
+lista2 = [False, True, lista1]
+print(lista2)
 ```
+
+```
+>>>[False, True, [0, 1]]
+```
+
+- Note que a `lista1` está dentro da `lista2`.
+  - É, portanto, uma sublista.
 
 ---
 
-slideTitle: Exercício II
+slideTitle: Acessando Elementos de Matrizes
 
-#### Faça programas em Python para:
+- Em Python, o acesso é realizado através de:
 
-1. Pedir que o usuário entre com um número inteiro positivo até que realmente seja. Depois, calcule o fatorial deste número e apresente o resultado.
-1. Repetir o processo de obter um número inteiro do usuário até que ele acerte o número sorteado pelo programa entre 1 e 10. Caso ele acerto, exiba uma mensagem parabenizando. Caso erre, como dica, indique se o número digitado é maior ou menor que o número sorteado.
-    - Para sortear um número inteiro aleatório entre 1 e 10, use a função `random.randint(1, 10)`. Use `import random` no início de seu programa para importar o módulo.
-
----
-
-slideTitle: Exercícios III
-
-#### Faça programas em Python para:
-
-1. Imprimir a tabuada de 1 a 10 da seguinte forma:
-.col-3[<br><br><br>]
-```
-    1 x 1 = 1
-    1 x 2 = 2
-    ...
-```
-1. Gerar a tabela de jogos de um campeonato que tem 4 times (times jogam em casa e na casa do
-adversário).
-    - Os times são: BOT, FLA, FLU, VAS.
-
-.col-3[<br><br><br>]
-```
-    BOT x FLU
-    FLU x BOT
-    ...
-```
+.center[![:imageS width:50%;](imagens/AcessoMatriz.svg)]
 
     </textarea>
 

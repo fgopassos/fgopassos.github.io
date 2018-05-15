@@ -242,6 +242,88 @@ adversário).
     ...
 ```
 
+---
+
+class: section-slide
+layout: false
+
+# Alguns Desvios Incondicionais
+
+---
+
+template: conteudo
+layout: true
+
+---
+
+slideTitle: Comando break
+
+- O comando `break` serve para .alert[sair de repetições abruptamente].
+- Exemplo de uso:
+
+```Python
+for i in range(3, 100, 3):
+  print(i, end=" ") # Imprime múltiplos de 3 a partir de 3.
+  if i % 7 == 0: # Quando o índice também for divisível por 7, para.
+    break
+print()
+```
+- Embora o melhor seja estruturar o código apenas com condições (no while), pode ser útil as vezes.
+  - O break desestrutura o código.
+  - Mas pode ser útil em alguns casos para facilitar a escrita.
+
+---
+
+slideTitle: Comando break
+
+- Exemplo: imprimir todos os 5 primeiros múltiplos naturais de 2 ou 3 usando um for.
+
+```Python
+cont = 0
+# Usar um range com um limite superestimado.
+for i in range(0, 100):
+  if i % 2 == 0 or i % 3 == 0:
+    print(i, end=" ")
+    cont = cont + 1
+  if cont == 5:
+    break
+print()
+```
+
+- .alert[Exercício:] modificar nosso algoritmo para indicar se um número é primo usando um break assim que encontrar um número divisível.
+
+---
+
+slideTitle: Comando continue
+
+- O comando `continue` é semelhante ao break mas tem o efeito oposto.
+  - Ao invés de parar o loop, ele continua.
+  - O que ele faz é voltar para o laço inicial de repetição.
+  - Ignora todos os comandos após ele.
+- Exemplo: indicar quantos números diferentes de 0 foram lidos do usuário.
+
+```Python
+cont = 0
+for i in range(10):
+  n = int(input("Entre com um número: "))
+  if n == 0:
+    continue
+  cont = cont + 1
+print("Foram lidos", cont, "numeros diferentes de 0.")
+```
+
+---
+
+slideTitle: Comandos de Desvio Incondicional
+
+- `break` e `continue` são exemplos de .alert[desvio incondicional].
+- Repare que eles só fazem sentido dentro de comandos de repetição.
+  - E devem ser usados imediatamente dentro de if's.
+- Evitar o uso, pois desestrutura o código.
+  - Seu uso excessivo pode trazer confusão.
+      - Quem vê um `for` ou `while` espera que a repetição ocorra até o fim!
+  - Usar apenas quando necessário.
+
     </textarea>
 
     <script src="../template/js/remark-latest.min.js" type="text/javascript"></script>
