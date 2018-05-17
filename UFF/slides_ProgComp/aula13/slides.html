@@ -409,6 +409,36 @@ print(x, lista)
 
 slideTitle: Alguns Métodos de Lista (II)
 
+- O método `pop` também aceita indicar o índice do elemento a ser removido.
+
+```Python
+lista = [1, 4, 7]
+x = lista.pop(1)
+print(x, lista)
+```
+
+```
+4 [1, 7]
+```
+
+- Se tentar realizar o `pop` em um índice que não existe:
+
+```Python
+lista = [1, 4, 7]
+x = lista.pop(3)
+print(x, lista)
+```
+
+<pre style="font-size:14px; color:red">
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    IndexError: pop index out of range
+<pre>
+
+---
+
+slideTitle: Alguns Métodos de Lista (III)
+
 - Método `insert`: insere um elemento na lista em uma posição específica.
 
 ```Python
@@ -452,7 +482,35 @@ ValueError: list.remove(x): x not in list
 
 ---
 
-slideTitle: Alguns Métodos de Lista (III)
+slideTitle: Alguns Métodos de Lista (IV)
+
+- Forma segura de usar o método `pop` com índice:
+
+```Python
+lista = [1, 4, 7]
+if 1 < len(lista):
+    x = lista.pop(1)
+    print('Elemento removido:', x)
+if 3 < len(lista):
+    x = lista.pop(3)
+    print('Elemento removido:', x)
+print(lista)
+```
+
+- Forma segura de usar o método `remove`:
+
+```Python
+lista = [1, 4, 7, 3, 4]
+if 4 in lista:
+    lista.remove(4)
+if 5 in lista:
+    lista.remove(5)
+print(lista)
+```
+
+---
+
+slideTitle: Alguns Métodos de Lista (V)
 
 - Método `count`: retorna quantos de um dado elemento há numa lista.
 ```Python
@@ -477,7 +535,7 @@ print(lista)
 
 ---
 
-slideTitle: Alguns Métodos de Lista (IV)
+slideTitle: Alguns Métodos de Lista (VI)
 
 - Método `sort`: ordena crescentemente uma lista (modifica a lista).
 ```Python
@@ -504,10 +562,25 @@ print(lista)
 
 ---
 
-slideTitle: Copiando Listas
+slideTitle: Alguns Métodos de Lista (VII)
+
+- Método `index`: retorna o índice da primeira ocorrerá de um elemento.
+
+```Python
+lista = [1, 4, 7, 3, 4]
+print(lista.index(4))
+```
+
+```
+1
+```
+
+---
+
+slideTitle: Mais Métodos: Copiando Listas
 
 
-- Se fizer uma atribuição, há apenas a .alert[**cópia da referência da lista**].
+- Usando atribuição, há apenas a .alert[**cópia da referência da lista**].
   - Neste caso, uma alteração em uma das listas causa modificação em ambas.
 
 ```Python
@@ -521,7 +594,7 @@ print("l1:", l1, "e l2:", l2)
 l1: [1, 4, 7, 9, 4] e l2: [1, 4, 7, 9, 4]
 ```
 
-- O correto é usar o método `copy`.
+- Para realmente gerar uma cópia, usa-se o método `copy`.
 ```Python
 l1 = [1, 4, 7, 3, 4]
 l2 = l1.copy()
@@ -560,151 +633,12 @@ print(lista)
 
 ---
 
-class: section-slide
-layout: false
+slideTitle: Exercícios (IV)
 
-# Vetores e Matrizes
+#### Para cada item, escreva um programa Python que:
 
----
-
-template: conteudo
-layout: true
-
----
-
-slideTitle: Vetores
-
-- Vetor ou *array* é um conjunto de elementos do mesmo tipo.
-- Por exemplo:
-    - um vetor de inteiros - `vet1 = [1, 2, 3, 6]`
-    - um vetor de lógicos - `vet2 = [True, False, True]`
-- Também chamado de matriz unidimensional.
-- Em Python, podemos usar listas para representar.
-
-```Python
-vetor = [2.0, 4.1, 3.3, 5.7]
-print(vetor)
-```
-
----
-
-slideTitle: Matrizes
-
-- Matriz multidimensional é um conjunto multidimensional de elementos do mesmo tipo.
-    - Matriz unidimensional é um vetor.
-    - Matriz bidimensional corresponde às matrizes comuns na matemática.
-
-.center[![:imageS width:30%;](imagens/matriz1.svg)]
-
-- Em Python, é possível representar matrizes através de .alert[lista de listas].
-
----
-
-slideTitle: Lista como Elemento de uma Lista
-
-- Uma lista também pode ser um elemento de uma lista.
-- Exemplo:
-
-```Python
-lista1 = [0, 1]
-lista2 = [False, True, lista1]
-print(lista2)
-```
-
-```
->>>[False, True, [0, 1]]
-```
-
-- Note que a `lista1` está dentro da `lista2`.
-  - É, portanto, uma sublista.
-
----
-
-slideTitle: Definindo uma Matriz
-
-- Exemplo: definir a seguinte matriz em Python:
-
-.center[![:imageS width:30%;](imagens/matriz2.svg)]
-
-```Python
-M = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-```
-
-- Ou (para ficar mais fácil de ler):
-
-```Python
-M = [[7,  8, 4,  3],
-     [2,  1, 6, 12],
-     [9, 11, 5, 10]]
-```
-
----
-
-slideTitle: Acessando Elementos de uma Matriz
-
-- Em Python, o acesso é realizado através dos índices.
-- Por exemplo, na matriz M do slide anterior:
-  - imprimir o elemento $M_{1,2}$:
-      - `print(M[1][2])`
-      - Saída ser: 6
-  - imprimir o elemento $M_{2,3}$:
-      - `print(M[2][3])`
-      - Saída será: 10
-- Agora, há dois índices:
-  - linhas: variam de 0 a L-1, onde L é o número de linhas.
-  - colunas: variam de 0 a C-1, onde C é o número de colunas.
-
----
-
-slideTitle: Modificando Elementos de uma Matriz
-
-- Basta acessar o elemento e atribuir um valor a ele.
-- Por exemplo, na matriz M do slide anterior:
-  - alterar o elemento $M_{0,0}$ para 20:
-      - `M[0][0] = 20`
-  - adicionar 1 ao elemento $M_{2,1}$:
-      - `M[2][1] = M[2][1] + 1`
-  - multiplicar por 3 o elemento $M_{0,3}$:
-      - `M[0][3] = M[0][3] * 3`
-  - fazer $M\_{0,2} \leftarrow M\_{0,0} + M\_{0,1}$:
-      - `M[0][2] = M[0][0] + M[0][1]`
-
----
-
-slideTitle: Acessar Linha da Matriz
-
-- É possível manipular linhas da matriz de forma independente.
-- Exemplo: imprimir a primeira linha:
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-print(mat[0])
-```
-- Redefinir uma linha:
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-mat[1] = [-2, -1, -6, -12]
-```
-
----
-
-slideTitle: Dimensões da Matriz
-
-- Para saber o número de linhas, basta usar len na matriz.
-  - Exemplo: `len(M)`
-- Para saber o número de colunas, basta usar len em alguma linha da matriz.
-  - Exemplo: `len(M[0])`
-- Note que Python permite ter lista de listas de tamanhos diferentes.
-- Para o conceito de matriz, isto não faz sentido!
-  - Número de colunas é sempre o mesmo.
-
----
-
-slideTitle: Acessando Elementos de Matrizes
-
-- Usando índices:
-
-.center[![:imageS width:50%;](imagens/AcessoMatriz.svg)]
-
+1. Crie uma lista vazia e adicione valores inteiros positivos que o usuário digitar (leitura termina quando usuário digitar -1 ou um número negativo). Depois, percorra a lista e calcule o somatório dos elementos.
+2. Crie uma lista com valores aleatórios entre 0 e 10, peça um número inteiro para o usuário e indique se o número está na lista e qual a sua posição na lista.
 
     </textarea>
 
