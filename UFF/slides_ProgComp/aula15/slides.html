@@ -365,7 +365,7 @@ slideTitle: Dicionário
     - O valor é acessado pela chave.
 - Exemplo de representação:
 
-.center[![:imageS width:30%;](imagens/dict.svg)]
+.center[![:imageS width:55%;](imagens/dict.png)]
 
 
 ---
@@ -378,17 +378,16 @@ slideTitle: Uso de Dicionário: Exemplo da Agenda
   - Uma para guardar os nomes.
   - Outra para guardar os telefones.
 
-
+.center[![:imageS width:60%;](imagens/agenda.svg)]
 
 
 ---
 
-slideTitle: Exemplo da Agenda em Python
+slideTitle: Exemplo da Agenda Usando Listas
 
 - Obtendo a agenda do usuário:
 
 ```Python
-i = 0
 nomes = []
 telefones = []
 nome = input('Entre com um nome (Digite "sair" para sair): ')
@@ -397,14 +396,186 @@ while (nome != 'sair'):
   tel = input('Entre com o telefone: ')
   telefones.apeend(tel)
   nome = input('Entre com um nome (Digite "sair" para sair): ')
-  i = i + 1
+```
+- Consultando telefone pelo nome:
+
+```Python
 print('Consulta de telefone:')
 nome = input('Entre com um nome (Digite "sair" para sair): ')
 while nome != 'sair':
   if nome in nomes:
     indice = nomes.index(nome)
     print('Nome:', nome, 'Tel:', telefones[indice])
-    print('Consulta de telefone:')
+    nome = input('Entre com outro nome (Digite "sair" para sair): ')
+```
+
+---
+
+slideTitle: Dicionário em Python
+
+- No exemplo, podemos fazer o nome da pessoa ser o índice do telefone.
+  - Usando dicionários.
+- .alert[**Dicionários**] de Python são representados entre chaves ({ }).
+- Cada par chave/valor é separado por vírgula (,).
+- A chave é separada do valor por dois pontos (:).
+
+```Python
+meu_dicinario = {'Maria': '999887755', 'João': '988775599'}
+```
+
+- A chave (*key*) pode ser qualquer tipo primitivo ou tupla.
+  - Lista e dicionário não podem, por exemplo.
+- O valor pode ser qualquer coisa: tipos primitivo, tupla, lista, dicionário...
+
+---
+
+slideTitle: Dicionário em Python
+
+- Representação Gráfica de um Dicionário
+
+```Python
+meu_dicinario = {'Maria': '999887755', 'João': '988775599',
+ 'Carlos': '977558899'}
+```
+
+.center[![:imageS width:40%;](imagens/agenda_dic.svg)]
+
+---
+
+slideTitle: Criando Dicionários em Python
+
+- Vazio:
+
+```Python
+dic1 = {}
+```
+
+- Com chaves sendo strings e valores sendo números:
+
+```Python
+dic2 = {'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.62, 'Paulo': 1.90}
+```
+
+- Com chaves sendo números:
+
+```Python
+dic3 = {1: 65.4, 2: 88.7, 5: 25.0}
+```
+
+- Misturado:
+
+```Python
+dic4 = {1: 65.4, 'Ana': 1.75, 5.83: False}
+```
+
+- Entre outras formas...
+
+---
+
+slideTitle: Imprimindo um Dicionário
+
+- O comando `print` sobre um dicionário irá imprimir na forma de dicionário:
+
+```Python
+dic2 = {'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.62, 'Paulo': 1.90}
+print(dic2)
+```
+
+```
+{'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.62, 'Paulo': 1.90}
+```
+
+---
+
+slideTitle: Acessar e Modificar Valores de um Dicionário
+
+- O acesso é feito utilizando os colchetes ([ ]), assim como nas listas.
+  - O índice deve ser uma chave válida.
+- Exemplo de acesso:
+```Python
+dic2 = {'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.62, 'Paulo': 1.90}
+print(dic2['Ana'])
+```
+
+```
+1.75
+```
+
+- Exemplo de modificação de valores.
+
+```Python
+dic2 = {'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.42, 'Paulo': 1.90}
+dic2['Rita'] = 1.61
+print(dic2)
+```
+
+```
+{'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.61, 'Paulo': 1.9}
+```
+
+---
+
+slideTitle: Inserir Par em um Dicionário
+
+- Basta existir o dicionário e realizar uma atribuição com novo par.
+
+```Python
+dic = {'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.42, 'Paulo': 1.90}
+dic['Maria'] = 1.56
+print(dic)
+```
+
+```
+{'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.42, 'Paulo': 1.9, 'Maria': 1.56}
+```
+
+
+- Diferente de listas (para valores numéricos):
+
+.col-3[
+Com dicionário:
+```Python
+dic = {}
+dic[1] = 190
+print(dic)
+```
+.alert[Funciona!]
+]
+
+.col-3[<br> .center[.alert[$\times$]]]
+
+.col-3[
+Com lista:
+```Python
+lista = []
+lista[1] = 190
+print(lista)
+```
+<span style="color:red">Ocorre erro!</span>
+]
+
+---
+
+slideTitle: Exemplo da Agenda Usando Dicionário
+
+- Obtendo a agenda do usuário:
+
+```Python
+agenda = {}
+nome = input('Entre com um nome (Digite "fim" para terminar): ')
+while (nome != 'fim'):
+  tel = input('Entre com o telefone: ')
+  agenda[nome] = tel
+  nome = input('Entre com um nome (Digite "fim" para terminar): ')
+```
+- Consultando telefone pelo nome:
+
+```Python
+print('Consulta de telefone:')
+nome = input('Entre com um nome (Digite "sair" para sair): ')
+while nome != 'sair':
+  if nome in agenda:
+    print('Nome:', nome, 'Tel:', agenda[nome])
     nome = input('Entre com outro nome (Digite "sair" para sair): ')
 ```
 
