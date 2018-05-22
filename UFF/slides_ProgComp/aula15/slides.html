@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Programação de Computadores: Aula 14</title>
+    <title>Programação de Computadores: Aula 15</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../template/css/roboto.css">
     <link rel="stylesheet" type="text/css" href="../template/css/general.css">
@@ -20,7 +20,7 @@ class: cover-slide
 
 ![:cover](
 Programação de Computadores
-Aula 14: Vetores e Matrizes em Python
+Aula 15: Tuplas e Dicionários
 Fernanda Passos
 ../template/img/logo.svg
 )
@@ -29,7 +29,7 @@ Fernanda Passos
 
 class: section-slide
 
-# Vetores em Python
+# Tuplas em Python
 
 ---
 
@@ -43,79 +43,294 @@ name: conteudo
 
 ---
 
-slideTitle: Vetores
+slideTitle: Tuplas em Python
 
-- Vetor ou *array* é um conjunto de elementos do mesmo tipo.
-    - É um conceito.
-- Exemplos:
-    - um vetor de inteiros &rarr; `vet1 = [1, 2, 3, 6]`
-    - um vetor de reais &rarr; `vet2 = [1.0, 3.1, 7.6, 8.9, 9.0]`
-    - um vetor de lógicos &rarr; `vet3 = [True, False, True]`
-    - um vetor de strings &rarr; `vet4 = ['A', 'casa', 'é', 'pequena']`
-- Também chamado de matriz unidimensional.
+- Tuplas são semelhantes a listas, em Python, porém mais limitadas.
+- Elas servem para guardar valores de forma imutável.
+  - Isto é, seus valores não podem ser modificados.
+- Tuplas podem representar:
+  - Vetores
+  - Matrizes
+  - Mas valores devem ser constantes!
 
 ---
 
-slideTitle: Vetores em Python
+slideTitle: Declaração de Tuplas
 
-- Em Python, podemos usar listas para representar.
+- Declaramos tuplas entre parênteses:
 
 ```Python
-vet1 = [1, 2, 3, 6]
-vet2 = [1.0, 3.1, 7.6, 8.9, 9.0]
-vet3 = [True, False, True]
-vet4 = ['A', 'casa', 'é', 'pequena']
+vet1 = (1, 2, 5, 3, 6)
+vet2 = (1.0, 3.1, 7.6, 8.9, 9.0)
+vet3 = (True, False, True)
+vet4 = ('A', 'casa', 'é', 'pequena')
+t = ('A', 1, 2.3, True)
 ```
-- Embora listas em Python permite criar conjuntos de quaisquer valores.
 
----
-
-slideTitle: Uso de Vetores/Listas
-
-- Imagine o seguinte problema a ser resolvido de forma algorı́tmica:
-    - Calcular a média das notas de 10 alunos de uma disciplina e determinar o número de alunos que tiveram a nota superior à média calculada.
-- Como resolver?
-
----
-
-slideTitle: Uso de Vetores/Listas (II)
-
-#### Tentativa 1:
+- Os valores sempre serão aqueles definidos na declaração.
+  - Tuplas nunca aumentam nem diminuem de tamanho.
+_ Se a tupla tiver apenas 1 elemento, deve-se **usar a vírgula no final**:
 
 ```Python
-soma = 0
-for i in range(10):
-    n = int(input("Entre com a nota " + str(i) + ": "))
-    soma = soma + n
-media = soma/10
-# contar quantos alunos estão acima da média.
+vet5 = (1, )
 ```
-
-- Repare que antes de contar, precisamos calcular a média.
-    - Mas então, como indicar quantos alunos estão acima da média se não temos mais os valores das notas?
 
 ---
 
-slideTitle: Uso de Vetores/Listas (III)
+slideTitle: Declaração de Tuplas (II)
 
-- Precisamos **guardar** as notas para isso!
-    - Usar vetor/lista!
+- Os parênteses podem ser omitidos:
 
 ```Python
-notas = 10*[0] # Cria vetor de 10 posições
-soma = 0
-for i in range(10):
-    notas[i] = int(input("Entre com a nota " + str(i) + ": "))
-    soma = soma + notas[i]
-media = soma/10
-cont = 0
-for i in range(10):
-    if notas[i] > media:
-        cont = cont + 1
-print("Existem", cont, "alunos acima da média", media)
+vet1 = 1, 2, 5, 3, 6
+vet2 = 1.0, 3.1, 7.6, 8.9, 9.0
+vet3 = True, False, True
+vet4 = 'A', 'casa', 'é', 'pequena'
+t = 'A', 1, 2.3, True
+vet5 = 1,
 ```
 
-- <a  href="https://repl.it/@fgopassos/media" target="_blank">Solução no Repl.it</a>
+- Experimente imprimir o tipo de cada vetor usando o comando `type`.
+  - Para todos, deve-se imprimir: `<class 'tuple'>`
+
+---
+
+slideTitle: Imprimindo uma Tupla
+
+- Basta usar o comando `print` sobre ela.
+
+```Python
+vet4 = ('A', 'casa', 'é', 'pequena')
+print(vet4)
+print((3, 2, 1, 0))
+```
+- Os valores impressos também estão entre parênteses:
+```
+('A', 'casa', 'é', 'pequena')
+(3, 2, 1, 0)
+```
+
+---
+
+slideTitle: Acessar Elementos de uma Tupla
+
+- Da mesma forma que em listas, usando colchetes.
+  - Mas apenas para obter os valores (leitura).
+  - Nunca para alterar os valores (escrita).
+
+```Python
+vet1 = (1, 2, 5, 3, 6)
+print(vet1[0])
+print(vet1[2])
+print(vet1[4])
+```
+
+- Índices variam de 0 a tamanho menos 1.
+
+---
+
+slideTitle: Acessar Elementos de uma Tupla
+
+- Acesso não permitido:
+
+```Python
+vet1 = (1, 2, 5, 3, 6)
+vet1[2] = 7 # Esta linha ocasionará erro!
+print(vet1)
+```
+<pre style="font-size:18px; color:red;">
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+</pre>
+
+- Embora seja possível redefinir uma tupla:
+
+```Python
+vet1 = (1, 2, 5, 3, 6)
+vet1 = (1, 2, 7, 3)
+print(vet1)
+```
+
+---
+
+slideTitle: Funções sobre Tuplas
+
+- Algumas funções sobre listas podem ser usadas sobre tuplas.
+  - `len`: retorna o tamanho da tupla.
+  - `min`: retorna o menor valor de uma tupla numérica.
+  - `max`: retorna o maior valor de uma tupla numérica.
+  - `sum`: retorna a soma dos valores de uma tupla numérica.
+
+```Python
+vet1 = (1, 2, 5, 3, 6)
+print(len(vet1), min(vet1), max(vet1), sum(vet1))
+```
+- Saída:
+```
+5 1 6 17
+```
+
+---
+
+slideTitle: Pertinência em tuplas
+
+- Assim como em listas, podemos usar o comando `in` para verificar se um elemento está na tupla.
+- Lembrando que o retorno é `True` ou `False`.
+    - Logo, usar em estruturas que trabalham com condições: `if` ou `while`
+- Exemplo:
+
+```Python
+tupla = (1, 2, 5, 3, 6)
+if 5 in tupla:
+    print('O valor', 5, 'está na tupla.')
+```
+
+```
+O valor 5 está na tupla.
+```
+
+---
+
+slideTitle: Operações sobre Tuplas
+
+- Soma de tuplas com operador +:
+
+```Python
+tupla1 = (4, 5, 2, 1)
+tupla2 = (3, -1, 0)
+print(tupla1 + tupla2)
+```
+
+```
+(4, 5, 2, 1, 3, -1, 0)
+```
+
+- Multiplicação de tuplas com operador *:
+
+```Python
+tupla = 3*(0, 1)
+print(tupla)
+```
+
+```
+(0, 1, 0, 1, 0, 1)
+```
+
+---
+
+slideTitle: Métodos de Tuplas
+
+- Existem apenas dois métodos:
+  - `index`: retorna o índice da primeira ocorrência de um dado valor (parâmetro) na tupla.
+
+```Python
+tupla = (5, 5, -1, 3, 0, 2, 1, 2, 5)
+print(tupla.index(2))
+```
+
+```
+5
+```
+  - `count`: retorna a quantidade de um dado valor (parâmetro) na tupla.
+
+```Python
+tupla = (5, 5, -1, 3, 0, 2, 1, 2, 5)
+print(tupla.count(5))
+```
+
+```
+3
+```
+
+---
+
+slideTitle: Conversão em Tuplas
+
+- Conversão de lista em tupla:
+
+```Python
+lista = [1, 4, 2]
+tupla = tuple(lista)
+print(tupla)
+```
+
+```
+(1, 4, 2)
+```
+
+- Conversão de tupla em em lista:
+
+```Python
+tupla = (1, 4, 2)
+lista = list(tupla)
+print(lista)
+```
+
+```
+[1, 4, 2]
+```
+
+---
+
+slideTitle: Conversão de Range
+
+- Conversão de range em tupla:
+
+```Python
+tupla = tuple(range(10))
+print(tupla)
+```
+
+```
+(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+```
+
+- Conversão de range em lista:
+
+```Python
+lista = list(range(10))
+print(lista)
+```
+
+```
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+---
+
+slideTitle: Iterar sobre Tuplas
+
+- Da mesma forma que em listas.
+- Usando índices:
+```Python
+tupla = (2, -3 , 5, 1, 0)
+for i in range(len(tupla)):
+  print(tupla[i])
+```
+
+- Nos elementos:
+```Python
+tupla = (2, -3 , 5, 1, 0)
+for elem in tupla:
+  print(elem)
+```
+
+---
+
+slideTitle: Matrizes e Tuplas
+
+- Podemos também representar matrizes usando tuplas.
+- Assim como listas, tuplas podem ter qualquer objeto como elemento.
+  - Tuplas de tuplas, ...
+- Exemplo de definição de matriz $3\times4$ usando tupla:
+
+```Python
+# Declaração:
+matriz = ((1, 3, -1, 0), (1, 2, 3, 0), (1, -2, -3, 1))
+# Exemplo de acesso a um elemento:
+print(matriz[2][1])
+```
 
 ---
 
@@ -123,15 +338,17 @@ slideTitle: Exercícios (I)
 
 #### Para cada item, escreva um programa Python que:
 
-1. Peça 10 valores reais ao usuário e indique quantos estão acima de (mínimo + máximo)/2. Pode usar as funções min e max.
-2. Obtenha a temperatura média de cada mês do ano e mostre todas as temperaturas acima da média anual, e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro,...). Sugestão: usar uma lista para armazenar o nome por extenso de cada mês.
+1. Calcule a distância entre dois pontos dados pelo usuário. Cada ponto deve ser representado por uma tupla de 2 elementos ($x_1$, $y_1$) e ($x_2$, $y_2$). A distância euclidiana é calculada por:
+$$\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+2. Obtenha do usuário 5 pares: nome de um atleta e a altura dele (em metros). Os pares serão armazenados em tuplas e cada par será armazena em uma lista. Ao final, imprima apenas o nome dos atletas que têm altura superior a 1.60 m.
+
 
 ---
 
 class: section-slide
 layout: false
 
-# Matrizes Bidimensionais em Python
+# Introdução a Dicionários em Python
 
 ---
 
@@ -140,15 +357,16 @@ layout: true
 
 ---
 
-slideTitle: Matrizes
+slideTitle: Dicionário
 
-- Matriz multidimensional é um conjunto multidimensional de elementos do mesmo tipo.
-    - Matriz unidimensional é um vetor.
-    - Matriz bidimensional corresponde às matrizes comuns na matemática.
+- .alert[Dicionário] é uma estrutura especial de Python.
+- Ele representa um mapeamento chave/valor (*key/value*).
+    - A chave funciona como um .alert[**índice**].
+    - O valor é acessado pela chave.
+- Exemplo de representação:
 
-.center[![:imageS width:25%;](imagens/matriz1.svg)]
+.center[![:imageS width:30%;](imagens/dict.svg)]
 
-- Em Python, é possível representar matrizes através de .alert[lista de listas].
 
 ---
 
