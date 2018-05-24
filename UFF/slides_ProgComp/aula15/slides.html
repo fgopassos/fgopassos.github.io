@@ -487,7 +487,7 @@ print(dic2)
 
 ---
 
-slideTitle: Acessar e Modificar Valores de um Dicionário
+slideTitle: Acessar Valores de um Dicionário
 
 - O acesso é feito utilizando os colchetes ([ ]), assim como nas listas.
   - O índice deve ser uma chave válida.
@@ -500,6 +500,23 @@ print(dic2['Ana'])
 ```
 1.75
 ```
+
+- Acesso a uma chave inexistente ocasiona erro:
+
+```Python
+dic2 = {'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.62, 'Paulo': 1.90}
+print(dic2['rita']) # Deveria ser Rita e não rita
+```
+
+<pre style="font-size:18px; color:red;">
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'rita'
+</pre>
+
+---
+
+slideTitle: Modificar Valores de um Dicionário
 
 - Exemplo de modificação de valores.
 
@@ -517,7 +534,7 @@ print(dic2)
 
 slideTitle: Inserir Par em um Dicionário
 
-- Basta existir o dicionário e realizar uma atribuição com novo par.
+- Basta existir o dicionário e realizar uma atribuição com o novo par.
 
 ```Python
 dic = {'Ana': 1.75, 'Marcos': 1.71, 'Rita': 1.42, 'Paulo': 1.90}
@@ -585,7 +602,229 @@ slideTitle: Exercícios (II)
 
 #### Para cada item, escreva um programa em Python que:
 
-1.
+1. Peça ao usuário para cadastrar (isto é, guardar) nomes de produtos e o preço correspodente. Depois, permita que o usuário consulte os elementos desta lista.
+
+---
+
+slideTitle: Ordem das Chaves/Valores no Dicionário
+
+- Não há uma ordem específica dos pares chave/valor.
+- Dicionários em Python guardam os pares em ordem arbitrária.
+- Muitas vezes, criamos um dicionário e quando o imprimimos, está em uma ordem diferente.
+- Exemplo:
+
+``` Python
+>>> dic = {1: 39.2, 4: 23.0, 3: 48.4, 8: 11.0}
+>>> print(dic)
+```
+
+```
+{8: 11.0, 1: 39.2, 3: 48.4, 4: 23.0}
+```
+
+---
+
+slideTitle: Funções sobre Dicionários
+
+Função  | Parâmetros   | Retorno
+--------|--------------|---------------------
+`len`   | o dicionário | Tamanho do dicionário
+`min`   | o dicionário | Retorna a menor chave
+`max`   | o dicionário | Retorna a maior chave
+`sum`   | o dicionário | Soma as chaves (se for valor numérico)
+
+- Exemplo:
+
+``` Python
+dic = {1: 39.2, 4: 23.0, 3: 48.4, 8: 11.0}
+print(len(dic), min(dic), max(dic), sum(dic))
+```
+
+```
+4 1 8 16
+```
+
+---
+
+slideTitle: Remover Elementos de um Dicionário
+
+- `del` remove um elemento do dicionário.
+    - Igual a lista.
+- Sintaxe: `del dicionario[chave]`
+- Exemplo:
+``` Python
+dic = {1: 39.2, 4: 23.0, 3: 48.4, 8: 11.0}
+del dic[4]
+print(dic)
+```
+
+```
+{1: 39.2, 3: 48.4, 8: 11.0}
+```
+
+- Também apaga uma lista (perde a referência):
+``` Python
+dic = {1: 39.2, 4: 23.0, 3: 48.4, 8: 11.0}
+del dic
+```
+
+---
+
+slideTitle: Pertinência em Dicionários
+
+- O comando `in` indica se uma **chave** pertence ao dicionário.
+    - Retorna `True` ou `False` (igual a listas).
+
+``` Python
+frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
+if 'laranja' in frutas:
+    print('laranja está no dic frutas')
+```
+
+- Pode ser útil para remover ou alterar um par, por ex.:
+
+``` Python
+frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
+print('Antes da tentativa de remoção:', frutas)
+nome = input('Entre com o nome da fruta para remover: ')
+if nome in frutas:
+    del frutas[nome]
+else:
+    print(nome, 'não está no dicionário frutas!')
+print('Depois da tentativa de remoção:', frutas)
+```
+
+---
+
+slideTitle: Iterar em Dicionários
+
+- Usando a combinação `for` e `in`.
+- O índice varia nas **chaves**.
+- Exemplo:
+
+``` Python
+frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
+for i in frutas:
+    print(i, frutas[i])
+```
+
+```
+banana 34
+laranja 102
+uva 50
+```
+
+---
+
+slideTitle: Converter para Dicionário
+
+- A função `dict` serve para converter uma estrutura em dicionário.
+- Tal estrutura deve estar em formato similar a um dicionário.
+  - Isto é, ter pares chave/valor.
+- Exemplo com tupla:
+
+```Python
+tupla = (('laranja', 102), ('uva', 50), ('banana', 34))
+dic = dict(tupla)
+print(type(dic), dic)
+```
+
+```
+<class 'dict'> {'laranja': 102, 'uva': 50, 'banana': 34}
+```
+
+- Exemplo com lista:
+
+```Python
+l = [['um', 'one'], ['dois', 'two'], ['três', 'three']]
+dic = dict(l)
+print(type(dic), dic)
+```
+
+```
+<class 'dict'> {'um': 'one', 'dois': 'two', 'três': 'three'}
+```
+
+---
+
+slideTitle: Alguns Métodos de Dicionários
+
+Método 	| Parâmetros 	| Descrição
+--------|---------------|-------------------
+`keys` 	| nenhum 	    | Retorna uma estrutura com as chaves do dicionário
+`values` 	| nenhum 	| Retorna uma estrutura com os valores do dicionário
+`items` 	| nenhum 	| Retorna uma estrutura contendo tuplas dos pares chave/valor do dicionário
+`get` 	| chave 	    | Retorna o valor associado à chave; ou `None`
+`get` 	| chave,alt 	| Retorna o valor associado à chave; ou alt
+
+- Lembrando que método se usa da seguinte forma:
+
+`dicionario.metodo()`
+
+---
+
+slideTitle: Alguns Métodos de Dicionários (II)
+
+- Exemplo de uso:
+``` Python
+frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
+print(frutas.keys())
+print(frutas.values())
+print(frutas.items())
+print(frutas.get('laranja'))
+print(frutas.get('caqui'))
+print(frutas.get('caqui', 'Não existe!'))
+```
+- Saída:
+
+```
+dict_keys(['laranja', 'banana', 'uva'])
+dict_values([102, 34, 50])
+dict_items([('laranja', 102), ('banana', 34), ('uva', 50)])
+102
+None
+Não existe!
+```
+
+---
+
+slideTitle: A Função Sorted
+
+- A função `sorted` ordena uma sequência de elementos.
+    - Tuplas, listas
+    - E dicionários, pelas chaves
+- Ela recebe como parâmetro a sequência e retorna uma lista ordenada.
+- Exemplo de uso com tuplas:
+
+``` Python
+t = (5, 4, 2, 7, 9, 0)
+print(sorted(t))
+```
+
+```
+[0, 2, 4, 5, 7, 9]
+```
+
+- Exemplo de uso com dicionários:
+
+``` Python
+frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
+print(sorted(frutas))
+```
+
+```
+['banana', 'laranja', 'uva']
+```
+
+---
+
+slideTitle: Exercícios (III)
+
+#### Para cada item, escreva um programa em Python que:
+
+1. Obtenha do usuário nomes de alunos e duas notas de prova. Gere um dicionário para armazenar as notas, com chave igual ao nome do aluno. Suponha que os nomes dos alunos sejam sempre diferentes. A leitura de nomes e notas de alunos termina quando o nome do aluno for vazio.
+    - Ao final, apresente o nome de cada aluno e suas respectivas médias aritméticas.
+2. Modifique a questão anterior para imprimir em ordem alfabética de nome dos alunos.
 
 
     </textarea>
