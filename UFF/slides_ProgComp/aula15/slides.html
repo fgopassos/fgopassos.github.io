@@ -418,9 +418,10 @@ slideTitle: Dicionário em Python
 - .alert[**Dicionários**] de Python são representados entre chaves ({ }).
 - Cada par chave/valor é separado por vírgula (,).
 - A chave é separada do valor por dois pontos (:).
+  - Deve ser um única.
 
 ```Python
-meu_dicinario = {'Maria': '999887755', 'João': '988775599'}
+meu_dicionario = {chave1: valor1, chave2: valor2}
 ```
 
 - A chave (*key*) pode ser qualquer tipo primitivo ou tupla.
@@ -431,14 +432,16 @@ meu_dicinario = {'Maria': '999887755', 'João': '988775599'}
 
 slideTitle: Dicionário em Python
 
-- Representação Gráfica de um Dicionário
-
-```Python
-meu_dicinario = {'Maria': '999887755', 'João': '988775599',
- 'Carlos': '977558899'}
-```
+- Representação Gráfica de um dicionário:
 
 .center[![:imageS width:40%;](imagens/agenda_dic.svg)]
+
+- Em Python:
+
+```Python
+agenda = {'Maria': '999887755', 'João': '988775599',
+'Carlos': '977558899'}
+```
 
 ---
 
@@ -585,6 +588,7 @@ while (nome != 'fim'):
   agenda[nome] = tel
   nome = input('Entre com um nome (Digite "fim" para terminar): ')
 ```
+
 - Consultando telefone pelo nome:
 
 ```Python

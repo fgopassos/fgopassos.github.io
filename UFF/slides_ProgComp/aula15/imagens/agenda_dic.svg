@@ -75,7 +75,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.0737889"
-     inkscape:cx="-25.593202"
+     inkscape:cx="96.568297"
      inkscape:cy="125.5603"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -97,7 +97,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -248,13 +248,13 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#008080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-115.04832"
-       y="438.23596"
+       y="436.23596"
        id="text4313"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4315"
          x="-115.04832"
-         y="438.23596">agenda</tspan></text>
+         y="436.23596">agenda</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -265,7 +265,8 @@
          sodipodi:role="line"
          id="tspan4399"
          x="-144.95848"
-         y="52.720882">chave</tspan></text>
+         y="52.720882"
+         style="font-size:30px">chave</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
        d="m 60.605698,111.14023 128.860232,0"
@@ -296,5 +297,17 @@
        inkscape:connector-curvature="3"
        inkscape:connection-start="#image4214"
        inkscape:connection-end="#image4214" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4190"
+       y="52.720882"
+       x="187.31065"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:30px"
+         y="52.720882"
+         x="187.31065"
+         id="tspan4192"
+         sodipodi:role="line">valor</tspan></text>
   </g>
 </svg>
