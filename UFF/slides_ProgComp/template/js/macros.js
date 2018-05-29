@@ -121,6 +121,11 @@ remark.macros.cover = function() {
   return ret;
 }
 
+remark.macros.div = function() {
+console.log(this);
+    return '<div style="width: 100%">' + this + '</div>';
+}
+
 // ![:translate](md)
 // Translates the markdown passed as argument to html.
 remark.macros.translate = function() {
