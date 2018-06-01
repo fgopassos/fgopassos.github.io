@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programação de Computadores: Aula 17</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../template/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/general.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/code.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/cover.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/section.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/elements.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/table.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/block.css">
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: cover-slide
+
+![:cover](
+Programação de Computadores
+Aula 17: Manipulação de Arquivos em Python
+Fernanda Passos
+../template/img/logo.svg
+)
+
+---
+
+class: section-slide
+
+# Arquivos
+
+---
+
+class: middle
+layout: true
+name: conteudo
+
+.title[
+{{slideTitle}}
+<hr>]
+
+---
+
+slideTitle: Básico sobre Arquivos
+
+![:block](Definição de arquivo:
+É um recurso para armazenamento de informação, que está disponível a um programa de computador.
+)
+<br>
+.center[![:imageS width:50%;](imagens/arquivos.jpg)]
+
+---
+
+slideTitle: Tipos de Arquivos
+
+- Muitos arquivos apresentam seus dados estruturados.
+    - Por exemplo, arquivos .doc apresentam marcadores para formatação.
+    - Isto é, dados reais armazenados vão além do conteúdo em si.
+- Por conta disto, vamos trabalhar com tipos de arquivos com estrutura simples.
+- Um exemplo são os .alert[arquivos texto].
+    - Extensão `.txt`
+
+.center[![:imageS width:15%;](imagens/arquivo_texto.png)]
+
+---
+
+slideTitle: Armazenamento de Arquivos
+
+- Normalmente são armazenados em memória secundária.
+    - HD, SSD, pendrive, cartão de memória,...
+- Queremos .alert[obter] dados de arquivos!
+    - Ou .alert[escrever] dados em arquivos!
+- Ao trabalhar com arquivos, precisamos saber sua localização.
+    - Indicar .alert[caminho do arquivo].
+    - Exceto quando o arquivo está no mesmo diretório (pasta) do programa, não é necessário o caminho.
+
+.center[![:imageS width:80%;](imagens/local.png)]
+
+---
+
+class: section-slide
+layout: false
+
+# Leitura e Escrita em Arquivos Texto em Python
+
+---
+
+template: conteudo
+layout: true
+
+---
+
+slideTitle: Abrir Arquivos em Python
+
+- Antes de obter ou escrever dados de/em um arquivo, precisamos .alert[**abri-lo**].
+    - "Abrir" aqui significa .alert[**preparar para leitura ou escrita**].
+- Para isso, devemos indicar o modo de operação.
+- Veremos três modos:
+    - Leitura (*read*): `"r"`
+    - Escrita (*write*): `"w"`
+    - Adicionar ao fim (*append*): `"a"`
+- Em Python, abrimos um arquivo com o comando `open`:
+
+```Python
+arquivo = open(nome_do_arquivo, modo)
+```
+
+---
+
+slideTitle: Abrir Arquivos para Leitura em Python
+
+- Para apenas ler dados de um arquivo, usamos o modo `"r"`.
+
+```Python
+arquivo = open("exemplo.txt", "r")
+```
+
+- No exemplo, tentamos abrir o arquivo `exemplo.txt`.
+    - Se ele existir, a variável `arquivo` será uma referência para ele.
+    - Caso contrário, ocorrerá erro!
+- Mais a frente veremos como contornar esse possível erro.
+    - Usando `try-except`.
+
+---
+
+slideTitle: Obter Dados de Arquivo em Python
+
+- O `open` só prepara para a leitura de um arquivo.
+- Para ler dados do arquivo, Python disponibiliza alguns métodos:
+    - `read`: lê todo o arquivo e retorna uma string com seu conteúdo texto.
+    - `readline`: lê apenas a primeira linha e a retorna em forma de string.
+    - `readlines`: lê todo o arquivo e retorna uma lista de linhas (string).
+- Para os exemplos a seguir, considere o seguinte conteúdo de arquivo:
+
+.center[![:imageS width:40%;](imagens/ex_arquivo.png)]
+
+---
+
+slideTitle: Obter Dados de um Arquivo em Python (II)
+
+```Python
+arquivo = open("exemplo.txt", "r")
+texto = arquivo.read()
+print(texto)
+```
+
+```
+Um exemplo de arquivo texto.
+Este arquivo tem 2 linhas.
+
+```
+
+```Python
+arquivo = open("exemplo.txt", "r")
+lista = arquivo.readlines()
+print(lista)
+```
+
+```
+['Um exemplo de arquivo texto.\n', 'Este arquivo tem 2 linhas.\n']
+```
+
+```Python
+arquivo = open("exemplo.txt", "r")
+linha1 = arquivo.readline()
+print(linha1)
+```
+
+```
+Um exemplo de arquivo texto.
+
+```
+
+---
+
+slideTitle: Obter Dados de um Arquivo em Python (III)
+
+- Outra forma simples de obter linhas do arquivo:
+    - Iterando sobre ele usando `for`.
+
+```Python
+arquivo = open("exemplo.txt", "r")
+*for linha in arquivo:
+    print(linha, end="")
+```
+
+---
+
+slideTitle: Fechar um Arquivo em Python
+
+- Se o arquivo foi aberto (`open`), ele deve ser fechado depois de usado.
+- O método é o `close`.
+
+```Python
+arquivo = open("exemplo.txt", "r")
+linha1 = arquivo.readline()
+print(linha1)
+*arquivo.close()
+```
+
+```Python
+arquivo = open("exemplo.txt", "r")
+for linha in arquivo:
+    print(linha, end="")
+*arquivo.close()
+```
+
+- Sempre que tiver um *open*, deve ter um *close* associado ao arquivo.
+
+---
+
+slideTitle: Exercício (I)
+
+1. Baixe o arquivo texto <a href="arquivos/numeros.txt" target="_blank">numeros.txt</a>.
+2. Escreva um programa que imprima todos os números primos existentes neste arquivo.
+3. Baixe o arquivo texto <a href="arquivos/lista_frutas.txt" target="_blank">lista_frutas.txt</a>.
+4. Escreva um programa que leia os elementos nesta lista e a apresente de forma ordenada.
+    - Use o método `sort` de lista ou a função `sorted`.
+    - Consulte: https://docs.python.org/3/howto/sorting.html
+5. Baixe o arquivo texto <a href="arquivos/matriz.txt" target="_blank">matriz.txt</a>.
+6. Calcule a soma dos elementos da diagonal principal.
+
+---
+
+slideTitle: Abrir Arquivos para Escrita em Python
+
+- Para apenas escrever dados em um arquivo, usamos o modo `"w"`.
+
+```Python
+arquivo = open("exemplo2.txt", "w")
+```
+
+- No exemplo, tentamos abrir o arquivo `exemplo2.txt` para escrita.
+    - Se não existir, o arquivo é **criado**.
+    - Se existir, o arquivo é **apagado**!
+    - Podem existir casos de erros: quota de disco excedida, falta de permissão,...
+- Mais a frente veremos como contornar esses possíveis erros.
+    - Usando `try-except`.
+
+---
+
+slideTitle: Escrever em um Arquivo em Python
+
+#### Principais métodos de escrita são:
+- `write`: escreve uma string.
+
+```Python
+arquivo = open("exemplo2.txt", "w")
+lista = ["Primeira linha.", "Segunda linha."]
+for i in lista:
+*    arquivo.write(i+"\n")
+arquivo.close()
+```
+
+- `writelines`: escreve as strings de uma lista de strings.
+
+```Python
+arquivo = open("exemplo3.txt", "w")
+lista = ["Primeira linha.\n", "Segunda linha.\n"]
+*arquivo.writelines(lista)
+arquivo.close()
+```
+
+- Para adicionar quebra de linha, usar "\n".
+
+---
+
+slideTitle: Abrir Arquivos para Escrita (Append)
+
+- O modo `"a"` de append, também prepara arquivo para escrita.
+    - Mas no final do arquivo.
+- Se arquivo não existe, cria-se um novo.
+- Se arquivo existe, adiciona dado ao fim (*append*).
+    - Portanto, não apaga arquivo!
+
+```Python
+*arquivo = open("exemplo2.txt", "a")
+lista = ["Um exemplo de frase.", "Outro exemplo de frase."]
+for i in lista:
+    arquivo.write(i+"\n")
+arquivo.close()
+```
+
+---
+
+slideTitle: Tratar Excessões ao Abrir Arquivos Python
+
+- É correto sempre usar o try-except ao abrir um arquivo.
+
+```Python
+*try:
+    arquivo = open("exemplo.txt", "r")
+    linha1 = arquivo.readline()
+    print(linha1)
+    arquivo.close()
+*except Exception as mensagem:
+    print(str(mensagem))
+```
+
+- Neste exemplo, usamos `except Exception as mensagem`
+    - Isto quer dizer: capturar qualquer erro em `mensagem`.
+    - Fazendo `str(mensagem)`, obtemos a mensagem de erro que apareceria.
+        - Mas não aborta o programa, pois você está controlando isso.
+
+---
+
+
+slideTitle: Exercício (II)
+
+1. Escreva um programa que guarde em um arquivo a sequência Fibonacci até um dado índice $n$ (inclusive) e o valor de $n$.
+    - O arquivo deve ser conforme o exemplo abaixo, para $n=10$:
+```
+10
+0 1 1 2 3 5 8 13 21 34
+```
+2. Escreva um programa que obtenha textos do usuário até que ele digite "sair" apenas. Salve tudo em um arquivo chamado "texto.txt".
+    - Faça com que o o conteúdo antigo não seja apagado caso o usuário execute o programa novamente.
+3. Modifique o programa 1 do Exercício (I) para gerar um arquivo com os nomes das frutas ordenado.
+4. Escreva um programa que obtenha duas matrizes, cada uma de um arquivo texto, e gere um novo arquivo contendo o resultado da subtração entre elas.
+
+    </textarea>
+
+    <script src="../template/js/remark-latest.min.js" type="text/javascript"></script>
+    <script src="../template/js/macros.js" type="text/javascript"></script>
+    <script src="../template/js/callbacks.js" type="text/javascript"></script>
+    <script src="../template/js/katex.min.js"></script>
+    <script src="../template/js/auto-render.min.js"></script>
+    <link rel="stylesheet" href="../template/css/katex.min.css">
+    <script type="text/javascript">
+      var renderMath = function() {
+        renderMathInElement(document.body, {delimiters: [
+           {left: "$$", right: "$$", display: true},
+           {left: "$", right: "$", display: false},
+           {left: "\\[", right: "\\]", display: true},
+           {left: "\\(", right: "\\)", display: false},
+        ]});
+      }
+      var slideshow = remark.create({highlightStyle: "github", highlightLines: "true", highlightSpans: "true", slideNumberFormat: onSlideCallback}, renderMath);
+
+      slideshow.on('afterShowSlide', function (s) {
+
+          var slide = document.getElementsByClassName('remark-visible')[0];
+          var iframeList = slide.getElementsByClassName('scaled-frame-md');
+
+          var i;
+          for (i = 0; i < iframeList.length; i++) {
+
+              var iframe = iframeList[i];
+
+              if (typeof iframe.attributes.after !== 'undefined') continue ;
+
+              var src = iframe.src;
+              iframe.src = '';
+              iframe.src = src;
+
+              var att = document.createAttribute("after");
+              att.value = 'true';
+              iframe.attributes.setNamedItem(att);
+          }
+
+      });
+    </script>
+</body>
+</html>

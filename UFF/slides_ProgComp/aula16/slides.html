@@ -578,6 +578,35 @@ em banana
 
 ---
 
+slideTitle: Operações Sobre Strings (III)
+
+- Transformar string em lista/tupla de caracteres:
+
+```python
+palavra = 'trasplante'
+lista = list(palavra) # para tupla, trocar list por tuple
+print(lista)
+```
+
+```
+['t', 'r', 'a', 's', 'p', 'l', 'a', 'n', 't', 'e']
+```
+
+- Juntar novamente com método `join`:
+
+```python
+palavra = 'trasplante'
+lista = list(palavra)
+lista.insert(3, 'n')
+print(''.join(lista))
+```
+
+```
+transplante
+```
+
+---
+
 slideTitle: Métodos de Strings
 
 - Métodos sobre string: função associada a uma string.
