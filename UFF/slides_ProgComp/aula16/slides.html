@@ -128,7 +128,7 @@ slideTitle: Exercício I
 slideTitle: Escopo de Variáveis
 
 - O escopo de uma variável indica sua visibilidade.
-    - Isto é, onde a variável é acessível no código.
+    - Isto é, onde a variável é acessível (leitura) no código.
 - Os escopos podem ser:
     - .alert[global]: variáveis são acessíveis em todos os escopos.
     - .alert[local]: variáveis são acessíveis apenas no escopo em que foram declaradas.
@@ -192,9 +192,9 @@ slideTitle: Exercício (II)
 ```Python
 # Programa 1:
 def f1():
-    y = y + 1
     x = y + 10
-    print(x, y)
+    z = y + 1
+    print(x, z)
 
 y = 5
 f1()
