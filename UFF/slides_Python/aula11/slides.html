@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programação de Computadores: Aula 11</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../template/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/general.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/code.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/cover.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/section.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/elements.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/table.css">
+    <link rel="stylesheet" type="text/css" href="../template/css/block.css">
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: cover-slide
+
+![:cover](
+Programação de Computadores
+Aula 11: Condicionais em Python
+Fernanda Passos
+../template/img/logo.svg
+)
+
+---
+
+class: section-slide
+
+# Condicionais em Python
+
+---
+
+class: middle
+layout: true
+name: conteudo
+
+.title[
+{{slideTitle}}
+<hr>]
+
+---
+
+slideTitle: Condicional de Um Ramo em Python
+
+- Sintaxe:
+
+```Python
+if (condicao):
+    # Bloco que será executado se condição for verdadeira.
+```
+- Note que o afastamento da margem esquerda determina o bloco.
+- Exemplo de dois comandos dentro do bloco `if`:
+    ```Python
+    a = 0
+    x = int(input("Entre com um número: "))
+    if (x > 0):
+        print("Número é positivo.")
+        a = a + 1
+    print(a)
+    ```
+
+---
+
+slideTitle: Indentação em Python
+
+![:block](Definição de Indentação:
+É o afastamento horizontal em relação à margem esquerda.
+)
+- Usado para criar os blocos.
+    - Importantíssimo em Python!
+    - Pode causar erros se não for feito de forma correta!
+- Podem ser espaços ou tabs.
+    - Muitas vezes tabs são convertidos (pelo editor de texto) em 4 ou 8 espaços.
+- .alert[Dica]: usar sempre tecla **tab** para realizar a indentação.
+    - Ou usar sempre a mesma quantidade de espaços.
+
+---
+
+slideTitle: Condicional de Dois Ramos em Python
+
+- Sintaxe:
+
+```Python
+if (condicao):
+    # Bloco que será executado se condição for verdadeira.
+else:
+    # Bloco que será executado se condição for falsa.
+```
+- Exemplo:
+    ```Python
+    a = 0
+    x = int(input("Entre com um número: "))
+    if (x > 0):
+        print("Número é positivo.")
+        a = a + 1
+    else:
+        print("Número é zero ou negativo.")
+        a = a - 1
+    print(a)
+    ```
+
+---
+
+slideTitle: Expressões Relacionais em Python
+
+- Operadores são similares aos da matemática:
+
+![:column 25%](<br>)
+.col-2[
+Operador | Significado
+:-------:|:-----------:
+    ==   | igualdade
+    !=   | diferença
+    >    | maior
+    <    | menor
+    >=   | maior ou igual
+    <=   | menor ou igual
+]
+
+---
+
+slideTitle: Expressões Lógicas em Python
+
+- São usadas nas condições de um **if**, por exemplo.
+- Constantes lógicas: `True`, `False`.
+- Expressões relacionais.
+- Operadores lógicos:
+    - `not` (não)
+    - `or` (ou)
+    - `and` (e)
+- Prioridade:
+    - Maior: Parênteses
+    - Depois: expressões relacionais
+    - Depois: not
+    - Menor: or, and
+
+---
+
+slideTitle: Aninhamento de if
+
+- Comando: `elif`
+- Exemplo:
+    ```Python
+    num = float(input("Entre com um número: "))
+    if (num < 0):
+        print(num, "é negativo!")
+    elif (num < 25):
+        print(num, "está no intervalo [0, 25[.")
+    elif (num < 50):
+        print(num, "está no intervalo [25, 50[.")
+    elif (num < 75):
+        print(num, "está no intervalo [50, 75[.")
+    elif (num <= 100):
+        print(num, "está no intervalo [75, 100].")
+    else:
+        print(num, "é maior que 100.")
+    ```
+
+---
+
+slideTitle: Aninhamento de if (II)
+
+- Também pode ser transformado em else e if interno.
+    - Fica em forma de escada.
+        ```Python
+        num = float(input("Entre com um número: "))
+        if (num < 0):
+            print(num, "é negativo!")
+        else:
+            if (num < 25):
+                print(num, "está no intervalo [0, 25[.")
+            else:
+                if (num < 50):
+                    print(num, "está no intervalo [25, 50[.")
+                else:
+                    if (num < 75):
+                        print(num, "está no intervalo [50, 75[.")
+                    else:
+                        if (num <= 100):
+                            print(num, "está no intervalo [75, 100].")
+                        else:
+                            print(num, "é maior que 100.")
+        ```
+
+---
+
+slideTitle: Exercícios
+
+#### Faça programas em Python para:
+
+1. Obter um número inteiro e indicar se ele é par ou ímpar.
+1. Obter um número inteiro e indicar se ele é múltiplo de 3 ou 7.
+1. Obter um número inteiro e indicar se ele é múltiplo de 3 e não multiplo de 2.
+1. Obter dois números reais e indicar se a raiz quadrada da soma das potências de 2 deles é maior que 100. Isto é, se $\sqrt{x^2 + y^2} > 100$. Use `math.sqrt(z)` para calcular a raiz quadrada de um número z. Use `import math` no início de seu programa para importar o módulo.
+
+---
+
+slideTitle: Exercícios (II)
+
+#### Faça um programa em Python para:
+
+1. Obter um número inteiro do usuário e indicar se ele acertou o número sorteado pelo programa entre 1 e 10. Caso o usuário erre, indique também se o número digitado é maior ou menor que o número sorteado.
+    - Para sortear um número inteiro aleatório entre 1 e 10, use a função `random.randint(1, 10)`. Use `import random` no início de seu programa para importar o módulo.
+    - Em programação de computadores, números aleatórios são pseudo-aleatórios.
+        - Ao reexecutar o programa, ele irá gerar o mesmo número aleatório!
+
+
+    </textarea>
+
+    <script src="../template/js/remark-latest.min.js" type="text/javascript"></script>
+    <script src="../template/js/macros.js" type="text/javascript"></script>
+    <script src="../template/js/callbacks.js" type="text/javascript"></script>
+    <script src="../template/js/katex.min.js"></script>
+    <script src="../template/js/auto-render.min.js"></script>
+    <link rel="stylesheet" href="../template/css/katex.min.css">
+    <script type="text/javascript">
+      var renderMath = function() {
+        renderMathInElement(document.body, {delimiters: [
+           {left: "$$", right: "$$", display: true},
+           {left: "$", right: "$", display: false},
+           {left: "\\[", right: "\\]", display: true},
+           {left: "\\(", right: "\\)", display: false},
+        ]});
+      }
+      var slideshow = remark.create({highlightStyle: "github", highlightLines: "true", highlightSpans: "true", slideNumberFormat: onSlideCallback}, renderMath);
+
+      slideshow.on('afterShowSlide', function (s) {
+
+          var slide = document.getElementsByClassName('remark-visible')[0];
+          var iframeList = slide.getElementsByClassName('scaled-frame-md');
+
+          var i;
+          for (i = 0; i < iframeList.length; i++) {
+
+              var iframe = iframeList[i];
+
+              if (typeof iframe.attributes.after !== 'undefined') continue ;
+
+              var src = iframe.src;
+              iframe.src = '';
+              iframe.src = src;
+
+              var att = document.createAttribute("after");
+              att.value = 'true';
+              iframe.attributes.setNamedItem(att);
+          }
+
+      });
+    </script>
+</body>
+</html>
