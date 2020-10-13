@@ -1,4 +1,4 @@
-# Material Didático: Redes
+# Material Didático
 
-Material didático para o ensino de Redes de Computadores.
+Material didático para o ensino de disciplinas de Engenharia de Telecomunicações e Computação (programação e redes).
 
