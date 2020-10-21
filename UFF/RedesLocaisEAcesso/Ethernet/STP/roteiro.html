@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>-</title>
+  <title>STP</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -65,11 +65,11 @@
 <p>Utilize essa aplicação modificando a topologia e/ou os parâmetros de configuração dos <em>switches</em> para tentar responder as questões abaixo:</p>
 <ol type="1">
 <li>Há algum problema em executar o STP em uma topologia sem <em>loops</em>? O que acontece nesse caso?</li>
-<li>Considere uma topologia em anel em que todos os enlace têm a mesma taxa de transmissão. Como fica a árvore geradora resultante?</li>
-<li>Volte à situação do item anterior, mas considere agora que um dos enlaces do <em>switch</em> raiz é mais lento que os demais. Em particular, assuma que o seu custo é o dobro do custo dos demais enlaces. Como isso altera a árvore geradora? E se fosse o triplo?</li>
-<li>Construa uma topologia contendo ao menos 4 <em>switches</em> que seja totalmente conectada — <em>i.e.</em>, há enlaces de cada <em>switch</em> para todos os demais. Use os mesmos custos para todos os enlaces. Agora observe o passo-a-passo do STP. Quanto tempo demora para o protocolo convergir?</li>
-<li>Volte ao cenário do item anterior, mas agora remova exatamente um enlace da topologia, necessariamente entre o <em>switch</em> raiz e um dos demais. Houve alteração no tempo de convergência? Todos os <em>switches</em> demoram o mesmo tempo para convergir ou algum demorou mais? No segundo caso, qual foi o switch que mais demorou a convergir?</li>
-<li>Considere uma vez mais o cenário do item anterior. Continue removendo enlaces da topologia e observe novamente o tempo de convergência. Você consegue observar alguma relação entre alguma característica da topologia e esse tempo?</li>
+<li>Considere uma topologia em anel com 7 em que todos os enlace têm a mesma taxa de transmissão. Como fica a árvore geradora resultante?</li>
+<li>Volte à situação do item anterior, mas considere agora que um dos enlaces do <em>switch</em> raiz é mais lento que os demais. Em particular, assuma que o seu custo é o triplo do custo dos demais enlaces. Como isso altera a árvore geradora?</li>
+<li>Construa uma topologia contendo 5 <em>switches</em> que seja totalmente conectada — <em>i.e.</em>, há enlaces de cada <em>switch</em> para todos os demais. Use os mesmos custos para todos os enlaces. Agora observe o passo-a-passo do STP. Quanto tempo demora para o protocolo convergir?</li>
+<li>Volte ao cenário do item anterior, mas agora remova exatamente um enlace da topologia, necessariamente entre o <em>switch</em> raiz e um dos demais. Houve alteração no tempo de convergência? Qual foi o switch que mais demorou a convergir? Explique.</li>
+<li>Considere uma vez mais o cenário do item anterior. Continue removendo enlaces da topologia sem particioná-la (<em>i.e.</em>, mantendo sempre pelo menos um enlace de cada nó conectado à rede) e observe novamente o tempo de convergência. Determine a relação entre características da topologia e esse tempo.</li>
 </ol>
 <iframe src="STP.html" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+50)+ 'px'; this.style.width=(this.contentWindow.document.body.scrollWidth+50)+ 'px';" style="width: 100%;"/>
 <section class="footnotes" role="doc-endnotes">
