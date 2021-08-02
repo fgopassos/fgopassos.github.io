@@ -1,0 +1,50 @@
+<h1 id="redes-locais-virtuais"> Redes Locais Virtuais (VLANs)</h1>
+<p>As VLANs (<em>Virtual Local Area Network</em>) são redes locais logicamente sobrepostas sobre uma mesma infraestrutura física de rede. Para isso, é necessário o uso de <b>comutadores especiais</b> que sejam capazes de configurar, implementar e reconhecer as VLANs. VLANs permitem que uma LAN (<em>Local Area Network</em>) seja segmentada logicamente em várias redes locais, ou que estações pertencentes a LANs diferentes interajam como se pertencessem à mesma LAN.</p>
+
+<p>Existem vários tipos de VLANs de acordo com a forma de mapeamento realizado pelos comutadores:</p>
+<ul>
+    <li> VLAN baseada em porta: trabalha em camada 2 e usam portas do switch para mapeamento;</li>
+    <li> VLAN baseada em tags: trabalha em camada 2 e usam portas e tags para o mapeamento;</li>
+    <li> VLAN baseada em MAC: trabalha em camada 2; usam MAC para o mapeamento;</li>
+    <li> VLAN baseada em IP: trabalha em camada 3; usam IP (endereço do <em>Internet Protocol</em>) para o mapeamento;</li>
+    <li> VLAN baseada em protocolos: trabalha em camada 2, 3, 4 ou 5; usam protocolos específicos de de camadas específicas da pilha de protocolos para realizar o mapeamento.</li>
+</ul>
+
+<p> Veremos a seguir as VLANs baseadas em portas e as VLANs baseadas em tags.</p>
+
+<h2 id="vlans-baseadas-em-portas"> VLANs Baseadas em Portas</h2>
+<p>Alguns fabricantes criam as VLANs utilizando os números de portas de switches. O administrador da rede divide as portas do switch em grupos. Cada grupo corresponde à uma VLAN, como no exemplo 1, e o tráfego originado em uma porta do grupo somente alcança portas do mesmo grupo. Por exemplo, as estações de trabalho correspondentes às portas 3, 4, 5 e 10 pertencem à VLAN 10, e estações de trabalho conectadas às portas 6, 7, 8 e 9 pertencem à VLAN 20. O switch guarda uma tabela de mapeamento de porta por VLAN e garante que os tráfegos das VLAN se mantenham isolados.</p>
+
+<p><strong>Exemplo 1) </strong> – Separação de LAN: Uma empresa pequena que possui quatro setores diferentes, com quatro funcionários em cada setor. Por uma questão de privacidade dos dados, ela deseja que cada setor tenha sua própria LAN. Ao invés de utilizar quatro comutadores, uma para cada LAN, ela pode utilizar apenas um comutador que suporte VLAN, e criar uma VLAN para cada setor. Desta forma os setores estão ilhados, e as estações de cada área podem se comunicar de forma segura. A figura a seguir ilustra o exemplo 1:</p>
+<figure>
+<img src="imagens/exemplo1.png" id="Exemplo 1"/>
+</figure>
+
+<p>O exemplo 1 pôde ser facilmente resolvido através da separação das VLANs por grupos de portas. Entretanto, redes com VLANs pertencendo à dois comutadores diferentes necessitam de uma solução um pouco mais sofisticada. E é nesse contexto que surgem a VLAN tag ou etiqueta VLAN.</p>
+
+
+<h2 id="etiqueta-vlan"> VLAN Baseadas em Tags</h2>
+
+<p>As etiquetas VLAN são utilizadas na diferenciação dos tráfegos de VLANs entre dois comutadores, como no exemplo 2. Quando existem VLANs que conectam estações de trabalho que pertencem a comutadores diferentes, os dois comutadores são interligados através de um entroncamento de VLANs. No entroncamento uma porta em cada comutador é separada para interligar os dois comutadores. As portas dos entroncamentos pertencem a mais de uma VLAN, e as etiquetas VLAN são utilizadas para realizar a diferenciação do tráfego pertencente a cada VLAN.</p>
+
+<p><strong>Exemplo 2) </strong> – Integração de LANs: Semelhante ao exemplo 1, uma outra empresa possui quatro setores. Entretanto os funcionários estão divididos em dois prédios diferentes. Cada prédio possui um comutador. No prédio 1 estão os funcionários do setor 1, 2 e 4. No prédio 2 estão os funcionários dos setores 3. Porém, alguns funcionários do setor 2 e 4 foram alocados no prédio 2. Neste caso, as VLANs referentes aos setores 2 e 4 integrarão estações de trabalho pertencente aos dois comutadores, como se estas estações tivessem ligadas em uma mesma LAN. A figura a seguir ilustra o exemplo 2:</p>
+<figure>
+<img src="imagens/exemplo2.png" id="Exemplo 2"/>
+</figure>
+
+<p>Os quadros que trafegam no entroncamento de VLANs são etiquetados permitindo a identificação da VLAN de destino de cada quadro. Para isso, o IEEE criou um formato de quadro Ethernet estendido, o 802.1Q (vide figura abaixo). O quadro estendido recebe o acréscimo de 4 bytes. Os primeiros 2 bytes contêm o rótulo de identificação do protocolo com valor 0x8100. Os outros 2 bytes possuem o controle de informação de rótulo. Nele, o campo principal é o identificador de VLAN com 12 bits. Há também um campo de prioridade com 3 bits e o campo CFI de 1 bit, mas esses campos não têm relação com VLANs. O campo prioridade define o nível de prioridade de quadro, a finalidade é oferecer qualidade de serviço na rede ethernet. Ele pode ser usado para priorizar o tráfego de um serviço em tempo real, por exemplo, em voz sobre ethernet. O campo CFI pode ser usado para indicar se o quadro é um quadro ethernet (CFI = 0) ou de LAN Token Ring (CFI = 1). Ou ele pode ser usado em conjunto com o campo prioridade e indicar os quadros que podem ser descartados em caso de congestionamento. </p> 
+<p>No processo de marcação do tráfego, o comutador de origem estende o quadro etiquetando com a VLAN que o quadro pertence, e o comutador de destino recebe o quadro, identifica a VLAN, retira a extensão e encaminha o quadro Ethernet para a VLAN correta.</p>
+<p>E desta forma o exemplo 2 também é solucionado. Internamente os comutadores dividem as VLANs por portas e na comunicação entre comutadores o tráfego é etiquetado.</p>
+
+<figure>
+<img src="imagens/802.1Q.png" id="Quadro 801.1Q"/>
+</figure>
+
+<hr />
+
+<ol>
+<p>Esse texto foi escrito por Tiago Bornia de Castro, doutorando do Programa de Pós Graduação em Engenharia Elétrica e de Telecomunicações - PPGEET - UFF.
+<br> Supervisão: profª Fernanda Passos.
+<br> Data: 26 de julho de 2021.
+<br>[1] Tanenbaum, Andrew S. e Wetherall, David. Redes de Computadores - 5ª edição. Pearson Education. 2011.</p>
+</ol>
