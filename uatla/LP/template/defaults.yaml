@@ -1,0 +1,26 @@
+# Input format
+from: markdown
+
+# Output format
+to: slidy
+
+# General options
+standalone: true
+self-contained: false
+#html-math-method: webtex
+html-math-method: mathjax
+
+# Template
+template: default.slidy
+
+# Code highlighting style
+highlight-style: kate
+
+# Additional javascript
+include-before-body: [js/main.html]
+
+# CSS
+css:
+- css/main.css
+
+resource-path: ["."]
