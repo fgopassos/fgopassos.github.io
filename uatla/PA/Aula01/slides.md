@@ -176,9 +176,7 @@ Links:
 
 <a href="https://www.jetbrains.com/pycharm-edu" target="_blank">.center[![:imageS width:20%;](imagens/pycharm-edu_logo.png)]</a>
 
----
-
-slideTitle: Usando PyCharm Edu
+# Usando PyCharm Edu
 
 - Escolha o modo "learner".
 - Crie um projeto:
@@ -195,20 +193,12 @@ slideTitle: Usando PyCharm Edu
     - Clique em ![:imageS width:2%;](imagens/play.png) para executar os comandos.
     - Saída do programa é exibida na caixa de texto abaixo.
 
----
-
-slideTitle: Usando PyCharm Edu
+# Usando PyCharm Edu
 
 .center[![:imageS width:95%;](imagens/pycharm-edu_tela.png)]
 
----
-
-class: section-slide
-layout: false
 
 # Introdução à Linguagem Python
-
-
 
 - A linguagem Python possui sua sintaxe bem definida.
 - Coisas em Python são referidas como .alert[objetos].
@@ -222,9 +212,7 @@ layout: false
         import math
         ```
 
----
-
-slideTitle: Entendendo Erros em Python
+# Entendendo Erros em Python
 
 - Qualquer interpretador de Python é capaz de acusar erros de sintaxe.
 - Exemplo: suponha que você escreveu o seguinte código:
@@ -243,9 +231,7 @@ NameError: name 'prit' is not defined
 Process finished with exit code 1
 </pre>
 
----
-
-slideTitle: Comentários em Python
+# Comentários em Python
 
 - Comentários em códigos são bem vindos!
     - São partes do código que serão ignoradas.
@@ -264,9 +250,7 @@ print("Olá") # Comentário pode ser usado aqui também!
 print("Olá")
 ```
 
----
-
-slideTitle: Constantes em Python
+# Constantes em Python
 
 - Numéricas:
     - Inteiro (int)
@@ -279,9 +263,7 @@ slideTitle: Constantes em Python
         - Números Complexos.
         - Exemplos: 4+2j, 2.9+2.1j, -7.32+0.3j, 8-100j
 
----
-
-slideTitle: Constantes em Python (II)
+# Constantes em Python (II)
 
 - String (str)
     - Representa texto.
@@ -299,9 +281,7 @@ slideTitle: Constantes em Python (II)
     - Dois exemplos apenas: **True** e **False**
         - Primeira letra é maiúscula
 
----
-
-slideTitle: Usando Console do PyCharm Edu
+# Usando Console do PyCharm Edu
 
 - View > Tools Windows > Python Console
 - Serve para digitar um comando por vez.
@@ -315,9 +295,7 @@ slideTitle: Usando Console do PyCharm Edu
     - `type(True)`
 - Repare que o resultado aparece logo abaixo.
 
----
-
-slideTitle: Comando de Impressão em Python
+# Comando de Impressão em Python
 
 - Comando: `print`
 - Permite imprimir um objeto Python.
@@ -330,9 +308,7 @@ slideTitle: Comando de Impressão em Python
     ```
 ![:imageS width:40%;](imagens/ex_print.png)
 
----
-
-slideTitle: Exercício I
+# Exercício I
 
 #### No console do PyCharm, experimente imprimir as constantes:
 
@@ -346,9 +322,7 @@ slideTitle: Exercício I
 Um texto com quebra de linha.
 - True
 
----
-
-slideTitle: Expressões Aritméticas em Python
+# Expressões Aritméticas em Python
 
 - Alguns operadores parecidos com os da matemática.
 
@@ -362,9 +336,7 @@ exponenciação |**    |`5**2`    | 25
 divisão inteira |//  |`5//2`    | 2
 módulo (resto)| %    |`5%2`     | 1
 
----
-
-slideTitle: Precedências dos Operadores
+# Precedências dos Operadores
 
 - Maior: Parênteses ()
 - Depois: ** (exponenciação)
@@ -372,9 +344,7 @@ slideTitle: Precedências dos Operadores
 - Depois: * (multiplicação), / (divisão), // (divisão inteira), % (resto)
 - Por último: + (adição), - (subtração)
 
----
-
-slideTitle: Exercício II
+# Exercício II
 
 #### Testar no console do PyCharm as expressões:
 - `5 + 2`
@@ -386,9 +356,7 @@ slideTitle: Exercício II
 
 Acesse no PyCharm: View > Tools Windows > Python Console
 
----
-
-slideTitle: Variáveis em Python
+# Variáveis em Python
 
 - Guardam valores na memória do computador.
 - Precisa de um identificador (nome) para indicar posição de memória no código.
@@ -402,9 +370,7 @@ slideTitle: Variáveis em Python
 - .alert[**Atribuição**] de valor é feita pelo sinal "="
     - Exemplo: `x = 4`
 
----
-
-slideTitle: Palavras Reservadas em Python
+# Palavras Reservadas em Python
 
 - Como o nome já diz, são **reservadas** para a linguagem.
     - Não podem ser usadas para nomear variáveis!
@@ -430,9 +396,7 @@ slideTitle: Palavras Reservadas em Python
 </tr>
 </table>
 
----
-
-slideTitle: Tipos de Variáveis em Python
+# Tipos de Variáveis em Python
 
 - Não há declaração.
     - Antes de usar, deve-se apenas inicializar a variável.
@@ -445,9 +409,7 @@ slideTitle: Tipos de Variáveis em Python
     - Associe um valor a uma variável x;
     - Execute o comando `type(x)` para ver qual é o tipo.
 
----
-
-slideTitle: Exercícios III
+# Exercícios III
 
 #### No console do PyCharm, veja o que acontece para cada comando abaixo executado na ordem especificada:
 
@@ -459,9 +421,7 @@ slideTitle: Exercícios III
 1. `B = 1.2`
 1. `A + B`
 
----
-
-slideTitle: Obtendo Dados do Usuário em Python
+# Obtendo Dados do Usuário em Python
 
 - Comando chama-se `input`
 - Exemplo de uso:
@@ -478,9 +438,7 @@ numero = int(input("Entre com um número: "))
 numero = float(input("Entre com um número: "))
 ```
 
----
-
-slideTitle: Obtendo Dados do Usuário em Python
+# Obtendo Dados do Usuário em Python
 
 - E se usuário entrar com um texto quando é pedido um número, por exemplo?
     - Ocorrerá um erro de execução!
@@ -498,9 +456,7 @@ slideTitle: Obtendo Dados do Usuário em Python
     - Veremos como fazer isso em aulas futuras...
     - Por enquanto, supor que usuário vai digitar valores nos tipos esperados!
 
----
-
-slideTitle: Exercícios IV
+# Exercícios IV
 
 #### Escreva os seguintes programas em Python:
 
@@ -511,13 +467,3 @@ graus Celsius, cuja fórmula de conversão é: $$(Fahrenheit - 32) \times \frac{
 - Lista online: https://wiki.python.org.br/EstruturaSequencial
 - Use o Pycharm e crie seus códigos no editor de texto (sem usar o console).
 
-# Exercício{.part}
-
-# 
-
-- Acesse: [https://www.levenez.com/lang/](https://www.levenez.com/lang/)
-- Dessa lista, escolha uma linguagem que não conheça e:
-	- Descreva as características da linguagem;
-	- Tente definir o paradigma de programação;
-	- É compilada, interpretada, híbrida?
-	- Apresente um trecho de código (pelo menos umas 5 linhas ou instruções) e tente explicar o que ele faz.
