@@ -5,7 +5,7 @@ date:
 subtitle: Aula 01 
 title: Introdução
 institute: Universidade Atlântica
-logo: ../atlantica_logo.svg
+logo: ../atlantica_logo2.svg
 ---
 
 # Estrutura da Unidade Curricular
@@ -26,8 +26,8 @@ logo: ../atlantica_logo.svg
 :::{.blocktitle}
 Horário e Sala
 :::
-- Sextas de 18:30h às 22:30h
-- Lab 
+- Sextas de 18:30h às 21:30h
+- Lab 1
 ::::::
 
 ::::::{.block .centered}
