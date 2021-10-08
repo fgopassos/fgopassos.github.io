@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Introdução à Linguagem Python</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span. { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Universidade Atlântica</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Introdução à Linguagem Python</h1>
+    <p class="subtitle">Aula 02</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+    <p class="note">Linguagem de Programação</p>
+  </div>
+</div>
+<div id="python-uma-linguagem-multiparadigma" class="slide section level1">
+<h1>Python: uma Linguagem Multiparadigma</h1>
+<ul>
+<li>Imperativa: comandos são ações.</li>
+<li>Orientada a objetos: abstração de dados.</li>
+<li>Programação concorrente e paralela.</li>
+<li>Programação funcional: notação <em>lambda</em>.</li>
+</ul>
+</div>
+<div id="python-é-originalmente-orientada-a-objetos" class="slide section level1">
+<h1>Python é Originalmente Orientada a Objetos</h1>
+<ul>
+<li>A linguagem Python possui sua sintaxe bem definida.</li>
+<li><em>Coisas</em> em Python são referidas como <strong>objetos</strong>.
+<ul>
+<li>Constantes, variáveis, listas, tuplas, dicionários…</li>
+<li>Veremos com detalhes cada um deles em aulas futuras.</li>
+</ul></li>
+<li>Também veremos como programar orientado a objetos.
+<ul>
+<li>Definição de classes;</li>
+<li>Instanciação de objetos;</li>
+<li>…</li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-de-classe-em-python" class="slide section level1">
+<h1>Exemplo de Classe em Python</h1>
+<div class="sourceCode" id="exClasse"><pre class="sourceCode python"><code class="sourceCode python"><span id="exClasse-1"><a href="#exClasse-1"></a><span class="kw">class</span> Pessoa:</span>
+<span id="exClasse-2"><a href="#exClasse-2"></a></span>
+<span id="exClasse-3"><a href="#exClasse-3"></a>    <span class="co"># Construtor</span></span>
+<span id="exClasse-4"><a href="#exClasse-4"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nome, <span class="bu">id</span>, idade):</span>
+<span id="exClasse-5"><a href="#exClasse-5"></a>        <span class="va">self</span>.nome <span class="op">=</span> nome</span>
+<span id="exClasse-6"><a href="#exClasse-6"></a>        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></span>
+<span id="exClasse-7"><a href="#exClasse-7"></a>        <span class="va">self</span>.idade <span class="op">=</span> idade</span>
+<span id="exClasse-8"><a href="#exClasse-8"></a></span>
+<span id="exClasse-9"><a href="#exClasse-9"></a>    <span class="co"># Método padrão que converte classe em string</span></span>
+<span id="exClasse-10"><a href="#exClasse-10"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="exClasse-11"><a href="#exClasse-11"></a>        <span class="cf">return</span>(<span class="st">&quot;Nome: &quot;</span> <span class="op">+</span> <span class="va">self</span>.nome <span class="op">+</span> <span class="st">&quot;, ID: &quot;</span> <span class="op">+</span> <span class="va">self</span>.<span class="bu">id</span> <span class="op">+</span> <span class="st">&quot;, Idade: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.idade))</span>
+<span id="exClasse-12"><a href="#exClasse-12"></a></span>
+<span id="exClasse-13"><a href="#exClasse-13"></a>    <span class="kw">def</span> adicionaIdade(<span class="va">self</span>):</span>
+<span id="exClasse-14"><a href="#exClasse-14"></a>        <span class="va">self</span>.idade <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
+</div>
+<div id="python-estruturado" class="slide section level1">
+<h1>Python Estruturado</h1>
+<ul>
+<li>Tudo em Python é objeto.</li>
+<li>No entanto, a <em>programação orientada a objetos</em> é geralmente opcional.
+<ul>
+<li>Embora os objetos básicos da linguagem estejam sempre presentes!</li>
+</ul></li>
+<li>Códigos em Python podem ser programados de forma <strong>estruturada</strong>.
+<ul>
+<li>Sequências de comandos;</li>
+<li>Estruturas de controle (seleção e repetições).</li>
+</ul></li>
+</ul>
+</div>
+<div id="python-concorrente-e-paralelo" class="slide section level1">
+<h1>Python Concorrente e Paralelo</h1>
+<ul>
+<li>Apresenta módulos para criar tarefas concorrentes ou paralelas.
+<ul>
+<li>Concorrente: programa que concorre por recursos (processamento, memória, I/O, …).</li>
+<li>Paralelo: recurso é multiplicado e, portanto, são usados simultaneamente.</li>
+</ul></li>
+<li><strong>Multithreading</strong>: concorrente.</li>
+<li><strong>Multiprocessing</strong>: processos paralelos.</li>
+<li>Mecanismos para sincronizar tarefas.
+<ul>
+<li><em>Locks</em>;</li>
+<li>Semáforos;</li>
+<li>Filas de recursos (<em>queue</em>).</li>
+</ul></li>
+</ul>
+</div>
+<div id="interpretando-códigos-em-python" class="slide section level1">
+<h1>Interpretando Códigos em Python</h1>
+<ul>
+<li>Linguagem é <strong>interpretada</strong>.
+<ul>
+<li>Trechos de códigos são traduzidos por vez.</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:33.3%;">
+<div class="sourceCode" id="interpretacao"><pre class="sourceCode python"><code class="sourceCode python"><span id="interpretacao-1"><a href="#interpretacao-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="interpretacao-2"><a href="#interpretacao-2"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="interpretacao-3"><a href="#interpretacao-3"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="interpretacao-4"><a href="#interpretacao-4"></a>d <span class="op">=</span> c <span class="op">*</span> <span class="dv">2</span></span></code></pre></div>
+</div><div class="column" style="width:28.3%;">
+<div class="center">
+<p><br> <span style="font-size: 80px; color: blue"> ➡ </span></p>
+</div>
+</div><div class="column" style="width:33.3%;">
+<pre id="saida" class="qq"><code>a = 5
+b = 2
+c = 7
+d = 14</code></pre>
+</div><div class="column" style="width:5%;">
+
+</div>
+</div>
+</div>
+<div id="entendendo-erros-em-python" class="slide section level1">
+<h1>Entendendo Erros em Python</h1>
+<ul>
+<li>Qualquer interpretador de Python é capaz de acusar erros de sintaxe.</li>
+<li>Exemplo: suponha o seguinte código:</li>
+</ul>
+<div class="sourceCode" id="primeiroProg"><pre class="sourceCode python"><code class="sourceCode python"><span id="primeiroProg-1"><a href="#primeiroProg-1"></a>prit(<span class="st">&quot;Olá Mundo!&quot;</span>)</span></code></pre></div>
+<ul>
+<li>Podemos perceber que o comando <code>print</code> está escrito errado.</li>
+<li>A mensagem de execução do comando será:</li>
+</ul>
+<pre class="nova" style="font-size:16px; font-family: 'Roboto', Roboto, mono; color:red;">
+$ python3 olaMundo.py 
+Traceback (most recent call last):
+  File "olaMundo.py", line 2, in <module>
+    prit("Olá Mundo!")
+NameError: name 'prit' is not defined
+</pre>
+</div>
+<div id="erros-e-interpretação-de-código" class="slide section level1">
+<h1>Erros e Interpretação de Código</h1>
+<ul>
+<li>Código executa até interpretar uma linha que contenha erro.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li>Este código tem um erro na 5ª linha.
+<ul>
+<li>Programa é interrompido nesta linha!</li>
+</ul>
+<div class="sourceCode" id="erroInterpretando"><pre class="sourceCode python"><code class="sourceCode python"><span id="erroInterpretando-1"><a href="#erroInterpretando-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
+<span id="erroInterpretando-2"><a href="#erroInterpretando-2"></a>b <span class="op">=</span> <span class="dv">9</span></span>
+<span id="erroInterpretando-3"><a href="#erroInterpretando-3"></a><span class="bu">print</span>(<span class="st">&quot;Valor de a:&quot;</span>, a)</span>
+<span id="erroInterpretando-4"><a href="#erroInterpretando-4"></a><span class="bu">print</span>(<span class="st">&quot;Valor de b:&quot;</span>, b)</span>
+<span id="erroInterpretando-5"><a href="#erroInterpretando-5"></a>comandoNaoExiste()</span>
+<span id="erroInterpretando-6"><a href="#erroInterpretando-6"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="erroInterpretando-7"><a href="#erroInterpretando-7"></a><span class="bu">print</span>(c)</span></code></pre></div></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<ul>
+<li>Este código tem erro na linha 6.
+<ul>
+<li>Mas programa executa até o fim!</li>
+</ul>
+<div class="sourceCode" id="erroInterpretando"><pre class="sourceCode python"><code class="sourceCode python"><span id="erroInterpretando-1"><a href="#erroInterpretando-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
+<span id="erroInterpretando-2"><a href="#erroInterpretando-2"></a>b <span class="op">=</span> <span class="dv">9</span></span>
+<span id="erroInterpretando-3"><a href="#erroInterpretando-3"></a><span class="bu">print</span>(<span class="st">&quot;Valor de a:&quot;</span>, a)</span>
+<span id="erroInterpretando-4"><a href="#erroInterpretando-4"></a><span class="bu">print</span>(<span class="st">&quot;Valor de b:&quot;</span>, b)</span>
+<span id="erroInterpretando-5"><a href="#erroInterpretando-5"></a><span class="cf">if</span> (a <span class="op">==</span> <span class="dv">3</span>):</span>
+<span id="erroInterpretando-6"><a href="#erroInterpretando-6"></a>  comandoNaoExiste()</span>
+<span id="erroInterpretando-7"><a href="#erroInterpretando-7"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="erroInterpretando-8"><a href="#erroInterpretando-8"></a><span class="bu">print</span>(c)</span></code></pre></div></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div>
+</div>
+</div>
+<div id="comentários-de-linha" class="slide section level1">
+<h1>Comentários de Linha</h1>
+<ul>
+<li>Comentários em códigos são bem vindos!
+<ul>
+<li>São partes do código que serão ignoradas.</li>
+<li>Servem para incluir alguma explicação do código.</li>
+</ul></li>
+<li><code>#</code> é o caractere que define um comentário.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="co"># Programa que imprime &quot;Olá&quot;</span></span>
+<span id="id-2"><a href="#id-2"></a><span class="bu">print</span>(<span class="st">&quot;Olá&quot;</span>) <span class="co"># Comentário pode ser usado aqui também!</span></span></code></pre></div>
+</div>
+<div id="comentários-de-bloco" class="slide section level1">
+<h1>Comentários de Bloco</h1>
+<ul>
+<li>Comentário de bloco:
+<ul>
+<li>Texto entre <code>'''</code> e <code>'''</code>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="co">&#39;&#39;&#39; Programa que imprime &quot;Olá&quot;.</span></span>
+<span id="id-2"><a href="#id-2"></a><span class="co">    Este é um exemplo de mais de uma linha de comentário! &#39;&#39;&#39;</span></span>
+<span id="id-3"><a href="#id-3"></a><span class="bu">print</span>(<span class="st">&quot;Olá&quot;</span>)</span></code></pre></div>
+</div>
+<div id="tipos-em-python-i" class="slide section level1">
+<h1>Tipos em Python (I)</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><strong>Tipagem dinâmica</strong>: tipo é atribuído no momento da atribuição.
+<ul>
+<li><strong>Não há declaração de tipo!</strong></li>
+<li><em>Duck Typing: “If it walks like a duck and it quacks like a duck, then it must be a duck.”</em></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="tipoDinamico"><pre class="sourceCode python"><code class="sourceCode python"><span id="tipoDinamico-1"><a href="#tipoDinamico-1"></a>a <span class="op">=</span> <span class="dv">5</span>            <span class="co"># é inteiro</span></span>
+<span id="tipoDinamico-2"><a href="#tipoDinamico-2"></a>pi <span class="op">=</span> <span class="fl">3.14</span>        <span class="co"># é float</span></span>
+<span id="tipoDinamico-3"><a href="#tipoDinamico-3"></a>c <span class="op">=</span> <span class="st">&quot;uma string&quot;</span> <span class="co"># é string</span></span></code></pre></div>
+</div><div class="column" style="width:40%;">
+<div class="center">
+<p><img src="img/duckTyping.jpeg" id="id" style="width:60.0%" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="tipos-em-python-ii" class="slide section level1">
+<h1>Tipos em Python (II)</h1>
+<ul>
+<li><strong>Tipagem forte</strong>: não há coerção de tipos.
+<ul>
+<li>Tipo da variável se mantém.</li>
+<li>Até que a atribuição ocorra novamente.
+<ul>
+<li>Nesse caso, o objeto da variável muda!</li>
+</ul></li>
+</ul></li>
+<li>No exemplo a seguir há um erro de tradução.
+<ul>
+<li>Erro na 3ª linha: <code>tempo</code> é do tipo int e não pode ser convertido para string.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="interpretacao"><pre class="sourceCode python"><code class="sourceCode python"><span id="interpretacao-1"><a href="#interpretacao-1"></a>tempo <span class="op">=</span> <span class="dv">5</span></span>
+<span id="interpretacao-2"><a href="#interpretacao-2"></a>seg <span class="op">=</span> <span class="st">&quot;s&quot;</span></span>
+<span id="interpretacao-3"><a href="#interpretacao-3"></a><span class="bu">print</span>(tempo <span class="op">+</span> seg)</span></code></pre></div>
+</div>
+<div id="módulos-de-python" class="slide section level1">
+<h1>Módulos de Python</h1>
+<ul>
+<li>Possui diversos módulos (bibliotecas):
+<ul>
+<li>coleção de objetos e funções já prontas.</li>
+<li>Uso do comando <code>import</code> para incluir um módulo.</li>
+<li>Por exemplo, para o módulo de matemática:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="exemploImport"><pre class="sourceCode python"><code class="sourceCode python"><span id="exemploImport-1"><a href="#exemploImport-1"></a><span class="im">import</span> math</span></code></pre></div>
+</div>
+<div id="constantes-em-python" class="slide section level1">
+<h1>Constantes em Python</h1>
+<ul>
+<li>Numéricas:
+<ul>
+<li>Inteiro (int)
+<ul>
+<li>Exemplos: 1, 43, -52, 2018, 364567</li>
+</ul></li>
+<li>Real (float)
+<ul>
+<li>Uso de ponto ao invés de vírgula como separador decimal.</li>
+<li>float vem de <em>floating point</em> (ponto flutuante).</li>
+<li>Exemplos: 0.5, 3.1415…, 8.0, -1000.761, 79.0001</li>
+</ul></li>
+<li>Complexo (complex)
+<ul>
+<li>Números Complexos.</li>
+<li>Exemplos: 4+2j, 2.9+2.1j, -7.32+0.3j, 8-100j</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="constantes-em-python-ii" class="slide section level1">
+<h1>Constantes em Python (II)</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>String (str)
+<ul>
+<li>Representa texto.</li>
+<li>Entre aspas simples ou duplas.</li>
+<li>Exemplos: <code>"Olá"</code>, <code>"a"</code>, <code>'Bom dia!'</code>.</li>
+<li>Para incluir as aspas no texto:
+<ul>
+<li><code>'Incluir "aspas duplas"'</code></li>
+<li><code>"Incluir 'aspas simples'"</code></li>
+</ul></li>
+<li>Aspas triplas permite incluir texto com quebra de linha:</li>
+</ul></li>
+<li>Lógica (bool)
+<ul>
+<li><em>bool</em> vem de booleano (Lógica de Boole)</li>
+<li>Dois exemplos apenas: <strong>True</strong> e <strong>False</strong>
+<ul>
+<li>Primeira letra é maiúscula.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><br><br><br><br><br><br><br></p>
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="co">&#39;&#39;&#39;Texto com</span></span>
+<span id="id-2"><a href="#id-2"></a><span class="co">quebra de linha&#39;&#39;&#39;</span>```</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="o-comando-type" class="slide section level1">
+<h1>O Comando Type</h1>
+<ul>
+<li>Já vimos que não há declaração.
+<ul>
+<li>Antes de usar, deve-se apenas inicializar a variável.</li>
+<li><em>Duck typing</em>!</li>
+</ul></li>
+<li>Exemplo:
+<ul>
+<li><code>x = 3.2</code></li>
+<li>O tipo de x será <em>float</em>.</li>
+</ul></li>
+<li>Experimente no console:
+<ul>
+<li>Associe um valor a uma variável x;</li>
+<li>Execute o comando <code>type(x)</code> para ver qual é o tipo.</li>
+</ul></li>
+</ul>
+</div>
+<div id="console-do-interpretador-de-python" class="slide section level1">
+<h1>Console do Interpretador de Python</h1>
+<ul>
+<li>Digitar um comando por vez.
+<ul>
+<li><em>Script</em>: interpretação por comando.</li>
+<li>A cada <em>enter</em>, o resultado da operação (se houver) é mostrado.</li>
+</ul></li>
+<li>Útil para testar pequenos algoritmos.</li>
+<li>Experimente usar o comando <code>type</code> para indicar qual é o tipo de uma constante:
+<ul>
+<li><code>type(16)</code></li>
+<li><code>type(3.1415)</code></li>
+<li><code>type('A')</code></li>
+<li><code>type(True)</code></li>
+</ul></li>
+<li>Note que o resultado aparece logo abaixo.</li>
+</ul>
+</div>
+<div id="comando-de-impressão-em-python" class="slide section level1">
+<h1>Comando de Impressão em Python</h1>
+<ul>
+<li>Comando: <code>print</code></li>
+<li>Permite imprimir um objeto Python.
+<ul>
+<li>Constantes, resultados de expressões, variáveis …</li>
+</ul></li>
+<li>Local de impressão:
+<ul>
+<li>Na saída padrão, que geralmente é no <em>console</em>.</li>
+</ul></li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="exemplo"><pre class="sourceCode python"><code class="sourceCode python"><span id="exemplo-1"><a href="#exemplo-1"></a><span class="bu">print</span>(<span class="st">&quot;Olá mundo&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exercício-i" class="slide section level1">
+<h1>Exercício I</h1>
+<ul>
+<li>No console, experimente imprimir as constantes:
+<ol style="list-style-type: lower-alpha">
+<li>16 (tipo inteiro)</li>
+<li>3.1415 (tipo float)</li>
+<li>A</li>
+<li>Um exemplo de texto.</li>
+<li>Exemplo de texto com “aspas duplas” aparecendo.</li>
+<li>Exemplo de texto com ‘aspas simples’ aparecendo.</li>
+<li>Era uma vez…<br> Um texto com quebra de linha.</li>
+<li>True (tipo booleano)</li>
+</ol></li>
+</ul>
+</div>
+<div id="expressões-aritméticas-em-python" class="slide section level1">
+<h1>Expressões Aritméticas em Python</h1>
+<ul>
+<li>Alguns operadores parecidos com os da matemática.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operação</th>
+<th>Operador</th>
+<th>Exemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>adição</td>
+<td>+</td>
+<td><code>5+2</code></td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>subtração</td>
+<td>-</td>
+<td><code>5-2</code></td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>multiplicação</td>
+<td>*</td>
+<td><code>5*2</code></td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>divisão</td>
+<td>/</td>
+<td><code>5/2</code></td>
+<td>2.5</td>
+</tr>
+<tr class="odd">
+<td>exponenciação</td>
+<td>**</td>
+<td><code>5**2</code></td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td>divisão inteira</td>
+<td>//</td>
+<td><code>5//2</code></td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>módulo (resto)</td>
+<td>%</td>
+<td><code>5%2</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="precedências-dos-operadores" class="slide section level1">
+<h1>Precedências dos Operadores</h1>
+<ul>
+<li>Maior: Parênteses ()</li>
+<li>Depois: ** (exponenciação)</li>
+<li>Depois: sinal -</li>
+<li>Depois: * (multiplicação), / (divisão), // (divisão inteira), % (resto)</li>
+<li>Por último: + (adição), - (subtração)</li>
+</ul>
+</div>
+<div id="exercício-ii" class="slide section level1">
+<h1>Exercício II</h1>
+<h2 id="testar-no-console-as-expressões">Testar no console as expressões:</h2>
+<ul>
+<li><code>5 + 2</code></li>
+<li><code>39/6</code></li>
+<li><code>39//6</code></li>
+<li><code>3**3</code></li>
+<li><code>(5+2) % 3</code></li>
+<li><code>(5-1)/2**2-4/2*(5-1)+1</code></li>
+</ul>
+<p>No PyCharm: View &gt; Tools Windows &gt; Python Console</p>
+</div>
+<div id="variáveis-em-python" class="slide section level1">
+<h1>Variáveis em Python</h1>
+<ul>
+<li>Guardam valores na memória do computador.</li>
+<li>Precisa de um identificador (nome) para indicar posição de memória no código.
+<ul>
+<li>Nome é formado por combinações de qualquer letra, número e "_".</li>
+<li>Não pode começar por número e não pode ser uma palavra reservada.</li>
+<li>Nome é <em>case sensitive</em>: diferencia letras maiúsculas de minúsculas.</li>
+<li>Exemplos válidos:
+<ul>
+<li>x, X, x2, minha_variavel, PI</li>
+</ul></li>
+<li>Exemplos não válidos:
+<ul>
+<li>1x, +, !, x.y</li>
+</ul></li>
+</ul></li>
+<li><strong>Atribuição</strong> de valor é feita pelo sinal “=”
+<ul>
+<li>Exemplo: <code>x = 4</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="palavras-reservadas-em-python" class="slide section level1">
+<h1>Palavras Reservadas em Python</h1>
+<ul>
+<li>Como o nome já diz, são <strong>reservadas</strong> para a linguagem.
+<ul>
+<li>Não podem ser usadas para nomear variáveis!</li>
+</ul></li>
+</ul>
+<table style="width:90%">
+<tr>
+<td>
+and
+</td>
+<td>
+as
+</td>
+<td>
+assert
+</td>
+<td>
+break
+</td>
+<td>
+class
+</td>
+<td>
+continue
+</td>
+</tr>
+<tr>
+<td>
+def
+</td>
+<td>
+del
+</td>
+<td>
+elif
+</td>
+<td>
+else
+</td>
+<td>
+except
+</td>
+<td>
+exec
+</td>
+</tr>
+<tr>
+<td>
+finally
+</td>
+<td>
+for
+</td>
+<td>
+from
+</td>
+<td>
+global
+</td>
+<td>
+if
+</td>
+<td>
+import
+</td>
+</tr>
+<tr>
+<td>
+in
+</td>
+<td>
+is
+</td>
+<td>
+lambda
+</td>
+<td>
+nonlocal
+</td>
+<td>
+not
+</td>
+<td>
+or
+</td>
+</tr>
+<tr>
+<td>
+pass
+</td>
+<td>
+raise
+</td>
+<td>
+return
+</td>
+<td>
+try
+</td>
+<td>
+while
+</td>
+<td>
+with
+</td>
+</tr>
+<tr>
+<td>
+yield
+</td>
+<td>
+True
+</td>
+<td>
+False
+</td>
+<td>
+None
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div id="exercícios-iii" class="slide section level1">
+<h1>Exercícios III</h1>
+<ul>
+<li>No console, reporte o que acontece para cada comando abaixo executado na ordem especificada:
+<ol style="list-style-type: decimal">
+<li><code>1x = 3</code></li>
+<li><code>A = 3.4</code></li>
+<li><code>type(A)</code></li>
+<li><code>A = "3.4"</code></li>
+<li><code>type(A)</code></li>
+<li><code>B = 1.2</code></li>
+<li><code>A + B</code></li>
+</ol></li>
+</ul>
+</div>
+<div id="obtendo-dados-do-usuário-em-python" class="slide section level1">
+<h1>Obtendo Dados do Usuário em Python</h1>
+<ul>
+<li>Comando chama-se <code>input</code></li>
+<li>Exemplo de uso:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>    texto <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Entre com um texto: &quot;</span>)</span></code></pre></div>
+</div>
+<div id="obtendo-dados-do-usuário-em-python-ii" class="slide section level1">
+<h1>Obtendo Dados do Usuário em Python (II)</h1>
+<ul>
+<li>Note que input é um função que retorna sempre uma string.</li>
+<li>Se quiser obter um inteiro, por exemplo, deve-se converter explicitamente:</li>
+</ul>
+<div class="sourceCode" id="inputInt"><pre class="sourceCode python"><code class="sourceCode python"><span id="inputInt-1"><a href="#inputInt-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
+<ul>
+<li>Exemplo para obter real:</li>
+</ul>
+<div class="sourceCode" id="inputFloat"><pre class="sourceCode python"><code class="sourceCode python"><span id="inputFloat-1"><a href="#inputFloat-1"></a>numero <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
+</div>
+<div id="obtendo-dados-do-usuário-em-python-1" class="slide section level1">
+<h1>Obtendo Dados do Usuário em Python</h1>
+<ul>
+<li>E se usuário entrar com um texto quando é pedido um número, por exemplo?
+<ul>
+<li>Ocorrerá um erro de execução!</li>
+</ul></li>
+<li>Exemplo:
+<pre style="font-size:20px; font-family: 'Roboto', Roboto, mono;">
+  >>> numero = int(input("Entre com um número: "))
+  Entre com um número: a
+  </pre>
+<pre style="font-size:20px; font-family: 'Roboto', Roboto, mono; color:red;">
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  ValueError: invalid literal for int() with base 10: 'a'
+  </pre></li>
+<li>É bom e é possível evitar!
+<ul>
+<li>Veremos como fazer isso em aulas futuras…</li>
+<li>Por enquanto, supor que usuário vai digitar valores nos tipos esperados!</li>
+</ul></li>
+</ul>
+</div>
+<div id="exercícios-iv" class="slide section level1">
+<h1>Exercícios IV</h1>
+<h2 id="escreva-os-seguintes-programas-em-python">Escreva os seguintes programas em Python:</h2>
+<ol style="list-style-type: decimal">
+<li>Escreva um programa que leia 3 notas de um aluno e calcule a média com os seguintes pesos: 1 para a primeira nota, 2 para a segunda e 3 para a terceira.</li>
+<li>Escreva um programa que leia uma temperatura em graus Fahrenheit e converta para graus Celsius, cuja fórmula de conversão é: <span class="math display">\[(Fahrenheit - 32) \times \frac{5}{9}\]</span></li>
+</ol>
+<ul>
+<li>Lista online: <a href="https://wiki.python.org.br/EstruturaSequencial" target="_blank"> https://wiki.python.org.br/EstruturaSequencial</a>.</li>
+</ul>
+</div>
+</body>
+</html>
