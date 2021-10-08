@@ -40,7 +40,8 @@ class Pessoa:
 
     # Método padrão que converte classe em string
     def __str__(self):
-        return("Nome: " + self.nome + ", ID: " + self.id + ", Idade: " + str(self.idade))
+        return("Nome: " + self.nome + ", ID: " + self.id +
+	       ", Idade: " + str(self.idade))
 
     def adicionaIdade(self):
         self.idade += 1
@@ -330,13 +331,13 @@ print("Olá mundo")
 
 Operação |	Operador | Exemplo  | Resultado
 ---------|-----------|----------|----------
-adição 	 | +         |`5+2`     | 7
-subtração| -         |`5-2`     | 3
-multiplicação |	*    |`5*2`     | 10
-divisão  |	/        |`5/2`     | 2.5
-exponenciação |**    |`5**2`    | 25
-divisão inteira |//  |`5//2`    | 2
-módulo (resto)| %    |`5%2`     | 1
+adição 	 | +         |5+2     | 7
+subtração| -         |5-2     | 3
+multiplicação |	*    |5*2     | 10
+divisão  |	/    |5/2     | 2.5
+exponenciação |**    |5**2    | 25
+divisão inteira |//  |5//2    | 2
+módulo (resto)| %    |5%2     | 1
 
 # Precedências dos Operadores
 
@@ -403,13 +404,13 @@ No PyCharm: View > Tools Windows > Python Console
 # Exercícios III
 
 - No console, reporte o que acontece para cada comando abaixo executado na ordem especificada:
-	1. `1x = 3`
-	1. `A = 3.4`
-	1. `type(A)`
-	1. `A = "3.4"`
-	1. `type(A)`
-	1. `B = 1.2`
-	1. `A + B`
+	a) `1x = 3`
+	b) `A = 3.4`
+	c) `type(A)`
+	d) `A = "3.4"`
+	e) `type(A)`
+	f) `B = 1.2`
+	g) `A + B`
 
 # Obtendo Dados do Usuário em Python
 
