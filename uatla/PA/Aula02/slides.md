@@ -8,18 +8,27 @@ institute: Universidade Atlântica
 logo: ../atlantica_logo2.svg
 ---
 
-# Introdução à Linguagem Python
+# Introdução à Linguagem Python (I)
+
+- Multiparadigma:
+        - Imperativa: comandos são ações.
+        - Orientada a objetos: abstração de dados.
+        - Programação concorrente e paralela.
+        - Programação funcional: notação *lambda*.
+- Interpretada: trechos de códigos são traduzidos por vez.
+
+# Python: Orientada a Objetos
 
 - A linguagem Python possui sua sintaxe bem definida.
-- Coisas em Python são referidas como **objetos**.
+- *Coisas* em Python são referidas como **objetos**.
     - Constantes, variáveis, listas, tuplas, dicionários...
     - Veremos com detalhes cada um deles em aulas futuras.
 - Possui diversos módulos (bibliotecas):
     - coleção de objetos e funções já prontas.
     - Uso do comando `import` para incluir um módulo.
-    - Por exemplo, para matemática:
+    - Por exemplo, para o módulo de matemática:
 
-~~~{#primeiroProg .python}
+~~~{#exemploImport .python}
 import math
 ~~~
 
@@ -27,19 +36,18 @@ import math
 
 - Qualquer interpretador de Python é capaz de acusar erros de sintaxe.
 - Exemplo: suponha que você escreveu o seguinte código:
-```Python
-prit("Olá")
-```
+~~~{#primeiroProg .python}
+prit("Olá Mundo!")
+~~~
 - Podemos perceber que o comando `print` está escrito errado.
 - A mensagem de execução do comando será:
 
 <pre class="nova" style="font-size:16px; font-family: 'Roboto', Roboto, mono; color:red;">
+$ python3 olaMundo.py 
 Traceback (most recent call last):
-  File "C:/Users/Passos/PycharmProjects/Aprendendo/olaMundo.py", line 1, in ...
+  File "olaMundo.py", line 2, in <module>
     prit("Olá Mundo!")
 NameError: name 'prit' is not defined
-
-Process finished with exit code 1
 </pre>
 
 # Comentários de Linha
