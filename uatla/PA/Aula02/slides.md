@@ -10,12 +10,12 @@ logo: ../atlantica_logo2.svg
 
 # Introdução à Linguagem Python (I)
 
-- Multiparadigma:
-        - Imperativa: comandos são ações.
-        - Orientada a objetos: abstração de dados.
-        - Programação concorrente e paralela.
-        - Programação funcional: notação *lambda*.
-- Interpretada: trechos de códigos são traduzidos por vez.
+- Linguagem é **multiparadigma**:
+	- Imperativa: comandos são ações.
+	- Orientada a objetos: abstração de dados.
+	- Programação concorrente e paralela.
+	- Programação funcional: notação *lambda*.
+- **Interpretada**: trechos de códigos são traduzidos por vez.
 
 # Python: Orientada a Objetos
 
@@ -106,11 +106,11 @@ print("Olá")
         - Primeira letra é maiúscula.
 ::::
 ::::{.column width=40%}
-<br><br><br><br><br><br><br>
+<br><br><br><br><br>
 
 ~~~{#id .python}
 '''Texto com
-quebra de linha'''```
+quebra de linha'''
 ~~~
 ::::
 
@@ -146,15 +146,15 @@ print("Olá mundo")
 # Exercício I
 
 - No console, experimente imprimir as constantes:
-	a) 16
-	b) 3.1415
+	a) 16 (como inteiro)
+	b) 3.1415 (como float)
 	c) A
 	d) Um exemplo de texto.
 	e) Exemplo de texto com "aspas duplas" aparecendo.
 	f) Exemplo de texto com 'aspas simples' aparecendo.
 	g) Era uma vez...<br>
 	Um texto com quebra de linha.
-	h) True
+	h) True (como booleano)
 
 # Expressões Aritméticas em Python
 
@@ -162,13 +162,13 @@ print("Olá mundo")
 
 Operação |	Operador | Exemplo  | Resultado
 ---------|-----------|----------|----------
-adição 	 | +         |`5+2`     | 7
-subtração| -         |`5-2`     | 3
-multiplicação |	*    |`5*2`     | 10
-divisão  |	/        |`5/2`     | 2.5
-exponenciação |**    |`5**2`    | 25
-divisão inteira |//  |`5//2`    | 2
-módulo (resto)| %    |`5%2`     | 1
+adição 	 | +         |5+2     | 7
+subtração| -         |5-2     | 3
+multiplicação |	*    |5*2     | 10
+divisão  |	/    |5/2     | 2.5
+exponenciação |**    |5**2    | 25
+divisão inteira |//  |5//2    | 2
+módulo (resto)| %    |5%2     | 1
 
 # Precedências dos Operadores
 
@@ -246,7 +246,7 @@ No PyCharm: View > Tools Windows > Python Console
     - Execute o comando `type(x)` para ver qual é o tipo.
 ::::
 ::::{.column width=35%}
-<br><br>
+<br>
 ![](img/duckTyping.jpeg){#duck width=70%}
 ::::
 
@@ -314,7 +314,9 @@ numero = float(input("Entre com um número: "))
 
 1. Escreva um programa que leia 3 notas de um aluno e calcule a média com os seguintes pesos: 1 para a primeira nota, 2 para a segunda e 3 para a terceira.
 2. Escreva um programa que leia uma temperatura em graus Fahrenheit e converta para
-graus Celsius, cuja fórmula de conversão é: $$(Fahrenheit - 32) \times \frac{5}{9}$$
+graus Celsius, cuja fórmula de conversão é: $(Fahrenheit - 32) \times \frac{5}{9}$
+3. Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
 
 - Lista online: <a href="https://wiki.python.org.br/EstruturaSequencial" target="_blank"> https://wiki.python.org.br/EstruturaSequencial</a>.
+
 

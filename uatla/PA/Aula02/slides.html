@@ -103,11 +103,24 @@ Fernanda Passos
     <p class="note">Programação Avançada</p>
   </div>
 </div>
-<div id="introdução-à-linguagem-python" class="slide section level1">
-<h1>Introdução à Linguagem Python</h1>
+<div id="introdução-à-linguagem-python-i" class="slide section level1">
+<h1>Introdução à Linguagem Python (I)</h1>
+<ul>
+<li>Linguagem é <strong>multiparadigma</strong>:
+<ul>
+<li>Imperativa: comandos são ações.</li>
+<li>Orientada a objetos: abstração de dados.</li>
+<li>Programação concorrente e paralela.</li>
+<li>Programação funcional: notação <em>lambda</em>.</li>
+</ul></li>
+<li><strong>Interpretada</strong>: trechos de códigos são traduzidos por vez.</li>
+</ul>
+</div>
+<div id="python-orientada-a-objetos" class="slide section level1">
+<h1>Python: Orientada a Objetos</h1>
 <ul>
 <li>A linguagem Python possui sua sintaxe bem definida.</li>
-<li>Coisas em Python são referidas como <strong>objetos</strong>.
+<li><em>Coisas</em> em Python são referidas como <strong>objetos</strong>.
 <ul>
 <li>Constantes, variáveis, listas, tuplas, dicionários…</li>
 <li>Veremos com detalhes cada um deles em aulas futuras.</li>
@@ -116,10 +129,10 @@ Fernanda Passos
 <ul>
 <li>coleção de objetos e funções já prontas.</li>
 <li>Uso do comando <code>import</code> para incluir um módulo.</li>
-<li>Por exemplo, para matemática:</li>
+<li>Por exemplo, para o módulo de matemática:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="primeiroProg"><pre class="sourceCode python"><code class="sourceCode python"><span id="primeiroProg-1"><a href="#primeiroProg-1"></a><span class="im">import</span> math</span></code></pre></div>
+<div class="sourceCode" id="exemploImport"><pre class="sourceCode python"><code class="sourceCode python"><span id="exemploImport-1"><a href="#exemploImport-1"></a><span class="im">import</span> math</span></code></pre></div>
 </div>
 <div id="entendendo-erros-em-python" class="slide section level1">
 <h1>Entendendo Erros em Python</h1>
@@ -127,18 +140,17 @@ Fernanda Passos
 <li>Qualquer interpretador de Python é capaz de acusar erros de sintaxe.</li>
 <li>Exemplo: suponha que você escreveu o seguinte código:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>prit(<span class="st">&quot;Olá&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="primeiroProg"><pre class="sourceCode python"><code class="sourceCode python"><span id="primeiroProg-1"><a href="#primeiroProg-1"></a>prit(<span class="st">&quot;Olá Mundo!&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Podemos perceber que o comando <code>print</code> está escrito errado.</li>
 <li>A mensagem de execução do comando será:</li>
 </ul>
 <pre class="nova" style="font-size:16px; font-family: 'Roboto', Roboto, mono; color:red;">
+$ python3 olaMundo.py 
 Traceback (most recent call last):
-  File "C:/Users/Passos/PycharmProjects/Aprendendo/olaMundo.py", line 1, in ...
+  File "olaMundo.py", line 2, in <module>
     prit("Olá Mundo!")
 NameError: name 'prit' is not defined
-
-Process finished with exit code 1
 </pre>
 </div>
 <div id="comentários-de-linha" class="slide section level1">
@@ -217,9 +229,9 @@ Process finished with exit code 1
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
-<p><br><br><br><br><br><br><br></p>
+<p><br><br><br><br><br></p>
 <div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="co">&#39;&#39;&#39;Texto com</span></span>
-<span id="id-2"><a href="#id-2"></a><span class="co">quebra de linha&#39;&#39;&#39;</span>```</span></code></pre></div>
+<span id="id-2"><a href="#id-2"></a><span class="co">quebra de linha&#39;&#39;&#39;</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -263,14 +275,14 @@ Process finished with exit code 1
 <ul>
 <li>No console, experimente imprimir as constantes:
 <ol style="list-style-type: lower-alpha">
-<li>16</li>
-<li>3.1415</li>
+<li>16 (como inteiro)</li>
+<li>3.1415 (como float)</li>
 <li>A</li>
 <li>Um exemplo de texto.</li>
 <li>Exemplo de texto com “aspas duplas” aparecendo.</li>
 <li>Exemplo de texto com ‘aspas simples’ aparecendo.</li>
 <li>Era uma vez…<br> Um texto com quebra de linha.</li>
-<li>True</li>
+<li>True (como booleano)</li>
 </ol></li>
 </ul>
 </div>
@@ -292,43 +304,43 @@ Process finished with exit code 1
 <tr class="odd">
 <td>adição</td>
 <td>+</td>
-<td><code>5+2</code></td>
+<td>5+2</td>
 <td>7</td>
 </tr>
 <tr class="even">
 <td>subtração</td>
 <td>-</td>
-<td><code>5-2</code></td>
+<td>5-2</td>
 <td>3</td>
 </tr>
 <tr class="odd">
 <td>multiplicação</td>
 <td>*</td>
-<td><code>5*2</code></td>
+<td>5*2</td>
 <td>10</td>
 </tr>
 <tr class="even">
 <td>divisão</td>
 <td>/</td>
-<td><code>5/2</code></td>
+<td>5/2</td>
 <td>2.5</td>
 </tr>
 <tr class="odd">
 <td>exponenciação</td>
 <td>**</td>
-<td><code>5**2</code></td>
+<td>5**2</td>
 <td>25</td>
 </tr>
 <tr class="even">
 <td>divisão inteira</td>
 <td>//</td>
-<td><code>5//2</code></td>
+<td>5//2</td>
 <td>2</td>
 </tr>
 <tr class="odd">
 <td>módulo (resto)</td>
 <td>%</td>
-<td><code>5%2</code></td>
+<td>5%2</td>
 <td>1</td>
 </tr>
 </tbody>
@@ -535,7 +547,7 @@ None
 </ul></li>
 </ul>
 </div><div class="column" style="width:35%;">
-<p><br><br> <img src="img/duckTyping.jpeg" id="duck" style="width:70.0%" /></p>
+<p><br> <img src="img/duckTyping.jpeg" id="duck" style="width:70.0%" /></p>
 </div>
 </div>
 </div>
@@ -560,7 +572,7 @@ None
 <li>Comando chama-se <code>input</code></li>
 <li>Exemplo de uso:</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>    texto <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Entre com um texto: &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>    texto <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Entre com um texto: &quot;</span>)</span></code></pre></div>
 </div>
 <div id="obtendo-dados-do-usuário-em-python-ii" class="slide section level1">
 <h1>Obtendo Dados do Usuário em Python (II)</h1>
@@ -568,11 +580,11 @@ None
 <li><p>Note que input é um função que retorna sempre uma string.</p></li>
 <li><p>Se quiser obter um inteiro, por exemplo, deve-se converter explicitamente:</p></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
 <ul>
 <li>Exemplo para obter real:</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>numero <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>numero <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
 </div>
 <div id="obtendo-dados-do-usuário-em-python-1" class="slide section level1">
 <h1>Obtendo Dados do Usuário em Python</h1>
@@ -603,7 +615,8 @@ None
 <h2 id="escreva-os-seguintes-programas-em-python">Escreva os seguintes programas em Python:</h2>
 <ol style="list-style-type: decimal">
 <li>Escreva um programa que leia 3 notas de um aluno e calcule a média com os seguintes pesos: 1 para a primeira nota, 2 para a segunda e 3 para a terceira.</li>
-<li>Escreva um programa que leia uma temperatura em graus Fahrenheit e converta para graus Celsius, cuja fórmula de conversão é: <span class="math display">\[(Fahrenheit - 32) \times \frac{5}{9}\]</span></li>
+<li>Escreva um programa que leia uma temperatura em graus Fahrenheit e converta para graus Celsius, cuja fórmula de conversão é: <span class="math inline">\((Fahrenheit - 32) \times \frac{5}{9}\)</span></li>
+<li>Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).</li>
 </ol>
 <ul>
 <li>Lista online: <a href="https://wiki.python.org.br/EstruturaSequencial" target="_blank"> https://wiki.python.org.br/EstruturaSequencial</a>.</li>
