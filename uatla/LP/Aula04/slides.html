@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Listas em Python</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span. { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Universidade Atlântica</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Listas em Python</h1>
+    <p class="subtitle">Aula 05</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+    <p class="note">Programação Avançada</p>
+  </div>
+</div>
+<div id="listas-em-python" class="slide section level1 part">
+<h1 class="part">Listas em Python</h1>
+</div>
+<div id="definição-de-listas-em-python" class="slide section level1">
+<h1>Definição de Listas em Python</h1>
+<div class="block centered">
+<div class="blocktitle">
+<p>Definição:</p>
+</div>
+<p>Uma lista (<em>list</em>) em Python é uma coleção ordenada de valores modificáveis.</p>
+</div>
+<ul>
+<li>Usada para representar conjuntos.</li>
+<li>Vetores: coleção ordenada de valores de mesmo tipo.
+<ul>
+<li>Conhecidos também como <em>arrays</em>.</li>
+</ul></li>
+<li>Matrizes: vetor bidimensional.</li>
+<li>Matrizes multidimensionais…</li>
+<li>Valores podem ser modificados a qualquer momento.</li>
+</ul>
+</div>
+<div id="representação-de-listas-em-python" class="slide section level1">
+<h1>Representação de Listas em Python</h1>
+<ul>
+<li><strong>Listas</strong> são representadas entre colchetes.</li>
+<li>Cada elemento da lista é separado por vírgula.</li>
+<li>Seus elementos podem ser de qualquer tipo e misturados.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="fl">2.3</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;a casa&#39;</span>, <span class="va">False</span>]</span></code></pre></div>
+</div>
+<div id="criação-de-uma-lista" class="slide section level1">
+<h1>Criação de uma Lista</h1>
+<ul>
+<li>Criando lista com elementos previamente conhecidos:</li>
+</ul>
+<div class="sourceCode" id="ex2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex2-1"><a href="#ex2-1"></a>l1 <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span></code></pre></div>
+<ul>
+<li>Criando lista vazia:</li>
+</ul>
+<div class="sourceCode" id="ex3"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex3-1"><a href="#ex3-1"></a>l2 <span class="op">=</span> []</span></code></pre></div>
+</div>
+<div id="imprimir-toda-a-lista" class="slide section level1">
+<h1>Imprimir Toda a Lista</h1>
+<ul>
+<li>Simples e fácil!</li>
+</ul>
+<div class="sourceCode" id="ex4"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex4-1"><a href="#ex4-1"></a>L <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>]</span>
+<span id="ex4-2"><a href="#ex4-2"></a><span class="bu">print</span>(L)</span></code></pre></div>
+<ul>
+<li>Saída:</li>
+</ul>
+<div class="sourceCode" id="ex5"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex5-1"><a href="#ex5-1"></a><span class="op">&gt;&gt;&gt;</span>[<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>]</span></code></pre></div>
+</div>
+<div id="operador-de-acesso-i" class="slide section level1">
+<h1>Operador de Acesso (I)</h1>
+<ul>
+<li>Dada uma lista, podemos acessar seus elementos um por um.</li>
+<li>Todo elemento de uma lista tem um índice associado.
+<ul>
+<li>Este índice sempre começa em 0.</li>
+</ul></li>
+</ul>
+<div class="center">
+<p><img src="imagens/lista_ind.svg" id="lista" style="width:25.0%" /></p>
+</div>
+<ul>
+<li>O acesso é feito via este índice.</li>
+</ul>
+</div>
+<div id="operador-de-acesso-ii" class="slide section level1">
+<h1>Operador de Acesso (II)</h1>
+<div class="center">
+<p><img src="imagens/lista_ind.svg" id="listaInd" style="width:25.0%" /></p>
+</div>
+<ul>
+<li>Por exemplo, imprimir o primeiro elemento:</li>
+</ul>
+<div class="sourceCode" id="printLista"><pre class="sourceCode python"><code class="sourceCode python"><span id="printLista-1"><a href="#printLista-1"></a><span class="bu">print</span>(L[<span class="dv">0</span>])</span></code></pre></div>
+<ul>
+<li>Outro exemplo: somar o primeiro e o último elemento:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="ListaAcesso"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaAcesso-1"><a href="#ListaAcesso-1"></a>soma <span class="op">=</span> L[<span class="dv">0</span>] <span class="op">+</span> L[<span class="dv">4</span>]</span>
+<span id="ListaAcesso-2"><a href="#ListaAcesso-2"></a><span class="bu">print</span>(soma)</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+<div class="center">
+<p>ou</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="ListaAcesso2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaAcesso2-1"><a href="#ListaAcesso2-1"></a><span class="bu">print</span>(L[<span class="dv">0</span>] <span class="op">+</span> L[<span class="dv">4</span>])</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="operador-de-acesso-iii" class="slide section level1">
+<h1>Operador de Acesso (III)</h1>
+<ul>
+<li>O que acontece quando acessamos um elemento em posição da lista que não existe?</li>
+<li>Por exemplo, na lista <code>l = [10, 20, 30, 40, 50]</code>:
+<ul>
+<li>Acessar elemento na posição 5 (ou 6, 7,…).
+<ul>
+<li>Ex.: <code>print(l[5])</code></li>
+</ul></li>
+</ul></li>
+<li>Isto ocasionará um erro!</li>
+</ul>
+<pre style="font-size:14pt; color:red;">
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    IndexError: list index out of range
+</pre>
+</div>
+<div id="operador-de-acesso-iv" class="slide section level1">
+<h1>Operador de Acesso (IV)</h1>
+<ul>
+<li>Podemos .alert[<strong>alterar</strong>] o valor de um elemento da lista.</li>
+<li>Exemplo 1: mudar o valor do segundo elemento para 15.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="ListaAcesso3"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaAcesso3-1"><a href="#ListaAcesso3-1"></a>l <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>] <span class="co"># criação da lista l.</span></span>
+<span id="ListaAcesso3-2"><a href="#ListaAcesso3-2"></a>l[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">15</span> <span class="co"># alteração do segundo elemento.</span></span>
+<span id="ListaAcesso3-3"><a href="#ListaAcesso3-3"></a><span class="bu">print</span>(l) <span class="co"># impressão da lista l.</span></span></code></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<pre><code>[10, 15, 30, 40, 50]</code></pre>
+</div>
+</div>
+<ul>
+<li>Exemplo 2: mudar o valor do terceiro elemento para ‘a’.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="ListaAcesso3"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaAcesso3-1"><a href="#ListaAcesso3-1"></a>l <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="ListaAcesso3-2"><a href="#ListaAcesso3-2"></a>l[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&#39;a&#39;</span></span>
+<span id="ListaAcesso3-3"><a href="#ListaAcesso3-3"></a><span class="bu">print</span>(l)</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<pre><code>[10, 15, 30, 40, 50]</code></pre>
+</div>
+</div>
+</div>
+<div id="tamanho-de-uma-lista" class="slide section level1">
+<h1>Tamanho de uma Lista</h1>
+<ul>
+<li>Para capturar o tamanho de uma lista, existe a função <code>len</code>.</li>
+<li>Exemplo de uso:</li>
+</ul>
+<div class="sourceCode" id="ListaTamanho"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaTamanho-1"><a href="#ListaTamanho-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">22</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">9</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">14</span>, <span class="dv">17</span>]</span>
+<span id="ListaTamanho-2"><a href="#ListaTamanho-2"></a><span class="bu">print</span>(<span class="bu">len</span>(lista))</span></code></pre></div>
+<ul>
+<li>A saída será:</li>
+</ul>
+<pre><code>8</code></pre>
+</div>
+<div id="remover-elemento-de-lista" class="slide section level1">
+<h1>Remover Elemento de Lista</h1>
+<ul>
+<li>Função <code>del</code> remove elemento especificando sua posição.</li>
+<li>Exemplo de uso:</li>
+</ul>
+<div class="sourceCode" id="ListaRemocao"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaRemocao-1"><a href="#ListaRemocao-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">22</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">9</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">14</span>, <span class="dv">17</span>]</span>
+<span id="ListaRemocao-2"><a href="#ListaRemocao-2"></a><span class="kw">del</span> lista[<span class="dv">3</span>]</span>
+<span id="ListaRemocao-3"><a href="#ListaRemocao-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<ul>
+<li>A saída será:</li>
+</ul>
+<pre><code>[1, 22, 5, 9, -6, 14, 17]</code></pre>
+<ul>
+<li><code>del</code> serve para apagar uma lista também.</li>
+</ul>
+<div class="sourceCode" id="ListaRemocao2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaRemocao2-1"><a href="#ListaRemocao2-1"></a><span class="kw">del</span> lista</span></code></pre></div>
+</div>
+<div id="exercícios-i" class="slide section level1">
+<h1>Exercícios (I)</h1>
+<h2 id="responda">Responda:</h2>
+<ol style="list-style-type: decimal">
+<li>Suponha que tenhas uma lista que varia de tamanho.
+<ul>
+<li>Qual comando deve ser usado para imprimir o seu último elemento?</li>
+</ul></li>
+</ol>
+<h2 id="escreve-um-programa-em-python-que">Escreve um programa em Python que:</h2>
+<ol style="list-style-type: decimal">
+<li>Crie uma lista contendo todas as vogais;</li>
+<li>Troque a primeira vogal com a última e a a segunda com a penúltima.
+<ul>
+<li>O que aconteceu com a lista?</li>
+</ul></li>
+</ol>
+</div>
+<div id="pertinência-em-lista" class="slide section level1">
+<h1>Pertinência em Lista</h1>
+<ul>
+<li>O comando <code>in</code> pode ser usando para verificar se um elemento está em uma lista.</li>
+<li>Uso:</li>
+</ul>
+<div class="sourceCode" id="ListaIn"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaIn-1"><a href="#ListaIn-1"></a><span class="op">&gt;&gt;&gt;</span> elemento <span class="kw">in</span> lista</span></code></pre></div>
+<ul>
+<li>Retorna <code>True</code> ou <code>False</code>.</li>
+<li>Exemplo de uso:</li>
+</ul>
+<div class="sourceCode" id="ListaInEx"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaInEx-1"><a href="#ListaInEx-1"></a>lista <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>]</span>
+<span id="ListaInEx-2"><a href="#ListaInEx-2"></a><span class="cf">if</span> <span class="dv">8</span> <span class="kw">in</span> lista:</span>
+<span id="ListaInEx-3"><a href="#ListaInEx-3"></a>    <span class="bu">print</span>(<span class="dv">8</span>, <span class="st">&quot;está na lista&quot;</span>)</span>
+<span id="ListaInEx-4"><a href="#ListaInEx-4"></a><span class="cf">else</span>:</span>
+<span id="ListaInEx-5"><a href="#ListaInEx-5"></a>    <span class="bu">print</span>(<span class="dv">8</span>, <span class="st">&quot;não está na lista&quot;</span>)</span></code></pre></div>
+</div>
+<div id="iterar-em-lista" class="slide section level1">
+<h1>Iterar em Lista</h1>
+<ul>
+<li>Podemos usar um índice variando de 0 a tamanho da lista.
+<ul>
+<li>Depois, acessar cada elemento na repetição.</li>
+</ul></li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="ListaIterar"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaIterar-1"><a href="#ListaIterar-1"></a>lista <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>]</span>
+<span id="ListaIterar-2"><a href="#ListaIterar-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lista)):</span>
+<span id="ListaIterar-3"><a href="#ListaIterar-3"></a>    <span class="bu">print</span>(lista[i])</span></code></pre></div>
+</div>
+<div id="iterar-em-lista-ii" class="slide section level1">
+<h1>Iterar em Lista (II)</h1>
+<ul>
+<li>Outra forma: usar o operador <code>in</code> em um <code>for</code>.
+<ul>
+<li>A faixa de valores do <code>for</code> é a própria lista.</li>
+<li>A variável de índice do <code>for</code> passa a ser o elemento.</li>
+<li>Portanto, acessa-se o elemento <strong>diretamente</strong> por esta variável.</li>
+</ul></li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="ListaIterar2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaIterar2-1"><a href="#ListaIterar2-1"></a>lista <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>]</span>
+<span id="ListaIterar2-2"><a href="#ListaIterar2-2"></a><span class="cf">for</span> elem <span class="kw">in</span> lista:</span>
+<span id="ListaIterar2-3"><a href="#ListaIterar2-3"></a>    <span class="bu">print</span>(elem)</span></code></pre></div>
+</div>
+<div id="exercícios-ii" class="slide section level1">
+<h1>Exercícios (II)</h1>
+<h2 id="escreve-um-programa-em-python-que-1">Escreve um programa em Python que:</h2>
+<ol style="list-style-type: decimal">
+<li>Crie um conjunto com os seguintes elementos: {1, 4, 5, 3, 6, 7, 16, 11, 15}.</li>
+<li>Imprima os números múltiplos de 3 deste conjunto.</li>
+<li>Modifique a lista para que todos os números pares sejam alterados para suas metades.</li>
+<li>Remova da lista todos os múltiplos de 5 usando a função <code>del</code>.</li>
+</ol>
+</div>
+<div id="índices-negativos" class="slide section level1">
+<h1>Índices Negativos</h1>
+<ul>
+<li>Em Python é possível acessar posições da lista através de índices negativos.</li>
+<li>A correspondência é vista na figura:</li>
+</ul>
+<div class="center">
+<p><img src="imagens/lista_ind_neg.svg" id="listaNegativo" /></p>
+</div>
+<ul>
+<li>Experimente criar uma lista e acessar a posição -1 ou outro valor negativo.
+<ul>
+<li>O menor valor possível é <code>-len(lista)</code>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="operador-de-concatenação" class="slide section level1">
+<h1>Operador de Concatenação</h1>
+<ul>
+<li>Para juntar duas listas, usamos o operador de soma <code>+</code>.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="ListaConcat"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaConcat-1"><a href="#ListaConcat-1"></a>lista1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="ListaConcat-2"><a href="#ListaConcat-2"></a>lista2 <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]</span>
+<span id="ListaConcat-3"><a href="#ListaConcat-3"></a><span class="bu">print</span>(lista1 <span class="op">+</span> lista2)</span></code></pre></div>
+<ul>
+<li>Resultado:</li>
+</ul>
+<pre><code>[1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]</code></pre>
+</div>
+<div id="operador-de-multiplicação-i" class="slide section level1">
+<h1>Operador de Multiplicação (I)</h1>
+<ul>
+<li>O operador de multiplicação <code>*</code> serve para realizar cópias concatenadas de uma lista.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="ListaMult"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaMult-1"><a href="#ListaMult-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="ListaMult-2"><a href="#ListaMult-2"></a><span class="bu">print</span>(<span class="dv">3</span><span class="op">*</span>lista)</span></code></pre></div>
+<ul>
+<li>Resultado:</li>
+</ul>
+<pre><code>[1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
+</div>
+<div id="operador-de-multiplicação-ii" class="slide section level1">
+<h1>Operador de Multiplicação (II)</h1>
+<ul>
+<li>Útil para inicializar uma lista.
+<ul>
+<li>Exemplo: Criar uma lista de 10 inteiros iniciados com 0.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="ListaMult2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaMult2-1"><a href="#ListaMult2-1"></a>lista <span class="op">=</span> <span class="dv">10</span><span class="op">*</span>[<span class="dv">0</span>]</span>
+<span id="ListaMult2-2"><a href="#ListaMult2-2"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+</div>
+<div id="algumas-funções-sobre-lista" class="slide section level1">
+<h1>Algumas Funções sobre Lista</h1>
+<ul>
+<li><code>min</code>: retorna o menor valor de uma lista.</li>
+<li><code>max</code>: retorna o maior valor de uma lista.</li>
+<li><code>sum</code>: retorna a soma dos valores de uma lista.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="ListaFuncoes"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaFuncoes-1"><a href="#ListaFuncoes-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">12</span>]</span>
+<span id="ListaFuncoes-2"><a href="#ListaFuncoes-2"></a><span class="bu">print</span>(<span class="bu">min</span>(lista))</span>
+<span id="ListaFuncoes-3"><a href="#ListaFuncoes-3"></a><span class="bu">print</span>(<span class="bu">max</span>(lista))</span>
+<span id="ListaFuncoes-4"><a href="#ListaFuncoes-4"></a><span class="bu">print</span>(<span class="bu">sum</span>(lista))</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<p>-Saída:</p>
+<pre><code>-7
+12
+22</code></pre>
+</div>
+</div>
+</div>
+<div id="alguns-métodos-de-lista-append" class="slide section level1">
+<h1>Alguns Métodos de Lista: Append</h1>
+<ul>
+<li>Método <code>append</code>: adiciona um elemento ao final da lista.</li>
+</ul>
+<div class="sourceCode" id="ListaAppend"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaAppend-1"><a href="#ListaAppend-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>]</span>
+<span id="ListaAppend-2"><a href="#ListaAppend-2"></a>lista.append(<span class="dv">2</span>)</span>
+<span id="ListaAppend-3"><a href="#ListaAppend-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre><code>[1, 4, 7, 2]</code></pre>
+</div>
+<div id="alguns-métodos-de-lista-pop-i" class="slide section level1">
+<h1>Alguns Métodos de Lista: Pop (I)</h1>
+<ul>
+<li>Método <code>pop</code>: remove e retorna o último elemento da lista.</li>
+</ul>
+<div class="sourceCode" id="ListaPop"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaPop-1"><a href="#ListaPop-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>]</span>
+<span id="ListaPop-2"><a href="#ListaPop-2"></a>x <span class="op">=</span> lista.pop()</span>
+<span id="ListaPop-3"><a href="#ListaPop-3"></a><span class="bu">print</span>(x, lista)</span></code></pre></div>
+<pre><code>7 [1, 4]</code></pre>
+</div>
+<div id="alguns-métodos-de-lista-pop-ii" class="slide section level1">
+<h1>Alguns Métodos de Lista: Pop (II)</h1>
+<ul>
+<li>O método <code>pop</code> também aceita indicar o índice do elemento a ser removido.</li>
+</ul>
+<div class="sourceCode" id="ListaPop"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaPop-1"><a href="#ListaPop-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>]</span>
+<span id="ListaPop-2"><a href="#ListaPop-2"></a>x <span class="op">=</span> lista.pop(<span class="dv">1</span>)</span>
+<span id="ListaPop-3"><a href="#ListaPop-3"></a><span class="bu">print</span>(x, lista)</span></code></pre></div>
+<pre><code>4 [1, 7]</code></pre>
+</div>
+<div id="alguns-métodos-de-lista-pop-iii" class="slide section level1">
+<h1>Alguns Métodos de Lista: Pop (III)</h1>
+<ul>
+<li>Se tentar realizar o <code>pop</code> em um índice que não existe:</li>
+</ul>
+<div class="sourceCode" id="ListaPop"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaPop-1"><a href="#ListaPop-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>]</span>
+<span id="ListaPop-2"><a href="#ListaPop-2"></a>x <span class="op">=</span> lista.pop(<span class="dv">3</span>)</span>
+<span id="ListaPop-3"><a href="#ListaPop-3"></a><span class="bu">print</span>(x, lista)</span></code></pre></div>
+<pre><code>    Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+    IndexError: pop index out of range</code></pre>
+</div>
+<div id="alguns-métodos-de-lista-pop-iv" class="slide section level1">
+<h1>Alguns Métodos de Lista: Pop (IV)</h1>
+<ul>
+<li>Forma segura de usar o método <code>pop</code> com índice:</li>
+</ul>
+<div class="sourceCode" id="ListaPop2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaPop2-1"><a href="#ListaPop2-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">41</span>]</span>
+<span id="ListaPop2-2"><a href="#ListaPop2-2"></a><span class="bu">print</span>(<span class="st">&#39;Lista ao inicio:&#39;</span>)</span>
+<span id="ListaPop2-3"><a href="#ListaPop2-3"></a><span class="bu">print</span>(lista)</span>
+<span id="ListaPop2-4"><a href="#ListaPop2-4"></a>elem <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Entre com o indice do elemento a ser removido: &#39;</span>))</span>
+<span id="ListaPop2-5"><a href="#ListaPop2-5"></a><span class="cf">if</span> elem <span class="op">&lt;</span> <span class="bu">len</span>(lista):</span>
+<span id="ListaPop2-6"><a href="#ListaPop2-6"></a>    x <span class="op">=</span> lista.pop(elem)</span>
+<span id="ListaPop2-7"><a href="#ListaPop2-7"></a>    <span class="bu">print</span>(<span class="st">&#39;Elemento removido:&#39;</span>, x)</span>
+<span id="ListaPop2-8"><a href="#ListaPop2-8"></a>elem <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Entre com o elemento a ser removido: &#39;</span>))</span>
+<span id="ListaPop2-9"><a href="#ListaPop2-9"></a><span class="cf">if</span> elem <span class="kw">in</span> lista:</span>
+<span id="ListaPop2-10"><a href="#ListaPop2-10"></a>    x <span class="op">=</span> lista.pop(elem)</span>
+<span id="ListaPop2-11"><a href="#ListaPop2-11"></a>    <span class="bu">print</span>(<span class="st">&#39;Elemento removido:&#39;</span>, x)</span>
+<span id="ListaPop2-12"><a href="#ListaPop2-12"></a><span class="bu">print</span>(<span class="st">&#39;Lista ao final:&#39;</span>)</span>
+<span id="ListaPop2-13"><a href="#ListaPop2-13"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+</div>
+<div id="alguns-métodos-de-lista-insert-i" class="slide section level1">
+<h1>Alguns Métodos de Lista: Insert (I)</h1>
+<ul>
+<li>Método <code>insert</code>: insere um elemento na lista em uma posição específica.</li>
+</ul>
+<div class="sourceCode" id="ListaInsert"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaInsert-1"><a href="#ListaInsert-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>]</span>
+<span id="ListaInsert-2"><a href="#ListaInsert-2"></a>lista.insert(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="ListaInsert-3"><a href="#ListaInsert-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre><code>[1, 2, 4, 7]</code></pre>
+</div>
+<div id="alguns-métodos-de-lista-remove-i" class="slide section level1">
+<h1>Alguns Métodos de Lista: Remove (I)</h1>
+<ul>
+<li>Método <code>remove</code>: remove a primeira ocorrência de um dado elemento da lista.
+<ul>
+<li>Elemento deve existir na lista e, caso contrário, ocorrerá erro!</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="ListaRemove"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaRemove-1"><a href="#ListaRemove-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaRemove-2"><a href="#ListaRemove-2"></a>lista.remove(<span class="dv">4</span>)</span>
+<span id="ListaRemove-3"><a href="#ListaRemove-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre><code>[1, 7, 3, 4]</code></pre>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="ListaRemove2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaRemove2-1"><a href="#ListaRemove2-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaRemove2-2"><a href="#ListaRemove2-2"></a>lista.remove(<span class="dv">5</span>)</span>
+<span id="ListaRemove2-3"><a href="#ListaRemove2-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre><code>ValueError: list.remove(x): x not in list</code></pre>
+</div>
+</div>
+</div>
+<div id="alguns-métodos-de-lista-remove-ii" class="slide section level1">
+<h1>Alguns Métodos de Lista: Remove (II)</h1>
+<ul>
+<li>Forma segura de usar o método <code>remove</code>:</li>
+</ul>
+<div class="sourceCode" id="ListaRemove2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaRemove2-1"><a href="#ListaRemove2-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaRemove2-2"><a href="#ListaRemove2-2"></a><span class="cf">if</span> <span class="dv">4</span> <span class="kw">in</span> lista:</span>
+<span id="ListaRemove2-3"><a href="#ListaRemove2-3"></a>    lista.remove(<span class="dv">4</span>)</span>
+<span id="ListaRemove2-4"><a href="#ListaRemove2-4"></a><span class="cf">if</span> <span class="dv">5</span> <span class="kw">in</span> lista:</span>
+<span id="ListaRemove2-5"><a href="#ListaRemove2-5"></a>    lista.remove(<span class="dv">5</span>)</span>
+<span id="ListaRemove2-6"><a href="#ListaRemove2-6"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+</div>
+<div id="alguns-métodos-de-lista-count" class="slide section level1">
+<h1>Alguns Métodos de Lista: Count</h1>
+<ul>
+<li>Método <code>count</code>: retorna quantos de um dado elemento há numa lista.</li>
+</ul>
+<div class="sourceCode" id="ListaCount"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaCount-1"><a href="#ListaCount-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaCount-2"><a href="#ListaCount-2"></a><span class="bu">print</span>(<span class="st">&quot;Há&quot;</span>, lista.count(<span class="dv">4</span>), <span class="st">&quot;número(s) 4 na lista.&quot;</span>)</span></code></pre></div>
+<pre><code>Há 2 número(s) 4 na lista.</code></pre>
+</div>
+<div id="alguns-métodos-de-lista-reverse" class="slide section level1">
+<h1>Alguns Métodos de Lista: Reverse</h1>
+<ul>
+<li>Método <code>reverse</code>: inverte uma lista (modifica a lista).</li>
+</ul>
+<div class="sourceCode" id="ListaReverse"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaReverse-1"><a href="#ListaReverse-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaReverse-2"><a href="#ListaReverse-2"></a>lista.reverse()</span>
+<span id="ListaReverse-3"><a href="#ListaReverse-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre><code>[4, 3, 7, 4, 1]</code></pre>
+</div>
+<div id="alguns-métodos-de-lista-sort" class="slide section level1">
+<h1>Alguns Métodos de Lista: Sort</h1>
+<ul>
+<li>Método <code>sort</code>: ordena crescentemente uma lista (modifica a lista).</li>
+</ul>
+<div class="sourceCode" id="ListaSort"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaSort-1"><a href="#ListaSort-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaSort-2"><a href="#ListaSort-2"></a>lista.sort()</span>
+<span id="ListaSort-3"><a href="#ListaSort-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre><code>[1, 3, 4, 4, 7]</code></pre>
+<ul>
+<li>Para ordenar decrescentemente, usar argumento <code>reverse=True</code>:</li>
+</ul>
+<div class="sourceCode" id="ListaSort2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaSort2-1"><a href="#ListaSort2-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaSort2-2"><a href="#ListaSort2-2"></a>lista.sort(reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="ListaSort2-3"><a href="#ListaSort2-3"></a><span class="bu">print</span>(lista)</span>
+<span id="ListaSort2-4"><a href="#ListaSort2-4"></a>```</span>
+<span id="ListaSort2-5"><a href="#ListaSort2-5"></a></span>
+<span id="ListaSort2-6"><a href="#ListaSort2-6"></a>```</span>
+<span id="ListaSort2-7"><a href="#ListaSort2-7"></a>[<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
+<span id="ListaSort2-8"><a href="#ListaSort2-8"></a>```</span>
+<span id="ListaSort2-9"><a href="#ListaSort2-9"></a></span>
+<span id="ListaSort2-10"><a href="#ListaSort2-10"></a><span class="co"># Alguns Métodos de Lista: Index</span></span>
+<span id="ListaSort2-11"><a href="#ListaSort2-11"></a></span>
+<span id="ListaSort2-12"><a href="#ListaSort2-12"></a><span class="op">-</span> Método `index`: retorna o índice da primeira ocorrerá de um elemento.</span>
+<span id="ListaSort2-13"><a href="#ListaSort2-13"></a></span>
+<span id="ListaSort2-14"><a href="#ListaSort2-14"></a><span class="op">~~~</span>{<span class="co">#ListaIndex .python}</span></span>
+<span id="ListaSort2-15"><a href="#ListaSort2-15"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaSort2-16"><a href="#ListaSort2-16"></a><span class="bu">print</span>(lista.index(<span class="dv">4</span>))</span></code></pre></div>
+<pre><code>1</code></pre>
+</div>
+<div id="mais-métodos-copiando-listas-i" class="slide section level1">
+<h1>Mais Métodos: Copiando Listas (I)</h1>
+<ul>
+<li>Usando atribuição, há apenas a <strong>cópia da referência da lista</strong>.
+<ul>
+<li>Neste caso, uma alteração em uma das listas causa modificação em ambas.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="ListaCopia"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaCopia-1"><a href="#ListaCopia-1"></a>l1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaCopia-2"><a href="#ListaCopia-2"></a>l2 <span class="op">=</span> l1</span>
+<span id="ListaCopia-3"><a href="#ListaCopia-3"></a>l2[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">9</span></span>
+<span id="ListaCopia-4"><a href="#ListaCopia-4"></a><span class="bu">print</span>(<span class="st">&quot;l1:&quot;</span>, l1, <span class="st">&quot;e l2:&quot;</span>, l2)</span></code></pre></div>
+<pre><code>l1: [1, 4, 7, 9, 4] e l2: [1, 4, 7, 9, 4]</code></pre>
+</div>
+<div id="mais-métodos-copiando-listas-ii" class="slide section level1">
+<h1>Mais Métodos: Copiando Listas (II)</h1>
+<ul>
+<li>Para realmente gerar uma cópia, usa-se o método <code>copy</code>.</li>
+</ul>
+<div class="sourceCode" id="ListaCopia2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaCopia2-1"><a href="#ListaCopia2-1"></a>l1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="ListaCopia2-2"><a href="#ListaCopia2-2"></a>l2 <span class="op">=</span> l1.copy()</span>
+<span id="ListaCopia2-3"><a href="#ListaCopia2-3"></a>l2[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">9</span></span>
+<span id="ListaCopia2-4"><a href="#ListaCopia2-4"></a><span class="bu">print</span>(<span class="st">&quot;l1:&quot;</span>, l1, <span class="st">&quot;e l2:&quot;</span>, l2)</span></code></pre></div>
+<pre><code>l1: [1, 4, 7, 3, 4] e l2: [1, 4, 7, 9, 4]</code></pre>
+</div>
+<div id="exercícios-iii" class="slide section level1">
+<h1>Exercícios (III)</h1>
+<ul>
+<li><strong>Sem executar</strong>, indique o resultado das impressões do código abaixo.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="Exercico3"><pre class="sourceCode python"><code class="sourceCode python"><span id="Exercico3-1"><a href="#Exercico3-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">6</span>]</span>
+<span id="Exercico3-2"><a href="#Exercico3-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">7</span>):</span>
+<span id="Exercico3-3"><a href="#Exercico3-3"></a>    lista.append(i)</span>
+<span id="Exercico3-4"><a href="#Exercico3-4"></a><span class="bu">print</span>(lista)</span>
+<span id="Exercico3-5"><a href="#Exercico3-5"></a>lista.sort()</span>
+<span id="Exercico3-6"><a href="#Exercico3-6"></a><span class="bu">print</span>(lista)</span>
+<span id="Exercico3-7"><a href="#Exercico3-7"></a>lista.insert(<span class="dv">6</span>, <span class="dv">9</span>)</span>
+<span id="Exercico3-8"><a href="#Exercico3-8"></a><span class="bu">print</span>(lista)</span>
+<span id="Exercico3-9"><a href="#Exercico3-9"></a>lista.remove(<span class="dv">10</span>)</span>
+<span id="Exercico3-10"><a href="#Exercico3-10"></a><span class="bu">print</span>(lista)</span>
+<span id="Exercico3-11"><a href="#Exercico3-11"></a>lista.remove(<span class="dv">6</span>)</span>
+<span id="Exercico3-12"><a href="#Exercico3-12"></a><span class="bu">print</span>(lista)</span>
+<span id="Exercico3-13"><a href="#Exercico3-13"></a>lista.reverse()</span>
+<span id="Exercico3-14"><a href="#Exercico3-14"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<p><br><br> - Ao final, execute o programa em um interpretador de Python para verificar sua resposta.</p>
+</div>
+</div>
+</div>
+<div id="exercícios-iv" class="slide section level1">
+<h1>Exercícios (IV)</h1>
+<h4 id="para-cada-item-escreva-um-programa-python-que">Para cada item, escreva um programa Python que:</h4>
+<ol style="list-style-type: decimal">
+<li>Crie uma lista vazia e adicione valores inteiros positivos que o usuário digitar (leitura termina quando usuário digitar -1 ou um número negativo). Depois, percorra a lista e calcule o somatório dos elementos.</li>
+<li>Crie uma lista com valores aleatórios entre 0 e 10, peça um número inteiro para o usuário e indique se o número está na lista e qual a sua posição na lista.</li>
+</ol>
+</div>
+</body>
+</html>
