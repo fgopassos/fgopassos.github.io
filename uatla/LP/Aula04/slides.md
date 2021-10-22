@@ -1,6 +1,6 @@
 ---
 author: Fernanda Passos
-note: Programação Avançada
+note: Linguagem de Programação
 date:
 subtitle: Aula 04
 title: Listas em Python
