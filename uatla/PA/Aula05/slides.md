@@ -639,4 +639,4 @@ print(lista)
 #### Para cada item, escreva um programa Python que:
 
 1. Crie uma lista vazia e adicione valores inteiros positivos que o usuário digitar (leitura termina quando usuário digitar -1 ou um número negativo). Depois, percorra a lista e calcule o somatório dos elementos.
-2. Crie uma lista com valores aleatórios entre 0 e 10, peça um número inteiro para o usuário e indique se o número está na lista e qual a sua posição na lista.
+2. Crie uma lista de 10 números inteiros com valores aleatórios entre 1 e 20, peça um número inteiro para o usuário e indique se o número digitado está na lista e qual a sua posição na lista.
