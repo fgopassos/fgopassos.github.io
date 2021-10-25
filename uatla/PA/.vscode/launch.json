@@ -1,0 +1,7 @@
+{
+    "name": "Markdown to Slidy",
+    "request": "launch",
+    "program": "/home/fernanda/Documentos/Atlântica/SlidesMdPandoc/bin/md2slidy.sh",
+    "externalConsole": true,
+    "args": ["-i", "slides.md", "-o", "slides.html", "-p", "../template"]
+  }

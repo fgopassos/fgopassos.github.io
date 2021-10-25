@@ -129,7 +129,7 @@ print(L[0] + L[4])
 
 # Operador de Acesso (IV)
 
-- Podemos .alert[**alterar**] o valor de um elemento da lista.
+- Podemos **alterar** o valor de um elemento da lista.
 - Exemplo 1: mudar o valor do segundo elemento para 15.
 
 :::::{.columns}
