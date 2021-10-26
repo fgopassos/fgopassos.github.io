@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Fernanda Passos" />
-  <title>Funções em Python</title>
+  <title>Modularização em Python</title>
   <style type="text/css">
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -94,7 +94,7 @@
   <div class="informationHolder">
     <p class="institute">Universidade Atlântica</p>
     <img class="logo" src="../atlantica_logo2.svg"></img>
-    <h1 class="title">Funções em Python</h1>
+    <h1 class="title">Modularização em Python</h1>
     <p class="subtitle">Aula 06</p>
     <p class="author">
 Fernanda Passos
@@ -102,13 +102,50 @@ Fernanda Passos
     <p class="note">Programação Avançada</p>
   </div>
 </div>
-<div id="funções-em-python" class="slide section level1 part">
-<h1 class="part">Funções em Python</h1>
+<div id="modularização-i" class="slide section level1">
+<h1>Modularização (I)</h1>
+<ul>
+<li>Permite organizar o código em partes/módulos.
+<ul>
+<li>Também chamado de sub-programas.</li>
+</ul></li>
+<li>Cada módulo tem seu objetivo.</li>
+<li>Pode possuir entradas e saídas.
+<ul>
+<li>Geralmente entradas são computadas pelo código do módulo</li>
+</ul></li>
+<li>Há dois tipos de módulos:
+<ul>
+<li><strong>Função</strong>: retorna valor.</li>
+<li><strong>Procedimento</strong>: não retorna valor.</li>
+</ul></li>
+</ul>
+</div>
+<div id="modularização-ii" class="slide section level1">
+<h1>Modularização (II)</h1>
+<ul>
+<li>Na <strong>declaração</strong> de um módulo, deve indicar:
+<ul>
+<li>nome: identificador;</li>
+<li>argumentos ou parâmetros: dados de entrada e/ou saída.</li>
+<li>retorno: se for uma função.</li>
+</ul></li>
+<li>Assinatura: definição do módulo contendo nome e argumentos…</li>
+<li>Na <strong>chamada</strong> de um módulo:
+<ul>
+<li>o nome deve ser utilizado;</li>
+<li>os parâmetros devem corresponder à assinatura do módulo;</li>
+<li>se for função, associar o retorno a alguma ação (atribuir a uma variável, imprimir, …).</li>
+</ul></li>
+</ul>
+</div>
+<div id="funções-e-procedimentos-em-python" class="slide section level1 part">
+<h1 class="part">Funções e Procedimentos em Python</h1>
 </div>
 <div id="declaração-de-funções-em-python" class="slide section level1">
 <h1>Declaração de Funções em Python</h1>
 <ul>
-<li>Funções (e procedimentos) em Python são implementados usando <code>def</code>.
+<li>Funções em Python são implementadas usando <code>def</code>.
 <ul>
 <li>Define o <strong>bloco</strong> da função/procedimento.</li>
 </ul></li>
@@ -180,8 +217,8 @@ Fernanda Passos
 <li>Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.</li>
 </ol>
 </div>
-<div id="escopo-de-variáveis" class="slide section level1">
-<h1>Escopo de Variáveis</h1>
+<div id="escopo-de-variáveis-i" class="slide section level1">
+<h1>Escopo de Variáveis (I)</h1>
 <ul>
 <li>O escopo de uma variável indica sua visibilidade.
 <ul>
@@ -260,6 +297,33 @@ Fernanda Passos
 <span id="ex1-8"><a href="#ex1-8"></a><span class="bu">print</span>(x, y)</span></code></pre></div>
 </div>
 </div>
+</div>
+<div id="parâmetros-em-lp" class="slide section level1">
+<h1>Parâmetros em LP</h1>
+<ul>
+<li>Há 2 tipos de passagem de parâmetros:
+<ul>
+<li><strong>Passagem por valor:</strong> apenas o valor da variável é passado para o escopo do módulo.
+<ul>
+<li>Há uma cópia do valor internamente.</li>
+<li>Alterações no parâmetro não modificam a variável externa ao módulo.</li>
+</ul></li>
+<li><strong>Passagem por referência:</strong> é passada a referência da variável.
+<ul>
+<li>Logo, valor da variável pode mudar.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="parâmetros-em-python" class="slide section level1">
+<h1>Parâmetros em Python</h1>
+<ul>
+<li>Python distingue objetos como <strong>mutável</strong> e <strong>imutável</strong>.</li>
+<li>Objetos mutáveis: seu
+<ul>
+<li>Exemplos: variáveis de</li>
+</ul></li>
+</ul>
 </div>
 <div id="parâmetros-de-função" class="slide section level1">
 <h1>Parâmetros de Função</h1>

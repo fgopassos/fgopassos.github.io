@@ -3,22 +3,39 @@ author: Fernanda Passos
 note: Programação Avançada
 date:
 subtitle: Aula 06
-title: Módulos/Funções em Python
+title: Modularização em Python
 institute: Universidade Atlântica
 logo: ../atlantica_logo2.svg
 ---
 
-# Módulos: Procedimentos e Funções
+# Modularização (I)
 
-# Módulos
+- Permite organizar o código em partes/módulos.
+    - Também chamado de sub-programas.
+- Cada módulo tem seu objetivo.
+- Pode possuir entradas e saídas.
+    - Geralmente entradas são computadas pelo código do módulo 
+- Há dois tipos de módulos:
+    - **Função**: retorna valor.
+    - **Procedimento**: não retorna valor.
 
-- 
+# Modularização (II)
 
-# Funções em Python{.part}
+- Na **declaração** de um módulo, deve indicar:
+    - nome: identificador;
+    - argumentos ou parâmetros: dados de entrada e/ou saída.
+    - retorno: se for uma função.
+- Assinatura: definição do módulo contendo nome e argumentos...
+- Na **chamada** de um módulo:
+    - o nome deve ser utilizado;
+    - os parâmetros devem corresponder à assinatura do módulo;
+    - se for função, associar o retorno a alguma ação (atribuir a uma variável, imprimir, ...).
+
+# Funções e Procedimentos em Python{.part}
 
 # Declaração de Funções em Python
 
-- Funções (e procedimentos) em Python são implementados usando `def`.
+- Funções em Python são implementadas usando `def`.
     - Define o **bloco** da função/procedimento.
 - Sintaxe de função (com retorno):
 
@@ -88,7 +105,7 @@ cabecalho("Olá mundo!", "Fernanda")
 2. Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.
 
 
-# Escopo de Variáveis
+# Escopo de Variáveis (I)
 
 - O escopo de uma variável indica sua visibilidade.
     - Isto é, onde a variável é acessível (leitura) no código.
