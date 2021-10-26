@@ -2,411 +2,666 @@
 author: Fernanda Passos
 note: Programação Avançada
 date:
-subtitle: Aula 06
+subtitle: Aula 07
 title: Modularização em Python
 institute: Universidade Atlântica
 logo: ../atlantica_logo2.svg
 ---
 
-# Vetores em Python {.part}
+# Modularização (I)
 
-# Vetores
+- Permite organizar o código em partes/módulos.
+    - Também chamado de sub-programas.
+- Cada módulo tem seu objetivo.
+- Pode possuir entradas e saídas.
+    - Geralmente entradas são computadas pelo código do módulo 
+- Há dois tipos de módulos:
+    - **Função**: retorna valor.
+    - **Procedimento**: não retorna valor.
 
-- Vetor ou *array* é um conjunto de elementos do mesmo tipo.
-    - É um conceito.
-- Exemplos:
-    - um vetor de inteiros &rarr; `vet1 = [1, 2, 3, 6]`
-    - um vetor de reais &rarr; `vet2 = [1.0, 3.1, 7.6, 8.9, 9.0]`
-    - um vetor de lógicos &rarr; `vet3 = [True, False, True]`
-    - um vetor de strings &rarr; `vet4 = ['A', 'casa', 'é', 'pequena']`
-- Também chamado de matriz unidimensional.
+# Modularização (II)
 
-# Vetores em Python
+- Na **declaração** de um módulo, deve indicar:
+    - nome: identificador;
+    - argumentos ou parâmetros: dados de entrada e/ou saída.
+    - retorno: se for uma função.
+- Assinatura: definição do módulo contendo nome e argumentos...
+- Na **chamada** de um módulo:
+    - o nome deve ser utilizado;
+    - os parâmetros devem corresponder à assinatura do módulo;
+    - se for função, associar o retorno a alguma ação (atribuir a uma variável, imprimir, ...).
 
-- Em Python, podemos usar listas para representar.
+# Funções e Procedimentos em Python{.part}
 
-```Python
-vet1 = [1, 2, 3, 6]
-vet2 = [1.0, 3.1, 7.6, 8.9, 9.0]
-vet3 = [True, False, True]
-vet4 = ['A', 'casa', 'é', 'pequena']
-```
-- Embora listas em Python permite criar conjuntos de quaisquer valores.
+# Declaração de Funções em Python
 
-# Uso de Vetores/Listas
+- Funções em Python são implementadas usando `def`.
+    - Define o **bloco** da função/procedimento.
+- Sintaxe de função (com retorno):
 
-- Imagine o seguinte problema a ser resolvido de forma algorı́tmica:
-    - Calcular a média das notas de 10 alunos de uma disciplina e determinar o número de alunos que tiveram a nota superior à média calculada.
-- Como resolver?
+~~~{#ex1 .python}
+def nome_funcao(parametros):
+    # Corpo da função
+    return valor_retorno
+~~~
 
-# Uso de Vetores/Listas (II)
+- `nome_funcao` é identificador (letras, algarismos - não no início - e '_').
+- `parametros` é opcional e são separados por vírgula.
+- `valor_retorno` é o valor de retorno da função.
 
-#### Tentativa 1:
+# Declaração de Procedimentos em Python
 
-```Python
-soma = 0
-for i in range(10):
-    n = int(input("Entre com a nota " + str(i) + ": "))
-    soma = soma + n
-media = soma/10
-# contar quantos alunos estão acima da média.
-```
+- Similar à função, mas **sem** `return`.
+- Sintaxe de procedimento:
 
-- Repare que antes de contar, precisamos calcular a média.
-    - Mas então, como indicar quantos alunos estão acima da média se não temos mais os valores das notas?
+~~~{#ex1 .python}
+def nome_procedimento(parametros):
+    # Corpo do procedimento
+~~~
 
-# Uso de Vetores/Listas (III)
+- `nome_procedimento` é identificador (letras, algarismos - não no início - e '_').
+- `parametros` é opcional e são separados por vírgula.
+    - Parênteses são obrigatórios mesmo sem parâmetros!
 
-- Precisamos **guardar** as notas para isso!
-    - Usar vetor/lista!
+# Chamada de Funções
 
-```Python
-notas = 10*[0] # Cria vetor de 10 posições
-soma = 0
-for i in range(10):
-    notas[i] = int(input("Entre com a nota " + str(i) + ": "))
-    soma = soma + notas[i]
-media = soma/10
-cont = 0
-for i in range(10):
-    if notas[i] > media:
-        cont = cont + 1
-print("Existem", cont, "alunos acima da média", media)
-```
+- Exemplo de uma função que implementa uma equação de segundo grau:
 
-- <a  href="https://repl.it/@fgopassos/media" target="_blank">Solução no Repl.it</a>
+~~~{#ex1 .python}
+# Definição da função f1:
+def f1(x):
+    y = x**2 - 2*x + 4
+    return y
 
-# Exercícios (I)
+num = float(input("Entre com um numero: "))
+# Chamada de f1:
+resultado = f1(num)
+print(resultado)
+~~~
 
-#### Para cada item, escreva um programa Python que:
+- Função/Procedimento deve ser declarando antes de uso!
 
-1. Peça 10 valores reais ao usuário e indique quantos estão acima de (mínimo + máximo)/2. Pode usar as funções min e max.
-2. Obtenha a temperatura média de cada mês do ano e mostre todas as temperaturas acima da média anual, e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro,...). Sugestão: usar uma lista para armazenar o nome por extenso de cada mês.
+# Chamada de Procedimentos
+
+- Exemplo de procedimento que imprime cabeçalho:
+
+~~~{#ex1 .python}
+# Definicao do procedimento cabecalho:
+def cabecalho(nome_programa, autor):
+    print('******************************')
+    print('{:^30}'.format(nome_programa))
+    print('{:^30}'.format("Autor: " + autor))
+    print('******************************')
+
+# Chamada de cabecalho:
+cabecalho("Olá mundo!", "Fernanda")
+~~~
+
+# Exercício I
+
+## Faça o que se pede em Python:
+
+1. Escreva uma função que indique o maior valor entre 3 números.
+2. Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.
+
+
+# Escopo de Variáveis (I)
+
+- O escopo de uma variável indica sua visibilidade.
+    - Isto é, onde a variável é acessível (leitura) no código.
+- Os escopos podem ser:
+    - **global**: variáveis são acessíveis em todos os escopos.
+    - **local**: variáveis são acessíveis apenas no escopo em que foram declaradas.
+
+:::::::{.center}
+![](imagens/escopo.svg){#escopo width=60%}
+:::::::
+
+# Escopo de Variáveis (II)
+
+- Exemplo de acesso à variável de escopo inexistente:
+
+:::::{.columns}
+::::{.column width=45%}
+~~~{#ex1 .python}
+def f2():
+    x = 10
+
+f2()
+print(x)
+~~~
+::::
+::::{.column width=5%}
+::::
+::::{.column width=50%}
+<br>
+<span style="color:red">Erro!</span>
+<br>
+`x` está no escopo local de `f2` e é acessível apenas em `f2`.
+::::
+:::::
+
+- Exemplo de acesso à variável em escopo global:
+
+
+:::::{.columns}
+::::{.column width=45%}
+~~~{#ex1 .python}
+def f3():
+    x = y + 10
+    print(x)
+
+y = 2
+f2()
+~~~
+::::
+::::{.column width=5%}
+::::
+::::{.column width=50%}
+<br>
+Ok!<br> `y` está em escopo global, acessível pelo escopo de `f3`!
+::::
+:::::
+
+# Exercício (II)
+
+## Para cada código abaixo, indique o que será impresso:
+
+:::::{.columns}
+::::{.column width=47%}
+~~~{#ex1 .python}
+# Programa 1:
+def f1():
+    x = y + 10
+    z = y + 1
+    print(x, z)
+
+y = 5
+f1()
+print(y)
+~~~
+
+::::
+::::{.column width=6%}
+::::
+::::{.column width=47%}
+~~~{#ex1 .python}
+# Programa 2:
+def f2():
+    x = y + 10
+    print(x, y)
+
+y = 5
+f2()
+print(x, y)
+~~~
+
+::::
+:::::
+
+# Parâmetros em LP
+
+- Há 2 tipos de passagem de parâmetros:
+    - **Passagem por valor:** apenas o valor da variável é passado para o escopo do módulo.
+        - Há uma cópia do valor internamente.
+        - Alterações no parâmetro não modificam a variável externa ao módulo.
+    - **Passagem por referência:** é passada a referência da variável.
+        - Logo, valor da variável pode mudar.
+
+# Parâmetros em Python
+
+- Python distingue objetos como **mutável** e **imutável**.
+- Objetos mutáveis: seu
+    - Exemplos: variáveis de 
+
+# Parâmetros de Função
+
+- Podem ser de tipos primitivos: números, strings, booleanos...
+- Parâmetro é nova variável e valor é copiado para ela.
+    - Está dentro de escopo local!
+- Modificação de parâmetro só é visível dentro de escopo da função.
+    - A cópia é modificada.
+
+~~~ Python
+def f(y):
+    y = "laranja"
+    print("Dentro de f:", y)
+
+y = "uva"
+print("Antes de chamar f:", y)
+f(y)
+print("Depois de chamar f:", y)
+~~~
+
+~~~
+Antes de chamar f: uva
+Dentro de f: laranja
+Depois de chamar f: uva
+~~~
+
+# Parâmetros de Função (II)
+
+- Podem também ser listas, tuplas e dicionários.
+- Agora, é importante fazer distinção entre .alert[referência] e .alert[valor].
+
+~~~{#ex1 .python}
+l = [1, 2, 3]
+~~~
+
+- Neste exemplo, `l` é **referência**.
+    - Os elementos são os **valores**.
+- Em Python, apenas a referência de `l` é copiada para a variável local do parâmetro da função.
+
+~~~{#ex1 .python}
+def func(v):
+    print(v)
+
+l = [1, 2, 3]
+~~~
+
+# Parâmetros de Função (III)
+
+- Alterar **referência** .alert[não modifica] lista externamente:
+
+~~~ Python
+def func(v):
+    v = [10, 20, 30]
+    print("Dentro da função:", v)
+
+l = [1, 2, 3]
+print("Antes de chamar a função:", l)
+func(l)
+print("Depois de chamar a função:", l)
+~~~
+
+~~~
+Antes de chamar a função: [1, 2, 3]
+Dentro da função: [10, 20, 30]
+*Depois de chamar a função: [1, 2, 3]
+~~~
+
+# Parâmetros de Função (IV)
+
+- Alterar **valor** .alert[modifica] a lista externamente:
+
+~~~ Python
+def func(v):
+    v[0] = 10
+    v[1] = 20
+    print("Dentro da função:", v)
+
+l = [1, 2, 3]
+print("Antes de chamar a função:", l)
+func(l)
+print("Depois de chamar a função:", l)
+~~~
+
+~~~
+Antes de chamar a função: [1, 2, 3]
+Dentro da função: [10, 20, 3]
+*Depois de chamar a função: [10, 20, 3]
+~~~
+
+# Retorno de Funções
+
+- O retorno pode ser de qualquer tipo.
+    - Primitivos: int, float, bool...
+    - Strings, listas, tuplas, dicionários...
+- Exemplo retornando lista:
+
+
+~~~ Python
+def pares(x, y):
+    lista = []
+    for i in range(x, y+1):
+        if i % 2 == 0:
+            lista.append(i)
+    return(lista)
+
+print(pares(3, 10))
+~~~
+
+~~~
+[4, 6, 8, 10]
+~~~
+
+# Retorno de Funções (II)
+
+- Exemplo retornando tupla:
+
+~~~ Python
+# Função que retorna o menor elemento e sua posição no vetor.
+def menor(vet):
+    if len(vet) <= 0:
+        return(None)
+    menor = vet[0]
+    menor_i = 0
+    for i in range(1, len(vet)):
+        if vet[i] < menor:
+            menor = vet[i]
+            menor_i = i
+    return((menor, menor_i))
+
+v = [1, 4, -2, 0, 10, -2, 1]
+r = menor(v)
+if r != None:
+    print("O menor elemento", r[0], "está na posição", r[1], "do vetor.")
+~~~
+
+~~~Text
+(-2, 2)
+~~~
+
+# Retorno de Funções (III)
+
+- Exemplo retornando dicionário:
+
+~~~ Python
+# Obtem do usuário dados de uma agenda telefônica.
+def obtem_agenda():
+    agenda = {}
+    nome = input("Nome: ")
+    while nome != '':
+        telefone = input("Telefone: ")
+        if nome in agenda:  #Guarda telefones em lista.
+            agenda[nome].append(telefone)
+        else:
+            agenda[nome] = [telefone]
+        nome = input("Nome: ")
+    return(agenda)
+
+agenda = obtem_agenda()
+print(agenda)
+~~~
+
+# Exercícios (III)
+
+
+#### Para cada código abaixo, indique o que será impresso:
+
+.col-3[
+~~~{#ex1 .python}
+# Programa 3:
+def f3(x, y):
+    y = y - x
+    x = x + 2
+
+y = 5
+x = 2
+f3(x, y)
+print(x, y)
+~~~
+]
+
+![:column 10%](<br>)
+
+.col-3[
+~~~{#ex1 .python}
+# Programa 4:
+def f4(y):
+    y = y + 10
+    return(y)
+
+y = 2
+x = f4(y)
+print(x, y)
+~~~
+]
+
+<br><br><br><br><br><br> <br><br>
+
+#### Para cada item, escreva um programa em Python que:
+
+1. Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
+    - Teste sua função usando os valores -1, 0, 1, 10 e 100.
 
 ---
 
 class: section-slide
 layout: false
 
-# Matrizes Bidimensionais em Python
+# Manipulação de Strings em Python
 
 ---
 
 template: conteudo
 layout: true
 
-# Matrizes
+# Manipulação de Strings
 
-- Matriz multidimensional é um conjunto multidimensional de elementos do mesmo tipo.
-    - Matriz unidimensional é um vetor.
-    - Matriz bidimensional corresponde às matrizes comuns na matemática.
+- Python apresenta diversas funções e métodos para manipular strings.
+- Útil para lidar com texto de entrada do `input`, por exemplo.
+- Algumas utilizadas:
+    - Converter para string.
+    - Obter tamanho de string.
+    - Separar strings por espaço (ou outro caractere).
+    - Colocar todas as letras maiúsculas (ou minúsculas).
+    - Verificar se é algarismo, letra.
+    - Verificar se uma string é substring de outra.
+    - Entre muitas outras...
 
-.center[![:imageS width:25%;](imagens/matriz1.svg)]
+# Operações Sobre Strings
 
-- Em Python, é possível representar matrizes através de .alert[lista de listas].
+![:column 60%](
+- Acesso à letra:
 
-# Lista como Elemento de uma Lista
+~~~{#ex1 .python}
+palavra = 'banana'
+print(palavra[2]\)
+~~~
 
-- Uma lista também pode ser um elemento de uma lista.
-- Exemplo 1:
+- Tamanho de string:
 
-```Python
-lista1 = [0, 1]
-lista2 = [False, True, lista1]
-print(lista2)
-```
+~~~{#ex1 .python}
+palavra = 'banana'
+print(len(palavra\)\)
+~~~
 
-```
-[False, True, [0, 1]]
-```
+- Pertinência de letra:
 
-- Note que a `lista1` está dentro da `lista2`.
-  - É, portanto, uma sublista.
-- Exemplo 2:
+~~~{#ex1 .python}
+palavra = 'banana'
+if 'ana' in palavra:
+    print(palavra, "contém 'ana'."\)
+else:
+    print(palavra, "não contém 'ana'."\)
+~~~
+)
 
-```Python
-lista = [[1, 3], -1, [3, 2, 6]]
+![:column 7%](<br><br>)
+
+![:column 33%](
+<br>
+Saída:
+
+~~~
+n
+~~~
+<br>
+
+Saída:
+
+~~~
+6
+~~~
+
+<br>
+
+Saída:
+
+~~~
+banana contém 'ana'.
+~~~
+)
+
+# Operações Sobre Strings (II)
+
+![:column 60%](
+- Concatenar strings:
+
+~~~{#ex1 .python}
+palavra = 'ban' + 'ana'
+print(palavra\)
+~~~
+
+- Multiplicar string:
+
+~~~{#ex1 .python}
+palavra = 3*'blá '
+print(palavra\)
+~~~
+
+- Iterar em uma string:
+
+~~~{#ex1 .python}
+palavra = 'banana'
+cont_a = 0
+for letra in palavra:
+    if letra == 'a':
+        cont_a = cont_a + 1
+print("Existem", cont_a, "letras 'a' em",
+palavra\)
+~~~
+)
+
+![:column 7%](<br><br>)
+
+![:column 33%](
+<br>
+Saída:
+
+~~~
+banana
+~~~
+<br>
+
+Saída:
+
+~~~
+blá blá blá
+~~~
+
+<br>
+
+Saída:
+
+~~~
+Existem 3 letras 'a'
+em banana
+~~~
+)
+
+# Operações Sobre Strings (III)
+
+- Transformar string em lista/tupla de caracteres:
+
+~~~{#ex1 .python}
+palavra = 'trasplante'
+lista = list(palavra) # para tupla, trocar list por tuple
 print(lista)
-```
+~~~
 
-```
-[[1, 3], -1, [3, 2, 6]]
-```
+~~~
+['t', 'r', 'a', 's', 'p', 'l', 'a', 'n', 't', 'e']
+~~~
 
-# Definindo uma Matriz
+- Juntar novamente com método `join`:
 
-- Podemos definir uma matriz usando lista de listas.
-- Exemplo: definir a seguinte matriz $3\times4$ em Python:
+~~~{#ex1 .python}
+palavra = 'trasplante'
+lista = list(palavra)
+lista.insert(3, 'n')
+print(''.join(lista))
+~~~
 
-.center[![:imageS width:30%;](imagens/matriz2.svg)]
+~~~
+transplante
+~~~
 
-```Python
-M = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-```
+# Métodos de Strings
 
-- Ou (para ficar mais fácil de ler):
+- Métodos sobre string: função associada a uma string.
+    - Forma de uso: `var_string.metodo()`
+- Existem várias:
 
-```Python
-M = [[7,  8, 4,  3],
-     [2,  1, 6, 12],
-     [9, 11, 5, 10]]
-```
+Método  |  Parâmetros | Descrição |
+--------|-------------|------------
+`split`   | sep (opcional) | Retorna lista contendo substrings separadas por sep.
+`count`   | substr          | Conta quantas substrings há na string.
+`find`    | substr          | Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.
+`replace` | str1, str2      | Retorna a string substituindo str2 em todas as ocorrências de str1.
+`join`    | lista           | Junta strings de uma lista separadas pela string de chamada.
 
-# Imprimindo Matriz sem Formato
+# Métodos de Strings (II)
 
-- Basta usar o `print` da matriz:
+Método  |  Parâmetros   | Descrição |
+--------|---------------|------------
+`upper`   | nenhum      | Retorna a string com todas as letras maiúsculas.
+`lower`   | nenhum      | Retorna a string com todas as letras minúsculas.
+`isalpha` | nenhum      | Retorna True ou False para indicar se string contém apenas letras.
+`isdigit` | nenhum      | Retorna True ou False para indicar se string contém apenas dígitos.
+`islower` | nenhum      | Retorna True ou False para indicar se string está toda em minúscula.
+`isupper` | nenhum      | Retorna True ou False para indicar se string está toda em maiúscula.
 
-```Python
-M = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-print(M)
-```
+# Métodos de Strings (III)
 
-```
-[[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-```
+Método  |  Parâmetros   | Descrição |
+--------|---------------|------------
+`center`  | d, c (opcional)     | Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).
+`rjust`   | d, c (opcional)     | Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).
+`ljust`   | d, c (opcional)     | Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).
 
-- A saída é sempre sem formato, mesmo se for declarada assim:
+- Para ver mais, acesse:
 
-```Python
-M = [[7,  8, 4,  3],
-     [2,  1, 6, 12],
-     [9, 11, 5, 10]]
-print(M)
-```
+https://wiki.python.org.br/ManipulandoStringsComPython
 
-```
-[[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-```
+# Exercício (III)
 
-- Mais a frente veremos como formatar a saída de uma matriz.
+1. Escrever uma função que indica se uma string é palíndromo.
+    - Uma palavra (ou texto) é palíndromo se ela é lida da mesma forma em ambos os sentidos (de frente para trás ou de trás para frente).
+2. Obter frase do usuário e remover todo espaço sobrando entre as palavras.
+    - Isto é, deixar apenas um espaço entre cada palavra.
+3. Obter frase do usuário e indicar a ocorrência da palavra 'não'.
+4. Obter frase do usuário e apresentar a quantidade de cada caractere existente nela. Dica: usar dicionário com a chave sendo a letra e o valor sendo a quantidade.
 
-# Definindo uma Matriz Vazia
+# Checar se Entrada é Número
 
-- Da mesma forma que vetor, mas agora criando as duas dimensões.
-    - Isto é, usando o operador de  multiplicação!
-- Exemplo de uma matriz $3\times5$ (3 linhas e 5 colunas):
+- Meio mais correto de verificar se uma entrada é número:
+    - Usar comando `try-except`
+- Como usar para este fim:
 
-.col-3[
-```Python
-M = 3*[None]
-for i in range(3):
-  M[i] = 5*[0]
-```
-]
-.col-3[<br>.center[ou]]
-.col-3[
-```Python
-M = 3*[None]
-for i in range(3):
-  M[i] = 5*[None]
-```
-]
+~~~{#ex1 .python}
+try:
+    n = int(input("Entre com um número: "))
+except ValueError:
+    print("Erro de entrada!")
+    print("Finalizando programa...")
+    quit() # Termina programa
+~~~
 
-- `None` representa um elemento nulo.
-    - É mais genérico que 0 (inteiro).
+- Neste exemplo, tenta-se fazer a conversão.
+- Se der erro (ValueError), o erro em si não aparece!
+    - Ao invés disso, executa o código dentro do `except`.
+- `try-except` também pode ser usado para outros fins.
+    - Veremos em aulas futuras.
 
+# Checar se Entrada é Número (II)
 
-# Acessando Elementos de uma Matriz
+- Para checar repetidamente:
 
-- Em Python, o acesso é realizado através dos índices.
-- Por exemplo, na matriz M do slide anterior:
-  - imprimir o elemento $M_{1,2}$:
-      - `print(M[1][2])`
-      - Saída ser: 6
-  - imprimir o elemento $M_{2,3}$:
-      - `print(M[2][3])`
-      - Saída será: 10
-- Agora, há dois índices:
-  - linhas: variam de 0 a L-1, onde L é o número de linhas.
-  - colunas: variam de 0 a C-1, onde C é o número de colunas.
+~~~{#ex1 .python}
+num_ok = False
+while not num_ok:
+    try:
+        num = int(input("Entre com um número: "))
+        num_ok = True
+    except ValueError:
+        print("Erro de entrada! Número deve ser inteiro!")
 
-# Modificando Elementos de uma Matriz
+# Usar num a partir daqui...
+~~~
 
-- Basta acessar o elemento e atribuir um valor a ele.
-- Por exemplo, na matriz M do slide anterior:
-  - alterar o elemento $M_{0,0}$ para 20:
-      - `M[0][0] = 20`
-  - adicionar 1 ao elemento $M_{2,1}$:
-      - `M[2][1] = M[2][1] + 1`
-  - multiplicar por 3 o elemento $M_{0,3}$:
-      - `M[0][3] = M[0][3] * 3`
-  - fazer $M\_{0,2} \leftarrow M\_{0,0} + M\_{0,1}$:
-      - `M[0][2] = M[0][0] + M[0][1]`
+# Exercício (IV)
 
-# Acessar Linha da Matriz
-
-- É possível manipular linhas da matriz de forma independente.
-    - Afinal, em Python, uma matriz é uma lista de listas.
-- Exemplo: imprimir a primeira linha:
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-print(mat[0])
-```
-- Redefinir uma linha:
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-mat[1] = [-2, -1, -6, -12]
-```
-
-# Dimensões da Matriz
-
-- Para saber o número de linhas, basta usar len na matriz.
-  - Exemplo: `len(M)`
-- Para saber o número de colunas, basta usar len em alguma linha da matriz.
-  - Exemplo: `len(M[0])`
-- Note que Python permite ter lista de listas de tamanhos diferentes.
-- Para o conceito de matriz, isto não faz sentido!
-  - Número de colunas é sempre o mesmo.
-
-# Iterando sobre Elementos de uma Matriz
-
-- Usando índices:
-    - i representa a linha;
-    - j representa a coluna.
-
-:::::::{.center}
-![](imagens/AcessoMatriz.svg){#acessoMatriz}
-:::::::
-
-# Iterando sobre Elementos de uma Matriz
-
-- Exemplo 1: somar todos os elementos da primeira linha da matriz:
-
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-soma = 0
-# Devemos variar a coluna.
-for j in range(4): # poderia substituir 4 por len(mat[0])
-    soma = soma + mat[0][j]
-print(soma)
-```
-
-- Exemplo 2: somar todos os elementos da primeira coluna da matriz:
-
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-soma = 0
-for i in range(3): # poderia substituir 3 por len(mat)
-    soma = soma + mat[i][0]
-print(soma)
-```
-
-# Iterando sobre Elementos de uma Matriz
-
-- Exemplo 3: somar todos os elementos da matriz.
-    - Neste caso, precisamos variar linha e coluna.
-    - Isto é, para cada linha, variar a coluna.
-    - Sendo assim, devemos usar um `for` dentro de outro!
-
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-soma = 0
-# Varia linha:
-for i in range(3): # poderia substituir 3 por len(mat)
-    # Varia coluna para cada linha:
-    for j in range(4): # poderia substituir 4 por len(mat[0])
-        soma = soma + mat[i][j]
-print(soma)
-```
-
-# Outra Forma de Iterar
-
-- Usando o comando `in` no `for`.
-    - Assim como podemos fazer com vetores/listas.
-- Exemplo:
-
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-soma = 0
-# Varia linha:
-for linha in mat:
-    # Varia coluna para cada linha:
-    for c in linha:
-        soma = soma + c
-print(soma)
-```
-
-# Exercícios (II)
-
-1. Crie a matriz $A = \left(\begin{array}{rrrr} 1 & 2 & 3 & 4\\\\ 5 & 6 & 7 & 8\\\\ 9 & 10 & 11 & 12 \end{array}\right)$ e apenas a imprima sem formato.
-2. Cria uma matriz $3\times3$ e obtenha seus valores do usuário.
-    - Apresente o resultado da soma da segunda linha.
-    - Modifique os valores da coluna 0 para os valores da última coluna, elemento por elemento.
-    - Indique soma dos elementos da diagonal principal.
-
-# Imprimindo uma Matriz Linha por Linha
-
-- Para melhorar a visualização da matriz, podemos imprimir a matriz linha a linha.
-
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-for lin in mat:
-    print(lin)
-```
-
-```
-[7, 8, 4, 3]
-[2, 1, 6, 12]
-[9, 11, 5, 10]
-```
-
-# Imprimindo uma Matriz Linha por Linha
-
-- Ou ainda, elemento por elemento, linha a linha:
-    - Neste caso, remove colchetes e vírgulas.
-
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-for lin in mat:
-    for c in lin:
-        print(c, end=" ")
-    print()
-```
-
-```
-7 8 4 3
-2 1 6 12
-9 11 5 10
-```
-
-# Um Pouco sobre Formatação de String
-
-- Python tem um método de string que a formata.
-    - Formatar signfica colocar strings na mesma quantidade de caracteres.
-- Sintaxe de uso: `formato.format(valor)`
-    - `formato` é uma **string** de formato.
-    - `valor` é o valor a ser formatado.
-- Exemplos de formato:
-    - `'{} {}'.format('casa', 'carro')` : cada valor é associado a um `{}`.
-        - Saída: `casa⌷carro`
-    - `'{:10}'.format('casa')` : alinhamento à esquerda com 10 caracteres.
-        - Saída: `casa⌷⌷⌷⌷⌷⌷`
-    - `'{:>10}'.format('casa')` : alinhamento à direita com 10 caracteres.
-        - Saída: `⌷⌷⌷⌷⌷⌷casa`
-    - `'{:^10}'.format('casa')` : centralização com 10 caracteres.
-        - Saída: `⌷⌷⌷casa⌷⌷⌷`
-- Consulte: https://pyformat.info/
-
-# Imprimindo uma Matriz Formatada
-
-- Usando o `format` para imprimir matrizes:
-
-```Python
-mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-for lin in mat:
-    for c in lin:
-        print('{:>3}'.format(c), end=" ")
-    print()
-```
-- Resultado da impressão:
-```
-  7   8   4   3
-  2   1   6  12
-  9  11   5  10
-```
-
-# Exercícios (III)
-
-1. Obtenha do usuário as dimensões de uma matriz e leia também cada elemento. Imprima a matriz no final.
-2. Leia duas matrizes A e B e calcule C como sendo a soma delas. Imprima a matriz resultante C.
+1. Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
 

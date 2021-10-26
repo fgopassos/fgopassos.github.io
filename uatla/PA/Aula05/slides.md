@@ -533,6 +533,7 @@ print(lista)
 # Alguns Métodos de Lista: Sort
 
 - Método `sort`: ordena crescentemente uma lista (modifica a lista).
+
 ~~~{#ListaSort .python}
 lista = [1, 4, 7, 3, 4]
 lista.sort()
@@ -543,13 +544,15 @@ print(lista)
 [1, 3, 4, 4, 7]
 ```
 
+# Alguns Métodos de Lista: Sort Reverso
+
 - Para ordenar decrescentemente, usar argumento `reverse=True`:
 
 ~~~{#ListaSort2 .python}
 lista = [1, 4, 7, 3, 4]
 lista.sort(reverse=True)
 print(lista)
-```
+~~~
 
 ```
 [7, 4, 4, 3, 1]

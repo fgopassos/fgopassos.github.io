@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Fernanda Passos" />
-  <title>Modularização em Python</title>
+  <title>Vetores e Matrizes em Python</title>
   <style type="text/css">
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -85,6 +85,7 @@
     href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
    href="../template/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
   <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
     charset="utf-8" type="text/javascript"></script>
 </head>
@@ -94,7 +95,7 @@
   <div class="informationHolder">
     <p class="institute">Universidade Atlântica</p>
     <img class="logo" src="../atlantica_logo2.svg"></img>
-    <h1 class="title">Modularização em Python</h1>
+    <h1 class="title">Vetores e Matrizes em Python</h1>
     <p class="subtitle">Aula 06</p>
     <p class="author">
 Fernanda Passos
@@ -102,700 +103,459 @@ Fernanda Passos
     <p class="note">Programação Avançada</p>
   </div>
 </div>
-<div id="modularização-i" class="slide section level1">
-<h1>Modularização (I)</h1>
+<div id="vetores-em-python" class="slide section level1 part">
+<h1 class="part">Vetores em Python</h1>
+</div>
+<div id="vetores" class="slide section level1">
+<h1>Vetores</h1>
 <ul>
-<li>Permite organizar o código em partes/módulos.
+<li>Vetor ou <em>array</em> é um conjunto de elementos do mesmo tipo.
 <ul>
-<li>Também chamado de sub-programas.</li>
+<li>É um conceito.</li>
 </ul></li>
-<li>Cada módulo tem seu objetivo.</li>
-<li>Pode possuir entradas e saídas.
+<li>Exemplos:
 <ul>
-<li>Geralmente entradas são computadas pelo código do módulo</li>
+<li>um vetor de inteiros → <code>vet1 = [1, 2, 3, 6]</code></li>
+<li>um vetor de reais → <code>vet2 = [1.0, 3.1, 7.6, 8.9, 9.0]</code></li>
+<li>um vetor de lógicos → <code>vet3 = [True, False, True]</code></li>
+<li>um vetor de strings → <code>vet4 = ['A', 'casa', 'é', 'pequena']</code></li>
 </ul></li>
-<li>Há dois tipos de módulos:
-<ul>
-<li><strong>Função</strong>: retorna valor.</li>
-<li><strong>Procedimento</strong>: não retorna valor.</li>
-</ul></li>
+<li>Também chamado de matriz unidimensional.</li>
 </ul>
 </div>
-<div id="modularização-ii" class="slide section level1">
-<h1>Modularização (II)</h1>
+<div id="vetores-em-python-1" class="slide section level1">
+<h1>Vetores em Python</h1>
 <ul>
-<li>Na <strong>declaração</strong> de um módulo, deve indicar:
+<li>Em Python, podemos usar listas para representar.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>vet1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>]</span>
+<span id="cb1-2"><a href="#cb1-2"></a>vet2 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">3.1</span>, <span class="fl">7.6</span>, <span class="fl">8.9</span>, <span class="fl">9.0</span>]</span>
+<span id="cb1-3"><a href="#cb1-3"></a>vet3 <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>]</span>
+<span id="cb1-4"><a href="#cb1-4"></a>vet4 <span class="op">=</span> [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span>]</span></code></pre></div>
 <ul>
-<li>nome: identificador;</li>
-<li>argumentos ou parâmetros: dados de entrada e/ou saída.</li>
-<li>retorno: se for uma função.</li>
-</ul></li>
-<li>Assinatura: definição do módulo contendo nome e argumentos…</li>
-<li>Na <strong>chamada</strong> de um módulo:
-<ul>
-<li>o nome deve ser utilizado;</li>
-<li>os parâmetros devem corresponder à assinatura do módulo;</li>
-<li>se for função, associar o retorno a alguma ação (atribuir a uma variável, imprimir, …).</li>
-</ul></li>
+<li>Embora listas em Python permite criar conjuntos de quaisquer valores.</li>
 </ul>
 </div>
-<div id="funções-e-procedimentos-em-python" class="slide section level1 part">
-<h1 class="part">Funções e Procedimentos em Python</h1>
-</div>
-<div id="declaração-de-funções-em-python" class="slide section level1">
-<h1>Declaração de Funções em Python</h1>
+<div id="uso-de-vetoreslistas" class="slide section level1">
+<h1>Uso de Vetores/Listas</h1>
 <ul>
-<li>Funções em Python são implementadas usando <code>def</code>.
+<li>Imagine o seguinte problema a ser resolvido de forma algorı́tmica:
 <ul>
-<li>Define o <strong>bloco</strong> da função/procedimento.</li>
+<li>Calcular a média das notas de 10 alunos de uma disciplina e determinar o número de alunos que tiveram a nota superior à média calculada.</li>
 </ul></li>
-<li>Sintaxe de função (com retorno):</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> nome_funcao(parametros):</span>
-<span id="ex1-2"><a href="#ex1-2"></a>    <span class="co"># Corpo da função</span></span>
-<span id="ex1-3"><a href="#ex1-3"></a>    <span class="cf">return</span> valor_retorno</span></code></pre></div>
-<ul>
-<li><code>nome_funcao</code> é identificador (letras, algarismos - não no início - e ’_’).</li>
-<li><code>parametros</code> é opcional e são separados por vírgula.</li>
-<li><code>valor_retorno</code> é o valor de retorno da função.</li>
+<li>Como resolver?</li>
 </ul>
 </div>
-<div id="declaração-de-procedimentos-em-python" class="slide section level1">
-<h1>Declaração de Procedimentos em Python</h1>
+<div id="uso-de-vetoreslistas-ii" class="slide section level1">
+<h1>Uso de Vetores/Listas (II)</h1>
+<h4 id="tentativa-1">Tentativa 1:</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com a nota &quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&quot;: &quot;</span>))</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    soma <span class="op">=</span> soma <span class="op">+</span> n</span>
+<span id="cb2-5"><a href="#cb2-5"></a>media <span class="op">=</span> soma<span class="op">/</span><span class="dv">10</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># contar quantos alunos estão acima da média.</span></span></code></pre></div>
 <ul>
-<li>Similar à função, mas <strong>sem</strong> <code>return</code>.</li>
-<li>Sintaxe de procedimento:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> nome_procedimento(parametros):</span>
-<span id="ex1-2"><a href="#ex1-2"></a>    <span class="co"># Corpo do procedimento</span></span></code></pre></div>
+<li>Repare que antes de contar, precisamos calcular a média.
 <ul>
-<li><code>nome_procedimento</code> é identificador (letras, algarismos - não no início - e ’_’).</li>
-<li><code>parametros</code> é opcional e são separados por vírgula.
-<ul>
-<li>Parênteses são obrigatórios mesmo sem parâmetros!</li>
+<li>Mas então, como indicar quantos alunos estão acima da média se não temos mais os valores das notas?</li>
 </ul></li>
 </ul>
 </div>
-<div id="chamada-de-funções" class="slide section level1">
-<h1>Chamada de Funções</h1>
+<div id="uso-de-vetoreslistas-iii" class="slide section level1">
+<h1>Uso de Vetores/Listas (III)</h1>
 <ul>
-<li>Exemplo de uma função que implementa uma equação de segundo grau:</li>
+<li>Precisamos <strong>guardar</strong> as notas para isso!
+<ul>
+<li>Usar vetor/lista!</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Definição da função f1:</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> f1(x):</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    y <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">4</span></span>
-<span id="ex1-4"><a href="#ex1-4"></a>    <span class="cf">return</span> y</span>
-<span id="ex1-5"><a href="#ex1-5"></a></span>
-<span id="ex1-6"><a href="#ex1-6"></a>num <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um numero: &quot;</span>))</span>
-<span id="ex1-7"><a href="#ex1-7"></a><span class="co"># Chamada de f1:</span></span>
-<span id="ex1-8"><a href="#ex1-8"></a>resultado <span class="op">=</span> f1(num)</span>
-<span id="ex1-9"><a href="#ex1-9"></a><span class="bu">print</span>(resultado)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>notas <span class="op">=</span> <span class="dv">10</span><span class="op">*</span>[<span class="dv">0</span>] <span class="co"># Cria vetor de 10 posições</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    notas[i] <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com a nota &quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&quot;: &quot;</span>))</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    soma <span class="op">=</span> soma <span class="op">+</span> notas[i]</span>
+<span id="cb3-6"><a href="#cb3-6"></a>media <span class="op">=</span> soma<span class="op">/</span><span class="dv">10</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>cont <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="cf">if</span> notas[i] <span class="op">&gt;</span> media:</span>
+<span id="cb3-10"><a href="#cb3-10"></a>        cont <span class="op">=</span> cont <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="bu">print</span>(<span class="st">&quot;Existem&quot;</span>, cont, <span class="st">&quot;alunos acima da média&quot;</span>, media)</span></code></pre></div>
 <ul>
-<li>Função/Procedimento deve ser declarando antes de uso!</li>
+<li><a  href="https://repl.it/@fgopassos/media" target="_blank">Solução no Repl.it</a></li>
 </ul>
 </div>
-<div id="chamada-de-procedimentos" class="slide section level1">
-<h1>Chamada de Procedimentos</h1>
-<ul>
-<li>Exemplo de procedimento que imprime cabeçalho:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Definicao do procedimento cabecalho:</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> cabecalho(nome_programa, autor):</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(<span class="st">&#39;******************************&#39;</span>)</span>
-<span id="ex1-4"><a href="#ex1-4"></a>    <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{:^30}</span><span class="st">&#39;</span>.<span class="bu">format</span>(nome_programa))</span>
-<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{:^30}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="st">&quot;Autor: &quot;</span> <span class="op">+</span> autor))</span>
-<span id="ex1-6"><a href="#ex1-6"></a>    <span class="bu">print</span>(<span class="st">&#39;******************************&#39;</span>)</span>
-<span id="ex1-7"><a href="#ex1-7"></a></span>
-<span id="ex1-8"><a href="#ex1-8"></a><span class="co"># Chamada de cabecalho:</span></span>
-<span id="ex1-9"><a href="#ex1-9"></a>cabecalho(<span class="st">&quot;Olá mundo!&quot;</span>, <span class="st">&quot;Fernanda&quot;</span>)</span></code></pre></div>
-</div>
-<div id="exercício-i" class="slide section level1">
-<h1>Exercício I</h1>
-<h2 id="faça-o-que-se-pede-em-python">Faça o que se pede em Python:</h2>
+<div id="exercícios-i" class="slide section level1">
+<h1>Exercícios (I)</h1>
+<h4 id="para-cada-item-escreva-um-programa-python-que">Para cada item, escreva um programa Python que:</h4>
 <ol style="list-style-type: decimal">
-<li>Escreva uma função que indique o maior valor entre 3 números.</li>
-<li>Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.</li>
+<li>Peça 10 valores reais ao usuário e indique quantos estão acima de (mínimo + máximo)/2. Pode usar as funções min e max.</li>
+<li>Obtenha a temperatura média de cada mês do ano e mostre todas as temperaturas acima da média anual, e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro,…). Sugestão: usar uma lista para armazenar o nome por extenso de cada mês.</li>
 </ol>
 </div>
-<div id="escopo-de-variáveis-i" class="slide section level1">
-<h1>Escopo de Variáveis (I)</h1>
+<div id="matrizes-bidimensionais-em-python" class="slide section level1 part">
+<h1 class="part">Matrizes Bidimensionais em Python</h1>
+</div>
+<div id="matrizes" class="slide section level1">
+<h1>Matrizes</h1>
 <ul>
-<li>O escopo de uma variável indica sua visibilidade.
+<li>Matriz multidimensional é um conjunto multidimensional de elementos do mesmo tipo.
 <ul>
-<li>Isto é, onde a variável é acessível (leitura) no código.</li>
-</ul></li>
-<li>Os escopos podem ser:
-<ul>
-<li><strong>global</strong>: variáveis são acessíveis em todos os escopos.</li>
-<li><strong>local</strong>: variáveis são acessíveis apenas no escopo em que foram declaradas.</li>
+<li>Matriz unidimensional é um vetor.</li>
+<li>Matriz bidimensional corresponde às matrizes comuns na matemática.</li>
 </ul></li>
 </ul>
 <div class="center">
-<p><img src="imagens/escopo.svg" id="escopo" style="width:60.0%" /></p>
+<p><img src="imagens/matriz1.svg" id="matriz1" /></p>
 </div>
-</div>
-<div id="escopo-de-variáveis-ii" class="slide section level1">
-<h1>Escopo de Variáveis (II)</h1>
 <ul>
-<li>Exemplo de acesso à variável de escopo inexistente:</li>
+<li>Em Python, é possível representar matrizes através de .alert[lista de listas].</li>
+</ul>
+</div>
+<div id="lista-como-elemento-de-uma-lista" class="slide section level1">
+<h1>Lista como Elemento de uma Lista</h1>
+<ul>
+<li>Uma lista também pode ser um elemento de uma lista.</li>
+<li>Exemplo 1:</li>
+</ul>
+<div class="sourceCode" id="id1"><pre class="sourceCode python"><code class="sourceCode python"><span id="id1-1"><a href="#id1-1"></a>code</span>
+<span id="id1-2"><a href="#id1-2"></a>lista1 <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="id1-3"><a href="#id1-3"></a>lista2 <span class="op">=</span> [<span class="va">False</span>, <span class="va">True</span>, lista1]</span>
+<span id="id1-4"><a href="#id1-4"></a><span class="bu">print</span>(lista2)</span></code></pre></div>
+<pre><code>[False, True, [0, 1]]</code></pre>
+</div>
+<div id="lista-como-elemento-de-uma-lista-ii" class="slide section level1">
+<h1>Lista como Elemento de uma Lista (II)</h1>
+<ul>
+<li>Note que, no slide anterior, a <code>lista1</code> está dentro da <code>lista2</code>.
+<ul>
+<li>É, portanto, uma sublista.</li>
+</ul></li>
+<li>Exemplo 2:</li>
+</ul>
+<div class="sourceCode" id="id2"><pre class="sourceCode python"><code class="sourceCode python"><span id="id2-1"><a href="#id2-1"></a>lista <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">3</span>], <span class="op">-</span><span class="dv">1</span>, [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">6</span>]]</span>
+<span id="id2-2"><a href="#id2-2"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre><code>[[1, 3], -1, [3, 2, 6]]</code></pre>
+</div>
+<div id="definindo-uma-matriz" class="slide section level1">
+<h1>Definindo uma Matriz</h1>
+<ul>
+<li>Podemos definir uma matriz usando lista de listas.</li>
+<li>Exemplo: definir a seguinte matriz <span class="math inline">\(3\times4\)</span> em Python:</li>
+</ul>
+<div class="center">
+<p><img src="imagens/matriz2.svg" id="matriz2" /></p>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span></code></pre></div>
+</div>
+<div id="definindo-uma-matriz-ii" class="slide section level1">
+<h1>Definindo uma Matriz (II)</h1>
+<ul>
+<li>Ou, para ficar mais fácil de ler, podemos escrever a matriz desta forma:
+<ul>
+<li>No entanto, não há nenhuma diferença no resultado em relação ao slide anterior.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>,  <span class="dv">8</span>, <span class="dv">4</span>,  <span class="dv">3</span>],</span>
+<span id="cb7-2"><a href="#cb7-2"></a>     [<span class="dv">2</span>,  <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>],</span>
+<span id="cb7-3"><a href="#cb7-3"></a>     [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span></code></pre></div>
+</div>
+<div id="imprimindo-matriz-sem-formato" class="slide section level1">
+<h1>Imprimindo Matriz sem Formato</h1>
+<ul>
+<li>Basta usar o <code>print</code> da matriz:</li>
+</ul>
+<div class="sourceCode" id="id3"><pre class="sourceCode python"><code class="sourceCode python"><span id="id3-1"><a href="#id3-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="id3-2"><a href="#id3-2"></a><span class="bu">print</span>(M)</span></code></pre></div>
+<pre id="idText1" class="text"><code>[[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]</code></pre>
+<ul>
+<li>A saída é sempre sem formato, mesmo se for declarada assim:</li>
+</ul>
+<div class="sourceCode" id="id4"><pre class="sourceCode python"><code class="sourceCode python"><span id="id4-1"><a href="#id4-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>,  <span class="dv">8</span>, <span class="dv">4</span>,  <span class="dv">3</span>],</span>
+<span id="id4-2"><a href="#id4-2"></a>     [<span class="dv">2</span>,  <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>],</span>
+<span id="id4-3"><a href="#id4-3"></a>     [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="id4-4"><a href="#id4-4"></a><span class="bu">print</span>(M)</span></code></pre></div>
+</div>
+<div id="definindo-uma-matriz-vazia" class="slide section level1">
+<h1>Definindo uma Matriz Vazia</h1>
+<ul>
+<li>Da mesma forma que vetor, mas agora criando as duas dimensões.
+<ul>
+<li>Isto é, usando o operador de multiplicação!</li>
+</ul></li>
+<li>Exemplo de uma matriz <span class="math inline">\(3\times5\)</span> (3 linhas e 5 colunas):</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> f2():</span>
-<span id="ex1-2"><a href="#ex1-2"></a>    x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="ex1-3"><a href="#ex1-3"></a></span>
-<span id="ex1-4"><a href="#ex1-4"></a>f2()</span>
-<span id="ex1-5"><a href="#ex1-5"></a><span class="bu">print</span>(x)</span></code></pre></div>
-</div><div class="column" style="width:5%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>M <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>[<span class="va">None</span>]</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  M[i] <span class="op">=</span> <span class="dv">5</span><span class="op">*</span>[<span class="dv">0</span>]</span></code></pre></div>
+</div><div class="column" style="width:10%;">
 
-</div><div class="column" style="width:50%;">
-<p><br> <span style="color:red">Erro!</span> <br> <code>x</code> está no escopo local de <code>f2</code> e é acessível apenas em <code>f2</code>.</p>
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>M <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>[<span class="va">None</span>]</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  M[i] <span class="op">=</span> <span class="dv">5</span><span class="op">*</span>[<span class="va">None</span>]</span></code></pre></div>
 </div>
 </div>
 <ul>
-<li>Exemplo de acesso à variável em escopo global:</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> f3():</span>
-<span id="ex1-2"><a href="#ex1-2"></a>    x <span class="op">=</span> y <span class="op">+</span> <span class="dv">10</span></span>
-<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(x)</span>
-<span id="ex1-4"><a href="#ex1-4"></a></span>
-<span id="ex1-5"><a href="#ex1-5"></a>y <span class="op">=</span> <span class="dv">2</span></span>
-<span id="ex1-6"><a href="#ex1-6"></a>f2()</span></code></pre></div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:50%;">
-<p><br> Ok!<br> <code>y</code> está em escopo global, acessível pelo escopo de <code>f3</code>!</p>
-</div>
-</div>
-</div>
-<div id="exercício-ii" class="slide section level1">
-<h1>Exercício (II)</h1>
-<h2 id="para-cada-código-abaixo-indique-o-que-será-impresso">Para cada código abaixo, indique o que será impresso:</h2>
-<div class="columns">
-<div class="column" style="width:47%;">
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Programa 1:</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> f1():</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    x <span class="op">=</span> y <span class="op">+</span> <span class="dv">10</span></span>
-<span id="ex1-4"><a href="#ex1-4"></a>    z <span class="op">=</span> y <span class="op">+</span> <span class="dv">1</span></span>
-<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(x, z)</span>
-<span id="ex1-6"><a href="#ex1-6"></a></span>
-<span id="ex1-7"><a href="#ex1-7"></a>y <span class="op">=</span> <span class="dv">5</span></span>
-<span id="ex1-8"><a href="#ex1-8"></a>f1()</span>
-<span id="ex1-9"><a href="#ex1-9"></a><span class="bu">print</span>(y)</span></code></pre></div>
-</div><div class="column" style="width:6%;">
-
-</div><div class="column" style="width:47%;">
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Programa 2:</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> f2():</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    x <span class="op">=</span> y <span class="op">+</span> <span class="dv">10</span></span>
-<span id="ex1-4"><a href="#ex1-4"></a>    <span class="bu">print</span>(x, y)</span>
-<span id="ex1-5"><a href="#ex1-5"></a></span>
-<span id="ex1-6"><a href="#ex1-6"></a>y <span class="op">=</span> <span class="dv">5</span></span>
-<span id="ex1-7"><a href="#ex1-7"></a>f2()</span>
-<span id="ex1-8"><a href="#ex1-8"></a><span class="bu">print</span>(x, y)</span></code></pre></div>
-</div>
-</div>
-</div>
-<div id="parâmetros-em-lp" class="slide section level1">
-<h1>Parâmetros em LP</h1>
+<li><code>None</code> representa um elemento nulo.
 <ul>
-<li>Há 2 tipos de passagem de parâmetros:
-<ul>
-<li><strong>Passagem por valor:</strong> apenas o valor da variável é passado para o escopo do módulo.
-<ul>
-<li>Há uma cópia do valor internamente.</li>
-<li>Alterações no parâmetro não modificam a variável externa ao módulo.</li>
+<li>É mais genérico que 0 (inteiro).</li>
 </ul></li>
-<li><strong>Passagem por referência:</strong> é passada a referência da variável.
+</ul>
+</div>
+<div id="acessando-elementos-de-uma-matriz" class="slide section level1">
+<h1>Acessando Elementos de uma Matriz</h1>
 <ul>
-<li>Logo, valor da variável pode mudar.</li>
+<li>Em Python, o acesso é realizado através dos índices.</li>
+<li>Por exemplo, na matriz M do slide anterior:
+<ul>
+<li>imprimir o elemento <span class="math inline">\(M_{1,2}\)</span>:
+<ul>
+<li><code>print(M[1][2])</code></li>
+<li>Saída ser: 6</li>
+</ul></li>
+<li>imprimir o elemento <span class="math inline">\(M_{2,3}\)</span>:
+<ul>
+<li><code>print(M[2][3])</code></li>
+<li>Saída será: 10</li>
+</ul></li>
+</ul></li>
+<li>Agora, há dois índices:
+<ul>
+<li>linhas: variam de 0 a L-1, onde L é o número de linhas.</li>
+<li>colunas: variam de 0 a C-1, onde C é o número de colunas.</li>
+</ul></li>
+</ul>
+</div>
+<div id="modificando-elementos-de-uma-matriz" class="slide section level1">
+<h1>Modificando Elementos de uma Matriz</h1>
+<ul>
+<li>Basta acessar o elemento e atribuir um valor a ele.</li>
+<li>Por exemplo, na matriz M do slide anterior:
+<ul>
+<li>alterar o elemento <span class="math inline">\(M_{0,0}\)</span> para 20:
+<ul>
+<li><code>M[0][0] = 20</code></li>
+</ul></li>
+<li>adicionar 1 ao elemento <span class="math inline">\(M_{2,1}\)</span>:
+<ul>
+<li><code>M[2][1] = M[2][1] + 1</code></li>
+</ul></li>
+<li>multiplicar por 3 o elemento <span class="math inline">\(M_{0,3}\)</span>:
+<ul>
+<li><code>M[0][3] = M[0][3] * 3</code></li>
+</ul></li>
+<li>fazer <span class="math inline">\(M\_{0,2} \leftarrow M\_{0,0} + M\_{0,1}\)</span>:
+<ul>
+<li><code>M[0][2] = M[0][0] + M[0][1]</code></li>
 </ul></li>
 </ul></li>
 </ul>
 </div>
-<div id="parâmetros-em-python" class="slide section level1">
-<h1>Parâmetros em Python</h1>
+<div id="acessar-linha-da-matriz" class="slide section level1">
+<h1>Acessar Linha da Matriz</h1>
 <ul>
-<li>Python distingue objetos como <strong>mutável</strong> e <strong>imutável</strong>.</li>
-<li>Objetos mutáveis: seu
+<li>É possível manipular linhas da matriz de forma independente.
 <ul>
-<li>Exemplos: variáveis de</li>
+<li>Afinal, em Python, uma matriz é uma lista de listas.</li>
+</ul></li>
+<li>Exemplo: imprimir a primeira linha:</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">print</span>(mat[<span class="dv">0</span>])</span></code></pre></div>
+<ul>
+<li>Redefinir uma linha:</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb11-2"><a href="#cb11-2"></a>mat[<span class="dv">1</span>] <span class="op">=</span> [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">6</span>, <span class="op">-</span><span class="dv">12</span>]</span></code></pre></div>
+</div>
+<div id="dimensões-da-matriz" class="slide section level1">
+<h1>Dimensões da Matriz</h1>
+<ul>
+<li>Para saber o número de linhas, basta usar len na matriz.
+<ul>
+<li>Exemplo: <code>len(M)</code></li>
+</ul></li>
+<li>Para saber o número de colunas, basta usar len em alguma linha da matriz.
+<ul>
+<li>Exemplo: <code>len(M[0])</code></li>
+</ul></li>
+<li>Note que Python permite ter lista de listas de tamanhos diferentes.</li>
+<li>Para o conceito de matriz, isto não faz sentido!
+<ul>
+<li>Número de colunas é sempre o mesmo.</li>
 </ul></li>
 </ul>
 </div>
-<div id="parâmetros-de-função" class="slide section level1">
-<h1>Parâmetros de Função</h1>
+<div id="iterando-sobre-elementos-de-uma-matriz" class="slide section level1">
+<h1>Iterando sobre Elementos de uma Matriz</h1>
 <ul>
-<li>Podem ser de tipos primitivos: números, strings, booleanos…</li>
-<li>Parâmetro é nova variável e valor é copiado para ela.
+<li>Usando índices:
 <ul>
-<li>Está dentro de escopo local!</li>
-</ul></li>
-<li>Modificação de parâmetro só é visível dentro de escopo da função.
-<ul>
-<li>A cópia é modificada.</li>
+<li>i representa a linha;</li>
+<li>j representa a coluna.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> f(y):</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    y <span class="op">=</span> <span class="st">&quot;laranja&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro de f:&quot;</span>, y)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>y <span class="op">=</span> <span class="st">&quot;uva&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar f:&quot;</span>, y)</span>
-<span id="cb1-7"><a href="#cb1-7"></a>f(y)</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar f:&quot;</span>, y)</span></code></pre></div>
-<pre><code>Antes de chamar f: uva
-Dentro de f: laranja
-Depois de chamar f: uva</code></pre>
+<div class="center">
+<p><img src="imagens/AcessoMatriz.svg" id="acessoMatriz" /></p>
 </div>
-<div id="parâmetros-de-função-ii" class="slide section level1">
-<h1>Parâmetros de Função (II)</h1>
+</div>
+<div id="iterando-sobre-elementos-de-uma-matriz-1" class="slide section level1">
+<h1>Iterando sobre Elementos de uma Matriz</h1>
 <ul>
-<li>Podem também ser listas, tuplas e dicionários.</li>
-<li>Agora, é importante fazer distinção entre .alert[referência] e .alert[valor].</li>
+<li>Exemplo 1: somar todos os elementos da primeira linha da matriz:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb12-2"><a href="#cb12-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="co"># Devemos variar a coluna.</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>): <span class="co"># poderia substituir 4 por len(mat[0])</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>    soma <span class="op">=</span> soma <span class="op">+</span> mat[<span class="dv">0</span>][j]</span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="bu">print</span>(soma)</span></code></pre></div>
 <ul>
-<li>Neste exemplo, <code>l</code> é <strong>referência</strong>.
+<li>Exemplo 2: somar todos os elementos da primeira coluna da matriz:</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb13-2"><a href="#cb13-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>): <span class="co"># poderia substituir 3 por len(mat)</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>    soma <span class="op">=</span> soma <span class="op">+</span> mat[i][<span class="dv">0</span>]</span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="bu">print</span>(soma)</span></code></pre></div>
+</div>
+<div id="iterando-sobre-elementos-de-uma-matriz-2" class="slide section level1">
+<h1>Iterando sobre Elementos de uma Matriz</h1>
 <ul>
-<li>Os elementos são os <strong>valores</strong>.</li>
+<li>Exemplo 3: somar todos os elementos da matriz.
+<ul>
+<li>Neste caso, precisamos variar linha e coluna.</li>
+<li>Isto é, para cada linha, variar a coluna.</li>
+<li>Sendo assim, devemos usar um <code>for</code> dentro de outro!</li>
 </ul></li>
-<li>Em Python, apenas a referência de <code>l</code> é copiada para a variável local do parâmetro da função.</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> func(v):</span>
-<span id="ex1-2"><a href="#ex1-2"></a>    <span class="bu">print</span>(v)</span>
-<span id="ex1-3"><a href="#ex1-3"></a></span>
-<span id="ex1-4"><a href="#ex1-4"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb14-2"><a href="#cb14-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># Varia linha:</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>): <span class="co"># poderia substituir 3 por len(mat)</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>    <span class="co"># Varia coluna para cada linha:</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>): <span class="co"># poderia substituir 4 por len(mat[0])</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>        soma <span class="op">=</span> soma <span class="op">+</span> mat[i][j]</span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="bu">print</span>(soma)</span></code></pre></div>
 </div>
-<div id="parâmetros-de-função-iii" class="slide section level1">
-<h1>Parâmetros de Função (III)</h1>
+<div id="outra-forma-de-iterar" class="slide section level1">
+<h1>Outra Forma de Iterar</h1>
 <ul>
-<li>Alterar <strong>referência</strong> .alert[não modifica] lista externamente:</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> func(v):</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    v <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro da função:&quot;</span>, v)</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar a função:&quot;</span>, l)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>func(l)</span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar a função:&quot;</span>, l)</span></code></pre></div>
-<pre><code>Antes de chamar a função: [1, 2, 3]
-Dentro da função: [10, 20, 30]
-*Depois de chamar a função: [1, 2, 3]</code></pre>
-</div>
-<div id="parâmetros-de-função-iv" class="slide section level1">
-<h1>Parâmetros de Função (IV)</h1>
+<li>Usando o comando <code>in</code> no <code>for</code>.
 <ul>
-<li>Alterar <strong>valor</strong> .alert[modifica] a lista externamente:</li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> func(v):</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    v[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>    v[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro da função:&quot;</span>, v)</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar a função:&quot;</span>, l)</span>
-<span id="cb5-8"><a href="#cb5-8"></a>func(l)</span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar a função:&quot;</span>, l)</span></code></pre></div>
-<pre><code>Antes de chamar a função: [1, 2, 3]
-Dentro da função: [10, 20, 3]
-*Depois de chamar a função: [10, 20, 3]</code></pre>
-</div>
-<div id="retorno-de-funções" class="slide section level1">
-<h1>Retorno de Funções</h1>
-<ul>
-<li>O retorno pode ser de qualquer tipo.
-<ul>
-<li>Primitivos: int, float, bool…</li>
-<li>Strings, listas, tuplas, dicionários…</li>
+<li>Assim como podemos fazer com vetores/listas.</li>
 </ul></li>
-<li>Exemplo retornando lista:</li>
+<li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> pares(x, y):</span>
-<span id="cb7-2"><a href="#cb7-2"></a>    lista <span class="op">=</span> []</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(x, y<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb7-4"><a href="#cb7-4"></a>        <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb7-5"><a href="#cb7-5"></a>            lista.append(i)</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="cf">return</span>(lista)</span>
-<span id="cb7-7"><a href="#cb7-7"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="bu">print</span>(pares(<span class="dv">3</span>, <span class="dv">10</span>))</span></code></pre></div>
-<pre><code>[4, 6, 8, 10]</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb15-2"><a href="#cb15-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># Varia linha:</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="cf">for</span> linha <span class="kw">in</span> mat:</span>
+<span id="cb15-5"><a href="#cb15-5"></a>    <span class="co"># Varia coluna para cada linha:</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="cf">for</span> c <span class="kw">in</span> linha:</span>
+<span id="cb15-7"><a href="#cb15-7"></a>        soma <span class="op">=</span> soma <span class="op">+</span> c</span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="bu">print</span>(soma)</span></code></pre></div>
 </div>
-<div id="retorno-de-funções-ii" class="slide section level1">
-<h1>Retorno de Funções (II)</h1>
+<div id="exercícios-ii" class="slide section level1">
+<h1>Exercícios (II)</h1>
+<ol style="list-style-type: decimal">
+<li>Crie a matriz <span class="math inline">\(A = \left(\begin{array}{rrrr} 1 &amp; 2 &amp; 3 &amp; 4\\\\ 5 &amp; 6 &amp; 7 &amp; 8\\\\ 9 &amp; 10 &amp; 11 &amp; 12 \end{array}\right)\)</span> e apenas a imprima sem formato.</li>
+<li>Cria uma matriz <span class="math inline">\(3\times3\)</span> e obtenha seus valores do usuário.
 <ul>
-<li>Exemplo retornando tupla:</li>
-</ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Função que retorna o menor elemento e sua posição no vetor.</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="kw">def</span> menor(vet):</span>
-<span id="cb9-3"><a href="#cb9-3"></a>    <span class="cf">if</span> <span class="bu">len</span>(vet) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb9-4"><a href="#cb9-4"></a>        <span class="cf">return</span>(<span class="va">None</span>)</span>
-<span id="cb9-5"><a href="#cb9-5"></a>    menor <span class="op">=</span> vet[<span class="dv">0</span>]</span>
-<span id="cb9-6"><a href="#cb9-6"></a>    menor_i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(vet)):</span>
-<span id="cb9-8"><a href="#cb9-8"></a>        <span class="cf">if</span> vet[i] <span class="op">&lt;</span> menor:</span>
-<span id="cb9-9"><a href="#cb9-9"></a>            menor <span class="op">=</span> vet[i]</span>
-<span id="cb9-10"><a href="#cb9-10"></a>            menor_i <span class="op">=</span> i</span>
-<span id="cb9-11"><a href="#cb9-11"></a>    <span class="cf">return</span>((menor, menor_i))</span>
-<span id="cb9-12"><a href="#cb9-12"></a></span>
-<span id="cb9-13"><a href="#cb9-13"></a>v <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb9-14"><a href="#cb9-14"></a>r <span class="op">=</span> menor(v)</span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="cf">if</span> r <span class="op">!=</span> <span class="va">None</span>:</span>
-<span id="cb9-16"><a href="#cb9-16"></a>    <span class="bu">print</span>(<span class="st">&quot;O menor elemento&quot;</span>, r[<span class="dv">0</span>], <span class="st">&quot;está na posição&quot;</span>, r[<span class="dv">1</span>], <span class="st">&quot;do vetor.&quot;</span>)</span></code></pre></div>
-<pre class="text"><code>(-2, 2)</code></pre>
+<li>Apresente o resultado da soma da segunda linha.</li>
+<li>Modifique os valores da coluna 0 para os valores da última coluna, elemento por elemento.</li>
+<li>Indique soma dos elementos da diagonal principal.</li>
+</ul></li>
+</ol>
 </div>
-<div id="retorno-de-funções-iii" class="slide section level1">
-<h1>Retorno de Funções (III)</h1>
+<div id="imprimindo-uma-matriz-linha-por-linha" class="slide section level1">
+<h1>Imprimindo uma Matriz Linha por Linha</h1>
 <ul>
-<li>Exemplo retornando dicionário:</li>
+<li>Para melhorar a visualização da matriz, podemos imprimir a matriz linha a linha.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Obtem do usuário dados de uma agenda telefônica.</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">def</span> obtem_agenda():</span>
-<span id="cb11-3"><a href="#cb11-3"></a>    agenda <span class="op">=</span> {}</span>
-<span id="cb11-4"><a href="#cb11-4"></a>    nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Nome: &quot;</span>)</span>
-<span id="cb11-5"><a href="#cb11-5"></a>    <span class="cf">while</span> nome <span class="op">!=</span> <span class="st">&#39;&#39;</span>:</span>
-<span id="cb11-6"><a href="#cb11-6"></a>        telefone <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Telefone: &quot;</span>)</span>
-<span id="cb11-7"><a href="#cb11-7"></a>        <span class="cf">if</span> nome <span class="kw">in</span> agenda:  <span class="co">#Guarda telefones em lista.</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a>            agenda[nome].append(telefone)</span>
-<span id="cb11-9"><a href="#cb11-9"></a>        <span class="cf">else</span>:</span>
-<span id="cb11-10"><a href="#cb11-10"></a>            agenda[nome] <span class="op">=</span> [telefone]</span>
-<span id="cb11-11"><a href="#cb11-11"></a>        nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Nome: &quot;</span>)</span>
-<span id="cb11-12"><a href="#cb11-12"></a>    <span class="cf">return</span>(agenda)</span>
-<span id="cb11-13"><a href="#cb11-13"></a></span>
-<span id="cb11-14"><a href="#cb11-14"></a>agenda <span class="op">=</span> obtem_agenda()</span>
-<span id="cb11-15"><a href="#cb11-15"></a><span class="bu">print</span>(agenda)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="bu">print</span>(lin)</span></code></pre></div>
+<pre><code>[7, 8, 4, 3]
+[2, 1, 6, 12]
+[9, 11, 5, 10]</code></pre>
+</div>
+<div id="imprimindo-uma-matriz-linha-por-linha-1" class="slide section level1">
+<h1>Imprimindo uma Matriz Linha por Linha</h1>
+<ul>
+<li>Ou ainda, elemento por elemento, linha a linha:
+<ul>
+<li>Neste caso, remove colchetes e vírgulas.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="cf">for</span> c <span class="kw">in</span> lin:</span>
+<span id="cb18-4"><a href="#cb18-4"></a>        <span class="bu">print</span>(c, end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="bu">print</span>()</span></code></pre></div>
+<pre><code>7 8 4 3
+2 1 6 12
+9 11 5 10</code></pre>
+</div>
+<div id="um-pouco-sobre-formatação-de-string" class="slide section level1">
+<h1>Um Pouco sobre Formatação de String</h1>
+<ul>
+<li>Python tem um método de string que a formata.
+<ul>
+<li>Formatar signfica colocar strings na mesma quantidade de caracteres.</li>
+</ul></li>
+<li>Sintaxe de uso: <code>formato.format(valor)</code>
+<ul>
+<li><code>formato</code> é uma <strong>string</strong> de formato.</li>
+<li><code>valor</code> é o valor a ser formatado.</li>
+</ul></li>
+<li>Exemplos de formato:
+<ul>
+<li><code>'{} {}'.format('casa', 'carro')</code> : cada valor é associado a um <code>{}</code>.
+<ul>
+<li>Saída: <code>casa⌷carro</code></li>
+</ul></li>
+<li><code>'{:10}'.format('casa')</code> : alinhamento à esquerda com 10 caracteres.
+<ul>
+<li>Saída: <code>casa⌷⌷⌷⌷⌷⌷</code></li>
+</ul></li>
+<li><code>'{:&gt;10}'.format('casa')</code> : alinhamento à direita com 10 caracteres.
+<ul>
+<li>Saída: <code>⌷⌷⌷⌷⌷⌷casa</code></li>
+</ul></li>
+<li><code>'{:^10}'.format('casa')</code> : centralização com 10 caracteres.
+<ul>
+<li>Saída: <code>⌷⌷⌷casa⌷⌷⌷</code></li>
+</ul></li>
+</ul></li>
+<li>Consulte: https://pyformat.info/</li>
+</ul>
+</div>
+<div id="imprimindo-uma-matriz-formatada" class="slide section level1">
+<h1>Imprimindo uma Matriz Formatada</h1>
+<ul>
+<li>Usando o <code>format</code> para imprimir matrizes:</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
+<span id="cb20-3"><a href="#cb20-3"></a>    <span class="cf">for</span> c <span class="kw">in</span> lin:</span>
+<span id="cb20-4"><a href="#cb20-4"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{:&gt;3}</span><span class="st">&#39;</span>.<span class="bu">format</span>(c), end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="bu">print</span>()</span></code></pre></div>
+<ul>
+<li>Resultado da impressão:</li>
+</ul>
+<pre><code>  7   8   4   3
+  2   1   6  12
+  9  11   5  10</code></pre>
 </div>
 <div id="exercícios-iii" class="slide section level1">
 <h1>Exercícios (III)</h1>
-<h4 id="para-cada-código-abaixo-indique-o-que-será-impresso-1">Para cada código abaixo, indique o que será impresso:</h4>
-<p>.col-3[ ~~~{#ex1 .python} # Programa 3: def f3(x, y): y = y - x x = x + 2</p>
-<p>y = 5 x = 2 f3(x, y) print(x, y) ~~~ ]</p>
-<div class="figure">
-<img src="br" alt="" />
-<p class="caption">:column 10%</p>
-</div>
-<p>.col-3[ ~~~{#ex1 .python} # Programa 4: def f4(y): y = y + 10 return(y)</p>
-<p>y = 2 x = f4(y) print(x, y) ~~~ ]</p>
-<p><br><br><br><br><br><br> <br><br></p>
-<h4 id="para-cada-item-escreva-um-programa-em-python-que">Para cada item, escreva um programa em Python que:</h4>
 <ol style="list-style-type: decimal">
-<li>Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
-<ul>
-<li>Teste sua função usando os valores -1, 0, 1, 10 e 100.</li>
-</ul></li>
-</ol>
-</div>
-<div class="slide section level1">
-
-<p>class: section-slide layout: false</p>
-</div>
-<div id="manipulação-de-strings-em-python" class="slide section level1">
-<h1>Manipulação de Strings em Python</h1>
-</div>
-<div class="slide section level1">
-
-<p>template: conteudo layout: true</p>
-</div>
-<div id="manipulação-de-strings" class="slide section level1">
-<h1>Manipulação de Strings</h1>
-<ul>
-<li>Python apresenta diversas funções e métodos para manipular strings.</li>
-<li>Útil para lidar com texto de entrada do <code>input</code>, por exemplo.</li>
-<li>Algumas utilizadas:
-<ul>
-<li>Converter para string.</li>
-<li>Obter tamanho de string.</li>
-<li>Separar strings por espaço (ou outro caractere).</li>
-<li>Colocar todas as letras maiúsculas (ou minúsculas).</li>
-<li>Verificar se é algarismo, letra.</li>
-<li>Verificar se uma string é substring de outra.</li>
-<li>Entre muitas outras…</li>
-</ul></li>
-</ul>
-</div>
-<div id="operações-sobre-strings" class="slide section level1">
-<h1>Operações Sobre Strings</h1>
-<p>[:column 60%]( - Acesso à letra:</p>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra[<span class="dv">2</span>]<span class="op">\</span>)</span></code></pre></div>
-<ul>
-<li>Tamanho de string:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(<span class="bu">len</span>(palavra<span class="op">\</span>)<span class="op">\</span>)</span></code></pre></div>
-<ul>
-<li>Pertinência de letra:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="cf">if</span> <span class="st">&#39;ana&#39;</span> <span class="kw">in</span> palavra:</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;contém &#39;ana&#39;.&quot;</span><span class="op">\</span>)</span>
-<span id="ex1-4"><a href="#ex1-4"></a><span class="cf">else</span>:</span>
-<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;não contém &#39;ana&#39;.&quot;</span><span class="op">\</span>)</span></code></pre></div>
-<p>)</p>
-<p>[:column 7%](<br><br>)</p>
-<p>[:column 33%]( <br> Saída:</p>
-<pre><code>n</code></pre>
-<p><br></p>
-<p>Saída:</p>
-<pre><code>6</code></pre>
-<p><br></p>
-<p>Saída:</p>
-<pre><code>banana contém &#39;ana&#39;.</code></pre>
-<p>)</p>
-</div>
-<div id="operações-sobre-strings-ii" class="slide section level1">
-<h1>Operações Sobre Strings (II)</h1>
-<p>[:column 60%]( - Concatenar strings:</p>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;ban&#39;</span> <span class="op">+</span> <span class="st">&#39;ana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra<span class="op">\</span>)</span></code></pre></div>
-<ul>
-<li>Multiplicar string:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="dv">3</span><span class="op">*</span><span class="st">&#39;blá &#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra<span class="op">\</span>)</span></code></pre></div>
-<ul>
-<li>Iterar em uma string:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a>cont_a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="ex1-3"><a href="#ex1-3"></a><span class="cf">for</span> letra <span class="kw">in</span> palavra:</span>
-<span id="ex1-4"><a href="#ex1-4"></a>    <span class="cf">if</span> letra <span class="op">==</span> <span class="st">&#39;a&#39;</span>:</span>
-<span id="ex1-5"><a href="#ex1-5"></a>        cont_a <span class="op">=</span> cont_a <span class="op">+</span> <span class="dv">1</span></span>
-<span id="ex1-6"><a href="#ex1-6"></a><span class="bu">print</span>(<span class="st">&quot;Existem&quot;</span>, cont_a, <span class="st">&quot;letras &#39;a&#39; em&quot;</span>,</span>
-<span id="ex1-7"><a href="#ex1-7"></a>palavra<span class="op">\</span>)</span></code></pre></div>
-<p>)</p>
-<p>[:column 7%](<br><br>)</p>
-<p>[:column 33%]( <br> Saída:</p>
-<pre><code>banana</code></pre>
-<p><br></p>
-<p>Saída:</p>
-<pre><code>blá blá blá</code></pre>
-<p><br></p>
-<p>Saída:</p>
-<pre><code>Existem 3 letras &#39;a&#39;
-em banana</code></pre>
-<p>)</p>
-</div>
-<div id="operações-sobre-strings-iii" class="slide section level1">
-<h1>Operações Sobre Strings (III)</h1>
-<ul>
-<li>Transformar string em lista/tupla de caracteres:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;trasplante&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a>lista <span class="op">=</span> <span class="bu">list</span>(palavra) <span class="co"># para tupla, trocar list por tuple</span></span>
-<span id="ex1-3"><a href="#ex1-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
-<pre><code>[&#39;t&#39;, &#39;r&#39;, &#39;a&#39;, &#39;s&#39;, &#39;p&#39;, &#39;l&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;e&#39;]</code></pre>
-<ul>
-<li>Juntar novamente com método <code>join</code>:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;trasplante&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a>lista <span class="op">=</span> <span class="bu">list</span>(palavra)</span>
-<span id="ex1-3"><a href="#ex1-3"></a>lista.insert(<span class="dv">3</span>, <span class="st">&#39;n&#39;</span>)</span>
-<span id="ex1-4"><a href="#ex1-4"></a><span class="bu">print</span>(<span class="st">&#39;&#39;</span>.join(lista))</span></code></pre></div>
-<pre><code>transplante</code></pre>
-</div>
-<div id="métodos-de-strings" class="slide section level1">
-<h1>Métodos de Strings</h1>
-<ul>
-<li>Métodos sobre string: função associada a uma string.
-<ul>
-<li>Forma de uso: <code>var_string.metodo()</code></li>
-</ul></li>
-<li>Existem várias:</li>
-</ul>
-<table>
-<colgroup>
-<col width="24%" />
-<col width="39%" />
-<col width="36%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Método</th>
-<th>Parâmetros</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>split</code></td>
-<td>sep (opcional)</td>
-<td>Retorna lista contendo substrings separadas por sep.</td>
-</tr>
-<tr class="even">
-<td><code>count</code></td>
-<td>substr</td>
-<td>Conta quantas substrings há na string.</td>
-</tr>
-<tr class="odd">
-<td><code>find</code></td>
-<td>substr</td>
-<td>Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.</td>
-</tr>
-<tr class="even">
-<td><code>replace</code></td>
-<td>str1, str2</td>
-<td>Retorna a string substituindo str2 em todas as ocorrências de str1.</td>
-</tr>
-<tr class="odd">
-<td><code>join</code></td>
-<td>lista</td>
-<td>Junta strings de uma lista separadas pela string de chamada.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="métodos-de-strings-ii" class="slide section level1">
-<h1>Métodos de Strings (II)</h1>
-<table>
-<colgroup>
-<col width="22%" />
-<col width="42%" />
-<col width="34%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Método</th>
-<th>Parâmetros</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>upper</code></td>
-<td>nenhum</td>
-<td>Retorna a string com todas as letras maiúsculas.</td>
-</tr>
-<tr class="even">
-<td><code>lower</code></td>
-<td>nenhum</td>
-<td>Retorna a string com todas as letras minúsculas.</td>
-</tr>
-<tr class="odd">
-<td><code>isalpha</code></td>
-<td>nenhum</td>
-<td>Retorna True ou False para indicar se string contém apenas letras.</td>
-</tr>
-<tr class="even">
-<td><code>isdigit</code></td>
-<td>nenhum</td>
-<td>Retorna True ou False para indicar se string contém apenas dígitos.</td>
-</tr>
-<tr class="odd">
-<td><code>islower</code></td>
-<td>nenhum</td>
-<td>Retorna True ou False para indicar se string está toda em minúscula.</td>
-</tr>
-<tr class="even">
-<td><code>isupper</code></td>
-<td>nenhum</td>
-<td>Retorna True ou False para indicar se string está toda em maiúscula.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="métodos-de-strings-iii" class="slide section level1">
-<h1>Métodos de Strings (III)</h1>
-<table>
-<colgroup>
-<col width="22%" />
-<col width="42%" />
-<col width="34%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Método</th>
-<th>Parâmetros</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>center</code></td>
-<td>d, c (opcional)</td>
-<td>Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).</td>
-</tr>
-<tr class="even">
-<td><code>rjust</code></td>
-<td>d, c (opcional)</td>
-<td>Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).</td>
-</tr>
-<tr class="odd">
-<td><code>ljust</code></td>
-<td>d, c (opcional)</td>
-<td>Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Para ver mais, acesse:</li>
-</ul>
-<p>https://wiki.python.org.br/ManipulandoStringsComPython</p>
-</div>
-<div id="exercício-iii" class="slide section level1">
-<h1>Exercício (III)</h1>
-<ol style="list-style-type: decimal">
-<li>Escrever uma função que indica se uma string é palíndromo.
-<ul>
-<li>Uma palavra (ou texto) é palíndromo se ela é lida da mesma forma em ambos os sentidos (de frente para trás ou de trás para frente).</li>
-</ul></li>
-<li>Obter frase do usuário e remover todo espaço sobrando entre as palavras.
-<ul>
-<li>Isto é, deixar apenas um espaço entre cada palavra.</li>
-</ul></li>
-<li>Obter frase do usuário e indicar a ocorrência da palavra ‘não’.</li>
-<li>Obter frase do usuário e apresentar a quantidade de cada caractere existente nela. Dica: usar dicionário com a chave sendo a letra e o valor sendo a quantidade.</li>
-</ol>
-</div>
-<div id="checar-se-entrada-é-número" class="slide section level1">
-<h1>Checar se Entrada é Número</h1>
-<ul>
-<li>Meio mais correto de verificar se uma entrada é número:
-<ul>
-<li>Usar comando <code>try-except</code></li>
-</ul></li>
-<li>Como usar para este fim:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="cf">try</span>:</span>
-<span id="ex1-2"><a href="#ex1-2"></a>    n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="ex1-3"><a href="#ex1-3"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="ex1-4"><a href="#ex1-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Erro de entrada!&quot;</span>)</span>
-<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(<span class="st">&quot;Finalizando programa...&quot;</span>)</span>
-<span id="ex1-6"><a href="#ex1-6"></a>    quit() <span class="co"># Termina programa</span></span></code></pre></div>
-<ul>
-<li>Neste exemplo, tenta-se fazer a conversão.</li>
-<li>Se der erro (ValueError), o erro em si não aparece!
-<ul>
-<li>Ao invés disso, executa o código dentro do <code>except</code>.</li>
-</ul></li>
-<li><code>try-except</code> também pode ser usado para outros fins.
-<ul>
-<li>Veremos em aulas futuras.</li>
-</ul></li>
-</ul>
-</div>
-<div id="checar-se-entrada-é-número-ii" class="slide section level1">
-<h1>Checar se Entrada é Número (II)</h1>
-<ul>
-<li>Para checar repetidamente:</li>
-</ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>num_ok <span class="op">=</span> <span class="va">False</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="cf">while</span> <span class="kw">not</span> num_ok:</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    <span class="cf">try</span>:</span>
-<span id="ex1-4"><a href="#ex1-4"></a>        num <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="ex1-5"><a href="#ex1-5"></a>        num_ok <span class="op">=</span> <span class="va">True</span></span>
-<span id="ex1-6"><a href="#ex1-6"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="ex1-7"><a href="#ex1-7"></a>        <span class="bu">print</span>(<span class="st">&quot;Erro de entrada! Número deve ser inteiro!&quot;</span>)</span>
-<span id="ex1-8"><a href="#ex1-8"></a></span>
-<span id="ex1-9"><a href="#ex1-9"></a><span class="co"># Usar num a partir daqui...</span></span></code></pre></div>
-</div>
-<div id="exercício-iv" class="slide section level1">
-<h1>Exercício (IV)</h1>
-<ol style="list-style-type: decimal">
-<li>Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.</li>
+<li>Obtenha do usuário as dimensões de uma matriz e leia também cada elemento. Imprima a matriz no final.</li>
+<li>Leia duas matrizes A e B e calcule C como sendo a soma delas. Imprima a matriz resultante C.</li>
 </ol>
 </div>
 </body>
