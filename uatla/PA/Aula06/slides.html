@@ -500,17 +500,72 @@ Fernanda Passos
 2 1 6 12
 9 11 5 10</code></pre>
 </div>
-<div id="um-pouco-sobre-formatação-de-string" class="slide section level1">
-<h1>Um Pouco sobre Formatação de String</h1>
+<div id="formatação-de-string" class="slide section level1">
+<h1>Formatação de String</h1>
 <ul>
-<li>Python tem um método de string que a formata.
+<li>Muitas vezes precisamos formatar strings:
 <ul>
-<li>Formatar signfica colocar strings na mesma quantidade de caracteres.</li>
+<li>imprimir menos casas decimais de um número decimal;</li>
+<li>centralizar, alinhar à direita ou esquerda, justificar;</li>
+<li>criar um padrão de impressão, como tabelas, …</li>
 </ul></li>
-<li>Sintaxe de uso: <code>formato.format(valor)</code>
+<li>Python possibilita pelo menos 4 maneiras de formatar strings.
+<ul>
+<li><em>C-like</em>: usando %d, %f, %s …</li>
+<li>método <code>format</code>: sobre a string.</li>
+<li>f-string: uso de <em>f</em> no início da string, com uso semelhante ao método <code>format</code>.</li>
+<li>uso de funções <em>built-in</em> e de métodos de string.</li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-de-formatação-de-string-decimais" class="slide section level1">
+<h1>Exemplo de Formatação de String: Decimais</h1>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li><em>C-like</em>:</li>
+</ul>
+<div class="sourceCode" id="format1"><pre class="sourceCode python"><code class="sourceCode python"><span id="format1-1"><a href="#format1-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format1-2"><a href="#format1-2"></a><span class="bu">print</span>(<span class="st">&quot;d = </span><span class="sc">%0.2f</span><span class="st">&quot;</span> <span class="op">%</span> d)</span></code></pre></div>
+<pre id="saidaFormat1" class="text"><code>d = 6.67</code></pre>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<ul>
+<li>Método <code>format</code>:</li>
+</ul>
+<div class="sourceCode" id="format2"><pre class="sourceCode python"><code class="sourceCode python"><span id="format2-1"><a href="#format2-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format2-2"><a href="#format2-2"></a><span class="bu">print</span>(<span class="st">&quot;d = </span><span class="sc">{:0.2f}</span><span class="st">&quot;</span>.<span class="bu">format</span>(d))</span></code></pre></div>
+<pre id="saidaFormat2" class="text"><code>d = 6.67</code></pre>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li>f-string:</li>
+</ul>
+<div class="sourceCode" id="format3"><pre class="sourceCode python"><code class="sourceCode python"><span id="format3-1"><a href="#format3-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format3-2"><a href="#format3-2"></a><span class="bu">print</span>(<span class="ss">f&quot;d = </span><span class="sc">{d:0.2f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre id="saidaFormat3" class="text"><code>d = 6.67</code></pre>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<ul>
+<li>Usando <code>round</code>:</li>
+</ul>
+<div class="sourceCode" id="format4"><pre class="sourceCode python"><code class="sourceCode python"><span id="format4-1"><a href="#format4-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format4-2"><a href="#format4-2"></a><span class="bu">print</span>(<span class="st">&quot;d =&quot;</span>, <span class="bu">round</span>(d, <span class="dv">2</span>))</span></code></pre></div>
+<pre id="saidaFormat4" class="text"><code>d = 6.67</code></pre>
+</div>
+</div>
+</div>
+<div id="formatação-de-string-alinhamento-i" class="slide section level1">
+<h1>Formatação de String: Alinhamento (I)</h1>
+<ul>
+<li>Sintaxe de uso do <code>format</code>: <code>formato.format(valor1, valor2, ...)</code>
 <ul>
 <li><code>formato</code> é uma <strong>string</strong> de formato.</li>
-<li><code>valor</code> é o valor a ser formatado.</li>
+<li><code>valor#</code> são os valores a serem formatados.</li>
 </ul></li>
 <li>Exemplos de formato:
 <ul>
@@ -531,7 +586,58 @@ Fernanda Passos
 <li>Saída: <code>⌷⌷⌷casa⌷⌷⌷</code></li>
 </ul></li>
 </ul></li>
-<li>Consulte: https://pyformat.info/</li>
+<li>Consulte: https://docs.python.org/pt-br/3/tutorial/inputoutput.html</li>
+</ul>
+</div>
+<div id="formatação-de-string-alinhamento-ii" class="slide section level1">
+<h1>Formatação de String: Alinhamento (II)</h1>
+<ul>
+<li>Sintaxe de uso do f-format: <code>f"formato", valor1, valor2, ...</code>
+<ul>
+<li><code>formato</code> é uma constante <strong>string</strong> de formato.</li>
+<li><code>valor#</code> são os valores a serem formatados.</li>
+</ul></li>
+<li>Exemplos de formato:
+<ul>
+<li><code>f"{'casa':10}"</code> : alinhamento à esquerda com 10 caracteres.
+<ul>
+<li>Saída: <code>casa⌷⌷⌷⌷⌷⌷</code></li>
+</ul></li>
+<li><code>f"{'casa':&gt;10}"</code> : alinhamento à direita com 10 caracteres.
+<ul>
+<li>Saída: <code>⌷⌷⌷⌷⌷⌷casa</code></li>
+</ul></li>
+<li><code>f"{'casa':^10}"</code> : centralização com 10 caracteres.
+<ul>
+<li>Saída: <code>⌷⌷⌷casa⌷⌷⌷</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="formatação-de-string-alinhamento-iii" class="slide section level1">
+<h1>Formatação de String: Alinhamento (III)</h1>
+<ul>
+<li>Usando os métodos de strings:
+<ul>
+<li><code>ljust(n)</code>: justifica a string à esquerda com <span class="math inline">\(n\)</span> caracteres.</li>
+<li><code>rjust(n)</code>: justifica a string à direita com <span class="math inline">\(n\)</span> caracteres.</li>
+<li><code>center(n)</code>: centraliza a string em <span class="math inline">\(n\)</span> caracteres.</li>
+</ul></li>
+<li>Exemplos de formato:
+<ul>
+<li><code>'casa'.ljust(10)</code> : alinhamento à esquerda com 10 caracteres.
+<ul>
+<li>Saída: <code>casa⌷⌷⌷⌷⌷⌷</code></li>
+</ul></li>
+<li><code>'casa'.rjust(10)</code> : alinhamento à direita com 10 caracteres.
+<ul>
+<li>Saída: <code>⌷⌷⌷⌷⌷⌷casa</code></li>
+</ul></li>
+<li><code>'casa'.center(10)</code> : centralização com 10 caracteres.
+<ul>
+<li>Saída: <code>⌷⌷⌷casa⌷⌷⌷</code></li>
+</ul></li>
+</ul></li>
 </ul>
 </div>
 <div id="imprimindo-uma-matriz-formatada" class="slide section level1">

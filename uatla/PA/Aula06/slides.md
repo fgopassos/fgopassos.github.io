@@ -368,13 +368,89 @@ for lin in mat:
 9 11 5 10
 ```
 
-# Um Pouco sobre Formatação de String
+# Formatação de String
 
-- Python tem um método de string que a formata.
-    - Formatar signfica colocar strings na mesma quantidade de caracteres.
-- Sintaxe de uso: `formato.format(valor)`
+- Muitas vezes precisamos formatar strings:
+    - imprimir menos casas decimais de um número decimal;
+    - centralizar, alinhar à direita ou esquerda, justificar;
+    - criar um padrão de impressão, como tabelas, ...
+- Python possibilita pelo menos 4 maneiras de formatar strings.
+    - *C-like*: usando %d, %f, %s ...
+    - método `format`: sobre a string.
+    - f-string: uso de *f* no início da string, com uso semelhante ao método `format`.
+    - uso de funções *built-in* e de métodos de string.
+
+# Exemplo de Formatação de String: Decimais
+
+:::::{.columns}
+::::{.column width=45%}
+
+- *C-like*:
+
+~~~{#format1 .python}
+d = 20 / 3
+print("d = %0.2f" % d)
+~~~
+
+~~~{#saidaFormat1 .text}
+d = 6.67
+~~~
+::::
+::::{.column width=10%}
+
+::::
+::::{.column width=45%}
+
+- Método `format`:
+
+~~~{#format2 .python}
+d = 20 / 3
+print("d = {:0.2f}".format(d))
+~~~
+
+~~~{#saidaFormat2 .text}
+d = 6.67
+~~~
+::::
+:::::
+
+:::::{.columns}
+::::{.column width=45%}
+
+- f-string:
+
+~~~{#format3 .python}
+d = 20 / 3
+print(f"d = {d:0.2f}")
+~~~
+
+~~~{#saidaFormat3 .text}
+d = 6.67
+~~~
+::::
+::::{.column width=10%}
+
+::::
+::::{.column width=45%}
+
+- Usando `round`:
+
+~~~{#format4 .python}
+d = 20 / 3
+print("d =", round(d, 2))
+~~~
+
+~~~{#saidaFormat4 .text}
+d = 6.67
+~~~
+::::
+:::::
+
+# Formatação de String: Alinhamento (I)
+
+- Sintaxe de uso do `format`: `formato.format(valor1, valor2, ...)`
     - `formato` é uma **string** de formato.
-    - `valor` é o valor a ser formatado.
+    - `valor#` são os valores a serem formatados.
 - Exemplos de formato:
     - `'{} {}'.format('casa', 'carro')` : cada valor é associado a um `{}`.
         - Saída: `casa⌷carro`
@@ -384,7 +460,34 @@ for lin in mat:
         - Saída: `⌷⌷⌷⌷⌷⌷casa`
     - `'{:^10}'.format('casa')` : centralização com 10 caracteres.
         - Saída: `⌷⌷⌷casa⌷⌷⌷`
-- Consulte: https://pyformat.info/
+- Consulte: https://docs.python.org/pt-br/3/tutorial/inputoutput.html
+
+# Formatação de String: Alinhamento (II)
+
+- Sintaxe de uso do f-format: `f"formato", valor1, valor2, ...`
+    - `formato` é uma constante **string** de formato.
+    - `valor#` são os valores a serem formatados.
+- Exemplos de formato:
+    - `f"{'casa':10}"` : alinhamento à esquerda com 10 caracteres.
+        - Saída: `casa⌷⌷⌷⌷⌷⌷`
+    - `f"{'casa':>10}"` : alinhamento à direita com 10 caracteres.
+        - Saída: `⌷⌷⌷⌷⌷⌷casa`
+    - `f"{'casa':^10}"` : centralização com 10 caracteres.
+        - Saída: `⌷⌷⌷casa⌷⌷⌷`
+
+# Formatação de String: Alinhamento (III)
+
+- Usando os métodos de strings:
+    - `ljust(n)`: justifica a string à esquerda com $n$ caracteres.
+    - `rjust(n)`: justifica a string à direita com $n$ caracteres.
+    - `center(n)`: centraliza a string em $n$ caracteres.
+- Exemplos de formato:
+    - `'casa'.ljust(10)` : alinhamento à esquerda com 10 caracteres.
+        - Saída: `casa⌷⌷⌷⌷⌷⌷`
+    - `'casa'.rjust(10)` : alinhamento à direita com 10 caracteres.
+        - Saída: `⌷⌷⌷⌷⌷⌷casa`
+    - `'casa'.center(10)` : centralização com 10 caracteres.
+        - Saída: `⌷⌷⌷casa⌷⌷⌷`
 
 # Imprimindo uma Matriz Formatada
 
