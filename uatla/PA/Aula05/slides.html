@@ -481,16 +481,12 @@ Fernanda Passos
 <div class="sourceCode" id="ListaPop2"><pre class="sourceCode python"><code class="sourceCode python"><span id="ListaPop2-1"><a href="#ListaPop2-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">41</span>]</span>
 <span id="ListaPop2-2"><a href="#ListaPop2-2"></a><span class="bu">print</span>(<span class="st">&#39;Lista ao inicio:&#39;</span>)</span>
 <span id="ListaPop2-3"><a href="#ListaPop2-3"></a><span class="bu">print</span>(lista)</span>
-<span id="ListaPop2-4"><a href="#ListaPop2-4"></a>elem <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Entre com o indice do elemento a ser removido: &#39;</span>))</span>
-<span id="ListaPop2-5"><a href="#ListaPop2-5"></a><span class="cf">if</span> elem <span class="op">&lt;</span> <span class="bu">len</span>(lista):</span>
-<span id="ListaPop2-6"><a href="#ListaPop2-6"></a>    x <span class="op">=</span> lista.pop(elem)</span>
-<span id="ListaPop2-7"><a href="#ListaPop2-7"></a>    <span class="bu">print</span>(<span class="st">&#39;Elemento removido:&#39;</span>, x)</span>
-<span id="ListaPop2-8"><a href="#ListaPop2-8"></a>elem <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Entre com o elemento a ser removido: &#39;</span>))</span>
-<span id="ListaPop2-9"><a href="#ListaPop2-9"></a><span class="cf">if</span> elem <span class="kw">in</span> lista:</span>
-<span id="ListaPop2-10"><a href="#ListaPop2-10"></a>    x <span class="op">=</span> lista.pop(elem)</span>
-<span id="ListaPop2-11"><a href="#ListaPop2-11"></a>    <span class="bu">print</span>(<span class="st">&#39;Elemento removido:&#39;</span>, x)</span>
-<span id="ListaPop2-12"><a href="#ListaPop2-12"></a><span class="bu">print</span>(<span class="st">&#39;Lista ao final:&#39;</span>)</span>
-<span id="ListaPop2-13"><a href="#ListaPop2-13"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<span id="ListaPop2-4"><a href="#ListaPop2-4"></a>ind <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Entre com o indice do elemento a ser removido: &#39;</span>))</span>
+<span id="ListaPop2-5"><a href="#ListaPop2-5"></a><span class="cf">if</span> ind <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> ind <span class="op">&lt;</span> <span class="bu">len</span>(lista): <span class="co"># Verificar limites</span></span>
+<span id="ListaPop2-6"><a href="#ListaPop2-6"></a>    elemento <span class="op">=</span> lista.pop(ind)</span>
+<span id="ListaPop2-7"><a href="#ListaPop2-7"></a>    <span class="bu">print</span>(<span class="st">&#39;Elemento removido:&#39;</span>, elemento)</span>
+<span id="ListaPop2-8"><a href="#ListaPop2-8"></a><span class="bu">print</span> (<span class="st">&quot;Lista ao fim:&quot;</span>)</span>
+<span id="ListaPop2-9"><a href="#ListaPop2-9"></a><span class="bu">print</span>(lista)</span></code></pre></div>
 </div>
 <div id="alguns-métodos-de-lista-insert-i" class="slide section level1">
 <h1>Alguns Métodos de Lista: Insert (I)</h1>

@@ -429,15 +429,11 @@ print(x, lista)
 lista = [1, 4, 7, 5, 6, 8, 10, 41]
 print('Lista ao inicio:')
 print(lista)
-elem = int(input('Entre com o indice do elemento a ser removido: '))
-if elem < len(lista):
-    x = lista.pop(elem)
-    print('Elemento removido:', x)
-elem = int(input('Entre com o elemento a ser removido: '))
-if elem in lista:
-    x = lista.pop(elem)
-    print('Elemento removido:', x)
-print('Lista ao final:')
+ind = int(input('Entre com o indice do elemento a ser removido: '))
+if ind >= 0 and ind < len(lista): # Verificar limites
+    elemento = lista.pop(ind)
+    print('Elemento removido:', elemento)
+print ("Lista ao fim:")
 print(lista)
 ~~~
 
