@@ -429,16 +429,10 @@ print(x, lista)
 lista = [1, 4, 7, 5, 6, 8, 10, 41]
 print('Lista ao inicio:')
 print(lista)
-elem = int(input('Entre com o indice do elemento a ser removido: '))
-if elem < len(lista):
-    x = lista.pop(elem)
+ind = int(input('Entre com o indice do elemento a ser removido: '))
+if ind >= 0 and ind < len(lista:
+    x = lista.pop(ind)
     print('Elemento removido:', x)
-elem = int(input('Entre com o elemento a ser removido: '))
-if elem in lista:
-    x = lista.pop(elem)
-    print('Elemento removido:', x)
-print('Lista ao final:')
-print(lista)
 ~~~
 
 
@@ -533,6 +527,7 @@ print(lista)
 # Alguns Métodos de Lista: Sort
 
 - Método `sort`: ordena crescentemente uma lista (modifica a lista).
+
 ~~~{#ListaSort .python}
 lista = [1, 4, 7, 3, 4]
 lista.sort()
@@ -549,7 +544,7 @@ print(lista)
 lista = [1, 4, 7, 3, 4]
 lista.sort(reverse=True)
 print(lista)
-```
+~~~
 
 ```
 [7, 4, 4, 3, 1]
