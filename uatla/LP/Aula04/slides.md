@@ -166,7 +166,7 @@ print(l)
 ::::
 ::::{.column width=45%}
 ```
-[10, 15, 30, 40, 50]
+[10, 20, 'a', 40, 50]
 ```
 ::::
 
@@ -218,10 +218,10 @@ del lista
 1. Suponha que tenhas uma lista que varia de tamanho.
     - Qual comando deve ser usado para imprimir o seu último elemento?
 
-## Escreve um programa em Python que:
+## Escreva um programa em Python que:
 
 1. Crie uma lista contendo todas as vogais;
-1. Troque a primeira vogal com a última e a a segunda com a penúltima.
+1. Troque a primeira vogal com a última e a a segunda com a penúltima. Use `len` para acessar o último e o penúltimo elemento.
     - O que aconteceu com a lista?
 
 # Pertinência em Lista
