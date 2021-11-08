@@ -1,8 +1,8 @@
 ---
 author: Fernanda Passos
-note: Programação Avançada
+note: Linguagem de Programação
 date:
-subtitle: Aula 07
+subtitle: Aula 06
 title: Tuplas e Dicionários em Python
 institute: Universidade Atlântica
 logo: ../atlantica_logo2.svg
@@ -703,8 +703,7 @@ print(type(dic), dic)
 
 # Alguns Métodos de Dicionários (I)
 
-:::{style="width: 98%;"}
-
+:::{width="50%"}
 Método 	| Parâmetros 	| Descrição
 --------|-------------|-------------------
 `keys` 	| nenhum 	    | Retorna uma estrutura com as chaves do dicionário
@@ -712,14 +711,15 @@ Método 	| Parâmetros 	| Descrição
 `items` 	| nenhum 	  | Retorna uma estrutura contendo tuplas dos pares chave/valor do dicionário
 `get` 	| chave 	    | Retorna o valor associado à chave; ou `None`
 `get` 	| chave,alt 	| Retorna o valor associado à chave; ou alt
-
 :::
+
+- Relembrando que os métodos são acessados por: `dic.metodo()`
 
 # Alguns Métodos de Dicionários (II)
 
 - Exemplo de uso:
 
-~~~{#ex .python style="font-size: 16pt;"}
+~~~{#ex .python style="font-size: 12 pt;"}
 frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
 print(frutas.keys())
 print(frutas.values())
@@ -731,7 +731,7 @@ print(frutas.get('caqui', 'Não existe!'))
 
 - Saída:
 
-~~~{#ex .text style="font-size: 14pt;"}
+~~~{#ex .text style="font-size: 12 pt;"}
 dict_keys(['laranja', 'banana', 'uva'])
 dict_values([102, 34, 50])
 dict_items([('laranja', 102), ('banana', 34), ('uva', 50)])
