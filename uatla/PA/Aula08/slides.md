@@ -199,22 +199,7 @@ print(x, y)
 ::::
 :::::
 
-# Parâmetros em LP
-
-- Há 2 tipos de passagem de parâmetros:
-    - **Passagem por valor:** apenas o valor da variável é passado para o escopo do módulo.
-        - Há uma cópia do valor internamente.
-        - Alterações no parâmetro não modificam a variável externa ao módulo.
-    - **Passagem por referência:** é passada a referência da variável.
-        - Logo, valor da variável pode mudar.
-
-# Parâmetros em Python
-
-- Python distingue objetos como **mutável** e **imutável**.
-- Objetos mutáveis: seu
-    - Exemplos: variáveis de 
-
-# Parâmetros de Função
+# Parâmetros de Função (I)
 
 - Podem ser de tipos primitivos: números, strings, booleanos...
 - Parâmetro é nova variável e valor é copiado para ela.
@@ -222,7 +207,9 @@ print(x, y)
 - Modificação de parâmetro só é visível dentro de escopo da função.
     - A cópia é modificada.
 
-~~~ Python
+# Parâmetros de Função (II)
+
+~~~{#ex1 .python}
 def f(y):
     y = "laranja"
     print("Dentro de f:", y)
@@ -233,16 +220,16 @@ f(y)
 print("Depois de chamar f:", y)
 ~~~
 
-~~~
+~~~{#exSaida .text}
 Antes de chamar f: uva
 Dentro de f: laranja
 Depois de chamar f: uva
 ~~~
 
-# Parâmetros de Função (II)
+# Parâmetros de Função (III)
 
 - Podem também ser listas, tuplas e dicionários.
-- Agora, é importante fazer distinção entre .alert[referência] e .alert[valor].
+- Agora, é importante fazer distinção entre **referência** e **valor**.
 
 ~~~{#ex1 .python}
 l = [1, 2, 3]
@@ -259,11 +246,11 @@ def func(v):
 l = [1, 2, 3]
 ~~~
 
-# Parâmetros de Função (III)
+# Parâmetros de Função (IV)
 
-- Alterar **referência** .alert[não modifica] lista externamente:
+- Alterar **referência** não modifica lista externamente:
 
-~~~ Python
+~~~{#ex1 .python}
 def func(v):
     v = [10, 20, 30]
     print("Dentro da função:", v)
@@ -274,17 +261,17 @@ func(l)
 print("Depois de chamar a função:", l)
 ~~~
 
-~~~
+~~~{#exSaida .text}
 Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 30]
-*Depois de chamar a função: [1, 2, 3]
+Depois de chamar a função: [1, 2, 3]
 ~~~
 
-# Parâmetros de Função (IV)
+# Parâmetros de Função (V)
 
-- Alterar **valor** .alert[modifica] a lista externamente:
+- Alterar **valor** modifica a lista externamente:
 
-~~~ Python
+~~~{#ex1 .python}
 def func(v):
     v[0] = 10
     v[1] = 20
@@ -296,10 +283,10 @@ func(l)
 print("Depois de chamar a função:", l)
 ~~~
 
-~~~
+~~~{#exSaida .text}
 Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 3]
-*Depois de chamar a função: [10, 20, 3]
+Depois de chamar a função: [10, 20, 3]
 ~~~
 
 # Retorno de Funções
@@ -310,7 +297,7 @@ Dentro da função: [10, 20, 3]
 - Exemplo retornando lista:
 
 
-~~~ Python
+~~~{#ex .python}
 def pares(x, y):
     lista = []
     for i in range(x, y+1):
@@ -321,7 +308,7 @@ def pares(x, y):
 print(pares(3, 10))
 ~~~
 
-~~~
+~~~{#exSaida .text}
 [4, 6, 8, 10]
 ~~~
 
@@ -329,7 +316,7 @@ print(pares(3, 10))
 
 - Exemplo retornando tupla:
 
-~~~ Python
+~~~{#ex .python}
 # Função que retorna o menor elemento e sua posição no vetor.
 def menor(vet):
     if len(vet) <= 0:
@@ -348,7 +335,7 @@ if r != None:
     print("O menor elemento", r[0], "está na posição", r[1], "do vetor.")
 ~~~
 
-~~~Text
+~~~{#exSaida .text}
 (-2, 2)
 ~~~
 
@@ -356,7 +343,7 @@ if r != None:
 
 - Exemplo retornando dicionário:
 
-~~~ Python
+~~~{#ex .python}
 # Obtem do usuário dados de uma agenda telefônica.
 def obtem_agenda():
     agenda = {}
@@ -377,9 +364,11 @@ print(agenda)
 # Exercícios (III)
 
 
-#### Para cada código abaixo, indique o que será impresso:
+## Para cada código abaixo, indique o que será impresso:
 
-.col-3[
+
+:::::{.columns}
+::::{.column width=45%}
 ~~~{#ex1 .python}
 # Programa 3:
 def f3(x, y):
@@ -391,11 +380,11 @@ x = 2
 f3(x, y)
 print(x, y)
 ~~~
-]
+::::
+::::{.column width=10%}
 
-![:column 10%](<br>)
-
-.col-3[
+::::
+::::{.column width=45%}
 ~~~{#ex1 .python}
 # Programa 4:
 def f4(y):
@@ -406,26 +395,17 @@ y = 2
 x = f4(y)
 print(x, y)
 ~~~
-]
+::::
+:::::
 
-<br><br><br><br><br><br> <br><br>
+# Exercício (IV)
 
-#### Para cada item, escreva um programa em Python que:
+## Para cada item, escreva um programa em Python que:
 
 1. Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
     - Teste sua função usando os valores -1, 0, 1, 10 e 100.
 
----
-
-class: section-slide
-layout: false
-
-# Manipulação de Strings em Python
-
----
-
-template: conteudo
-layout: true
+# Manipulação de Strings em Python {.part}
 
 # Manipulação de Strings
 
@@ -442,7 +422,9 @@ layout: true
 
 # Operações Sobre Strings
 
-![:column 60%](
+:::::{.columns}
+::::{.column width=50%}
+
 - Acesso à letra:
 
 ~~~{#ex1 .python}
@@ -466,12 +448,12 @@ if 'ana' in palavra:
 else:
     print(palavra, "não contém 'ana'."\)
 ~~~
-)
 
-![:column 7%](<br><br>)
+::::
+::::{.column width=10%}
 
-![:column 33%](
-<br>
+::::
+::::{.column width=40%}
 Saída:
 
 ~~~
@@ -492,11 +474,13 @@ Saída:
 ~~~
 banana contém 'ana'.
 ~~~
-)
+::::
+:::::
 
 # Operações Sobre Strings (II)
 
-![:column 60%](
+:::::{.columns}
+::::{.column width=50%}
 - Concatenar strings:
 
 ~~~{#ex1 .python}
@@ -508,7 +492,7 @@ print(palavra\)
 
 ~~~{#ex1 .python}
 palavra = 3*'blá '
-print(palavra\)
+print(palavra)
 ~~~
 
 - Iterar em uma string:
@@ -520,24 +504,24 @@ for letra in palavra:
     if letra == 'a':
         cont_a = cont_a + 1
 print("Existem", cont_a, "letras 'a' em",
-palavra\)
+palavra)
 ~~~
-)
 
-![:column 7%](<br><br>)
+::::
+::::{.column width=10%}
 
-![:column 33%](
-<br>
+::::
+::::{.column width=40%}
 Saída:
 
-~~~
+~~~{#exSaida .text}
 banana
 ~~~
 <br>
 
 Saída:
 
-~~~
+~~~{#exSaida .text}
 blá blá blá
 ~~~
 
@@ -545,11 +529,12 @@ blá blá blá
 
 Saída:
 
-~~~
+~~~{#exSaida .text}
 Existem 3 letras 'a'
 em banana
 ~~~
-)
+::::
+:::::
 
 # Operações Sobre Strings (III)
 
@@ -561,7 +546,7 @@ lista = list(palavra) # para tupla, trocar list por tuple
 print(lista)
 ~~~
 
-~~~
+~~~{#exSaida .text}
 ['t', 'r', 'a', 's', 'p', 'l', 'a', 'n', 't', 'e']
 ~~~
 
@@ -574,7 +559,7 @@ lista.insert(3, 'n')
 print(''.join(lista))
 ~~~
 
-~~~
+~~~{#exSaida .text}
 transplante
 ~~~
 
@@ -626,7 +611,7 @@ https://wiki.python.org.br/ManipulandoStringsComPython
 
 # Checar se Entrada é Número
 
-- Meio mais correto de verificar se uma entrada é número:
+- Forma mais correta de verificar se uma entrada é número:
     - Usar comando `try-except`
 - Como usar para este fim:
 
