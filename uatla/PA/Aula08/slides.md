@@ -600,7 +600,7 @@ Método  |  Parâmetros   | Descrição |
 
 https://wiki.python.org.br/ManipulandoStringsComPython
 
-# Exercício (III)
+# Exercício (V)
 
 1. Escrever uma função que indica se uma string é palíndromo.
     - Uma palavra (ou texto) é palíndromo se ela é lida da mesma forma em ambos os sentidos (de frente para trás ou de trás para frente).
@@ -646,7 +646,7 @@ while not num_ok:
 # Usar num a partir daqui...
 ~~~
 
-# Exercício (IV)
+# Exercício (VI)
 
 1. Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
 
