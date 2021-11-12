@@ -719,7 +719,7 @@ Método 	| Parâmetros 	| Descrição
 
 - Exemplo de uso:
 
-~~~{#ex .python style="font-size: 12 pt;"}
+~~~{#ex .python style="font-size: 11 pt;"}
 frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
 print(frutas.keys())
 print(frutas.values())
@@ -731,7 +731,7 @@ print(frutas.get('caqui', 'Não existe!'))
 
 - Saída:
 
-~~~{#ex .text style="font-size: 12 pt;"}
+~~~{#ex .text style="font-size: 11 pt;"}
 dict_keys(['laranja', 'banana', 'uva'])
 dict_values([102, 34, 50])
 dict_items([('laranja', 102), ('banana', 34), ('uva', 50)])

@@ -429,14 +429,14 @@ print(x, y)
 
 ~~~{#ex1 .python}
 palavra = 'banana'
-print(palavra[2]\)
+print(palavra[2])
 ~~~
 
 - Tamanho de string:
 
 ~~~{#ex1 .python}
 palavra = 'banana'
-print(len(palavra\)\)
+print(len(palavra))
 ~~~
 
 - Pertinência de letra:
@@ -444,9 +444,9 @@ print(len(palavra\)\)
 ~~~{#ex1 .python}
 palavra = 'banana'
 if 'ana' in palavra:
-    print(palavra, "contém 'ana'."\)
+    print(palavra, "contém 'ana'.")
 else:
-    print(palavra, "não contém 'ana'."\)
+    print(palavra, "não contém 'ana'.")
 ~~~
 
 ::::
