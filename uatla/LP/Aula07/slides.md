@@ -102,7 +102,9 @@ cabecalho("Olá mundo!", "Fernanda")
 ## Faça o que se pede em Python:
 
 1. Escreva uma função que indique o maior valor entre 3 números.
-2. Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.
+    - Os parâmetros devem ser 3 números inteiros.
+    - Não usar a função `min`.
+2. Escreva um procedimento que imprima a tabuada formatada (de 1 a 10) de um dado número.
 
 
 # Escopo de Variáveis (I)
@@ -152,7 +154,7 @@ def f3():
     print(x)
 
 y = 2
-f2()
+f3()
 ~~~
 ::::
 ::::{.column width=5%}
@@ -208,19 +210,13 @@ print(x, y)
     - **Passagem por referência:** é passada a referência da variável.
         - Logo, valor da variável pode mudar.
 
-# Parâmetros em Python
-
-- Python distingue objetos como **mutável** e **imutável**.
-- Objetos mutáveis: seu
-    - Exemplos: variáveis de 
-
 # Parâmetros de Função
 
 - Podem ser de tipos primitivos: números, strings, booleanos...
 - Parâmetro é nova variável e valor é copiado para ela.
     - Está dentro de escopo local!
 - Modificação de parâmetro só é visível dentro de escopo da função.
-    - A cópia é modificada.
+    - Apenas a cópia é modificada.
 
 ~~~ Python
 def f(y):
@@ -376,8 +372,7 @@ print(agenda)
 
 # Exercícios (III)
 
-
-#### Para cada código abaixo, indique o que será impresso:
+## Para cada código abaixo, indique o que será impresso:
 
 .col-3[
 ~~~{#ex1 .python}
@@ -408,24 +403,15 @@ print(x, y)
 ~~~
 ]
 
-<br><br><br><br><br><br> <br><br>
+# Exercícios (IV)
 
-#### Para cada item, escreva um programa em Python que:
+## Para cada item, escreva um programa em Python que:
 
 1. Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
     - Teste sua função usando os valores -1, 0, 1, 10 e 100.
 
----
 
-class: section-slide
-layout: false
-
-# Manipulação de Strings em Python
-
----
-
-template: conteudo
-layout: true
+# Manipulação de Strings em Python {.part}
 
 # Manipulação de Strings
 
@@ -442,19 +428,21 @@ layout: true
 
 # Operações Sobre Strings
 
-![:column 60%](
+:::::{.columns}
+::::{.column width=50%}
+
 - Acesso à letra:
 
 ~~~{#ex1 .python}
 palavra = 'banana'
-print(palavra[2]\)
+print(palavra[2])
 ~~~
 
 - Tamanho de string:
 
 ~~~{#ex1 .python}
 palavra = 'banana'
-print(len(palavra\)\)
+print(len(palavra))
 ~~~
 
 - Pertinência de letra:
@@ -462,16 +450,16 @@ print(len(palavra\)\)
 ~~~{#ex1 .python}
 palavra = 'banana'
 if 'ana' in palavra:
-    print(palavra, "contém 'ana'."\)
+    print(palavra, "contém 'ana'.")
 else:
-    print(palavra, "não contém 'ana'."\)
+    print(palavra, "não contém 'ana'.")
 ~~~
-)
 
-![:column 7%](<br><br>)
+::::
+::::{.column width=10%}
 
-![:column 33%](
-<br>
+::::
+::::{.column width=40%}
 Saída:
 
 ~~~
@@ -492,23 +480,25 @@ Saída:
 ~~~
 banana contém 'ana'.
 ~~~
-)
+::::
+:::::
 
 # Operações Sobre Strings (II)
 
-![:column 60%](
+:::::{.columns}
+::::{.column width=50%}
 - Concatenar strings:
 
 ~~~{#ex1 .python}
 palavra = 'ban' + 'ana'
-print(palavra\)
+print(palavra)
 ~~~
 
 - Multiplicar string:
 
 ~~~{#ex1 .python}
 palavra = 3*'blá '
-print(palavra\)
+print(palavra)
 ~~~
 
 - Iterar em uma string:
@@ -520,24 +510,24 @@ for letra in palavra:
     if letra == 'a':
         cont_a = cont_a + 1
 print("Existem", cont_a, "letras 'a' em",
-palavra\)
+palavra)
 ~~~
-)
 
-![:column 7%](<br><br>)
+::::
+::::{.column width=10%}
 
-![:column 33%](
-<br>
+::::
+::::{.column width=40%}
 Saída:
 
-~~~
+~~~{#exSaida .text}
 banana
 ~~~
 <br>
 
 Saída:
 
-~~~
+~~~{#exSaida .text}
 blá blá blá
 ~~~
 
@@ -545,11 +535,12 @@ blá blá blá
 
 Saída:
 
-~~~
+~~~{#exSaida .text}
 Existem 3 letras 'a'
 em banana
 ~~~
-)
+::::
+:::::
 
 # Operações Sobre Strings (III)
 
@@ -561,7 +552,7 @@ lista = list(palavra) # para tupla, trocar list por tuple
 print(lista)
 ~~~
 
-~~~
+~~~{#exSaida .text}
 ['t', 'r', 'a', 's', 'p', 'l', 'a', 'n', 't', 'e']
 ~~~
 
@@ -574,7 +565,7 @@ lista.insert(3, 'n')
 print(''.join(lista))
 ~~~
 
-~~~
+~~~{#exSaida .text}
 transplante
 ~~~
 
@@ -615,7 +606,7 @@ Método  |  Parâmetros   | Descrição |
 
 https://wiki.python.org.br/ManipulandoStringsComPython
 
-# Exercício (III)
+# Exercício (V)
 
 1. Escrever uma função que indica se uma string é palíndromo.
     - Uma palavra (ou texto) é palíndromo se ela é lida da mesma forma em ambos os sentidos (de frente para trás ou de trás para frente).
@@ -626,7 +617,7 @@ https://wiki.python.org.br/ManipulandoStringsComPython
 
 # Checar se Entrada é Número
 
-- Meio mais correto de verificar se uma entrada é número:
+- Forma mais correta de verificar se uma entrada é número:
     - Usar comando `try-except`
 - Como usar para este fim:
 
@@ -661,7 +652,7 @@ while not num_ok:
 # Usar num a partir daqui...
 ~~~
 
-# Exercício (IV)
+# Exercício (VI)
 
 1. Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
 

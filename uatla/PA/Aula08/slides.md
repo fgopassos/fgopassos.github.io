@@ -102,7 +102,11 @@ cabecalho("Olá mundo!", "Fernanda")
 ## Faça o que se pede em Python:
 
 1. Escreva uma função que indique o maior valor entre 3 números.
+    - Os parâmetros de entrada são 3 números.
+    - Sem usar a função `min`.
+    - Teste sua função em um programa principal.
 2. Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.
+    - Teste sua função em um programa principal.
 
 
 # Escopo de Variáveis (I)
@@ -152,7 +156,7 @@ def f3():
     print(x)
 
 y = 2
-f2()
+f3()
 ~~~
 ::::
 ::::{.column width=5%}
@@ -163,49 +167,13 @@ Ok!<br> `y` está em escopo global, acessível pelo escopo de `f3`!
 ::::
 :::::
 
-# Exercício (II)
-
-## Para cada código abaixo, indique o que será impresso:
-
-:::::{.columns}
-::::{.column width=47%}
-~~~{#ex1 .python}
-# Programa 1:
-def f1():
-    x = y + 10
-    z = y + 1
-    print(x, z)
-
-y = 5
-f1()
-print(y)
-~~~
-
-::::
-::::{.column width=6%}
-::::
-::::{.column width=47%}
-~~~{#ex1 .python}
-# Programa 2:
-def f2():
-    x = y + 10
-    print(x, y)
-
-y = 5
-f2()
-print(x, y)
-~~~
-
-::::
-:::::
-
 # Parâmetros de Função (I)
 
 - Podem ser de tipos primitivos: números, strings, booleanos...
 - Parâmetro é nova variável e valor é copiado para ela.
     - Está dentro de escopo local!
 - Modificação de parâmetro só é visível dentro de escopo da função.
-    - A cópia é modificada.
+    - Apenas a cópia é modificada.
 
 # Parâmetros de Função (II)
 
@@ -314,9 +282,11 @@ print(pares(3, 10))
 
 # Retorno de Funções (II)
 
+:::::{.columns}
+::::{.column width=75%}
 - Exemplo retornando tupla:
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size: 18pt;"}
 # Função que retorna o menor elemento e sua posição no vetor.
 def menor(vet):
     if len(vet) <= 0:
@@ -327,7 +297,7 @@ def menor(vet):
         if vet[i] < menor:
             menor = vet[i]
             menor_i = i
-    return((menor, menor_i))
+    return (menor, menor_i)
 
 v = [1, 4, -2, 0, 10, -2, 1]
 r = menor(v)
@@ -335,15 +305,26 @@ if r != None:
     print("O menor elemento", r[0], "está na posição", r[1], "do vetor.")
 ~~~
 
+::::
+::::{.column width=5%}
+
+::::
+::::{.column width=20%}
+- Saída:
+
 ~~~{#exSaida .text}
 (-2, 2)
 ~~~
+
+::::
+:::::
+
 
 # Retorno de Funções (III)
 
 - Exemplo retornando dicionário:
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size: 18pt;"}
 # Obtem do usuário dados de uma agenda telefônica.
 def obtem_agenda():
     agenda = {}
@@ -361,7 +342,7 @@ agenda = obtem_agenda()
 print(agenda)
 ~~~
 
-# Exercícios (III)
+# Exercícios (II)
 
 
 ## Para cada código abaixo, indique o que será impresso:
@@ -398,20 +379,13 @@ print(x, y)
 ::::
 :::::
 
-# Exercício (IV)
-
-## Para cada item, escreva um programa em Python que:
-
-1. Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
-    - Teste sua função usando os valores -1, 0, 1, 10 e 100.
-
 # Manipulação de Strings em Python {.part}
 
 # Manipulação de Strings
 
 - Python apresenta diversas funções e métodos para manipular strings.
 - Útil para lidar com texto de entrada do `input`, por exemplo.
-- Algumas utilizadas:
+- Algumas delas são:
     - Converter para string.
     - Obter tamanho de string.
     - Separar strings por espaço (ou outro caractere).
@@ -427,21 +401,21 @@ print(x, y)
 
 - Acesso à letra:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 print(palavra[2])
 ~~~
 
 - Tamanho de string:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 print(len(palavra))
 ~~~
 
 - Pertinência de letra:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 if 'ana' in palavra:
     print(palavra, "contém 'ana'.")
@@ -451,27 +425,33 @@ else:
 
 ::::
 ::::{.column width=10%}
+<br>
+&#8680;
 
+<br><br>
+
+&#8680;
+
+<br><br>
+
+&#8680;
 ::::
 ::::{.column width=40%}
 Saída:
 
-~~~
+~~~{#exSaida .text style="font-size: 18pt;"}
 n
 ~~~
-<br>
 
 Saída:
 
-~~~
+~~~{#exSaida .text style="font-size: 18pt;"}
 6
 ~~~
 
-<br>
-
 Saída:
 
-~~~
+~~~{#exSaida .text style="font-size: 18pt;"}
 banana contém 'ana'.
 ~~~
 ::::
@@ -483,21 +463,21 @@ banana contém 'ana'.
 ::::{.column width=50%}
 - Concatenar strings:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'ban' + 'ana'
-print(palavra\)
+print(palavra)
 ~~~
 
 - Multiplicar string:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 3*'blá '
 print(palavra)
 ~~~
 
 - Iterar em uma string:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 cont_a = 0
 for letra in palavra:
@@ -509,27 +489,33 @@ palavra)
 
 ::::
 ::::{.column width=10%}
+<br>
+&#8680;
 
+<br><br>
+
+&#8680;
+
+<br><br>
+
+&#8680;
 ::::
 ::::{.column width=40%}
 Saída:
 
-~~~{#exSaida .text}
+~~~{#exSaida .text style="font-size: 18pt;"}
 banana
 ~~~
-<br>
 
 Saída:
 
-~~~{#exSaida .text}
+~~~{#exSaida .text style="font-size: 18pt;"}
 blá blá blá
 ~~~
 
-<br>
-
 Saída:
 
-~~~{#exSaida .text}
+~~~{#exSaida .text style="font-size: 18pt;"}
 Existem 3 letras 'a'
 em banana
 ~~~
@@ -550,6 +536,8 @@ print(lista)
 ['t', 'r', 'a', 's', 'p', 'l', 'a', 'n', 't', 'e']
 ~~~
 
+# Operações Sobre Strings (IV)
+
 - Juntar novamente com método `join`:
 
 ~~~{#ex1 .python}
@@ -569,32 +557,38 @@ transplante
     - Forma de uso: `var_string.metodo()`
 - Existem várias:
 
-Método  |  Parâmetros | Descrição |
---------|-------------|------------
-`split`   | sep (opcional) | Retorna lista contendo substrings separadas por sep.
-`count`   | substr          | Conta quantas substrings há na string.
-`find`    | substr          | Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.
-`replace` | str1, str2      | Retorna a string substituindo str2 em todas as ocorrências de str1.
-`join`    | lista           | Junta strings de uma lista separadas pela string de chamada.
+:::{style="font-size: 16pt;"}
+Método  |  Parâmetros     | Descrição                                                         |
+--------|-----------------|-------------------------------------------------------------------
+split   | sep (opcional)  | Retorna lista contendo substrings separadas por sep.
+count   | substr          | Conta quantas substrings há na string.
+find    | substr          | Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.
+replace | str1, str2      | Retorna a string substituindo str2 em todas as ocorrências de str1.
+join    | lista           | Junta strings de uma lista separadas pela string de chamada.
+:::
 
 # Métodos de Strings (II)
 
-Método  |  Parâmetros   | Descrição |
---------|---------------|------------
-`upper`   | nenhum      | Retorna a string com todas as letras maiúsculas.
-`lower`   | nenhum      | Retorna a string com todas as letras minúsculas.
-`isalpha` | nenhum      | Retorna True ou False para indicar se string contém apenas letras.
-`isdigit` | nenhum      | Retorna True ou False para indicar se string contém apenas dígitos.
-`islower` | nenhum      | Retorna True ou False para indicar se string está toda em minúscula.
-`isupper` | nenhum      | Retorna True ou False para indicar se string está toda em maiúscula.
+:::{style="font-size: 20pt;"}
+Método  |  Parâmetros   | Descrição                                            |
+--------|---------------|-------------------------------------------------------
+upper   | nenhum      | Retorna a string com todas as letras maiúsculas.
+lower   | nenhum      | Retorna a string com todas as letras minúsculas.
+isalpha | nenhum      | Retorna True ou False para indicar se string contém apenas letras.
+isdigit | nenhum      | Retorna True ou False para indicar se string contém apenas dígitos.
+islower | nenhum      | Retorna True ou False para indicar se string está toda em minúscula.
+isupper | nenhum      | Retorna True ou False para indicar se string está toda em maiúscula.
+:::
 
 # Métodos de Strings (III)
 
-Método  |  Parâmetros   | Descrição |
---------|---------------|------------
-`center`  | d, c (opcional)     | Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).
-`rjust`   | d, c (opcional)     | Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).
-`ljust`   | d, c (opcional)     | Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).
+:::{style="font-size: 20pt;"}
+Método  |  Parâmetros   | Descrição                                            |
+--------|---------------|-------------------------------------------------------
+center  | d, c (opcional)     | Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).
+rjust   | d, c (opcional)     | Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).
+ljust   | d, c (opcional)     | Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).
+:::
 
 - Para ver mais, acesse:
 

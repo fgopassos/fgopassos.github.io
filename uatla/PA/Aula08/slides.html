@@ -213,8 +213,16 @@ Fernanda Passos
 <h1>Exercício I</h1>
 <h2 id="faça-o-que-se-pede-em-python">Faça o que se pede em Python:</h2>
 <ol style="list-style-type: decimal">
-<li>Escreva uma função que indique o maior valor entre 3 números.</li>
-<li>Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.</li>
+<li>Escreva uma função que indique o maior valor entre 3 números.
+<ul>
+<li>Os parâmetros de entrada são 3 números.</li>
+<li>Sem usar a função <code>min</code>.</li>
+<li>Teste sua função em um programa principal.</li>
+</ul></li>
+<li>Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.
+<ul>
+<li>Teste sua função em um programa principal.</li>
+</ul></li>
 </ol>
 </div>
 <div id="escopo-de-variáveis-i" class="slide section level1">
@@ -262,39 +270,11 @@ Fernanda Passos
 <span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(x)</span>
 <span id="ex1-4"><a href="#ex1-4"></a></span>
 <span id="ex1-5"><a href="#ex1-5"></a>y <span class="op">=</span> <span class="dv">2</span></span>
-<span id="ex1-6"><a href="#ex1-6"></a>f2()</span></code></pre></div>
+<span id="ex1-6"><a href="#ex1-6"></a>f3()</span></code></pre></div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:50%;">
 <p><br> Ok!<br> <code>y</code> está em escopo global, acessível pelo escopo de <code>f3</code>!</p>
-</div>
-</div>
-</div>
-<div id="exercício-ii" class="slide section level1">
-<h1>Exercício (II)</h1>
-<h2 id="para-cada-código-abaixo-indique-o-que-será-impresso">Para cada código abaixo, indique o que será impresso:</h2>
-<div class="columns">
-<div class="column" style="width:47%;">
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Programa 1:</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> f1():</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    x <span class="op">=</span> y <span class="op">+</span> <span class="dv">10</span></span>
-<span id="ex1-4"><a href="#ex1-4"></a>    z <span class="op">=</span> y <span class="op">+</span> <span class="dv">1</span></span>
-<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(x, z)</span>
-<span id="ex1-6"><a href="#ex1-6"></a></span>
-<span id="ex1-7"><a href="#ex1-7"></a>y <span class="op">=</span> <span class="dv">5</span></span>
-<span id="ex1-8"><a href="#ex1-8"></a>f1()</span>
-<span id="ex1-9"><a href="#ex1-9"></a><span class="bu">print</span>(y)</span></code></pre></div>
-</div><div class="column" style="width:6%;">
-
-</div><div class="column" style="width:47%;">
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Programa 2:</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> f2():</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    x <span class="op">=</span> y <span class="op">+</span> <span class="dv">10</span></span>
-<span id="ex1-4"><a href="#ex1-4"></a>    <span class="bu">print</span>(x, y)</span>
-<span id="ex1-5"><a href="#ex1-5"></a></span>
-<span id="ex1-6"><a href="#ex1-6"></a>y <span class="op">=</span> <span class="dv">5</span></span>
-<span id="ex1-7"><a href="#ex1-7"></a>f2()</span>
-<span id="ex1-8"><a href="#ex1-8"></a><span class="bu">print</span>(x, y)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -308,7 +288,7 @@ Fernanda Passos
 </ul></li>
 <li>Modificação de parâmetro só é visível dentro de escopo da função.
 <ul>
-<li>A cópia é modificada.</li>
+<li>Apenas a cópia é modificada.</li>
 </ul></li>
 </ul>
 </div>
@@ -402,10 +382,12 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 </div>
 <div id="retorno-de-funções-ii" class="slide section level1">
 <h1>Retorno de Funções (II)</h1>
+<div class="columns">
+<div class="column" style="width:75%;">
 <ul>
 <li>Exemplo retornando tupla:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="co"># Função que retorna o menor elemento e sua posição no vetor.</span></span>
+<div class="sourceCode" id="ex" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="co"># Função que retorna o menor elemento e sua posição no vetor.</span></span>
 <span id="ex-2"><a href="#ex-2"></a><span class="kw">def</span> menor(vet):</span>
 <span id="ex-3"><a href="#ex-3"></a>    <span class="cf">if</span> <span class="bu">len</span>(vet) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
 <span id="ex-4"><a href="#ex-4"></a>        <span class="cf">return</span>(<span class="va">None</span>)</span>
@@ -415,20 +397,28 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 <span id="ex-8"><a href="#ex-8"></a>        <span class="cf">if</span> vet[i] <span class="op">&lt;</span> menor:</span>
 <span id="ex-9"><a href="#ex-9"></a>            menor <span class="op">=</span> vet[i]</span>
 <span id="ex-10"><a href="#ex-10"></a>            menor_i <span class="op">=</span> i</span>
-<span id="ex-11"><a href="#ex-11"></a>    <span class="cf">return</span>((menor, menor_i))</span>
+<span id="ex-11"><a href="#ex-11"></a>    <span class="cf">return</span> (menor, menor_i)</span>
 <span id="ex-12"><a href="#ex-12"></a></span>
 <span id="ex-13"><a href="#ex-13"></a>v <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="ex-14"><a href="#ex-14"></a>r <span class="op">=</span> menor(v)</span>
 <span id="ex-15"><a href="#ex-15"></a><span class="cf">if</span> r <span class="op">!=</span> <span class="va">None</span>:</span>
 <span id="ex-16"><a href="#ex-16"></a>    <span class="bu">print</span>(<span class="st">&quot;O menor elemento&quot;</span>, r[<span class="dv">0</span>], <span class="st">&quot;está na posição&quot;</span>, r[<span class="dv">1</span>], <span class="st">&quot;do vetor.&quot;</span>)</span></code></pre></div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:20%;">
+<ul>
+<li>Saída:</li>
+</ul>
 <pre id="exSaida" class="text"><code>(-2, 2)</code></pre>
+</div>
+</div>
 </div>
 <div id="retorno-de-funções-iii" class="slide section level1">
 <h1>Retorno de Funções (III)</h1>
 <ul>
 <li>Exemplo retornando dicionário:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="co"># Obtem do usuário dados de uma agenda telefônica.</span></span>
+<div class="sourceCode" id="ex" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="co"># Obtem do usuário dados de uma agenda telefônica.</span></span>
 <span id="ex-2"><a href="#ex-2"></a><span class="kw">def</span> obtem_agenda():</span>
 <span id="ex-3"><a href="#ex-3"></a>    agenda <span class="op">=</span> {}</span>
 <span id="ex-4"><a href="#ex-4"></a>    nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Nome: &quot;</span>)</span>
@@ -444,9 +434,9 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 <span id="ex-14"><a href="#ex-14"></a>agenda <span class="op">=</span> obtem_agenda()</span>
 <span id="ex-15"><a href="#ex-15"></a><span class="bu">print</span>(agenda)</span></code></pre></div>
 </div>
-<div id="exercícios-iii" class="slide section level1">
-<h1>Exercícios (III)</h1>
-<h2 id="para-cada-código-abaixo-indique-o-que-será-impresso-1">Para cada código abaixo, indique o que será impresso:</h2>
+<div id="exercícios-ii" class="slide section level1">
+<h1>Exercícios (II)</h1>
+<h2 id="para-cada-código-abaixo-indique-o-que-será-impresso">Para cada código abaixo, indique o que será impresso:</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Programa 3:</span></span>
@@ -472,16 +462,6 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 </div>
 </div>
 </div>
-<div id="exercício-iv" class="slide section level1">
-<h1>Exercício (IV)</h1>
-<h2 id="para-cada-item-escreva-um-programa-em-python-que">Para cada item, escreva um programa em Python que:</h2>
-<ol style="list-style-type: decimal">
-<li>Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
-<ul>
-<li>Teste sua função usando os valores -1, 0, 1, 10 e 100.</li>
-</ul></li>
-</ol>
-</div>
 <div id="manipulação-de-strings-em-python" class="slide section level1 part">
 <h1 class="part">Manipulação de Strings em Python</h1>
 </div>
@@ -490,7 +470,7 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 <ul>
 <li>Python apresenta diversas funções e métodos para manipular strings.</li>
 <li>Útil para lidar com texto de entrada do <code>input</code>, por exemplo.</li>
-<li>Algumas utilizadas:
+<li>Algumas delas são:
 <ul>
 <li>Converter para string.</li>
 <li>Obter tamanho de string.</li>
@@ -509,32 +489,34 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 <ul>
 <li>Acesso à letra:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra[<span class="dv">2</span>]<span class="op">\</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra[<span class="dv">2</span>])</span></code></pre></div>
 <ul>
 <li>Tamanho de string:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(<span class="bu">len</span>(palavra<span class="op">\</span>)<span class="op">\</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(<span class="bu">len</span>(palavra))</span></code></pre></div>
 <ul>
 <li>Pertinência de letra:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="cf">if</span> <span class="st">&#39;ana&#39;</span> <span class="kw">in</span> palavra:</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;contém &#39;ana&#39;.&quot;</span><span class="op">\</span>)</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;contém &#39;ana&#39;.&quot;</span>)</span>
 <span id="ex1-4"><a href="#ex1-4"></a><span class="cf">else</span>:</span>
-<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;não contém &#39;ana&#39;.&quot;</span><span class="op">\</span>)</span></code></pre></div>
+<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;não contém &#39;ana&#39;.&quot;</span>)</span></code></pre></div>
 </div><div class="column" style="width:10%;">
-
+<p><br> ⇨</p>
+<p><br><br></p>
+<p>⇨</p>
+<p><br><br></p>
+<p>⇨</p>
 </div><div class="column" style="width:40%;">
 <p>Saída:</p>
-<pre><code>n</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>n</code></pre>
 <p>Saída:</p>
-<pre><code>6</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>6</code></pre>
 <p>Saída:</p>
-<pre><code>banana contém &#39;ana&#39;.</code></pre>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>banana contém &#39;ana&#39;.</code></pre>
 </div>
 </div>
 </div>
@@ -545,17 +527,17 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 <ul>
 <li>Concatenar strings:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;ban&#39;</span> <span class="op">+</span> <span class="st">&#39;ana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra<span class="op">\</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;ban&#39;</span> <span class="op">+</span> <span class="st">&#39;ana&#39;</span></span>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra)</span></code></pre></div>
 <ul>
 <li>Multiplicar string:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="dv">3</span><span class="op">*</span><span class="st">&#39;blá &#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="dv">3</span><span class="op">*</span><span class="st">&#39;blá &#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra)</span></code></pre></div>
 <ul>
 <li>Iterar em uma string:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a>cont_a <span class="op">=</span> <span class="dv">0</span></span>
 <span id="ex1-3"><a href="#ex1-3"></a><span class="cf">for</span> letra <span class="kw">in</span> palavra:</span>
 <span id="ex1-4"><a href="#ex1-4"></a>    <span class="cf">if</span> letra <span class="op">==</span> <span class="st">&#39;a&#39;</span>:</span>
@@ -563,16 +545,18 @@ Depois de chamar a função: [10, 20, 3]</code></pre>
 <span id="ex1-6"><a href="#ex1-6"></a><span class="bu">print</span>(<span class="st">&quot;Existem&quot;</span>, cont_a, <span class="st">&quot;letras &#39;a&#39; em&quot;</span>,</span>
 <span id="ex1-7"><a href="#ex1-7"></a>palavra)</span></code></pre></div>
 </div><div class="column" style="width:10%;">
-
+<p><br> ⇨</p>
+<p><br><br></p>
+<p>⇨</p>
+<p><br><br></p>
+<p>⇨</p>
 </div><div class="column" style="width:40%;">
 <p>Saída:</p>
-<pre id="exSaida" class="text"><code>banana</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>banana</code></pre>
 <p>Saída:</p>
-<pre id="exSaida" class="text"><code>blá blá blá</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>blá blá blá</code></pre>
 <p>Saída:</p>
-<pre id="exSaida" class="text"><code>Existem 3 letras &#39;a&#39;
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>Existem 3 letras &#39;a&#39;
 em banana</code></pre>
 </div>
 </div>
@@ -586,6 +570,9 @@ em banana</code></pre>
 <span id="ex1-2"><a href="#ex1-2"></a>lista <span class="op">=</span> <span class="bu">list</span>(palavra) <span class="co"># para tupla, trocar list por tuple</span></span>
 <span id="ex1-3"><a href="#ex1-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
 <pre id="exSaida" class="text"><code>[&#39;t&#39;, &#39;r&#39;, &#39;a&#39;, &#39;s&#39;, &#39;p&#39;, &#39;l&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;e&#39;]</code></pre>
+</div>
+<div id="operações-sobre-strings-iv" class="slide section level1">
+<h1>Operações Sobre Strings (IV)</h1>
 <ul>
 <li>Juntar novamente com método <code>join</code>:</li>
 </ul>
@@ -604,11 +591,12 @@ em banana</code></pre>
 </ul></li>
 <li>Existem várias:</li>
 </ul>
+<div style="font-size: 16pt;">
 <table>
 <colgroup>
-<col width="24%" />
-<col width="39%" />
-<col width="36%" />
+<col width="8%" />
+<col width="18%" />
+<col width="72%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -619,40 +607,42 @@ em banana</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>split</code></td>
+<td>split</td>
 <td>sep (opcional)</td>
 <td>Retorna lista contendo substrings separadas por sep.</td>
 </tr>
 <tr class="even">
-<td><code>count</code></td>
+<td>count</td>
 <td>substr</td>
 <td>Conta quantas substrings há na string.</td>
 </tr>
 <tr class="odd">
-<td><code>find</code></td>
+<td>find</td>
 <td>substr</td>
 <td>Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.</td>
 </tr>
 <tr class="even">
-<td><code>replace</code></td>
+<td>replace</td>
 <td>str1, str2</td>
 <td>Retorna a string substituindo str2 em todas as ocorrências de str1.</td>
 </tr>
 <tr class="odd">
-<td><code>join</code></td>
+<td>join</td>
 <td>lista</td>
 <td>Junta strings de uma lista separadas pela string de chamada.</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
 <div id="métodos-de-strings-ii" class="slide section level1">
 <h1>Métodos de Strings (II)</h1>
+<div style="font-size: 20pt;">
 <table>
 <colgroup>
-<col width="22%" />
-<col width="42%" />
-<col width="34%" />
+<col width="10%" />
+<col width="19%" />
+<col width="70%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -663,45 +653,47 @@ em banana</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>upper</code></td>
+<td>upper</td>
 <td>nenhum</td>
 <td>Retorna a string com todas as letras maiúsculas.</td>
 </tr>
 <tr class="even">
-<td><code>lower</code></td>
+<td>lower</td>
 <td>nenhum</td>
 <td>Retorna a string com todas as letras minúsculas.</td>
 </tr>
 <tr class="odd">
-<td><code>isalpha</code></td>
+<td>isalpha</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string contém apenas letras.</td>
 </tr>
 <tr class="even">
-<td><code>isdigit</code></td>
+<td>isdigit</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string contém apenas dígitos.</td>
 </tr>
 <tr class="odd">
-<td><code>islower</code></td>
+<td>islower</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string está toda em minúscula.</td>
 </tr>
 <tr class="even">
-<td><code>isupper</code></td>
+<td>isupper</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string está toda em maiúscula.</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
 <div id="métodos-de-strings-iii" class="slide section level1">
 <h1>Métodos de Strings (III)</h1>
+<div style="font-size: 20pt;">
 <table>
 <colgroup>
-<col width="22%" />
-<col width="42%" />
-<col width="34%" />
+<col width="10%" />
+<col width="19%" />
+<col width="70%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -712,22 +704,23 @@ em banana</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>center</code></td>
+<td>center</td>
 <td>d, c (opcional)</td>
 <td>Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).</td>
 </tr>
 <tr class="even">
-<td><code>rjust</code></td>
+<td>rjust</td>
 <td>d, c (opcional)</td>
 <td>Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).</td>
 </tr>
 <tr class="odd">
-<td><code>ljust</code></td>
+<td>ljust</td>
 <td>d, c (opcional)</td>
 <td>Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).</td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>Para ver mais, acesse:</li>
 </ul>
