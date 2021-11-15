@@ -103,7 +103,7 @@ cabecalho("Olá mundo!", "Fernanda")
 
 1. Escreva uma função que indique o maior valor entre 3 números.
     - Os parâmetros de entrada são 3 números.
-    - Sem usar a função `min`.
+    - Sem usar a função `max`.
     - Teste sua função em um programa principal.
 2. Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.
     - Teste sua função em um programa principal.
