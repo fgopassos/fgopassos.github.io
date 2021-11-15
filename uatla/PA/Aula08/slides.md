@@ -594,7 +594,7 @@ ljust   | d, c (opcional)     | Retorna string alinhada à esquerda em d quantid
 
 https://wiki.python.org.br/ManipulandoStringsComPython
 
-# Exercício (V)
+# Exercício (III)
 
 1. Escrever uma função que indica se uma string é palíndromo.
     - Uma palavra (ou texto) é palíndromo se ela é lida da mesma forma em ambos os sentidos (de frente para trás ou de trás para frente).
@@ -603,13 +603,13 @@ https://wiki.python.org.br/ManipulandoStringsComPython
 3. Obter frase do usuário e indicar a ocorrência da palavra 'não'.
 4. Obter frase do usuário e apresentar a quantidade de cada caractere existente nela. Dica: usar dicionário com a chave sendo a letra e o valor sendo a quantidade.
 
-# Checar se Entrada é Número
+# Checar se Entrada é Número (I)
 
 - Forma mais correta de verificar se uma entrada é número:
     - Usar comando `try-except`
 - Como usar para este fim:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 try:
     n = int(input("Entre com um número: "))
 except ValueError:
@@ -618,13 +618,15 @@ except ValueError:
     quit() # Termina programa
 ~~~
 
+# Checar se Entrada é Número (II)
+
 - Neste exemplo, tenta-se fazer a conversão.
 - Se der erro (ValueError), o erro em si não aparece!
     - Ao invés disso, executa o código dentro do `except`.
 - `try-except` também pode ser usado para outros fins.
     - Veremos em aulas futuras.
 
-# Checar se Entrada é Número (II)
+# Checar se Entrada é Número (III)
 
 - Para checar repetidamente:
 
@@ -640,7 +642,7 @@ while not num_ok:
 # Usar num a partir daqui...
 ~~~
 
-# Exercício (VI)
+# Exercício (IV)
 
 1. Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
 
