@@ -213,8 +213,12 @@ Fernanda Passos
 <h1>Exercício I</h1>
 <h2 id="faça-o-que-se-pede-em-python">Faça o que se pede em Python:</h2>
 <ol style="list-style-type: decimal">
-<li>Escreva uma função que indique o maior valor entre 3 números.</li>
-<li>Escreva um procedimento que imprima a tabuada (de 1 a 10) de um dado número.</li>
+<li>Escreva uma função que indique o maior valor entre 3 números.
+<ul>
+<li>Os parâmetros devem ser 3 números inteiros.</li>
+<li>Não usar a função <code>min</code>.</li>
+</ul></li>
+<li>Escreva um procedimento que imprima a tabuada formatada (de 1 a 10) de um dado número.</li>
 </ol>
 </div>
 <div id="escopo-de-variáveis-i" class="slide section level1">
@@ -262,7 +266,7 @@ Fernanda Passos
 <span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(x)</span>
 <span id="ex1-4"><a href="#ex1-4"></a></span>
 <span id="ex1-5"><a href="#ex1-5"></a>y <span class="op">=</span> <span class="dv">2</span></span>
-<span id="ex1-6"><a href="#ex1-6"></a>f2()</span></code></pre></div>
+<span id="ex1-6"><a href="#ex1-6"></a>f3()</span></code></pre></div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:50%;">
@@ -315,16 +319,6 @@ Fernanda Passos
 </ul></li>
 </ul>
 </div>
-<div id="parâmetros-em-python" class="slide section level1">
-<h1>Parâmetros em Python</h1>
-<ul>
-<li>Python distingue objetos como <strong>mutável</strong> e <strong>imutável</strong>.</li>
-<li>Objetos mutáveis: seu
-<ul>
-<li>Exemplos: variáveis de</li>
-</ul></li>
-</ul>
-</div>
 <div id="parâmetros-de-função" class="slide section level1">
 <h1>Parâmetros de Função</h1>
 <ul>
@@ -335,7 +329,7 @@ Fernanda Passos
 </ul></li>
 <li>Modificação de parâmetro só é visível dentro de escopo da função.
 <ul>
-<li>A cópia é modificada.</li>
+<li>Apenas a cópia é modificada.</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> f(y):</span>
@@ -470,7 +464,7 @@ Dentro da função: [10, 20, 3]
 </div>
 <div id="exercícios-iii" class="slide section level1">
 <h1>Exercícios (III)</h1>
-<h4 id="para-cada-código-abaixo-indique-o-que-será-impresso-1">Para cada código abaixo, indique o que será impresso:</h4>
+<h2 id="para-cada-código-abaixo-indique-o-que-será-impresso-1">Para cada código abaixo, indique o que será impresso:</h2>
 <p>.col-3[ ~~~{#ex1 .python} # Programa 3: def f3(x, y): y = y - x x = x + 2</p>
 <p>y = 5 x = 2 f3(x, y) print(x, y) ~~~ ]</p>
 <div class="figure">
@@ -479,8 +473,10 @@ Dentro da função: [10, 20, 3]
 </div>
 <p>.col-3[ ~~~{#ex1 .python} # Programa 4: def f4(y): y = y + 10 return(y)</p>
 <p>y = 2 x = f4(y) print(x, y) ~~~ ]</p>
-<p><br><br><br><br><br><br> <br><br></p>
-<h4 id="para-cada-item-escreva-um-programa-em-python-que">Para cada item, escreva um programa em Python que:</h4>
+</div>
+<div id="exercícios-iv" class="slide section level1">
+<h1>Exercícios (IV)</h1>
+<h2 id="para-cada-item-escreva-um-programa-em-python-que">Para cada item, escreva um programa em Python que:</h2>
 <ol style="list-style-type: decimal">
 <li>Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
 <ul>
@@ -488,16 +484,8 @@ Dentro da função: [10, 20, 3]
 </ul></li>
 </ol>
 </div>
-<div class="slide section level1">
-
-<p>class: section-slide layout: false</p>
-</div>
-<div id="manipulação-de-strings-em-python" class="slide section level1">
-<h1>Manipulação de Strings em Python</h1>
-</div>
-<div class="slide section level1">
-
-<p>template: conteudo layout: true</p>
+<div id="manipulação-de-strings-em-python" class="slide section level1 part">
+<h1 class="part">Manipulação de Strings em Python</h1>
 </div>
 <div id="manipulação-de-strings" class="slide section level1">
 <h1>Manipulação de Strings</h1>
@@ -518,25 +506,30 @@ Dentro da função: [10, 20, 3]
 </div>
 <div id="operações-sobre-strings" class="slide section level1">
 <h1>Operações Sobre Strings</h1>
-<p>[:column 60%]( - Acesso à letra:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Acesso à letra:</li>
+</ul>
 <div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra[<span class="dv">2</span>]<span class="op">\</span>)</span></code></pre></div>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra[<span class="dv">2</span>])</span></code></pre></div>
 <ul>
 <li>Tamanho de string:</li>
 </ul>
 <div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(<span class="bu">len</span>(palavra<span class="op">\</span>)<span class="op">\</span>)</span></code></pre></div>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(<span class="bu">len</span>(palavra))</span></code></pre></div>
 <ul>
 <li>Pertinência de letra:</li>
 </ul>
 <div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="cf">if</span> <span class="st">&#39;ana&#39;</span> <span class="kw">in</span> palavra:</span>
-<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;contém &#39;ana&#39;.&quot;</span><span class="op">\</span>)</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;contém &#39;ana&#39;.&quot;</span>)</span>
 <span id="ex1-4"><a href="#ex1-4"></a><span class="cf">else</span>:</span>
-<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;não contém &#39;ana&#39;.&quot;</span><span class="op">\</span>)</span></code></pre></div>
-<p>)</p>
-<p>[:column 7%](<br><br>)</p>
-<p>[:column 33%]( <br> Saída:</p>
+<span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;não contém &#39;ana&#39;.&quot;</span>)</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<p>Saída:</p>
 <pre><code>n</code></pre>
 <p><br></p>
 <p>Saída:</p>
@@ -544,18 +537,23 @@ Dentro da função: [10, 20, 3]
 <p><br></p>
 <p>Saída:</p>
 <pre><code>banana contém &#39;ana&#39;.</code></pre>
-<p>)</p>
+</div>
+</div>
 </div>
 <div id="operações-sobre-strings-ii" class="slide section level1">
 <h1>Operações Sobre Strings (II)</h1>
-<p>[:column 60%]( - Concatenar strings:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Concatenar strings:</li>
+</ul>
 <div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;ban&#39;</span> <span class="op">+</span> <span class="st">&#39;ana&#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra<span class="op">\</span>)</span></code></pre></div>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra)</span></code></pre></div>
 <ul>
 <li>Multiplicar string:</li>
 </ul>
 <div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="dv">3</span><span class="op">*</span><span class="st">&#39;blá &#39;</span></span>
-<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra<span class="op">\</span>)</span></code></pre></div>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra)</span></code></pre></div>
 <ul>
 <li>Iterar em uma string:</li>
 </ul>
@@ -565,19 +563,21 @@ Dentro da função: [10, 20, 3]
 <span id="ex1-4"><a href="#ex1-4"></a>    <span class="cf">if</span> letra <span class="op">==</span> <span class="st">&#39;a&#39;</span>:</span>
 <span id="ex1-5"><a href="#ex1-5"></a>        cont_a <span class="op">=</span> cont_a <span class="op">+</span> <span class="dv">1</span></span>
 <span id="ex1-6"><a href="#ex1-6"></a><span class="bu">print</span>(<span class="st">&quot;Existem&quot;</span>, cont_a, <span class="st">&quot;letras &#39;a&#39; em&quot;</span>,</span>
-<span id="ex1-7"><a href="#ex1-7"></a>palavra<span class="op">\</span>)</span></code></pre></div>
-<p>)</p>
-<p>[:column 7%](<br><br>)</p>
-<p>[:column 33%]( <br> Saída:</p>
-<pre><code>banana</code></pre>
+<span id="ex1-7"><a href="#ex1-7"></a>palavra)</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<p>Saída:</p>
+<pre id="exSaida" class="text"><code>banana</code></pre>
 <p><br></p>
 <p>Saída:</p>
-<pre><code>blá blá blá</code></pre>
+<pre id="exSaida" class="text"><code>blá blá blá</code></pre>
 <p><br></p>
 <p>Saída:</p>
-<pre><code>Existem 3 letras &#39;a&#39;
+<pre id="exSaida" class="text"><code>Existem 3 letras &#39;a&#39;
 em banana</code></pre>
-<p>)</p>
+</div>
+</div>
 </div>
 <div id="operações-sobre-strings-iii" class="slide section level1">
 <h1>Operações Sobre Strings (III)</h1>
@@ -587,7 +587,7 @@ em banana</code></pre>
 <div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;trasplante&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a>lista <span class="op">=</span> <span class="bu">list</span>(palavra) <span class="co"># para tupla, trocar list por tuple</span></span>
 <span id="ex1-3"><a href="#ex1-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
-<pre><code>[&#39;t&#39;, &#39;r&#39;, &#39;a&#39;, &#39;s&#39;, &#39;p&#39;, &#39;l&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;e&#39;]</code></pre>
+<pre id="exSaida" class="text"><code>[&#39;t&#39;, &#39;r&#39;, &#39;a&#39;, &#39;s&#39;, &#39;p&#39;, &#39;l&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;e&#39;]</code></pre>
 <ul>
 <li>Juntar novamente com método <code>join</code>:</li>
 </ul>
@@ -595,7 +595,7 @@ em banana</code></pre>
 <span id="ex1-2"><a href="#ex1-2"></a>lista <span class="op">=</span> <span class="bu">list</span>(palavra)</span>
 <span id="ex1-3"><a href="#ex1-3"></a>lista.insert(<span class="dv">3</span>, <span class="st">&#39;n&#39;</span>)</span>
 <span id="ex1-4"><a href="#ex1-4"></a><span class="bu">print</span>(<span class="st">&#39;&#39;</span>.join(lista))</span></code></pre></div>
-<pre><code>transplante</code></pre>
+<pre id="exSaida" class="text"><code>transplante</code></pre>
 </div>
 <div id="métodos-de-strings" class="slide section level1">
 <h1>Métodos de Strings</h1>
@@ -735,8 +735,8 @@ em banana</code></pre>
 </ul>
 <p>https://wiki.python.org.br/ManipulandoStringsComPython</p>
 </div>
-<div id="exercício-iii" class="slide section level1">
-<h1>Exercício (III)</h1>
+<div id="exercício-v" class="slide section level1">
+<h1>Exercício (V)</h1>
 <ol style="list-style-type: decimal">
 <li>Escrever uma função que indica se uma string é palíndromo.
 <ul>
@@ -753,7 +753,7 @@ em banana</code></pre>
 <div id="checar-se-entrada-é-número" class="slide section level1">
 <h1>Checar se Entrada é Número</h1>
 <ul>
-<li>Meio mais correto de verificar se uma entrada é número:
+<li>Forma mais correta de verificar se uma entrada é número:
 <ul>
 <li>Usar comando <code>try-except</code></li>
 </ul></li>
@@ -792,10 +792,14 @@ em banana</code></pre>
 <span id="ex1-8"><a href="#ex1-8"></a></span>
 <span id="ex1-9"><a href="#ex1-9"></a><span class="co"># Usar num a partir daqui...</span></span></code></pre></div>
 </div>
-<div id="exercício-iv" class="slide section level1">
-<h1>Exercício (IV)</h1>
+<div id="exercício-vi" class="slide section level1">
+<h1>Exercício (VI)</h1>
 <ol style="list-style-type: decimal">
-<li>Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.</li>
+<li>Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
+<ul>
+<li>Multiplique todos os valores da matriz por -1.</li>
+<li>Imprima a matriz ao final.</li>
+</ul></li>
 </ol>
 </div>
 </body>

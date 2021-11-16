@@ -655,4 +655,5 @@ while not num_ok:
 # Exercício (VI)
 
 1. Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
-
+    - Multiplique todos os valores da matriz por -1.
+    - Imprima a matriz ao final.
