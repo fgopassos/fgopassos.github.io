@@ -486,8 +486,8 @@ def fatorial(n):
 
 - Função de recorrência de Fibonacci:
 $$fib(n) = \left\{ \begin{array}{ll}
-         0 & \mbox{if $n \geq 0$};\\
-         1 & \mbox{if $n \geq 1$};\\
+         0 & \mbox{if $n = 0$};\\
+         1 & \mbox{if $n = 1$};\\
          fib(n-1) + fib(n-2) & \mbox{if $n > 1$}.\end{array} \right.$$
 
 - **Exercício:** Escreva uma função recursiva para calcular o enésimo termo da sequência Fibonacci conforme a função de recorrência acima.
