@@ -218,7 +218,9 @@ print(x, y)
 - Modificação de parâmetro só é visível dentro de escopo da função.
     - Apenas a cópia é modificada.
 
-~~~ Python
+:::::{.columns}
+::::{.column width=45%}
+~~~{#ex .python style="font-size: 18pt;"}
 def f(y):
     y = "laranja"
     print("Dentro de f:", y)
@@ -229,18 +231,26 @@ f(y)
 print("Depois de chamar f:", y)
 ~~~
 
-~~~
+::::
+::::{.column width=10%}
+
+::::
+::::{.column width=45%}
+~~~{#exSaida .csv style="font-size: 18pt;"}
 Antes de chamar f: uva
 Dentro de f: laranja
 Depois de chamar f: uva
 ~~~
+::::
+:::::
+
 
 # Parâmetros de Função (II)
 
 - Podem também ser listas, tuplas e dicionários.
-- Agora, é importante fazer distinção entre .alert[referência] e .alert[valor].
+- Agora, é importante fazer distinção entre **referência** e **valor**.
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 l = [1, 2, 3]
 ~~~
 
@@ -248,18 +258,19 @@ l = [1, 2, 3]
     - Os elementos são os **valores**.
 - Em Python, apenas a referência de `l` é copiada para a variável local do parâmetro da função.
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 def func(v):
     print(v)
 
 l = [1, 2, 3]
+func(l)
 ~~~
 
 # Parâmetros de Função (III)
 
-- Alterar **referência** .alert[não modifica] lista externamente:
+- Alterar a referência **não modifica** lista externamente:
 
-~~~ Python
+~~~{#ex1 .python style="font-size: 18pt;"}
 def func(v):
     v = [10, 20, 30]
     print("Dentro da função:", v)
@@ -270,17 +281,17 @@ func(l)
 print("Depois de chamar a função:", l)
 ~~~
 
-~~~
+~~~{#ex1 .text style="font-size: 18pt;"}
 Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 30]
-*Depois de chamar a função: [1, 2, 3]
+Depois de chamar a função: [1, 2, 3]
 ~~~
 
 # Parâmetros de Função (IV)
 
-- Alterar **valor** .alert[modifica] a lista externamente:
+- Alterar valor **modifica** a lista externamente:
 
-~~~ Python
+~~~{#ex1 .python style="font-size: 18pt;"}
 def func(v):
     v[0] = 10
     v[1] = 20
@@ -292,7 +303,7 @@ func(l)
 print("Depois de chamar a função:", l)
 ~~~
 
-~~~
+~~~{#ex1 .text style="font-size: 18pt;"}
 Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 3]
 *Depois de chamar a função: [10, 20, 3]
@@ -306,7 +317,7 @@ Dentro da função: [10, 20, 3]
 - Exemplo retornando lista:
 
 
-~~~ Python
+~~~{#ex1 .python style="font-size: 18pt;"}
 def pares(x, y):
     lista = []
     for i in range(x, y+1):
@@ -317,7 +328,7 @@ def pares(x, y):
 print(pares(3, 10))
 ~~~
 
-~~~
+~~~{#ex1 .python style="font-size: 18pt;"}
 [4, 6, 8, 10]
 ~~~
 
@@ -325,7 +336,7 @@ print(pares(3, 10))
 
 - Exemplo retornando tupla:
 
-~~~ Python
+~~~{#ex1 .python style="font-size: 18pt;"}
 # Função que retorna o menor elemento e sua posição no vetor.
 def menor(vet):
     if len(vet) <= 0:
@@ -340,19 +351,16 @@ def menor(vet):
 
 v = [1, 4, -2, 0, 10, -2, 1]
 r = menor(v)
+print(r)
 if r != None:
     print("O menor elemento", r[0], "está na posição", r[1], "do vetor.")
-~~~
-
-~~~Text
-(-2, 2)
 ~~~
 
 # Retorno de Funções (III)
 
 - Exemplo retornando dicionário:
 
-~~~ Python
+~~~{#ex1 .python style="font-size: 18pt;"}
 # Obtem do usuário dados de uma agenda telefônica.
 def obtem_agenda():
     agenda = {}
@@ -374,7 +382,8 @@ print(agenda)
 
 ## Para cada código abaixo, indique o que será impresso:
 
-.col-3[
+:::::{.columns}
+::::{.column width=45%}
 ~~~{#ex1 .python}
 # Programa 3:
 def f3(x, y):
@@ -386,11 +395,12 @@ x = 2
 f3(x, y)
 print(x, y)
 ~~~
-]
 
-![:column 10%](<br>)
+::::
+::::{.column width=10%}
 
-.col-3[
+::::
+::::{.column width=45%}
 ~~~{#ex1 .python}
 # Programa 4:
 def f4(y):
@@ -401,14 +411,102 @@ y = 2
 x = f4(y)
 print(x, y)
 ~~~
-]
+::::
+:::::
+
 
 # Exercícios (IV)
 
 ## Para cada item, escreva um programa em Python que:
 
-1. Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
-    - Teste sua função usando os valores -1, 0, 1, 10 e 100.
+1. Escreva uma função que calcule o fatorial de um dado $n$.
+    - Exemplo: para $n = 5$, $fat(n) = 5 \times 4 \times 3 \times 2 \times 1$.
+2. Escreva uma função que calcule as raízes da fórmula de Bháskara, a partir de $a$, $b$ e $c$.
+$$ x = \frac{-b \pm \sqrt{b^2 - 4 \times a \times c}}{2 \times a} $$
+
+# Recursão
+
+- Capacidade de uma função chamar a si própria.
+- Útil para **recorrências**.
+    - Isto é, uma função em que cada termo de uma sequência é definido em função dos elementos anteriores.
+- Assim como em uma repetição, deve ter uma **condição de parada**.
+- Exemplo:
+
+:::::{.columns}
+::::{.column width=45%}
+~~~{#id .python }
+def contagemRegressiva(n):
+    if n == 0:
+        print('Decolar!')
+    else:
+        print(n)
+        contagemRegressiva(n-1)
+~~~
+::::
+::::{.column width=10%}
+
+::::
+::::{.column width=45%}
+~~~{#id .python }
+def contagemRegressiva(n):
+    while(n):
+        print(n)
+        n = n - 1
+    print('Decolar!')
+~~~
+::::
+:::::
+
+# Exemplo de Função Recursiva: Recorrência
+
+:::::{.columns}
+::::{.column width=45%}
+- Fatorial: função de recorrência.
+$$fat(n) = \left\{ \begin{array}{ll}
+         1 & \mbox{if $n \geq 0$};\\
+        n \times fat(n-1) & \mbox{if $n > 0$}.\end{array} \right.$$
+::::
+::::{.column width=10%}
+
+::::
+::::{.column width=45%}
+~~~{#fat .python }
+def fatorial(n):
+    # Para n >= 0
+    if n == 0:
+        return 1
+    else:
+        temp = n * fatorial(n-1)
+        return temp
+~~~
+::::
+:::::
+
+# Mais um Exemplo e Exercício
+
+- Função de recorrência de Fibonacci:
+$$fib(n) = \left\{ \begin{array}{ll}
+         0 & \mbox{if $n \geq 0$};\\
+         1 & \mbox{if $n \geq 1$};\\
+         fib(n-1) + fib(n-2) & \mbox{if $n > 1$}.\end{array} \right.$$
+
+- **Exercício:** Escreva uma função recursiva para calcular o enésimo termo da sequência Fibonacci conforme a função de recorrência acima.
+
+
+# Exercício (VI)
+
+1. Escreva uma função recursiva que calcule o exponencial de um $x$ elevado a $n$.
+    - Isto é, $exponencial(x, n)$
+
+# Solução
+
+~~~{#id .python }
+def exponencial(x, n):
+    if n == 0:
+        return 1
+    else:
+        return(x * exponencial(x, n-1))
+~~~
 
 
 # Manipulação de Strings em Python {.part}
@@ -417,7 +515,7 @@ print(x, y)
 
 - Python apresenta diversas funções e métodos para manipular strings.
 - Útil para lidar com texto de entrada do `input`, por exemplo.
-- Algumas utilizadas:
+- Algumas delas são:
     - Converter para string.
     - Obter tamanho de string.
     - Separar strings por espaço (ou outro caractere).
@@ -433,21 +531,21 @@ print(x, y)
 
 - Acesso à letra:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 print(palavra[2])
 ~~~
 
 - Tamanho de string:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 print(len(palavra))
 ~~~
 
 - Pertinência de letra:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 if 'ana' in palavra:
     print(palavra, "contém 'ana'.")
@@ -457,27 +555,33 @@ else:
 
 ::::
 ::::{.column width=10%}
+<br>
+&#8680;
 
+<br><br>
+
+&#8680;
+
+<br><br>
+
+&#8680;
 ::::
 ::::{.column width=40%}
 Saída:
 
-~~~
+~~~{#exSaida .text style="font-size: 18pt;"}
 n
 ~~~
-<br>
 
 Saída:
 
-~~~
+~~~{#exSaida .text style="font-size: 18pt;"}
 6
 ~~~
 
-<br>
-
 Saída:
 
-~~~
+~~~{#exSaida .text style="font-size: 18pt;"}
 banana contém 'ana'.
 ~~~
 ::::
@@ -489,21 +593,21 @@ banana contém 'ana'.
 ::::{.column width=50%}
 - Concatenar strings:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'ban' + 'ana'
 print(palavra)
 ~~~
 
 - Multiplicar string:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 3*'blá '
 print(palavra)
 ~~~
 
 - Iterar em uma string:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 palavra = 'banana'
 cont_a = 0
 for letra in palavra:
@@ -515,27 +619,33 @@ palavra)
 
 ::::
 ::::{.column width=10%}
+<br>
+&#8680;
 
+<br><br>
+
+&#8680;
+
+<br><br>
+
+&#8680;
 ::::
 ::::{.column width=40%}
 Saída:
 
-~~~{#exSaida .text}
+~~~{#exSaida .text style="font-size: 18pt;"}
 banana
 ~~~
-<br>
 
 Saída:
 
-~~~{#exSaida .text}
+~~~{#exSaida .text style="font-size: 18pt;"}
 blá blá blá
 ~~~
 
-<br>
-
 Saída:
 
-~~~{#exSaida .text}
+~~~{#exSaida .text style="font-size: 18pt;"}
 Existem 3 letras 'a'
 em banana
 ~~~
@@ -556,6 +666,8 @@ print(lista)
 ['t', 'r', 'a', 's', 'p', 'l', 'a', 'n', 't', 'e']
 ~~~
 
+# Operações Sobre Strings (IV)
+
 - Juntar novamente com método `join`:
 
 ~~~{#ex1 .python}
@@ -575,38 +687,44 @@ transplante
     - Forma de uso: `var_string.metodo()`
 - Existem várias:
 
-Método  |  Parâmetros | Descrição |
---------|-------------|------------
-`split`   | sep (opcional) | Retorna lista contendo substrings separadas por sep.
-`count`   | substr          | Conta quantas substrings há na string.
-`find`    | substr          | Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.
-`replace` | str1, str2      | Retorna a string substituindo str2 em todas as ocorrências de str1.
-`join`    | lista           | Junta strings de uma lista separadas pela string de chamada.
+:::{style="font-size: 16pt;"}
+Método  |  Parâmetros     | Descrição                                                         |
+--------|-----------------|-------------------------------------------------------------------
+split   | sep (opcional)  | Retorna lista contendo substrings separadas por sep.
+count   | substr          | Conta quantas substrings há na string.
+find    | substr          | Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.
+replace | str1, str2      | Retorna a string substituindo str2 em todas as ocorrências de str1.
+join    | lista           | Junta strings de uma lista separadas pela string de chamada.
+:::
 
 # Métodos de Strings (II)
 
-Método  |  Parâmetros   | Descrição |
---------|---------------|------------
-`upper`   | nenhum      | Retorna a string com todas as letras maiúsculas.
-`lower`   | nenhum      | Retorna a string com todas as letras minúsculas.
-`isalpha` | nenhum      | Retorna True ou False para indicar se string contém apenas letras.
-`isdigit` | nenhum      | Retorna True ou False para indicar se string contém apenas dígitos.
-`islower` | nenhum      | Retorna True ou False para indicar se string está toda em minúscula.
-`isupper` | nenhum      | Retorna True ou False para indicar se string está toda em maiúscula.
+:::{style="font-size: 20pt;"}
+Método  |  Parâmetros   | Descrição                                            |
+--------|---------------|-------------------------------------------------------
+upper   | nenhum      | Retorna a string com todas as letras maiúsculas.
+lower   | nenhum      | Retorna a string com todas as letras minúsculas.
+isalpha | nenhum      | Retorna True ou False para indicar se string contém apenas letras.
+isdigit | nenhum      | Retorna True ou False para indicar se string contém apenas dígitos.
+islower | nenhum      | Retorna True ou False para indicar se string está toda em minúscula.
+isupper | nenhum      | Retorna True ou False para indicar se string está toda em maiúscula.
+:::
 
 # Métodos de Strings (III)
 
-Método  |  Parâmetros   | Descrição |
---------|---------------|------------
-`center`  | d, c (opcional)     | Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).
-`rjust`   | d, c (opcional)     | Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).
-`ljust`   | d, c (opcional)     | Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).
+:::{style="font-size: 20pt;"}
+Método  |  Parâmetros   | Descrição                                            |
+--------|---------------|-------------------------------------------------------
+center  | d, c (opcional)     | Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).
+rjust   | d, c (opcional)     | Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).
+ljust   | d, c (opcional)     | Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).
+:::
 
 - Para ver mais, acesse:
 
 https://wiki.python.org.br/ManipulandoStringsComPython
 
-# Exercício (V)
+# Exercício (VII)
 
 1. Escrever uma função que indica se uma string é palíndromo.
     - Uma palavra (ou texto) é palíndromo se ela é lida da mesma forma em ambos os sentidos (de frente para trás ou de trás para frente).
@@ -615,13 +733,13 @@ https://wiki.python.org.br/ManipulandoStringsComPython
 3. Obter frase do usuário e indicar a ocorrência da palavra 'não'.
 4. Obter frase do usuário e apresentar a quantidade de cada caractere existente nela. Dica: usar dicionário com a chave sendo a letra e o valor sendo a quantidade.
 
-# Checar se Entrada é Número
+# Checar se Entrada é Número (I)
 
 - Forma mais correta de verificar se uma entrada é número:
     - Usar comando `try-except`
 - Como usar para este fim:
 
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 18pt;"}
 try:
     n = int(input("Entre com um número: "))
 except ValueError:
@@ -630,13 +748,15 @@ except ValueError:
     quit() # Termina programa
 ~~~
 
+# Checar se Entrada é Número (II)
+
 - Neste exemplo, tenta-se fazer a conversão.
 - Se der erro (ValueError), o erro em si não aparece!
     - Ao invés disso, executa o código dentro do `except`.
 - `try-except` também pode ser usado para outros fins.
     - Veremos em aulas futuras.
 
-# Checar se Entrada é Número (II)
+# Checar se Entrada é Número (III)
 
 - Para checar repetidamente:
 
@@ -652,7 +772,7 @@ while not num_ok:
 # Usar num a partir daqui...
 ~~~
 
-# Exercício (VI)
+# Exercício (VIII)
 
 1. Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
     - Multiplique todos os valores da matriz por -1.

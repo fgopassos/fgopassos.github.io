@@ -85,6 +85,7 @@
     href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
    href="../template/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
   <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
     charset="utf-8" type="text/javascript"></script>
 </head>
@@ -332,25 +333,32 @@ Fernanda Passos
 <li>Apenas a cópia é modificada.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> f(y):</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    y <span class="op">=</span> <span class="st">&quot;laranja&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro de f:&quot;</span>, y)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>y <span class="op">=</span> <span class="st">&quot;uva&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar f:&quot;</span>, y)</span>
-<span id="cb1-7"><a href="#cb1-7"></a>f(y)</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar f:&quot;</span>, y)</span></code></pre></div>
-<pre><code>Antes de chamar f: uva
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="ex" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="kw">def</span> f(y):</span>
+<span id="ex-2"><a href="#ex-2"></a>    y <span class="op">=</span> <span class="st">&quot;laranja&quot;</span></span>
+<span id="ex-3"><a href="#ex-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro de f:&quot;</span>, y)</span>
+<span id="ex-4"><a href="#ex-4"></a></span>
+<span id="ex-5"><a href="#ex-5"></a>y <span class="op">=</span> <span class="st">&quot;uva&quot;</span></span>
+<span id="ex-6"><a href="#ex-6"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar f:&quot;</span>, y)</span>
+<span id="ex-7"><a href="#ex-7"></a>f(y)</span>
+<span id="ex-8"><a href="#ex-8"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar f:&quot;</span>, y)</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<pre id="exSaida" class="csv" style="font-size: 18pt;"><code>Antes de chamar f: uva
 Dentro de f: laranja
 Depois de chamar f: uva</code></pre>
+</div>
+</div>
 </div>
 <div id="parâmetros-de-função-ii" class="slide section level1">
 <h1>Parâmetros de Função (II)</h1>
 <ul>
 <li>Podem também ser listas, tuplas e dicionários.</li>
-<li>Agora, é importante fazer distinção entre .alert[referência] e .alert[valor].</li>
+<li>Agora, é importante fazer distinção entre <strong>referência</strong> e <strong>valor</strong>.</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div>
 <ul>
 <li>Neste exemplo, <code>l</code> é <strong>referência</strong>.
 <ul>
@@ -358,43 +366,44 @@ Depois de chamar f: uva</code></pre>
 </ul></li>
 <li>Em Python, apenas a referência de <code>l</code> é copiada para a variável local do parâmetro da função.</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> func(v):</span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> func(v):</span>
 <span id="ex1-2"><a href="#ex1-2"></a>    <span class="bu">print</span>(v)</span>
 <span id="ex1-3"><a href="#ex1-3"></a></span>
-<span id="ex1-4"><a href="#ex1-4"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div>
+<span id="ex1-4"><a href="#ex1-4"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="ex1-5"><a href="#ex1-5"></a>func(l)</span></code></pre></div>
 </div>
 <div id="parâmetros-de-função-iii" class="slide section level1">
 <h1>Parâmetros de Função (III)</h1>
 <ul>
-<li>Alterar <strong>referência</strong> .alert[não modifica] lista externamente:</li>
+<li>Alterar a referência <strong>não modifica</strong> lista externamente:</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> func(v):</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    v <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro da função:&quot;</span>, v)</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar a função:&quot;</span>, l)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>func(l)</span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar a função:&quot;</span>, l)</span></code></pre></div>
-<pre><code>Antes de chamar a função: [1, 2, 3]
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> func(v):</span>
+<span id="ex1-2"><a href="#ex1-2"></a>    v <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro da função:&quot;</span>, v)</span>
+<span id="ex1-4"><a href="#ex1-4"></a></span>
+<span id="ex1-5"><a href="#ex1-5"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="ex1-6"><a href="#ex1-6"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar a função:&quot;</span>, l)</span>
+<span id="ex1-7"><a href="#ex1-7"></a>func(l)</span>
+<span id="ex1-8"><a href="#ex1-8"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar a função:&quot;</span>, l)</span></code></pre></div>
+<pre id="ex1" class="text" style="font-size: 18pt;"><code>Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 30]
-*Depois de chamar a função: [1, 2, 3]</code></pre>
+Depois de chamar a função: [1, 2, 3]</code></pre>
 </div>
 <div id="parâmetros-de-função-iv" class="slide section level1">
 <h1>Parâmetros de Função (IV)</h1>
 <ul>
-<li>Alterar <strong>valor</strong> .alert[modifica] a lista externamente:</li>
+<li>Alterar valor <strong>modifica</strong> a lista externamente:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> func(v):</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    v[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>    v[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro da função:&quot;</span>, v)</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar a função:&quot;</span>, l)</span>
-<span id="cb5-8"><a href="#cb5-8"></a>func(l)</span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar a função:&quot;</span>, l)</span></code></pre></div>
-<pre><code>Antes de chamar a função: [1, 2, 3]
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> func(v):</span>
+<span id="ex1-2"><a href="#ex1-2"></a>    v[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="ex1-3"><a href="#ex1-3"></a>    v[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">20</span></span>
+<span id="ex1-4"><a href="#ex1-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Dentro da função:&quot;</span>, v)</span>
+<span id="ex1-5"><a href="#ex1-5"></a></span>
+<span id="ex1-6"><a href="#ex1-6"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="ex1-7"><a href="#ex1-7"></a><span class="bu">print</span>(<span class="st">&quot;Antes de chamar a função:&quot;</span>, l)</span>
+<span id="ex1-8"><a href="#ex1-8"></a>func(l)</span>
+<span id="ex1-9"><a href="#ex1-9"></a><span class="bu">print</span>(<span class="st">&quot;Depois de chamar a função:&quot;</span>, l)</span></code></pre></div>
+<pre id="ex1" class="text" style="font-size: 18pt;"><code>Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 3]
 *Depois de chamar a função: [10, 20, 3]</code></pre>
 </div>
@@ -408,81 +417,177 @@ Dentro da função: [10, 20, 3]
 </ul></li>
 <li>Exemplo retornando lista:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> pares(x, y):</span>
-<span id="cb7-2"><a href="#cb7-2"></a>    lista <span class="op">=</span> []</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(x, y<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb7-4"><a href="#cb7-4"></a>        <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb7-5"><a href="#cb7-5"></a>            lista.append(i)</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="cf">return</span>(lista)</span>
-<span id="cb7-7"><a href="#cb7-7"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="bu">print</span>(pares(<span class="dv">3</span>, <span class="dv">10</span>))</span></code></pre></div>
-<pre><code>[4, 6, 8, 10]</code></pre>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="kw">def</span> pares(x, y):</span>
+<span id="ex1-2"><a href="#ex1-2"></a>    lista <span class="op">=</span> []</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(x, y<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="ex1-4"><a href="#ex1-4"></a>        <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="ex1-5"><a href="#ex1-5"></a>            lista.append(i)</span>
+<span id="ex1-6"><a href="#ex1-6"></a>    <span class="cf">return</span>(lista)</span>
+<span id="ex1-7"><a href="#ex1-7"></a></span>
+<span id="ex1-8"><a href="#ex1-8"></a><span class="bu">print</span>(pares(<span class="dv">3</span>, <span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>[<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span></code></pre></div>
 </div>
 <div id="retorno-de-funções-ii" class="slide section level1">
 <h1>Retorno de Funções (II)</h1>
 <ul>
 <li>Exemplo retornando tupla:</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Função que retorna o menor elemento e sua posição no vetor.</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="kw">def</span> menor(vet):</span>
-<span id="cb9-3"><a href="#cb9-3"></a>    <span class="cf">if</span> <span class="bu">len</span>(vet) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb9-4"><a href="#cb9-4"></a>        <span class="cf">return</span>(<span class="va">None</span>)</span>
-<span id="cb9-5"><a href="#cb9-5"></a>    menor <span class="op">=</span> vet[<span class="dv">0</span>]</span>
-<span id="cb9-6"><a href="#cb9-6"></a>    menor_i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(vet)):</span>
-<span id="cb9-8"><a href="#cb9-8"></a>        <span class="cf">if</span> vet[i] <span class="op">&lt;</span> menor:</span>
-<span id="cb9-9"><a href="#cb9-9"></a>            menor <span class="op">=</span> vet[i]</span>
-<span id="cb9-10"><a href="#cb9-10"></a>            menor_i <span class="op">=</span> i</span>
-<span id="cb9-11"><a href="#cb9-11"></a>    <span class="cf">return</span>((menor, menor_i))</span>
-<span id="cb9-12"><a href="#cb9-12"></a></span>
-<span id="cb9-13"><a href="#cb9-13"></a>v <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb9-14"><a href="#cb9-14"></a>r <span class="op">=</span> menor(v)</span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="cf">if</span> r <span class="op">!=</span> <span class="va">None</span>:</span>
-<span id="cb9-16"><a href="#cb9-16"></a>    <span class="bu">print</span>(<span class="st">&quot;O menor elemento&quot;</span>, r[<span class="dv">0</span>], <span class="st">&quot;está na posição&quot;</span>, r[<span class="dv">1</span>], <span class="st">&quot;do vetor.&quot;</span>)</span></code></pre></div>
-<pre class="text"><code>(-2, 2)</code></pre>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Função que retorna o menor elemento e sua posição no vetor.</span></span>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> menor(vet):</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    <span class="cf">if</span> <span class="bu">len</span>(vet) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="ex1-4"><a href="#ex1-4"></a>        <span class="cf">return</span>(<span class="va">None</span>)</span>
+<span id="ex1-5"><a href="#ex1-5"></a>    menor <span class="op">=</span> vet[<span class="dv">0</span>]</span>
+<span id="ex1-6"><a href="#ex1-6"></a>    menor_i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="ex1-7"><a href="#ex1-7"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(vet)):</span>
+<span id="ex1-8"><a href="#ex1-8"></a>        <span class="cf">if</span> vet[i] <span class="op">&lt;</span> menor:</span>
+<span id="ex1-9"><a href="#ex1-9"></a>            menor <span class="op">=</span> vet[i]</span>
+<span id="ex1-10"><a href="#ex1-10"></a>            menor_i <span class="op">=</span> i</span>
+<span id="ex1-11"><a href="#ex1-11"></a>    <span class="cf">return</span>((menor, menor_i))</span>
+<span id="ex1-12"><a href="#ex1-12"></a></span>
+<span id="ex1-13"><a href="#ex1-13"></a>v <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="ex1-14"><a href="#ex1-14"></a>r <span class="op">=</span> menor(v)</span>
+<span id="ex1-15"><a href="#ex1-15"></a><span class="bu">print</span>(r)</span>
+<span id="ex1-16"><a href="#ex1-16"></a><span class="cf">if</span> r <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="ex1-17"><a href="#ex1-17"></a>    <span class="bu">print</span>(<span class="st">&quot;O menor elemento&quot;</span>, r[<span class="dv">0</span>], <span class="st">&quot;está na posição&quot;</span>, r[<span class="dv">1</span>], <span class="st">&quot;do vetor.&quot;</span>)</span></code></pre></div>
 </div>
 <div id="retorno-de-funções-iii" class="slide section level1">
 <h1>Retorno de Funções (III)</h1>
 <ul>
 <li>Exemplo retornando dicionário:</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Obtem do usuário dados de uma agenda telefônica.</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">def</span> obtem_agenda():</span>
-<span id="cb11-3"><a href="#cb11-3"></a>    agenda <span class="op">=</span> {}</span>
-<span id="cb11-4"><a href="#cb11-4"></a>    nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Nome: &quot;</span>)</span>
-<span id="cb11-5"><a href="#cb11-5"></a>    <span class="cf">while</span> nome <span class="op">!=</span> <span class="st">&#39;&#39;</span>:</span>
-<span id="cb11-6"><a href="#cb11-6"></a>        telefone <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Telefone: &quot;</span>)</span>
-<span id="cb11-7"><a href="#cb11-7"></a>        <span class="cf">if</span> nome <span class="kw">in</span> agenda:  <span class="co">#Guarda telefones em lista.</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a>            agenda[nome].append(telefone)</span>
-<span id="cb11-9"><a href="#cb11-9"></a>        <span class="cf">else</span>:</span>
-<span id="cb11-10"><a href="#cb11-10"></a>            agenda[nome] <span class="op">=</span> [telefone]</span>
-<span id="cb11-11"><a href="#cb11-11"></a>        nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Nome: &quot;</span>)</span>
-<span id="cb11-12"><a href="#cb11-12"></a>    <span class="cf">return</span>(agenda)</span>
-<span id="cb11-13"><a href="#cb11-13"></a></span>
-<span id="cb11-14"><a href="#cb11-14"></a>agenda <span class="op">=</span> obtem_agenda()</span>
-<span id="cb11-15"><a href="#cb11-15"></a><span class="bu">print</span>(agenda)</span></code></pre></div>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Obtem do usuário dados de uma agenda telefônica.</span></span>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> obtem_agenda():</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    agenda <span class="op">=</span> {}</span>
+<span id="ex1-4"><a href="#ex1-4"></a>    nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Nome: &quot;</span>)</span>
+<span id="ex1-5"><a href="#ex1-5"></a>    <span class="cf">while</span> nome <span class="op">!=</span> <span class="st">&#39;&#39;</span>:</span>
+<span id="ex1-6"><a href="#ex1-6"></a>        telefone <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Telefone: &quot;</span>)</span>
+<span id="ex1-7"><a href="#ex1-7"></a>        <span class="cf">if</span> nome <span class="kw">in</span> agenda:  <span class="co">#Guarda telefones em lista.</span></span>
+<span id="ex1-8"><a href="#ex1-8"></a>            agenda[nome].append(telefone)</span>
+<span id="ex1-9"><a href="#ex1-9"></a>        <span class="cf">else</span>:</span>
+<span id="ex1-10"><a href="#ex1-10"></a>            agenda[nome] <span class="op">=</span> [telefone]</span>
+<span id="ex1-11"><a href="#ex1-11"></a>        nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Nome: &quot;</span>)</span>
+<span id="ex1-12"><a href="#ex1-12"></a>    <span class="cf">return</span>(agenda)</span>
+<span id="ex1-13"><a href="#ex1-13"></a></span>
+<span id="ex1-14"><a href="#ex1-14"></a>agenda <span class="op">=</span> obtem_agenda()</span>
+<span id="ex1-15"><a href="#ex1-15"></a><span class="bu">print</span>(agenda)</span></code></pre></div>
 </div>
 <div id="exercícios-iii" class="slide section level1">
 <h1>Exercícios (III)</h1>
 <h2 id="para-cada-código-abaixo-indique-o-que-será-impresso-1">Para cada código abaixo, indique o que será impresso:</h2>
-<p>.col-3[ ~~~{#ex1 .python} # Programa 3: def f3(x, y): y = y - x x = x + 2</p>
-<p>y = 5 x = 2 f3(x, y) print(x, y) ~~~ ]</p>
-<div class="figure">
-<img src="br" alt="" />
-<p class="caption">:column 10%</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Programa 3:</span></span>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> f3(x, y):</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    y <span class="op">=</span> y <span class="op">-</span> x</span>
+<span id="ex1-4"><a href="#ex1-4"></a>    x <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></span>
+<span id="ex1-5"><a href="#ex1-5"></a></span>
+<span id="ex1-6"><a href="#ex1-6"></a>y <span class="op">=</span> <span class="dv">5</span></span>
+<span id="ex1-7"><a href="#ex1-7"></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="ex1-8"><a href="#ex1-8"></a>f3(x, y)</span>
+<span id="ex1-9"><a href="#ex1-9"></a><span class="bu">print</span>(x, y)</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="co"># Programa 4:</span></span>
+<span id="ex1-2"><a href="#ex1-2"></a><span class="kw">def</span> f4(y):</span>
+<span id="ex1-3"><a href="#ex1-3"></a>    y <span class="op">=</span> y <span class="op">+</span> <span class="dv">10</span></span>
+<span id="ex1-4"><a href="#ex1-4"></a>    <span class="cf">return</span>(y)</span>
+<span id="ex1-5"><a href="#ex1-5"></a></span>
+<span id="ex1-6"><a href="#ex1-6"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="ex1-7"><a href="#ex1-7"></a>x <span class="op">=</span> f4(y)</span>
+<span id="ex1-8"><a href="#ex1-8"></a><span class="bu">print</span>(x, y)</span></code></pre></div>
 </div>
-<p>.col-3[ ~~~{#ex1 .python} # Programa 4: def f4(y): y = y + 10 return(y)</p>
-<p>y = 2 x = f4(y) print(x, y) ~~~ ]</p>
+</div>
 </div>
 <div id="exercícios-iv" class="slide section level1">
 <h1>Exercícios (IV)</h1>
 <h2 id="para-cada-item-escreva-um-programa-em-python-que">Para cada item, escreva um programa em Python que:</h2>
 <ol style="list-style-type: decimal">
-<li>Defina uma função para gerar a sequência fibonacci até um dado n (inclusive).
+<li>Escreva uma função que calcule o fatorial de um dado <span class="math inline">\(n\)</span>.
 <ul>
-<li>Teste sua função usando os valores -1, 0, 1, 10 e 100.</li>
+<li>Exemplo: para <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(fat(n) = 5 \times 4 \times 3 \times 2 \times 1\)</span>.</li>
+</ul></li>
+<li>Escreva uma função que calcule as raízes da fórmula de Bháskara, a partir de <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> e <span class="math inline">\(c\)</span>. <span class="math display">\[ x = \frac{-b \pm \sqrt{b^2 - 4 \times a \times c}}{2 \times a} \]</span></li>
+</ol>
+</div>
+<div id="recursão" class="slide section level1">
+<h1>Recursão</h1>
+<ul>
+<li>Capacidade de uma função chamar a si própria.</li>
+<li>Útil para <strong>recorrências</strong>.
+<ul>
+<li>Isto é, uma função em que cada termo de uma sequência é definido em função dos elementos anteriores.</li>
+</ul></li>
+<li>Assim como em uma repetição, deve ter uma <strong>condição de parada</strong>.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="kw">def</span> contagemRegressiva(n):</span>
+<span id="id-2"><a href="#id-2"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="id-3"><a href="#id-3"></a>        <span class="bu">print</span>(<span class="st">&#39;Decolar!&#39;</span>)</span>
+<span id="id-4"><a href="#id-4"></a>    <span class="cf">else</span>:</span>
+<span id="id-5"><a href="#id-5"></a>        <span class="bu">print</span>(n)</span>
+<span id="id-6"><a href="#id-6"></a>        contagemRegressiva(n<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="kw">def</span> contagemRegressiva(n):</span>
+<span id="id-2"><a href="#id-2"></a>    <span class="cf">while</span>(n):</span>
+<span id="id-3"><a href="#id-3"></a>        <span class="bu">print</span>(n)</span>
+<span id="id-4"><a href="#id-4"></a>        n <span class="op">=</span> n <span class="op">-</span> <span class="dv">1</span></span>
+<span id="id-5"><a href="#id-5"></a>    <span class="bu">print</span>(<span class="st">&#39;Decolar!&#39;</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="exemplo-de-função-recursiva-recorrência" class="slide section level1">
+<h1>Exemplo de Função Recursiva: Recorrência</h1>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li>Fatorial: função de recorrência. <span class="math display">\[fat(n) = \left\{ \begin{array}{ll}
+       1 &amp; \mbox{if $n \geq 0$};\\
+      n \times fat(n-1) &amp; \mbox{if $n &gt; 0$}.\end{array} \right.\]</span></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<div class="sourceCode" id="fat"><pre class="sourceCode python"><code class="sourceCode python"><span id="fat-1"><a href="#fat-1"></a><span class="kw">def</span> fatorial(n):</span>
+<span id="fat-2"><a href="#fat-2"></a>    <span class="co"># Para n &gt;= 0</span></span>
+<span id="fat-3"><a href="#fat-3"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="fat-4"><a href="#fat-4"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="fat-5"><a href="#fat-5"></a>    <span class="cf">else</span>:</span>
+<span id="fat-6"><a href="#fat-6"></a>        temp <span class="op">=</span> n <span class="op">*</span> fatorial(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="fat-7"><a href="#fat-7"></a>        <span class="cf">return</span> temp</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="mais-um-exemplo-e-exercício" class="slide section level1">
+<h1>Mais um Exemplo e Exercício</h1>
+<ul>
+<li><p>Função de recorrência de Fibonacci: <span class="math display">\[fib(n) = \left\{ \begin{array}{ll}
+       0 &amp; \mbox{if $n \geq 0$};\\
+       1 &amp; \mbox{if $n \geq 1$};\\
+       fib(n-1) + fib(n-2) &amp; \mbox{if $n &gt; 1$}.\end{array} \right.\]</span></p></li>
+<li><p><strong>Exercício:</strong> Escreva uma função recursiva para calcular o enésimo termo da sequência Fibonacci conforme a função de recorrência acima.</p></li>
+</ul>
+</div>
+<div id="exercício-vi" class="slide section level1">
+<h1>Exercício (VI)</h1>
+<ol style="list-style-type: decimal">
+<li>Escreva uma função recursiva que calcule o exponencial de um <span class="math inline">\(x\)</span> elevado a <span class="math inline">\(n\)</span>.
+<ul>
+<li>Isto é, <span class="math inline">\(exponencial(x, n)\)</span></li>
 </ul></li>
 </ol>
+</div>
+<div id="solução" class="slide section level1">
+<h1>Solução</h1>
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="kw">def</span> exponencial(x, n):</span>
+<span id="id-2"><a href="#id-2"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="id-3"><a href="#id-3"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="id-4"><a href="#id-4"></a>    <span class="cf">else</span>:</span>
+<span id="id-5"><a href="#id-5"></a>        <span class="cf">return</span>(x <span class="op">*</span> exponencial(x, n<span class="op">-</span><span class="dv">1</span>))</span></code></pre></div>
 </div>
 <div id="manipulação-de-strings-em-python" class="slide section level1 part">
 <h1 class="part">Manipulação de Strings em Python</h1>
@@ -492,7 +597,7 @@ Dentro da função: [10, 20, 3]
 <ul>
 <li>Python apresenta diversas funções e métodos para manipular strings.</li>
 <li>Útil para lidar com texto de entrada do <code>input</code>, por exemplo.</li>
-<li>Algumas utilizadas:
+<li>Algumas delas são:
 <ul>
 <li>Converter para string.</li>
 <li>Obter tamanho de string.</li>
@@ -511,32 +616,34 @@ Dentro da função: [10, 20, 3]
 <ul>
 <li>Acesso à letra:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra[<span class="dv">2</span>])</span></code></pre></div>
 <ul>
 <li>Tamanho de string:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(<span class="bu">len</span>(palavra))</span></code></pre></div>
 <ul>
 <li>Pertinência de letra:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="cf">if</span> <span class="st">&#39;ana&#39;</span> <span class="kw">in</span> palavra:</span>
 <span id="ex1-3"><a href="#ex1-3"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;contém &#39;ana&#39;.&quot;</span>)</span>
 <span id="ex1-4"><a href="#ex1-4"></a><span class="cf">else</span>:</span>
 <span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(palavra, <span class="st">&quot;não contém &#39;ana&#39;.&quot;</span>)</span></code></pre></div>
 </div><div class="column" style="width:10%;">
-
+<p><br> ⇨</p>
+<p><br><br></p>
+<p>⇨</p>
+<p><br><br></p>
+<p>⇨</p>
 </div><div class="column" style="width:40%;">
 <p>Saída:</p>
-<pre><code>n</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>n</code></pre>
 <p>Saída:</p>
-<pre><code>6</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>6</code></pre>
 <p>Saída:</p>
-<pre><code>banana contém &#39;ana&#39;.</code></pre>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>banana contém &#39;ana&#39;.</code></pre>
 </div>
 </div>
 </div>
@@ -547,17 +654,17 @@ Dentro da função: [10, 20, 3]
 <ul>
 <li>Concatenar strings:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;ban&#39;</span> <span class="op">+</span> <span class="st">&#39;ana&#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;ban&#39;</span> <span class="op">+</span> <span class="st">&#39;ana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra)</span></code></pre></div>
 <ul>
 <li>Multiplicar string:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="dv">3</span><span class="op">*</span><span class="st">&#39;blá &#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="dv">3</span><span class="op">*</span><span class="st">&#39;blá &#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a><span class="bu">print</span>(palavra)</span></code></pre></div>
 <ul>
 <li>Iterar em uma string:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a>palavra <span class="op">=</span> <span class="st">&#39;banana&#39;</span></span>
 <span id="ex1-2"><a href="#ex1-2"></a>cont_a <span class="op">=</span> <span class="dv">0</span></span>
 <span id="ex1-3"><a href="#ex1-3"></a><span class="cf">for</span> letra <span class="kw">in</span> palavra:</span>
 <span id="ex1-4"><a href="#ex1-4"></a>    <span class="cf">if</span> letra <span class="op">==</span> <span class="st">&#39;a&#39;</span>:</span>
@@ -565,16 +672,18 @@ Dentro da função: [10, 20, 3]
 <span id="ex1-6"><a href="#ex1-6"></a><span class="bu">print</span>(<span class="st">&quot;Existem&quot;</span>, cont_a, <span class="st">&quot;letras &#39;a&#39; em&quot;</span>,</span>
 <span id="ex1-7"><a href="#ex1-7"></a>palavra)</span></code></pre></div>
 </div><div class="column" style="width:10%;">
-
+<p><br> ⇨</p>
+<p><br><br></p>
+<p>⇨</p>
+<p><br><br></p>
+<p>⇨</p>
 </div><div class="column" style="width:40%;">
 <p>Saída:</p>
-<pre id="exSaida" class="text"><code>banana</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>banana</code></pre>
 <p>Saída:</p>
-<pre id="exSaida" class="text"><code>blá blá blá</code></pre>
-<p><br></p>
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>blá blá blá</code></pre>
 <p>Saída:</p>
-<pre id="exSaida" class="text"><code>Existem 3 letras &#39;a&#39;
+<pre id="exSaida" class="text" style="font-size: 18pt;"><code>Existem 3 letras &#39;a&#39;
 em banana</code></pre>
 </div>
 </div>
@@ -588,6 +697,9 @@ em banana</code></pre>
 <span id="ex1-2"><a href="#ex1-2"></a>lista <span class="op">=</span> <span class="bu">list</span>(palavra) <span class="co"># para tupla, trocar list por tuple</span></span>
 <span id="ex1-3"><a href="#ex1-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
 <pre id="exSaida" class="text"><code>[&#39;t&#39;, &#39;r&#39;, &#39;a&#39;, &#39;s&#39;, &#39;p&#39;, &#39;l&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;e&#39;]</code></pre>
+</div>
+<div id="operações-sobre-strings-iv" class="slide section level1">
+<h1>Operações Sobre Strings (IV)</h1>
 <ul>
 <li>Juntar novamente com método <code>join</code>:</li>
 </ul>
@@ -606,11 +718,12 @@ em banana</code></pre>
 </ul></li>
 <li>Existem várias:</li>
 </ul>
+<div style="font-size: 16pt;">
 <table>
 <colgroup>
-<col width="24%" />
-<col width="39%" />
-<col width="36%" />
+<col width="8%" />
+<col width="18%" />
+<col width="72%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -621,40 +734,42 @@ em banana</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>split</code></td>
+<td>split</td>
 <td>sep (opcional)</td>
 <td>Retorna lista contendo substrings separadas por sep.</td>
 </tr>
 <tr class="even">
-<td><code>count</code></td>
+<td>count</td>
 <td>substr</td>
 <td>Conta quantas substrings há na string.</td>
 </tr>
 <tr class="odd">
-<td><code>find</code></td>
+<td>find</td>
 <td>substr</td>
 <td>Procura a primeira ocorrência da substring na string. Retorna o índice e -1 se não encontrar.</td>
 </tr>
 <tr class="even">
-<td><code>replace</code></td>
+<td>replace</td>
 <td>str1, str2</td>
 <td>Retorna a string substituindo str2 em todas as ocorrências de str1.</td>
 </tr>
 <tr class="odd">
-<td><code>join</code></td>
+<td>join</td>
 <td>lista</td>
 <td>Junta strings de uma lista separadas pela string de chamada.</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
 <div id="métodos-de-strings-ii" class="slide section level1">
 <h1>Métodos de Strings (II)</h1>
+<div style="font-size: 20pt;">
 <table>
 <colgroup>
-<col width="22%" />
-<col width="42%" />
-<col width="34%" />
+<col width="10%" />
+<col width="19%" />
+<col width="70%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -665,45 +780,47 @@ em banana</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>upper</code></td>
+<td>upper</td>
 <td>nenhum</td>
 <td>Retorna a string com todas as letras maiúsculas.</td>
 </tr>
 <tr class="even">
-<td><code>lower</code></td>
+<td>lower</td>
 <td>nenhum</td>
 <td>Retorna a string com todas as letras minúsculas.</td>
 </tr>
 <tr class="odd">
-<td><code>isalpha</code></td>
+<td>isalpha</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string contém apenas letras.</td>
 </tr>
 <tr class="even">
-<td><code>isdigit</code></td>
+<td>isdigit</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string contém apenas dígitos.</td>
 </tr>
 <tr class="odd">
-<td><code>islower</code></td>
+<td>islower</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string está toda em minúscula.</td>
 </tr>
 <tr class="even">
-<td><code>isupper</code></td>
+<td>isupper</td>
 <td>nenhum</td>
 <td>Retorna True ou False para indicar se string está toda em maiúscula.</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
 <div id="métodos-de-strings-iii" class="slide section level1">
 <h1>Métodos de Strings (III)</h1>
+<div style="font-size: 20pt;">
 <table>
 <colgroup>
-<col width="22%" />
-<col width="42%" />
-<col width="34%" />
+<col width="10%" />
+<col width="19%" />
+<col width="70%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -714,29 +831,30 @@ em banana</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>center</code></td>
+<td>center</td>
 <td>d, c (opcional)</td>
 <td>Retorna string centralizada em d quantidade de caracteres, complementando com c (caractere).</td>
 </tr>
 <tr class="even">
-<td><code>rjust</code></td>
+<td>rjust</td>
 <td>d, c (opcional)</td>
 <td>Retorna string alinhada à direita em d quantidade de caracteres, complementando com c (caractere).</td>
 </tr>
 <tr class="odd">
-<td><code>ljust</code></td>
+<td>ljust</td>
 <td>d, c (opcional)</td>
 <td>Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).</td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>Para ver mais, acesse:</li>
 </ul>
 <p>https://wiki.python.org.br/ManipulandoStringsComPython</p>
 </div>
-<div id="exercício-v" class="slide section level1">
-<h1>Exercício (V)</h1>
+<div id="exercício-vii" class="slide section level1">
+<h1>Exercício (VII)</h1>
 <ol style="list-style-type: decimal">
 <li>Escrever uma função que indica se uma string é palíndromo.
 <ul>
@@ -750,8 +868,8 @@ em banana</code></pre>
 <li>Obter frase do usuário e apresentar a quantidade de cada caractere existente nela. Dica: usar dicionário com a chave sendo a letra e o valor sendo a quantidade.</li>
 </ol>
 </div>
-<div id="checar-se-entrada-é-número" class="slide section level1">
-<h1>Checar se Entrada é Número</h1>
+<div id="checar-se-entrada-é-número-i" class="slide section level1">
+<h1>Checar se Entrada é Número (I)</h1>
 <ul>
 <li>Forma mais correta de verificar se uma entrada é número:
 <ul>
@@ -759,12 +877,15 @@ em banana</code></pre>
 </ul></li>
 <li>Como usar para este fim:</li>
 </ul>
-<div class="sourceCode" id="ex1"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="cf">try</span>:</span>
+<div class="sourceCode" id="ex1" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex1-1"><a href="#ex1-1"></a><span class="cf">try</span>:</span>
 <span id="ex1-2"><a href="#ex1-2"></a>    n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
 <span id="ex1-3"><a href="#ex1-3"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
 <span id="ex1-4"><a href="#ex1-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Erro de entrada!&quot;</span>)</span>
 <span id="ex1-5"><a href="#ex1-5"></a>    <span class="bu">print</span>(<span class="st">&quot;Finalizando programa...&quot;</span>)</span>
 <span id="ex1-6"><a href="#ex1-6"></a>    quit() <span class="co"># Termina programa</span></span></code></pre></div>
+</div>
+<div id="checar-se-entrada-é-número-ii" class="slide section level1">
+<h1>Checar se Entrada é Número (II)</h1>
 <ul>
 <li>Neste exemplo, tenta-se fazer a conversão.</li>
 <li>Se der erro (ValueError), o erro em si não aparece!
@@ -777,8 +898,8 @@ em banana</code></pre>
 </ul></li>
 </ul>
 </div>
-<div id="checar-se-entrada-é-número-ii" class="slide section level1">
-<h1>Checar se Entrada é Número (II)</h1>
+<div id="checar-se-entrada-é-número-iii" class="slide section level1">
+<h1>Checar se Entrada é Número (III)</h1>
 <ul>
 <li>Para checar repetidamente:</li>
 </ul>
@@ -792,8 +913,8 @@ em banana</code></pre>
 <span id="ex1-8"><a href="#ex1-8"></a></span>
 <span id="ex1-9"><a href="#ex1-9"></a><span class="co"># Usar num a partir daqui...</span></span></code></pre></div>
 </div>
-<div id="exercício-vi" class="slide section level1">
-<h1>Exercício (VI)</h1>
+<div id="exercício-viii" class="slide section level1">
+<h1>Exercício (VIII)</h1>
 <ol style="list-style-type: decimal">
 <li>Obter matriz do usuário linha por linha. Cada linha deve ser tratada como string e os valores devem ser convertidos para float.
 <ul>
