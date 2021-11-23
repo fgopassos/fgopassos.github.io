@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Introdução à Aplicações em Redes</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span. { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Universidade Atlântica</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Introdução à Aplicações em Redes</h1>
+    <p class="subtitle">Aula 10</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+    <p class="note">Programação Avançada</p>
+  </div>
+</div>
+<div id="aplicações-e-sistema-operativo" class="slide section level1 part">
+<h1 class="part">Aplicações e Sistema Operativo</h1>
+</div>
+<div id="camadas-de-software-e-hardware" class="slide section level1">
+<h1>Camadas de Software e Hardware</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><em>Software</em>:
+<ul>
+<li>Aplicação: programa(s) do usuário.
+<ul>
+<li>Firefox, Word, Media Player;</li>
+<li>Seu programa em Python…</li>
+</ul></li>
+<li>Sistema operativo: gerencia <em>hardwares</em> e <em>softwares</em> do sistema.</li>
+</ul></li>
+<li><em>Hardware</em>:
+<ul>
+<li>Dispositivos do computador.
+<ul>
+<li>Processador, memória;</li>
+<li>Disco rígido, SSD;</li>
+<li>Interface de rede;</li>
+<li>Teclado, <em>mouse</em>, monitor…</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="center">
+<p><img src="imagens/camadas.svg" id="camadas" style="width:35.0%" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="programa" class="slide section level1">
+<h1>Programa</h1>
+<ul>
+<li>Conjunto de instruções que serão executadas pelo processador.</li>
+<li>Sequencialmente: passo a passo.</li>
+<li>Relação direta com o código implementado.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:17%;">
+
+</div><div class="column" style="width:13%;">
+<p><br><br> Programa</p>
+</div><div class="column" style="width:5%;">
+<p><br><br> →</p>
+</div><div class="column" style="width:50%;">
+<p><img src="imagens/programas.png" id="programa" style="width:100.0%" /></p>
+</div>
+</div>
+</div>
+<div id="processo" class="slide section level1">
+<h1>Processo</h1>
+<ul>
+<li>Programa em execução no computador.
+<ul>
+<li>Isto é, é uma instância de um programa.</li>
+</ul></li>
+<li>Podemos ter vários processos de um mesmo programa.</li>
+<li>Geralmente usa bibliotecas de interface com o S.O.
+<ul>
+<li>acessar entrada de dados (via teclado, por exemplo);</li>
+<li>mostrar saída (textual ou gráfica no monitor);</li>
+<li>acessar ficheiro no disco…</li>
+</ul></li>
+<li>Sistema operacional é responsável por gerenciar os processos.
+<ul>
+<li>Criar, executar instruções, escalonar, finalizar…</li>
+</ul></li>
+</ul>
+</div>
+<div id="a-camada-do-sistema-operativo-s.o." class="slide section level1">
+<h1>A Camada do Sistema Operativo (S.O.)</h1>
+<ul>
+<li>É muito mais que um gerenciador de processos.
+<ul>
+<li>Gerencia processamento, memória, dispositivos de E/S…</li>
+</ul></li>
+<li>Faz interface entre <em>hardware</em>, processos e usuários.</li>
+<li>Tem parte implementada em software e parte implementada em hardware.</li>
+<li>Oferece, para os programas, comunicação com dispositivos.
+<ul>
+<li>Via <strong>chamadas de sistemas</strong>.</li>
+</ul></li>
+<li>Usuário não pode operar diretamente sobre o hardware.
+<ul>
+<li>Ainda bem, pois é complicado!</li>
+</ul></li>
+<li>É um sistema complexo!</li>
+</ul>
+</div>
+<div id="sistemas-operativos-divisão-de-tarefas" class="slide section level1">
+<h1>Sistemas Operativos: Divisão de Tarefas</h1>
+<ul>
+<li>S.O. servem para facilitar o uso do computador.</li>
+<li>Antigamente, apenas um programa poderia executar por vez.</li>
+<li>A partir da década de 60 e 70, houve a evolução para o time sharing.
+<ul>
+<li>Compartilhamento de tempo.</li>
+<li>Mais de um processo poderia executar “ao mesmo tempo”.</li>
+</ul></li>
+<li>Processos são divididos em tarefas pequenas (milissegundos).</li>
+<li>Cada tarefa executa no seu tempo.</li>
+<li>Sistemas tornaram-se <strong>multitarefas</strong> e <strong>multiusuários</strong>.</li>
+</ul>
+</div>
+<div id="sistemas-operativos-existentes" class="slide section level1">
+<h1>Sistemas Operativos Existentes</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Unix</li>
+<li>MS-DOS
+<ul>
+<li>Microsoft Disk Operating System</li>
+</ul></li>
+<li>Windows</li>
+<li>Linux</li>
+<li>Mac OS</li>
+<li>Android</li>
+<li>IOS</li>
+<li>…</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="imagens/unix.png" id="unix" style="width:30.0%" />     <img src="imagens/msdos.png" id="dos" style="width:20.0%" />   <img src="imagens/windows.png" id="win" style="width:20.0%" /> <br> <br> <img src="imagens/linux.png" id="linux" style="width:20.0%" />     <img src="imagens/macOS.png" id="mac" style="width:30.0%" />   <img src="imagens/android.png" id="android" style="width:20.0%" /></p>
+</div>
+</div>
+</div>
+<div id="programas-de-interface-com-usuário" class="slide section level1">
+<h1>Programas de Interface com Usuário</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Rodam sobre o S.O.</li>
+<li>Por linha de comando.
+<ul>
+<li>MS-DOS, Unix, Linux…</li>
+<li>Uso de linguagens de script.</li>
+<li>No Linux, por exemplo, temos o sh e bash.</li>
+</ul></li>
+<li>GUI: graphical user interface.
+<ul>
+<li>Por janelas, ícones, menus e mouse.</li>
+<li>Mais amigável: <em>user friendly</em>.</li>
+<li>Windows, Unix, Linux, Android, MacOS…</li>
+</ul></li>
+<li>No Linux, por exemplo, pode-se escolher a GUI.
+<ul>
+<li>X Windows, Gnome, KDE, XFCE,…</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="center">
+<p><img src="imagens/dosGUI.png" id="dosGUI" style="width:45.0%" />     <img src="imagens/windowsGUI.png" id="winGUI" style="width:45.0%" /> <br> <br> <img src="imagens/xwindow.png" id="xwindow" style="width:45.0%" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="aplicações" class="slide section level1">
+<h1>Aplicações</h1>
+<ul>
+<li>Um ou mais programas de computadores para algum propósito.
+<ul>
+<li>Exemplos: tocador (<em>player</em>) de música, editor de texto, navegador web, …</li>
+</ul></li>
+<li><strong>Aplicações de desktop</strong>: programa que não requer acesso à rede.
+<ul>
+<li>Não necessitam de serviços externos (outros computadores).</li>
+</ul></li>
+<li><strong>Aplicações em rede</strong>:
+<ul>
+<li>Necessitam estar conectadas a serviços externos.</li>
+</ul></li>
+</ul>
+</div>
+<div id="aplicações-em-rede" class="slide section level1">
+<h1>Aplicações em Rede</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Web;</li>
+<li>e-mail;</li>
+<li>Acesso e Login remoto;</li>
+<li>Compartilhamento de arquivos;</li>
+<li>Serviços de streaming de vídeo;</li>
+<li>…</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="center">
+<p><img src="imagens/web.jpeg" id="web" style="width:30.0%" />     <img src="imagens/email.jpeg" id="email" style="width:20.0%" />     <img src="imagens/ssh.jpeg" id="ssh" style="width:25.0%" /> <br> <br> <img src="imagens/bittorrent.png" id="torrent" style="width:20.0%" />     <img src="imagens/skype.png" id="skype" style="width:30.0%" /> <br> <br> <img src="imagens/netflix.png" id="netflix" style="width:20.0%" />     <img src="imagens/spotify.png" id="netflix" style="width:20.0%" /></p>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div>
+</div>
+</div>
+<div id="comunicação-entre-sistemas" class="slide section level1 part">
+<h1 class="part">Comunicação entre Sistemas</h1>
+</div>
+<div id="redes-de-computadores-comunicação-entre-máquinas" class="slide section level1">
+<h1>Redes de Computadores: Comunicação entre Máquinas</h1>
+<div class="block centered">
+<div class="blocktitle">
+<p>Uma definição de redes de computadores:</p>
+</div>
+<p>Conjunto de computadores independentes interconectados de modo que se comuniquem.</p>
+</div>
+<ul>
+<li>Computadores (<em>hosts</em>) podem ser:
+<ul>
+<li>pessoais (PCs), portáteis (laptops), servidores, smartphones, …</li>
+</ul></li>
+<li>Atualmente existem diversas tecnologias de conexão.
+<ul>
+<li><strong>Meio físico</strong> ou <strong>enlaces</strong>: cabo de par trançado, cabo de fibra, radio-frequência, …</li>
+<li><strong>Dispositivos de conexão</strong> ou <strong>nós comutadores</strong>: <em>switches</em>, roteadores, …</li>
+</ul></li>
+</ul>
+</div>
+<div id="a-internet" class="slide section level1">
+<h1>A Internet</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="center">
+<p><img src="imagens/internet.png" id="pilha" style="width:100.0%" /></p>
+</div>
+</div><div class="column" style="width:67%;">
+<ul>
+<li>Conexão entre vários nós de conexão através de diferentes enlaces.
+<ul>
+<li>A nível mundial.</li>
+</ul></li>
+<li>Modelo de negócio:
+<ul>
+<li>Provedores de serviço da Internet.</li>
+<li>Serviços de interconexão entre redes.</li>
+<li>Pode ser definida como uma rede de provedores de serviço.</li>
+</ul></li>
+<li>Rede resultante é muito complexa.
+<ul>
+<li>Evolução guiada por fatores econômicos, políticas nacionais.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:3%;">
+
+</div>
+</div>
+</div>
+<div id="organização-da-internet" class="slide section level1">
+<h1>Organização da Internet</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>É organizada em camadas de uma pilha de protocolos:
+<ul>
+<li>TCP/IP.</li>
+</ul></li>
+<li>Protocolos ditam as regras de comunicação em cada camada.</li>
+<li>Cada camada é resposável por tarefas específicas da rede.
+<ul>
+<li>TCP (<em>Transmission Control Protocol</em>) é protocolo da camada de transporte.
+<ul>
+<li>Comunicação entre processos.</li>
+</ul></li>
+<li>IP (<em>Internet Protocol</em>) é protocolo da camada de rede.
+<ul>
+<li>Comunicação entre máquinas.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="center">
+<p><img src="imagens/pilhaProtocolos.svg" id="pilha" style="width:60.0%" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="dados-na-internet" class="slide section level1">
+<h1>Dados na Internet</h1>
+<ul>
+<li>Dado a ser transmitido é dividido em pedaços chamados de <strong>pacote</strong>.</li>
+<li>Pacotes são encaminhados de dispositivo a dispositivo: seguem rotas definidas pelos comutadores da rede.</li>
+</ul>
+<div class="center">
+<div class="figure">
+<img src="imagens/pacotesAnimacao.svg" id="animacao" style="width:60.0%" alt="" />
+<p class="caption">Fonte: http://www.content-animation.org.uk/teaching/tcp-ip.htm</p>
+</div>
+</div>
+</div>
+<div id="serviços-providos-pelo-ip" class="slide section level1">
+<h1>Serviços Providos pelo IP</h1>
+<ul>
+<li>Serviço de <strong>datagrama</strong>: empacotamento de dados.
+<ul>
+<li>Datagrama = pacote IP.</li>
+<li>Introduz cabeçalho específico.</li>
+</ul></li>
+<li>Endereçamento de <em>hosts</em> e dispositivos da rede:
+<ul>
+<li>Número IP (versão 4 ou 6) identifica um host.
+<ul>
+<li>Exemplo: 123.45.67.89</li>
+</ul></li>
+</ul></li>
+<li>Verificação de erro nos pacotes (<em>checksum</em>).</li>
+<li>Serviço do melhor esforço:
+<ul>
+<li>Pacotes podem ser perdidos, duplicados ou desordenados;</li>
+<li>Não há garantias de atraso.</li>
+</ul></li>
+</ul>
+</div>
+<div id="serviços-providos-pelo-tcp" class="slide section level1">
+<h1>Serviços Providos pelo TCP</h1>
+<ul>
+<li>Protocolo da camada de transporte.
+<ul>
+<li>Interface com a aplicação!</li>
+<li>Isto é, com o processo ou processos da aplicação.</li>
+</ul></li>
+<li>Responsável por <strong>endereçar</strong> os processos.</li>
+<li>Provê serviço de <strong>entrega confiável de pacotes</strong>:
+<ul>
+<li>Resolve problema de pacotes perdidos, duplicados e desordenados.</li>
+<li>Mas ainda não garante tempo máximo de atraso.</li>
+</ul></li>
+<li>Faz <strong>controle de fluxo</strong> e de <strong>congestionamento</strong>.</li>
+<li>Serviço <strong>orientado a conexão</strong>:
+<ul>
+<li>Existe etapa inicial de conexão: confirmação de comunicação entre duas máquinas.</li>
+</ul></li>
+</ul>
+</div>
+<div id="udp-outro-protocolo-de-transporte" class="slide section level1">
+<h1>UDP: Outro Protocolo de Transporte</h1>
+<ul>
+<li>Na camada de transporte ainda há outros protocolos.</li>
+<li>UDP (<em>User Datagram Protocol</em>)
+<ul>
+<li>Faz o básico: envia pacotes para os processos.</li>
+</ul></li>
+<li>Não possui nenhum dos serviços que o TCP oferece.</li>
+<li>Por que ele existe?</li>
+</ul>
+</div>
+<div id="programação-em-redes-de-computadores" class="slide section level1 part">
+<h1 class="part">Programação em Redes de Computadores</h1>
+</div>
+<div id="modelos-de-arquitetura-de-sistemas" class="slide section level1">
+<h1>Modelos de Arquitetura de Sistemas</h1>
+<ul>
+<li>Cliente-servidor:
+<ul>
+<li>Cliente faz requisições.</li>
+<li>Servidor aguarda requisições e as atende quando são realizadas.</li>
+</ul></li>
+<li>Par a par (Peer-to-Peer - P2P):
+<ul>
+<li>Cada nó da rede age como cliente ou como servidor.</li>
+<li>Isto é, pode fazer requisições ou atender requisições a outros nós da rede.</li>
+</ul></li>
+</ul>
+</div>
+<div id="sockets" class="slide section level1">
+<h1>Sockets</h1>
+<div class="block centered">
+<div class="blocktitle">
+<p>Socket</p>
+</div>
+<p>Janela entre processo da aplicação e protocolo de transporte.</p>
+</div>
+<div class="center">
+<p><img src="imagens/sockets.png" id="sockets" /></p>
+</div>
+</div>
+<div id="identificação-de-processos" class="slide section level1">
+<h1>Identificação de Processos</h1>
+<ul>
+<li>Agora vamos lidar com dois ou mais processos em máquinas diferentes.
+<ul>
+<li>Além disso, existem outros processos no sistema.</li>
+</ul></li>
+<li>Máquina é identifica por IP.</li>
+<li>Em um máquina, o processo se associa a um socket identificado por uma <strong>porta</strong>.
+<ul>
+<li>Um número de 16 bits: valor único para cada socket!</li>
+<li>Algumas portas são reservadas para serviços específicos, como HTTP (80), SSH (22).</li>
+</ul></li>
+</ul>
+</div>
+<div id="comunicação-via-udp" class="slide section level1">
+<h1>Comunicação via UDP</h1>
+<ul>
+<li>Serviço básico, “mínimo” da camada de transporte da Internet.</li>
+<li>Apenas entrega pacote ao socket correspondente.</li>
+<li>Herda modelo de serviço da camada de redes: “melhor esforço”.</li>
+<li>Pacotes UDP podem ser:
+<ul>
+<li>Perdidos.</li>
+<li>Entregues fora de ordem para a aplicação.</li>
+</ul></li>
+<li>Sem conexão:
+<ul>
+<li>Não há comunicação inicial entre UDP do transmissor e do receptor.</li>
+<li>Datagramas são simplesmente enviados.</li>
+</ul></li>
+<li>Cada pacote UDP é tratado de forma independente dos demais.</li>
+</ul>
+</div>
+<div id="comunicação-via-udp-ii" class="slide section level1">
+<h1>Comunicação via UDP (II)</h1>
+<ul>
+<li>Usos do UDP:
+<ul>
+<li>Aplicações de Streaming multimídia (tolerantes a perda, sensíveis a taxa).</li>
+<li>DNS: serviço de nomes na Internet.</li>
+<li>SNMP: protocolo padrão para monitoramento e gerenciamento de redes.</li>
+</ul></li>
+<li>Transferência confiável sobre UDP:
+<ul>
+<li>Possível, mas depende da aplicação.</li>
+<li>Adição de confiabilidade da própria aplicação.</li>
+<li>Métodos de recuperação de erros específicos de cada aplicação.</li>
+</ul></li>
+</ul>
+</div>
+<div id="sockets-udp-em-python" class="slide section level1">
+<h1>Sockets UDP em Python</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Importar módulo: <code>import socket</code>
+<ul>
+<li>Ou <code>from socket import *</code></li>
+</ul></li>
+<li>Funções:
+<ul>
+<li><strong>socket</strong>: cria socket.
+<ul>
+<li>Para UDP, indicar que é SOCK_DGRAM.</li>
+</ul></li>
+<li><strong>bind</strong>: associa endereço local (porta) ao socket.
+<ul>
+<li>Usado por processo servidor.</li>
+</ul></li>
+<li><strong>sendto</strong>: envia mensagem para destinatário.</li>
+<li><strong>recvfrom</strong>: recebe mensagem de remetente.</li>
+<li><strong>close</strong>: termina socket.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="imagens/etapasUDP.png" id="etapasUDP" style="width:90.0%" /></p>
+</div>
+</div>
+</div>
+<div id="exemplo-de-aplicação-cliente-servidor-com-udp" class="slide section level1">
+<h1>Exemplo de Aplicação Cliente-Servidor com UDP</h1>
+<ul>
+<li>Aplicação de exemplo:
+<ul>
+<li>Cliente lê string do teclado e envia o dado para o servidor.</li>
+<li>O servidor recebe o dado e converte a string para caixa alta.</li>
+<li>Servidor envia dados modificados para o cliente.</li>
+<li>Cliente recebe dado modificado e imprime na tela.</li>
+</ul></li>
+</ul>
+</div>
+<div id="processo-servidor-udp-i" class="slide section level1">
+<h1>Processo Servidor UDP (I)</h1>
+<div class="sourceCode" id="servidorUDP" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="servidorUDP-1"><a href="#servidorUDP-1"></a><span class="im">from</span> socket <span class="im">import</span> <span class="op">*</span></span>
+<span id="servidorUDP-2"><a href="#servidorUDP-2"></a></span>
+<span id="servidorUDP-3"><a href="#servidorUDP-3"></a><span class="co"># Numero de porta na qual o servidor estara esperando conexoes.</span></span>
+<span id="servidorUDP-4"><a href="#servidorUDP-4"></a>serverPort <span class="op">=</span> <span class="dv">12000</span></span>
+<span id="servidorUDP-5"><a href="#servidorUDP-5"></a></span>
+<span id="servidorUDP-6"><a href="#servidorUDP-6"></a><span class="co"># Criar o socket. AF_INET e SOCK_DGRAM indicam UDP.</span></span>
+<span id="servidorUDP-7"><a href="#servidorUDP-7"></a>serverSocket <span class="op">=</span> socket(AF_INET, SOCK_DGRAM)</span>
+<span id="servidorUDP-8"><a href="#servidorUDP-8"></a></span>
+<span id="servidorUDP-9"><a href="#servidorUDP-9"></a><span class="co"># Associar o socket a porta escolhida. Primeiro argumento vazio indica</span></span>
+<span id="servidorUDP-10"><a href="#servidorUDP-10"></a><span class="co"># que desejamos aceitar conexoes em qualquer interface de rede desse host</span></span>
+<span id="servidorUDP-11"><a href="#servidorUDP-11"></a>serverSocket.bind((<span class="st">&#39;&#39;</span>, serverPort))</span>
+<span id="servidorUDP-12"><a href="#servidorUDP-12"></a></span>
+<span id="servidorUDP-13"><a href="#servidorUDP-13"></a><span class="bu">print</span> (<span class="st">&#39;O servidor esta pronto para receber pacotes.&#39;</span>)</span>
+<span id="servidorUDP-14"><a href="#servidorUDP-14"></a></span>
+<span id="servidorUDP-15"><a href="#servidorUDP-15"></a><span class="co"># Continua...</span></span></code></pre></div>
+</div>
+<div id="processo-servidor-udp-ii" class="slide section level1">
+<h1>Processo Servidor UDP (II)</h1>
+<div class="sourceCode" id="servidorUDP2" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="servidorUDP2-1"><a href="#servidorUDP2-1"></a><span class="co"># Loop infinito: servidor eh capaz de tratar multiplas conexoes</span></span>
+<span id="servidorUDP2-2"><a href="#servidorUDP2-2"></a><span class="cf">while</span> <span class="dv">1</span>:</span>
+<span id="servidorUDP2-3"><a href="#servidorUDP2-3"></a>        <span class="co"># Aguardar novo pacote</span></span>
+<span id="servidorUDP2-4"><a href="#servidorUDP2-4"></a>        <span class="bu">print</span> (<span class="st">&#39;Aguardando pacote...&#39;</span>)</span>
+<span id="servidorUDP2-5"><a href="#servidorUDP2-5"></a>        sentence, addr <span class="op">=</span> serverSocket.recvfrom(<span class="dv">1024</span>)</span>
+<span id="servidorUDP2-6"><a href="#servidorUDP2-6"></a>        <span class="bu">print</span> (<span class="st">&#39;Nova pacote recebido!&#39;</span>, addr)</span>
+<span id="servidorUDP2-7"><a href="#servidorUDP2-7"></a></span>
+<span id="servidorUDP2-8"><a href="#servidorUDP2-8"></a>        <span class="co"># Processamento</span></span>
+<span id="servidorUDP2-9"><a href="#servidorUDP2-9"></a>        capitalizedSentence <span class="op">=</span> sentence.decode(<span class="st">&quot;ascii&quot;</span>).upper()</span>
+<span id="servidorUDP2-10"><a href="#servidorUDP2-10"></a></span>
+<span id="servidorUDP2-11"><a href="#servidorUDP2-11"></a>        <span class="co"># Envio. Repare que o endereco do destinatario eh necessario.</span></span>
+<span id="servidorUDP2-12"><a href="#servidorUDP2-12"></a>        <span class="bu">print</span> (<span class="st">&#39;Realizando envio...&#39;</span>)</span>
+<span id="servidorUDP2-13"><a href="#servidorUDP2-13"></a>        serverSocket.sendto(capitalizedSentence.encode(<span class="st">&quot;ascii&quot;</span>), addr)</span>
+<span id="servidorUDP2-14"><a href="#servidorUDP2-14"></a></span>
+<span id="servidorUDP2-15"><a href="#servidorUDP2-15"></a><span class="co"># Fechamento</span></span>
+<span id="servidorUDP2-16"><a href="#servidorUDP2-16"></a><span class="bu">print</span> (<span class="st">&#39;Fechando socket...&#39;</span>)</span>
+<span id="servidorUDP2-17"><a href="#servidorUDP2-17"></a>serverSocket.close()</span></code></pre></div>
+</div>
+<div id="processo-cliente-udp" class="slide section level1">
+<h1>Processo Cliente UDP</h1>
+<div class="sourceCode" id="servidorUDP2" style="font-size: 16pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="servidorUDP2-1"><a href="#servidorUDP2-1"></a><span class="im">from</span> socket <span class="im">import</span> <span class="op">*</span></span>
+<span id="servidorUDP2-2"><a href="#servidorUDP2-2"></a><span class="im">import</span> os</span>
+<span id="servidorUDP2-3"><a href="#servidorUDP2-3"></a></span>
+<span id="servidorUDP2-4"><a href="#servidorUDP2-4"></a>serverName <span class="op">=</span> <span class="st">&#39;localhost&#39;</span> <span class="co"># Ou &#39;127.0.0.1&#39;</span></span>
+<span id="servidorUDP2-5"><a href="#servidorUDP2-5"></a>serverPort <span class="op">=</span> <span class="dv">12000</span></span>
+<span id="servidorUDP2-6"><a href="#servidorUDP2-6"></a></span>
+<span id="servidorUDP2-7"><a href="#servidorUDP2-7"></a><span class="co"># Criacao do socket</span></span>
+<span id="servidorUDP2-8"><a href="#servidorUDP2-8"></a>clientSocket <span class="op">=</span> socket(AF_INET, SOCK_DGRAM)</span>
+<span id="servidorUDP2-9"><a href="#servidorUDP2-9"></a></span>
+<span id="servidorUDP2-10"><a href="#servidorUDP2-10"></a>sentence <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Input lowercase sentence:&#39;</span>)</span>
+<span id="servidorUDP2-11"><a href="#servidorUDP2-11"></a></span>
+<span id="servidorUDP2-12"><a href="#servidorUDP2-12"></a><span class="co"># Envio de bytes. Repare que o endereco do destinatario eh necessario</span></span>
+<span id="servidorUDP2-13"><a href="#servidorUDP2-13"></a>clientSocket.sendto(sentence.encode(<span class="st">&quot;ascii&quot;</span>), (serverName, serverPort))</span>
+<span id="servidorUDP2-14"><a href="#servidorUDP2-14"></a></span>
+<span id="servidorUDP2-15"><a href="#servidorUDP2-15"></a><span class="co"># Recepcao</span></span>
+<span id="servidorUDP2-16"><a href="#servidorUDP2-16"></a>modifiedSentence, addr <span class="op">=</span> clientSocket.recvfrom(<span class="dv">1024</span>)</span>
+<span id="servidorUDP2-17"><a href="#servidorUDP2-17"></a><span class="bu">print</span> (<span class="st">&#39;From Server:&#39;</span>, addr, modifiedSentence.decode(<span class="st">&quot;ascii&quot;</span>))</span>
+<span id="servidorUDP2-18"><a href="#servidorUDP2-18"></a></span>
+<span id="servidorUDP2-19"><a href="#servidorUDP2-19"></a><span class="co"># Fechamento</span></span>
+<span id="servidorUDP2-20"><a href="#servidorUDP2-20"></a>clientSocket.close()</span></code></pre></div>
+</div>
+<div id="alguns-detalhes" class="slide section level1">
+<h1>Alguns Detalhes</h1>
+<ul>
+<li>Servidor deve ser iniciado primeiro que cliente.
+<ul>
+<li>Servidor espera as conexões.</li>
+</ul></li>
+<li>A troca de mensagens deve ser feita em <strong>bytes</strong>.</li>
+<li>String deve ser convertido para sequência de bytes.
+<ul>
+<li><code>encode</code></li>
+<li><code>decode</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="exercícios" class="slide section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li>Implemente um programa servidor (oráculo) que fique esperando perguntas por mensagens UDP e que responda “sim”, “não” ou “talvez”.
+<ul>
+<li>Escolha a resposta aleatoriamente.</li>
+<li>Use a função <code>randint</code> do módulo random para escolher entre as 3 possíveis respostas.</li>
+<li>Use a porta 12345.</li>
+</ul></li>
+<li>Implemente um programa cliente para obter perguntas do usuário e enviá-las para o oráculo.
+<ul>
+<li>IP do servidor é 127.0.0.1</li>
+</ul></li>
+<li>Execute os dois programas (primeiro servidor e depois cliente).</li>
+</ol>
+</div>
+</body>
+</html>

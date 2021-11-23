@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1023 480" id="svgfile90">
+                  <style type="text/css">
+rect.background {fill:#eeeeff;stroke:none}
+rect.box        {stroke:black;fill:white;stroke-width:1}
+text.box        {font-family:Arial;font-size:18px; font-weight:bold; text-anchor:middle; fill:#0C469C;stroke:none}
+line.arrow     {stroke:crimson;stroke-width:4;fill:none}
+line.arrow2    {stroke:darkgreen;stroke-width:4;fill:none}
+</style>
+                  <rect class="background" width="1023" height="480"></rect>
+                  <g transform="translate(0,10)">
+                     <defs>
+                        <style type="text/css"></style>
+                     </defs>
+                     <g transform="translate(0,10)">
+                        <g transform="translate(10,50)">
+                           <rect class="box" width="150" height="200"></rect>
+                           <text class="box" y=" 25" x="75">Cliente</text>
+                           <g transform="translate(10,60)">
+                              <rect class="box" width="130" height="135"></rect>
+                              <text class="box" y=" 25" x="65">IP</text>
+                              <text class="box" y="50" x="65">Pacote</text>
+                              <text class="box" y="75" x="65">para</text>
+                              <text class="box" y="105" x="65">161.73.206.11</text>
+                           </g>
+                        </g>
+                        <line class="arrow" x1="85" y1="250" x2="85" y2="320"></line>
+                        <g transform="translate(10,320)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Ethernet</text>
+                           <text class="box" y="50" x="75">Interface</text>
+                        </g>
+                        <line class="arrow" x1="85" y1="380" x2="85" y2="410"></line>
+                        <line class="arrow2" x1="25" y1="410" x2="270" y2="410"></line>
+                        <text class="box" style="fill:green" y="435" x="175">Ethernet</text>
+                        <line class="arrow" x1="250" y1="380" x2="250" y2="410"></line>
+                        <g transform="translate(175,320)">
+                           <rect style="fill:lemonchiffon" class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                        </g>
+                        <g transform="translate(810,50)">
+                           <rect class="box" width="150" height="200"></rect>
+                           <text class="box" y=" 25" x="75">Servidor</text>
+                           <text class="box" y="40" x="75">161.73.206.11</text>
+                           <g transform="translate(10,60)">
+                              <rect class="box" width="130" height="135"></rect>
+                              <text class="box" y=" 25" x="65">IP</text>
+                           </g>
+                        </g>
+                        <line class="arrow" x1="885" y1="250" x2="885" y2="320"></line>
+                        <g transform="translate(810,320)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Ethernet</text>
+                           <text class="box" y="50" x="75">Interface</text>
+                        </g>
+                        <line class="arrow" x1="885" y1="380" x2="885" y2="410"></line>
+                        <line class="arrow2" x1="950" y1="410" x2="650" y2="410"></line>
+                        <text class="box" style="fill:green" y="435" x="775">Ethernet</text>
+                        <line class="arrow" x1="725" y1="380" x2="725" y2="410"></line>
+                        <g transform="translate(650,320)">
+                           <rect style="fill:lemonchiffon" class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                        </g>
+                        <g transform="translate(650,210)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                           <line class="arrow" x1="75" y1="60" x2="75" y2="110"></line>
+                        </g>
+                        <g transform="translate(175,210)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                           <line class="arrow" x1="75" y1="60" x2="75" y2="110"></line>
+                        </g>
+                        <g transform="translate(175,100)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                           <line class="arrow" x1="75" y1="60" x2="75" y2="110"></line>
+                        </g>
+                        <g transform="translate(650,100)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                           <line class="arrow" x1="75" y1="60" x2="75" y2="110"></line>
+                        </g>
+                        <g transform="translate(400,210)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                           <line class="arrow" x1="75" y1="60" x2="75" y2="110"></line>
+                        </g>
+                        <line class="arrow" x1="325" y1="150" x2="400" y2="150"></line>
+                        <line class="arrow" x1="325" y1="260" x2="400" y2="260"></line>
+                        <line class="arrow" x1="325" y1="370" x2="400" y2="370"></line>
+                        <line class="arrow" x1="550" y1="150" x2="650" y2="150"></line>
+                        <line class="arrow" x1="550" y1="260" x2="650" y2="260"></line>
+                        <line class="arrow" x1="550" y1="370" x2="650" y2="370"></line>
+                        <g transform="translate(400,100)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                           <line class="arrow" x1="75" y1="60" x2="75" y2="110"></line>
+                        </g>
+                        <g transform="translate(400,320)">
+                           <rect class="box" width="150" height="60"></rect>
+                           <text class="box" y="25" x="75">Roteador</text>
+                        </g>
+                        <g class="alternateanim" style="display:none">
+                           <rect transform="translate(250,410)" x="-55" y="-10" class="box" style="fill:yellow" rx="5" ry="5" width="110" height="20"></rect>
+                           <rect transform="translate(250,370)" x="-55" y="-10" class="box" style="fill:cyan" rx="5" ry="5" width="110" height="20"></rect>
+                           <rect transform="translate(250,260)" x="-55" y="-10" class="box" style="fill:mediumseagreen" rx="5" ry="5" width="110" height="20"></rect>
+                           <rect transform="translate(475,150)" x="-55" y="-10" class="box" style="fill:coral" rx="5" ry="5" width="110" height="20"></rect>
+                           <rect transform="translate(725,370)" x="-55" y="-10" class="box" style="fill:coral" rx="5" ry="5" width="110" height="20"></rect>
+                        </g>
+                        <g id="e" transform="translate(85,230)">
+                           <rect x="-55" y="-10" class="box" style="fill:yellow" rx="5" ry="5" width="110" height="20"></rect>
+                           <animateTransform id="s90e1" attributeName="transform" type="translate" from="85,230" to="85,410" begin="6s;s90e12.end" dur="1s"></animateTransform>
+                           <set attributeType="CSS" attributeName="visibility" to="visible" begin="s90e12.end"></set>
+                           <animateTransform id="s90e2" attributeName="transform" type="translate" from="85,410" to="250,410" begin="s90e1.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90e3" attributeName="transform" type="translate" from="250,410" to="250,370" begin="s90e2.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e3p" attributeName="transform" type="translate" from="250,370" to="250,370" begin="s90e3.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e4" attributeName="transform" type="translate" from="250,370" to="250,260" begin="s90e3p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90e4p" attributeName="transform" type="translate" from="250,260" to="250,260" begin="s90e4.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e5" attributeName="transform" type="translate" from="250,260" to="250,150" begin="s90e4p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90e5p" attributeName="transform" type="translate" from="250,150" to="250,150" begin="s90e5.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e6" attributeName="transform" type="translate" from="250,150" to="475,150" begin="s90e5p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90e6p" attributeName="transform" type="translate" from="475,150" to="475,150" begin="s90e6.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e7" attributeName="transform" type="translate" from="475,150" to="725,150" begin="s90e6p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90e7p" attributeName="transform" type="translate" from="725,150" to="725,150" begin="s90e7.end" dur="0.2s"></animateTransform>
+                           <set attributeType="CSS" attributeName="visibility" to="hidden" begin="s90e7.end"></set>
+                           <animateTransform id="s90e8" attributeName="transform" type="translate" from="725,150" to="725,260" begin="s90e7p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90e8p" attributeName="transform" type="translate" from="725,260" to="725,260" begin="s90e8.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e9" attributeName="transform" type="translate" from="725,260" to="725,370" begin="s90e8p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90e9p" attributeName="transform" type="translate" from="725,370" to="725,370" begin="s90e9.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e10" attributeName="transform" type="translate" from="725,370" to="725,410" begin="s90e9p.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90e11" attributeName="transform" type="translate" from="725,410" to="885,410" begin="s90e10.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90e12" attributeName="transform" type="translate" from="885,410" to="885,230" begin="s90e11.end" dur="1s" fill="freeze"></animateTransform>
+                        </g>
+                        <g id="a" transform="translate(85,230)">
+                           <rect x="-55" y="-10" class="box" style="fill:cyan" rx="5" ry="5" width="110" height="20"></rect>
+                           <animateTransform id="s90a1" attributeName="transform" type="translate" from="85,230" to="85,410" begin="5s;s90a8.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90a2" attributeName="transform" type="translate" from="85,410" to="250,410" begin="s90a1.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90a3" attributeName="transform" type="translate" from="250,410" to="250,370" begin="s90a2.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90a3p" attributeName="transform" type="translate" from="250,370" to="250,370" begin="s90a3.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90a4" attributeName="transform" type="translate" from="250,370" to="475,370" begin="s90a3p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90a4p" attributeName="transform" type="translate" from="475,370" to="475,370" begin="s90a4.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90a5" attributeName="transform" type="translate" from="475,370" to="725,370" begin="s90a4p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90a5p" attributeName="transform" type="translate" from="725,370" to="725,370" begin="s90a5.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90a6" attributeName="transform" type="translate" from="725,370" to="725,410" begin="s90a5p.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90a7" attributeName="transform" type="translate" from="725,410" to="885,410" begin="s90a6.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90a8" attributeName="transform" type="translate" from="885,410" to="885,230" begin="s90a7.end" dur="1s" fill="freeze"></animateTransform>
+                        </g>
+                        <g id="b" transform="translate(85,230)">
+                           <rect x="-55" y="-10" class="box" style="fill:yellow" rx="5" ry="5" width="110" height="20"></rect>
+                           <animateTransform id="s90b1" attributeName="transform" type="translate" from="85,230" to="85,410" begin="4s;s90b12.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90b2" attributeName="transform" type="translate" from="85,410" to="250,410" begin="s90b1.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90b3" attributeName="transform" type="translate" from="250,410" to="250,370" begin="s90b2.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b3p" attributeName="transform" type="translate" from="250,370" to="250,370" begin="s90b3.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b4" attributeName="transform" type="translate" from="250,370" to="250,260" begin="s90b3p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90b4p" attributeName="transform" type="translate" from="250,260" to="250,260" begin="s90b4.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b5" attributeName="transform" type="translate" from="250,260" to="250,150" begin="s90b4p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90b5p" attributeName="transform" type="translate" from="250,150" to="250,150" begin="s90b5.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b6" attributeName="transform" type="translate" from="250,150" to="475,150" begin="s90b5p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90b6p" attributeName="transform" type="translate" from="475,150" to="475,150" begin="s90b6.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b7" attributeName="transform" type="translate" from="475,150" to="725,150" begin="s90b6p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90b7p" attributeName="transform" type="translate" from="725,150" to="725,150" begin="s90b7.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b8" attributeName="transform" type="translate" from="725,150" to="725,260" begin="s90b7p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90b8p" attributeName="transform" type="translate" from="725,260" to="725,260" begin="s90b8.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b9" attributeName="transform" type="translate" from="725,260" to="725,370" begin="s90b8p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90b9p" attributeName="transform" type="translate" from="725,370" to="725,370" begin="s90b9.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b10" attributeName="transform" type="translate" from="725,370" to="725,410" begin="s90b9p.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90b11" attributeName="transform" type="translate" from="725,410" to="885,410" begin="s90b10.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90b12" attributeName="transform" type="translate" from="885,410" to="885,230" begin="s90b11.end" dur="1s" fill="freeze"></animateTransform>
+                        </g>
+                        <g id="c" transform="translate(85,230)">
+                           <rect x="-55" y="-10" class="box" style="fill:mediumseagreen" rx="5" ry="5" width="110" height="20"></rect>
+                           <animateTransform id="s90c1" attributeName="transform" type="translate" from="85,230" to="85,410" begin="3s;s90c12.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90c2" attributeName="transform" type="translate" from="85,410" to="250,410" begin="s90c1.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90c3" attributeName="transform" type="translate" from="250,410" to="250,370" begin="s90c2.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90c3p" attributeName="transform" type="translate" from="250,370" to="250,370" begin="s90c3.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90c4" attributeName="transform" type="translate" from="250,370" to="250,260" begin="s90c3p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90c4p" attributeName="transform" type="translate" from="250,260" to="250,260" begin="s90c4.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90c6" attributeName="transform" type="translate" from="250,260" to="475,260" begin="s90c4p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90c6p" attributeName="transform" type="translate" from="475,260" to="475,260" begin="s90c6.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90c7" attributeName="transform" type="translate" from="475,260" to="725,260" begin="s90c6p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90c7p" attributeName="transform" type="translate" from="725,260" to="725,260" begin="s90c7.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90c9" attributeName="transform" type="translate" from="725,260" to="725,370" begin="s90c7p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90c9p" attributeName="transform" type="translate" from="725,370" to="725,370" begin="s90c9.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90c10" attributeName="transform" type="translate" from="725,370" to="725,410" begin="s90c9p.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90c11" attributeName="transform" type="translate" from="725,410" to="885,410" begin="s90c10.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90c12" attributeName="transform" type="translate" from="885,410" to="885,230" begin="s90c11.end" dur="1s" fill="freeze"></animateTransform>
+                        </g>
+                        <g id="d" transform="translate(85,230)">
+                           <rect x="-55" y="-10" class="box" style="fill:coral" rx="5" ry="5" width="110" height="20"></rect>
+                           <animateTransform id="s90d1" attributeName="transform" type="translate" from="85,230" to="85,410" begin="2s;s90d12.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90d2" attributeName="transform" type="translate" from="85,410" to="250,410" begin="s90d1.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90d3" attributeName="transform" type="translate" from="250,410" to="250,370" begin="s90d2.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d3p" attributeName="transform" type="translate" from="250,370" to="250,370" begin="s90d3.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d4" attributeName="transform" type="translate" from="250,370" to="250,260" begin="s90d3p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90d4p" attributeName="transform" type="translate" from="250,260" to="250,260" begin="s90d4.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d5" attributeName="transform" type="translate" from="250,260" to="250,150" begin="s90d4p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90d5p" attributeName="transform" type="translate" from="250,150" to="250,150" begin="s90d5.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d6" attributeName="transform" type="translate" from="250,150" to="475,150" begin="s90d5p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90d6p" attributeName="transform" type="translate" from="475,150" to="475,150" begin="s90d6.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d7" attributeName="transform" type="translate" from="475,150" to="475,260" begin="s90d6p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90d7p" attributeName="transform" type="translate" from="475,260" to="475,260" begin="s90d7.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d8" attributeName="transform" type="translate" from="475,260" to="725,260" begin="s90d7p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90d8p" attributeName="transform" type="translate" from="725,260" to="725,260" begin="s90d8.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d9" attributeName="transform" type="translate" from="725,260" to="725,370" begin="s90d8p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90d9p" attributeName="transform" type="translate" from="725,370" to="725,370" begin="s90d9.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d10" attributeName="transform" type="translate" from="725,370" to="725,410" begin="s90d9p.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90d11" attributeName="transform" type="translate" from="725,410" to="885,410" begin="s90d10.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90d12" attributeName="transform" type="translate" from="885,410" to="885,230" begin="s90d11.end" dur="1s" fill="freeze"></animateTransform>
+                        </g>
+                        <g id="f" transform="translate(85,230)">
+                           <rect x="-55" y="-10" class="box" style="fill:mediumseagreen" rx="5" ry="5" width="110" height="20"></rect>
+                           <animateTransform id="s90f1" attributeName="transform" type="translate" from="85,230" to="85,410" begin="1s;s90f12.end" dur="1s"></animateTransform>
+                           <set attributeType="CSS" attributeName="visibility" to="visible" begin="s90f12.end"></set>
+                           <animateTransform id="s90f2" attributeName="transform" type="translate" from="85,410" to="250,410" begin="s90f1.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90f3" attributeName="transform" type="translate" from="250,410" to="250,370" begin="s90f2.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90f3p" attributeName="transform" type="translate" from="250,370" to="250,370" begin="s90f3.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90f4" attributeName="transform" type="translate" from="250,370" to="250,260" begin="s90f3p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90f4p" attributeName="transform" type="translate" from="250,260" to="250,260" begin="s90f4.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90f6" attributeName="transform" type="translate" from="250,260" to="475,260" begin="s90f4p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90f6p" attributeName="transform" type="translate" from="475,260" to="475,260" begin="s90f6.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90f7" attributeName="transform" type="translate" from="475,260" to="725,260" begin="s90f6p.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90f7p" attributeName="transform" type="translate" from="725,260" to="725,260" begin="s90f7.end" dur="0.2s"></animateTransform>
+                           <set attributeType="CSS" attributeName="visibility" to="hidden" begin="s90f7p.end"></set>
+                           <animateTransform id="s90f9" attributeName="transform" type="translate" from="725,260" to="725,370" begin="s90f7p.end" dur="0.5s"></animateTransform>
+                           <animateTransform id="s90f9p" attributeName="transform" type="translate" from="725,370" to="725,370" begin="s90f9.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90f10" attributeName="transform" type="translate" from="725,370" to="725,410" begin="s90f9p.end" dur="0.2s"></animateTransform>
+                           <animateTransform id="s90f11" attributeName="transform" type="translate" from="725,410" to="885,410" begin="s90f10.end" dur="1s"></animateTransform>
+                           <animateTransform id="s90f12" attributeName="transform" type="translate" from="885,410" to="885,230" begin="s90f11.end" dur="1s" fill="freeze"></animateTransform>
+                        </g>
+                     </g>
+                  </g>
+</svg>
+
