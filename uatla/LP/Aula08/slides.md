@@ -275,8 +275,4 @@ except Exception as mensagem:
 
 2. Escreva um programa que obtenha textos do usuário até que ele digite "sair" apenas. Salve tudo em um ficheiro chamado "texto.txt".
     - Faça com que o o conteúdo antigo não seja apagado caso o usuário execute o programa novamente.
-
-# Exercícios para Casa (III)
-
 3. Modifique o programa 1 do Exercício (I) para gerar um ficheiro com os nomes das frutas ordenado.
-4. Escreva um programa que obtenha duas matrizes, cada uma de um ficheiro texto, e gere um novo ficheiro contendo o resultado da subtração entre elas.

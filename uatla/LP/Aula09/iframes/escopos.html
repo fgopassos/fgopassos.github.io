@@ -1,0 +1,19 @@
+<html>
+	<head>
+        <script type="text/javascript">
+			function cb() {
+                var a = 1;
+                {
+                    let a = 5;
+                    console.log(a);
+                }
+                console.log(a);
+            }
+        </script>
+	</head>
+	<body>
+		<center>
+			<input type="button" value="Executar (Modo Inspetor)" onclick="cb();"></input>
+		</center>
+	</body>
+</html>
