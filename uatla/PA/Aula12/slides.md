@@ -208,8 +208,8 @@ print("Todos as threads terminaram")
 # Exemplo: Servidor TCP Multithreading
 
 - Cálculo de divisores:
-    - <a href=""> cliente </a>
-    - servidor
+    - <a href="codigos/divisores_cliente.py"> código do cliente </a>
+    - <a href="codigos/divisores_servidor.py"> código do servidor </a>
 
 # Exercício (I)
 
