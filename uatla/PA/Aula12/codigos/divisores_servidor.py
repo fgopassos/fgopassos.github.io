@@ -54,13 +54,15 @@ while True:
     print ('Aguardando conexao...')
     connectionSocket, addr = serverSocket.accept()
 
-    # Trata a requisicao
-    trataRequisicao(connectionSocket)
+    # Trata a requisicao sem usar threads
+    # Descomente aqui para testar sem e comente as 
+    # duas linhas de código abaixo.
+    #trataRequisicao(connectionSocket)
 
     # Trata a requisicao usando threads
-    #t = threading.Thread(target=trataRequisicao, args=(connectionSocket,))
+    t = threading.Thread(target=trataRequisicao, args=(connectionSocket,))
 
     # Inicia a thread
-    #t.start()
+    t.start()
 
 
