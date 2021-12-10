@@ -2,7 +2,7 @@
 author: Fernanda Passos
 date: 30 de Novembro de 2021
 subtitle: Linguagem de Programação
-title: Javascript
+title: Aplicações Web e Javascript
 institute: Universidade Atlântica
 logo: ../atlantica_logo2.svg
 ---
@@ -123,6 +123,39 @@ logo: ../atlantica_logo2.svg
 	</body>
 </html>
 ```
+
+# HTML: Estrutura de um Documento (II)
+
+:::::{.columns}
+:::{.column width=60%}
+
+- Documento organizado de forma hierárquica (em árvore).
+- Cada nó da hierarquia corresponde a uma _tag_.
+	- Exemplo: `<nomeDaTag> filhos </nomeDaTag>`.
+- _Tags_ são aninhadas, criando a hierarquia.
+
+```{.html .numberLines style="font-size: 18px;"} 
+<html>
+	<head>
+	</head>
+
+	<body>
+		<h1>Um tutorial sobre HTML</h1>
+
+		<p>Este documento <i>web</i> estabelece alguns...</p>
+	</body>
+</html>
+```
+
+:::
+:::{.column width=40%}
+- Hierarquia:
+
+![](imagens/HTMLHierarquia.svg){style="width: 90%;"}
+
+:::
+:::::
+
 # Javascript {.part}
 
 # Javascript: Conceitos Básicos
@@ -636,16 +669,31 @@ alert('Olá ' + nome + '!')
 
 <iframe src="iframes/prompt.html" style="width: 100%; height: 50px; border: 0;">
 
+</iframe>
+
+<!--
 # Exercícios
 
 1. Escreva um programa em JS e HTML que obtenha um número do usu
 2.
+-->
 
+# Exercícios (I)
+
+1. Crie uma página web que contenha um código Javascript que calcule os N=10 primeiros números múltiplos de 5 e 7 simultaneamente.
+	- Imprima o resultado no console do _browser_.
+2. Altere o item 1 para que a entrada de N seja através do `prompt`.
+3. Crie uma página web que contenha um código Javascript que calcule o fatorial de um número.
+	- Use recursão.
+	- Mostre o resultado com a função `alert()`.
+
+<!--
 # Javascript e HTML
 
 ## Iteração com um botão
 
 - Em HTML, podemos incluir um elemento chamado `button`.
+-->
 
 # Javascript: Objetos
 
@@ -1121,3 +1169,11 @@ Carro.help();	// Permitido
 carro1.help(); // Erro!
 ```	
 
+# Exercícios (II)
+
+1. Crie uma página web que contenha um código Javascript que calcule os N primeiros números múltiplos de 5 e 7 simultaneamente.
+	- Durante o cálculo, armazene os números em um vetor.
+	- Imprima o resultado no console do _browser_.
+3. Crie um objeto em Javascript para representar um funcionário de uma empresa.
+	- Inclua campos para o nome, apelido, ano do nascimento e salário.
+	- Inclua um método que calcule a idade do funcionário com base no ano atual (recebido como argumento) e no seu ano de nascimento.
