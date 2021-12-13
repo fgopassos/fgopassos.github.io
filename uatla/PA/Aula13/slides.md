@@ -1,6 +1,5 @@
 ---
 author: Fernanda Passos
-date: 30 de Novembro de 2021
 subtitle: Programação Avançada
 title: Introdução as Aplicações Web
 institute: Universidade Atlântica
@@ -259,10 +258,17 @@ logo: ../atlantica_logo2.svg
 :::
 :::::
 
+# HTML: _Tags_ Aplicáveis ao `head`
+
+| Nome da _Tag_ | Propósito                                            |
+| ------------- | ---------------------------------------------------- |
+| `script`      | Carrega ou define _script_ executado sobre a página  |
+| `title`       | Define um título para a página                       |
+| `style`       | Define estilos aplicados aos elementos da página     |
+| `meta`        | Define metadados sobre a página                      |
+| `link`        | Carrega algum recurso externo à página (_e.g._, CSS) |
 
 # HTML: _Tags_ Típicas de Formatação
-
-
 
 :::::{.columns}
 :::{.column width=47%}
@@ -311,7 +317,30 @@ logo: ../atlantica_logo2.svg
 :::
 :::::
 
+# Exercício (I)
 
+1\. Usando as tags html, head, body, p, h1 a h6, escreva uma página HTML similar ao exemplo abaixo:
+
+::::{.center}
+<iframe src="iframes/exercicios/ex1.html" style="width: 80%; height: 330px;">
+
+</iframe>
+::::
+
+# Exercício (II)
+
+2\. Escreva uma página HTML que apresente a seguinte tabela:
+
+::::{.center width=80%}
+Caracter | Permissão
+:--------|:---------
+r        | Permissão de leitura (*read*)
+w        | Permissão de escrita (*write*)
+x        | Permissão de execução (*execute*)
+  -      | Permissão desabilitada
+::::
+
+- Note os nomes em itálico na segunda coluna.
 
 # HTML: _Tags_ de Elementos Multimídia
 
@@ -343,16 +372,6 @@ logo: ../atlantica_logo2.svg
 
 :::
 :::::
-
-# HTML: _Tags_ Aplicáveis ao `head`
-
-| Nome da _Tag_ | Propósito                                            |
-| ------------- | ---------------------------------------------------- |
-| `script`      | Carrega ou define _script_ executado sobre a página  |
-| `title`       | Define um título para a página                       |
-| `style`       | Define estilos aplicados aos elementos da página     |
-| `meta`        | Define metadados sobre a página                      |
-| `link`        | Carrega algum recurso externo à página (_e.g._, CSS) |
 
 # HTML: Campos das _Tags_
 
@@ -409,6 +428,13 @@ logo: ../atlantica_logo2.svg
 
 :::
 :::::
+
+# Exercício (III)
+
+3\. Adicione uma imagem a uma das páginas criadas nos exercícios anteriores.
+
+4\. Adicione um link na página do exercício I para a página do exercício II.
+
 
 # HTML: A _Tag_ `div`
 
@@ -471,7 +497,7 @@ logo: ../atlantica_logo2.svg
 
 ::::{}
 - Na maioria dos casos, um `input` pode/deve ter um `label` associado.
-	- Associa um texto ao ao `input`.
+	- Associa um texto ao `input`.
 - Exemplo:
 
 ::::
@@ -531,9 +557,9 @@ logo: ../atlantica_logo2.svg
 	</head>
 	<body>
         <form action="/processaForm.php">
-            <label for="fname">Nome:</label>
+            <label for="nome">Nome:</label>
             <input type="text" id="nome"><br><br>
-            <label for="lname">Apelido:</label>
+            <label for="apelido">Apelido:</label>
             <input type="text" id="apelido"><br><br>            
             <input type="checkbox" id="pais1" value="Angola">
             <label for="pais1">Nasci em Angola</label><br>
@@ -748,6 +774,14 @@ seletor [, seletor2, ...][:pseudo-classe] {
     </body>
 </html>			
 ```
+
+# CSS: Exercício (IV)
+
+1. Use um ficheiro CSS para realizar alterações na tabela do Exercício II.
+	- Altere a largura das células (_padding_).
+	- Mude a cor do título da tabela.
+	- Altere as cores de cada linha de forma alternada.
+		- Sugestão: usar atributo classe para cada linha.
 
 # Javascript {.part}
 

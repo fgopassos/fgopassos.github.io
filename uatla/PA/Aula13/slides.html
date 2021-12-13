@@ -101,7 +101,6 @@
     <p class="author">
 Fernanda Passos
     </p>
-    <p class="date">30 de Novembro de 2021</p>
   </div>
 </div>
 <div id="conceitos-básicos" class="slide section level1 part">
@@ -501,6 +500,39 @@ Fernanda Passos
 </div>
 </div>
 </div>
+<div id="html-tags-aplicáveis-ao-head" class="slide section level1">
+<h1>HTML: <em>Tags</em> Aplicáveis ao <code>head</code></h1>
+<table>
+<thead>
+<tr class="header">
+<th>Nome da <em>Tag</em></th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>script</code></td>
+<td>Carrega ou define <em>script</em> executado sobre a página</td>
+</tr>
+<tr class="even">
+<td><code>title</code></td>
+<td>Define um título para a página</td>
+</tr>
+<tr class="odd">
+<td><code>style</code></td>
+<td>Define estilos aplicados aos elementos da página</td>
+</tr>
+<tr class="even">
+<td><code>meta</code></td>
+<td>Define metadados sobre a página</td>
+</tr>
+<tr class="odd">
+<td><code>link</code></td>
+<td>Carrega algum recurso externo à página (<em>e.g.</em>, CSS)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="html-tags-típicas-de-formatação" class="slide section level1">
 <h1>HTML: <em>Tags</em> Típicas de Formatação</h1>
 <div class="columns">
@@ -586,6 +618,49 @@ Fernanda Passos
 </div>
 </div>
 </div>
+<div id="exercício-i" class="slide section level1">
+<h1>Exercício (I)</h1>
+<p>1. Usando as tags html, head, body, p, h1 a h6, escreva uma página HTML similar ao exemplo abaixo:</p>
+<div class="center">
+<iframe src="iframes/exercicios/ex1.html" style="width: 80%; height: 330px;">
+</iframe>
+</div>
+</div>
+<div id="exercício-ii" class="slide section level1">
+<h1>Exercício (II)</h1>
+<p>2. Escreva uma página HTML que apresente a seguinte tabela:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Caracter</th>
+<th align="left">Permissão</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">r</td>
+<td align="left">Permissão de leitura (<em>read</em>)</td>
+</tr>
+<tr class="even">
+<td align="left">w</td>
+<td align="left">Permissão de escrita (<em>write</em>)</td>
+</tr>
+<tr class="odd">
+<td align="left">x</td>
+<td align="left">Permissão de execução (<em>execute</em>)</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="left">Permissão desabilitada</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Note os nomes em itálico na segunda coluna.</li>
+</ul>
+</div>
 <div id="html-tags-de-elementos-multimídia" class="slide section level1">
 <h1>HTML: <em>Tags</em> de Elementos Multimídia</h1>
 <div class="columns">
@@ -624,39 +699,6 @@ Fernanda Passos
 </iframe>
 </div>
 </div>
-</div>
-<div id="html-tags-aplicáveis-ao-head" class="slide section level1">
-<h1>HTML: <em>Tags</em> Aplicáveis ao <code>head</code></h1>
-<table>
-<thead>
-<tr class="header">
-<th>Nome da <em>Tag</em></th>
-<th>Propósito</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>script</code></td>
-<td>Carrega ou define <em>script</em> executado sobre a página</td>
-</tr>
-<tr class="even">
-<td><code>title</code></td>
-<td>Define um título para a página</td>
-</tr>
-<tr class="odd">
-<td><code>style</code></td>
-<td>Define estilos aplicados aos elementos da página</td>
-</tr>
-<tr class="even">
-<td><code>meta</code></td>
-<td>Define metadados sobre a página</td>
-</tr>
-<tr class="odd">
-<td><code>link</code></td>
-<td>Carrega algum recurso externo à página (<em>e.g.</em>, CSS)</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div id="html-campos-das-tags" class="slide section level1">
 <h1>HTML: Campos das <em>Tags</em></h1>
@@ -744,6 +786,11 @@ Fernanda Passos
 </div>
 </div>
 </div>
+<div id="exercício-iii" class="slide section level1">
+<h1>Exercício (III)</h1>
+<p>3. Adicione uma imagem a uma das páginas criadas nos exercícios anteriores.</p>
+<p>4. Adicione um link na página do exercício I para a página do exercício II.</p>
+</div>
 <div id="html-a-tag-div" class="slide section level1">
 <h1>HTML: A <em>Tag</em> <code>div</code></h1>
 <div>
@@ -826,7 +873,7 @@ Fernanda Passos
 <ul>
 <li>Na maioria dos casos, um <code>input</code> pode/deve ter um <code>label</code> associado.
 <ul>
-<li>Associa um texto ao ao <code>input</code>.</li>
+<li>Associa um texto ao <code>input</code>.</li>
 </ul></li>
 <li>Exemplo:</li>
 </ul>
@@ -880,9 +927,9 @@ Fernanda Passos
 <span id="cb8-3"><a href="#cb8-3"></a>    <span class="kw">&lt;/head&gt;</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a>    <span class="kw">&lt;body&gt;</span></span>
 <span id="cb8-5"><a href="#cb8-5"></a>        <span class="kw">&lt;form</span> <span class="er">action</span><span class="ot">=</span><span class="st">&quot;/processaForm.php&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>            <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;fname&quot;</span><span class="kw">&gt;</span>Nome:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>            <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;nome&quot;</span><span class="kw">&gt;</span>Nome:<span class="kw">&lt;/label&gt;</span></span>
 <span id="cb8-7"><a href="#cb8-7"></a>            <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;nome&quot;</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>            <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;lname&quot;</span><span class="kw">&gt;</span>Apelido:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>            <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;apelido&quot;</span><span class="kw">&gt;</span>Apelido:<span class="kw">&lt;/label&gt;</span></span>
 <span id="cb8-9"><a href="#cb8-9"></a>            <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;apelido&quot;</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span>            </span>
 <span id="cb8-10"><a href="#cb8-10"></a>            <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;checkbox&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;pais1&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Angola&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb8-11"><a href="#cb8-11"></a>            <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;pais1&quot;</span><span class="kw">&gt;</span>Nasci em Angola<span class="kw">&lt;/label&gt;&lt;br&gt;</span></span>
@@ -1213,6 +1260,20 @@ Fernanda Passos
 <span id="cb11-6"><a href="#cb11-6"></a>        ...</span>
 <span id="cb11-7"><a href="#cb11-7"></a>    <span class="kw">&lt;/body&gt;</span></span>
 <span id="cb11-8"><a href="#cb11-8"></a><span class="kw">&lt;/html&gt;</span>         </span></code></pre></div>
+</div>
+<div id="css-exercício-iv" class="slide section level1">
+<h1>CSS: Exercício (IV)</h1>
+<ol style="list-style-type: decimal">
+<li>Use um ficheiro CSS para realizar alterações na tabela do Exercício II.
+<ul>
+<li>Altere a largura das células (<em>padding</em>).</li>
+<li>Mude a cor do título da tabela.</li>
+<li>Altere as cores de cada linha de forma alternada.
+<ul>
+<li>Sugestão: usar atributo classe para cada linha.</li>
+</ul></li>
+</ul></li>
+</ol>
 </div>
 <div id="javascript" class="slide section level1 part">
 <h1 class="part">Javascript</h1>
