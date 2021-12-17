@@ -1055,6 +1055,16 @@ alert(somaArgs(1, 5, 2, 7));
 
 </iframe>
 
+# Exercícios (II)
+
+1. Crie uma página web que contenha um código Javascript que calcule um vetor que contenha até o centésimo termo de Fibonacci.
+	- Em seguida, obtenha do usuário (via _prompt_) um número N entre 0 e 100.
+	- Imprima (via _alert_) o valor do termo N na sequência.
+2. Crie dois objetos em Javascript distintos para representar um funcionário de uma empresa.
+	- Inclua campos para o nome, apelido, ano do nascimento e salário.
+	- Inclua um método que calcule a idade do funcionário com base no ano atual (recebido como argumento) e no seu ano de nascimento.
+	- Imprima (via _alert_) o nome, apelido, idade e salário deste funcionário.
+
 # Javascript: Voltando aos Objetos
 
 - Já vimos como podemos criar **objetos** em Javascript.
@@ -1112,7 +1122,7 @@ Construtor
 
 ```{.javascript .numberLines style="font-size: 16px;"}
 class Carro {
-	construtor(fabricante, modelo, ano, portas) { 
+	constructor(fabricante, modelo, ano, portas) { 
 		this.fabricante = fabricante;
 		this.modelo = modelo;
 		this.ano = ano;
@@ -1137,7 +1147,7 @@ carro1.log();
 
 ```{.javascript .numberLines style="font-size: 16px;"}
 class Carrinha extends Carro {
-	construtor(fabricante, modelo, ano, portas, lugares) { 
+	constructor(fabricante, modelo, ano, portas, lugares) { 
 		super(fabricante, modelo, ano, portas);	// Chama construtor da classe original
 		this.lugares = lugares;	// Complementa com uma nova propriedade
 	}
@@ -1151,7 +1161,7 @@ class Carrinha extends Carro {
 
 - Métodos associados a uma **classe**, mas não a uma instância.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 18px;"}
 class Carro {
 	constructor(fabricante, modelo, ano, portas) { 
 		this.fabricante = fabricante;
@@ -1169,11 +1179,9 @@ Carro.help();	// Permitido
 carro1.help(); // Erro!
 ```	
 
-# Exercícios (II)
+# Exercícios (III)
 
-1. Crie uma página web que contenha um código Javascript que calcule os N primeiros números múltiplos de 5 e 7 simultaneamente.
-	- Durante o cálculo, armazene os números em um vetor.
-	- Imprima o resultado no console do _browser_.
-3. Crie um objeto em Javascript para representar um funcionário de uma empresa.
-	- Inclua campos para o nome, apelido, ano do nascimento e salário.
+1. Crie uma classe em Javascript para representar um funcionário de uma empresa (similar ao Exercício II).
 	- Inclua um método que calcule a idade do funcionário com base no ano atual (recebido como argumento) e no seu ano de nascimento.
+1. Crie (instancie) dois objetos distintos em Javascript utilizando a classe criada no item 1.
+	- Mostre o nome, apelido, idade e salário do objeto criado.

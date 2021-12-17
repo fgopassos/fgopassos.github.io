@@ -1285,6 +1285,22 @@ Fernanda Passos
 <iframe src="iframes/varArgs.html" style="width: 100%; height: 35px; border: 0;">
 </iframe>
 </div>
+<div id="exercícios-ii" class="slide section level1">
+<h1>Exercícios (II)</h1>
+<ol style="list-style-type: decimal">
+<li>Crie uma página web que contenha um código Javascript que calcule um vetor que contenha até o centésimo termo de Fibonacci.
+<ul>
+<li>Em seguida, obtenha do usuário (via <em>prompt</em>) um número N entre 0 e 100.</li>
+<li>Imprima (via <em>alert</em>) o valor do termo N na sequência.</li>
+</ul></li>
+<li>Crie dois objetos em Javascript distintos para representar um funcionário de uma empresa.
+<ul>
+<li>Inclua campos para o nome, apelido, ano do nascimento e salário.</li>
+<li>Inclua um método que calcule a idade do funcionário com base no ano atual (recebido como argumento) e no seu ano de nascimento.</li>
+<li>Imprima (via <em>alert</em>) o nome, apelido, idade e salário deste funcionário.</li>
+</ul></li>
+</ol>
+</div>
 <div id="javascript-voltando-aos-objetos" class="slide section level1">
 <h1>Javascript: Voltando aos Objetos</h1>
 <ul>
@@ -1345,7 +1361,7 @@ Fernanda Passos
 <div id="javascript-exemplo-de-uma-classe-carro" class="slide section level1">
 <h1>Javascript: Exemplo de uma Classe Carro</h1>
 <div class="sourceCode" id="cb48" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">class</span> Carro {</span>
-<span id="cb48-2"><a href="#cb48-2"></a>    <span class="fu">construtor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas) { </span>
+<span id="cb48-2"><a href="#cb48-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas) { </span>
 <span id="cb48-3"><a href="#cb48-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">=</span> fabricante<span class="op">;</span></span>
 <span id="cb48-4"><a href="#cb48-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
 <span id="cb48-5"><a href="#cb48-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">ano</span> <span class="op">=</span> ano<span class="op">;</span></span>
@@ -1371,7 +1387,7 @@ Fernanda Passos
 <li>Feito com a palavra-chave <code>extends</code>:</li>
 </ul>
 <div class="sourceCode" id="cb49" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">class</span> Carrinha <span class="kw">extends</span> Carro {</span>
-<span id="cb49-2"><a href="#cb49-2"></a>    <span class="fu">construtor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas<span class="op">,</span> lugares) { </span>
+<span id="cb49-2"><a href="#cb49-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas<span class="op">,</span> lugares) { </span>
 <span id="cb49-3"><a href="#cb49-3"></a>        <span class="kw">super</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas)<span class="op">;</span> <span class="co">// Chama construtor da classe original</span></span>
 <span id="cb49-4"><a href="#cb49-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">lugares</span> <span class="op">=</span> lugares<span class="op">;</span> <span class="co">// Complementa com uma nova propriedade</span></span>
 <span id="cb49-5"><a href="#cb49-5"></a>    }</span>
@@ -1385,7 +1401,7 @@ Fernanda Passos
 <ul>
 <li>Métodos associados a uma <strong>classe</strong>, mas não a uma instância.</li>
 </ul>
-<div class="sourceCode" id="cb50" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">class</span> Carro {</span>
+<div class="sourceCode" id="cb50" style="font-size: 18px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">class</span> Carro {</span>
 <span id="cb50-2"><a href="#cb50-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas) { </span>
 <span id="cb50-3"><a href="#cb50-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">=</span> fabricante<span class="op">;</span></span>
 <span id="cb50-4"><a href="#cb50-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
@@ -1401,18 +1417,16 @@ Fernanda Passos
 <span id="cb50-14"><a href="#cb50-14"></a>Carro<span class="op">.</span><span class="fu">help</span>()<span class="op">;</span>   <span class="co">// Permitido</span></span>
 <span id="cb50-15"><a href="#cb50-15"></a>carro1<span class="op">.</span><span class="fu">help</span>()<span class="op">;</span> <span class="co">// Erro!</span></span></code></pre></div>
 </div>
-<div id="exercícios-ii" class="slide section level1">
-<h1>Exercícios (II)</h1>
+<div id="exercícios-iii" class="slide section level1">
+<h1>Exercícios (III)</h1>
 <ol style="list-style-type: decimal">
-<li>Crie uma página web que contenha um código Javascript que calcule os N primeiros números múltiplos de 5 e 7 simultaneamente.
+<li>Crie uma classe em Javascript para representar um funcionário de uma empresa (similar ao Exercício II).
 <ul>
-<li>Durante o cálculo, armazene os números em um vetor.</li>
-<li>Imprima o resultado no console do <em>browser</em>.</li>
-</ul></li>
-<li>Crie um objeto em Javascript para representar um funcionário de uma empresa.
-<ul>
-<li>Inclua campos para o nome, apelido, ano do nascimento e salário.</li>
 <li>Inclua um método que calcule a idade do funcionário com base no ano atual (recebido como argumento) e no seu ano de nascimento.</li>
+</ul></li>
+<li>Crie (instancie) dois objetos distintos em Javascript utilizando a classe criada no item 1.
+<ul>
+<li>Mostre o nome, apelido, idade e salário do objeto criado.</li>
 </ul></li>
 </ol>
 </div>
