@@ -1,0 +1,14 @@
+<body>
+    <head>
+        <link rel="stylesheet" type="text/css"
+           href={{url_for('static', filename='calculadora.css')}} />
+    </head>
+    <body>
+        <table>
+            <tr><th>Operação</th><th>Resultado</th></tr>
+            {% for op in resultados %}
+            <tr><td>{{ x }} {{ op }} {{ y }}</td><td>{{ resultados[op] }}</td></tr>
+            {% endfor %}
+        </table>
+    </body>
+</body>
