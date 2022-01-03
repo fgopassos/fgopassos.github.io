@@ -298,12 +298,12 @@ Fernanda Passos
 <span id="cb4-2"><a href="#cb4-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/cadeiras&quot;</span>)             </span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="kw">def</span> alunos():</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="kw">def</span> lista_cadeiras():</span>
 <span id="cb4-6"><a href="#cb4-6"></a>    <span class="cf">return</span> <span class="st">&quot;Programação avançada, Linguagem de Programação, Estatística, Redes de Computadores&quot;</span> </span>
 <span id="cb4-7"><a href="#cb4-7"></a></span>
 <span id="cb4-8"><a href="#cb4-8"></a></span>
 <span id="cb4-9"><a href="#cb4-9"></a><span class="at">@app.route</span>(<span class="st">&quot;/alunos&quot;</span>)               </span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="kw">def</span> hello():</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="kw">def</span> lista_alunos():</span>
 <span id="cb4-11"><a href="#cb4-11"></a>    <span class="cf">return</span> <span class="st">&quot;António, Carla, Daniel, João, Paula, Tiago&quot;</span> </span>
 <span id="cb4-12"><a href="#cb4-12"></a></span>
 <span id="cb4-13"><a href="#cb4-13"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
@@ -559,7 +559,7 @@ Fernanda Passos
 <h1>Flask: Exemplo de Uso de <em>Templates</em></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb12" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">&lt;body&gt;</span></span>
+<div class="sourceCode" id="cb12" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>    <span class="kw">&lt;body&gt;</span></span>
 <span id="cb12-4"><a href="#cb12-4"></a>        <span class="kw">&lt;table&gt;</span></span>
@@ -582,7 +582,7 @@ Fernanda Passos
 <span id="cb12-21"><a href="#cb12-21"></a>            <span class="kw">&lt;/tr&gt;</span></span>
 <span id="cb12-22"><a href="#cb12-22"></a>        <span class="kw">&lt;/table&gt;</span></span>
 <span id="cb12-23"><a href="#cb12-23"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb12-24"><a href="#cb12-24"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb13" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
 <span id="cb13-2"><a href="#cb13-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
@@ -626,7 +626,7 @@ Fernanda Passos
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb14" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">&lt;body&gt;</span></span>
+<div class="sourceCode" id="cb14" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a>    <span class="kw">&lt;body&gt;</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a>        <span class="kw">&lt;table&gt;</span></span>
@@ -651,7 +651,7 @@ Fernanda Passos
 <span id="cb14-23"><a href="#cb14-23"></a>            <span class="kw">&lt;/tr&gt;</span></span>
 <span id="cb14-24"><a href="#cb14-24"></a>        <span class="kw">&lt;/table&gt;</span></span>
 <span id="cb14-25"><a href="#cb14-25"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb14-26"><a href="#cb14-26"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb15" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
 <span id="cb15-2"><a href="#cb15-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
@@ -683,7 +683,7 @@ Fernanda Passos
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb16" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;body&gt;</span></span>
+<div class="sourceCode" id="cb16" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
 <span id="cb16-3"><a href="#cb16-3"></a>    <span class="kw">&lt;body&gt;</span></span>
 <span id="cb16-4"><a href="#cb16-4"></a>        <span class="kw">&lt;table&gt;</span></span>
@@ -696,7 +696,7 @@ Fernanda Passos
 <span id="cb16-11"><a href="#cb16-11"></a>            {% endfor %}</span>
 <span id="cb16-12"><a href="#cb16-12"></a>        <span class="kw">&lt;/table&gt;</span></span>
 <span id="cb16-13"><a href="#cb16-13"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb16-14"><a href="#cb16-14"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<span id="cb16-14"><a href="#cb16-14"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb17" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
 <span id="cb17-2"><a href="#cb17-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
@@ -878,7 +878,7 @@ Fernanda Passos
 <span id="cb21-21"><a href="#cb21-21"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
 <span id="cb21-22"><a href="#cb21-22"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb22" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">&lt;body&gt;</span></span>
+<div class="sourceCode" id="cb22" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
 <span id="cb22-3"><a href="#cb22-3"></a>    <span class="kw">&lt;body&gt;</span></span>
 <span id="cb22-4"><a href="#cb22-4"></a>        <span class="kw">&lt;h1&gt;</span>Bem-vindo ao sistema!<span class="kw">&lt;/h1&gt;</span></span>
@@ -895,7 +895,8 @@ Fernanda Passos
 <span id="cb22-15"><a href="#cb22-15"></a><span class="ot">                name=</span><span class="st">&quot;password&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;&quot;</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span></span>
 <span id="cb22-16"><a href="#cb22-16"></a>            <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;submit&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Enviar&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb22-17"><a href="#cb22-17"></a>        <span class="kw">&lt;/form&gt;</span></span>
-<span id="cb22-18"><a href="#cb22-18"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<span id="cb22-18"><a href="#cb22-18"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 </div>
 </div>
 <ul>

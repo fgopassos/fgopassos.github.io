@@ -150,12 +150,12 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/cadeiras")				
-def alunos():
+def lista_cadeiras():
     return "Programação avançada, Linguagem de Programação, Estatística, Redes de Computadores"	
 
 
 @app.route("/alunos")				
-def hello():
+def lista_alunos():
     return "António, Carla, Daniel, João, Paula, Tiago"	
 
 if __name__ == "__main__":
@@ -348,7 +348,7 @@ def alunosPOST():
 :::::{.columns}
 :::{.column width=50%}
 ```{.HTML .numberLines style="font-size: 16px;"}
-<body>
+<html>
     <head></head>
     <body>
         <table>
@@ -371,7 +371,7 @@ def alunosPOST():
 			</tr>
         </table>
     </body>
-</body>
+</html>
 ```
 :::
 :::{.column width=50%}
@@ -414,7 +414,7 @@ if __name__ == "__main__":
 :::::{.columns}
 :::{.column width=50%}
 ```{.HTML .numberLines style="font-size: 16px;"}
-<body>
+<html>
     <head></head>
     <body>
         <table>
@@ -439,7 +439,7 @@ if __name__ == "__main__":
 			</tr>
         </table>
     </body>
-</body>
+</html>
 ```
 :::
 :::{.column width=50%}
@@ -477,7 +477,7 @@ if __name__ == "__main__":
 :::::{.columns}
 :::{.column width=50%}
 ```{.HTML .numberLines style="font-size: 16px;"}
-<body>
+<html>
     <head></head>
     <body>
         <table>
@@ -490,7 +490,7 @@ if __name__ == "__main__":
             {% endfor %}
         </table>
     </body>
-</body>
+</html>
 ```
 :::
 :::{.column width=50%}
@@ -659,7 +659,7 @@ if __name__ == "__main__":
 :::
 :::{.column width=50%}
 ```{.html .numberLines style="font-size: 16px;"}
-<body>
+<html>
     <head></head>
     <body>
         <h1>Bem-vindo ao sistema!</h1>
@@ -676,7 +676,8 @@ if __name__ == "__main__":
 				name="password" value=""><br><br>
             <input type="submit" value="Enviar">
         </form>
-</body>
+	</body>
+</html>
 ```
 :::
 :::::
