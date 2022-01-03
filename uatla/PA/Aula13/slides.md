@@ -12,6 +12,8 @@ logo: ../atlantica_logo2.svg
 
 :::::{.columns}
 ::::{.column style="width:45%; padding-top: 100px;"}
+<br>
+
 - Aplicação computacional **distribuída**.
 	- **Partes** executadas em **dispositivos diferentes**.
 - Nomeadamente:
@@ -23,7 +25,8 @@ logo: ../atlantica_logo2.svg
 ::::{.column width=55%}
 
 :::::::{.center}
-![](imagens/appWeb.png){#appWeb width="50%"}
+<br> <br>
+![](imagens/appWeb.png){#appWeb width="45%"}
 :::::::
 
 ::::
@@ -538,20 +541,20 @@ x        | Permissão de execução (*execute*)
 :::
 :::::
 
-# HTML: Submetendo um Formulário
+# HTML: Submetendo um Formulário (I)
 
-::::{}
 - Informações de formulário são geralmente submetidas a algum objeto HTTP.
 	- Um _software_ do _backend_ responsável por processá-lo.
 - No HTML, isso é feito em duas partes:
 	1. Preenchimento do campo `action` do elemento `form`.
 	2. Inclusão de um `input` de tipo `submit`.
-::::
+
+# HTML: Submetendo um Formulário (II)
 
 :::::{.columns}
-:::{.column width=50%}
+:::{.column width=55%}
 
-```{.html .numberLines style="font-size: 16px;"}
+```{.html .numberLines style="font-size: 18px;"}
 <html>
 	<head>
 	</head>
@@ -575,7 +578,8 @@ x        | Permissão de execução (*execute*)
 
 
 :::
-:::{.column width=50%}
+:::{.column width=45%}
+<br> <br>
 <iframe src="iframes/Exemplo6.html" style="width: 90%; height: 220px;">
 
 </iframe>
@@ -596,7 +600,7 @@ x        | Permissão de execução (*execute*)
 	3. Como um ficheiro separado carregado através da _tag_ `link` no `head`.
 
 ::::::{.block .centered}
-:::{.blocktitle}
+:::{.blocktitle style="font-size: 18px;"}
 Observação
 :::
 - Duas últimas formas permitem aplicar o mesmo estilo a múltiplas instâncias de uma _tag_ de uma única vez.
