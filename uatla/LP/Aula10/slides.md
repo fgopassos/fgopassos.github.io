@@ -7,33 +7,10 @@ logo: ../atlantica_logo2.svg
 ---
 
 
-# HTML e DOM {.part}
+# Tags HTML {.part}
 
 
-# HTML: Visão Geral
-
-:::::{.columns}
-::::{.column width=50%}
-- Linguagem de **marcação** para documentos **hipertexto**.
-	- **Marcação**: anotação feita no conteúdo para alterar suas propriedades.
-		- _e.g._, fonte, cor de fundo, tamanho, ...
-	- **Hipertexto**: texto que contém referências a outros textos, imagens, sons, ...
-::::
-::::{.column width=50%}
-- Permite criar documentos contendo:
-	- Texto.
-	- Formatações especiais.
-	- Imagens.
-	- Tabelas.
-	- Vídeos.
-	- Sons.
-	- Referências a outros documentos.
-	- ...
-::::
-
-:::::
-
-# HTML: Estrutura de um Documento (I)
+# Revisão de HTML: Estrutura de um Documento (I)
 
 - No nível mais alto de abstração, documento HTML contém duas seções:
 	- `head`: 
@@ -56,7 +33,7 @@ logo: ../atlantica_logo2.svg
 </html>
 ```
 
-# HTML: Estrutura de um Documento (II)
+# Revisão de HTML: Estrutura de um Documento (II)
 
 :::::{.columns}
 :::{.column width=60%}
@@ -415,15 +392,20 @@ x        | Permissão de execução (*execute*)
 # HTML: Criando um Simples Botão
 
 - Botão é útil para criar interação com o usuário e disparar eventos.
-- Existem as _tags_ button e input com o type="button".
+- Existe input com o type="button".
 
 ```{.html .numberLines style="font-size: 18px;"}
 	        <input type="button" value="Clique aqui");">
 
 ```
 
-- 
+- Existem também a _tag_ **button**.
 
+```{.html .numberLines style="font-size: 18px;"}
+			<button type="button">Clique aqui!</button>
+```
+
+# Javascript e DOM {.part}
 
 # Javascript e DOM
 
@@ -586,8 +568,10 @@ var el3 = document.getElementByClass('minhaClasse1 minhaClasse2');
 </iframe>
 ::::
 
-# Exercício I
+# Exercício Rápido (I)
 
+1. Experimentos os códigos HTML + JS de ambos os slides anteriores.
+	- Cada um é uma página HTML distinta (separada).
 
 # Javascript e DOM: Inserindo Novos Elementos
 
@@ -632,7 +616,7 @@ var el3 = document.getElementByClass('minhaClasse1 minhaClasse2');
 ::::
 
 
-- **Nota**: na tabela, `el` denota algum nó **já existente** no DOM.
+- **Nota**: na tabela, `el` denota algum elemento/nó **já existente** no DOM.
 
 
 # Javascript e DOM: Exemplos de Inserção
@@ -672,6 +656,15 @@ var el3 = document.getElementByClass('minhaClasse1 minhaClasse2');
 
 </iframe>
 ::::
+
+# Exercício (IV)
+
+- Gere um ficheiro HTML com o exemplo do slide anterior.
+	- Interaja com o botão e observe seu comportamento.
+- Agora, edite seu ficheiro HTML e adicione dois campos de formulário com _id_ formCol1 e formCol2, respectivamente.
+	- Posicione-os lado a lado, entre a tabela e o botão.
+	- Use a tag `<br>` para quebrar a linha entre os elementos.
+- Faça com que o valor preenchido de ambos os campos do formulário sejam incluídos como uma linha da tabela.
 
 # Javascript e DOM: Remoção e Substituição
 
@@ -759,7 +752,6 @@ _Callback_
 | `onmouseout`  | Cursor deixa área do elemento              |                             |
 | `onmousedown` | Botão do rato é pressionado sobre elemento |                             |
 | `onmouseup`   | Botão do rato é liberado sobre o elemento  |                             |
-| `onclick`     | Evento de click é completado               |                             |
 ::::
 
 # Javascript: Eventos de Temporização
@@ -809,3 +801,9 @@ _Callback_
 
 </iframe>
 ::::
+
+# Exercício (V)
+
+1. Crie um ficheiro em HTML + JS que mostre imagens diferentes a cada 10~s.
+	- Baseie-se no slide anterior para isso.
+	- No JS, crie um vetor ou objeto para armazenar os caminhos das imagens.
