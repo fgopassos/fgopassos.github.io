@@ -805,5 +805,6 @@ _Callback_
 # Exercício (V)
 
 1. Crie um ficheiro em HTML + JS que mostre imagens diferentes a cada 10~s.
-	- Baseie-se no slide anterior para isso.
+	- Baseie-se no slide anterior para isso e inclua botões para iniciar e parar.
 	- No JS, crie um vetor ou objeto para armazenar os caminhos das imagens.
+	- Use o campo _value_ da caixa de texto do formulário para obter o seu conteúdo.
