@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Programação Concorrente em Python</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Universidade Atlântica</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Programação Concorrente em Python</h1>
+    <p class="subtitle">Aula 11</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+    <p class="note">Linguagem de Programação</p>
+  </div>
+</div>
+<div id="threads" class="slide section level1">
+<h1>Threads</h1>
+<div class="block centered">
+<div class="blocktitle">
+<p>Definação:</p>
+</div>
+<ul>
+<li>Uma thread é um fluxo de controle sequencial dentro de um programa em execução (processo).
+<ul>
+<li>Um processo é formado por uma ou mais threads.</li>
+</ul></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center">
+<p><img src="imagens/thread1.png" id="thread1" style="width:50.0%" /></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center">
+<p><img src="imagens/thread2.png" id="thread2" style="width:65.0%" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="multithreading" class="slide section level1">
+<h1>Multithreading</h1>
+<ul>
+<li>Um sistema que usa múltiplas threads é chamado de <strong>multithreading</strong>.</li>
+<li>Um sistema de threads mantém a <strong>mínima informação</strong> para que permita que a CPU possa ser compartilhada por vários threads.
+<ul>
+<li>Contexto de thread.</li>
+</ul></li>
+<li>No conceito de <em>multithreading</em>, um processo pode possuir vários fluxos de controle (threads).</li>
+<li>Threads de um processo compartilham o mesmo espaço de endereçamento.</li>
+<li>Trocas de contexto de threads de um mesmo processo são mais rápidas.
+<ul>
+<li>Comparado ao processo.</li>
+</ul></li>
+</ul>
+</div>
+<div id="multithreading-vs.-multiprocessamento" class="slide section level1">
+<h1>Multithreading vs. Multiprocessamento</h1>
+<div class="columns">
+<div class="column" style="width:49%;">
+<h2 id="prós">Prós:</h2>
+<ul>
+<li>Menos tempo para criar um thread do que um processo filho.</li>
+<li>Menos tempo para finalizar um thread do que um processo.</li>
+<li>A troca de contexto é mais rápida entre threads do mesmo processo.</li>
+<li>Mais eficiência no compartilhamento de dados através da memória compartilhada dentro de um mesmo processo.</li>
+</ul>
+</div><div class="column" style="width:49%;">
+<h2 id="contras">Contras:</h2>
+<ul>
+<li>Menos proteção da área de memória entre os threads.
+<ul>
+<li>Por padrão, processos não têm acesso a área de memória de outros.</li>
+</ul></li>
+<li>Programador deve proteger dados que não podem ser manipulados simultaneamente.
+<ul>
+<li>Esforço de programação.</li>
+</ul></li>
+<li>Por definição, threads de um mesmo processo não podem executar em máquinas diferentes.</li>
+</ul>
+</div><div class="column" style="width:2%;">
+
+</div>
+</div>
+</div>
+<div id="exemplos-reais-de-uso-de-threads" class="slide section level1">
+<h1>Exemplos Reais de Uso de Threads</h1>
+<ul>
+<li>Navegador Web
+<ul>
+<li>Um thread para exibir imagens ou texto.</li>
+<li>Outro thread para recuperar dados da rede.</li>
+</ul></li>
+<li>Processador de textos
+<ul>
+<li>Um thread para exibir gráficos/reformatar um texto.</li>
+<li>Outro para ler sequência de teclas do usuário.</li>
+<li>Outro para verificação ortográfica e gramatical.</li>
+<li>Outro para salvamento automático.</li>
+</ul></li>
+<li>Servidores com threads.</li>
+<li>…</li>
+</ul>
+</div>
+<div id="exemplos-reais-servidor-com-threads" class="slide section level1">
+<h1>Exemplos Reais: Servidor com Threads</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Facilita implementação.</li>
+<li>Explora paralelismo.
+<ul>
+<li>Real (sistema multinúcleos) ou</li>
+<li>Aproveitamento de ociosidade de CPU.
+<ul>
+<li>Devido a acesso a disco, por exemplo.</li>
+</ul></li>
+</ul></li>
+<li>Servidor faz chamadas de sistema bloqueantes.
+<ul>
+<li>Mas apenas a thread que fez a chamada é bloqueado.</li>
+<li>Outras threads continuam executando.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="imagens/threadsServidor.svg" id="threadsServidor" style="width:80.0%" /></p>
+</div>
+</div>
+</div>
+<div id="exemplo-de-um-programa-com-threads" class="slide section level1">
+<h1>Exemplo de um Programa com Threads</h1>
+<ul>
+<li>Objetivo do programa é contar o número de palavras em um ficheiro.</li>
+<li>Podemos dividir o ficheiro em N partes.</li>
+<li>Atribuímos cada parte para uma contagem por uma thread.</li>
+<li>Se as threads executam em paralelo, tempo de processamento tende a reduzir.</li>
+<li>Reduzir para quanto?
+<ul>
+<li>Ideal é reduzir em N.</li>
+<li>Mas pode ser maior devido à sobrecargas.</li>
+</ul></li>
+</ul>
+</div>
+<div id="multithreading-em-python-3" class="slide section level1">
+<h1>Multithreading em Python 3</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Módulo é chamado <strong>multithreading</strong>.
+<ul>
+<li><code>import multithreading</code></li>
+</ul></li>
+<li>Thread é criada com uma função associada.
+<ul>
+<li>Tal função é o código que o thread irá executar.</li>
+<li>Pode ter qualquer nome.</li>
+<li>Deve ser implementada.</li>
+<li>Aceita parâmetros.</li>
+<li>Apresenta seu próprio escopo (local) e pode acessar escopo global.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="imagens/escopoThread.png" id="escopo" style="width:80.0%" /></p>
+</div>
+</div>
+</div>
+<div id="thread-em-python-definir" class="slide section level1">
+<h1>Thread em Python: Definir</h1>
+<div class="sourceCode" id="thread" style="font-size: 20pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="thread-1"><a href="#thread-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
+<span id="thread-2"><a href="#thread-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="thread-3"><a href="#thread-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que a thread irá executar.</span></span>
+<span id="thread-4"><a href="#thread-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> meu_thread():</span>
+<span id="thread-5"><a href="#thread-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Sou um thread&#39;</span>)</span>
+<span id="thread-6"><a href="#thread-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="thread-7"><a href="#thread-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Thread (processo) principal irá criar 5 threads.</span></span>
+<span id="thread-8"><a href="#thread-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="thread-9"><a href="#thread-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cria thread.</span></span>
+<span id="thread-10"><a href="#thread-10" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> threading.Thread(target<span class="op">=</span>meu_thread)</span>
+<span id="thread-11"><a href="#thread-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inicia execução do thread.</span></span>
+<span id="thread-12"><a href="#thread-12" aria-hidden="true" tabindex="-1"></a>    t.start()</span></code></pre></div>
+</div>
+<div id="thread-em-python-identificar" class="slide section level1">
+<h1>Thread em Python: Identificar</h1>
+<div class="sourceCode" id="threadsId" style="font-size: 20pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="threadsId-1"><a href="#threadsId-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
+<span id="threadsId-2"><a href="#threadsId-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="threadsId-3"><a href="#threadsId-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que a thread irá executar.</span></span>
+<span id="threadsId-4"><a href="#threadsId-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> meu_thread(<span class="bu">id</span>):</span>
+<span id="threadsId-5"><a href="#threadsId-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Sou um thread de id&#39;</span>, <span class="bu">id</span>)</span>
+<span id="threadsId-6"><a href="#threadsId-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="threadsId-7"><a href="#threadsId-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Thread (processo) principal irá criar 5 threads.</span></span>
+<span id="threadsId-8"><a href="#threadsId-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="threadsId-9"><a href="#threadsId-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cria thread com argumento i para identificar.</span></span>
+<span id="threadsId-10"><a href="#threadsId-10" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> threading.Thread(target<span class="op">=</span>meu_thread, args<span class="op">=</span>(i,))</span>
+<span id="threadsId-11"><a href="#threadsId-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Inicia execução do thread.</span></span>
+<span id="threadsId-12"><a href="#threadsId-12" aria-hidden="true" tabindex="-1"></a>    t.start()</span></code></pre></div>
+</div>
+<div id="thread-em-python-esperar-término" class="slide section level1">
+<h1>Thread em Python: Esperar Término</h1>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Programa principal pode esperar pelo término de um thread.
+<ul>
+<li>Geralmente é uma boa prática!</li>
+<li>Muitas vezes é necessário!</li>
+</ul></li>
+<li>Uso do método join() de uma thread.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="threadsJoin" style="font-size: 18pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="threadsJoin-1"><a href="#threadsJoin-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="threadsJoin-2"><a href="#threadsJoin-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Programa principal</span></span>
+<span id="threadsJoin-3"><a href="#threadsJoin-3" aria-hidden="true" tabindex="-1"></a>t_lista <span class="op">=</span> []</span>
+<span id="threadsJoin-4"><a href="#threadsJoin-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="threadsJoin-5"><a href="#threadsJoin-5" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> threading.Thread(target<span class="op">=</span>meu_thread, args<span class="op">=</span>(i,))</span>
+<span id="threadsJoin-6"><a href="#threadsJoin-6" aria-hidden="true" tabindex="-1"></a>    t.start()</span>
+<span id="threadsJoin-7"><a href="#threadsJoin-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Guarda objeto da thread criada.</span></span>
+<span id="threadsJoin-8"><a href="#threadsJoin-8" aria-hidden="true" tabindex="-1"></a>    t_lista.append(t)</span>
+<span id="threadsJoin-9"><a href="#threadsJoin-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="threadsJoin-10"><a href="#threadsJoin-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Espera todos os threads.</span></span>
+<span id="threadsJoin-11"><a href="#threadsJoin-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> thread <span class="kw">in</span> t_lista:</span>
+<span id="threadsJoin-12"><a href="#threadsJoin-12" aria-hidden="true" tabindex="-1"></a>    thread.join()</span>
+<span id="threadsJoin-13"><a href="#threadsJoin-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="threadsJoin-14"><a href="#threadsJoin-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Todos as threads terminaram&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="exercício-i" class="slide section level1">
+<h1>Exercício I</h1>
+<p><strong>Objetivo</strong>: Implementar um programa concorrente, com duas threads (além do thread principal), para incrementar de 1 cada elemento de um vetor de N elementos.</p>
+<ol style="list-style-type: decimal">
+<li>Inicializar o vetor no thread principal e imprimir seus valores iniciais.</li>
+<li>Distribuir trabalho entre os threads para incremento dos dados do vetor.
+<ul>
+<li>Pode ser simplesmente um if (são 2 threads apenas).</li>
+</ul></li>
+<li>Imprimir os valores atualizados do vetor no thread principal.</li>
+</ol>
+</div>
+<div id="exercício-ii" class="slide section level1">
+<h1>Exercício II</h1>
+<p><strong>Objetivo</strong>: Implementar um programa concorrente, com T threads (além do thread principal), para incrementar de 1 cada elemento de um vetor de N elementos.</p>
+<ol style="list-style-type: decimal">
+<li>Inicializar o vetor no thread principal e imprimir seus valores iniciais.</li>
+<li>Distribuir trabalho entre os threads para incremento dos dados do vetor.</li>
+<li>Imprimir os valores atualizados do vetor no thread principal.</li>
+</ol>
+<p>Como dividir as tarefas entre as threads?</p>
+</div>
+<div id="dica-para-exercício-ii" class="slide section level1">
+<h1>Dica para Exercício II</h1>
+<ul>
+<li>Exemplo com N=15 e T=4.</li>
+</ul>
+<div class="center">
+<p><img src="imagens/dicaThread.png" id="escopo" style="width:90.0%" /></p>
+</div>
+</div>
+</body>
+</html>
