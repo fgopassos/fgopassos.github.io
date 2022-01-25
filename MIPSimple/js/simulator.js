@@ -254,7 +254,7 @@ Simulator.prototype.Control = function() {
 
             default:
                 
-                alert("InstruÁ„o com opcode inv·lido: " + this.IROutput.RI_31_26 + "!");
+                alert("Instru√ß√£o com opcode inv√°lido: " + this.IROutput.RI_31_26 + "!");
                 return(-1);
         }
     }
@@ -421,7 +421,7 @@ Simulator.prototype.ALU = function() {
         /*
          * We should not have got here.
          */
-        alert("Sinais de controle da ALU s„o inv·lidos!");
+        alert("Sinais de controle da ALU s√£o inv√°lidos!");
         return(-1);
     }
 
@@ -535,7 +535,7 @@ Simulator.prototype.ALUControl = function() {
 
                 default:
                     
-                    alert("InstruÁ„o com campo funÁ„o inv·lido: " + this.IROutput.RI_5_0 + "!");
+                    alert("Instru√ß√£o com campo fun√ß√£o inv√°lido: " + this.IROutput.RI_5_0 + "!");
                     return(-1);
             }
         }
@@ -546,7 +546,7 @@ Simulator.prototype.ALUControl = function() {
          * Unused. We should not have got here.
          */
 
-        alert("Controle da ALU chegou a um estado inv·lido!");
+        alert("Controle da ALU chegou a um estado inv√°lido!");
         return(-1);
     }
 
@@ -1105,7 +1105,7 @@ Simulator.prototype.updateInspector = function(target) {
        case "InstructionMemory":
             var bits = this.IROutput.RI_31_26 + this.IROutput.RI_25_0;
             var hex = completeWithLeftZeros(parseInt(bits, 2).toString(16), 8);
-            string = "&nbsp;MemÛria de InstruÁıes: 0x" + hex;
+            string = "&nbsp;Mem√≥ria de Instru√ß√µes: 0x" + hex;
             break ;
         case "PC":
             string = "&nbsp;PC: 0x" + completeWithLeftZeros(this.PCOutput.toString(16), 8);
@@ -1117,7 +1117,7 @@ Simulator.prototype.updateInspector = function(target) {
             string = "&nbsp;Porta AND: " + (this.BranchANDGateOutput & 1);
             break ;
         case "SignalExtension":
-            string = "&nbsp;Extens„o de Sinal: 0x" + completeWithLeftZeros(this.SignalExtensionOutput.toString(16), 8);
+            string = "&nbsp;Extens√£o de Sinal: 0x" + completeWithLeftZeros(this.SignalExtensionOutput.toString(16), 8);
             break ;
         case "PCIncrementer":
             string = "&nbsp;Somador (PC): 0x" + completeWithLeftZeros(this.PCIncrementerOutput.toString(16), 8);
@@ -1132,7 +1132,7 @@ Simulator.prototype.updateInspector = function(target) {
             string = "&nbsp;Somador (branch): 0x" + completeWithLeftZeros(this.BranchOffsetAdderOutput.toString(16), 8);
             break ;
         case "DataMemory":
-            string = "&nbsp;MemÛria de Dados: 0x" + completeWithLeftZeros(this.DataMemoryOutput.toString(16), 8);
+            string = "&nbsp;Mem√≥ria de Dados: 0x" + completeWithLeftZeros(this.DataMemoryOutput.toString(16), 8);
             break ;
         case "RI_5_0":
             string = "&nbsp;RI[5-0]: " + this.IROutput.RI_5_0;
@@ -1243,7 +1243,7 @@ Simulator.prototype.readByte = function(address) {
 
     if (tableCell == null) {
 
-        alert("ExceÁ„o: tentativa de acesso ilegal ‡ posiÁ„o de memÛria " + address + "!");
+        alert("Exce√ß√£o: tentativa de acesso ilegal √† posi√ß√£o de mem√≥ria " + address + "!");
         return(-1);
     }
 
@@ -1290,7 +1290,7 @@ Simulator.prototype.writeByte = function(address, value) {
 
     if (tableCell == null) {
 
-        alert("ExceÁ„o: tentativa de acesso ilegal ‡ posiÁ„o de memÛria " + pos0 + "!");
+        alert("Exce√ß√£o: tentativa de acesso ilegal √† posi√ß√£o de mem√≥ria " + pos0 + "!");
         return(-1);
     }
 

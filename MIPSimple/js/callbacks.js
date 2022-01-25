@@ -44,7 +44,7 @@ function RegTableOnClickDone(event) {
     }
     else {
 
-        alert("Valor inv·lido. Valor deve ser especificado em hexadecimal.");
+        alert("Valor inv√°lido. Valor deve ser especificado em hexadecimal.");
         newInput.select();
     }
     
@@ -92,7 +92,7 @@ function RITableOnClickDone(event) {
     }
     else {
 
-        alert("Valor inv·lido. Valor deve ser especificado em hexadecimal.");
+        alert("Valor inv√°lido. Valor deve ser especificado em hexadecimal.");
         newInput.select();
     }
     
@@ -100,7 +100,7 @@ function RITableOnClickDone(event) {
 
 function MemTableOnClick(cell) {
 
-//    alert("Clique na posiÁ„o de memÛria " + cell.id);
+//    alert("Clique na posi√ß√£o de mem√≥ria " + cell.id);
 
     if (specificCallbacksEnabled) {
 
@@ -144,7 +144,7 @@ function MemTableOnClickDone(event) {
     }
     else {
 
-        alert("Valor inv·lido. Valor deve ser especificado em hexadecimal.");
+        alert("Valor inv√°lido. Valor deve ser especificado em hexadecimal.");
         newInput.select();
     }
     
@@ -210,7 +210,7 @@ function BtnLoadOnClick() {
     baseAddress = document.getElementById('MemoryLoadPos').value;
     if (baseAddress == "" || baseAddress * 1 != baseAddress) {
 
-        alert("EndereÁo de carregamento inv·lido!");
+        alert("Endere√ßo de carregamento inv√°lido!");
         return ;
     }
 
@@ -218,7 +218,7 @@ function BtnLoadOnClick() {
 
     if (baseAddress % 4 != 0) {
 
-        alert("EndereÁo base n„o È alinhado ao tamanho da palavra. InstruÁıes de Jump n„o funcionar„o corretamente!");
+        alert("Endere√ßo base n√£o √© alinhado ao tamanho da palavra. Instru√ß√µes de Jump n√£o funcionar√£o corretamente!");
     }
 
     currentExecutable = currentAssembler.getBinaryCodeWithRelocation(baseAddress);
@@ -255,7 +255,7 @@ function BtnRunOnClick() {
     var freq = parseInt(freqS);
     if (freqS == "" || freq <= 0) {
 
-        alert("Valor de frequÍncia inv·lido!");
+        alert("Valor de frequ√™ncia inv√°lido!");
         return ;
     }
 
@@ -347,7 +347,7 @@ function BtnNextOnClick() {
     var freq = parseInt(freqS);
     if (freqS == "" || freq <= 0) {
 
-        alert("Valor de frequÍncia inv·lido!");
+        alert("Valor de frequ√™ncia inv√°lido!");
         return ;
     }
 

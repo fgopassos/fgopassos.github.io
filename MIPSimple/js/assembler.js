@@ -32,13 +32,13 @@ function Assembler(SourceCode) {
     });
 
     this.token2String = [
-        "mnemônico",
-        "registrador",
+        "mnemÃ´nico",
+        "registradores",
         "inteiro",
-        "vírgula",
+        "vÃ­rgula",
         "dois pontos",
-        "abre parênteses",
-        "fecha parênteses",
+        "abre parÃ¢nteses",
+        "fecha parÃŠnteses",
         "label",
         "quebra de linha",
         "fim de arquivo",
@@ -152,7 +152,7 @@ Assembler.prototype.instruction_lw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -164,13 +164,13 @@ Assembler.prototype.instruction_lw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[3].primary != assembler.tokens.T_INTEGER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
             
     if (rawInstruction[3].secondary > 32767 || rawInstruction[3].secondary < -32768)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": constante numérica de magnitude muito grande (" + rawInstruction[3].secondary + ").",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": constante numÃ©rica de magnitude muito grande (" + rawInstruction[3].secondary + ").",
             code  : ""
         };
  
@@ -182,7 +182,7 @@ Assembler.prototype.instruction_lw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[4].primary != assembler.tokens.T_OPENPAR)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_OPENPAR] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " após o imediato do segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_OPENPAR] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " apÃ³s o imediato do segundo argumento.",
             code  : ""
         };
  
@@ -191,7 +191,7 @@ Assembler.prototype.instruction_lw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[5].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[5].primary] + " após o abre parênteses do segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[5].primary] + " apÃ³s o abre parÃªnteses do segundo argumento.",
             code  : ""
         };
  
@@ -202,7 +202,7 @@ Assembler.prototype.instruction_lw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[6].primary != assembler.tokens.T_CLOSEPAR)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_CLOSEPAR] + ", obtido " + assembler.token2String[rawInstruction[6].primary] + " após o registrador do segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_CLOSEPAR] + ", obtido " + assembler.token2String[rawInstruction[6].primary] + " apÃ³s o registrador do segundo argumento.",
             code  : ""
         };
  
@@ -211,7 +211,7 @@ Assembler.prototype.instruction_lw = function(assembler, rawInstruction, instruc
      */
      if (rawInstruction.length > 7) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -237,7 +237,7 @@ Assembler.prototype.instruction_sw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -249,13 +249,13 @@ Assembler.prototype.instruction_sw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[3].primary != assembler.tokens.T_INTEGER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
             
     if (rawInstruction[3].secondary > 32767 || rawInstruction[3].secondary < -32768)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": constante numérica de magnitude muito grande (" + rawInstruction[3].secondary + ").",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": constante numÃ©rica de magnitude muito grande (" + rawInstruction[3].secondary + ").",
             code  : ""
         };
     offset = toTwoComplement(rawInstruction[3].secondary, 16);
@@ -266,7 +266,7 @@ Assembler.prototype.instruction_sw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[4].primary != assembler.tokens.T_OPENPAR)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_OPENPAR] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " após o imediato do segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_OPENPAR] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " apÃ³s o imediato do segundo argumento.",
             code  : ""
         };
  
@@ -275,7 +275,7 @@ Assembler.prototype.instruction_sw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[5].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[5].primary] + " após o abre parênteses do segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[5].primary] + " apÃ³s o abre parÃªnteses do segundo argumento.",
             code  : ""
         };
  
@@ -286,7 +286,7 @@ Assembler.prototype.instruction_sw = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[6].primary != assembler.tokens.T_CLOSEPAR)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_CLOSEPAR] + ", obtido " + assembler.token2String[rawInstruction[6].primary] + " após o registrador do segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_CLOSEPAR] + ", obtido " + assembler.token2String[rawInstruction[6].primary] + " apÃ³s o registrador do segundo argumento.",
             code  : ""
         };
  
@@ -295,7 +295,7 @@ Assembler.prototype.instruction_sw = function(assembler, rawInstruction, instruc
      */
      if (rawInstruction.length > 7) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -321,7 +321,7 @@ Assembler.prototype.instruction_addi = function(assembler, rawInstruction, instr
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -332,7 +332,7 @@ Assembler.prototype.instruction_addi = function(assembler, rawInstruction, instr
      */
     if (rawInstruction[3].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
  
@@ -344,13 +344,13 @@ Assembler.prototype.instruction_addi = function(assembler, rawInstruction, instr
      */
     if (rawInstruction[4].primary != assembler.tokens.T_INTEGER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
             code  : ""
         };
             
     if (rawInstruction[4].secondary > 32767 || rawInstruction[4].secondary < -32768)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": constante numérica de magnitude muito grande (" + rawInstruction[4].secondary + ").",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": constante numÃ©rica de magnitude muito grande (" + rawInstruction[4].secondary + ").",
             code  : ""
         };
  
@@ -362,7 +362,7 @@ Assembler.prototype.instruction_addi = function(assembler, rawInstruction, instr
      */
      if (rawInstruction.length > 5) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -390,7 +390,7 @@ Assembler.prototype.instruction_add = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -401,7 +401,7 @@ Assembler.prototype.instruction_add = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[3].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
  
@@ -412,7 +412,7 @@ Assembler.prototype.instruction_add = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[4].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
             code  : ""
         };
  
@@ -423,7 +423,7 @@ Assembler.prototype.instruction_add = function(assembler, rawInstruction, instru
      */
      if (rawInstruction.length > 5) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -451,7 +451,7 @@ Assembler.prototype.instruction_sub = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -462,7 +462,7 @@ Assembler.prototype.instruction_sub = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[3].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
  
@@ -473,7 +473,7 @@ Assembler.prototype.instruction_sub = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[4].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
             code  : ""
         };
  
@@ -484,7 +484,7 @@ Assembler.prototype.instruction_sub = function(assembler, rawInstruction, instru
      */
     if (rawInstruction.length > 5) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -512,7 +512,7 @@ Assembler.prototype.instruction_and = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -523,7 +523,7 @@ Assembler.prototype.instruction_and = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[3].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
  
@@ -534,7 +534,7 @@ Assembler.prototype.instruction_and = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[4].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
             code  : ""
         };
  
@@ -545,7 +545,7 @@ Assembler.prototype.instruction_and = function(assembler, rawInstruction, instru
      */
      if (rawInstruction.length > 5) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -573,7 +573,7 @@ Assembler.prototype.instruction_or = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -584,7 +584,7 @@ Assembler.prototype.instruction_or = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[3].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
  
@@ -595,7 +595,7 @@ Assembler.prototype.instruction_or = function(assembler, rawInstruction, instruc
      */
     if (rawInstruction[4].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
             code  : ""
         };
  
@@ -606,7 +606,7 @@ Assembler.prototype.instruction_or = function(assembler, rawInstruction, instruc
      */
      if (rawInstruction.length > 5) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -634,7 +634,7 @@ Assembler.prototype.instruction_slt = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -645,7 +645,7 @@ Assembler.prototype.instruction_slt = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[3].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
  
@@ -656,7 +656,7 @@ Assembler.prototype.instruction_slt = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[4].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
             code  : ""
         };
  
@@ -667,7 +667,7 @@ Assembler.prototype.instruction_slt = function(assembler, rawInstruction, instru
      */
      if (rawInstruction.length > 5) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -693,7 +693,7 @@ Assembler.prototype.instruction_beq = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[2].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
 
@@ -704,7 +704,7 @@ Assembler.prototype.instruction_beq = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[3].primary != assembler.tokens.T_REGISTER)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_REGISTER] + ", obtido " + assembler.token2String[rawInstruction[3].primary] + " como segundo argumento.",
             code  : ""
         };
  
@@ -716,7 +716,7 @@ Assembler.prototype.instruction_beq = function(assembler, rawInstruction, instru
      */
     if (rawInstruction[4].primary != assembler.tokens.T_INTEGER && rawInstruction[4].primary != assembler.tokens.T_LABEL)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + " ou " + assembler.token2String[assembler.tokens.T_LABEL] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + " ou " + assembler.token2String[assembler.tokens.T_LABEL] + ", obtido " + assembler.token2String[rawInstruction[4].primary] + " como terceiro argumento.",
             code  : ""
         };
             
@@ -727,7 +727,7 @@ Assembler.prototype.instruction_beq = function(assembler, rawInstruction, instru
 
     if (rawInstruction[4].secondary > 32767 || rawInstruction[4].secondary < -32768)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": constante numérica de magnitude muito grande (" + rawInstruction[4].secondary + ").",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": constante numÃ©rica de magnitude muito grande (" + rawInstruction[4].secondary + ").",
             code  : ""
         };
  
@@ -739,7 +739,7 @@ Assembler.prototype.instruction_beq = function(assembler, rawInstruction, instru
      */
      if (rawInstruction.length > 5) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -764,7 +764,7 @@ Assembler.prototype.instruction_j = function(assembler, rawInstruction, instruct
      */
     if (rawInstruction[2].primary != assembler.tokens.T_INTEGER && rawInstruction[2].primary != assembler.tokens.T_LABEL)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + " ou " + assembler.token2String[assembler.tokens.T_LABEL] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": esperado " + assembler.token2String[assembler.tokens.T_INTEGER] + " ou " + assembler.token2String[assembler.tokens.T_LABEL] + ", obtido " + assembler.token2String[rawInstruction[2].primary] + " como primeiro argumento.",
             code  : ""
         };
             
@@ -781,7 +781,7 @@ Assembler.prototype.instruction_j = function(assembler, rawInstruction, instruct
 
     if (rawInstruction[2].secondary > 67108863 || rawInstruction[2].secondary < 0)
         return {
-            error : "Erro sintático na linha " + instructionLine + ": constante numérica de magnitude muito grande (" + rawInstruction[2].secondary + ").",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": constante numÃ©rica de magnitude muito grande (" + rawInstruction[2].secondary + ").",
             code  : ""
         };
  
@@ -792,7 +792,7 @@ Assembler.prototype.instruction_j = function(assembler, rawInstruction, instruct
      */
      if (rawInstruction.length > 3) 
         return {
-            error : "Erro sintático na linha " + instructionLine + ": símbolo inesperado após o último argumento da instrução.",
+            error : "Erro sintÃ¡tico na linha " + instructionLine + ": sÃ­mbolo inesperado apÃ³s o Ãºltimo argumento da instruÃ§Ã£o.",
             code  : ""
         };
 
@@ -987,7 +987,7 @@ Assembler.prototype.nextToken = function() {
                  return {
 
                      primary   : this.tokens.T_ERROR,
-                     secondary : "Erro léxico na linha " + this.currentLine + ": caracter inválido '" + ch + "'."
+                     secondary : "Erro lÃ©xico na linha " + this.currentLine + ": caracter invÃ¡lido '" + ch + "'."
                  };
 
             case 1:
@@ -1221,7 +1221,7 @@ Assembler.prototype.nextToken = function() {
                     return {
 
                         primary   : this.tokens.T_ERROR,
-                        secondary : "Erro léxico na linha " + this.currentLine + ": registrador inválido '$" + secondary + "'."
+                        secondary : "Erro lÃ©xico na linha " + this.currentLine + ": registrador invÃ¡lido '$" + secondary + "'."
                     };
                 }
 
@@ -1282,7 +1282,7 @@ Assembler.prototype.nextToken = function() {
                 return {
 
                     primary   : this.tokens.T_ERROR,
-                    secondary : "Erro léxico na linha " + this.currentLine + ": algarismo decimal esperado após sinal de menos."
+                    secondary : "Erro lÃ©xico na linha " + this.currentLine + ": algarismo decimal esperado apÃ³s sinal de menos."
                 };
         }
     }
@@ -1336,7 +1336,7 @@ Assembler.prototype.parse = function() {
                     break ;
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_EOF] + ", " + this.token2String[this.tokens.T_MNEMONIC] + " ou " + this.token2String[this.tokens.T_LABEL] + ". Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_EOF] + ", " + this.token2String[this.tokens.T_MNEMONIC] + " ou " + this.token2String[this.tokens.T_LABEL] + ". Encontrado " + this.token2String[token.primary] + ".");
 
             case 1:
 
@@ -1372,7 +1372,7 @@ Assembler.prototype.parse = function() {
                     return(this.parseRawInstructions());
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_REGISTER] + ", ou " + this.token2String[this.tokens.T_LABEL] + ", ou " + this.token2String[this.tokens.T_INTEGER] + ", ou " + this.token2String[this.tokens.T_LINEBREAK] + " ou " + this.token2String[this.tokens.T_EOF] + ". Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_REGISTER] + ", ou " + this.token2String[this.tokens.T_LABEL] + ", ou " + this.token2String[this.tokens.T_INTEGER] + ", ou " + this.token2String[this.tokens.T_LINEBREAK] + " ou " + this.token2String[this.tokens.T_EOF] + ". Encontrado " + this.token2String[token.primary] + ".");
 
             case 2:
 
@@ -1382,7 +1382,7 @@ Assembler.prototype.parse = function() {
                     break ;
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_COLON] + " após um Label. Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_COLON] + " apÃ³s um Label. Encontrado " + this.token2String[token.primary] + ".");
 
             case 3:
 
@@ -1408,7 +1408,7 @@ Assembler.prototype.parse = function() {
                     return(this.parseRawInstructions());
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_COMMA] + ", ou " + this.token2String[this.tokens.T_LINEBREAK] + " ou " + this.token2String[this.tokens.T_EOF] + ". Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_COMMA] + ", ou " + this.token2String[this.tokens.T_LINEBREAK] + " ou " + this.token2String[this.tokens.T_EOF] + ". Encontrado " + this.token2String[token.primary] + ".");
 
             case 4:
 
@@ -1441,7 +1441,7 @@ Assembler.prototype.parse = function() {
                     return(this.parseRawInstructions());
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_COMMA] + ", ou " + this.token2String[this.tokens.T_OPENPAR] + ", ou " + this.token2String[this.tokens.T_LINEBREAK] + " ou " + this.token2String[this.tokens.T_EOF] + ". Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_COMMA] + ", ou " + this.token2String[this.tokens.T_OPENPAR] + ", ou " + this.token2String[this.tokens.T_LINEBREAK] + " ou " + this.token2String[this.tokens.T_EOF] + ". Encontrado " + this.token2String[token.primary] + ".");
 
             case 5:            
 
@@ -1461,7 +1461,7 @@ Assembler.prototype.parse = function() {
                     break ;
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_REGISTER] + ", ou " + this.token2String[this.tokens.T_LABEL] + " ou " + this.token2String[this.tokens.T_INTEGER] + ". Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_REGISTER] + ", ou " + this.token2String[this.tokens.T_LABEL] + " ou " + this.token2String[this.tokens.T_INTEGER] + ". Encontrado " + this.token2String[token.primary] + ".");
 
             case 6:
 
@@ -1473,7 +1473,7 @@ Assembler.prototype.parse = function() {
                     break ;
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_REGISTER] + ". Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_REGISTER] + ". Encontrado " + this.token2String[token.primary] + ".");
                 
             case 7:
 
@@ -1485,7 +1485,7 @@ Assembler.prototype.parse = function() {
                     break ;
                 }
 
-                return("Erro sintático na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_CLOSEPAR] + ". Encontrado " + this.token2String[token.primary] + ".");
+                return("Erro sintÃ¡tico na linha " + this.currentLine + ": esperado " + this.token2String[this.tokens.T_CLOSEPAR] + ". Encontrado " + this.token2String[token.primary] + ".");
                 
         }
     }
@@ -1553,7 +1553,7 @@ Assembler.prototype.getBinaryCodeWithRelocation = function(offset) {
          */
         if (newAddress > 67108863) {
 
-            return("Endereço base é muito alto.");
+            return("EndereÃ§o base Ã© muito alto.");
         }
         newAddress = completeWithLeftZeros(newAddress.toString(2), 26);
         binaryCode[this.absoluteLabelReferences[i]] = instruction.substring(0, 6) + newAddress;

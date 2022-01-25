@@ -22,7 +22,7 @@
     <div style="width: 780px; float:left;">
     <div id="CPUContainer" class="block-container" style="width: 780px;">
         <div class="block-title">
-            CPU <font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Visualização do estado do processador. Ao longo da execução, linhas de controle ativas são destacadas.">(ajuda)</font>
+            CPU <font style="font-size: 10px; color: #07a; text-decoration: underline;" title="VisualizaÃ§Ã£o do estado do processador. Ao longo da execuÃ§Ã£o, linhas de controle ativas sÃ£o destacadas.">(ajuda)</font>
             <div class="minimize" onclick="minimize(this);">
             -
             </div>
@@ -39,7 +39,7 @@
 <!--    <div id="interaction" class="table">-->
     <div id="ExecutableContainer" class="block-container" style="width: 780px;">
         <div class="block-title">
-            Executável (Linguagem de Máquina)<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Exibe código executável binário após a montagem (vide 'Código fonte' abaixo). Botão 'Carregar' carrega instruções na posição de memória especificada (decimal). Relocações são realizadas quando necessário.">(ajuda)</font>
+            ExecutÃ¡vel (Linguagem de MÃ¡quina)<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Exibe cÃ³digo executÃ¡vel binÃ¡rio apÃ³s a montagem (vide 'CÃ³digo fonte' abaixo). BotÃ£o 'Carregar' carrega instruÃ§Ãµes na posiÃ§Ã£o de memÃ³ria especificada (decimal). RelocaÃ§Ãµes sÃ£o realizadas quando necessÃ¡rio.">(ajuda)</font>
 
             <div class="minimize" onclick="minimize(this);">
             -
@@ -67,7 +67,7 @@
         <center>
             <table style:"border: none;">
                 <tr>
-                    <td>Posição de Memória:</td>
+                    <td>PosiÃ§Ã£o de MemÃ³ria:</td>
                     <td><input class="MemoryLoadPosEB" type="text" id="MemoryLoadPos" maxlength="4" value=0></input></td>
                     <td><button class="btn" onclick="BtnLoadOnClick()" type="button" id="LoadBtn" autocomplete="off">Carregar</button></td>
                 </tr>
@@ -79,7 +79,7 @@
 
     <div id="CodeContainer" class="block-container" style="width: 780px;">
         <div class="block-title">
-            Código Fonte (Linguagem de Montagem)<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Permite a entrada de um código fonte em linguagem de montagem. Código pode ser compilado (montado) através do botão 'Montar'. Código resultante é exibido na seção 'Executável' acima. Para uma lista das instruções suportadas, vide link ao final desta página.">(ajuda)</font>
+            CÃ³digo Fonte (Linguagem de Montagem)<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Permite a entrada de um cÃ³digo fonte em linguagem de montagem. CÃ³digo pode ser compilado (montado) atravÃ©s do botÃ£o 'Montar'. CÃ³digo resultante Ã© exibido na seÃ§Ã£o 'ExecutÃ¡vel' acima. Para uma lista das instruÃ§Ãµes suportadas, vide link ao final desta pÃ¡gina.">(ajuda)</font>
 
             <div class="minimize" onclick="minimize(this);">
             -
@@ -93,7 +93,7 @@
         </center>
     </div>
 <br>
-Para instruções detalhadas sobre a sintaxe da linguagem de montagem e uma lista das instruções disponíveis, clique <a href="instrucoes.html">aqui</a>.
+Para instruÃ§Ãµes detalhadas sobre a sintaxe da linguagem de montagem e uma lista das instruÃ§Ãµes disponÃ­veis, clique <a href="instrucoes.html">aqui</a>.
 <br>
 <br>
 Para exemplos de programas escritos nesta linguagem de montagem, clique <a href="exemplos.html">aqui</a>.
@@ -105,7 +105,7 @@ Para exemplos de programas escritos nesta linguagem de montagem, clique <a href=
     <div style="width: 460px; float:right;">
     <div id="ControllersContainer" class="block-container" style="width: 460px;">
         <div class="block-title">
-            Controles da Simulação<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="O botão 'Rodar' inicia a execução do simulador do estado atual (PC, memória, etc). O botão 'Pausar' pausa a simulação ao término da instrução corrente. O botão 'Próx. Inst.' executa a próxima instrução (apontada pelo PC). Quando colocado em modo de execução, o simulador será executado (dentro do possível) na frequência especificada (e.g., 1Hz -> 1 instrução por segundo).">(ajuda)</font>
+            Controles da SimulaÃ§Ã£o<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="O botÃ£o 'Rodar' inicia a execuÃ§Ã£o do simulador do estado atual (PC, memÃ³ria, etc). O botÃ£o 'Pausar' pausa a simulaÃ§Ã£o ao tÃ©rmino da instruÃ§Ã£o corrente. O botÃ£o 'PrÃ³x. Inst.' executa a prÃ³xima instruÃ§Ã£o (apontada pelo PC). Quando colocado em modo de execuÃ§Ã£o, o simulador serÃ¡ executado (dentro do possÃ­vel) na frequÃªncia especificada (e.g., 1Hz -> 1 instruÃ§Ã£o por segundo).">(ajuda)</font>
 
             <div class="minimize" onclick="minimize(this);">
             -
@@ -113,12 +113,12 @@ Para exemplos de programas escritos nesta linguagem de montagem, clique <a href=
         </div>
         <table>
             <tr>
-                <td>Frequência (Hz):</td>
+                <td>FrequÃªncia (Hz):</td>
                 <td><input class="FreqEB" type="text" id="Freq" maxlength="4" value="1"></input></td>
                 
                 <td><button class="btn" onclick="BtnRunOnClick()" type="button" id="RunSimulationBtn" autocomplete="off">Rodar</button></td>
                 <td><button class="btn" onclick="BtnPauseOnClick()" type="button" id="PauseSimulationBtn" disabled autocomplete="off">Pausar</button></td>
-                <td><button class="btn" onclick="BtnNextOnClick()" type="button" id="NextSimulationBtn" autocomplete="off">Próx. Inst.</button></td>
+                <td><button class="btn" onclick="BtnNextOnClick()" type="button" id="NextSimulationBtn" autocomplete="off">PrÃ³x. Inst.</button></td>
               
             </tr>
         </table>
@@ -126,7 +126,7 @@ Para exemplos de programas escritos nesta linguagem de montagem, clique <a href=
     <br>
     <div id="InspectorContainer" class="block-container" style="width: 460px;">
         <div class="block-title">
-            Inspeção de Componentes<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Permite verificar o estado atual (valores de entrada e saída) de diversos componentes do processador (e.g., ALU, banco de registradores).">(ajuda)</font>
+            InspeÃ§Ã£o de Componentes<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Permite verificar o estado atual (valores de entrada e saÃ­da) de diversos componentes do processador (e.g., ALU, banco de registradores).">(ajuda)</font>
 
             <div class="minimize" onclick="minimize(this);">
             -
@@ -138,7 +138,7 @@ Para exemplos de programas escritos nesta linguagem de montagem, clique <a href=
     <br>
     <div id="TabelaMemoriaContainer" class="block-container" style="width: 460px;">
         <div class="block-title">
-            Memória Principal<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Exibe estado atual de cada posição de memória. Por uma questão de desempenho, o tamanho da memória foi limitado a 2048 posições. Valores também podem ser editados: basta clicar em uma posição, editar o valor e clicar em qualquer outra parte da interface.">(ajuda)</font>
+            MemÃ³ria Principal<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Exibe estado atual de cada posiÃ§Ã£o de memÃ³ria. Por uma questÃ£o de desempenho, o tamanho da memÃ³ria foi limitado a 2048 posiÃ§Ãµes. Valores tambÃ©m podem ser editados: basta clicar em uma posiÃ§Ã£o, editar o valor e clicar em qualquer outra parte da interface para concluir a ediÃ§Ã£o.">(ajuda)</font>
 
             <div class="minimize" onclick="minimize(this);">
             -
@@ -184,7 +184,7 @@ Para exemplos de programas escritos nesta linguagem de montagem, clique <a href=
 <br>    
     <div id="TabelaRegistradoresContainer" class="block-container" style="width: 460px;">
         <div class="block-title">
-            Registradores<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Similar à seção 'Memória Principal', permite inspecionar/editar os valores dos registradores.">(ajuda)</font>
+            Registradores (ou Registos)<font style="font-size: 10px; color: #07a; text-decoration: underline;" title="Similar Ã  seÃ§Ã£o 'MemÃ³ria Principal', permite inspecionar/editar os valores dos registradores (registos).">(ajuda)</font>
 
             <div class="minimize" onclick="minimize(this);">
             -

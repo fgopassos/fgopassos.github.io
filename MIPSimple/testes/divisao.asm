@@ -1,26 +1,26 @@
-; Programa que realiza divisões inteiras
-; Assume dividendo na posição 100 e divisor 
-; na posição 104. Quociente é guardado em 108.
+; Programa que realiza divisÃµes inteiras
+; Assume dividendo na posiÃ§Ã£o 100 e divisor 
+; na posiÃ§Ã£o 104. Quociente Ã© guardado em 108.
 ; Resto em 112.
-; Assume que registradores estão zerados.
-; Utiliza processo de subtrações sucessivas.
+; Assume que registradores (registos) estÃ£o zerados.
+; Utiliza processo de subtraÃ§Ãµes sucessivas.
 
-; Carregar um ponteiro com endereço base dos
+; Carregar um ponteiro com endereÃ§o base dos
 ; operandos.
 addi $0, $0, 100
 
 ; Ler valores dos operandos
-; Durante a execução:
+; Durante a execuÃ§Ã£o:
 ;  - $1 acumula o quociente.
 ;  - $2 guarda o dividendo.
 ;  - $3 guarda o divisor.
-;  - $4 é usado para comparações.
-;  - $5 é usado como 0 para referência.
+;  - $4 Ã© usado para comparaÃ§Ãµes.
+;  - $5 Ã© usado como 0 para referÃªncia.
 lw $2, 0($0)
 lw $3, 4($0)
 
 TESTE:
-; Teste: dividendo é menor que divisor?
+; Teste: dividendo Ã© menor que divisor?
 slt $4, $2, $3
 beq $4, $5, SUBTRACAO
 
@@ -31,7 +31,7 @@ FIM:
 j FIM ; loop infinito no final do programa
 
 SUBTRACAO:
-; Aqui, subtraímos o dividendo do divisor e 
+; Aqui, subtraÃ­mos o dividendo do divisor e 
 ; voltamos para o teste.
 sub $2, $2, $3
 addi $1, $1, 1
