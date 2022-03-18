@@ -781,3 +781,4 @@ seletor [, seletor2, ...][:pseudo-classe] {
 	- Checkbox "Lembrar-me" (ainda sem ação associada).
 	- Botão para cancelar e outro para enviar (ainda sem ação associada).
 3. Criar um ficheiro de estilo para cada página (um para cada ou apenas um para os dois).
+4. Crie uma página Web em HTML simples para conversação via texto (chat).
