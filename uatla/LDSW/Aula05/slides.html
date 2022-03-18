@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Javascript e Document Object Model</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Atlântica - Instituto Universitário</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Javascript e <em>Document Object Model</em></h1>
+    <p class="subtitle">GSC - Laboratório de Desenvolvimento de Sistemas Web</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+  </div>
+</div>
+<div id="javascript-e-dom" class="slide section level1 part">
+<h1 class="part">Javascript e DOM</h1>
+</div>
+<div id="javascript-e-dom-1" class="slide section level1">
+<h1>Javascript e DOM</h1>
+<ul>
+<li>DOM: <em>Document Object Model</em>.
+<ul>
+<li>Representação do HTML da página criada pelo <em>browser</em>.</li>
+<li>A partir do <em>parse</em> do documento.</li>
+<li>Árvore em que os nós são os elementos/<em>tags</em> do documento.</li>
+</ul></li>
+<li>Javascript disponibiliza funções para interagir com o DOM:
+<ul>
+<li>Navegar pela hierarquia.</li>
+<li>Acessar, modificar, remover e adicionar novos nós.</li>
+</ul></li>
+</ul>
+<div class="block centered">
+<div class="blocktitle">
+<p>Utilidades</p>
+</div>
+<ul>
+<li>Código Javascript pode alterar conteúdo e estilo da página mostrada ao usuário.</li>
+<li>Código Javascript pode ler valores introduzidos pelo usuário em campos de formulário.</li>
+</ul>
+</div>
+</div>
+<div id="javascript-e-dom-o-objeto-document" class="slide section level1">
+<h1>Javascript e DOM: O Objeto <code>document</code></h1>
+<ul>
+<li>Acesso ao DOM pode ser feito pelo objeto <code>document</code>.
+<ul>
+<li>Implicitamente disponível.</li>
+<li>Representa o documento HTML.</li>
+<li>Contém (entre outras) a propriedade <code>documentElement</code>.
+<ul>
+<li>Elemento correspondente à <em>tag</em> <code>&lt;html&gt;</code>.</li>
+<li>Ou seja, a raiz da árvore.</li>
+</ul></li>
+</ul></li>
+<li>Cada nó do DOM possui (entre outras) as propriedades.
+<ul>
+<li><code>childNodes</code>: vetor com os seus filhos no DOM.</li>
+<li><code>parentNode</code>: seu pai no DOM.</li>
+<li><code>nodeName</code>: identificador do tipo de nó na árvore DOM.</li>
+</ul></li>
+</ul>
+</div>
+<div id="javascript-e-dom-navegando-através-do-document" class="slide section level1">
+<h1>Javascript e DOM: Navegando através do <code>document</code></h1>
+<ul>
+<li>Podemos, portanto, navegar o DOM começando no <code>document</code>. Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb1" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>            <span class="kw">function</span> <span class="fu">retornaNoEFilhos</span>(no<span class="op">,</span> nivel) {</span>
+<span id="cb1-5"><a href="#cb1-5"></a>                <span class="kw">var</span> s <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">,</span> i<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>                <span class="cf">if</span> (nivel <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-7"><a href="#cb1-7"></a>                    <span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> nivel <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i<span class="op">++</span>) s <span class="op">+=</span> <span class="st">&quot;      &quot;</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>                    s <span class="op">+=</span> <span class="st">&quot;+---- &quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>                }</span>
+<span id="cb1-10"><a href="#cb1-10"></a>                s <span class="op">+=</span> no<span class="op">.</span><span class="at">nodeName</span> <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>                <span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> no<span class="op">.</span><span class="at">childNodes</span><span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) </span>
+<span id="cb1-12"><a href="#cb1-12"></a>                    s <span class="op">+=</span> <span class="fu">retornaNoEFilhos</span>(no<span class="op">.</span><span class="at">childNodes</span>[i]<span class="op">,</span> nivel <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>                <span class="cf">return</span>(s)<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>            }</span>
+<span id="cb1-15"><a href="#cb1-15"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>        <span class="kw">&lt;h1&gt;</span>Título<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>        <span class="kw">&lt;h2&gt;</span>Seção<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>        Uma <span class="kw">&lt;b&gt;</span>tabela<span class="kw">&lt;/b&gt;</span>:<span class="kw">&lt;br&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a>        <span class="kw">&lt;table&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>            <span class="kw">&lt;tr&gt;&lt;th&gt;</span>Col 1<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Col 2<span class="kw">&lt;/th&gt;&lt;/tr&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a>            <span class="kw">&lt;tr&gt;&lt;td&gt;&lt;s&gt;</span>val 1<span class="kw">&lt;/s&gt;&lt;/td&gt;&lt;td&gt;&lt;u&gt;</span>val 2<span class="kw">&lt;/u&gt;&lt;/td&gt;&lt;/tr&gt;</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>            <span class="kw">&lt;tr&gt;&lt;td&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;outraPagina.html&quot;</span><span class="kw">&gt;</span>val 3<span class="kw">&lt;/a&gt;&lt;/td&gt;&lt;td&gt;</span>val 4<span class="kw">&lt;/td&gt;&lt;/tr&gt;</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>        <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Gerar DOM&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;alert(retornaNoEFilhos(document.documentElement, 0));&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 40%; bottom: 150px; right: 50px;">
+<iframe src="iframes/Exemplo9.html" style="width: 90%; height: 300px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="javascript-e-dom-a-família-de-métodos-getelementby" class="slide section level1">
+<h1>Javascript e DOM: A Família de Métodos <code>getElementBy*</code></h1>
+<ul>
+<li>Podemos encontrar um elemento no DOM fazendo implementando uma busca na árvore.</li>
+<li>Mas há métodos (do objeto <code>document</code>) já disponíveis para isso:</li>
+</ul>
+<div class="center" style="font-size: 15px; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Retorno</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>getElementById()</code></td>
+<td>Primeiro (único?) elemento com id especificado</td>
+</tr>
+<tr class="even">
+<td><code>getElementByTagName()</code></td>
+<td>Todos os elementos daquela <em>tag</em></td>
+</tr>
+<tr class="odd">
+<td><code>getElementByName()</code></td>
+<td>Todos os elementos com aquele nome</td>
+</tr>
+<tr class="even">
+<td><code>getElementByClassName()</code></td>
+<td>Todos os elementos pertencentes aquela classe</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Note: para o <code>getElementByClassName()</code>, múltiplas classes podem ser especificadas separadas por espaço.
+<ul>
+<li>Retorno: elementos que pertencem a ambas <strong>simultaneamente</strong>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">var</span> el1 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;meuDiv&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">var</span> el2 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementByTagName</span>(<span class="st">&#39;div&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">var</span> el3 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementByClass</span>(<span class="st">&#39;minhaClasse1 minhaClasse2&#39;</span>)<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-e-dom-modificando-conteúdo-de-elementos" class="slide section level1">
+<h1>Javascript e DOM: Modificando Conteúdo de Elementos</h1>
+<ul>
+<li>Pode ser feito com a propriedade <code>innerHTML</code>:</li>
+</ul>
+<div class="sourceCode" id="cb3" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>            <span class="kw">var</span> vezesCarregado <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>            <span class="kw">function</span> <span class="fu">carregaBotao</span>() {</span>
+<span id="cb3-6"><a href="#cb3-6"></a>                vezesCarregado<span class="op">++;</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>                <span class="kw">var</span> el <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;saida&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>                <span class="cf">if</span> (vezesCarregado <span class="op">==</span> <span class="dv">1</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a>                    el<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&quot;Botão foi carregado 1 vez&quot;</span><span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>                <span class="cf">else</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>                    el<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&quot;Botão foi carregado &quot;</span> <span class="op">+</span> <span class="bu">String</span>(vezesCarregado) <span class="op">+</span><span class="st">&quot; vezes&quot;</span><span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>            }</span>
+<span id="cb3-13"><a href="#cb3-13"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>        <span class="kw">&lt;h1&gt;</span>Vezes carregado<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a>        <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;saida&quot;</span><span class="kw">&gt;</span>Botão foi carregado 0 vezes<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Carregar&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;carregaBotao();&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 40%; bottom: 50px; right: 20px; padding-right: 10px;">
+<iframe src="iframes/Exemplo10.html" style="width: 90%; height: 150px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="javascript-e-dom-modificando-estilo-de-elementos" class="slide section level1">
+<h1>Javascript e DOM: Modificando Estilo de Elementos</h1>
+<ul>
+<li>Pode ser feito com a propriedade <code>style</code>:</li>
+</ul>
+<div class="sourceCode" id="cb4" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>            <span class="kw">var</span> indiceCor <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>            <span class="kw">var</span> cores <span class="op">=</span> [<span class="st">&quot;&quot;</span><span class="op">,</span> <span class="st">&quot;blue&quot;</span><span class="op">,</span> <span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="st">&quot;green&quot;</span><span class="op">,</span> <span class="st">&quot;orange&quot;</span>]<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>            <span class="kw">function</span> <span class="fu">alteraCor</span>() {</span>
+<span id="cb4-7"><a href="#cb4-7"></a>                indiceCor <span class="op">=</span> (indiceCor <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> cores<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>                <span class="kw">var</span> el <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;meuElemento&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>                el<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> cores[indiceCor]<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>            }</span>
+<span id="cb4-11"><a href="#cb4-11"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>        <span class="kw">&lt;h1&gt;</span>Mudança de cor<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>        <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;meuElemento&quot;</span><span class="kw">&gt;</span>Um texto qualquer<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Alterar cor&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;alteraCor();&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 40%; bottom: 50px; right: 20px; padding-right: 10px;">
+<iframe src="iframes/Exemplo11.html" style="width: 90%; height: 150px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exercício-rápido-i" class="slide section level1">
+<h1>Exercício Rápido (I)</h1>
+<ol style="list-style-type: decimal">
+<li>Experimentos os códigos HTML + JS de ambos os slides anteriores.
+<ul>
+<li>Cada um é uma página HTML distinta (separada).</li>
+</ul></li>
+</ol>
+</div>
+<div id="javascript-e-dom-inserindo-novos-elementos" class="slide section level1">
+<h1>Javascript e DOM: Inserindo Novos Elementos</h1>
+<ul>
+<li><strong>Objetivo</strong>: criar um novo elemento em determinado ponto do documento.
+<ul>
+<li><em>e.g.</em>, colocar uma tabela dentro de um <code>div</code>.</li>
+</ul></li>
+<li>Técnicamente, pode ser feito com o <code>innerHTML</code>:
+<ol style="list-style-type: decimal">
+<li>Acha-se o elemento do DOM correspondente ao <code>div</code>.</li>
+<li>Adiciona-se o código HTML da tabela ao <code>innerHTML</code> do <code>div</code>.</li>
+</ol></li>
+</ul>
+<div class="sourceCode" id="cb5" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>            <span class="kw">function</span> <span class="fu">adicionaTabela</span>() {</span>
+<span id="cb5-5"><a href="#cb5-5"></a>                <span class="kw">var</span> el <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;meuDiv&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>                el<span class="op">.</span><span class="at">innerHTML</span> <span class="op">+=</span> <span class="st">&quot;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Col 1&lt;/th&gt;&lt;th&gt;Col 2&lt;/th&gt;&lt;/tr&gt;&quot;</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>                el<span class="op">.</span><span class="at">innerHTML</span> <span class="op">+=</span> <span class="st">&quot;&lt;tr&gt;&lt;td&gt;Dado 1&lt;/td&gt;&lt;td&gt;Dado 2&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&quot;</span><span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>            }</span>
+<span id="cb5-9"><a href="#cb5-9"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>        <span class="kw">&lt;h1&gt;</span>Tabela Dinâmica<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>        <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;meuDiv&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Adiciona Tabela&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;adicionaTabela();&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</div>
+<div id="javascript-e-dom-inserindo-novos-elementos-ii" class="slide section level1">
+<h1>Javascript e DOM: Inserindo Novos Elementos (II)</h1>
+<ul>
+<li>No entanto, Javascript fornece uma API para esse fim.
+<ul>
+<li>Torna código mais legível.</li>
+</ul></li>
+<li>Métodos relevantes:</li>
+</ul>
+<div class="center" style="font-size: 15px; line-height: 80%;">
+<table style="width:100%;">
+<colgroup>
+<col width="20%" />
+<col width="51%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Propósito</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>document.createElement()</code></td>
+<td>Cria novo elemento DOM do tipo especificado</td>
+<td><code>document.createElement("table")</code></td>
+</tr>
+<tr class="even">
+<td><code>document.createTextNode()</code></td>
+<td>Cria novo nó do tipo <code>text</code> (<em>i.e.</em>, conteúdo de tag)</td>
+<td><code>document.createElement("Novo texto!")</code></td>
+</tr>
+<tr class="odd">
+<td><code>el.appendChild()</code></td>
+<td>Acrescenta novo filho ao elemento (como último filho)</td>
+<td><code>el.appendChild(novoDiv)</code></td>
+</tr>
+<tr class="even">
+<td><code>el.insertBefore()</code></td>
+<td>Acrescenta novo filho ao elemento (antes de outro filho especificado)</td>
+<td><code>el.insertBefore(novoDiv, outroFilho)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>Nota</strong>: na tabela, <code>el</code> denota algum elemento/nó <strong>já existente</strong> no DOM.</li>
+</ul>
+</div>
+<div id="javascript-e-dom-exemplos-de-inserção" class="slide section level1">
+<h1>Javascript e DOM: Exemplos de Inserção</h1>
+<div class="sourceCode" id="cb6" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>            <span class="kw">var</span> elementosAdicionados <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>            <span class="kw">function</span> <span class="fu">adicionaLinha</span>() {</span>
+<span id="cb6-6"><a href="#cb6-6"></a>                <span class="kw">var</span> el <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;minhaTabela&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>                <span class="kw">var</span> tr <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&quot;tr&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>                <span class="kw">var</span> td1 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&quot;td&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>                <span class="kw">var</span> td2 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&quot;td&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>                <span class="kw">var</span> text1 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createTextNode</span>(<span class="st">&quot;Texto célula &quot;</span> <span class="op">+</span> <span class="bu">String</span>(<span class="op">++</span>elementosAdicionados))<span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>                <span class="kw">var</span> text2 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createTextNode</span>(<span class="st">&quot;Texto célula &quot;</span> <span class="op">+</span> <span class="bu">String</span>(<span class="op">++</span>elementosAdicionados))<span class="op">;</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>                td1<span class="op">.</span><span class="fu">appendChild</span>(text1)<span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>                td2<span class="op">.</span><span class="fu">appendChild</span>(text2)<span class="op">;</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>                tr<span class="op">.</span><span class="fu">appendChild</span>(td2)<span class="op">;</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>                tr<span class="op">.</span><span class="fu">insertBefore</span>(td1<span class="op">,</span> td2)<span class="op">;</span> <span class="co">// td1 inserido antes do td2!</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>                el<span class="op">.</span><span class="fu">appendChild</span>(tr)<span class="op">;</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a>            }</span>
+<span id="cb6-18"><a href="#cb6-18"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb6-21"><a href="#cb6-21"></a>        <span class="kw">&lt;h1&gt;</span>Tabela Dinâmica (II)<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22"></a>        <span class="kw">&lt;table</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;minhaTabela&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-23"><a href="#cb6-23"></a>            <span class="kw">&lt;tr&gt;&lt;th&gt;</span>Col 1<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Col 2<span class="kw">&lt;/th&gt;&lt;/tr&gt;</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a>        <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Nova linha ao final&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;adicionaLinha();&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-26"><a href="#cb6-26"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb6-27"><a href="#cb6-27"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 25%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo13.html" style="width: 90%; height: 350px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exercício-iv" class="slide section level1">
+<h1>Exercício (IV)</h1>
+<ul>
+<li>Gere um ficheiro HTML com o exemplo do slide anterior.
+<ul>
+<li>Interaja com o botão e observe seu comportamento.</li>
+</ul></li>
+<li>Agora, edite seu ficheiro HTML e adicione dois campos de formulário com <em>id</em> formCol1 e formCol2, respectivamente.
+<ul>
+<li>Posicione-os lado a lado, entre a tabela e o botão.</li>
+<li>Use a tag <code>&lt;br&gt;</code> para quebrar a linha entre os elementos.</li>
+</ul></li>
+<li>Faça com que o valor preenchido de ambos os campos do formulário sejam incluídos como uma linha da tabela.</li>
+</ul>
+</div>
+<div id="javascript-e-dom-remoção-e-substituição" class="slide section level1">
+<h1>Javascript e DOM: Remoção e Substituição</h1>
+<ul>
+<li>Por vezes, é útil removermos ou substituirmos um elemento do DOM.</li>
+<li>API provê métodos para isso:</li>
+</ul>
+<div class="center" style="font-size: 15px; line-height: 80%;">
+<table>
+<colgroup>
+<col width="19%" />
+<col width="50%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Propósito</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>el.removeChild()</code></td>
+<td>Remove filho especificado do elemento</td>
+<td><code>el.removeChild(elFilho)</code></td>
+</tr>
+<tr class="even">
+<td><code>el.replaceChild()</code></td>
+<td>Substitui filho especificado do elemento por outro</td>
+<td><code>el.replaceChild(novo, antigo)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="javascript-e-dom-exemplos-de-remoção-e-substituição" class="slide section level1">
+<h1>Javascript e DOM: Exemplos de Remoção e Substituição</h1>
+<div class="sourceCode" id="cb7" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>            <span class="kw">function</span> <span class="fu">substitui</span>() {</span>
+<span id="cb7-5"><a href="#cb7-5"></a>                <span class="kw">var</span> lista <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;lista&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>                <span class="kw">var</span> item <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;substituido&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>                <span class="kw">var</span> novo <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&quot;li&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>                novo<span class="op">.</span><span class="fu">appendChild</span>(<span class="bu">document</span><span class="op">.</span><span class="fu">createTextNode</span>(<span class="st">&quot;Novo item&quot;</span>))<span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>                lista<span class="op">.</span><span class="fu">replaceChild</span>(novo<span class="op">,</span> item)<span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>            }</span>
+<span id="cb7-11"><a href="#cb7-11"></a>            <span class="kw">function</span> <span class="fu">remove</span>() {</span>
+<span id="cb7-12"><a href="#cb7-12"></a>                <span class="kw">var</span> lista <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;lista&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>                <span class="kw">var</span> item <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;removido&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>                lista<span class="op">.</span><span class="fu">removeChild</span>(item)<span class="op">;</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>            }</span>
+<span id="cb7-16"><a href="#cb7-16"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a>        <span class="kw">&lt;h1&gt;</span>Remoção e Substituição<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a>        <span class="kw">&lt;ul</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;lista&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a>            <span class="kw">&lt;li</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;substituido&quot;</span><span class="kw">&gt;</span>Item 1<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a>            <span class="kw">&lt;li&gt;</span>Item 2<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a>            <span class="kw">&lt;li</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;removido&quot;</span><span class="kw">&gt;</span>Item 3<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a>        <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Remove&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;remove();&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-26"><a href="#cb7-26"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Substitui&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;substitui();&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb7-28"><a href="#cb7-28"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 25%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo14.html" style="width: 90%; height: 350px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="javascript-eventos" class="slide section level1">
+<h1>Javascript: Eventos</h1>
+<ul>
+<li>Um dos principais usos de Javascript é <strong>responder a eventos</strong>.
+<ul>
+<li>Carregamento de botões.</li>
+<li>Estouro de temporizadores.</li>
+<li>Término de carregamento da página.</li>
+<li>Mudança em campo de formuário.</li>
+<li>…</li>
+</ul></li>
+<li>Paradigma de <strong>Programação Orientada a Eventos</strong>.</li>
+</ul>
+<div class="block centered">
+<div class="blocktitle">
+<p><em>Callback</em></p>
+</div>
+<ul>
+<li>Conceito básico do paradigma.</li>
+<li>Função chamada quando determinado evento ocorre.</li>
+</ul>
+</div>
+</div>
+<div id="javascript-eventos-do-dom" class="slide section level1">
+<h1>Javascript: Eventos do DOM</h1>
+<ul>
+<li>Boa parte dos elementos HTML suporta vários eventos.</li>
+<li>Propriedades <code>on*</code> associam eventos a códigos Javascript.</li>
+<li>Eventos comuns:</li>
+</ul>
+<div class="center" style="font-size: 15px; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Propriedade</th>
+<th>Evento</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>onclick</code></td>
+<td>Usuário carrega no elemento</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>onload</code></td>
+<td>Página é carregada</td>
+<td>Usado com elemento <code>body</code></td>
+</tr>
+<tr class="odd">
+<td><code>onunload</code></td>
+<td>Usuário deixa a página</td>
+<td>Usado com elemento <code>body</code></td>
+</tr>
+<tr class="even">
+<td><code>onchange</code></td>
+<td>Campo de formulário tem valor alterado</td>
+<td>Usado com elementos <code>input</code></td>
+</tr>
+<tr class="odd">
+<td><code>onmouseover</code></td>
+<td>Cursor está sobre elemento</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>onmouseout</code></td>
+<td>Cursor deixa área do elemento</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>onmousedown</code></td>
+<td>Botão do rato é pressionado sobre elemento</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>onmouseup</code></td>
+<td>Botão do rato é liberado sobre o elemento</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="javascript-eventos-de-temporização" class="slide section level1">
+<h1>Javascript: Eventos de Temporização</h1>
+<ul>
+<li>Em alguns casos, queremos executar após um determinado tempo.</li>
+<li>Para isso, criamos um <strong>temporizador</strong>, associamos uma duração e uma <em>callback</em>.
+<ul>
+<li>Feito com a função <code>setTimeout()</code>.</li>
+<li>Retorna um objeto representando o temporizador.</li>
+</ul></li>
+<li>Podemos cancelar o temporizador criado usando a função <code>clearTimeout()</code>.</li>
+</ul>
+</div>
+<div id="javascript-exemplo-de-temporizador" class="slide section level1">
+<h1>Javascript: Exemplo de Temporizador</h1>
+<div class="sourceCode" id="cb8" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>            <span class="kw">var</span> timer<span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>            <span class="kw">function</span> <span class="fu">iniciar</span>() {</span>
+<span id="cb8-6"><a href="#cb8-6"></a>                <span class="kw">var</span> botao <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementsByTagName</span>(<span class="st">&quot;input&quot;</span>)[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>                botao<span class="op">.</span><span class="at">value</span> <span class="op">=</span> <span class="st">&quot;Parar&quot;</span><span class="op">;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>                botao<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> parar<span class="op">;</span>  <span class="co">// Altera callback do botão.</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>                timer <span class="op">=</span> <span class="pp">setTimeout</span>(timerCallback<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>            }</span>
+<span id="cb8-11"><a href="#cb8-11"></a>            <span class="kw">function</span> <span class="fu">parar</span>() {</span>
+<span id="cb8-12"><a href="#cb8-12"></a>                <span class="kw">var</span> botao <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementsByTagName</span>(<span class="st">&quot;input&quot;</span>)[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>                botao<span class="op">.</span><span class="at">value</span> <span class="op">=</span> <span class="st">&quot;Iniciar&quot;</span><span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>                botao<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> iniciar<span class="op">;</span>  <span class="co">// Altera callback do botão.</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>                <span class="pp">clearTimeout</span>(timer)<span class="op">;</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>            }</span>
+<span id="cb8-17"><a href="#cb8-17"></a>            <span class="kw">function</span> <span class="fu">timerCallback</span>() {</span>
+<span id="cb8-18"><a href="#cb8-18"></a>                <span class="kw">var</span> el <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;titulo&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a>                <span class="cf">if</span> (el<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">==</span> <span class="st">&quot;red&quot;</span>) el<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a>                <span class="cf">else</span> el<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="st">&quot;red&quot;</span><span class="op">;</span></span>
+<span id="cb8-21"><a href="#cb8-21"></a>                timer <span class="op">=</span> <span class="pp">setTimeout</span>(timerCallback<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a>            }</span>
+<span id="cb8-23"><a href="#cb8-23"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb8-25"><a href="#cb8-25"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb8-26"><a href="#cb8-26"></a>        <span class="kw">&lt;h1</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;titulo&quot;</span><span class="kw">&gt;</span>Temporizador<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Iniciar&quot;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;iniciar();&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-28"><a href="#cb8-28"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 25%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo16.html" style="width: 90%; height: 350px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exercício-v" class="slide section level1">
+<h1>Exercício (V)</h1>
+<ol style="list-style-type: decimal">
+<li>Crie um ficheiro em HTML + JS que mostre imagens diferentes a cada 10 s.
+<ul>
+<li>Baseie-se no slide anterior para isso e inclua botões para iniciar e parar.</li>
+<li>No JS, crie um vetor ou objeto para armazenar os caminhos das imagens.</li>
+<li>Use o campo <em>value</em> da caixa de texto do formulário para obter o seu conteúdo.</li>
+</ul></li>
+</ol>
+</div>
+</body>
+</html>

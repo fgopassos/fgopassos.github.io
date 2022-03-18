@@ -1,0 +1,24 @@
+<html>
+	<head>
+        <script type="text/javascript">
+            var timer;
+            var vezes = 0;
+			function cb() {
+                timer = setTimeout(timerCallback, 1000);
+            }
+
+            function timerCallback() {
+                alert("Vezes = " + String(++vezes));
+                if (vezes == 3)
+                    clearTimeout(timer);
+                else
+                    timer = setTimeout(timerCallback, 1000);
+            }            
+        </script>
+	</head>
+	<body>
+		<center>
+			<input type="button" value="Executar" onclick="cb();"></input>
+		</center>
+	</body>
+</html>

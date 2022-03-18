@@ -1,0 +1,22 @@
+<html>
+	<head>
+        <script type="text/javascript">
+
+            var a = 1;
+            function f(arg) {
+                arg *= 3;
+                alert("Na função, arg = " + String(arg));
+            }
+            
+            function cb() {
+                f(a);
+                alert("Após a função, a = " + String(a));
+            }
+        </script>
+	</head>
+	<body>
+		<center>
+			<input type="button" value="Executar" onclick="cb();"></input>
+		</center>
+	</body>
+</html>

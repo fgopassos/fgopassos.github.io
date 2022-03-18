@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Javascript</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Atlântica - Instituto Universitário</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Javascript</h1>
+    <p class="subtitle">GSC - Laboratório de Desenvolvimento de Sistemas Web</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+  </div>
+</div>
+<div id="estudaremos-agora-o-javascript" class="slide section level1">
+<h1>Estudaremos Agora o Javascript…</h1>
+<div class="center">
+<p><img src="imagens/sisWeb_Js.svg" id="appWeb" style="width:80.0%" /></p>
+</div>
+</div>
+<div id="javascript" class="slide section level1 part">
+<h1 class="part">Javascript</h1>
+</div>
+<div id="javascript-conceitos-básicos" class="slide section level1">
+<h1>Javascript: Conceitos Básicos</h1>
+<ul>
+<li>Linguagem <strong>interpretada</strong> pelo <em>browser</em>.</li>
+<li>Permite <strong>execução</strong> de códigos que <strong>interagem com o HTML/CSS</strong> da página.
+<ul>
+<li>Leitura e modificação.</li>
+<li>Alteração de conteúdo e/ou forma.</li>
+<li>Associação de funções Javascript a eventos da página.</li>
+</ul></li>
+<li>Permite dinamismo sem (necessariamente) envolvimento do servidor.
+<ul>
+<li>Baixa latência.</li>
+<li><strong>Bom tempo de resposta</strong>.</li>
+</ul></li>
+</ul>
+<div class="block centered">
+<div class="blocktitle">
+<p>Node.js</p>
+</div>
+<ul>
+<li>Ambiente para execução de Javascript em <em>backend</em>.</li>
+</ul>
+</div>
+</div>
+<div id="javascript-características" class="slide section level1">
+<h1>Javascript: Características</h1>
+<ul>
+<li>Sintaxe similar a Java, C.
+<ul>
+<li>Embora com várias peculiaridades.</li>
+</ul></li>
+<li>Suporta paradigmas <strong>imperativo</strong>, <strong>orientado a objetos</strong> e <strong>funcional</strong>.</li>
+<li>Tipagem dinâmica:
+<ul>
+<li>Variáveis podem ter tipos diferentes em momentos diferentes com base em seus valores atuais.</li>
+</ul></li>
+<li><em>Case-sensitive</em>: maiúsculas e minúsculas <strong>fazem diferença</strong>.</li>
+</ul>
+</div>
+<div id="javascript-hello-world" class="slide section level1">
+<h1>Javascript: <em>Hello World</em></h1>
+<div class="sourceCode" id="cb1" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>            <span class="fu">alert</span>(<span class="st">&quot;Hello World!&quot;</span>)<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<iframe src="iframes/HelloWorld.html" style="width: 90%; height: 50px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-comentários" class="slide section level1">
+<h1>Javascript: Comentários</h1>
+<ul>
+<li>Idêntico a C, Java.</li>
+<li>Dois tipos:
+<ul>
+<li>Comentários de linha: qualquer coisa após <code>//</code> até o final de uma linha.</li>
+<li>Comentários de bloco: qualquer coisa entre <code>/*</code> e <code>*/</code>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="javascript-variáveis" class="slide section level1">
+<h1>Javascript: Variáveis</h1>
+<ul>
+<li>Devem <strong>sempre</strong> ser declaradas antes da primeira utilização.</li>
+<li>Há três formas:
+<ul>
+<li>Com <code>const</code>: variável com valor constante, somente leitura.</li>
+<li>Com <code>var</code>: variável que pode ser lida ou escrita declarada no escopo da função ou global.</li>
+<li>Com <code>let</code>: variável que pode ser lida ou escrita declarada no escopo do bloco atual.</li>
+</ul></li>
+<li>Nos três casos, a declaração é similar:</li>
+</ul>
+<div class="sourceCode" id="cb2" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">var</span> a<span class="op">,</span> b <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">const</span> c <span class="op">=</span> <span class="dv">50</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">let</span> d<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Por ora, focaremos nas variáveis declaradas com <code>var</code>.</li>
+</ul>
+</div>
+<div id="javascript-operadores" class="slide section level1">
+<h1>Javascript: Operadores</h1>
+<ul>
+<li>Operadores básicos em Javascript são os mesmos de C, Java.
+<ul>
+<li>Mas há operadores adicionais.</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="center">
+<p><strong>Aritméticos</strong></p>
+<div class="center" style="font-size: 15px; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>Soma</td>
+</tr>
+<tr class="even">
+<td><code>*</code></td>
+<td>Multiplicação</td>
+</tr>
+<tr class="odd">
+<td><code>-</code></td>
+<td>Subtração</td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>Divisão</td>
+</tr>
+<tr class="odd">
+<td><code>%</code></td>
+<td>Resto da divisão inteira</td>
+</tr>
+<tr class="even">
+<td><code>++</code></td>
+<td>Incremento</td>
+</tr>
+<tr class="odd">
+<td><code>--</code></td>
+<td>Decremento</td>
+</tr>
+<tr class="even">
+<td><code>**</code></td>
+<td>Exponenciação</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="center">
+<p><strong>Lógicos/Booleanos</strong></p>
+<div class="center" style="font-size: 15px; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&amp;&amp;</code></td>
+<td><code>and</code></td>
+</tr>
+<tr class="even">
+<td><code>||</code></td>
+<td><code>or</code></td>
+</tr>
+<tr class="odd">
+<td><code>!</code></td>
+<td><code>not</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="center">
+<p><strong>Comparação</strong></p>
+<div class="center" style="font-size: 15px; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>Igual a (valor)</td>
+</tr>
+<tr class="even">
+<td><code>===</code></td>
+<td>Igual e mesmo tipo</td>
+</tr>
+<tr class="odd">
+<td><code>!=</code></td>
+<td>Diferente (valor)</td>
+</tr>
+<tr class="even">
+<td><code>!==</code></td>
+<td>Diferente (valor e tipo)</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td>Menor que</td>
+</tr>
+<tr class="even">
+<td><code>&gt;</code></td>
+<td>Maior que</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;=</code></td>
+<td>Menor ou igual</td>
+</tr>
+<tr class="even">
+<td><code>&gt;=</code></td>
+<td>Maior ou igual</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="javascript-comparações-de-tipo" class="slide section level1">
+<h1>Javascript: Comparações de Tipo</h1>
+<ul>
+<li>Atenção aos operadores <code>===</code> e <code>!==</code>:
+<ul>
+<li>Não existem em Java, C.</li>
+<li>Nem sempre têm o mesmo efeito dos operadores <code>==</code> e <code>!=</code>.</li>
+</ul></li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb3" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">var</span> b <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">alert</span>(<span class="st">&quot;a == b? &quot;</span> <span class="op">+</span> (a <span class="op">==</span> b))<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">alert</span>(<span class="st">&quot;a === b? &quot;</span> <span class="op">+</span> (a <span class="op">===</span> b))<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/IgualMesmoTipo2.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-atribuição" class="slide section level1">
+<h1>Javascript: Atribuição</h1>
+<ul>
+<li>Variáveis podem ter seus valores alterados através da operação de atribuição.
+<ul>
+<li>Exceto pelas declaradas com <code>const</code>!</li>
+<li>Resulta em exceção/erro de execução.</li>
+</ul></li>
+<li>Operador de atribuição é o caractere <code>=</code>, comando de atribuição sempre terminado em <code>;</code>.</li>
+<li>O valor atrubuído pode ser uma outra variável, uma constante literal, ou qualquer expressão (<em>e.g.</em>, lógica, aritimética).</li>
+<li>Atribuição pode ser combinada com operadores aritméticos.</li>
+<li>Exemplos:</li>
+</ul>
+<div class="sourceCode" id="cb4" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">var</span> a<span class="op">,</span> b <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">var</span> c<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>a <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>a <span class="op">+=</span> a <span class="op">-</span> b<span class="op">**</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>a <span class="op">/=</span> <span class="dv">3</span><span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-strings" class="slide section level1">
+<h1>Javascript: Strings</h1>
+<ul>
+<li>Permitem armazenar informações textuais.</li>
+<li>Denotadas por sequências de caracteres entre aspas.
+<ul>
+<li>Duplas ou simples:
+<ul>
+<li><code>"uma string"</code>.</li>
+<li><code>'outra string'</code>.</li>
+</ul></li>
+</ul></li>
+<li>Podem ser concatenadas com o operador <code>+</code>:
+<ul>
+<li><code>"string" + " concatenada"</code>.</li>
+</ul></li>
+<li>Comprimento de uma string pode ser verificado com a propriedade <code>length</code>.</li>
+</ul>
+<div class="sourceCode" id="cb5" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="st">&quot;Teste&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">var</span> b <span class="op">=</span> <span class="st">&quot;Javascript&quot;</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">var</span> mensagemCompleta <span class="op">=</span> a <span class="op">+</span> b<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">var</span> l <span class="op">=</span> mensagemCompleta<span class="op">.</span><span class="at">length</span><span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-estruturas-de-seleção" class="slide section level1">
+<h1>Javascript: Estruturas de Seleção</h1>
+<div>
+<ul>
+<li>Testes de condições podem ser feitos com:
+<ul>
+<li>Estruturas do tipo <code>if/else</code>.</li>
+<li>Estruturas do tipo <code>switch/case</code>.</li>
+<li>O operador ternário <code>?</code>.</li>
+</ul></li>
+<li>Em todos os casos, sintaxe idêntica a de linguagens como C e Java.</li>
+<li>Exemplos:</li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="sourceCode" id="cb6" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="cf">if</span> (a <span class="op">&gt;</span> <span class="dv">0</span>) b <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="cf">if</span> (c <span class="op">==</span> <span class="dv">4</span> <span class="op">&amp;&amp;</span> b <span class="op">&lt;=</span> <span class="dv">1</span>) {</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    a <span class="op">+=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>}</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="cf">else</span> a <span class="op">-=</span> <span class="dv">10</span><span class="op">;</span></span></code></pre></div>
+</div><div class="column" style="width:34%;">
+<div class="sourceCode" id="cb7" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">switch</span>(a) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>        b <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>        <span class="cf">break</span> <span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>        b <span class="op">*=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>        <span class="cf">break</span> <span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="cf">default</span><span class="op">:</span> </span>
+<span id="cb7-9"><a href="#cb7-9"></a>        b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>}</span></code></pre></div>
+</div><div class="column" style="width:33%;">
+<div class="sourceCode" id="cb8" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a>b <span class="op">=</span> (a <span class="op">&lt;</span> <span class="dv">0</span>) <span class="op">?</span> <span class="op">-</span>a <span class="op">:</span> a<span class="op">;</span> </span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="javascript-pontos-de-atenção-com-estruturas-de-seleção" class="slide section level1">
+<h1>Javascript: Pontos de Atenção com Estruturas de Seleção</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="if" class="center">
+<h3>if</h3>
+</div>
+<ul>
+<li>Uso do <code>else</code> é opcional.</li>
+<li>Tanto no <code>if</code> quanto no <code>else</code> pode-se usar <strong>chaves</strong>.
+<ul>
+<li>Definem <strong>bloco</strong> de comandos a ser executados em cada caso.</li>
+<li>Se for um único comando, chaves são opcionais.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="switchcase" class="center">
+<h3>switch/case</h3>
+</div>
+<ul>
+<li>Cláusula <code>default</code>:
+<ul>
+<li>Executada se nenhuma condição é verdadeira.</li>
+</ul></li>
+<li>Palavra-chave <code>break</code>:
+<ul>
+<li>Sai imediatamente do <code>switch/case</code>.</li>
+<li>Sem <code>break</code>, <strong>execução continua</strong> para as linhas abaixo, <strong>mesmo associadas a outras condições</strong>:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb9" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">switch</span>(a) {</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>        b <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// b recebe 10 aqui, mas execução continua.</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>        b <span class="op">*=</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// Executado mesmo se a == 1.</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>        <span class="cf">break</span> <span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="cf">default</span><span class="op">:</span> </span>
+<span id="cb9-8"><a href="#cb9-8"></a>        b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>}</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="javascript-estruturas-de-repetição" class="slide section level1">
+<h1>Javascript: Estruturas de Repetição</h1>
+<ul>
+<li>Linguagem suporta repetições definidas e indefinidas:
+<ul>
+<li>Definidas usando a palavra-chave <code>for</code>.
+<ul>
+<li>Iteração por uma quantidade definida de elementos.</li>
+</ul></li>
+<li>Indefinidas usando a palavra-chave <code>while</code> ou a construção <code>do/while</code>.
+<ul>
+<li>Não se sabe <em>a priori</em> quantas iterações haverá.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="javascript-repetições-com-for" class="slide section level1">
+<h1>Javascript: Repetições com <code>for</code></h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Ao contrário de C, Javascript têm três variantes do <code>for</code>.
+<ul>
+<li>O <code>for</code> “básico”.</li>
+<li>O <code>for in</code>.</li>
+<li>O <code>for of</code>.</li>
+</ul></li>
+<li>Num primeiro momento, focaremos apenas no primeiro caso.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="sintaxe-geral" class="center">
+<h3>Sintaxe Geral</h3>
+</div>
+<div class="sourceCode" id="cb10" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="cf">for</span> (cmd1 <span class="op">;</span> cond <span class="op">;</span> cmd2) {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="co">// Bloco de código a ser executado.</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>}</span></code></pre></div>
+<ul>
+<li><code>cmd1</code> é executado <strong>antes da primeira iteração</strong>.</li>
+<li><code>cond</code> é uma condição testada <strong>antes de cada iteração</strong>.</li>
+<li><code>cmd2</code> é executado <strong>após cada iteração</strong>.
+<ul>
+<li>Mas <strong>antes do teste</strong> da condição.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="javascript-exemplo-de-repetição-com-for" class="slide section level1">
+<h1>Javascript: Exemplo de Repetição com <code>for</code></h1>
+<ul>
+<li>Calcular <span class="math inline">\(\displaystyle\sum_{a=0}^{9}{a^2}\)</span>:</li>
+</ul>
+<div class="sourceCode" id="cb11" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">var</span> a<span class="op">,</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> (a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> a <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> a<span class="op">++</span>) {</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    b <span class="op">+=</span> a<span class="op">**</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>}</span></code></pre></div>
+<ul>
+<li>Note: assim como no <code>if</code>, chaves são opcionais se corpo da repetição tem apenas um comando.</li>
+</ul>
+</div>
+<div id="javascript-repetição-com-while" class="slide section level1">
+<h1>Javascript: Repetição com <code>while</code></h1>
+<ul>
+<li>Sintaxe geral:</li>
+</ul>
+<div class="sourceCode" id="cb12" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="cf">while</span>(cond) {</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    <span class="co">// Comandos</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>}</span></code></pre></div>
+<ul>
+<li>Note: assim como no <code>if</code> e no <code>for</code>, chaves são opcionais se corpo da repetição tem apenas um comando.</li>
+<li>Exemplo</li>
+</ul>
+<div class="sourceCode" id="cb13" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="cf">while</span> (a <span class="op">&lt;</span> <span class="dv">10</span>) {</span>
+<span id="cb13-3"><a href="#cb13-3"></a>    b <span class="op">+=</span> a<span class="op">**</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>    a<span class="op">++;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>}</span></code></pre></div>
+</div>
+<div id="javascript-repetição-com-dowhile" class="slide section level1">
+<h1>Javascript: Repetição com <code>do/while</code></h1>
+<ul>
+<li>Similar à repetição com <code>do</code>, mas teste é realizado <strong>após</strong> cada iteração.
+<ul>
+<li>Garante que <strong>ao menos uma iteração</strong> é executada.</li>
+</ul></li>
+<li>Sintaxe geral:</li>
+</ul>
+<div class="sourceCode" id="cb14" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a><span class="cf">do</span> {</span>
+<span id="cb14-2"><a href="#cb14-2"></a>    <span class="co">// Comandos</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>} <span class="cf">while</span>(cond)<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Note: assim como no <code>if</code> e no <code>for</code>, chaves são opcionais se corpo da repetição tem apenas um comando.</li>
+<li>Exemplo</li>
+</ul>
+<div class="sourceCode" id="cb15" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="cf">do</span> {</span>
+<span id="cb15-3"><a href="#cb15-3"></a>    b <span class="op">+=</span> a<span class="op">**</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>    a<span class="op">++;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>} <span class="cf">while</span>(a <span class="op">&lt;</span> <span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-funções" class="slide section level1">
+<h1>Javascript: Funções</h1>
+<ul>
+<li>A sintaxe para definição de funções é um pouco diferente em Javascript em relação a C, Java:</li>
+</ul>
+<div class="sourceCode" id="cb16" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">function</span> <span class="fu">nome</span>([arg1 [<span class="op">,</span> arg2 [<span class="op">,</span> <span class="op">...</span>]]]) {</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="co">// Corpo da função</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>    <span class="co">// Opcionalmente, função pode retornar algo:</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>    <span class="cf">return</span> valor<span class="op">;</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>}</span></code></pre></div>
+<div class="block centered">
+<div class="blocktitle">
+<p>Observações</p>
+</div>
+<ul>
+<li>Funções podem ou não ter argumentos.
+<ul>
+<li>Ainda que tenham, tipos dos argumentos <strong>não</strong> são declarados.</li>
+</ul></li>
+<li>Funções podem ou não retornar valores.
+<ul>
+<li>Ainda que retornem valores, tipo do retorno <strong>não</strong> é declarado.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="javascript-chamada-de-funções" class="slide section level1">
+<h1>Javascript: Chamada de Funções</h1>
+<ul>
+<li>A sintaxe para chamada de funções é idêntica a C, Java:</li>
+</ul>
+<div class="sourceCode" id="cb17" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">nome</span>([arg1 [<span class="op">,</span> arg2 [<span class="op">,</span> <span class="op">...</span>]]])<span class="op">;</span></span></code></pre></div>
+<div class="block centered">
+<div class="blocktitle">
+<p>Observações</p>
+</div>
+<ul>
+<li>Se a função retorna algo, valor pode ser atribuído a variável.
+<ul>
+<li>Ou testada como parte de condição de <code>if</code>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="javascript-exemplo-de-uso-de-funções" class="slide section level1">
+<h1>Javascript: Exemplo de Uso de Funções</h1>
+<div class="sourceCode" id="cb18" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">function</span> <span class="fu">maior</span>(a<span class="op">,</span> b) {</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="cf">if</span> (a <span class="op">&gt;</span> b) <span class="cf">return</span>(a)<span class="op">;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>    <span class="cf">else</span> <span class="cf">return</span>(b)<span class="op">;</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>}</span>
+<span id="cb18-6"><a href="#cb18-6"></a></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="kw">var</span> a<span class="op">,</span> b<span class="op">,</span> c<span class="op">;</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a></span>
+<span id="cb18-9"><a href="#cb18-9"></a>a <span class="op">=</span> <span class="dv">13</span><span class="op">;</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a>b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb18-11"><a href="#cb18-11"></a>c <span class="op">=</span> <span class="fu">maior</span>(a<span class="op">,</span> b)<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-mais-sobre-funções" class="slide section level1">
+<h1>Javascript: Mais sobre Funções</h1>
+<ul>
+<li>Em Javascript, funções são <strong>valores de primeira classe</strong>.
+<ul>
+<li>Funções podem:
+<ul>
+<li>Ser passadas como parâmetros de outras funções.</li>
+<li>Ser retornadas como valores de retorno de outras funções.</li>
+<li>Ser atribuídas e armazenadas em variáveis.</li>
+</ul></li>
+</ul></li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb19" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">function</span> <span class="fu">sub</span>(a<span class="op">,</span> b) {</span>
+<span id="cb19-2"><a href="#cb19-2"></a>    <span class="cf">return</span>(a <span class="op">-</span> b)<span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>}</span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="kw">function</span> <span class="fu">soma</span>(a<span class="op">,</span> b) {</span>
+<span id="cb19-5"><a href="#cb19-5"></a>    <span class="cf">return</span>(a <span class="op">+</span> b)<span class="op">;</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>}</span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="kw">function</span> <span class="fu">sel</span>(f1<span class="op">,</span> f2<span class="op">,</span> s) {</span>
+<span id="cb19-8"><a href="#cb19-8"></a>    <span class="cf">return</span>(s <span class="op">==</span> <span class="dv">0</span> <span class="op">?</span> f1 <span class="op">:</span> f2)<span class="op">;</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a>}</span>
+<span id="cb19-10"><a href="#cb19-10"></a><span class="kw">var</span> f <span class="op">=</span> <span class="fu">sel</span>(sub<span class="op">,</span> soma<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span> <span class="co">// retorna função soma.</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a><span class="fu">f</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span> <span class="co">// executa a função soma.</span></span></code></pre></div>
+<ul>
+<li>Javascript também suporta <strong>recursão</strong>.</li>
+</ul>
+</div>
+<div id="javascript-algumas-funções-nativas-úteis" class="slide section level1">
+<h1>Javascript: Algumas Funções Nativas Úteis</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Função</th>
+<th>Propósito</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>string()</td>
+<td>Converte números em strings</td>
+<td>string(3)</td>
+</tr>
+<tr class="even">
+<td>Number()</td>
+<td>Converte string em número</td>
+<td>Number(“3”)</td>
+</tr>
+<tr class="odd">
+<td>Math.sin()</td>
+<td>Calcula o seno do argumento</td>
+<td>Math.sin(3.14)</td>
+</tr>
+<tr class="even">
+<td>Math.cos()</td>
+<td>Calcula o coseno do argumento</td>
+<td>Math.cos(3.14)</td>
+</tr>
+<tr class="odd">
+<td>Math.sqrt()</td>
+<td>Calcula a raiz quadrada do argumento</td>
+<td>Math.sqrt(17)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="javascript-funções-de-saída" class="slide section level1">
+<h1>Javascript: Funções de Saída</h1>
+<ul>
+<li>Muitas vezes, é útil “imprimirmos” valores ou mensagens.
+<ul>
+<li>Para alertar o usuário de certas condições.</li>
+<li>Ou para auxiliar na depuração do código.</li>
+</ul></li>
+<li>Duas funções simples para esse propósito:
+<ul>
+<li><code>alert()</code>: apresenta uma caixa de alerta para o usuário com a mensagem especificada como argumento.</li>
+<li><code>console.log()</code>: imprime a mensagem especificada como argumento no <em>console</em> do <em>browser</em></li>
+</ul></li>
+<li>Exemplo da <code>console.log()</code>:</li>
+</ul>
+<div class="sourceCode" id="cb20" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;O valor de a é: &quot;</span>)<span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/consoleLog.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-função-de-entrada-simples" class="slide section level1">
+<h1>Javascript: Função de Entrada Simples</h1>
+<ul>
+<li>Para entrada, uma alternativa simples é usar o comando <code>prompt()</code>.
+<ul>
+<li>Irá aparecer uma janela para o usuário.</li>
+<li>Valor do texto digitado é retornado.</li>
+<li>Texto inserido entre parênteses aparece na janela.</li>
+</ul></li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb21" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">var</span> nome<span class="op">;</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>nome <span class="op">=</span> <span class="fu">prompt</span>(<span class="st">&quot;Digite seu nome:&quot;</span>)<span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="fu">alert</span>(<span class="st">&#39;Olá &#39;</span> <span class="op">+</span> nome <span class="op">+</span> <span class="st">&#39;!&#39;</span>)</span></code></pre></div>
+<iframe src="iframes/prompt.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+<!--
+# Exercícios
+
+1. Escreva um programa em JS e HTML que obtenha um número do usu
+2.
+-->
+</div>
+<div id="exercícios-i" class="slide section level1">
+<h1>Exercícios (I)</h1>
+<ol style="list-style-type: decimal">
+<li>Crie uma página web que contenha um código Javascript que calcule os N=10 primeiros números múltiplos de 5 e 7 simultaneamente.
+<ul>
+<li>Imprima o resultado no console do <em>browser</em>.</li>
+</ul></li>
+<li>Altere o item 1 para que a entrada de N seja através do <code>prompt</code>.</li>
+<li>Crie uma página web que contenha um código Javascript que calcule o fatorial de um número.
+<ul>
+<li>Use recursão.</li>
+<li>Mostre o resultado com a função <code>alert()</code>.</li>
+</ul></li>
+</ol>
+<!--
+# Javascript e HTML
+
+## Iteração com um botão
+
+- Em HTML, podemos incluir um elemento chamado `button`.
+-->
+</div>
+<div id="javascript-objetos" class="slide section level1">
+<h1>Javascript: Objetos</h1>
+<ul>
+<li>Frequentemente, variáveis em Javascript armazenam <strong>objetos</strong>.</li>
+<li>Objetos podem armazenar <strong>múltiplos valores</strong> na forma de <strong>propriedades</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb22" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<span id="cb22-2"><a href="#cb22-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>    <span class="dt">portas</span><span class="op">:</span> <span class="dv">4</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>}<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Podemos acessar as propriedades de um objeto usando o operador <code>.</code> (<em>i.e.</em>, ponto):
+<ul>
+<li><em>e.g.</em>, <code>carro.fabricante</code>.</li>
+</ul></li>
+<li>Notação alternativa:
+<ul>
+<li><code>carro["fabricante"]</code>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="javascript-métodos" class="slide section level1">
+<h1>Javascript: Métodos</h1>
+<ul>
+<li>Objetos podem armazenar também funções.
+<ul>
+<li>Nesse caso, chamadas de <strong>métodos</strong>.</li>
+</ul></li>
+<li>Dentro do <strong>escopo</strong> de um método, palavra-chave <code>this</code> referencia o objeto que o contém.</li>
+</ul>
+<div class="sourceCode" id="cb23" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<span id="cb23-2"><a href="#cb23-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="dt">portas</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>    <span class="dt">log</span><span class="op">:</span> <span class="kw">function</span>() {</span>
+<span id="cb23-7"><a href="#cb23-7"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">+</span> <span class="st">&quot; fabricado em &quot;</span> <span class="op">+</span> <span class="fu">string</span>(<span class="kw">this</span><span class="op">.</span><span class="at">ano</span>))<span class="op">;</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>    } </span>
+<span id="cb23-9"><a href="#cb23-9"></a>}<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Podemos executar o método de um objeto usando o operador <code>.</code> (<em>i.e.</em>, ponto):
+<ul>
+<li><em>e.g.</em>, <code>carro.log()</code>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="javascript-vetores" class="slide section level1">
+<h1>Javascript: Vetores</h1>
+<ul>
+<li>Vetores permitem armazenar sequeências ou conjuntos de valores relacionados.</li>
+<li>Para incializar um vetor vazio, há várias formas:</li>
+</ul>
+<div class="sourceCode" id="cb24" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">var</span> vetorA <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">var</span> vetorB <span class="op">=</span> <span class="bu">Array</span>()<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Pode-se também criar um vetor já preenchido:</li>
+</ul>
+<div class="sourceCode" id="cb25" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">var</span> outrosCarros <span class="op">=</span> <span class="bu">Array</span>(<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>)<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-acesso-a-elementos-de-vetores" class="slide section level1">
+<h1>Javascript: Acesso a Elementos de Vetores</h1>
+<ul>
+<li>Elementos de um vetor são referenciados por seu índice usando parênteses retos:</li>
+</ul>
+<div class="sourceCode" id="cb26" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(carros[<span class="dv">1</span>])<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Note que os índices são contados <strong>a partir do 0</strong>.</li>
+<li>Elementos também podem ser adicionados livremente com essa notação:</li>
+</ul>
+<div class="sourceCode" id="cb27" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>carros[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&quot;Opel&quot;</span><span class="op">;</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>carros[<span class="dv">10</span>] <span class="op">=</span> <span class="st">&quot;Jeep&quot;</span><span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-outras-caracterísitcas-dos-vetores" class="slide section level1">
+<h1>Javascript: Outras Caracterísitcas dos Vetores</h1>
+<div class="block centered">
+<div class="blocktitle">
+<p>Importante</p>
+</div>
+<ul>
+<li>Assim como variáveis, vetores em Javascript não tem um tipo explícito.</li>
+<li>Logo, um mesmo vetor pode armazenar, em dado momento, elementos de vários tipos!</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb28" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>carros[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&quot;57&quot;</span><span class="op">;</span></span></code></pre></div>
+</div>
+<ul>
+<li>Internamente, vetores são armazenados como objetos.</li>
+<li>Uma das propriedades armazenadas é a <code>length</code>.
+<ul>
+<li>Armazena o tamanho atual do vetor.</li>
+</ul></li>
+</ul>
+</div>
+<div id="javascript-repetições-com-for...of" class="slide section level1">
+<h1>Javascript: Repetições com <code>for...of</code></h1>
+<ul>
+<li>A estrutura <code>for ... of</code> varre elementos de um objeto <strong>iterável</strong>.
+<ul>
+<li><em>e.g.</em>, um vetor.</li>
+</ul></li>
+<li>Sintaxe geral:</li>
+</ul>
+<div class="sourceCode" id="cb29" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a><span class="cf">for</span> (variavel <span class="kw">of</span> vetor) {</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="co">// Faça algo com &#39;variavel&#39;</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>}</span></code></pre></div>
+<ul>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb30" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="kw">var</span> carro<span class="op">;</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="cf">for</span> (carro <span class="kw">of</span> carros) <span class="fu">alert</span>(carro)<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/forOf.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-repetições-com-for...in" class="slide section level1">
+<h1>Javascript: Repetições com <code>for...in</code></h1>
+<ul>
+<li>Similar ao <code>for...of</code>, mas itera por <strong>propriedades de um objeto</strong>.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb31" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<span id="cb31-2"><a href="#cb31-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>    <span class="dt">portas</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>}<span class="op">;</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="kw">var</span> i<span class="op">;</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a><span class="cf">for</span> (i <span class="kw">in</span> carro) <span class="fu">alert</span>(i <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> <span class="bu">String</span>(carro[i]))<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/forIn.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+<div class="block centered">
+<div class="blocktitle">
+<p>Importante</p>
+</div>
+<ul>
+<li>Propriedades são percorridas na ordem em que foram incluídas no objeto.</li>
+</ul>
+</div>
+</div>
+<div id="javascript-escopo-de-função" class="slide section level1">
+<h1>Javascript: Escopo de Função</h1>
+<ul>
+<li>Até 2015, um código Javascript só possuia dois escopos:
+<ul>
+<li>Global.</li>
+<li>Função.</li>
+<li><em>i.e.</em>, variáveis declaradas dentro de uma função são diferentes das globais.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb32" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="kw">function</span> <span class="fu">f1</span>() {</span>
+<span id="cb32-3"><a href="#cb32-3"></a>    <span class="kw">var</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>    <span class="fu">alert</span>(<span class="st">&quot;Em f1, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>}</span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="kw">function</span> <span class="fu">f2</span>() {</span>
+<span id="cb32-7"><a href="#cb32-7"></a>    <span class="fu">alert</span>(<span class="st">&quot;Em f2, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>}</span>
+<span id="cb32-9"><a href="#cb32-9"></a><span class="fu">f1</span>()<span class="op">;</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="fu">f2</span>()<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/escopoFuncao.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-escopo-de-bloco" class="slide section level1">
+<h1>Javascript: Escopo de Bloco</h1>
+<ul>
+<li>Atualmente, Javascript conta também com os <strong>escopos de blocos</strong>
+<ul>
+<li><strong>Chaves</strong> definiem um novo bloco.
+<ul>
+<li>Inclusive em estruturas de <strong>seleção</strong> e <strong>repetição</strong>.</li>
+</ul></li>
+<li>Variáveis declaradas com <code>let</code> percentem apenas ao escopo do bloco.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb33" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>{</span>
+<span id="cb33-3"><a href="#cb33-3"></a>    <span class="kw">let</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>    <span class="fu">alert</span>(<span class="st">&quot;Dentro do bloco, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a>}</span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="fu">alert</span>(<span class="st">&quot;Fora do bloco, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/escopoBloco.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+<ul>
+<li>Uso típico em repetições:</li>
+</ul>
+<div class="sourceCode" id="cb34" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">var</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="op">...</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb34-4"><a href="#cb34-4"></a>    <span class="op">...</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>}</span></code></pre></div>
+</div>
+<div id="javascript-const" class="slide section level1">
+<h1>Javascript: <code>const</code></h1>
+<ul>
+<li>Como <code>var</code> e <code>let</code>, a palavra-chave <code>const</code> permite declarar variáveis.</li>
+<li>Como <code>let</code>, variáveis declaradas com <code>const</code> são de escopo de bloco.</li>
+<li>Diferente das outras duas, <code>const</code> torna a variável <strong>somente-leitura</strong>.
+<ul>
+<li><em>i.e.</em>, não pode ser atribuída após a inicialização.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb35" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">const</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span>  <span class="co">// Resulta em erro!</span></span></code></pre></div>
+<iframe src="iframes/constErro.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+<div class="block centered">
+<div class="blocktitle">
+<p>Importante</p>
+</div>
+<ul>
+<li><code>const</code> torna a variável somente-leitura, mas não necessariamente imutável!</li>
+</ul>
+</div>
+</div>
+<div id="javascript-alterando-variável-declarada-com-const" class="slide section level1">
+<h1>Javascript: Alterando Variável Declarada com <code>const</code></h1>
+<div class="sourceCode" id="cb36" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">const</span> a <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Jaguar&quot;</span>]<span class="op">;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="kw">const</span> b <span class="op">=</span> {<span class="dt">prop1</span> <span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">prop2</span> <span class="op">:</span> <span class="dv">20</span>}<span class="op">;</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&quot;Honda&quot;</span><span class="op">;</span> <span class="co">// Sem em erro!</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>b<span class="op">.</span><span class="at">prop1</span> <span class="op">=</span> <span class="dv">50</span><span class="op">;</span> <span class="co">// Sem erro!</span></span>
+<span id="cb36-6"><a href="#cb36-6"></a>b[<span class="st">&quot;prop3&quot;</span>] <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> <span class="co">// Sem erro!</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(b)<span class="op">;</span></span>
+<span id="cb36-8"><a href="#cb36-8"></a>a <span class="op">=</span> []<span class="op">;</span> <span class="co">// Erro!</span></span></code></pre></div>
+<iframe src="iframes/constMutavel.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-temporizadores" class="slide section level1">
+<h1>Javascript: Temporizadores</h1>
+<ul>
+<li>Em alguns casos, queremos executar após um determinado tempo.</li>
+<li>Para isso, criamos um <strong>temporizador</strong>, associamos uma duração e uma <em>callback</em>.
+<ul>
+<li>Feito com a função <code>setTimeout()</code>.</li>
+<li>Retorna um objeto representando o temporizador.</li>
+</ul></li>
+<li>Podemos cancelar o temporizador criado usando a função <code>clearTimeout()</code>.</li>
+</ul>
+</div>
+<div id="javascript-exemplo-de-temporizador" class="slide section level1">
+<h1>Javascript: Exemplo de Temporizador</h1>
+<div class="sourceCode" id="cb37" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">var</span> timer<span class="op">;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="kw">var</span> vezes <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>timer <span class="op">=</span> <span class="pp">setTimeout</span>(timerCallback<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="kw">function</span> <span class="fu">timerCallback</span>() {</span>
+<span id="cb37-5"><a href="#cb37-5"></a>    <span class="fu">alert</span>(<span class="st">&quot;Vezes = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(<span class="op">++</span>vezes))<span class="op">;</span></span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="cf">if</span> (vezes <span class="op">==</span> <span class="dv">3</span>)</span>
+<span id="cb37-7"><a href="#cb37-7"></a>        <span class="pp">clearTimeout</span>(timer)<span class="op">;</span></span>
+<span id="cb37-8"><a href="#cb37-8"></a>    <span class="cf">else</span></span>
+<span id="cb37-9"><a href="#cb37-9"></a>        timer <span class="op">=</span> <span class="pp">setTimeout</span>(timerCallback<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
+<span id="cb37-10"><a href="#cb37-10"></a>}</span></code></pre></div>
+<iframe src="iframes/Temporizador.html" style="width: 100%; height: 50px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-parâmetros-por-valor-e-referência" class="slide section level1">
+<h1>Javascript: Parâmetros por Valor e Referência</h1>
+<ul>
+<li>Via de regra, parâmetros são passados por <strong>valor</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb38" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="kw">function</span> <span class="fu">f</span>(arg) {</span>
+<span id="cb38-3"><a href="#cb38-3"></a>    arg <span class="op">*=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a>    <span class="fu">alert</span>(<span class="st">&quot;Na função, arg = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(arg))<span class="op">;</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a>}</span>
+<span id="cb38-6"><a href="#cb38-6"></a><span class="fu">f</span>(a)<span class="op">;</span></span>
+<span id="cb38-7"><a href="#cb38-7"></a><span class="fu">alert</span>(<span class="st">&quot;Após a função, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/PassagemParametro.html" style="width: 100%; height: 35px; border: 0;">
+</iframe>
+<ul>
+<li>Entretanto, <strong>objetos</strong> e <strong>vetores</strong> são passados por <strong>referência</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb39" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw">var</span> a <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Jaguar&quot;</span>]<span class="op">;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="kw">var</span> b <span class="op">=</span> {<span class="dt">prop1</span> <span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">prop2</span> <span class="op">:</span> <span class="dv">20</span>}<span class="op">;</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="kw">function</span> <span class="fu">f</span>(arg1<span class="op">,</span> arg2) {</span>
+<span id="cb39-4"><a href="#cb39-4"></a>    arg1[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&quot;Opel&quot;</span><span class="op">;</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>    arg2<span class="op">.</span><span class="at">prop1</span> <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a>    <span class="fu">alert</span>(<span class="st">&quot;Na função, arg1[0] = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(arg1[<span class="dv">0</span>]))<span class="op">;</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>    <span class="fu">alert</span>(<span class="st">&quot;Na função, arg2.prop1 = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(arg2<span class="op">.</span><span class="at">prop1</span>))<span class="op">;</span></span>
+<span id="cb39-8"><a href="#cb39-8"></a>}</span>
+<span id="cb39-9"><a href="#cb39-9"></a><span class="fu">f</span>(a<span class="op">,</span>b)<span class="op">;</span></span>
+<span id="cb39-10"><a href="#cb39-10"></a><span class="fu">alert</span>(<span class="st">&quot;Após a  função, a[0] = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a[<span class="dv">0</span>]))<span class="op">;</span></span>
+<span id="cb39-11"><a href="#cb39-11"></a><span class="fu">alert</span>(<span class="st">&quot;Após a  função, b.prop1 = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(b<span class="op">.</span><span class="at">prop1</span>))<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/PassagemObjeto.html" style="width: 100%; height: 35px; border: 0;">
+</iframe>
+</div>
+<div id="javascript-parâmetros-com-valor-padrão" class="slide section level1">
+<h1>Javascript: Parâmetros com Valor Padrão</h1>
+<ul>
+<li>Em determinados casos, podemos querer definir uma função que pode ou não receber certos parâmetros.
+<ul>
+<li>Provê mais flexibilidade.</li>
+<li>Maior possibilidade de reutilização de código.</li>
+</ul></li>
+<li>Javascript <strong>não</strong> verifica os parâmetros na chamada de função.
+<ul>
+<li>Nem a <strong>quantidade</strong>, nem os <strong>tipos</strong>.</li>
+</ul></li>
+<li>Logo, nada impede simplesmente chamarmos a função sem um ou mais dos parâmetros.</li>
+<li>No entanto, nesse caso, valor do parâmetro não passado fica <strong>indefinido</strong>.</li>
+<li>Comumente, queremos um <strong>valor padrão</strong> nesses casos.</li>
+</ul>
+</div>
+<div id="javascript-parâmetros-com-valor-padrão-ii" class="slide section level1">
+<h1>Javascript: Parâmetros com Valor Padrão (II)</h1>
+<ul>
+<li>Duas alternativas:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="antes-do-ecmascript-2015">Antes do ECMAScript 2015</h4>
+<div class="sourceCode" id="cb40" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1"></a><span class="kw">function</span> <span class="fu">f</span>(a<span class="op">,</span> b) {</span>
+<span id="cb40-2"><a href="#cb40-2"></a></span>
+<span id="cb40-3"><a href="#cb40-3"></a>    <span class="cf">if</span> (b <span class="op">===</span> <span class="kw">undefined</span>) {</span>
+<span id="cb40-4"><a href="#cb40-4"></a>        b <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>    }</span>
+<span id="cb40-6"><a href="#cb40-6"></a>    <span class="op">...</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a>}</span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<h4 id="depois-do-ecmascript-2015">Depois do ECMAScript 2015</h4>
+<div class="sourceCode" id="cb41" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">function</span> <span class="fu">f</span>(a<span class="op">,</span> b <span class="op">=</span> <span class="dv">3</span>) {</span>
+<span id="cb41-2"><a href="#cb41-2"></a></span>
+<span id="cb41-3"><a href="#cb41-3"></a>    <span class="op">...</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a>}</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="javascript-funções-com-parâmetros-variáveis" class="slide section level1">
+<h1>Javascript: Funções com Parâmetros Variáveis</h1>
+<ul>
+<li>Javascript também permite a definição de funções que podem ser chamadas com um número arbitrário de parâmetros.
+<ul>
+<li>Parâmetros acessados pelo vetor <code>arguments</code>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb42" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">function</span> <span class="fu">somaArgs</span>() {</span>
+<span id="cb42-2"><a href="#cb42-2"></a>    <span class="kw">var</span> s <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a>    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">arguments</span><span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) s <span class="op">+=</span> <span class="kw">arguments</span>[i]<span class="op">;</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>    <span class="cf">return</span> s<span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a>}</span>
+<span id="cb42-6"><a href="#cb42-6"></a><span class="fu">alert</span>(<span class="fu">somaArgs</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">7</span>))<span class="op">;</span></span></code></pre></div>
+<iframe src="iframes/varArgs.html" style="width: 100%; height: 35px; border: 0;">
+</iframe>
+</div>
+<div id="exercícios-ii" class="slide section level1">
+<h1>Exercícios (II)</h1>
+<ol style="list-style-type: decimal">
+<li>Crie uma página web que contenha um código Javascript que calcule um vetor que contenha até o centésimo termo de Fibonacci.
+<ul>
+<li>Em seguida, obtenha do usuário (via <em>prompt</em>) um número N entre 0 e 100.</li>
+<li>Imprima (via <em>alert</em>) o valor do termo N na sequência.</li>
+</ul></li>
+<li>Crie dois objetos em Javascript distintos para representar um funcionário de uma empresa.
+<ul>
+<li>Inclua campos para o nome, apelido, ano do nascimento e salário.</li>
+<li>Inclua um método que calcule a idade do funcionário com base no ano atual (recebido como argumento) e no seu ano de nascimento.</li>
+<li>Imprima (via <em>alert</em>) o nome, apelido, idade e salário deste funcionário.</li>
+</ul></li>
+</ol>
+</div>
+<div id="javascript-voltando-aos-objetos" class="slide section level1">
+<h1>Javascript: Voltando aos Objetos</h1>
+<ul>
+<li>Já vimos como podemos criar <strong>objetos</strong> em Javascript.
+<ul>
+<li>Definimos cada atributo do objeto, um a um.</li>
+<li>Ou na inicialização, ou posteriormente.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb43" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<span id="cb43-2"><a href="#cb43-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>    <span class="dt">portas</span><span class="op">:</span> <span class="dv">4</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>}<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Nessa abordagem, se quisermos criar outro objeto carro, temos que <strong>manualmente</strong> definir cada propriedade novamente.</li>
+</ul>
+</div>
+<div id="javascript-classes" class="slide section level1">
+<h1>Javascript: Classes</h1>
+<ul>
+<li>Classes proveêm uma forma de criarmos um modelo/template para objetos.</li>
+<li>Uma vez definida a classe, podemos facilmente <strong>instanciar</strong> múltiplos objetos similares.</li>
+<li>Sintaxe geral:</li>
+</ul>
+<div class="sourceCode" id="cb44" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1"></a><span class="kw">class</span> NomeDaClasse {</span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">constructor</span>() { <span class="op">...</span> }</span>
+<span id="cb44-3"><a href="#cb44-3"></a>  <span class="fu">metodo_1</span>() { <span class="op">...</span> }</span>
+<span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">metodo_2</span>() { <span class="op">...</span> }</span>
+<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">metodo_3</span>() { <span class="op">...</span> }</span>
+<span id="cb44-6"><a href="#cb44-6"></a>}</span></code></pre></div>
+<ul>
+<li>Uma classe pode ser <strong>instanciada</strong> com o auxílio da palavra-chave <code>new</code>:</li>
+</ul>
+<div class="sourceCode" id="cb45" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="kw">new</span> <span class="fu">NomeDaClasse</span>()<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-construtores" class="slide section level1">
+<h1>Javascript: Construtores</h1>
+<ul>
+<li>Métodos são opcionais em classes, mas em geral é importante adicionar um <strong>construtor</strong>.</li>
+</ul>
+<div class="block centered">
+<div class="blocktitle">
+<p>Construtor</p>
+</div>
+<ul>
+<li>Método especial que:
+<ul>
+<li>É chamado quando um objeto da classe é instanciado.</li>
+<li>Recebe os argumentos passados na instanciação.</li>
+<li>Precisa ser nomeado <code>constructor</code>.</li>
+<li>É usado para inicializar propriedades do objeto.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="javascript-exemplo-de-uma-classe-carro" class="slide section level1">
+<h1>Javascript: Exemplo de uma Classe Carro</h1>
+<div class="sourceCode" id="cb46" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">class</span> Carro {</span>
+<span id="cb46-2"><a href="#cb46-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas) { </span>
+<span id="cb46-3"><a href="#cb46-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">=</span> fabricante<span class="op">;</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">ano</span> <span class="op">=</span> ano<span class="op">;</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">portas</span> <span class="op">=</span> portas<span class="op">;</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a>    }</span>
+<span id="cb46-8"><a href="#cb46-8"></a>    <span class="fu">log</span>() {</span>
+<span id="cb46-9"><a href="#cb46-9"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">+</span> <span class="st">&quot; fabricado em &quot;</span> <span class="op">+</span> <span class="fu">string</span>(<span class="kw">this</span><span class="op">.</span><span class="at">ano</span>))<span class="op">;</span></span>
+<span id="cb46-10"><a href="#cb46-10"></a>    } </span>
+<span id="cb46-11"><a href="#cb46-11"></a>}<span class="op">;</span></span>
+<span id="cb46-12"><a href="#cb46-12"></a></span>
+<span id="cb46-13"><a href="#cb46-13"></a><span class="kw">var</span> carro1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Carro</span>(<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span> <span class="dv">2015</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb46-14"><a href="#cb46-14"></a><span class="kw">var</span> carro2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Carro</span>(<span class="st">&quot;Jaguar&quot;</span><span class="op">,</span> <span class="st">&quot;S Type&quot;</span><span class="op">,</span> <span class="dv">2008</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb46-15"><a href="#cb46-15"></a>carro1<span class="op">.</span><span class="fu">log</span>()<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-herança" class="slide section level1">
+<h1>Javascript: Herança</h1>
+<ul>
+<li>É possível criar classes que são <strong>especializações</strong> de outras classes.
+<ul>
+<li>Herdam todas as propriedades/métodos.</li>
+<li>Mas podem estender/alterar certas características.</li>
+</ul></li>
+<li>Feito com a palavra-chave <code>extends</code>:</li>
+</ul>
+<div class="sourceCode" id="cb47" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">class</span> Carrinha <span class="kw">extends</span> Carro {</span>
+<span id="cb47-2"><a href="#cb47-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas<span class="op">,</span> lugares) { </span>
+<span id="cb47-3"><a href="#cb47-3"></a>        <span class="kw">super</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas)<span class="op">;</span> <span class="co">// Chama construtor da classe original</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">lugares</span> <span class="op">=</span> lugares<span class="op">;</span> <span class="co">// Complementa com uma nova propriedade</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a>    }</span>
+<span id="cb47-6"><a href="#cb47-6"></a>    <span class="fu">ocupacao</span>(passageiros) { <span class="co">// Complementada também com métodos novos</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>        <span class="cf">return</span> lugares <span class="op">-</span> passageiros<span class="op">;</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a>    } </span>
+<span id="cb47-9"><a href="#cb47-9"></a>}<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="javascript-métodos-estáticos" class="slide section level1">
+<h1>Javascript: Métodos Estáticos</h1>
+<ul>
+<li>Métodos associados a uma <strong>classe</strong>, mas não a uma instância.</li>
+</ul>
+<div class="sourceCode" id="cb48" style="font-size: 18px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">class</span> Carro {</span>
+<span id="cb48-2"><a href="#cb48-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas) { </span>
+<span id="cb48-3"><a href="#cb48-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">=</span> fabricante<span class="op">;</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">ano</span> <span class="op">=</span> ano<span class="op">;</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">portas</span> <span class="op">=</span> portas<span class="op">;</span></span>
+<span id="cb48-7"><a href="#cb48-7"></a>    }</span>
+<span id="cb48-8"><a href="#cb48-8"></a>    <span class="kw">static</span> <span class="fu">help</span>() {</span>
+<span id="cb48-9"><a href="#cb48-9"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Classe que define informações e comportamentos básicos de um carro.&quot;</span>)<span class="op">;</span></span>
+<span id="cb48-10"><a href="#cb48-10"></a>    } </span>
+<span id="cb48-11"><a href="#cb48-11"></a>}<span class="op">;</span></span>
+<span id="cb48-12"><a href="#cb48-12"></a></span>
+<span id="cb48-13"><a href="#cb48-13"></a><span class="kw">var</span> carro1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Carro</span>(<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span> <span class="dv">2015</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb48-14"><a href="#cb48-14"></a>Carro<span class="op">.</span><span class="fu">help</span>()<span class="op">;</span>   <span class="co">// Permitido</span></span>
+<span id="cb48-15"><a href="#cb48-15"></a>carro1<span class="op">.</span><span class="fu">help</span>()<span class="op">;</span> <span class="co">// Erro!</span></span></code></pre></div>
+</div>
+<div id="exercícios-iii" class="slide section level1">
+<h1>Exercícios (III)</h1>
+<ol style="list-style-type: decimal">
+<li>Crie uma classe em Javascript para representar um funcionário de uma empresa (similar ao Exercício II).
+<ul>
+<li>Inclua um método que calcule a idade do funcionário com base no ano atual (recebido como argumento) e no seu ano de nascimento.</li>
+</ul></li>
+<li>Crie (instancie) dois objetos distintos em Javascript utilizando a classe criada no item 1.
+<ul>
+<li>Mostre o nome, apelido, idade e salário do objeto criado.</li>
+</ul></li>
+</ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+        <script type="text/javascript">
+
+class Carro {
+	constructor(fabricante, modelo, ano, portas) { 
+		this.fabricante = fabricante;
+		this.modelo = modelo;
+		this.ano = ano;
+		this.portas = portas;
+	}
+	static help() {
+		console.log("Classe que define informações e comportamentos básicos de um carro.");
+	} 
+};
+
+var carro1 = new Carro("Fiat", "Punto", 2015, 4);
+Carro.help();	// Permitido
+//carro1.help(); // Erro!
+
+        </script>
+	</head>
+	<body>
+		<center>
+			<!--<input type="button" value="Executar" onclick="cb();"></input>-->
+		</center>
+	</body>
+</html>

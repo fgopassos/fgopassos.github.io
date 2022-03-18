@@ -1,0 +1,20 @@
+<html>
+	<head>
+        <script type="text/javascript">
+			var vezesCarregado = 0;
+            function carregaBotao() {
+				vezesCarregado++;
+				var el = document.getElementById("saida");
+				if (vezesCarregado == 1)
+					el.innerHTML = "Botão foi carregado 1 vez";
+				else
+					el.innerHTML = "Botão foi carregado " + String(vezesCarregado) +" vezes";
+			}
+        </script>
+	</head>
+	<body>
+		<h1>Vezes carregado</h1>
+		<p id="saida">Botão foi carregado 0 vezes</p>
+        <input type="button" value="Carregar" onclick="carregaBotao();"
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+	<head>
+        <script type="text/javascript">
+			function cb() {
+                const a = ["Fiat", "Jaguar"];
+                const b = {prop1 : 10, prop2 : 20};
+                a[0] = "Honda";	// Sem em erro!
+                console.log(a);
+                b.prop1 = 50; // Sem erro!
+                b["prop3"] = 100; // Sem erro!
+                console.log(b);
+                a = []; // Erro!
+            }
+        </script>
+	</head>
+	<body>
+		<center>
+			<input type="button" value="Executar (Modo Inspetor)" onclick="cb();"></input>
+		</center>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+	<head>
+        <script type="text/javascript">
+
+            var a = ["Fiat", "Jaguar"];
+            var b = {prop1 : 10, prop2 : 20};
+            function f(arg1, arg2) {
+                arg1[0] = "Opel";
+                arg2.prop1 = 30;
+                alert("Na função, arg1[0] = " + String(arg1[0]));
+                alert("Na função, arg2.prop1 = " + String(arg2.prop1));
+            }
+            
+            function cb() {
+                f(a,b);
+                alert("Após a  função, a[0] = " + String(a[0]));
+                alert("Após a  função, b.prop1 = " + String(b.prop1));
+            }
+        </script>
+	</head>
+	<body>
+		<center>
+			<input type="button" value="Executar" onclick="cb();"></input>
+		</center>
+	</body>
+</html>

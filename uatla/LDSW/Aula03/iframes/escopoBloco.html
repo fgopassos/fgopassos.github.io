@@ -1,0 +1,19 @@
+<html>
+	<head>
+        <script type="text/javascript">
+			function cb() {
+                var a = 1;
+                {
+                    let a = 5;
+                    alert("Dentro do bloco, a = " + String(a));
+                }
+                alert("Fora do bloco, a = " + String(a));
+            }
+        </script>
+	</head>
+	<body>
+		<center>
+			<input type="button" value="Executar" onclick="cb();"></input>
+		</center>
+	</body>
+</html>

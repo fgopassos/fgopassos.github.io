@@ -1,0 +1,21 @@
+<html>
+	<head>
+        <script type="text/javascript">
+
+            function somaArgs() {
+                var s = 0;
+                for (let i = 0; i < arguments.length; i++) s += arguments[i];
+                return s;
+            }
+            
+            function cb() {
+                alert(somaArgs(1, 5, 2, 7));
+            }
+        </script>
+	</head>
+	<body>
+		<center>
+			<input type="button" value="Executar" onclick="cb();"></input>
+		</center>
+	</body>
+</html>
