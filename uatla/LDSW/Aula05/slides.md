@@ -820,6 +820,7 @@ _Callback_
 # Exercício
 
 - Gere uma tabela dinâmica com jQuery.
+	- Permita que utilizador adicione e remova linhas.
 - Cada célula da tabela (exceto o título) deve ser editável.
 	- Use: `<td contenteditable="true">`
 - Inclua um botão que "salva" a tabela.
