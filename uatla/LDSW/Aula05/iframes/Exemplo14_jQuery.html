@@ -1,0 +1,26 @@
+<html>
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+		$(document).ready(function(){
+            $("#btn_rem").click(function(){
+                $("#removido").remove();
+            });
+            $("#btn_sub").click(function(){
+                //$("#substituido").text("Novo item"); // Apenas altera conteúdo
+                $("#substituido").replaceWith($("<li>").text("Novo item"));
+            });
+        });
+        </script>
+	</head>
+	<body>
+		<h1>Remoção e Substituição</h1>
+		<ul id="lista">
+            <li id="substituido">Item 1</li>
+            <li>Item 2</li>
+            <li id="removido">Item 3</li>
+        </ul>
+        <input id="btn_rem" type="button" value="Remove"></input>
+        <input id="btn_sub" type="button" value="Substitui"></input>
+	</body>
+</html>

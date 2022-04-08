@@ -1,0 +1,23 @@
+<html>
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+		$(document).ready(function(){
+            var elementosAdicionados = 0;
+            $("input[type=button]").click(function(){
+                var td = $("<td>").text("Texto célula " + String(++elementosAdicionados));
+                var nova_lin = $("<tr>").append(td);
+                td.after($("<td>").text("Texto célula " + String(++elementosAdicionados)));
+                $("#minhaTabela").append(nova_lin);
+            });
+        });
+        </script>
+	</head>
+	<body>
+		<h1>Tabela Dinâmica (II)</h1>
+		<table id="minhaTabela">
+            <tr><th>Col 1</th><th>Col 2</th></tr>
+        </table>
+        <input type="button" value="Nova linha ao final">
+	</body>
+</html>

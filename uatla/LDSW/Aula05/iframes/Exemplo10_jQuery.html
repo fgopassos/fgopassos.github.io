@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+        var vezesCarregado = 0;
+        $(document).ready(function(){
+			$("input").click(function(){
+				vezesCarregado++;
+				var texto = "Botão foi carregado ";
+				texto += (vezesCarregado == 1)? "1 vez" : String(vezesCarregado) + " vezes";
+				$("#saida").text(texto);
+			});
+        });
+        </script>
+    </head>
+    <body>
+        <h1>Vezes carregado</h1>
+        <p id="saida"> Botão foi carregado 0 vezes </p>
+        <input type="button" value="Carregar">
+    </body>
+</html>

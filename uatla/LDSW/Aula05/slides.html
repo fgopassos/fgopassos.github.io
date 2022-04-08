@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Fernanda Passos" />
-  <title>Javascript e Document Object Model</title>
+  <title>Javascript, Document Object Model e jQuery</title>
   <style type="text/css">
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -95,7 +95,7 @@
   <div class="informationHolder">
     <p class="institute">Atlântica - Instituto Universitário</p>
     <img class="logo" src="../atlantica_logo2.svg"></img>
-    <h1 class="title">Javascript e <em>Document Object Model</em></h1>
+    <h1 class="title">Javascript, <em>Document Object Model</em> e jQuery</h1>
     <p class="subtitle">GSC - Laboratório de Desenvolvimento de Sistemas Web</p>
     <p class="author">
 Fernanda Passos
@@ -291,15 +291,6 @@ Fernanda Passos
 </iframe>
 </div>
 </div>
-<div id="exercício-rápido-i" class="slide section level1">
-<h1>Exercício Rápido (I)</h1>
-<ol style="list-style-type: decimal">
-<li>Experimentos os códigos HTML + JS de ambos os slides anteriores.
-<ul>
-<li>Cada um é uma página HTML distinta (separada).</li>
-</ul></li>
-</ol>
-</div>
 <div id="javascript-e-dom-inserindo-novos-elementos" class="slide section level1">
 <h1>Javascript e DOM: Inserindo Novos Elementos</h1>
 <ul>
@@ -414,21 +405,6 @@ Fernanda Passos
 <iframe src="iframes/Exemplo13.html" style="width: 90%; height: 350px; background-color: white;">
 </iframe>
 </div>
-</div>
-<div id="exercício-iv" class="slide section level1">
-<h1>Exercício (IV)</h1>
-<ul>
-<li>Gere um ficheiro HTML com o exemplo do slide anterior.
-<ul>
-<li>Interaja com o botão e observe seu comportamento.</li>
-</ul></li>
-<li>Agora, edite seu ficheiro HTML e adicione dois campos de formulário com <em>id</em> formCol1 e formCol2, respectivamente.
-<ul>
-<li>Posicione-os lado a lado, entre a tabela e o botão.</li>
-<li>Use a tag <code>&lt;br&gt;</code> para quebrar a linha entre os elementos.</li>
-</ul></li>
-<li>Faça com que o valor preenchido de ambos os campos do formulário sejam incluídos como uma linha da tabela.</li>
-</ul>
 </div>
 <div id="javascript-e-dom-remoção-e-substituição" class="slide section level1">
 <h1>Javascript e DOM: Remoção e Substituição</h1>
@@ -632,16 +608,634 @@ Fernanda Passos
 </iframe>
 </div>
 </div>
-<div id="exercício-v" class="slide section level1">
-<h1>Exercício (V)</h1>
-<ol style="list-style-type: decimal">
-<li>Crie um ficheiro em HTML + JS que mostre imagens diferentes a cada 10 s.
+<div id="jquery" class="slide section level1 part">
+<h1 class="part">jQuery</h1>
+</div>
+<div id="biblioteca-jquery" class="slide section level1">
+<h1>Biblioteca jQuery</h1>
 <ul>
-<li>Baseie-se no slide anterior para isso e inclua botões para iniciar e parar.</li>
-<li>No JS, crie um vetor ou objeto para armazenar os caminhos das imagens.</li>
-<li>Use o campo <em>value</em> da caixa de texto do formulário para obter o seu conteúdo.</li>
+<li>Biblioteca de Javascript.</li>
+<li>Apresenta funcionalidades para:
+<ul>
+<li>Manipular elementos do DOM;</li>
+<li>Aplicar efeitos e animações ricos (já prontos) em elementos;</li>
+<li>Capturar eventos e configurar diversas ações sobre elementos;</li>
+<li>Trabalhar com Ajax (veremos futuramente);</li>
+<li>…</li>
 </ul></li>
-</ol>
+</ul>
+</div>
+<div id="inclusão-do-jquery" class="slide section level1">
+<h1>Inclusão do jQuery</h1>
+<ul>
+<li>Pode ser feito download em <a href="https://jquery.com">jQuery.com</a>
+<ul>
+<li>Extensão .js</li>
+</ul></li>
+<li>Através de uma ligação da biblioteca neste site:
+<ul>
+<li>https://code.jquery.com/jquery-3.6.0.min.js</li>
+</ul></li>
+<li>Através de uma ligação da biblioteca em um CDN, como o Google:
+<ul>
+<li>https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js</li>
+</ul></li>
+</ul>
+</div>
+<div id="inclusão-do-jquery-exemplos" class="slide section level1">
+<h1>Inclusão do jQuery: Exemplos</h1>
+<ul>
+<li>Incluir no mesmo diretório do html.</li>
+</ul>
+<div class="sourceCode" id="cb9" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>        <span class="co">&lt;!-- Fazer download em https://jquery.com --&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;jquery-3.6.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="kw">&lt;body&gt;</span> ...</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>Ligação no CDN do Google.</li>
+</ul>
+<div class="sourceCode" id="cb10" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="kw">&lt;body&gt;</span> ...</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</div>
+<div id="sintaxe-do-jquery" class="slide section level1">
+<h1>Sintaxe do jQuery</h1>
+<ul>
+<li>A sintaxe é baseada na seleção de elementos do DOM e ações associadas a ele.
+<ul>
+<li>$(seletor).acao()</li>
+</ul></li>
+<li>É necessário o $ ao início.</li>
+<li>Entre parênteses (obrigatório) fica o seletor.
+<ul>
+<li>Seleciona um elemento na forma de objeto.</li>
+</ul></li>
+<li>acao() é um método disponível ao elemento.</li>
+<li>Exemplos:
+<ul>
+<li><code>$("p").text("Texto do parágrafo")</code> - altera o texto dos parágrafos.</li>
+<li><code>$(".teste").text("Texto de teste.")</code> - altera o texto dos elementos que tem <code>class="teste"</code>.</li>
+<li><code>$(this).hide()</code> - esconde o elemento corrente.</li>
+</ul></li>
+</ul>
+</div>
+<div id="executar-comandos-jquery" class="slide section level1">
+<h1>Executar Comandos jQuery</h1>
+<ul>
+<li>Dentro de <code>&lt;script&gt; &lt;/script&gt;</code> do tipo Javascript.</li>
+<li>Necessário selecionar inicialmente o elemento raiz: <em>document</em>.
+<ul>
+<li>Ação <em>ready()</em> indica que página foi totalmente carregada.</li>
+<li>O argumento do método <em>ready()</em> é uma função (geralmente anónima).</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb11" style="font-size: 18px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb11-6"><a href="#cb11-6"></a>            <span class="co">// Comandos aqui</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>        })<span class="op">;</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>    <span class="kw">&lt;body&gt;</span> ...</span>
+<span id="cb11-11"><a href="#cb11-11"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</div>
+<div id="executar-comandos-jquery-exemplo" class="slide section level1">
+<h1>Executar Comandos jQuery: Exemplo</h1>
+<div class="sourceCode" id="cb12" style="font-size: 18px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb12-6"><a href="#cb12-6"></a>            <span class="fu">$</span>(<span class="st">&quot;h1&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb12-7"><a href="#cb12-7"></a>                <span class="fu">$</span>(<span class="kw">this</span>)<span class="op">.</span><span class="fu">hide</span>()<span class="op">;</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>            })<span class="op">;</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a>        })<span class="op">;</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a>        <span class="kw">&lt;h1&gt;</span>Carregue aqui para esconder<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 50%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo17_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="seletores-do-jquery" class="slide section level1">
+<h1>Seletores do jQuery</h1>
+<ul>
+<li>Baseados nos seletores do CSS.</li>
+</ul>
+<div class="center" style="font-size: 18px; line-height: 80%; width: 95%;">
+<table>
+<colgroup>
+<col width="9%" />
+<col width="27%" />
+<col width="22%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Seletor</th>
+<th>Seleção de elemento HTML por:</th>
+<th>Exemplo</th>
+<th>Descrição do exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Elemento</td>
+<td>Nome da tag.</td>
+<td><code>$("p")</code></td>
+<td>Seleciona todos os elementos <code>&lt;p&gt;</code>.</td>
+</tr>
+<tr class="even">
+<td>#id</td>
+<td>Valor do atributo id.</td>
+<td><code>$("#teste")</code></td>
+<td>Seleciona elemento de id teste.</td>
+</tr>
+<tr class="odd">
+<td>.class</td>
+<td>Valor do atributo class.</td>
+<td><code>$(".teste")</code></td>
+<td>Seleciona elementos de class="teste’.</td>
+</tr>
+<tr class="even">
+<td>[atr]</td>
+<td>Atributo atr.</td>
+<td><code>$("[href]")</code></td>
+<td>Seleciona todos elementos com atributo href.</td>
+</tr>
+<tr class="odd">
+<td>[atr=val]</td>
+<td>Atributo atr igual a val.</td>
+<td><code>$("a[target='_blank']")</code></td>
+<td>Seleciona todas as tags <code>&lt;a&gt;</code> com target=’_blank’.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Para mais, consultar: <a href="https://api.jquery.com/category/selectors/">https://api.jquery.com/category/selectors/</a></li>
+</ul>
+</div>
+<div id="ações-ou-eventos" class="slide section level1">
+<h1>Ações ou Eventos</h1>
+<div class="center" style="font-size: 20px; line-height: 80%; width: 95%;">
+<table>
+<thead>
+<tr class="header">
+<th>Rato</th>
+<th>Teclado</th>
+<th>Formulário</th>
+<th>Documento/Janela</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>click</td>
+<td>keypress</td>
+<td>submit</td>
+<td>load</td>
+</tr>
+<tr class="even">
+<td>dblclick</td>
+<td>keydown</td>
+<td>change</td>
+<td>resize</td>
+</tr>
+<tr class="odd">
+<td>mouseenter</td>
+<td>keyup</td>
+<td>focus</td>
+<td>scroll</td>
+</tr>
+<tr class="even">
+<td>mouseleave</td>
+<td></td>
+<td>blur</td>
+<td>unload</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb13" style="font-size: 18px;"><pre class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb13-2"><a href="#cb13-2"></a>            <span class="fu">$</span>(<span class="st">&quot;h1&quot;</span>)<span class="op">.</span><span class="fu">dblclick</span>(<span class="kw">function</span>(){</span>
+<span id="cb13-3"><a href="#cb13-3"></a>                <span class="fu">$</span>(<span class="kw">this</span>)<span class="op">.</span><span class="fu">hide</span>()<span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>            })<span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>        })<span class="op">;</span></span></code></pre></div>
+</div>
+<div id="exemplos-com-botões" class="slide section level1">
+<h1>Exemplos com Botões</h1>
+<div class="sourceCode" id="cb14" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>        <span class="kw">var</span> vezesCarregado <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb14-7"><a href="#cb14-7"></a>            <span class="fu">$</span>(<span class="st">&quot;input[value=&#39;Gerar alert()&#39;]&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb14-8"><a href="#cb14-8"></a>                <span class="fu">alert</span>(<span class="st">&quot;mensagem!&quot;</span>)<span class="op">;</span></span>
+<span id="cb14-9"><a href="#cb14-9"></a>            })<span class="op">;</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a>            <span class="fu">$</span>(<span class="st">&quot;input[value=&#39;Gerar console.log()&#39;]&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb14-11"><a href="#cb14-11"></a>                <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;mensagem!&quot;</span>)<span class="op">;</span></span>
+<span id="cb14-12"><a href="#cb14-12"></a>            })<span class="op">;</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a>        })<span class="op">;</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb14-15"><a href="#cb14-15"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb14-16"><a href="#cb14-16"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb14-17"><a href="#cb14-17"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Gerar alert()&quot;</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb14-18"><a href="#cb14-18"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Gerar console.log()&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb14-19"><a href="#cb14-19"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo8_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="manipular-elementos-do-dom-com-jquery" class="slide section level1">
+<h1>Manipular Elementos do DOM com jQuery</h1>
+<ul>
+<li>Métodos para obter e alterar elementos (get e set):
+<ul>
+<li><strong>text()</strong> - obtém ou altera texto do elemento selecionado.</li>
+<li><strong>html()</strong> - obtém ou altera conteúdo do elemento selecionado.</li>
+<li><strong>val()</strong> - obtém ou altera o valor de campos de um elemento de formulário selecionado.
+<ul>
+<li>elmentos que tem o atributo <em>value</em>.</li>
+</ul></li>
+<li><strong>css(propriedade)</strong> - obtém ou altera css do elemento selecionado.</li>
+<li><strong>attr()</strong> - obtém valores de atributos (apenas get).</li>
+</ul></li>
+<li>Para métodos de alteração do elemento (set), um parâmetro a mais é colocado.
+<ul>
+<li>O valor.</li>
+</ul></li>
+</ul>
+</div>
+<div id="manipular-elementos-do-dom-com-jquery-exemplos" class="slide section level1">
+<h1>Manipular Elementos do DOM com jQuery: Exemplos</h1>
+<ul>
+<li>Exemplo de get com text():
+<ul>
+<li><code>var texto = $("#idA").text();</code></li>
+<li>A variável <code>texto</code> terá o texto do elemento identificado por idA.</li>
+</ul></li>
+<li>Exemplo de set com text():
+<ul>
+<li><code>$("p").text("Texto do parágrafo");</code></li>
+</ul></li>
+<li>Exemplo de set com css():
+<ul>
+<li><code>$("p").css("color", "blue");</code></li>
+</ul></li>
+<li>Exemplo de get com atr():
+<ul>
+<li><code>var link = $("#a_id").attr("href");</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-contar-vezes-de-botão-carregado" class="slide section level1">
+<h1>Exemplo: Contar Vezes de Botão Carregado</h1>
+<div class="sourceCode" id="cb15" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>        <span class="kw">var</span> vezesCarregado <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb15-7"><a href="#cb15-7"></a>            <span class="fu">$</span>(<span class="st">&quot;input&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb15-8"><a href="#cb15-8"></a>                vezesCarregado<span class="op">++;</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>                <span class="kw">var</span> texto <span class="op">=</span> <span class="st">&quot;Botão foi carregado &quot;</span><span class="op">;</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>                texto <span class="op">+=</span> (vezesCarregado <span class="op">==</span> <span class="dv">1</span>)<span class="op">?</span> <span class="st">&quot;1 vez&quot;</span> <span class="op">:</span> <span class="bu">String</span>(vezesCarregado) <span class="op">+</span> <span class="st">&quot; vezes&quot;</span><span class="op">;</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>                <span class="fu">$</span>(<span class="st">&quot;#saida&quot;</span>)<span class="op">.</span><span class="fu">text</span>(texto)<span class="op">;</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>            })<span class="op">;</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>        })<span class="op">;</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a>        <span class="kw">&lt;h1&gt;</span>Vezes carregado<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a>        <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;saida&quot;</span><span class="kw">&gt;</span> Botão foi carregado 0 vezes <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb15-19"><a href="#cb15-19"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Carregar&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb15-21"><a href="#cb15-21"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo10_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exemplo-versão-2-contar-vezes-de-botão-carregado" class="slide section level1">
+<h1>Exemplo (versão 2): Contar Vezes de Botão Carregado</h1>
+<div class="sourceCode" id="cb16" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb16-6"><a href="#cb16-6"></a>            <span class="fu">$</span>(<span class="st">&quot;input&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb16-7"><a href="#cb16-7"></a>                <span class="fu">$</span>(<span class="st">&quot;#num&quot;</span>)<span class="op">.</span><span class="fu">text</span>(<span class="kw">function</span>(i<span class="op">,</span> num){</span>
+<span id="cb16-8"><a href="#cb16-8"></a>                    <span class="cf">if</span> (num <span class="op">==</span> <span class="st">&quot;0&quot;</span>) <span class="fu">$</span>(<span class="st">&quot;#unid&quot;</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;vez&quot;</span>)<span class="op">;</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>                    <span class="cf">else</span> <span class="fu">$</span>(<span class="st">&quot;#unid&quot;</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;vezes&quot;</span>)<span class="op">;</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>                    <span class="cf">return</span>(<span class="bu">Number</span>(num) <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a>                })<span class="op">;</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>            })<span class="op">;</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a>        })<span class="op">;</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb16-15"><a href="#cb16-15"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb16-16"><a href="#cb16-16"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a>        <span class="kw">&lt;h1&gt;</span>Vezes carregado<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb16-18"><a href="#cb16-18"></a>        <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;saida&quot;</span><span class="kw">&gt;</span>Botão foi carregado <span class="kw">&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;num&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;span</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;unid&quot;</span><span class="kw">&gt;</span>vezes<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb16-19"><a href="#cb16-19"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Carregar&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb16-20"><a href="#cb16-20"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb16-21"><a href="#cb16-21"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 45%; bottom: 220px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo10_jQuery_v2.html" style="width: 90%; height: 190px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exemplo-alterar-cor-de-texto" class="slide section level1">
+<h1>Exemplo: Alterar Cor de Texto</h1>
+<div class="sourceCode" id="cb17" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>        <span class="kw">var</span> indiceCor <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>        <span class="kw">const</span> cores <span class="op">=</span> [<span class="st">&quot;&quot;</span><span class="op">,</span> <span class="st">&quot;blue&quot;</span><span class="op">,</span> <span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="st">&quot;green&quot;</span><span class="op">,</span> <span class="st">&quot;orange&quot;</span>]<span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb17-8"><a href="#cb17-8"></a>            <span class="fu">$</span>(<span class="st">&quot;input[type=button]&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb17-9"><a href="#cb17-9"></a>                indiceCor <span class="op">=</span> (indiceCor <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> cores<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>                <span class="fu">$</span>(<span class="st">&quot;#meuElemento&quot;</span>)<span class="op">.</span><span class="fu">css</span>(<span class="st">&quot;color&quot;</span><span class="op">,</span> cores[indiceCor])<span class="op">;</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>            })<span class="op">;</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a>        })<span class="op">;</span></span>
+<span id="cb17-13"><a href="#cb17-13"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a>        <span class="kw">&lt;h1&gt;</span>Mudança de cor<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb17-17"><a href="#cb17-17"></a>        <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;meuElemento&quot;</span><span class="kw">&gt;</span>Um texto qualquer<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb17-18"><a href="#cb17-18"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Alterar cor&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb17-19"><a href="#cb17-19"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb17-20"><a href="#cb17-20"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo11_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="inserir-e-remover-conteúdos-com-jquery" class="slide section level1">
+<h1>Inserir e Remover Conteúdos com jQuery</h1>
+<ul>
+<li>Para inserir:
+<ul>
+<li><strong>append()</strong> - insere conteúdo ao final dos elementos selecionados.</li>
+<li><strong>prepend()</strong> - insere conteúdo ao início dos elementos selecionados.</li>
+<li><strong>after()</strong> - insere conteúdo após os elementos selecionados.</li>
+<li><strong>before()</strong> - insere conteúdo antes dos elementos selecionados.</li>
+</ul></li>
+<li>Para remover:
+<ul>
+<li><strong>remove()</strong> - remove os elementos selecionados e seus filhos.</li>
+<li><strong>empty()</strong> - remove os filhos dos elementos selecionados.
+<ul>
+<li>Descendentes dos filhos também são removidos.</li>
+</ul></li>
+</ul></li>
+<li>Para substituir:
+<ul>
+<li><strong>replaceWith()</strong> - substitui elementos selecionados por outro (em argumento).</li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-tabela-dinâmica" class="slide section level1">
+<h1>Exemplo: Tabela Dinâmica</h1>
+<div class="sourceCode" id="cb18" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>        <span class="co">// Exemplo de tabela estática em JSON:</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>        <span class="kw">const</span> tabDados <span class="op">=</span> {<span class="st">&quot;Título 1&quot;</span><span class="op">:</span> [</span>
+<span id="cb18-7"><a href="#cb18-7"></a>             {<span class="st">&quot;Col 1&quot;</span> <span class="op">:</span> <span class="st">&quot;Dado 1&quot;</span><span class="op">,</span> <span class="st">&quot;Col 2&quot;</span><span class="op">:</span> <span class="st">&quot;Dado 2&quot;</span><span class="op">,</span> <span class="st">&quot;Col 3&quot;</span> <span class="op">:</span> <span class="st">&quot;Dado 3&quot;</span>}<span class="op">,</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>             {<span class="st">&quot;Col 1&quot;</span> <span class="op">:</span> <span class="st">&quot;Dado 4&quot;</span><span class="op">,</span> <span class="st">&quot;Col 2&quot;</span><span class="op">:</span> <span class="st">&quot;Dado 5&quot;</span><span class="op">,</span> <span class="st">&quot;Col 3&quot;</span> <span class="op">:</span> <span class="st">&quot;Dado 6&quot;</span>}]}<span class="op">;</span> </span>
+<span id="cb18-9"><a href="#cb18-9"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb18-10"><a href="#cb18-10"></a>            <span class="fu">$</span>(<span class="st">&quot;input[type=button]&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb18-11"><a href="#cb18-11"></a>                <span class="kw">var</span> tabela <span class="op">=</span> <span class="fu">$</span>(<span class="st">&quot;&lt;table&gt;&quot;</span>)<span class="op">;</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a>                <span class="co">// Incluir cabeçalho</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a>                <span class="kw">var</span> cab <span class="op">=</span> <span class="fu">$</span>(<span class="st">&quot;&lt;tr&gt;&quot;</span>)<span class="op">;</span></span>
+<span id="cb18-14"><a href="#cb18-14"></a>                <span class="cf">for</span> (<span class="kw">let</span> j <span class="kw">in</span> tabDados[<span class="st">&quot;Título 1&quot;</span>][<span class="dv">0</span>])</span>
+<span id="cb18-15"><a href="#cb18-15"></a>                    cab<span class="op">.</span><span class="fu">append</span>(<span class="fu">$</span>(<span class="st">&quot;&lt;th&gt;&quot;</span>)<span class="op">.</span><span class="fu">append</span>(j))<span class="op">;</span></span>
+<span id="cb18-16"><a href="#cb18-16"></a>                tabela<span class="op">.</span><span class="fu">append</span>(cab)<span class="op">;</span></span>
+<span id="cb18-17"><a href="#cb18-17"></a>                <span class="co">// Incluir outras linhas</span></span>
+<span id="cb18-18"><a href="#cb18-18"></a>                <span class="cf">for</span> (<span class="kw">let</span> i <span class="kw">of</span> tabDados[<span class="st">&quot;Título 1&quot;</span>]){</span>
+<span id="cb18-19"><a href="#cb18-19"></a>                    <span class="kw">var</span> lin <span class="op">=</span> <span class="fu">$</span>(<span class="st">&quot;&lt;tr&gt;&quot;</span>)<span class="op">;</span></span>
+<span id="cb18-20"><a href="#cb18-20"></a>                    <span class="cf">for</span> (<span class="kw">let</span> j <span class="kw">in</span> i)</span>
+<span id="cb18-21"><a href="#cb18-21"></a>                        lin<span class="op">.</span><span class="fu">append</span>(<span class="fu">$</span>(<span class="st">&quot;&lt;td&gt;&quot;</span>)<span class="op">.</span><span class="fu">append</span>(i[j]))<span class="op">;</span></span>
+<span id="cb18-22"><a href="#cb18-22"></a>                    tabela<span class="op">.</span><span class="fu">append</span>(lin)<span class="op">;</span></span>
+<span id="cb18-23"><a href="#cb18-23"></a>                }</span>
+<span id="cb18-24"><a href="#cb18-24"></a>                <span class="fu">$</span>(<span class="st">&quot;#meuDiv&quot;</span>)<span class="op">.</span><span class="fu">append</span>(tabela)<span class="op">;</span></span>
+<span id="cb18-25"><a href="#cb18-25"></a>            })<span class="op">;</span></span>
+<span id="cb18-26"><a href="#cb18-26"></a>        })<span class="op">;</span></span>
+<span id="cb18-27"><a href="#cb18-27"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb18-28"><a href="#cb18-28"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb18-29"><a href="#cb18-29"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb18-30"><a href="#cb18-30"></a>        <span class="kw">&lt;h1&gt;</span>Tabela Dinâmica<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb18-31"><a href="#cb18-31"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Adiciona Tabela&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb18-32"><a href="#cb18-32"></a>        <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;meuDiv&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb18-33"><a href="#cb18-33"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb18-34"><a href="#cb18-34"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 45%; bottom: 110px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo12_jQuery.html" style="width: 90%; height: 300px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exemplo-tabela-dinâmica-ii" class="slide section level1">
+<h1>Exemplo: Tabela Dinâmica (II)</h1>
+<div class="sourceCode" id="cb19" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb19-6"><a href="#cb19-6"></a>            <span class="kw">var</span> elementosAdicionados <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>            <span class="fu">$</span>(<span class="st">&quot;input[type=button]&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb19-8"><a href="#cb19-8"></a>                <span class="kw">var</span> td <span class="op">=</span> <span class="fu">$</span>(<span class="st">&quot;&lt;td&gt;&quot;</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;Texto célula &quot;</span> <span class="op">+</span> <span class="bu">String</span>(<span class="op">++</span>elementosAdicionados))<span class="op">;</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a>                <span class="kw">var</span> nova_lin <span class="op">=</span> <span class="fu">$</span>(<span class="st">&quot;&lt;tr&gt;&quot;</span>)<span class="op">.</span><span class="fu">append</span>(td)<span class="op">;</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>                td<span class="op">.</span><span class="fu">after</span>(<span class="fu">$</span>(<span class="st">&quot;&lt;td&gt;&quot;</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;Texto célula &quot;</span> <span class="op">+</span> <span class="bu">String</span>(<span class="op">++</span>elementosAdicionados)))<span class="op">;</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a>                <span class="fu">$</span>(<span class="st">&quot;#minhaTabela&quot;</span>)<span class="op">.</span><span class="fu">append</span>(nova_lin)<span class="op">;</span></span>
+<span id="cb19-12"><a href="#cb19-12"></a>            })<span class="op">;</span></span>
+<span id="cb19-13"><a href="#cb19-13"></a>        })<span class="op">;</span></span>
+<span id="cb19-14"><a href="#cb19-14"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb19-15"><a href="#cb19-15"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb19-16"><a href="#cb19-16"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb19-17"><a href="#cb19-17"></a>        <span class="kw">&lt;h1&gt;</span>Tabela Dinâmica (II)<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb19-18"><a href="#cb19-18"></a>        <span class="kw">&lt;table</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;minhaTabela&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb19-19"><a href="#cb19-19"></a>            <span class="kw">&lt;tr&gt;&lt;th&gt;</span>Col 1<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Col 2<span class="kw">&lt;/th&gt;&lt;/tr&gt;</span></span>
+<span id="cb19-20"><a href="#cb19-20"></a>        <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb19-21"><a href="#cb19-21"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Nova linha ao final&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb19-22"><a href="#cb19-22"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb19-23"><a href="#cb19-23"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo13_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exemplo-remoção-e-substituição-de-elementos" class="slide section level1">
+<h1>Exemplo: Remoção e Substituição de Elementos</h1>
+<div class="sourceCode" id="cb20" style="font-size: 17px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>        <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>        <span class="fu">$</span>(<span class="bu">document</span>)<span class="op">.</span><span class="fu">ready</span>(<span class="kw">function</span>(){</span>
+<span id="cb20-6"><a href="#cb20-6"></a>            <span class="fu">$</span>(<span class="st">&quot;#btn_rem&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb20-7"><a href="#cb20-7"></a>                <span class="fu">$</span>(<span class="st">&quot;#removido&quot;</span>)<span class="op">.</span><span class="fu">remove</span>()<span class="op">;</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a>            })<span class="op">;</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a>            <span class="fu">$</span>(<span class="st">&quot;#btn_sub&quot;</span>)<span class="op">.</span><span class="fu">click</span>(<span class="kw">function</span>(){</span>
+<span id="cb20-10"><a href="#cb20-10"></a>                <span class="co">//$(&quot;#substituido&quot;).text(&quot;Novo item&quot;); // Apenas altera conteúdo</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a>                <span class="fu">$</span>(<span class="st">&quot;#substituido&quot;</span>)<span class="op">.</span><span class="fu">replaceWith</span>(<span class="fu">$</span>(<span class="st">&quot;&lt;li&gt;&quot;</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;Novo item&quot;</span>))<span class="op">;</span></span>
+<span id="cb20-12"><a href="#cb20-12"></a>            })<span class="op">;</span></span>
+<span id="cb20-13"><a href="#cb20-13"></a>        })<span class="op">;</span></span>
+<span id="cb20-14"><a href="#cb20-14"></a>        <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb20-15"><a href="#cb20-15"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb20-16"><a href="#cb20-16"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a>        <span class="kw">&lt;h1&gt;</span>Remoção e Substituição<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb20-18"><a href="#cb20-18"></a>        <span class="kw">&lt;ul</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;lista&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb20-19"><a href="#cb20-19"></a>            <span class="kw">&lt;li</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;substituido&quot;</span><span class="kw">&gt;</span>Item 1<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb20-20"><a href="#cb20-20"></a>            <span class="kw">&lt;li&gt;</span>Item 2<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb20-21"><a href="#cb20-21"></a>            <span class="kw">&lt;li</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;removido&quot;</span><span class="kw">&gt;</span>Item 3<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb20-22"><a href="#cb20-22"></a>        <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb20-23"><a href="#cb20-23"></a>        <span class="kw">&lt;input</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;btn_rem&quot;</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Remove&quot;</span><span class="kw">&gt;&lt;/input&gt;</span></span>
+<span id="cb20-24"><a href="#cb20-24"></a>        <span class="kw">&lt;input</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;btn_sub&quot;</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;button&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Substitui&quot;</span><span class="kw">&gt;&lt;/input&gt;</span></span>
+<span id="cb20-25"><a href="#cb20-25"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb20-26"><a href="#cb20-26"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;">
+<iframe src="iframes/Exemplo14_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+</iframe>
+</div>
+</div>
+<div id="exercício" class="slide section level1">
+<h1>Exercício</h1>
+<ul>
+<li>Gere uma tabela dinâmica com jQuery.</li>
+<li>Cada célula da tabela (exceto o título) deve ser editável.
+<ul>
+<li>Use: <code>&lt;td contenteditable="true"&gt;</code></li>
+</ul></li>
+<li>Inclua um botão que “salva” a tabela.</li>
+<li>Salvar significa guardar seu conteúdo em um objeto Javascript.
+<ul>
+<li>Futuramente pode ser usado para enviar dados da tabela para o servidor.</li>
+</ul></li>
+</ul>
+</div>
+<div id="percorrer-árvore-do-dom-com-jquery" class="slide section level1">
+<h1>Percorrer Árvore do DOM com jQuery</h1>
+<ul>
+<li>Existem funções ascendentes:
+<ul>
+<li>parent(): seleciona o elemento pai de um elemento.</li>
+<li>parents(): seleciona todos os elementos pais de um elemento.
+<ul>
+<li>Vai até a raiz <code>&lt;html&gt; &lt;/html&gt;</code>.</li>
+</ul></li>
+<li>parentsUntil(“xxx”): seleciona todos os elementos pais de um elemento até o elemento “xxx”.
+<ul>
+<li>“xxx” é um filtro.</li>
+</ul></li>
+</ul></li>
+<li>Existem funções descententes:
+<ul>
+<li>children(): seleciona todos os filhos diretos de um elemento.
+<ul>
+<li>Vai até 1 nível apenas.</li>
+</ul></li>
+<li>children(“xxx”): o mesmo que o anterior, mas “xxx” é filtro.</li>
+<li>find(“xxx”): seleciona todos os filhos de um elemento com o filtro “xxx”.
+<ul>
+<li>Procura em todos os níveis descendentes.</li>
+<li>"*" é o filtro para selecionar todos os filhos.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="exercícios-sobre-funções-ascendentes-de-descendentes" class="slide section level1">
+<h1>Exercícios sobre Funções Ascendentes de Descendentes</h1>
+<ul>
+<li>Aceda <a href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_parent">https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_parent</a>
+<ul>
+<li>Analise o HTML e jQuery.</li>
+</ul></li>
+<li>Na função do jQuery, a partir do HTML original:
+<ul>
+<li>Experimente trocar parent() para parents().</li>
+<li>Experimente trocar parent() para parentsUntil(“div”).</li>
+<li>Experimente trocar parent() para parentsUntil(“div.ancestors”).</li>
+<li>Experimente trocar seletor “span” para “div” e parent() para children().</li>
+<li>Experimente trocar seletor “span” para “div” e parent() para find(“span”).</li>
+<li>Experimente trocar seletor “span” para “div” e parent() para find("*").</li>
+</ul></li>
+</ul>
+</div>
+<div id="efeitos-jquery" class="slide section level1">
+<h1>Efeitos jQuery</h1>
+<ul>
+<li>A maioria dos efeitos jQuery tem a seguinte sintaxe:
+<ul>
+<li><code>$(seletor).efeito([velocidade [, callback]]);</code></li>
+<li>velocidade (facultativo): velocidade que ocorre o efeito.
+<ul>
+<li>Pode ser “slow”, “fast” e valores numéricos em milissegundos.</li>
+</ul></li>
+<li>callback (facultativo): função que será chamada quando o efeito terminar.</li>
+</ul></li>
+<li>Alguns efeitos são:
+<ul>
+<li>Esconder/mostrar:
+<ul>
+<li><strong>hide()</strong>: esconder.</li>
+<li><strong>show()</strong>: mostrar.</li>
+<li><strong>toggle()</strong>: alterna/comuta entre hide() e show().</li>
+</ul></li>
+<li>Sliding (deslizar):
+<ul>
+<li><strong>slideDown()</strong>: deslizar para baixo.</li>
+<li><strong>slideUp()</strong>: deslizar para cima.</li>
+<li><strong>slideToggle()</strong>: alterna/comuta entre slideUp() e slideDown().</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="mais-efeitos-jquery" class="slide section level1">
+<h1>Mais Efeitos jQuery</h1>
+<ul>
+<li>Fade (aparecer e desaparecer):
+<ul>
+<li><strong>fadeIn()</strong>: aparecer um elemento escondido.</li>
+<li><strong>fadeOut()</strong>: desaparecer.</li>
+<li><strong>fadeToggle()</strong>: alterna/comuta entre fadeIn() e fadeOut().</li>
+<li><strong>fadeTo()</strong>: desaparece até um dado nível de opacidade (entre 0 e 1).
+<ul>
+<li><code>$(seletor).fadeTo(velocidade, opacidade[, callback]);</code></li>
+<li>Velocidade e opacidade são obrigatórios.</li>
+</ul></li>
+</ul></li>
+<li>Animate (animação): cria animações customizadas.
+<ul>
+<li><code>$(selector).animate(propriedades[,velocidade,callback]);</code></li>
+<li>propriedades (obrigatório): atributo e valor CSS entre { }.</li>
+<li>Apenas propriedades numéricas podem ser animadas.
+<ul>
+<li>width/height, left/right, fontSize, opacity, …</li>
+</ul></li>
+</ul></li>
+</ul>
 </div>
 </body>
 </html>

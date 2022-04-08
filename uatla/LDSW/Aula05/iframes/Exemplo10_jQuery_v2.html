@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+			$("input").click(function(){
+                $("#num").text(function(i, num){
+					if (num == "0") $("#unid").text("vez");
+					else $("#unid").text("vezes");
+					return(Number(num) + 1);
+				});
+			});
+        });
+        </script>
+    </head>
+    <body>
+        <h1>Vezes carregado</h1>
+        <p id="saida">Botão foi carregado <span id="num">0</span> <span id="unid">vezes</span> </p>
+        <input type="button" value="Carregar">
+    </body>
+</html>

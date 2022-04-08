@@ -1,0 +1,34 @@
+<html>
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+		// Exemplo de tabela estática em JSON:
+		const tabDados = {"Título 1": [
+			 {"Col 1" : "Dado 1", "Col 2": "Dado 2", "Col 3" : "Dado 3"},
+			 {"Col 1" : "Dado 4", "Col 2": "Dado 5", "Col 3" : "Dado 6"}]};	
+		$(document).ready(function(){
+			$("input[type=button]").click(function(){
+				var tabela = $("<table>");
+				// Incluir cabeçalho
+				var cab = $("<tr>");
+				for (let j in tabDados["Título 1"][0])
+					cab.append($("<th>").append(j));
+				tabela.append(cab);
+				// Incluir outras linhas
+				for (let i of tabDados["Título 1"]){
+					var lin = $("<tr>");
+					for (let j in i)
+						lin.append($("<td>").append(i[j]));
+					tabela.append(lin);
+				}
+				$("#meuDiv").append(tabela);
+			});
+        });
+        </script>
+	</head>
+	<body>
+		<h1>Tabela Dinâmica</h1>
+        <input type="button" value="Adiciona Tabela">
+		<div id="meuDiv"></div>
+	</body>
+</html>

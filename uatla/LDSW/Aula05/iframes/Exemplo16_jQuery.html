@@ -1,0 +1,31 @@
+<html>
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+		$(document).ready(function(){
+            var cores = ["", "red"];
+            var ind_cores = 0;
+            var timer;
+            function timerCallback() {
+                ind_cores = (ind_cores + 1) % cores.length;
+                $("#titulo").css("color", cores[ind_cores]);
+                timer = setTimeout(timerCallback, 1000);
+            }
+            $("#btn").click(function(){
+                if(this.value == "Iniciar"){
+                    this.value = "Parar";
+                    timer = setTimeout(timerCallback, 1000);
+                }
+                else{
+                    this.value = "Iniciar";
+                    clearTimeout(timer);
+                }
+            });
+        });
+        </script>
+	</head>
+	<body>
+		<h1 id="titulo">Temporizador</h1>
+        <input id="btn" type="button" value="Iniciar"></input>
+	</body>
+</html>

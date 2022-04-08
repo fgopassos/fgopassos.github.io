@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+        var vezesCarregado = 0;
+        $(document).ready(function(){
+			$("input[value='Gerar alert()']").click(function(){
+				alert("mensagem!");
+			});
+			$("input[value='Gerar console.log()']").click(function(){
+				console.log("mensagem!");
+			});
+        });
+        </script>
+	</head>
+	<body>
+		<input type="button" value="Gerar alert()"><br><br>
+		<input type="button" value="Gerar console.log()">
+	</body>
+</html>
