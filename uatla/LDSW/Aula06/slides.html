@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Flask</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Atlântica - Instituto Universitário</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Flask</h1>
+    <p class="subtitle">GSC - Laboratório de Desenvolvimento de Sistemas Web</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+  </div>
+</div>
+<div id="flask" class="slide section level1 part">
+<h1 class="part">Flask</h1>
+</div>
+<div id="flask-introdução" class="slide section level1">
+<h1>Flask: Introdução</h1>
+<ul>
+<li><strong>O que é?</strong>
+<ul>
+<li><em>Framework</em> em Python que permite implementação de <em>web services</em>.</li>
+</ul></li>
+<li><strong>O que provê?</strong>
+<ul>
+<li>Um Web Server Gateway Interface (WSGI).</li>
+<li>Uma <em>template engine</em>.</li>
+<li>Funcionalidades para lidar de forma segura com <em>strings</em> recebidas do utilizador.</li>
+<li>…</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-wsgi" class="slide section level1">
+<h1>Flask: WSGI</h1>
+<div class="center">
+<p><img src="imagens/WSGI.svg" style="width:40.0%" /></p>
+</div>
+<ul>
+<li>Conjunto de convenções para <strong>encaminhamento de requisições</strong> de servidores web para aplicações web.</li>
+<li>Aplicações expõem funcionalidades que podem ser chamadas pelo servidor web.</li>
+<li>Funcionalidades são mapeadas para <strong>recursos</strong> web.
+<ul>
+<li><em>i.e.</em>, objetos HTTP.</li>
+</ul></li>
+<li>Ao <strong>receber requisição</strong>, servidor determina funcionalidade associada e <strong>chama a função</strong> da aplicação.</li>
+</ul>
+</div>
+<div id="flask-template-engine" class="slide section level1">
+<h1>Flask: <em>Template Engine</em></h1>
+<ul>
+<li>Flask usa o conceito de <em>templates</em>.
+<ul>
+<li>Modelos de resposta que podem ser personalizados.</li>
+<li>Em geral, páginas <em>web</em> com elementos pontuais que podem ser substituídos.</li>
+<li><em>e.g.</em>, um elemento da página que apresenta o nome do utilizador.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-ideia-geral" class="slide section level1">
+<h1>Flask: Ideia Geral</h1>
+<ul>
+<li>Aplicação desenvolvida em Flask contém funções de <em>backend</em>.</li>
+<li>Uma ou mais funções são <strong>mapeadas</strong> para URLs de um servidor web.</li>
+<li>Ao fazer uma requisição para a URL, cliente na verdade executa a função.</li>
+<li>Função retorna uma resposta ao cliente.
+<ul>
+<li>Em alguns casos, uma página HTML.</li>
+<li>Em outros dados brutos em algum formato utilizados pelo <em>frontend</em>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-hello-world" class="slide section level1">
+<h1>Flask: <em>Hello World</em></h1>
+<div class="sourceCode" id="cb1" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask     <span class="co"># Importa-se a biblioteca do Flask</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)       <span class="co"># Cria-se uma &quot;Aplicação Flask&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)             <span class="co"># O decorator app.route() associa a função ao caminho &quot;/&quot; no servidor</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> hello():</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="cf">return</span> <span class="st">&quot;Hello World&quot;</span>    <span class="co"># Valor retornado é simplesmente uma string enviada como (corpo) da resposta HTTP.</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<ul>
+<li>O que faz?
+<ol style="list-style-type: decimal">
+<li>Cria uma função (a <code>hello()</code>) que sempre retorna <code>"Hello World"</code></li>
+<li>Associa essa função ao caminho/objeto <code>/</code> no servidor web.
+<ul>
+<li>Sempre que cliente requisita o caminho <code>/</code>, <code>hello()</code> é executada, retornando a <em>string</em> ao cliente.</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+<div id="flask-instalação" class="slide section level1">
+<h1>Flask: Instalação</h1>
+<ul>
+<li>Como qualquer biblioteca/componente Python, Flask pode ser instalado via pip/pip3:</li>
+</ul>
+<div class="sourceCode" id="cb2" style="font-size: 20px;"><pre class="sourceCode numberSource Bash numberLines"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">pip</span> install flask</span></code></pre></div>
+<ul>
+<li>No VS Code:
+<ul>
+<li><a href="https://code.visualstudio.com/docs/python/tutorial-flask#_create-a-project-environment-for-the-flask-tutorial" class="uri">https://code.visualstudio.com/docs/python/tutorial-flask#_create-a-project-environment-for-the-flask-tutorial</a></li>
+</ul></li>
+<li>No PyCharm:
+<ul>
+<li><a href="https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html#packages-tool-window" class="uri">https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html#packages-tool-window</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-execução" class="slide section level1">
+<h1>Flask: Execução</h1>
+<ul>
+<li>Uma vez instalado, <em>scripts</em> Python usando Flask podem ser executados normalmente:</li>
+</ul>
+<div class="sourceCode" id="cb3" style="font-size: 18px;"><pre class="sourceCode numberSource Text numberLines"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a># python HelloWorld.py</span>
+<span id="cb3-2"><a href="#cb3-2"></a> * Serving Flask app &#39;HelloWorld&#39; (lazy loading)</span>
+<span id="cb3-3"><a href="#cb3-3"></a> * Environment: production</span>
+<span id="cb3-4"><a href="#cb3-4"></a>   WARNING: This is a development server. Do not use it in a production deployment.</span>
+<span id="cb3-5"><a href="#cb3-5"></a>   Use a production WSGI server instead.</span>
+<span id="cb3-6"><a href="#cb3-6"></a> * Debug mode: off</span>
+<span id="cb3-7"><a href="#cb3-7"></a> * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</span></code></pre></div>
+<ul>
+<li>Observe as várias mensagens impressas no terminal:
+<ol style="list-style-type: decimal">
+<li>Executado dessa forma, o Flask cria automaticamente um servidor web.</li>
+<li>Por padrão, servidor ouve na porta 5000 e <strong>apenas conexões locais</strong>.
+<ul>
+<li>Para testes!</li>
+<li>Há servidores WSGI para <strong>ambientes de produção</strong>.</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+<div id="flask-alterando-a-porta-do-servidor" class="slide section level1">
+<h1>Flask: Alterando a Porta do Servidor</h1>
+<ul>
+<li>Se necessário, pode-se executar o servidor web do Flask em outra porta.</li>
+<li>Duas alternativas:
+<ol style="list-style-type: decimal">
+<li>Alterando o código:
+<ul>
+<li>Passar a porta desejada como argumento do método <code>app.run()</code>.</li>
+<li>Exemplo: <code>app.run(debug=False, port=6000)</code></li>
+</ul></li>
+<li>Executando a aplicação com o comando <code>flask</code>:
+<ul>
+<li>Renomeie o <code>script</code> para <code>app.py</code>.</li>
+<li>Executar o comando <code>flask run</code> com o parâmetro <code>--port</code>.</li>
+<li>Exemplo: <code>flask run --port 6000</code></li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+<div id="flask-permitindo-conexões-de-fora-do-host-local" class="slide section level1">
+<h1>Flask: Permitindo Conexões de Fora do <em>Host</em> Local</h1>
+<ul>
+<li>Pode ser feito com:
+<ul>
+<li>O parâmetro <code>host</code> do método <code>app.run()</code>.
+<ul>
+<li>Exemplo: <code>app.run(debug=False, host=0.0.0.0)</code></li>
+</ul></li>
+<li>O argumento <code>--host</code> do comando <code>flask</code>:
+<ul>
+<li>Exemplo: <code>flask run --host 0.0.0.0</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-aceder-ao-servidor" class="slide section level1">
+<h1>Flask: Aceder ao Servidor</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img src="imagens/HelloWorldOutput.png" style="width:100.0%" /></p>
+</div><div class="column" style="width:40%;">
+<p><br> <br></p>
+<ul>
+<li>Note:
+<ul>
+<li><em>Browser</em> faz um <code>GET</code> em <code>/</code>.</li>
+<li><em>Browser</em> mostra <em>string</em> retornada pela função.
+<ul>
+<li><strong>Não é um código HTML</strong>, apenas a <em>string</em>.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="flask-definindo-múltiplos-recursos-i" class="slide section level1">
+<h1>Flask: Definindo Múltiplos Recursos (I)</h1>
+<ul>
+<li>Uma aplicação Flask pode expor tantas funções quanto necessário para o servidor.</li>
+<li>Exemplo:
+<ul>
+<li>Suponha uma aplicação web de gerência de uma instituição de ensino.</li>
+<li>O <em>backend</em> deve oferecer um <em>end point</em> que liste os alunos matriculados.</li>
+<li>Outro <em>end point</em> deve listar as cadeiras disponíveis.</li>
+</ul></li>
+<li>Um <strong>end point</strong> é um identificador que é associado a uma função que tratará uma requisição.</li>
+</ul>
+</div>
+<div id="flask-definindo-múltiplos-recursos-ii" class="slide section level1">
+<h1>Flask: Definindo Múltiplos Recursos (II)</h1>
+<div class="sourceCode" id="cb4" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask </span>
+<span id="cb4-2"><a href="#cb4-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/cadeiras&quot;</span>)             </span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="kw">def</span> lista_cadeiras():</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="cf">return</span> <span class="st">&quot;Programação avançada, Linguagem de Programação, Estatística, Redes de Computadores&quot;</span> </span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="at">@app.route</span>(<span class="st">&quot;/alunos&quot;</span>)               </span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="kw">def</span> lista_alunos():</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="cf">return</span> <span class="st">&quot;António, Carla, Daniel, João, Paula, Tiago&quot;</span> </span>
+<span id="cb4-12"><a href="#cb4-12"></a></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb4-14"><a href="#cb4-14"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<ul>
+<li>Decorador <code>route()</code>: associa caminho a função no código Flask.
+<ul>
+<li>Um decorador é um recurso da linguagem Python.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-caminhos-variáveis" class="slide section level1">
+<h1>Flask: Caminhos Variáveis</h1>
+<ul>
+<li>Suponha uma aplicação de <em>webmail</em>.
+<ul>
+<li>Queremos disponibilizar a caixa de entrada e a caixa de <em>spam</em> ao utilizador.</li>
+<li>Considere o seguinte trecho de código Flask:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb5" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> markupsafe <span class="im">import</span> escape</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="at">@app.route</span>(<span class="st">&quot;/&lt;name&gt;/inbox&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">def</span> inbox(name):</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="co"># conteudoInbox = ...</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">return</span> <span class="ss">f&quot;Conteudo do inbox do usuario </span><span class="sc">{</span>escape(name)<span class="sc">}</span><span class="ss">: ...&quot;</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="at">@app.route</span>(<span class="st">&quot;/&lt;name&gt;/spam&quot;</span>)</span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="kw">def</span> spam(name):</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="co"># conteudoSpam = ...</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="cf">return</span> <span class="ss">f&quot;Conteudo da caixa de spam do usuario </span><span class="sc">{</span>escape(name)<span class="sc">}</span><span class="ss">: ...&quot;</span></span></code></pre></div>
+<ul>
+<li>No decorador <code>route()</code>, definimos <em>templates</em> de caminhos contendo o modificador <code>&lt;name&gt;</code>.
+<ul>
+<li>Caminhos como <code>/fernanda/spam</code> e <code>/fernanda/inbox</code> são automaticamente mapeados para as funções certas.</li>
+<li>E <code>fernanda</code> é mapeado para o parâmetro <code>name</code> das funções.</li>
+</ul></li>
+</ul>
+<div class="block centered" style="position: absolute; right: 10px; bottom: 30%; width: 30%;">
+<div class="blocktitle">
+<p>Importante!</p>
+</div>
+<ul>
+<li>Repare no uso da função <code>escape()</code> da biblioteca <em>markupsafe</em>.
+<ul>
+<li>Sanitiza a string (passada pelo utilizador) contra possíveis ataques de injeção de código.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="flask-caminhos-variáveis-ii" class="slide section level1">
+<h1>Flask: Caminhos Variáveis (II)</h1>
+<ul>
+<li>É possível também especificar restrições adicionais ao formato dos <em>templates</em>.
+<ul>
+<li>Exemplo: parte da URL deve ser o ID do utilizador contendo apenas números.</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb6" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="at">@app.route</span>(<span class="st">&quot;/login/&lt;int:id&gt;&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">def</span> login(<span class="bu">id</span>):</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="cf">return</span> <span class="ss">f&quot;ID recebido foi: </span><span class="sc">{</span><span class="bu">id</span><span class="sc">}</span><span class="ss">&quot;</span></span></code></pre></div>
+<ul>
+<li>Nesse caso, acesso a <code>/login/12345</code> funciona, mas a <code>/login/fernanda</code> não.
+<ul>
+<li>Retorna erro 404.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="center" style="line-height: 90%; font-size: 16px;">
+<table>
+<thead>
+<tr class="header">
+<th>Modificador</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>int</code></td>
+<td>Números inteiros positivos</td>
+</tr>
+<tr class="even">
+<td><code>float</code></td>
+<td>Números reais positivos</td>
+</tr>
+<tr class="odd">
+<td><code>string</code></td>
+<td>Qualquer texto sem barras</td>
+</tr>
+<tr class="even">
+<td><code>path</code></td>
+<td>Qualquer texto mesmo com barras</td>
+</tr>
+<tr class="odd">
+<td><code>uuid</code></td>
+<td>Strigs no formato de UUID</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="atividade-i" class="slide section level1">
+<h1>Atividade I</h1>
+<ul>
+<li>Faça um programa em Flask que implemente o <em>backend</em> de uma aplicação que:
+<ul>
+<li>calcula o IMC (Índice de Massa Corporal) de uma pessoa pela fórmula <span class="math inline">\(imc = \frac{peso}{altura^2}\)</span></li>
+<li>peso em kg, altura em m, IMC em kg/m²</li>
+<li>O programa deve receber o peso e altura por um caminho variável (pela url).
+<ul>
+<li><em>e.g.</em>, /imc/60.0/1.65</li>
+</ul></li>
+<li>O retorno pode ser simplesmente um texto com o valor do IMC.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-caminhos-terminados-em" class="slide section level1">
+<h1>Flask: Caminhos Terminados em <code>/</code></h1>
+<ul>
+<li>Considere o seguinte trecho de código:</li>
+</ul>
+<div class="sourceCode" id="cb7" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="at">@app.route</span>(<span class="st">&quot;/teste/minhaFuncao/&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">def</span> f():</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">return</span> <span class="st">&quot;Qualquer coisa&quot;</span></span></code></pre></div>
+<ul>
+<li>Claramente, função é acessível pelo caminho <code>/teste/minhaFuncao/</code>.</li>
+<li>Mas <strong>também</strong> é acessível pelo caminho <code>/teste/minhaFuncao</code></li>
+<li>Por outro lado:</li>
+</ul>
+<div class="sourceCode" id="cb8" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="at">@app.route</span>(<span class="st">&quot;/teste/minhaFuncao2&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">def</span> f2():</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="cf">return</span> <span class="st">&quot;Qualquer coisa&quot;</span></span></code></pre></div>
+<ul>
+<li><code>f2</code> <strong>só</strong> é acessível pelo caminho <code>/teste/minhaFuncao2</code>.</li>
+</ul>
+</div>
+<div id="flask-múltiplos-caminhos-para-a-mesma-função" class="slide section level1">
+<h1>Flask: Múltiplos Caminhos para a Mesma Função</h1>
+<ul>
+<li>É possível associar mais que um caminho para uma mesma função.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb9" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="at">@app.route</span>(<span class="st">&quot;/teste/minhaFuncao2&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="at">@app.route</span>(<span class="st">&quot;/teste/outroNome&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="kw">def</span> f():</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="cf">return</span> <span class="st">&quot;Qualquer coisa&quot;</span></span></code></pre></div>
+<ul>
+<li>Requisições feitas tanto para <code>/teste/minhaFuncao2</code> quanto para <code>/teste/outroNome</code> mapeadas para <code>f()</code>.</li>
+</ul>
+</div>
+<div id="flask-obter-caminhos-para-certas-funções" class="slide section level1">
+<h1>Flask: Obter Caminhos para Certas Funções</h1>
+<ul>
+<li>Por vezes, pode ser necessário a uma função obter o caminho de outra.
+<ul>
+<li>Por exemplo, para responder a uma requisição com um redirecionamento.</li>
+</ul></li>
+<li>Podemos simplesmente colocar o caminho da outra função como uma <em>string</em> <em>hardcoded</em>.</li>
+<li>Mas uma alternativa melhor é usar a função <code>url_for()</code>.</li>
+<li>Recebe como argumentos:
+<ul>
+<li>Nome da função desejada.</li>
+<li>(Opcionalmente) Argumentos no formato <code>nome=valor</code>.</li>
+</ul></li>
+<li>Retorna: o caminho da função especificada, incluindo potenciais argumentos.</li>
+</ul>
+</div>
+<div id="flask-exemplo-simples-de-uso-de-url_for" class="slide section level1">
+<h1>Flask: Exemplo Simples de Uso de <code>url_for()</code></h1>
+<ul>
+<li>Usaremos <code>redirect</code> e <code>url_for</code> neste exemplo (devem ser importados!).</li>
+</ul>
+<div class="sourceCode" id="cb10" style="font-size: 17px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, redirect, url_for</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>appFlask <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="at">@appFlask.route</span>(<span class="st">&#39;/conta/premium&#39;</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="kw">def</span> contaPremium():</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    <span class="cf">return</span> <span class="st">&quot;Esta é uma conta premium&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="at">@appFlask.route</span>(<span class="st">&#39;/conta/&lt;float:preco&gt;&#39;</span>)</span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="kw">def</span> conta(preco):</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    <span class="cf">return</span> <span class="ss">f&quot;Esta é uma conta básica no valor de </span><span class="sc">{</span>preco<span class="sc">}</span><span class="ss"> Euros&quot;</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="at">@appFlask.route</span>(<span class="st">&#39;/utilizador/&lt;nome&gt;&#39;</span>)</span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="kw">def</span> utilizador(nome):</span>
+<span id="cb10-15"><a href="#cb10-15"></a>    <span class="cf">if</span> nome <span class="op">==</span><span class="st">&#39;premium&#39;</span>:</span>
+<span id="cb10-16"><a href="#cb10-16"></a>        <span class="cf">return</span> redirect(url_for(<span class="st">&#39;contaPremium&#39;</span>))</span>
+<span id="cb10-17"><a href="#cb10-17"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-18"><a href="#cb10-18"></a>        <span class="cf">return</span> redirect(url_for(<span class="st">&#39;conta&#39;</span>, preco <span class="op">=</span> <span class="fl">5.99</span>))</span>
+<span id="cb10-19"><a href="#cb10-19"></a></span>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb10-21"><a href="#cb10-21"></a>   appFlask.run(debug <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
+</div>
+<div id="flask-tipos-de-requisição" class="slide section level1">
+<h1>Flask: Tipos de requisição</h1>
+<ul>
+<li>Até aqui, vimos apenas exemplos de funções que devolvem conteúdos ao utilizador.
+<ul>
+<li>Em geral, mapeadas para requisições HTTP do tipo <code>GET</code>.</li>
+</ul></li>
+<li>Por padrão, o Flask associa as funções apenas a requisições <code>GET</code>.</li>
+<li>Entretanto, podemos solicitar que outros tipos de requisição sejam direcionados às nossas funções.</li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb11" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">from</span> flask <span class="im">import</span> request</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="at">@app.route</span>(<span class="st">&#39;/alunos&#39;</span>, methods<span class="op">=</span>[<span class="st">&#39;GET&#39;</span>, <span class="st">&#39;POST&#39;</span>])</span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="kw">def</span> alunos():</span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&#39;POST&#39;</span>:    <span class="co"># Objeto build-in request contém informações sobre a requisição</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>        <span class="cf">return</span> cadastraAluno()      <span class="co"># Se é um POST, cadastramos um novo aluno</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-8"><a href="#cb11-8"></a>        <span class="cf">return</span> listaAlunos()        <span class="co"># Se é um GET, listamos alunos cadastrados</span></span></code></pre></div>
+</div>
+<div id="flask-tipos-de-requisição-ii" class="slide section level1">
+<h1>Flask: Tipos de requisição (II)</h1>
+<ul>
+<li>Note que o mesmo caminho pode ser atribuído a duas funções.
+<ul>
+<li>Desde que associado a <strong>tipos de requisição diferentes</strong>.</li>
+</ul></li>
+<li>Exemplo:</li>
+</ul>
+<div class="sourceCode" id="cb12" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="at">@app.route</span>(<span class="st">&#39;/alunos2&#39;</span>, methods<span class="op">=</span>[<span class="st">&#39;GET&#39;</span>])</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">def</span> alunosGET():</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="cf">return</span> listaAlunos()</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="at">@app.route</span>(<span class="st">&#39;/alunos2&#39;</span>, methods<span class="op">=</span>[<span class="st">&#39;POST&#39;</span>])</span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="kw">def</span> alunosPOST():</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="cf">return</span> cadastraAluno()</span></code></pre></div>
+<ul>
+<li>Veremos exemplos mais concretos em próximos slides…</li>
+</ul>
+</div>
+<div id="templates-e-conteúdos-estáticos" class="slide section level1 part">
+<h1 class="part"><em>Templates</em> e Conteúdos Estáticos</h1>
+</div>
+<div id="flask-ficheiros-estáticos-e-templates" class="slide section level1">
+<h1>Flask: Ficheiros Estáticos e <em>Templates</em></h1>
+<ul>
+<li>Por ora, temos retornado <em>strings</em> simples em todos os exemplos.</li>
+<li>Mas, em geral, queremos apresentar a informação retornada em páginas sofisticadas.
+<ul>
+<li>HTML determinando a disposição das informações.</li>
+<li>CSS determinando o estilo da página.</li>
+<li>Javascript para processamentos no frontend e dinamização do conteúdo.</li>
+</ul></li>
+<li>Flask permite a integração desses elementos através da criação de dois diretórios:
+<ul>
+<li><code>static</code>: conteúdos totalmente estáticos.
+<ul>
+<li><em>i.e.</em>, que não variam de acordo com a resposta gerada.</li>
+<li><em>e.g.</em>, CSS, Javascript.</li>
+</ul></li>
+<li><code>templates</code>: modelos preenchidos com informações geradas dinamicamente.
+<ul>
+<li><em>e.g.</em>, páginas HTML com pequenos pontos a serem preenchidos.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-renderizando-templates" class="slide section level1">
+<h1>Flask: Renderizando <em>Templates</em></h1>
+<ul>
+<li>Considere novamente nossa aplicação calculadora.</li>
+<li>Além das funções que calculam individualmente cada operação, queremos uma função que retorne os resultados de <strong>todas</strong> as 4 operações sobre os dois operandos especificados.</li>
+<li>Para facilitar a visualização, queremos organizar os resultados em uma <strong>tabela</strong>.</li>
+<li>Podemos implementar isso através das seguintes etapas:
+<ol style="list-style-type: decimal">
+<li>Criamos um <em>template</em> para a página de resultado.
+<ul>
+<li>Contém uma tabela e <em>placeholders</em> para os elementos.</li>
+</ul></li>
+<li>Criamos a função python que calcula os resultados da operações.
+<ul>
+<li>Retorna o <em>template</em> substituindo os <em>placeholders</em> pelos valores.</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+<div id="flask-exemplo-de-uso-de-templates" class="slide section level1">
+<h1>Flask: Exemplo de Uso de <em>Templates</em></h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb13" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>        <span class="kw">&lt;table&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>            <span class="kw">&lt;tr&gt;&lt;th&gt;</span>Operação<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Resultado<span class="kw">&lt;/th&gt;&lt;/tr&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} X {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>                <span class="kw">&lt;td&gt;</span>{{ multiplicacao }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} / {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a>                <span class="kw">&lt;td&gt;</span>{{ divisao }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb13-15"><a href="#cb13-15"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} + {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-16"><a href="#cb13-16"></a>                <span class="kw">&lt;td&gt;</span>{{ soma }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb13-18"><a href="#cb13-18"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb13-19"><a href="#cb13-19"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} - {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-20"><a href="#cb13-20"></a>                <span class="kw">&lt;td&gt;</span>{{ subtracao }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb13-21"><a href="#cb13-21"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb13-22"><a href="#cb13-22"></a>        <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb13-23"><a href="#cb13-23"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb13-24"><a href="#cb13-24"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb14" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
+<span id="cb14-2"><a href="#cb14-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/todas/&lt;float:x&gt;/&lt;float:y&gt;&quot;</span>)</span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="kw">def</span> todas(x, y):</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;calculadora.html&#39;</span>, x<span class="op">=</span>x, y<span class="op">=</span>y, </span>
+<span id="cb14-7"><a href="#cb14-7"></a>                            multiplicacao<span class="op">=</span>x<span class="op">*</span>y, </span>
+<span id="cb14-8"><a href="#cb14-8"></a>                            divisao<span class="op">=</span>x<span class="op">/</span>y, </span>
+<span id="cb14-9"><a href="#cb14-9"></a>                            soma<span class="op">=</span>x<span class="op">+</span>y, </span>
+<span id="cb14-10"><a href="#cb14-10"></a>                            subtracao<span class="op">=</span>x<span class="op">-</span>y)</span>
+<span id="cb14-11"><a href="#cb14-11"></a></span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb14-13"><a href="#cb14-13"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div>
+</div>
+<ul>
+<li>Código HTML deve ser colocado no ficheiro <code>templates/calculadora.html</code></li>
+</ul>
+</div>
+<div id="flask-trechos-condicionais-em-templates" class="slide section level1">
+<h1>Flask: Trechos Condicionais em <em>Templates</em></h1>
+<ul>
+<li>Além dos <em>placeholders</em>, <em>templates</em> podem conter outros elementos especiais.</li>
+<li>Um deles são estruturas do tipo <code>if...else</code>.
+<ul>
+<li>Permitem a inclusão condicional de partes do <em>template</em>.</li>
+</ul></li>
+<li>Exemplo:
+<ul>
+<li>Suponha que nossa calculadora teste se o divisor é zero.</li>
+<li>Se for, o resultado da divisão não é calculado.</li>
+<li>Nesse caso, queremos omitir a linha da divisão da tabela.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-trechos-condicionais-em-templates-ii" class="slide section level1">
+<h1>Flask: Trechos Condicionais em <em>Templates</em> (II)</h1>
+<ul>
+<li>Nova versão da calculadora:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb15" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>        <span class="kw">&lt;table&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>            <span class="kw">&lt;tr&gt;&lt;th&gt;</span>Operação<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Resultado<span class="kw">&lt;/th&gt;&lt;/tr&gt;</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} X {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>                <span class="kw">&lt;td&gt;</span>{{ multiplicacao }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>            {% if divisao %}</span>
+<span id="cb15-11"><a href="#cb15-11"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} / {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>                <span class="kw">&lt;td&gt;</span>{{ divisao }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>            {% endif %}</span>
+<span id="cb15-16"><a href="#cb15-16"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} + {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a>                <span class="kw">&lt;td&gt;</span>{{ soma }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-19"><a href="#cb15-19"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb15-21"><a href="#cb15-21"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} - {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-22"><a href="#cb15-22"></a>                <span class="kw">&lt;td&gt;</span>{{ subtracao }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb15-23"><a href="#cb15-23"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb15-24"><a href="#cb15-24"></a>        <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb15-25"><a href="#cb15-25"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb15-26"><a href="#cb15-26"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb16" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
+<span id="cb16-2"><a href="#cb16-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/todas/&lt;float:x&gt;/&lt;float:y&gt;&quot;</span>)</span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="kw">def</span> todas(x, y):</span>
+<span id="cb16-6"><a href="#cb16-6"></a>    <span class="cf">if</span> y <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb16-7"><a href="#cb16-7"></a>        <span class="cf">return</span> render_template(<span class="st">&#39;calculadora.html&#39;</span>, x<span class="op">=</span>x, y<span class="op">=</span>y, </span>
+<span id="cb16-8"><a href="#cb16-8"></a>                            multiplicacao<span class="op">=</span>x<span class="op">*</span>y, </span>
+<span id="cb16-9"><a href="#cb16-9"></a>                            soma<span class="op">=</span>x<span class="op">+</span>y, </span>
+<span id="cb16-10"><a href="#cb16-10"></a>                            subtracao<span class="op">=</span>x<span class="op">-</span>y)</span>
+<span id="cb16-11"><a href="#cb16-11"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-12"><a href="#cb16-12"></a>        <span class="cf">return</span> render_template(<span class="st">&#39;calculadora.html&#39;</span>, x<span class="op">=</span>x, y<span class="op">=</span>y, </span>
+<span id="cb16-13"><a href="#cb16-13"></a>                            multiplicacao<span class="op">=</span>x<span class="op">*</span>y, </span>
+<span id="cb16-14"><a href="#cb16-14"></a>                            divisao<span class="op">=</span>x<span class="op">/</span>y, </span>
+<span id="cb16-15"><a href="#cb16-15"></a>                            soma<span class="op">=</span>x<span class="op">+</span>y, </span>
+<span id="cb16-16"><a href="#cb16-16"></a>                            subtracao<span class="op">=</span>x<span class="op">-</span>y)</span>
+<span id="cb16-17"><a href="#cb16-17"></a></span>
+<span id="cb16-18"><a href="#cb16-18"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb16-19"><a href="#cb16-19"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="flask-iterações-em-templates" class="slide section level1">
+<h1>Flask: Iterações em <em>Templates</em></h1>
+<ul>
+<li>Se algum objeto iterável é passado por um template, é possível utilizar uma estrutura do tipo <code>for</code>.</li>
+<li>Exemplo de refatoração da aplicação calculadora com dicionário:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb17" style="font-size: 16px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>        <span class="kw">&lt;table&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>            <span class="kw">&lt;tr&gt;&lt;th&gt;</span>Operação<span class="kw">&lt;/th&gt;&lt;th&gt;</span>Resultado<span class="kw">&lt;/th&gt;&lt;/tr&gt;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>            {% for op in resultados %}</span>
+<span id="cb17-7"><a href="#cb17-7"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>                <span class="kw">&lt;td&gt;</span>{{ x }} {{ op }} {{ y }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>                <span class="kw">&lt;td&gt;</span>{{ resultados[valor] }}<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>            {% endfor %}</span>
+<span id="cb17-12"><a href="#cb17-12"></a>        <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb17-13"><a href="#cb17-13"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb18" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
+<span id="cb18-2"><a href="#cb18-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/todas/&lt;float:x&gt;/&lt;float:y&gt;&quot;</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="kw">def</span> todas(x, y):</span>
+<span id="cb18-6"><a href="#cb18-6"></a></span>
+<span id="cb18-7"><a href="#cb18-7"></a>    resultados <span class="op">=</span> {</span>
+<span id="cb18-8"><a href="#cb18-8"></a>        <span class="st">&quot;x&quot;</span>: x<span class="op">*</span>y,</span>
+<span id="cb18-9"><a href="#cb18-9"></a>        <span class="st">&quot;+&quot;</span>: x<span class="op">+</span>y, </span>
+<span id="cb18-10"><a href="#cb18-10"></a>        <span class="st">&quot;-&quot;</span>: x<span class="op">-</span>y</span>
+<span id="cb18-11"><a href="#cb18-11"></a>    }</span>
+<span id="cb18-12"><a href="#cb18-12"></a>    <span class="cf">if</span> y <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb18-13"><a href="#cb18-13"></a>        resultados[<span class="st">&quot;/&quot;</span>] <span class="op">=</span> x<span class="op">/</span>y</span>
+<span id="cb18-14"><a href="#cb18-14"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;calculadora_v3.html&#39;</span>, x<span class="op">=</span>x, </span>
+<span id="cb18-15"><a href="#cb18-15"></a>                                y<span class="op">=</span>y, resultados<span class="op">=</span>resultados) </span>
+<span id="cb18-16"><a href="#cb18-16"></a></span>
+<span id="cb18-17"><a href="#cb18-17"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb18-18"><a href="#cb18-18"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="flask-referenciar-recursos-estáticos-i" class="slide section level1">
+<h1>Flask: Referenciar Recursos Estáticos (I)</h1>
+<ul>
+<li>Suponha que desejemos melhorar um pouco a visualização dos resultados da calculadora.</li>
+<li>Em particular, queremos colocar bordas na tabela/células.</li>
+<li>Para isso, crimos um pequeno ficheiro CSS chamado <code>calculadora.css</code>:</li>
+</ul>
+<div class="sourceCode" id="cb19" style="font-size: 20px;"><pre class="sourceCode numberSource CSS numberLines"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1"></a>table<span class="op">,</span> td<span class="op">,</span> th {</span>
+<span id="cb19-2"><a href="#cb19-2"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>    <span class="kw">border-collapse</span>: <span class="dv">collapse</span><span class="op">;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>    <span class="kw">border-color</span>: <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>}</span></code></pre></div>
+</div>
+<div id="flask-referenciar-recursos-estáticos-ii" class="slide section level1">
+<h1>Flask: Referenciar Recursos Estáticos (II)</h1>
+<ul>
+<li>Problema: como referenciar esse CSS no <em>template</em>?</li>
+<li>Solução ideal:
+<ol style="list-style-type: decimal">
+<li>Colocar <code>calculadora.css</code> no diretório <code>static</code>.</li>
+<li>Ao carregar o CSS no template, usar a função <code>url_for()</code>.</li>
+</ol></li>
+</ul>
+<div class="sourceCode" id="cb20" style="font-size: 20px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;stylesheet&quot;</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text/css&quot;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="ot">    href=</span><span class="st">{{url_for(</span><span class="er">&#39;static&#39;,</span> <span class="er">filename</span><span class="ot">=</span><span class="st">&#39;calculadora.css&#39;</span><span class="er">)}}</span> <span class="kw">/&gt;</span></span></code></pre></div>
+<div class="block centered" style="position: absolute; bottom: 5%; right: 15px; width: 40%;">
+<div class="blocktitle">
+<p>Nota</p>
+</div>
+<ul>
+<li><code>url_for</code> não é estritamente necessário.</li>
+<li><code>/static/calculadora.css</code> funcionaria na maioria dos casos.</li>
+<li>Mas certos cenários podem necessitar de caminhos diferentes.</li>
+</ul>
+</div>
+</div>
+<div id="atividade-ii" class="slide section level1">
+<h1>Atividade II</h1>
+<ol style="list-style-type: decimal">
+<li>Baseado nos slides anteriores, implemente uma calculadora no <em>backend</em>, com o <em>frontend</em> na forma de tabela.
+<ul>
+<li>Use o css sugerido ou outro.</li>
+</ul></li>
+<li>Gere um template para apresentar o resultado da calculadora de IMC.
+<ul>
+<li>Adicione na resposta a classificação de acordo com: <a href="https://www.adexo.pt/tratamento/imc">https://www.adexo.pt/tratamento/imc</a></li>
+</ul></li>
+</ol>
+</div>
+<div id="interação-com-requisições-em-flask" class="slide section level1 part">
+<h1 class="part">Interação com Requisições em Flask</h1>
+</div>
+<div id="flask-receber-dados-da-requisição" class="slide section level1">
+<h1>Flask: Receber Dados da Requisição</h1>
+<ul>
+<li>Comumente, aplicações web precisam obter arguments/parâmetros do utilizador.</li>
+<li>Exemplo: operandos da aplicação <em>calculadora</em>.</li>
+<li>Vimos uma forma de fazer isso:
+<ul>
+<li>Usando <strong>caminhos variáveis</strong>.</li>
+</ul></li>
+<li>Mas há duas formas mais <strong>adequadas</strong> e <strong>padronizadas</strong>:
+<ul>
+<li>Argumentos da URL.</li>
+<li>Campos de formulário.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-argumentos-da-url" class="slide section level1">
+<h1>Flask: Argumentos da URL</h1>
+<ul>
+<li><em>Query String</em>:
+<ul>
+<li>Parte da URL que atribui valores a parâmetros.</li>
+<li>Localizada <strong>no final</strong> da URL, separada pelo caractere <code>?</code></li>
+<li>Parâmetros codificados no formato <code>chave=valor</code></li>
+<li>Múltiplos parâmetros separados pelo caractere <code>&amp;</code></li>
+</ul></li>
+<li>Exemplo: <code>https://www.google.com/search?client=firefox-b-d&amp;q=flask</code>
+<ul>
+<li>Dois parâmetros:
+<ul>
+<li><code>client</code>: tem valor <code>firefox-b-d</code></li>
+<li><code>q</code>: tem valor <code>flask</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-leitura-de-parâmetros-da-url" class="slide section level1">
+<h1>Flask: Leitura de Parâmetros da URL</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Flask faz o <em>parse</em> automaticamente da <em>query string</em>.</li>
+<li>Parâmetros e seus valores podem ser acessados pelo objeto <code>request</code>.
+<ul>
+<li>Lembre-se: objeto que contém <strong>informações sobre a requisição</strong>.</li>
+</ul></li>
+<li>Mais especificamente, argumentos são armazenados no <strong>dicionário</strong> <code>request.args</code>.</li>
+<li>Exemplo: versão alternativa da calculadora.
+<ul>
+<li><strong>Exercício</strong>: tente acessar o caminho <code>/calc?x=3&amp;y=2&amp;op=*</code></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="sourceCode" id="cb21" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request</span>
+<span id="cb21-2"><a href="#cb21-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/calc&quot;</span>)</span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="kw">def</span> calculadora():</span>
+<span id="cb21-6"><a href="#cb21-6"></a>    x <span class="op">=</span> <span class="bu">float</span>(request.args.get(<span class="st">&#39;x&#39;</span>))</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    y <span class="op">=</span> <span class="bu">float</span>(request.args.get(<span class="st">&#39;y&#39;</span>))</span>
+<span id="cb21-8"><a href="#cb21-8"></a>    op <span class="op">=</span> request.args.get(<span class="st">&#39;op&#39;</span>)</span>
+<span id="cb21-9"><a href="#cb21-9"></a></span>
+<span id="cb21-10"><a href="#cb21-10"></a>    <span class="cf">if</span> op <span class="op">==</span> <span class="st">&#39;+&#39;</span>:</span>
+<span id="cb21-11"><a href="#cb21-11"></a>        res <span class="op">=</span> x <span class="op">+</span> y</span>
+<span id="cb21-12"><a href="#cb21-12"></a>    <span class="cf">elif</span> op <span class="op">==</span> <span class="st">&#39;-&#39;</span>:</span>
+<span id="cb21-13"><a href="#cb21-13"></a>        res <span class="op">=</span> x <span class="op">-</span> y</span>
+<span id="cb21-14"><a href="#cb21-14"></a>    <span class="cf">elif</span> op <span class="op">==</span> <span class="st">&#39;*&#39;</span>:</span>
+<span id="cb21-15"><a href="#cb21-15"></a>        res <span class="op">=</span> x <span class="op">*</span> y</span>
+<span id="cb21-16"><a href="#cb21-16"></a>    <span class="cf">else</span>:</span>
+<span id="cb21-17"><a href="#cb21-17"></a>        res <span class="op">=</span> x <span class="op">/</span> y</span>
+<span id="cb21-18"><a href="#cb21-18"></a></span>
+<span id="cb21-19"><a href="#cb21-19"></a>    <span class="cf">return</span> <span class="ss">f&quot;</span><span class="sc">{x}</span><span class="ss"> </span><span class="sc">{op}</span><span class="ss"> </span><span class="sc">{y}</span><span class="ss"> = </span><span class="sc">{</span>res<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb21-20"><a href="#cb21-20"></a></span>
+<span id="cb21-21"><a href="#cb21-21"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb21-22"><a href="#cb21-22"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="atividade-iii" class="slide section level1">
+<h1>Atividade III</h1>
+<ul>
+<li>Use <em>Query String</em> para reimplementar o <em>backend</em> da calculadora de IMC.</li>
+</ul>
+</div>
+<div id="flask-campos-de-formulário" class="slide section level1">
+<h1>Flask: Campos de formulário</h1>
+<ul>
+<li>Uma forma mais <strong>elegante</strong> e <strong>segura</strong> de obter dados do utilizador é através dos <strong>campos de formulário</strong>.
+<ul>
+<li>Normalmente, gerados através de um <em>submit</em> associado a um formulário em uma página HTML.</li>
+<li>Por sua vez, causa uma <strong>requisição</strong> do tipo <code>POST</code>.</li>
+<li>Parâmetros (campos do formulário) e seus valores codificados no <strong>corpo</strong> da requisição.</li>
+</ul></li>
+<li>Do ponto de vista do Flask, podem ser acessados pelo <strong>dicionário</strong> <code>request.form</code></li>
+</ul>
+</div>
+<div id="flask-utilizando-o-request.form" class="slide section level1">
+<h1>Flask: Utilizando o <code>request.form</code></h1>
+<ul>
+<li>Exemplo: protótipo de página de <em>login</em>:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb22" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request, render_template</span>
+<span id="cb22-2"><a href="#cb22-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb22-3"><a href="#cb22-3"></a></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="kw">def</span> verificaLogin(username, password):</span>
+<span id="cb22-5"><a href="#cb22-5"></a></span>
+<span id="cb22-6"><a href="#cb22-6"></a>    <span class="cf">if</span> username <span class="op">==</span> <span class="st">&quot;pedro&quot;</span> <span class="kw">and</span> password <span class="op">==</span> <span class="st">&quot;123456&quot;</span>:</span>
+<span id="cb22-7"><a href="#cb22-7"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb22-8"><a href="#cb22-8"></a>    <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a></span>
+<span id="cb22-10"><a href="#cb22-10"></a><span class="at">@app.route</span>(<span class="st">&quot;/login&quot;</span>, methods<span class="op">=</span>[<span class="st">&#39;GET&#39;</span>, <span class="st">&#39;POST&#39;</span>])</span>
+<span id="cb22-11"><a href="#cb22-11"></a><span class="kw">def</span> login():</span>
+<span id="cb22-12"><a href="#cb22-12"></a></span>
+<span id="cb22-13"><a href="#cb22-13"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&#39;POST&#39;</span>:</span>
+<span id="cb22-14"><a href="#cb22-14"></a>        <span class="cf">if</span> verificaLogin(request.form[<span class="st">&#39;username&#39;</span>], </span>
+<span id="cb22-15"><a href="#cb22-15"></a>                request.form[<span class="st">&#39;password&#39;</span>]):</span>
+<span id="cb22-16"><a href="#cb22-16"></a>            <span class="cf">return</span> <span class="st">&#39;Login bem sucedido!&#39;</span></span>
+<span id="cb22-17"><a href="#cb22-17"></a>        <span class="cf">else</span>:</span>
+<span id="cb22-18"><a href="#cb22-18"></a>            <span class="cf">return</span> <span class="st">&#39;Nome do utilizador ou palavra-passe inválidos!&#39;</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;login.html&#39;</span>)</span>
+<span id="cb22-20"><a href="#cb22-20"></a></span>
+<span id="cb22-21"><a href="#cb22-21"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb22-22"><a href="#cb22-22"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb23" style="font-size: 16px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>    <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>        <span class="kw">&lt;h1&gt;</span>Bem-vindo ao sistema!<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a>        Por favor, forneça suas credenciais:<span class="kw">&lt;br&gt;</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>        <span class="kw">&lt;form</span> <span class="er">action</span><span class="ot">=</span><span class="st">&quot;/login&quot;</span> <span class="er">method</span><span class="ot">=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>            <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;username&quot;</span><span class="kw">&gt;</span>Nome do utilizador:<span class="kw">&lt;/label&gt;&lt;br&gt;</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>            <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> </span>
+<span id="cb23-10"><a href="#cb23-10"></a><span class="ot">                id=</span><span class="st">&quot;username&quot;</span> </span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="ot">                name=</span><span class="st">&quot;username&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;&quot;</span><span class="kw">&gt;&lt;br&gt;</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a>            <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;password&quot;</span><span class="kw">&gt;</span>Palavra-passe:<span class="kw">&lt;/label&gt;&lt;br&gt;</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a>            <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;password&quot;</span> </span>
+<span id="cb23-14"><a href="#cb23-14"></a><span class="ot">                id=</span><span class="st">&quot;password&quot;</span> </span>
+<span id="cb23-15"><a href="#cb23-15"></a><span class="ot">                name=</span><span class="st">&quot;password&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;&quot;</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb23-16"><a href="#cb23-16"></a>            <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;submit&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&quot;Enviar&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb23-17"><a href="#cb23-17"></a>        <span class="kw">&lt;/form&gt;</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb23-19"><a href="#cb23-19"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="atividade-iv" class="slide section level1">
+<h1>Atividade IV</h1>
+<ol style="list-style-type: decimal">
+<li>Copie os exemplos dos dois últimos slides (login) e faça-o funcionar.</li>
+<li>Em seguida, melhore a página principal com CSS, Javascript/jQuery (se achar relevante).</li>
+</ol>
+</div>
+<div id="sessões-e-cookies" class="slide section level1 part">
+<h1 class="part">Sessões e <em>Cookies</em></h1>
+</div>
+<div id="flask-aplicações-stateful" class="slide section level1">
+<h1>Flask: Aplicações <em>Stateful</em></h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Até aqui, vimos apenas exemplos de aplicações <strong><em>stateless</em></strong>.
+<ul>
+<li>Respostas são geradas apenas com base na requisição.</li>
+<li>Não levam em conta nenhum <strong>histórico</strong> de interação do utilizador.
+<ul>
+<li><em>i.e.</em>, <strong>interações passadas não influenciam</strong> respostas futuras.</li>
+</ul></li>
+</ul></li>
+<li>Porém, aplicações mais sofisticadas comumente são <strong><em>stateful</em></strong>.
+<ul>
+<li><strong>Estado</strong> das interações do utilizador tem que ser considerado.</li>
+<li><em>e.g.</em>, estado do cesto de compras, id do utilizador logado no <em>webmail</em>, …</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="block centered">
+<div class="blocktitle">
+<p>Problema</p>
+</div>
+<ul>
+<li>HTTP é inerentemente <em>stateless</em>.
+<ul>
+<li><em>i.e.</em>, <strong>requisições idênticas recebem respostas idênticas</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="flask-cookies" class="slide section level1">
+<h1>Flask: Cookies</h1>
+<ul>
+<li>Mecanismo usado sobre o HTTP para permitir aplicações <em>stateful</em>.</li>
+<li>Servidor pode <strong>solicitar</strong> ao navegador que <strong>armazene</strong> <em>cookies</em>.
+<ul>
+<li>Pequenos pedaços de informação.</li>
+<li>Par <code>(nome, valor)</code>.</li>
+</ul></li>
+<li>Navegador se compromente a <strong>incluir</strong> cookies em todas as <strong>requisições futuras</strong>.
+<ul>
+<li>Apenas os pertinentes àquela página.</li>
+</ul></li>
+</ul>
+<div class="block centered">
+<div class="blocktitle">
+<p>Note</p>
+</div>
+<ul>
+<li>Em geral, <em>cookies</em> armazenam <strong>pequenas</strong> informações.</li>
+<li><em>e.g.</em>, conteúdo do cesto <strong>não</strong> é armazenado no <em>cookie</em>.
+<ul>
+<li>Armazena-se ID do utilizador.</li>
+<li>Servidor mantém base de dados no <em>backend</em> com cestos de cada utilizador.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="flask-definindo-e-lendo-cookies" class="slide section level1">
+<h1>Flask: Definindo e Lendo Cookies</h1>
+<ul>
+<li><em>Cookies</em> podem ser <strong>definidos nas respostas</strong>.
+<ul>
+<li>Um objeto resposta tem que ser <strong>explicitamente</strong> criado com <code>make_respose()</code>.</li>
+<li>Depois, <em>cookies</em> podem ser adicionados com o método <code>set_cookie()</code></li>
+</ul></li>
+<li><em>Cookies</em> enviados pelo navegador podem ser <strong>lidos nas requisições</strong>.
+<ul>
+<li>Do objeto <code>request</code>.</li>
+<li>Contém um <strong>dicionário</strong> chamado <em>cookies</em>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-exemplo-de-cookies" class="slide section level1">
+<h1>Flask: Exemplo de Cookies</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb24" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request, make_response</span>
+<span id="cb24-2"><a href="#cb24-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb24-3"><a href="#cb24-3"></a></span>
+<span id="cb24-4"><a href="#cb24-4"></a>cestos <span class="op">=</span> {}</span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="at">@app.route</span>(<span class="st">&quot;/adicionaAoCesto&quot;</span>)</span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="kw">def</span> adicionaAoCesto():</span>
+<span id="cb24-7"><a href="#cb24-7"></a></span>
+<span id="cb24-8"><a href="#cb24-8"></a>    prodID <span class="op">=</span> request.args.get(<span class="st">&#39;prodID&#39;</span>)</span>
+<span id="cb24-9"><a href="#cb24-9"></a>    userID <span class="op">=</span> request.cookies.get(<span class="st">&#39;userID&#39;</span>)</span>
+<span id="cb24-10"><a href="#cb24-10"></a>    cestos[userID].append(prodID)</span>
+<span id="cb24-11"><a href="#cb24-11"></a>    <span class="cf">return</span> <span class="ss">f&quot;Produto adicionado! Cesto agora tem:&lt;br&gt; </span><span class="sc">{</span>cestos[userID]<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a></span>
+<span id="cb24-13"><a href="#cb24-13"></a><span class="at">@app.route</span>(<span class="st">&quot;/atribuiID&quot;</span>)</span>
+<span id="cb24-14"><a href="#cb24-14"></a><span class="kw">def</span> atribuiID():</span>
+<span id="cb24-15"><a href="#cb24-15"></a></span>
+<span id="cb24-16"><a href="#cb24-16"></a>    novoID <span class="op">=</span> <span class="st">&#39;ab5bc01&#39;</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a>    cestos[novoID] <span class="op">=</span> []</span>
+<span id="cb24-18"><a href="#cb24-18"></a>    resp <span class="op">=</span> make_response(<span class="st">&#39;ID atribuído!&#39;</span>)</span>
+<span id="cb24-19"><a href="#cb24-19"></a>    resp.set_cookie(<span class="st">&#39;userID&#39;</span>, novoID)</span>
+<span id="cb24-20"><a href="#cb24-20"></a>    <span class="cf">return</span> resp</span>
+<span id="cb24-21"><a href="#cb24-21"></a></span>
+<span id="cb24-22"><a href="#cb24-22"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb24-23"><a href="#cb24-23"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div><div class="column" style="width:45%;">
+<ul>
+<li>Protótipo de <em>backend</em> de comércio eletrônico.</li>
+<li>No primeiro acesso ao sistema, utilizador acessa <code>/atribuiID</code>
+<ul>
+<li>Gera um ID.
+<ul>
+<li>Por simplicidade, estático. Na prática, único para cada utilizador.</li>
+</ul></li>
+</ul></li>
+<li>Ao carregar em botões “Adicionar ao Cesto” no <em>frontend</em>, requisições são feitas para <code>/adicionaAoCesto</code>
+<ul>
+<li>ID do produto passado como argumento na forma de <em>query string</em>.</li>
+<li>ID do utilizador extraído a partir do <em>cookie</em>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="flask-exemplo-de-cookies-em-ação" class="slide section level1">
+<h1>Flask: Exemplo de Cookies em Ação</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="imagens/atribuiID.png" style="width:100.0%" /></p>
+</div><div class="column" style="width:50%;">
+<p><img src="imagens/AdicionaAoCesto.png" style="width:100.0%" /></p>
+</div>
+</div>
+</div>
+<div id="flask-sessões" class="slide section level1">
+<h1>Flask: Sessões</h1>
+<ul>
+<li>Além do suporte de baixo nível a <em>cookies</em>, Flask disponibiliza um mecanismo de alto nível de <strong>sessões</strong>.
+<ul>
+<li>Construído sobre <em>cookies</em>, mas mais prático e seguro.</li>
+</ul></li>
+<li>Um objeto <code>session</code> é disponibilizado para todos os métodos, identificando a sessão correspondente à requisição.
+<ul>
+<li><strong>Sessão</strong>: sequência de requisições de um mesmo utilizador/navegador.</li>
+</ul></li>
+<li>Aplicação pode gravar dados no objeto <code>session</code> e lê-los em outras requisições da mesma sessão.
+<ul>
+<li><code>session</code> é um dicionário.</li>
+</ul></li>
+<li>Internamente, dados no <code>session</code> são salvos como <em>cookies</em>.
+<ul>
+<li>Mas de forma <strong>transparente</strong>.</li>
+<li>E <strong>criptografados</strong> para maior segurança.</li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-cesto-de-compras-com-sessões" class="slide section level1">
+<h1>Flask: Cesto de Compras com Sessões</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb25" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request, session</span>
+<span id="cb25-2"><a href="#cb25-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb25-3"><a href="#cb25-3"></a>app.secret_key <span class="op">=</span> b<span class="st">&#39;((s23e__#i54e/*!&#39;</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>cestos <span class="op">=</span> {}</span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="at">@app.route</span>(<span class="st">&quot;/adicionaAoCesto&quot;</span>)</span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="kw">def</span> adicionaAoCesto():</span>
+<span id="cb25-7"><a href="#cb25-7"></a></span>
+<span id="cb25-8"><a href="#cb25-8"></a>    prodID <span class="op">=</span> request.args.get(<span class="st">&#39;prodID&#39;</span>)</span>
+<span id="cb25-9"><a href="#cb25-9"></a>    userID <span class="op">=</span> session[<span class="st">&#39;userID&#39;</span>]</span>
+<span id="cb25-10"><a href="#cb25-10"></a>    cestos[userID].append(prodID)</span>
+<span id="cb25-11"><a href="#cb25-11"></a>    <span class="cf">return</span> <span class="ss">f&quot;Produto adicionado! Cesto agora tem:&lt;br&gt; </span><span class="sc">{</span>cestos[userID]<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a></span>
+<span id="cb25-13"><a href="#cb25-13"></a><span class="at">@app.route</span>(<span class="st">&quot;/atribuiID&quot;</span>)</span>
+<span id="cb25-14"><a href="#cb25-14"></a><span class="kw">def</span> atribuiID():</span>
+<span id="cb25-15"><a href="#cb25-15"></a></span>
+<span id="cb25-16"><a href="#cb25-16"></a>    novoID <span class="op">=</span> <span class="st">&#39;ab5bc01&#39;</span></span>
+<span id="cb25-17"><a href="#cb25-17"></a>    cestos[novoID] <span class="op">=</span> []</span>
+<span id="cb25-18"><a href="#cb25-18"></a>    session[<span class="st">&#39;userID&#39;</span>] <span class="op">=</span> novoID</span>
+<span id="cb25-19"><a href="#cb25-19"></a>    <span class="cf">return</span> <span class="st">&#39;ID atribuído!&#39;</span></span>
+<span id="cb25-20"><a href="#cb25-20"></a></span>
+<span id="cb25-21"><a href="#cb25-21"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb25-22"><a href="#cb25-22"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div><div class="column" style="width:45%;">
+<ul>
+<li>Mesma lógica anterior, mas sem uso explícito de <em>cookies</em>.</li>
+<li>Para usar o <code>session</code> é <strong>obrigatório definir uma chave secreta</strong>.
+<ul>
+<li><em>String</em> em <code>app.secret_key</code>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="flask-exemplo-de-session-em-ação" class="slide section level1">
+<h1>Flask: Exemplo de <code>Session</code> em Ação</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="imagens/SessionAtribuiID.png" style="width:100.0%" /></p>
+</div><div class="column" style="width:50%;">
+<p><img src="imagens/SessionAdicionaAoCesto.png" style="width:100.0%" /></p>
+</div>
+</div>
+<ul>
+<li><strong>Repare</strong>: valor armazenado no <em>cookie</em> (ID do utilizador) é <strong>criptografado</strong>.</li>
+</ul>
+</div>
+<div id="flask-redirecionamentos" class="slide section level1">
+<h1>Flask: Redirecionamentos</h1>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Muitas vezes, é útil redirecionar o utilizador para outra página/<em>endpoint</em> do sistema.</li>
+<li>Exemplo:
+<ul>
+<li>Sistema com autenticação.</li>
+<li>Redirecionar utilizador não autenticado para página de <em>login</em>.</li>
+<li>Após login bem sucedido, redirecionar para página principal.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb26" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, request, render_template, session, redirect, url_for</span>
+<span id="cb26-2"><a href="#cb26-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a>app.secret_key <span class="op">=</span> b<span class="st">&#39;((s23e__#i54e/*!&#39;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="kw">def</span> verificaLogin(username, password):</span>
+<span id="cb26-5"><a href="#cb26-5"></a></span>
+<span id="cb26-6"><a href="#cb26-6"></a>    <span class="cf">if</span> username <span class="op">==</span> <span class="st">&quot;pedro&quot;</span> <span class="kw">and</span> password <span class="op">==</span> <span class="st">&quot;123456&quot;</span>:</span>
+<span id="cb26-7"><a href="#cb26-7"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>    <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a></span>
+<span id="cb26-10"><a href="#cb26-10"></a><span class="at">@app.route</span>(<span class="st">&quot;/login&quot;</span>, methods<span class="op">=</span>[<span class="st">&#39;GET&#39;</span>, <span class="st">&#39;POST&#39;</span>])</span>
+<span id="cb26-11"><a href="#cb26-11"></a><span class="kw">def</span> login():</span>
+<span id="cb26-12"><a href="#cb26-12"></a></span>
+<span id="cb26-13"><a href="#cb26-13"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&#39;POST&#39;</span>:</span>
+<span id="cb26-14"><a href="#cb26-14"></a>        <span class="cf">if</span> verificaLogin(request.form[<span class="st">&#39;username&#39;</span>], </span>
+<span id="cb26-15"><a href="#cb26-15"></a>                request.form[<span class="st">&#39;password&#39;</span>]):</span>
+<span id="cb26-16"><a href="#cb26-16"></a>            session[<span class="st">&#39;username&#39;</span>] <span class="op">=</span> request.form[<span class="st">&#39;username&#39;</span>]</span>
+<span id="cb26-17"><a href="#cb26-17"></a>            <span class="cf">return</span> redirect(url_for(<span class="st">&#39;principal&#39;</span>))</span>
+<span id="cb26-18"><a href="#cb26-18"></a>        <span class="cf">else</span>:</span>
+<span id="cb26-19"><a href="#cb26-19"></a>            <span class="cf">return</span> <span class="st">&#39;Nome do utilizador ou palavra-passe inválidos!&#39;</span></span>
+<span id="cb26-20"><a href="#cb26-20"></a>    <span class="cf">return</span> render_template(<span class="st">&#39;login.html&#39;</span>)</span>
+<span id="cb26-21"><a href="#cb26-21"></a></span>
+<span id="cb26-22"><a href="#cb26-22"></a><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</span>
+<span id="cb26-23"><a href="#cb26-23"></a><span class="kw">def</span> principal():</span>
+<span id="cb26-24"><a href="#cb26-24"></a></span>
+<span id="cb26-25"><a href="#cb26-25"></a>    <span class="cf">if</span> <span class="st">&#39;username&#39;</span> <span class="kw">in</span> session:</span>
+<span id="cb26-26"><a href="#cb26-26"></a>        <span class="cf">return</span> <span class="ss">f&quot;Seja bem-vindo, </span><span class="sc">{</span>session[<span class="st">&#39;username&#39;</span>]<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb26-27"><a href="#cb26-27"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-28"><a href="#cb26-28"></a>        <span class="cf">return</span> redirect(url_for(<span class="st">&#39;login&#39;</span>))</span>
+<span id="cb26-29"><a href="#cb26-29"></a></span>
+<span id="cb26-30"><a href="#cb26-30"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb26-31"><a href="#cb26-31"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="atividade-v" class="slide section level1">
+<h1>Atividade V</h1>
+<ol style="list-style-type: decimal">
+<li>Altere a página de login da Atividade IV e inclua o uso de <em>cookies</em>.</li>
+<li>De forma similar à página de login, desenvolva uma página de registo.
+<ul>
+<li>No Python, o registo deve ser feito em um dicionário: par (utilizador, palavra-passe).</li>
+<li>Deve-se verificar se cadastro existe.
+<ul>
+<li>Nesse caso, redirecionar utilizador para página de login.</li>
+</ul></li>
+</ul></li>
+<li>Desenvolva também uma página principal ao qual o utilizador tenha acesso quando o login é bem sucedido.
+<ul>
+<li>A página pode ser simplesmente de boas vindas.</li>
+</ul></li>
+</ol>
+</div>
+<div id="flask-tipos-de-resposta" class="slide section level1">
+<h1>Flask: Tipos de Resposta</h1>
+<ul>
+<li>Em todos os exemplos anteriores, as respostas eram sempre <em>strings</em> planas ou HTML.
+<ul>
+<li>Renderizadas diretamente para o utilizador.</li>
+</ul></li>
+<li>Aplicações reais muitas vezes solicitam <strong>serviços</strong> do <em>backend</em> que geram <strong>dados</strong>, e não diretamente o conteúdo a ser renderizado.</li>
+<li>Dados podem ser qualquer coisa:
+<ul>
+<li>Imagens, arquivos executáveis, um vetor de dados, …</li>
+</ul></li>
+<li>Em particular, é comum que <em>endpoints</em> retornem dados em formato <strong>JSON</strong>.
+<ul>
+<li>Formato facilmente interpretável com Javascript.</li>
+<li>Suportado <strong>nativamente</strong> pelo Flask.
+<ul>
+<li>Conversão automática de <strong>dicionários</strong>.</li>
+<li>Ou conversão explícita de outros tipos com o <code>jsonify</code>.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="flask-respostas-com-json" class="slide section level1">
+<h1>Flask: Respostas com JSON</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb27" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb27-2"><a href="#cb27-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb27-3"><a href="#cb27-3"></a></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/carro&quot;</span>)</span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="kw">def</span> carro():</span>
+<span id="cb27-6"><a href="#cb27-6"></a>    </span>
+<span id="cb27-7"><a href="#cb27-7"></a>    <span class="cf">return</span> {</span>
+<span id="cb27-8"><a href="#cb27-8"></a>            <span class="st">&quot;Fabricante&quot;</span>: <span class="st">&quot;Fiat&quot;</span>,</span>
+<span id="cb27-9"><a href="#cb27-9"></a>            <span class="st">&quot;Modelo&quot;</span>: <span class="st">&quot;500&quot;</span>,</span>
+<span id="cb27-10"><a href="#cb27-10"></a>            <span class="st">&quot;Peso&quot;</span>: <span class="dv">940</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a>        }</span>
+<span id="cb27-12"><a href="#cb27-12"></a></span>
+<span id="cb27-13"><a href="#cb27-13"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb27-14"><a href="#cb27-14"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb28" style="font-size: 16px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, jsonify</span>
+<span id="cb28-2"><a href="#cb28-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb28-3"><a href="#cb28-3"></a></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="at">@app.route</span>(<span class="st">&quot;/primos&quot;</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="kw">def</span> primos():</span>
+<span id="cb28-6"><a href="#cb28-6"></a>    lista <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>]</span>
+<span id="cb28-7"><a href="#cb28-7"></a>    <span class="cf">return</span> jsonify(lista)</span>
+<span id="cb28-8"><a href="#cb28-8"></a>        </span>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb28-10"><a href="#cb28-10"></a>    app.run(debug<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+</body>
+</html>
