@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Segurança em Sistemas Web</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Atlântica - Instituto Universitário</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Segurança em Sistemas Web</h1>
+    <p class="subtitle">GSC - Laboratório de Desenvolvimento de Sistemas Web</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+  </div>
+</div>
+<div id="segurança-no-http" class="slide section level1 part">
+<h1 class="part">Segurança no HTTP</h1>
+</div>
+<div id="https-http-secure" class="slide section level1">
+<h1>HTTPS: HTTP Secure</h1>
+<ul>
+<li>Versão segura do HTTP.</li>
+<li>HTTP envia texto plano dos objetos do cliente para o servidor e vice-e-versa.
+<ul>
+<li>Informações podem ser interceptadas e facilmente visualizadas.</li>
+</ul></li>
+<li>Uso do protocolo SSL/TLS.
+<ul>
+<li>Conexão <strong>criptografada</strong>.</li>
+<li>Verificação de autenticidade do servidor e do cliente por meio de <strong>certificados digitais</strong>.</li>
+</ul></li>
+<li>URL das páginas inicia com <code>https://</code>.</li>
+</ul>
+</div>
+<div id="https-criptografia" class="slide section level1">
+<h1>HTTPS: Criptografia</h1>
+<ul>
+<li>Algoritmo criptográfico cifra <em>objeto original</em> com <em>chave</em>.
+<ul>
+<li>Gera <em>objeto criptografado</em>.</li>
+</ul></li>
+<li>Algoritmo criptográfico descifra <em>objeto criptografado</em> com <em>chave</em>.
+<ul>
+<li>Gera <em>objeto original</em>.</li>
+<li>Algoritmos de cifragem e descifragem devem ser correspondentes.</li>
+</ul></li>
+</ul>
+</div>
+<div id="https-criptografia-ii" class="slide section level1">
+<h1>HTTPS: Criptografia (II)</h1>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Simétrica:
+<ul>
+<li>mesma chave (privadas) no cliente e no servidor.</li>
+</ul></li>
+</ul>
+<div class="center">
+<p><img src="imagens/criptografiaSimetrica.png" style="width:100.0%" /></p>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Assimétrica:
+<ul>
+<li>par de chaves, uma pública e outra privada.</li>
+</ul></li>
+</ul>
+<div class="center">
+<p><img src="imagens/criptografiaAssimetrica.png" style="width:100.0%" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="https-criptografia-iii" class="slide section level1">
+<h1>HTTPS: Criptografia (III)</h1>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><br></p>
+<ul>
+<li>Combinação de criptografia simétrica e assimétrica.
+<ul>
+<li>Simétrica é melhor para criptografar objetos grandes.</li>
+<li>E assimétrica é usada para criptografar chave simétrica.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<p><img src="imagens/criptografiaSimetricaAssimetrica.png" style="width:100.0%" /></p>
+</div>
+</div>
+</div>
+<div id="https-certificados-e-autoridades-certificadoras" class="slide section level1">
+<h1>HTTPS: Certificados e Autoridades Certificadoras</h1>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="center">
+<p><img src="imagens/certificadoSNS24.png" style="width:80.0%" /></p>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>Em HTTPS, normalmente, chaves públicas são distribuídas por <strong>certificados digitais</strong>.</li>
+<li>Certificado precisa ser <strong>autenticado</strong>.
+<ul>
+<li>Isto é, <strong>validados</strong> e <strong>assinados digitalmente</strong>.</li>
+</ul></li>
+<li>Quem autentica?
+<ul>
+<li>Autoridades certificadoras confiáveis (terceira parte).</li>
+<li>Validam e assinam digitalmente o certificado.</li>
+<li>Empresas especializadas, governo, …</li>
+<li>Há uma <strong>relação de confiança</strong>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="autenticação-de-certificados-nos-navegadores" class="slide section level1">
+<h1>Autenticação de Certificados nos Navegadores</h1>
+<p><br></p>
+<div class="center">
+<p><img src="imagens/httpsWorking.png" style="width:45.0%" /></p>
+</div>
+</div>
+<div id="https-no-flask" class="slide section level1">
+<h1>HTTPS no Flask</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><br></p>
+<ul>
+<li>Instalar o OpenSSL no Python 3 com pip ou pip3.</li>
+</ul>
+<div class="sourceCode" id="cb1" style="font-size: 18px;"><pre class="sourceCode Bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install pyopenssl</span></code></pre></div>
+<ul>
+<li>Ele provê o uso do SSL e manipulação de certificados digitais.</li>
+<li>Um teste simples utilizando o contexto <em>adhoc</em>:</li>
+</ul>
+<div class="sourceCode" id="cb2" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb2-2"><a href="#cb2-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">def</span> hello():</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="cf">return</span> <span class="st">&quot;Hello World!&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb2-7"><a href="#cb2-7"></a>    app.run(ssl_context<span class="op">=</span><span class="st">&#39;adhoc&#39;</span>)</span></code></pre></div>
+</div><div class="column" style="width:45%;">
+<p><br> <img src="imagens/certificadoNaoConfiavel.png" style="width:100.0%" /></p>
+</div>
+</div>
+</div>
+<div id="gerar-certificado-digital-auto-assinado" class="slide section level1">
+<h1>Gerar Certificado Digital Auto-assinado</h1>
+<ul>
+<li>O contexto <em>adhoc</em> faz o Flask gerar certificados a cada vez que a página é carregada.
+<ul>
+<li>Utilizador deve aceitar a cada atualização da página.</li>
+</ul></li>
+<li>É possível gerar nosso próprio <strong>certificado auto-assinado</strong>.</li>
+<li>Gerar com o OpenSSL ou em sites como: <a href="https://certificatetools.com/">https://certificatetools.com/</a>
+<ul>
+<li>Trocar ‘CSR only’ para ‘Self-sign’ em ‘<em>CSR Options</em>’.</li>
+<li>Preencher ‘<em>Common Names</em>’ com ‘localhost’, por exemplo (para teste).</li>
+<li>Submeter.</li>
+<li>Salvar ‘<em>Private Key</em>’ e ‘<em>PEM Certificate</em>’ no diretório de sua aplicação .py.</li>
+</ul></li>
+</ul>
+</div>
+<div id="usar-certificado-digital-auto-assinado-no-flask" class="slide section level1">
+<h1>Usar Certificado Digital Auto-assinado no Flask</h1>
+<ul>
+<li>Assuma que os respetivos ficheiros são:
+<ul>
+<li>Para <em>private key</em>: <code>cert.key</code></li>
+<li>Para <em>PEM Certificate</em>: <code>cert.crt</code></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb3" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb3-2"><a href="#cb3-2"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">def</span> hello():</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="cf">return</span> <span class="st">&quot;Hello World!&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    app.run(debug<span class="op">=</span><span class="va">True</span>, ssl_context<span class="op">=</span>(<span class="st">&#39;cert.crt&#39;</span>, <span class="st">&#39;cert.key&#39;</span>))</span></code></pre></div>
+<ul>
+<li>Para versão de produção, é preferível usar certificado registado em <strong>autoridades certificadoras</strong>.</li>
+</ul>
+</div>
+<div id="atividade-i" class="slide section level1">
+<h1>Atividade I</h1>
+<ol style="list-style-type: decimal">
+<li>Adicione o HTTPS com certificados auto-assinados a sua aplicação web de login.</li>
+</ol>
+</div>
+<div id="autenticação-e-segurança-de-palavra-passe" class="slide section level1 part">
+<h1 class="part">Autenticação e Segurança de Palavra-Passe</h1>
+</div>
+<div id="fatores-de-autenticação" class="slide section level1">
+<h1>Fatores de Autenticação</h1>
+<ul>
+<li>Vimos que o envio da palavra-passe é criptografado pelo HTTPS.
+<ul>
+<li>Resolve problema do <em>men-in-the-middle</em>.</li>
+</ul></li>
+<li>Agora, como o utilizador se autentica em um sistema web?
+<ul>
+<li>Isto é, prova a sua identidade?</li>
+</ul></li>
+<li>Existem 3 tipos comuns de fatores de autenticação:
+<ol style="list-style-type: decimal">
+<li>Baseado em algo que sabe (<em>Something you know</em>)
+<ul>
+<li>Exemplo: uma palavra-passe.</li>
+</ul></li>
+<li>Baseado em algo que tem (<em>Something you have</em>)
+<ul>
+<li>Exemplo: um cartão de acesso.</li>
+</ul></li>
+<li>Baseado em algo que é (<em>Something you are</em>)
+<ul>
+<li>Exemplo: uso de biometria.</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+<div id="autenticação-por-palavra-passe" class="slide section level1">
+<h1>Autenticação por Palavra-Passe</h1>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><br></p>
+<ul>
+<li>Um dos métodos mais comuns em sistemas web atualmente.</li>
+<li>Utilizador regista identificador e palavra-passe no sistema.
+<ul>
+<li>Identificadores podem ser e-mail ou um nome que não exista no sistema.</li>
+<li>Servidor regista chave de autenticação (identificador, palavra-passe).</li>
+</ul></li>
+<li>Utilizador submete suas credenciais: identificador e palavra-passe.
+<ul>
+<li>Servidor checa as credenciais submetidas contra aquelas registadas.</li>
+<li>Se casar, utilizador ganha permissão para acessar ao sistema.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><br><br> <img src="imagens/loginpage.png" style="width:85.0%" /></p>
+</div>
+</div>
+</div>
+<div id="armazenamento-de-palavra-passe" class="slide section level1">
+<h1>Armazenamento de Palavra-Passe</h1>
+<ul>
+<li>No entanto, temos um outro problema:
+<ul>
+<li>Uma vez que a palavra-passe chega no servidor, como ela deve ser armazenada?</li>
+</ul></li>
+</ul>
+<div class="center" style="font-size: 16px; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Utilizador</th>
+<th>Palavra-passe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td><code>matrix</code></td>
+</tr>
+<tr class="even">
+<td>Pedro</td>
+<td><code>KgY1q!o6</code></td>
+</tr>
+<tr class="odd">
+<td>João</td>
+<td><code>123456</code></td>
+</tr>
+<tr class="even">
+<td>Maria</td>
+<td><code>minhasenhasegura</code></td>
+</tr>
+<tr class="odd">
+<td>Joana</td>
+<td><code>123456</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>O que aconteceria se um atacante tivesse acesso a base de utilizadores e palavras-passes?
+<ul>
+<li>Atacante pode facilmente aceder ao sistema se passando por um utilizador legitimamente registado.</li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-em-python-com-armazenamento-em-memória" class="slide section level1">
+<h1>Exemplo em Python com Armazenamento em Memória</h1>
+<div class="sourceCode" id="cb4" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> verificaPalavraPasse(passwd_dic, passwd_input):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="cf">return</span>(passwd_dic <span class="op">==</span> passwd_input)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Dicionario que guarda os utilizadores</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>dic <span class="op">=</span> {}</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>user <span class="op">=</span> <span class="st">&quot;Maria&quot;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>passwd <span class="op">=</span> <span class="st">&quot;teste123&quot;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a>dic[user] <span class="op">=</span> passwd</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># Assumindo que user é Maria...</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>passwd_in <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Palavra-passe: &quot;</span>)</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="bu">print</span>(verificaPalavraPasse(dic[user], passwd_in))</span></code></pre></div>
+<ul>
+<li>Não usar este tipo de armazenamento pois quem tem acesso a base obtém facilmente as palavras-passe dos utilizadores.
+<ul>
+<li>Péssima política de segurança!</li>
+</ul></li>
+</ul>
+</div>
+<div id="armazenamento-de-hash-criptográfico" class="slide section level1">
+<h1>Armazenamento de Hash Criptográfico</h1>
+<ul>
+<li><strong>Hash</strong>: função que recebe dado e retorna bytes de tamanho fixo (<em>e.g.</em>, 256 bits).
+<ul>
+<li>Exemplos de <em>hashes</em>: MD5, SHA1, SHA256, …</li>
+<li>O <em>digest</em> (binário do <em>hash</em>) pode ser apresentado em hexadecimal.</li>
+<li>Propriedade requerida do <em>hash</em>: ser <strong>irreversível</strong>.
+<ul>
+<li>Isto é, a partir dele, não se pode recuperar o dado original.</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="center" style="font-size: 16px; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Utilizador</th>
+<th>Palavra-passe (SHA256)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td><code>6e00cd562cc2d88e238dfb81d9439de7ec843ee9d0c9879d549cb1436786f975</code></td>
+</tr>
+<tr class="even">
+<td>Pedro</td>
+<td><code>9f89aa1497044d9bfe03543fa0b02310b8c78dcba0eff6a3923710c85fad1d5f</code></td>
+</tr>
+<tr class="odd">
+<td>João</td>
+<td><code>8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92</code></td>
+</tr>
+<tr class="even">
+<td>Maria</td>
+<td><code>0591942e447a74c0ea310f39bb3760f3d5382a74866b08e5cfe210419ffe9be6</code></td>
+</tr>
+<tr class="odd">
+<td>Joana</td>
+<td><code>8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="exemplo-em-python-hash" class="slide section level1">
+<h1>Exemplo em Python: Hash</h1>
+<div class="sourceCode" id="cb5" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> hashlib</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">def</span> verificaPalavraPasse(<span class="bu">hash</span>, passwd):</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    <span class="bu">bytes</span> <span class="op">=</span> passwd.encode()</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="cf">return</span>(hashlib.sha256(<span class="bu">bytes</span>).digest() <span class="op">==</span> <span class="bu">hash</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    </span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="kw">def</span> geraHash(passwd):</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="co"># Gera o hash (SHA 256) da palavra-passe</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="bu">hash</span> <span class="op">=</span> hashlib.sha256(passwd.encode())</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="co"># Obtém o hexadecimal e retorna</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="cf">return</span> (<span class="bu">hash</span>.digest())</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co"># Dicionario que guarda os utilizadores</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>dic <span class="op">=</span> {}</span>
+<span id="cb5-15"><a href="#cb5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16"></a>user <span class="op">=</span> <span class="st">&quot;Maria&quot;</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>passwd <span class="op">=</span> <span class="st">&quot;teste123&quot;</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a></span>
+<span id="cb5-19"><a href="#cb5-19"></a>dic[user] <span class="op">=</span> {} <span class="co"># Vamos usar agora o formato {&quot;Maria&quot;:{&quot;hash&quot;:&quot;3d43...&quot;}}</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="co"># Insere hash da palavra-passe para o utilizador</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a>dic[user][<span class="st">&quot;hash&quot;</span>] <span class="op">=</span> geraHash(passwd)</span>
+<span id="cb5-22"><a href="#cb5-22"></a></span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="co"># Assumindo que user é Maria...</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a>passwd_in <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Palavra-passe: &quot;</span>)</span>
+<span id="cb5-25"><a href="#cb5-25"></a><span class="bu">print</span>(verificaPalavraPasse(dic[user][<span class="st">&quot;hash&quot;</span>], passwd_in))</span></code></pre></div>
+</div>
+<div id="ataques-de-força-bruta" class="slide section level1">
+<h1>Ataques de Força Bruta</h1>
+<ul>
+<li>Atacante checa exaustivamente todas as possíveis palavra-passes.
+<ul>
+<li>Online: explora o sistema de autenticação da aplicação web.</li>
+<li>Offline: através de vazamento de base de dados.</li>
+</ul></li>
+<li>Um exemplo de algoritmo simples:
+<ul>
+<li>gerar todas as combinações de strings de vários tamanhos;</li>
+<li>para cada uma delas, gerar seu hash e checar contra a palavra-passe armazenada.</li>
+</ul></li>
+<li>Coforme aumenta-se o número de caracteres, este processo tende a demorar muito.</li>
+<li>Para tentativas submetidas repetidamente ao sistema web de login: - há soluções de verificar múltiplas tentativas e bloquear temporariamente o acesso. - Exemplo: contador de tentativas com bloqueio e uso de CAPTCHA (teste de Turing).</li>
+</ul>
+</div>
+<div id="ataques-de-força-bruta-dicionário" class="slide section level1">
+<h1>Ataques de Força Bruta: Dicionário</h1>
+<ul>
+<li>Ao invés de tentar todas as combinações de strings, o uso de dicionário reduz o espaço de busca.
+<ul>
+<li>Objetivo de tentar palavras comumente utilizadas para palavras-passe.</li>
+<li>Dicionário contém essas palavras.</li>
+</ul></li>
+<li>Uso de um dicionário:
+<ul>
+<li>em uma linguagem específica (<em>e.g.</em>, português);</li>
+<li>lista de palavras-passe comumente utilizadas.</li>
+</ul></li>
+<li>Exemplo de palavras-passe comuns:
+<ul>
+<li><a href="https://github.com/duyet/bruteforce-database">https://github.com/duyet/bruteforce-database</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="soluções-para-ataques-de-força-bruta" class="slide section level1">
+<h1>Soluções para Ataques de Força-Bruta</h1>
+<ul>
+<li>Usar palavras-passe difíceis:
+<ul>
+<li>8 ou mais caracteres;</li>
+<li>Inclusão de alguns caracteres não alfa-numéricos;</li>
+<li>Não usar palavras comuns em dicionários…</li>
+</ul></li>
+<li>Forçar utilizador a criar palavras-passe deste modo.
+<ul>
+<li>Fazer verificação no cliente via Javascript?</li>
+</ul></li>
+</ul>
+</div>
+<div id="ataque-de-rainbow-table" class="slide section level1">
+<h1>Ataque de <em>Rainbow Table</em></h1>
+<ul>
+<li>Considere a seguinte situação em que atacante tem posse da base.
+<ul>
+<li>Palavras-passe armazenadas pelo seu <em>hash</em>.</li>
+<li>Atacante possui também tabela com uma lista de <em>hashes</em> pré-calculados.</li>
+</ul></li>
+<li>Atacante pode, então, conhecer a palavra-passe se o <em>hash</em> dela estiver contido nesta tabela.</li>
+<li><strong>Rainbow Tables</strong> (tabelas arco-íris): dicionário de palavras-passes e seus valores <em>hash</em> pré-computados.</li>
+<li>Para palavras-passe longas, esta abordagem de ataque é preferível.
+<ul>
+<li>Em relação a ataques de força-bruta e dicionário.</li>
+</ul></li>
+<li>Processo de gerar a tabela é custoso!</li>
+</ul>
+</div>
+<div id="salt-i" class="slide section level1">
+<h1>Salt (I)</h1>
+<ul>
+<li>Servidor gera e armazena junto a palavra-passe do utilizador, uma string chamada de <em>salt</em>.
+<ul>
+<li>É uma string única por utilizador.</li>
+<li>Pode ser gerada aleatoriamente.</li>
+</ul></li>
+<li>Palavra-passe armazenada é concatenada ao <em>salt</em>.
+<ul>
+<li>Hash é calculado sobre [<em>salt</em> + palavra-passe] e armazenado dessa forma.</li>
+</ul></li>
+</ul>
+<div class="center" style="font-size: 16px; line-height: 80%;">
+<table>
+<colgroup>
+<col width="46%" />
+<col width="30%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Utilizador</th>
+<th><em>Salt</em></th>
+<th>Palavra-passe (SHA256)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td><code>AMx1#w</code></td>
+<td><code>4e35262a19af80608d46baceaab7067f2fb9634f7eddd8c157261eab5db829b8</code></td>
+</tr>
+<tr class="even">
+<td>Pedro</td>
+<td><code>8fdSPc</code></td>
+<td><code>dc5a70dd56d86bf612d8719819cd7b358f151e0d8ef67f4b05428a3549c904fb</code></td>
+</tr>
+<tr class="odd">
+<td>João</td>
+<td><code>!vk9$A</code></td>
+<td><code>e727a738b144b3ffeb7e746c27a4284feabb7735ab626a25558922dc97887844</code></td>
+</tr>
+<tr class="even">
+<td>Maria</td>
+<td><code>04dRTT</code></td>
+<td><code>52c3a526f66eccacd2f570112eb026a11d35b7b287baa8403e461c89c79d452c</code></td>
+</tr>
+<tr class="odd">
+<td>Joana</td>
+<td><code>u)Ln56</code></td>
+<td><code>9e1943d1be8296d677fca3b6d2bc81137d69045f0f14b627f589647b0ddd2780</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="salt-ii" class="slide section level1">
+<h1>Salt (II)</h1>
+<ul>
+<li>O <em>salt</em> é usado para dificultar ataques de <em>rainbow table</em>.
+<ul>
+<li><em>salt</em> dificulta (bastante!) associar palavra-passe a <em>hash</em> diretamente.</li>
+</ul></li>
+<li>Resolve também problema de João e Joana, que tem o mesmo <em>hash</em>.
+<ul>
+<li>Porque eles tem a mesma palavra-passe.</li>
+</ul></li>
+<li>Alguns sistemas usam <em>pepper</em> também.
+<ul>
+<li>Esse valor vem do cliente e não é gerado no servidor.</li>
+<li>hash(<em>pepper</em> + <em>salt</em> + palavra-passe)</li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-em-python-uso-de-salt-i" class="slide section level1">
+<h1>Exemplo em Python: Uso de <em>Salt</em> (I)</h1>
+<div class="sourceCode" id="cb6" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> hashlib, string, random</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># Verifica se hashSHA256(salt+passwd) é igual ao hash do argumento</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="kw">def</span> verificaPalavraPasse(salt, <span class="bu">hash</span>, passwd):</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="bu">bytes</span> <span class="op">=</span> (salt<span class="op">+</span>passwd).encode()</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="cf">return</span>(hashlib.sha256(<span class="bu">bytes</span>).digest() <span class="op">==</span> <span class="bu">hash</span>)</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co"># Gera um salt aleatoriamente, o hash(salt+passwd).</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co"># Retorna uma tupla com o salt e os bytes do hash   </span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="kw">def</span> geraHash(passwd):</span>
+<span id="cb6-11"><a href="#cb6-11"></a>    caracteres <span class="op">=</span> string.ascii_letters<span class="op">+</span>string.digits<span class="op">+</span>string.punctuation</span>
+<span id="cb6-12"><a href="#cb6-12"></a>    <span class="co"># Gera um salt de 16 bits aleatoriamente</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>    salt <span class="op">=</span> <span class="st">&#39;&#39;</span>.join(random.choices(caracteres, k<span class="op">=</span><span class="dv">16</span>))</span>
+<span id="cb6-14"><a href="#cb6-14"></a>    <span class="co"># Gera o hash (SHA 256) do salt + palavra-passe</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>    <span class="bu">hash</span> <span class="op">=</span> hashlib.sha256((salt<span class="op">+</span>passwd).encode())</span>
+<span id="cb6-16"><a href="#cb6-16"></a>    <span class="cf">return</span> (salt, <span class="bu">hash</span>.digest())</span></code></pre></div>
+</div>
+<div id="exemplo-em-python-uso-de-salt-ii" class="slide section level1">
+<h1>Exemplo em Python: Uso de <em>Salt</em> (II)</h1>
+<ul>
+<li>Programa principal:</li>
+</ul>
+<div class="sourceCode" id="cb7" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Dicionario que guarda os utilizadores</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>dic <span class="op">=</span> {}</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>user <span class="op">=</span> <span class="st">&quot;Maria&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>passwd <span class="op">=</span> <span class="st">&quot;teste123&quot;</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>dic[user] <span class="op">=</span> {} <span class="co"># Ex.: {&#39;Maria&#39;: {&#39;salt&#39; = &#39;...&#39;, &#39;hash&#39;: &#39;...&#39;}}</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co"># Insere hash da palavra-passe para o utilizador</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>dic[user][<span class="st">&quot;salt&quot;</span>], dic[user][<span class="st">&quot;hash&quot;</span>] <span class="op">=</span> geraHash(passwd)</span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co"># Assumindo que user é Maria...</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>passwd_in <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Palavra-passe: &quot;</span>)</span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="bu">print</span>(verificaPalavraPasse(dic[user][<span class="st">&quot;salt&quot;</span>], dic[user][<span class="st">&quot;hash&quot;</span>], passwd_in))</span></code></pre></div>
+</div>
+<div id="atividade-ii" class="slide section level1">
+<h1>Atividade II</h1>
+<ol style="list-style-type: decimal">
+<li>Incluir o armazenamento de <em>hash</em> na lógica de registo de sua aplicação web.</li>
+<li>Incluir também o armazenamento do <em>salt</em>.</li>
+<li>Alterar a verificação das palavras-passe.</li>
+</ol>
+</div>
+</body>
+</html>
