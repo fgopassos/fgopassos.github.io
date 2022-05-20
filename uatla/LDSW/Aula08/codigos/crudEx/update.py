@@ -1,0 +1,14 @@
+import sqlite3
+con = sqlite3.connect('minhaBase.db')
+
+cur = con.cursor()
+
+# Insere uma linha na tabela
+cur.execute("UPDATE lp SET  percUso = 13.1 where id = 1")
+
+# Guarda (commit) as mudanças
+con.commit()
+
+# Ao final, fechar a conexão com a base.
+# Assegure-se de que todos os commits tenham sido feitos.
+con.close()

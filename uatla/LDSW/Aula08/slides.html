@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Fernanda Passos" />
+  <title>Base de Dados e Flask</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../template/css/main.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<script charset="utf-8" type="text/javascript" src="../template/js/main.js"></script>
+<div class="slide titlepage">
+  <div class="informationHolder">
+    <p class="institute">Atlântica - Instituto Universitário</p>
+    <img class="logo" src="../atlantica_logo2.svg"></img>
+    <h1 class="title">Base de Dados e Flask</h1>
+    <p class="subtitle">GSC - Laboratório de Desenvolvimento de Sistemas Web</p>
+    <p class="author">
+Fernanda Passos
+    </p>
+  </div>
+</div>
+<div id="base-de-dados" class="slide section level1 part">
+<h1 class="part">Base de Dados</h1>
+</div>
+<div id="tipos-de-bases-de-dados" class="slide section level1">
+<h1>Tipos de Bases de Dados</h1>
+<ul>
+<li>Atualmente existem dois grandes tipos de bases de dados:
+<ul>
+<li>Relacional: geralmente usa SQL.</li>
+<li>Não relacional: NoSQL (<em>Not only SQL</em>).</li>
+</ul></li>
+</ul>
+<div class="center">
+<p><img src="imagens/relacionalXnaoRelacional.jpg" style="width:40.0%" /></p>
+</div>
+</div>
+<div id="bases-de-dados-relacional" class="slide section level1">
+<h1>Bases de Dados Relacional</h1>
+<ul>
+<li>Dados são armazenados em estruturas lógicas de tabelas.
+<ul>
+<li>Tabelas podem ser associadas entre si.</li>
+</ul></li>
+<li>Linguagem comum para manipular dados: SQL.
+<ul>
+<li>SQL: <em>Structured Query Language</em>.</li>
+</ul></li>
+</ul>
+<div class="center">
+<p><img src="imagens/exemploRelacao.jpg" style="width:70.0%" /></p>
+</div>
+</div>
+<div id="sistemas-gerenciadores-de-bases-de-dados" class="slide section level1">
+<h1>Sistemas Gerenciadores de Bases de Dados</h1>
+<ul>
+<li>Existem vários sistemas:
+<ul>
+<li>Oracle Database</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Microsoft SQL Server</li>
+<li>SQLite</li>
+<li>…</li>
+</ul></li>
+<li>Por simplicidade, iremos trabalhar com o <strong>SQLite 3</strong>. <!-- TODO: Pôr figura do logo do sqlite --></li>
+</ul>
+</div>
+<div id="sqlite-e-python" class="slide section level1">
+<h1>SQLite e Python</h1>
+<ul>
+<li>SQLite é um programa externo ao Python.</li>
+<li>Instalação no sistema:
+<ul>
+<li><a href="https://www.sqlitetutorial.net/download-install-sqlite/">https://www.sqlitetutorial.net/download-install-sqlite/</a></li>
+</ul></li>
+<li>Testar se SQLite está instalado:
+<ul>
+<li>em linha de comando, digitar <code>sqlite3</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-de-criação-de-tabela" class="slide section level1">
+<h1>Exemplo de Criação de Tabela</h1>
+<ul>
+<li>Programa: createTable.py</li>
+</ul>
+<div class="sourceCode" id="cb1" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb1-2"><a href="#cb1-2"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;minhaBase.db&#39;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Criar cursor para realizar operações SQL</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Comando SQL para criar a tabela de linguagens de programação.</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>sql_create_table <span class="op">=</span> <span class="st">&#39;&#39;&#39;CREATE TABLE lp (id INT PRIVATE KEY AUTOINCREMENT,</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="st">    nome text, anoCriacao int, percUso real)&#39;&#39;&#39;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Cria uma tabela para guardar...</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>cur.execute(sql_create_table)</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># Guarda (commit) as mudanças</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>con.commit()</span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># Ao final, fechar a conexão com a base.</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Assegure-se de que todos os commits tenham sido feitos.</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>con.close()</span></code></pre></div>
+</div>
+<div id="crud" class="slide section level1">
+<h1>CRUD</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Acrônimo</th>
+<th>Descrição</th>
+<th>Comando de SQL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td>cria/insere dado na tabela.</td>
+<td>INSERT</td>
+</tr>
+<tr class="even">
+<td>Read/Retrieve</td>
+<td>obtém dado da tabela.</td>
+<td>SELECT</td>
+</tr>
+<tr class="odd">
+<td>Update</td>
+<td>atualiza dado já existente na tabela.</td>
+<td>UPDATE</td>
+</tr>
+<tr class="even">
+<td>Delete</td>
+<td>apaga dado da tabela.</td>
+<td>DELETE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="inserção-de-dados-create" class="slide section level1">
+<h1>Inserção de Dados (<em>Create</em>)</h1>
+<div class="sourceCode" id="cb2" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb2-2"><a href="#cb2-2"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;minhaBase.db&#39;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># Insere linhas na tabela</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>cur.execute(<span class="st">&quot;INSERT INTO lp VALUES (0, &#39;Python&#39;,1991, 15.3)&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a>cur.execute(<span class="st">&quot;INSERT INTO lp VALUES (1, &#39;C&#39;,1972, 12.3)&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>cur.execute(<span class="st">&quot;INSERT INTO lp VALUES (2, &#39;Java&#39;,1994, 11.8)&quot;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co"># Compromete (commit) as mudanças</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>con.commit()</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co"># Ao final, fechar a conexão com a base.</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="co"># Assegure-se de que todos os commits tenham sido feitos.</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>con.close()</span></code></pre></div>
+</div>
+<div id="consulta-de-dados-read" class="slide section level1">
+<h1>Consulta de Dados (<em>Read</em>)</h1>
+<div class="sourceCode" id="cb3" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb3-2"><a href="#cb3-2"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;minhaBase.db&#39;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># Para fazer consultas à base de dados lp em minhaBase.db</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Vamos ordenar as linguagens por ano de criação.</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>consulta <span class="op">=</span> cur.execute(<span class="st">&#39;SELECT * FROM lp ORDER BY anoCriacao&#39;</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># &#39;consulta&#39; é um objeto iterável e cada elemento é uma linha do</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co"># resultado do select.</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="cf">for</span> i <span class="kw">in</span> consulta: <span class="bu">print</span>(i)</span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co"># Vamos ordenar as linguagens por percentual de uso. </span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>cur.execute(<span class="st">&#39;SELECT * FROM lp ORDER BY percUso&#39;</span>)</span>
+<span id="cb3-16"><a href="#cb3-16"></a></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co"># fetch all retorna uma lista com o resultado da consulta</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>lista_consulta <span class="op">=</span> cur.fetchall()</span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="bu">print</span>(lista_consulta)</span>
+<span id="cb3-20"><a href="#cb3-20"></a></span>
+<span id="cb3-21"><a href="#cb3-21"></a>con.close()</span></code></pre></div>
+</div>
+<div id="fetchall-fetchone-fetchmany" class="slide section level1">
+<h1>Fetchall, fetchone, fetchmany</h1>
+<ul>
+<li><code>fetchall()</code>:
+<ul>
+<li>Retorna lista completa dos valores retornados pelo SELECT.</li>
+</ul></li>
+<li><code>fetchone()</code>:
+<ul>
+<li>Retorna o primeiro valor do SELECT.</li>
+</ul></li>
+<li><code>fetchmany(x)</code>:
+<ul>
+<li>Retorna lista dos <code>x</code> valores retornados pelo SELECT.</li>
+</ul></li>
+</ul>
+</div>
+<div id="atualização-de-dados-update" class="slide section level1">
+<h1>Atualização de Dados (<em>Update</em>)</h1>
+<div class="sourceCode" id="cb4" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb4-2"><a href="#cb4-2"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;minhaBase.db&#39;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># Atualiza uma linha específica da tabela</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>cur.execute(<span class="st">&quot;UPDATE lp SET  percUso = 13.1 where id = 1&quot;</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co"># Guarda (commit) as mudanças</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>con.commit()</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># Ao final, fechar a conexão com a base.</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co"># Assegure-se de que todos os commits tenham sido feitos.</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>con.close()</span></code></pre></div>
+</div>
+<div id="remoção-de-dados-delete" class="slide section level1">
+<h1>Remoção de Dados (<em>Delete</em>)</h1>
+<div class="sourceCode" id="cb5" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;minhaBase.db&#39;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Insere uma linha na tabela</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>cur.execute(<span class="st">&quot;DELETE FROM lp WHERE id=0&quot;</span>)</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># Guarda (commit) as mudanças</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>con.commit()</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co"># Ao final, fechar a conexão com a base.</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="co"># Assegure-se de que todos os commits tenham sido feitos.</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>con.close()</span>
+<span id="cb5-16"><a href="#cb5-16"></a></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="bu">print</span>(<span class="st">&quot;Remoção concluída...&quot;</span>)</span></code></pre></div>
+</div>
+<div id="operações-com-entrada-do-utilizador" class="slide section level1">
+<h1>Operações com Entrada do Utilizador</h1>
+<ul>
+<li>Ao usar input de utilizador, texto SQL fica mais livre.
+<ul>
+<li><code>cur.execute("DELETE FROM lp WHERE id=" + id_input)</code></li>
+</ul></li>
+<li>Por exemplo, utilizador pode injetar código:
+<ul>
+<li><code>0 OR id=1</code></li>
+<li><code>0; DROP lp;</code></li>
+</ul></li>
+<li>Por segurança, o correto é usar <em>placeholders</em> ‘?’ na função <code>execute</code>.
+<ul>
+<li><code>cur.execute("DELETE FROM lp WHERE id=?", (id_input,))</code></li>
+<li>O <em>placeholder</em> ‘?’ fica no local onde o texto será substituído;</li>
+<li>Após a vírgula, incluir uma tupla com os valores.</li>
+</ul></li>
+<li>Para previnir de ataques de injeção de código HTML, JS…
+<ul>
+<li>Uso de função ‘escape()’ do pacote <code>markupsafe</code>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="exemplo-de-delete-com-placeholders-e-escape" class="slide section level1">
+<h1>Exemplo de <em>Delete</em> com <em>Placeholders</em> e <em>Escape</em></h1>
+<div class="sourceCode" id="cb6" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">from</span> markupsafe <span class="im">import</span> escape <span class="co"># Usado para impedir ataque de injeção de código html ou js</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;minhaBase.db&#39;</span>)</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="cf">try</span>:</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    cur <span class="op">=</span> con.cursor()</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="co"># Insere uma linha na tabela</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>    id_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Entre com o id: &quot;</span>)</span>
+<span id="cb6-11"><a href="#cb6-11"></a>    cur.execute(<span class="st">&quot;DELETE FROM lp WHERE id=?&quot;</span>, (id_input,))</span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>    <span class="co"># Guarda (commit) as mudanças</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>    con.commit()</span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> m:</span>
+<span id="cb6-16"><a href="#cb6-16"></a>    <span class="bu">print</span>(m)</span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="cf">finally</span>:</span>
+<span id="cb6-18"><a href="#cb6-18"></a>    <span class="co"># Ao final, fechar a conexão com a base.</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a>    <span class="co"># Assegure-se de que todos os commits tenham sido feitos.</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a>    con.close()</span>
+<span id="cb6-21"><a href="#cb6-21"></a></span>
+<span id="cb6-22"><a href="#cb6-22"></a><span class="bu">print</span>(<span class="st">&quot;Remoção concluída...&quot;</span>)</span></code></pre></div>
+</div>
+<div id="flask-e-sqlite" class="slide section level1 part">
+<h1 class="part">Flask e SQLite</h1>
+</div>
+<div id="crud-com-flask-e-sqlite" class="slide section level1">
+<h1>CRUD com Flask e SQLite</h1>
+<ul>
+<li>Podemos implementar o CRUD no Flask.</li>
+<li>Interface com o utilizador: funciona no navegador (cliente).</li>
+<li>Operações de CRUD: no servidor Flask (Python 3).
+<ul>
+<li>Base de dados (SQLite) junto ao servidor.</li>
+</ul></li>
+<li>A seguir, vamos criar uma aplicação Web simples para CRUD.
+<ul>
+<li>Aplicação que apresenta a base de dados com registo de nome de cliente e e-mail.</li>
+</ul></li>
+</ul>
+</div>
+<div id="organização-de-ficheiros-e-diretórios" class="slide section level1">
+<h1>Organização de Ficheiros e Diretórios</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Descrição dos ficheiros:
+<ul>
+<li>static/stilos.css: estilos para a página.</li>
+<li>templates/add_user.html: página com formulário para adicionar registo.</li>
+<li>templates/edit_user.html: página com formulário para editar um registo específico.</li>
+<li>templates/index.html: página principal que mostra a tabela e disponibiliza operações.</li>
+<li>app.py: servidor flask.</li>
+<li>create_db.py: programa a parte para criar a base de dados SQLite.</li>
+<li>db_web.db: a base de dados.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img src="imagens/crudWebApp.png" style="width:75.0%" /></p>
+</div>
+</div>
+</div>
+<div id="criar-a-base-em-sqlite" class="slide section level1">
+<h1>Criar a Base em SQLite</h1>
+<ul>
+<li>Ficheiro create_db.py.</li>
+</ul>
+<div class="sourceCode" id="cb7" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> sqlite3 <span class="im">as</span> sql</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#Liga-se à base de dados do SQLite</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>con <span class="op">=</span> sql.<span class="ex">connect</span>(<span class="st">&#39;db_web.db&#39;</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co">#Cria o cursor para se fazer as queries SQL</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co">#Remove a tabela utilizadores se já existir.</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>cur.execute(<span class="st">&quot;DROP TABLE IF EXISTS utilizadores&quot;</span>)</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co">#Cria a tabela utilizadores do zero.</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>sql <span class="op">=</span> <span class="st">&quot;CREATE TABLE utilizadores (&#39;Id&#39; INTEGER PRIMARY KEY AUTOINCREMENT, &#39;Nome&#39; TEXT, &#39;Email&#39; TEXT)&quot;</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>cur.execute(sql)</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="co">#&#39;Comita&#39; as mudanças</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>con.commit()</span>
+<span id="cb7-18"><a href="#cb7-18"></a></span>
+<span id="cb7-19"><a href="#cb7-19"></a>con.close()</span></code></pre></div>
+</div>
+<div id="mostrar-tabela-no-flask" class="slide section level1">
+<h1>Mostrar Tabela: no Flask</h1>
+<div class="sourceCode" id="cb8" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Fazer os imports antes</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="at">@app.route</span>(<span class="st">&quot;/index&quot;</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="kw">def</span> index():</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    con<span class="op">=</span>sql.<span class="ex">connect</span>(<span class="st">&quot;db_web.db&quot;</span>)</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="co"># Permite recuperar retorno de fetchall como dicionário</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>    con.row_factory<span class="op">=</span>sql.Row</span>
+<span id="cb8-8"><a href="#cb8-8"></a>    cur<span class="op">=</span>con.cursor()</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    cur.execute(<span class="st">&quot;SELECT * FROM utilizadores&quot;</span>)</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    dado<span class="op">=</span>cur.fetchall()</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;index.html&quot;</span>, dados<span class="op">=</span>dado)</span></code></pre></div>
+</div>
+<div id="mostrar-tabela-no-template-html" class="slide section level1">
+<h1>Mostrar Tabela: no Template HTML</h1>
+<ul>
+<li>Apenas a parte da tabela e botão de adicionar utilizador:</li>
+</ul>
+<div class="sourceCode" id="cb9" style="font-size: 18px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;table</span> <span class="er">class</span><span class="ot">=</span><span class="st">&#39;table&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>    <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>        <span class="kw">&lt;th&gt;</span>ID<span class="kw">&lt;/th&gt;</span> <span class="kw">&lt;th&gt;</span>Nome<span class="kw">&lt;/th&gt;</span> <span class="kw">&lt;th&gt;</span>E-mail<span class="kw">&lt;/th&gt;</span> <span class="kw">&lt;th&gt;&lt;/th&gt;</span> <span class="kw">&lt;th&gt;&lt;/th&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>    {% for linha in dados %}</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>        <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">readonly</span> <span class="er">value</span><span class="ot">=</span><span class="st">{{linha.Id}}</span><span class="kw">&gt;</span> <span class="kw">&lt;/input&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>        <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">readonly</span> <span class="er">value</span><span class="ot">=</span><span class="st">{{linha.Nome}}</span><span class="kw">&gt;</span> <span class="kw">&lt;/input&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>        <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">readonly</span> <span class="er">value</span><span class="ot">=</span><span class="st">{{linha.Email}}</span><span class="kw">&gt;</span> <span class="kw">&lt;/input&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>        <span class="kw">&lt;td</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;fixed-width&#39;</span><span class="kw">&gt;</span> </span>
+<span id="cb9-11"><a href="#cb9-11"></a>            <span class="kw">&lt;form</span> <span class="er">method</span><span class="ot">=</span><span class="st">&#39;GET&#39;</span> <span class="er">action</span><span class="ot">=</span><span class="st">&#39;{{url_for(&quot;edit_user&quot;,uid=linha.Id)}}&#39;</span><span class="kw">&gt;</span> </span>
+<span id="cb9-12"><a href="#cb9-12"></a>                <span class="kw">&lt;button</span> <span class="er">class</span><span class="ot">=</span><span class="st">&#39;button1&#39;</span><span class="kw">&gt;</span> Editar <span class="kw">&lt;/button&gt;</span> <span class="kw">&lt;/form&gt;</span> </span>
+<span id="cb9-13"><a href="#cb9-13"></a>        <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a>        <span class="kw">&lt;td</span> <span class="er">id</span><span class="ot">=</span><span class="st">&#39;fixed-width&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>            <span class="kw">&lt;form</span> <span class="er">method</span><span class="ot">=</span><span class="st">&#39;GET&#39;</span> <span class="er">action</span><span class="ot">=</span><span class="st">&#39;{{url_for(&quot;delete_user&quot;,uid=linha.Id)}}&#39;</span><span class="kw">&gt;</span> </span>
+<span id="cb9-16"><a href="#cb9-16"></a>                <span class="kw">&lt;button</span> <span class="er">class</span><span class="ot">=</span><span class="st">&#39;button2&#39;</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&#39;return confirm(&quot;Tem certeza que deseja remover?&quot;)&#39;</span><span class="kw">&gt;</span> × <span class="kw">&lt;/button&gt;</span> </span>
+<span id="cb9-17"><a href="#cb9-17"></a>            <span class="kw">&lt;/form&gt;</span> </span>
+<span id="cb9-18"><a href="#cb9-18"></a>        <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb9-19"><a href="#cb9-19"></a>    <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a>    {% endfor %}</span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="kw">&lt;/table&gt;</span> <span class="kw">&lt;br&gt;</span></span>
+<span id="cb9-22"><a href="#cb9-22"></a><span class="kw">&lt;form</span> <span class="er">action</span><span class="ot">=</span><span class="st">&#39;{{url_for(&quot;add_user&quot;)}}&#39;</span><span class="kw">&gt;</span> <span class="kw">&lt;button</span> <span class="er">class</span><span class="ot">=</span><span class="st">&#39;button3&#39;</span><span class="kw">&gt;</span>+ Adicionar Utilizador<span class="kw">&lt;/button&gt;</span> <span class="kw">&lt;form&gt;</span>  </span></code></pre></div>
+</div>
+<div id="mostrar-tabela-resultado-com-css" class="slide section level1">
+<h1>Mostrar Tabela: Resultado com CSS</h1>
+<ul>
+<li>Página principal com o CSS aplicado e alguns dados adicionados a base de dados:</li>
+</ul>
+<div class="center">
+<p><img src="imagens/paginaCSS.png" style="width:80.0%" /></p>
+</div>
+</div>
+<div id="adicionar-registo-no-flask" class="slide section level1">
+<h1>Adicionar Registo: no Flask</h1>
+<div class="sourceCode" id="cb10" style="font-size: 20px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="at">@app.route</span>(<span class="st">&quot;/add_user&quot;</span>,methods<span class="op">=</span>[<span class="st">&#39;POST&#39;</span>,<span class="st">&#39;GET&#39;</span>])</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="kw">def</span> add_user():</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="cf">if</span> request.method<span class="op">==</span><span class="st">&#39;POST&#39;</span>:</span>
+<span id="cb10-4"><a href="#cb10-4"></a>        nome<span class="op">=</span>request.form[<span class="st">&#39;uname&#39;</span>]</span>
+<span id="cb10-5"><a href="#cb10-5"></a>        email<span class="op">=</span>request.form[<span class="st">&#39;contact&#39;</span>]</span>
+<span id="cb10-6"><a href="#cb10-6"></a>        con<span class="op">=</span>sql.<span class="ex">connect</span>(<span class="st">&quot;db_web.db&quot;</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a>        cur<span class="op">=</span>con.cursor()</span>
+<span id="cb10-8"><a href="#cb10-8"></a>        cur.execute(<span class="st">&quot;INSERT INTO utilizadores(Nome,Email) VALUES (?,?)&quot;</span>, (nome, email))</span>
+<span id="cb10-9"><a href="#cb10-9"></a>        con.commit()</span>
+<span id="cb10-10"><a href="#cb10-10"></a>        <span class="cf">return</span> redirect(url_for(<span class="st">&quot;index&quot;</span>))</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;add_user.html&quot;</span>)</span></code></pre></div>
+</div>
+<div id="adicionar-registo-no-template-html" class="slide section level1">
+<h1>Adicionar Registo: no Template HTML</h1>
+<ul>
+<li>Apenas a parte do formulário:</li>
+</ul>
+<div class="sourceCode" id="cb11" style="font-size: 18px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">&lt;form</span> <span class="er">method</span><span class="ot">=</span><span class="st">&#39;post&#39;</span> <span class="er">action</span><span class="ot">=</span><span class="st">&#39;{{url_for(&quot;add_user&quot;)}}&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-25&quot;</span><span class="kw">&gt;</span> <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;fname&quot;</span><span class="kw">&gt;</span> Nome <span class="kw">&lt;/label&gt;</span> <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-75&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;fname&quot;</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;uname&quot;</span> <span class="er">placeholder</span><span class="ot">=</span><span class="st">&quot;Digite aqui...&quot;</span> <span class="er">required</span><span class="kw">&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-25&quot;</span><span class="kw">&gt;</span> <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;fcontact&quot;</span><span class="kw">&gt;</span> E-mail <span class="kw">&lt;/label&gt;</span> <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-75&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;fcontact&quot;</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;contact&quot;</span> <span class="er">placeholder</span><span class="ot">=</span><span class="st">&quot;Digite aqui...&quot;</span> <span class="er">required</span><span class="kw">&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a>    <span class="kw">&lt;br&gt;</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&#39;submit&#39;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&#39;Enviar&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+</div>
+<div id="adicionar-registo-resultado-com-css" class="slide section level1">
+<h1>Adicionar Registo: Resultado com CSS</h1>
+<ul>
+<li>Página principal com o CSS aplicado:</li>
+</ul>
+<div class="center">
+<p><img src="imagens/addUserTela.png" style="width:80.0%" /></p>
+</div>
+</div>
+<div id="atualizar-registo-no-flask" class="slide section level1">
+<h1>Atualizar Registo: no Flask</h1>
+<ul>
+<li>Utiliza o id na URL da página.
+<ul>
+<li>‘id’ vem da associação do botão ‘Editar’ ao id mostrado na tabela.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb12" style="font-size: 18px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="at">@app.route</span>(<span class="st">&quot;/edit_user/&lt;int:id&gt;&quot;</span>,methods<span class="op">=</span>[<span class="st">&#39;POST&#39;</span>,<span class="st">&#39;GET&#39;</span>])</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">def</span> edit_user(<span class="bu">id</span>):</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="cf">if</span> request.method<span class="op">==</span><span class="st">&#39;POST&#39;</span>:</span>
+<span id="cb12-4"><a href="#cb12-4"></a>        nome<span class="op">=</span>request.form[<span class="st">&#39;uname&#39;</span>]</span>
+<span id="cb12-5"><a href="#cb12-5"></a>        email<span class="op">=</span>request.form[<span class="st">&#39;contact&#39;</span>]</span>
+<span id="cb12-6"><a href="#cb12-6"></a>        con<span class="op">=</span>sql.<span class="ex">connect</span>(<span class="st">&quot;db_web.db&quot;</span>)</span>
+<span id="cb12-7"><a href="#cb12-7"></a>        cur<span class="op">=</span>con.cursor()</span>
+<span id="cb12-8"><a href="#cb12-8"></a>        cur.execute(<span class="st">&quot;UPDATE utilizadores SET Nome=?,Email=? WHERE Id=?&quot;</span>,(nome, email, <span class="bu">id</span>))</span>
+<span id="cb12-9"><a href="#cb12-9"></a>        con.commit()</span>
+<span id="cb12-10"><a href="#cb12-10"></a>        <span class="cf">return</span> redirect(url_for(<span class="st">&quot;index&quot;</span>))</span>
+<span id="cb12-11"><a href="#cb12-11"></a>    con<span class="op">=</span>sql.<span class="ex">connect</span>(<span class="st">&quot;db_web.db&quot;</span>)</span>
+<span id="cb12-12"><a href="#cb12-12"></a>    con.row_factory<span class="op">=</span>sql.Row</span>
+<span id="cb12-13"><a href="#cb12-13"></a>    cur<span class="op">=</span>con.cursor()</span>
+<span id="cb12-14"><a href="#cb12-14"></a>    cur.execute(<span class="st">&quot;SELECT * FROM utilizadores WHERE Id=?&quot;</span>,(<span class="bu">id</span>,))</span>
+<span id="cb12-15"><a href="#cb12-15"></a>    dado<span class="op">=</span>cur.fetchone()</span>
+<span id="cb12-16"><a href="#cb12-16"></a>    <span class="cf">return</span> render_template(<span class="st">&quot;edit_user.html&quot;</span>,datas<span class="op">=</span>dado)</span></code></pre></div>
+</div>
+<div id="atualizar-registo-no-template-html" class="slide section level1">
+<h1>Atualizar Registo: no Template HTML</h1>
+<ul>
+<li>Apenas a parte do formulário:</li>
+</ul>
+<div class="sourceCode" id="cb13" style="font-size: 18px;"><pre class="sourceCode numberSource HTML numberLines"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">&lt;form</span> <span class="er">method</span><span class="ot">=</span><span class="st">&#39;post&#39;</span> <span class="er">action</span><span class="ot">=</span><span class="st">&#39;{{url_for(&quot;edit_user&quot;,uid=datas.Id)}}&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-25&quot;</span><span class="kw">&gt;</span> <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;fname&quot;</span><span class="kw">&gt;</span>Nome<span class="kw">&lt;/label&gt;</span> <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-75&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;fname&quot;</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;uname&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&#39;{{datas.Nome}}&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-25&quot;</span><span class="kw">&gt;</span> <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">&quot;fcontact&quot;</span><span class="kw">&gt;</span>E-mail<span class="kw">&lt;/label&gt;</span> <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;col-75&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;fcontact&quot;</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;contact&quot;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&#39;{{datas.Email}}&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a>    <span class="kw">&lt;br&gt;</span></span>
+<span id="cb13-15"><a href="#cb13-15"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-16"><a href="#cb13-16"></a>        <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&#39;submit&#39;</span> <span class="er">value</span><span class="ot">=</span><span class="st">&#39;Enviar&#39;</span><span class="kw">&gt;</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb13-18"><a href="#cb13-18"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+</div>
+<div id="atualizar-registo-resultado-com-css" class="slide section level1">
+<h1>Atualizar Registo: Resultado com CSS</h1>
+<ul>
+<li>Página principal com o CSS aplicado:</li>
+</ul>
+<div class="center">
+<p><img src="imagens/editUserTela.png" style="width:80.0%" /></p>
+</div>
+</div>
+<div id="remove-registo-no-flask" class="slide section level1">
+<h1>Remove Registo: no Flask</h1>
+<ul>
+<li>Utiliza o id na URL da página.
+<ul>
+<li>‘id’ vem da associação do botão de remoção ao id mostrado na tabela.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb14" style="font-size: 20px;"><pre class="sourceCode numberSource Python numberLines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="at">@app.route</span>(<span class="st">&quot;/delete_user/&lt;int:id&gt;&quot;</span>,methods<span class="op">=</span>[<span class="st">&#39;GET&#39;</span>])</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">def</span> delete_user(<span class="bu">id</span>):</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    con<span class="op">=</span>sql.<span class="ex">connect</span>(<span class="st">&quot;db_web.db&quot;</span>)</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    cur<span class="op">=</span>con.cursor()</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    cur.execute(<span class="st">&quot;DELETE FROM utilizadores WHERE Id=?&quot;</span>,(<span class="bu">id</span>,))</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    con.commit()</span>
+<span id="cb14-7"><a href="#cb14-7"></a>    <span class="cf">return</span> redirect(url_for(<span class="st">&quot;index&quot;</span>))</span></code></pre></div>
+</div>
+<div id="remover-registo-botão-delete" class="slide section level1">
+<h1>Remover Registo: Botão Delete</h1>
+<div class="center">
+<p><img src="imagens/deleteUserTela.png" style="width:80.0%" /></p>
+</div>
+</div>
+<div id="atividades" class="slide section level1">
+<h1>Atividades</h1>
+<ol style="list-style-type: decimal">
+<li>Reproduzir a aplicação web proposta nos slides anteriores.
+<ul>
+<li>Note que os códigos disponíveis não estão completos!</li>
+</ul></li>
+<li>Modifique a aplicação para lidar uma outra base de dados.
+<ul>
+<li>Tema é livre.</li>
+</ul></li>
+</ol>
+</div>
+</body>
+</html>
