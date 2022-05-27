@@ -1,0 +1,17 @@
+<html>
+<head>
+<script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"> </script>
+<script type=text/javascript src="{{ url_for('static', filename='funcoes.js') }}"> </script>
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+</head>
+<body>
+	<h1>Exemplo de uso de jQuery com AJAX:</h1>
+	<p><input type=text size=5 name=a> + </input>
+	   <input type=text size=5 name=b> = </input>
+	   <span id=resultado> ? </span>
+	</p>
+	<input id=botaoSoma type=button value='Somar'> </input>
+</body>
+</html>

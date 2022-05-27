@@ -1,0 +1,18 @@
+<html>
+<head>
+<script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"> </script>
+<script type=text/javascript src="{{ url_for('static', filename='funcoes.js') }}"> </script>
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+</head>
+<body>
+	<h1>Upload de ficheiro com jQuery com AJAX:</h1>
+	<form id="meu_form">
+        <input type="file" name="ficheiros" multiple>
+        <input type="submit" id="botaoEnviar" value="Enviar">
+  </form>
+  <br>
+  <span id="msg"> </span>
+</body>
+</html>

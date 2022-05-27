@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"> </script>
+        <script type=text/javascript src="{{ url_for('static', filename='funcoes.js') }}"> </script>
+        <script type=text/javascript>
+            $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
+    </head>
+    <body>
+        <h1>Bem-vindo ao sistema!</h1>
+
+        Por favor, forneça suas credenciais:<br>
+        <div class=container>
+            <span id="msgErro" style="color: brown;"> </span> <br>
+            <label for="username">Nome de utilizador:</label><br>
+            <input type="text" id="username" name="username" value=""><br>
+            <label for="password">Palavra-passe:</label><br>
+            <input type="password" id="password" name="password" value=""><br><br>
+            <input type="button" id="btnEnviar" value="Enviar">
+        </div>
+    </body>
+</html>
