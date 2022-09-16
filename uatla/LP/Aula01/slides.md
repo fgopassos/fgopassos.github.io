@@ -3,123 +3,10 @@ author: Fernanda Passos
 note: Linguagem de Programação
 date: 
 subtitle: Aula 01 
-title: Introdução
+title: Linguagem de Programação e Paradigmas
 institute: Universidade Atlântica
 logo: ../atlantica_logo2.svg
 ---
-
-# Estrutura da Unidade Curricular
-
-- Linguagem de Programação (LP).
-- Objetivos:
-	1. Conhecer os paradigmas de linguagens de programação e suas aplicações.
-	2. Compreender a programação de computadores por linguagem estruturada.
-	3. Compreender a programação de computadores por linguagem orientada a objetos.
-	4. Introduzir técnicas de programação concorrente.
-	5. Elaborar e projetar programas de pequeno e médio porte  para resolver problemas reais computacionais.
-	6. Analisar técnicas de programação independente de plataforma.
-
-
-# Informações Gerais
-
-::::::{.block .centered}
-:::{.blocktitle}
-Horário e Sala
-:::
-- Sextas de 18:30h às 21:30h
-- Lab 1
-::::::
-
-::::::{.block .centered}
-:::{.blocktitle}
-Contato
-:::
-* fpassos@uatlantica.pt
-* Moodle:
-  * Calendário.
-  * Material didático.
-  * Listas de Exercícios.
-  * **Avisos**.
-::::::
-
-# Conteúdo Programático (I)
-
-* Linguagens de Programação e seus paradigmas
-	* Paradigma de programação estruturada
-	* Paradigma de programação concorrente
-	* Paradigma de programação orientada aos objetos
-	* Paradigma de programação funcional
-	* Paradigma de programação lógico
-	* Paradigmas híbridos
-	- Linguagens compiladas e linguagens interpretadas
-
-
-# Conteúdo Programático (II)
-
-- Programação pela Linguagem Python 3
-	- Estruturas lógicas e de controle
-	- Estrutura de dados básicas (listas, tuplas e dicionários)
-	- Módulos e Recursão
-	- Entrada e saída e arquivos
-	- Tratamento de exceções
-	- Objetos, classes e métodos
-- Programação pela Linguagem Java Script
-	- Páginas Web: HTML, CSS e Java Script
-	- Estruturas lógicas e de controle
-	- Estruturas de dados básicas e funções
-	- Estrutura de documentos Web
-	- Tratamento de Eventos
-
-# Conteúdo Programático (III)
-
-* Introdução à Programação concorrente
-	* Multiprocessamento
-	* *Multithreading*
-* Projeto de programas de computadores
-	* Elaboração de programas
-	* Depuração de programas
-	* Escolha e projeto de estrutura de dados
-	* Avaliação de desempenho
-	* Documentação
-
-# Material de Apoio
-
-::::::{.block .centered}
-:::{.blocktitle}
-Sobre Linguagem de Programação:
-:::
-* Livro: Sebesta, R. W. (2018). *Conceitos de Linguagens de Programação.* Edição 11. Bookman Editora.
-::::::
-
-::::::{.block .centered}
-:::{.blocktitle}
-Sobre Python:
-:::
-  * Menezes, N. N. C. (2019). *Introdução à programação com Python: Algoritmos e lógica de programação para iniciantes.* Edição 3. Novatec.
-  * Links na Internet: http://python.org.br
-::::::
-
-
-# Avaliação
-
-* Serão passados 6 trabalhos individuais ao longo do curso.
-	* Em laboratório.
-	* Pior nota é descartada: média será de 5 dos 6 trabalhos.
-	* Nota T1.
-* Trabalho em grupo.
-	* A ser definido.
-	* Com apresentação oral ao final do curso.
-	* Nota T2.
-* Nota final: $\frac{T1 + T2}{2}$
-* Exame Final:
-	* Em caso da nota final abaixo de 50%.
-
-# Visão Geral do Curso
-
-- O que são linguagens de programação?
-- Por que elas existem?
-	- Existe semelhança com as linguagens humanas?
-- Quais são as *palavras*, as *formas de escrita*, os *significados*?
 
 # Linguagem de Programação
 
@@ -222,10 +109,10 @@ f = (g + h) – (i + j);
 
 - Outro exemplo de código em assembly do MIPS:
 	- Realiza o cálculo de fatorial de *n*.
-	- Apenas para saber¹
+	- Apenas para saber.
 ::::
 ::::{.column width=60%}
-~~~{#idCode .mips}
+~~~{#idCode .mips style="font-size:22px"}
 # Supor n correspondente a $a0
 fact:
   sub  $sp,$sp,8 # ajuste da pilha
@@ -308,8 +195,9 @@ Linguagem de Alto Nível
 
 - Para calcular fatorial de *n*.
 
+:::::::{.center}
 <script src="https://ideone.com/e.js/X8ulN9" type="text/javascript"></script>
-
+:::::::
 
 # Surgimento da Linguagem LISP
 
@@ -324,7 +212,10 @@ Linguagem de Alto Nível
 # Exemplo de Código LISP
 
 - Para calcular fatorial de *n*.
+
+:::::::{.center}
 <script src="https://ideone.com/e.js/EesooO" type="text/javascript" ></script>
+:::::::
 
 # Surgimento da Linguagem ALGOL
 
@@ -387,8 +278,9 @@ SUBTRACT DISCOUNT FROM COST GIVING FINAL-COST.
 
 - Cálculo de fatorial:
 
+::::::{.center}
 <script src="https://ideone.com/e.js/ixoJjE" type="text/javascript" ></script>
-
+::::::
 
 # Surgimento da Linguagem Python
 
@@ -404,7 +296,9 @@ SUBTRACT DISCOUNT FROM COST GIVING FINAL-COST.
 
 # Exemplo de Código em Python
 
-<script src="https://ideone.com/e.js/5fthYk" type="text/javascript" ></script>
+::::::{.center}
+<script src="https://ideone.com/e.js/5fthYk" type="text/javascript"></script>
+::::::
 
 # Surgimento da Linguagem Java
 
@@ -421,7 +315,7 @@ SUBTRACT DISCOUNT FROM COST GIVING FINAL-COST.
 
 - Exemplo orientado a objetos (classes):
 
-~~~{#java .java}
+~~~{#java .java style="font-size:22px"}
 public abstract class Animal {
    public abstract void fazerBarulho();
 }
@@ -456,7 +350,9 @@ public class Gato extends Animal {
 
 # Exemplo de Código em JavaScript
 
+::::::{.center}
 <script src="https://ideone.com/e.js/wqT3px" type="text/javascript" ></script>
+::::::
 
 # 
 
@@ -500,7 +396,7 @@ public class Gato extends Animal {
 - Imperativo:
 	- Linguagem indica os passos de como chegar na solução.
 
-~~~{#imperativo .c}
+~~~{#imperativo .c style="font-size:22px"}
 char cores[5][10] = {"verde", "amarelo", "azul", "branco", "vermelho"};
 int i;
 
@@ -512,7 +408,7 @@ for (i=0; i < 5; i++){
 - Declarativo:
 	- Linguagem declara o que deve ser feito.
 
-~~~{#declarativo .sql}
+~~~{#declarativo .sql style="font-size:22px"}
 SELECT * FROM cores;
 ~~~
 
@@ -561,7 +457,7 @@ SELECT * FROM cores;
 	- São usados símbolos para representar as sentenças, como verdadeiros ou falsos.
 - Exemplos: Prolog, 
 - Código para calcular fatorial de *N* em Prolog:
-~~~{#prolog .prolog}
+~~~{#prolog .prolog style="font-size:22px"}
 factorial(0,1). 
 
 factorial(N,F) :-  
@@ -653,6 +549,7 @@ factorial(N,F) :-
 	- Mas não responde como o desejado.
 	- Mais difícil de corrigir.
 
+<!--
 # Exercício{.part}
 
 # 
@@ -663,3 +560,4 @@ factorial(N,F) :-
 	- Tente definir o paradigma de programação;
 	- É compilada, interpretada, híbrida?
 	- Apresente um trecho de código (pelo menos umas 5 linhas ou instruções) e tente explicar o que ele faz.
+-->
