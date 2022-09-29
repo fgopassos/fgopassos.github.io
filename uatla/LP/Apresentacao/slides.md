@@ -92,10 +92,11 @@ Sobre Linguagem de Programação:
 
 ::::::{.block .centered}
 :::{.blocktitle}
-Sobre Python:
+Sobre Python e Javascript:
 :::
   * Menezes, N. N. C. (2019). *Introdução à programação com Python: Algoritmos e lógica de programação para iniciantes.* Edição 3. Novatec.
-  * Links na Internet: http://python.org.br
+  * Flanagan, D. (2020). JavaScript: the definitive guide. Edição 7. Bookman Editora
+  * Documentação de Python: https://docs.python.org/3/tutorial/
 ::::::
 
 

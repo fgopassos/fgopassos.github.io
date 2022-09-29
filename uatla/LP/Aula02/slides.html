@@ -18,6 +18,7 @@
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -49,7 +50,7 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span. { color: #1f1c1b; } /* Normal */
+    code span { color: #1f1c1b; } /* Normal */
     code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
     code span.an { color: #ca60ca; } /* Annotation */
     code span.at { color: #0057ae; } /* Attribute */
@@ -131,21 +132,21 @@ Fernanda Passos
 </div>
 <div id="exemplo-de-classe-em-python" class="slide section level1">
 <h1>Exemplo de Classe em Python</h1>
-<div class="sourceCode" id="exClasse"><pre class="sourceCode python"><code class="sourceCode python"><span id="exClasse-1"><a href="#exClasse-1"></a><span class="kw">class</span> Pessoa:</span>
-<span id="exClasse-2"><a href="#exClasse-2"></a></span>
-<span id="exClasse-3"><a href="#exClasse-3"></a>    <span class="co"># Construtor</span></span>
-<span id="exClasse-4"><a href="#exClasse-4"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nome, <span class="bu">id</span>, idade):</span>
-<span id="exClasse-5"><a href="#exClasse-5"></a>        <span class="va">self</span>.nome <span class="op">=</span> nome</span>
-<span id="exClasse-6"><a href="#exClasse-6"></a>        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></span>
-<span id="exClasse-7"><a href="#exClasse-7"></a>        <span class="va">self</span>.idade <span class="op">=</span> idade</span>
-<span id="exClasse-8"><a href="#exClasse-8"></a></span>
-<span id="exClasse-9"><a href="#exClasse-9"></a>    <span class="co"># Método padrão que converte classe em string</span></span>
-<span id="exClasse-10"><a href="#exClasse-10"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="exClasse-11"><a href="#exClasse-11"></a>        <span class="cf">return</span>(<span class="st">&quot;Nome: &quot;</span> <span class="op">+</span> <span class="va">self</span>.nome <span class="op">+</span> <span class="st">&quot;, ID: &quot;</span> <span class="op">+</span> <span class="va">self</span>.<span class="bu">id</span> <span class="op">+</span></span>
-<span id="exClasse-12"><a href="#exClasse-12"></a>           <span class="st">&quot;, Idade: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.idade))</span>
-<span id="exClasse-13"><a href="#exClasse-13"></a></span>
-<span id="exClasse-14"><a href="#exClasse-14"></a>    <span class="kw">def</span> adicionaIdade(<span class="va">self</span>):</span>
-<span id="exClasse-15"><a href="#exClasse-15"></a>        <span class="va">self</span>.idade <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="exClasse" style="font-size:24px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="exClasse-1"><a href="#exClasse-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Pessoa:</span>
+<span id="exClasse-2"><a href="#exClasse-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="exClasse-3"><a href="#exClasse-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Construtor</span></span>
+<span id="exClasse-4"><a href="#exClasse-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nome, <span class="bu">id</span>, idade):</span>
+<span id="exClasse-5"><a href="#exClasse-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nome <span class="op">=</span> nome</span>
+<span id="exClasse-6"><a href="#exClasse-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span></span>
+<span id="exClasse-7"><a href="#exClasse-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.idade <span class="op">=</span> idade</span>
+<span id="exClasse-8"><a href="#exClasse-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="exClasse-9"><a href="#exClasse-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Método padrão que converte classe em string</span></span>
+<span id="exClasse-10"><a href="#exClasse-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="exClasse-11"><a href="#exClasse-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(<span class="st">&quot;Nome: &quot;</span> <span class="op">+</span> <span class="va">self</span>.nome <span class="op">+</span> <span class="st">&quot;, ID: &quot;</span> <span class="op">+</span> <span class="va">self</span>.<span class="bu">id</span> <span class="op">+</span></span>
+<span id="exClasse-12"><a href="#exClasse-12" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;, Idade: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.idade))</span>
+<span id="exClasse-13"><a href="#exClasse-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="exClasse-14"><a href="#exClasse-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> adicionaIdade(<span class="va">self</span>):</span>
+<span id="exClasse-15"><a href="#exClasse-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.idade <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 </div>
 <div id="python-estruturado" class="slide section level1">
 <h1>Python Estruturado</h1>
@@ -190,13 +191,13 @@ Fernanda Passos
 </ul>
 <div class="columns">
 <div class="column" style="width:33.3%;">
-<div class="sourceCode" id="interpretacao"><pre class="sourceCode python"><code class="sourceCode python"><span id="interpretacao-1"><a href="#interpretacao-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
-<span id="interpretacao-2"><a href="#interpretacao-2"></a>b <span class="op">=</span> <span class="dv">2</span></span>
-<span id="interpretacao-3"><a href="#interpretacao-3"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="interpretacao-4"><a href="#interpretacao-4"></a>d <span class="op">=</span> c <span class="op">*</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="interpretacao"><pre class="sourceCode python"><code class="sourceCode python"><span id="interpretacao-1"><a href="#interpretacao-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="interpretacao-2"><a href="#interpretacao-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="interpretacao-3"><a href="#interpretacao-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="interpretacao-4"><a href="#interpretacao-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> c <span class="op">*</span> <span class="dv">2</span></span></code></pre></div>
 </div><div class="column" style="width:28.3%;">
 <div class="center">
-<p><br> <span style="font-size: 80px; color: blue"> ➡ </span></p>
+<p><br> <span style="font-size: 80px; color: SteelBlue"> ➡ </span></p>
 </div>
 </div><div class="column" style="width:33.3%;">
 <pre id="saida" class="qq"><code>a = 5
@@ -214,7 +215,7 @@ d = 14</code></pre>
 <li>Qualquer interpretador de Python é capaz de acusar erros de sintaxe.</li>
 <li>Exemplo: suponha o seguinte código:</li>
 </ul>
-<div class="sourceCode" id="primeiroProg"><pre class="sourceCode python"><code class="sourceCode python"><span id="primeiroProg-1"><a href="#primeiroProg-1"></a>prit(<span class="st">&quot;Olá Mundo!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="primeiroProg"><pre class="sourceCode python"><code class="sourceCode python"><span id="primeiroProg-1"><a href="#primeiroProg-1" aria-hidden="true" tabindex="-1"></a>prit(<span class="st">&quot;Olá Mundo!&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Podemos perceber que o comando <code>print</code> está escrito errado.</li>
 <li>A mensagem de execução do comando será:</li>
@@ -239,13 +240,13 @@ NameError: name 'prit' is not defined
 <ul>
 <li>Programa é interrompido nesta linha!</li>
 </ul>
-<div class="sourceCode" id="erroInterpretando"><pre class="sourceCode python"><code class="sourceCode python"><span id="erroInterpretando-1"><a href="#erroInterpretando-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
-<span id="erroInterpretando-2"><a href="#erroInterpretando-2"></a>b <span class="op">=</span> <span class="dv">9</span></span>
-<span id="erroInterpretando-3"><a href="#erroInterpretando-3"></a><span class="bu">print</span>(<span class="st">&quot;Valor de a:&quot;</span>, a)</span>
-<span id="erroInterpretando-4"><a href="#erroInterpretando-4"></a><span class="bu">print</span>(<span class="st">&quot;Valor de b:&quot;</span>, b)</span>
-<span id="erroInterpretando-5"><a href="#erroInterpretando-5"></a>comandoNaoExiste()</span>
-<span id="erroInterpretando-6"><a href="#erroInterpretando-6"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="erroInterpretando-7"><a href="#erroInterpretando-7"></a><span class="bu">print</span>(c)</span></code></pre></div></li>
+<div class="sourceCode" id="erroInterpretando"><pre class="sourceCode python"><code class="sourceCode python"><span id="erroInterpretando-1"><a href="#erroInterpretando-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
+<span id="erroInterpretando-2"><a href="#erroInterpretando-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">9</span></span>
+<span id="erroInterpretando-3"><a href="#erroInterpretando-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Valor de a:&quot;</span>, a)</span>
+<span id="erroInterpretando-4"><a href="#erroInterpretando-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Valor de b:&quot;</span>, b)</span>
+<span id="erroInterpretando-5"><a href="#erroInterpretando-5" aria-hidden="true" tabindex="-1"></a>comandoNaoExiste()</span>
+<span id="erroInterpretando-6"><a href="#erroInterpretando-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="erroInterpretando-7"><a href="#erroInterpretando-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code></pre></div></li>
 </ul>
 </div><div class="column" style="width:5%;">
 
@@ -255,14 +256,14 @@ NameError: name 'prit' is not defined
 <ul>
 <li>Mas programa executa até o fim!</li>
 </ul>
-<div class="sourceCode" id="erroInterpretando"><pre class="sourceCode python"><code class="sourceCode python"><span id="erroInterpretando-1"><a href="#erroInterpretando-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
-<span id="erroInterpretando-2"><a href="#erroInterpretando-2"></a>b <span class="op">=</span> <span class="dv">9</span></span>
-<span id="erroInterpretando-3"><a href="#erroInterpretando-3"></a><span class="bu">print</span>(<span class="st">&quot;Valor de a:&quot;</span>, a)</span>
-<span id="erroInterpretando-4"><a href="#erroInterpretando-4"></a><span class="bu">print</span>(<span class="st">&quot;Valor de b:&quot;</span>, b)</span>
-<span id="erroInterpretando-5"><a href="#erroInterpretando-5"></a><span class="cf">if</span> (a <span class="op">==</span> <span class="dv">3</span>):</span>
-<span id="erroInterpretando-6"><a href="#erroInterpretando-6"></a>  comandoNaoExiste()</span>
-<span id="erroInterpretando-7"><a href="#erroInterpretando-7"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="erroInterpretando-8"><a href="#erroInterpretando-8"></a><span class="bu">print</span>(c)</span></code></pre></div></li>
+<div class="sourceCode" id="erroInterpretando"><pre class="sourceCode python"><code class="sourceCode python"><span id="erroInterpretando-1"><a href="#erroInterpretando-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">4</span></span>
+<span id="erroInterpretando-2"><a href="#erroInterpretando-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">9</span></span>
+<span id="erroInterpretando-3"><a href="#erroInterpretando-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Valor de a:&quot;</span>, a)</span>
+<span id="erroInterpretando-4"><a href="#erroInterpretando-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Valor de b:&quot;</span>, b)</span>
+<span id="erroInterpretando-5"><a href="#erroInterpretando-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="op">==</span> <span class="dv">3</span>):</span>
+<span id="erroInterpretando-6"><a href="#erroInterpretando-6" aria-hidden="true" tabindex="-1"></a>  comandoNaoExiste()</span>
+<span id="erroInterpretando-7"><a href="#erroInterpretando-7" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="erroInterpretando-8"><a href="#erroInterpretando-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code></pre></div></li>
 </ul>
 </div><div class="column" style="width:5%;">
 
@@ -280,8 +281,8 @@ NameError: name 'prit' is not defined
 <li><code>#</code> é o caractere que define um comentário.</li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="co"># Programa que imprime &quot;Olá&quot;</span></span>
-<span id="id-2"><a href="#id-2"></a><span class="bu">print</span>(<span class="st">&quot;Olá&quot;</span>) <span class="co"># Comentário pode ser usado aqui também!</span></span></code></pre></div>
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Programa que imprime &quot;Olá&quot;</span></span>
+<span id="id-2"><a href="#id-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Olá&quot;</span>) <span class="co"># Comentário pode ser usado aqui também!</span></span></code></pre></div>
 </div>
 <div id="comentários-de-bloco" class="slide section level1">
 <h1>Comentários de Bloco</h1>
@@ -291,9 +292,9 @@ NameError: name 'prit' is not defined
 <li>Texto entre <code>'''</code> e <code>'''</code>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="co">&#39;&#39;&#39; Programa que imprime &quot;Olá&quot;.</span></span>
-<span id="id-2"><a href="#id-2"></a><span class="co">    Este é um exemplo de mais de uma linha de comentário! &#39;&#39;&#39;</span></span>
-<span id="id-3"><a href="#id-3"></a><span class="bu">print</span>(<span class="st">&quot;Olá&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39; Programa que imprime &quot;Olá&quot;.</span></span>
+<span id="id-2"><a href="#id-2" aria-hidden="true" tabindex="-1"></a><span class="co">    Este é um exemplo de mais de uma linha de comentário! &#39;&#39;&#39;</span></span>
+<span id="id-3"><a href="#id-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Olá&quot;</span>)</span></code></pre></div>
 </div>
 <div id="tipos-em-python-i" class="slide section level1">
 <h1>Tipos em Python (I)</h1>
@@ -306,9 +307,9 @@ NameError: name 'prit' is not defined
 <li><em>Duck Typing: “If it walks like a duck and it quacks like a duck, then it must be a duck.”</em></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="tipoDinamico"><pre class="sourceCode python"><code class="sourceCode python"><span id="tipoDinamico-1"><a href="#tipoDinamico-1"></a>a <span class="op">=</span> <span class="dv">5</span>            <span class="co"># é inteiro</span></span>
-<span id="tipoDinamico-2"><a href="#tipoDinamico-2"></a>pi <span class="op">=</span> <span class="fl">3.14</span>        <span class="co"># é float</span></span>
-<span id="tipoDinamico-3"><a href="#tipoDinamico-3"></a>c <span class="op">=</span> <span class="st">&quot;uma string&quot;</span> <span class="co"># é string</span></span></code></pre></div>
+<div class="sourceCode" id="tipoDinamico"><pre class="sourceCode python"><code class="sourceCode python"><span id="tipoDinamico-1"><a href="#tipoDinamico-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span>            <span class="co"># é inteiro</span></span>
+<span id="tipoDinamico-2"><a href="#tipoDinamico-2" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span>        <span class="co"># é float</span></span>
+<span id="tipoDinamico-3"><a href="#tipoDinamico-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="st">&quot;uma string&quot;</span> <span class="co"># é string</span></span></code></pre></div>
 </div><div class="column" style="width:40%;">
 <div class="center">
 <p><img src="img/duckTyping.jpeg" id="id" style="width:60.0%" /></p>
@@ -332,9 +333,9 @@ NameError: name 'prit' is not defined
 <li>Erro na 3ª linha: <code>tempo</code> é do tipo int e não pode ser convertido para string.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="interpretacao"><pre class="sourceCode python"><code class="sourceCode python"><span id="interpretacao-1"><a href="#interpretacao-1"></a>tempo <span class="op">=</span> <span class="dv">5</span></span>
-<span id="interpretacao-2"><a href="#interpretacao-2"></a>seg <span class="op">=</span> <span class="st">&quot;s&quot;</span></span>
-<span id="interpretacao-3"><a href="#interpretacao-3"></a><span class="bu">print</span>(tempo <span class="op">+</span> seg)</span></code></pre></div>
+<div class="sourceCode" id="interpretacao"><pre class="sourceCode python"><code class="sourceCode python"><span id="interpretacao-1"><a href="#interpretacao-1" aria-hidden="true" tabindex="-1"></a>tempo <span class="op">=</span> <span class="dv">5</span></span>
+<span id="interpretacao-2"><a href="#interpretacao-2" aria-hidden="true" tabindex="-1"></a>seg <span class="op">=</span> <span class="st">&quot;s&quot;</span></span>
+<span id="interpretacao-3"><a href="#interpretacao-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tempo <span class="op">+</span> seg)</span></code></pre></div>
 </div>
 <div id="módulos-de-python" class="slide section level1">
 <h1>Módulos de Python</h1>
@@ -346,7 +347,7 @@ NameError: name 'prit' is not defined
 <li>Por exemplo, para o módulo de matemática:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="exemploImport"><pre class="sourceCode python"><code class="sourceCode python"><span id="exemploImport-1"><a href="#exemploImport-1"></a><span class="im">import</span> math</span></code></pre></div>
+<div class="sourceCode" id="exemploImport"><pre class="sourceCode python"><code class="sourceCode python"><span id="exemploImport-1"><a href="#exemploImport-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span></code></pre></div>
 </div>
 <div id="constantes-em-python" class="slide section level1">
 <h1>Constantes em Python</h1>
@@ -398,21 +399,25 @@ NameError: name 'prit' is not defined
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
-<p><br><br><br><br><br><br><br></p>
-<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1"></a><span class="co">&#39;&#39;&#39;Texto com</span></span>
-<span id="id-2"><a href="#id-2"></a><span class="co">quebra de linha&#39;&#39;&#39;</span>```</span></code></pre></div>
+<p><br><br><br><br></p>
+<div class="sourceCode" id="id"><pre class="sourceCode python"><code class="sourceCode python"><span id="id-1"><a href="#id-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;&#39;&#39;Texto com</span></span>
+<span id="id-2"><a href="#id-2" aria-hidden="true" tabindex="-1"></a><span class="co">quebra de linha&#39;&#39;&#39;</span></span></code></pre></div>
 </div>
 </div>
 </div>
 <div id="o-comando-type" class="slide section level1">
 <h1>O Comando Type</h1>
 <ul>
-<li>Já vimos que não há declaração.
+<li>Retorna uma string com o nome do tipo de uma variável.
+<ul>
+<li>Útil para consulta.</li>
+<li>Pois não há declarações de tipo em Python!
 <ul>
 <li>Antes de usar, deve-se apenas inicializar a variável.</li>
 <li><em>Duck typing</em>!</li>
 </ul></li>
-<li>Exemplo:
+</ul></li>
+<li>Exemplo de definição de variável:
 <ul>
 <li><code>x = 3.2</code></li>
 <li>O tipo de x será <em>float</em>.</li>
@@ -457,7 +462,7 @@ NameError: name 'prit' is not defined
 </ul></li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="exemplo"><pre class="sourceCode python"><code class="sourceCode python"><span id="exemplo-1"><a href="#exemplo-1"></a><span class="bu">print</span>(<span class="st">&quot;Olá mundo&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="exemplo"><pre class="sourceCode python"><code class="sourceCode python"><span id="exemplo-1"><a href="#exemplo-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Olá mundo&quot;</span>)</span></code></pre></div>
 </div>
 <div id="exercício-i" class="slide section level1">
 <h1>Exercício I</h1>
@@ -480,6 +485,7 @@ NameError: name 'prit' is not defined
 <ul>
 <li>Alguns operadores parecidos com os da matemática.</li>
 </ul>
+<div class="center" style="line-height: 85%;">
 <table>
 <thead>
 <tr class="header">
@@ -535,6 +541,7 @@ NameError: name 'prit' is not defined
 </tbody>
 </table>
 </div>
+</div>
 <div id="precedências-dos-operadores" class="slide section level1">
 <h1>Precedências dos Operadores</h1>
 <ul>
@@ -547,14 +554,16 @@ NameError: name 'prit' is not defined
 </div>
 <div id="exercício-ii" class="slide section level1">
 <h1>Exercício II</h1>
-<h2 id="testar-no-console-as-expressões">Testar no console as expressões:</h2>
 <ul>
+<li>Testar no console as expressões:
+<ol style="list-style-type: lower-alpha">
 <li><code>5 + 2</code></li>
 <li><code>39/6</code></li>
 <li><code>39//6</code></li>
 <li><code>3**3</code></li>
 <li><code>(5+2) % 3</code></li>
 <li><code>(5-1)/2**2-4/2*(5-1)+1</code></li>
+</ol></li>
 </ul>
 <p>No PyCharm: View &gt; Tools Windows &gt; Python Console</p>
 </div>
@@ -732,7 +741,7 @@ None
 <li>Comando chama-se <code>input</code></li>
 <li>Exemplo de uso:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>    texto <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Entre com um texto: &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    texto <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Entre com um texto: &quot;</span>)</span></code></pre></div>
 </div>
 <div id="obtendo-dados-do-usuário-em-python-ii" class="slide section level1">
 <h1>Obtendo Dados do Usuário em Python (II)</h1>
@@ -740,11 +749,11 @@ None
 <li>Note que input é um função que retorna sempre uma string.</li>
 <li>Se quiser obter um inteiro, por exemplo, deve-se converter explicitamente:</li>
 </ul>
-<div class="sourceCode" id="inputInt"><pre class="sourceCode python"><code class="sourceCode python"><span id="inputInt-1"><a href="#inputInt-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="inputInt"><pre class="sourceCode python"><code class="sourceCode python"><span id="inputInt-1"><a href="#inputInt-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
 <ul>
 <li>Exemplo para obter real:</li>
 </ul>
-<div class="sourceCode" id="inputFloat"><pre class="sourceCode python"><code class="sourceCode python"><span id="inputFloat-1"><a href="#inputFloat-1"></a>numero <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="inputFloat"><pre class="sourceCode python"><code class="sourceCode python"><span id="inputFloat-1"><a href="#inputFloat-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span></code></pre></div>
 </div>
 <div id="obtendo-dados-do-usuário-em-python-1" class="slide section level1">
 <h1>Obtendo Dados do Usuário em Python</h1>

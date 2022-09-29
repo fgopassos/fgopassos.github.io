@@ -29,7 +29,7 @@ logo: ../atlantica_logo2.svg
 
 # Exemplo de Classe em Python
 
-~~~{#exClasse .python}
+~~~{#exClasse .python style="font-size:24px;"}
 class Pessoa:
 
     # Construtor
@@ -85,7 +85,7 @@ d = c * 2
 ::::{.column width=28.3%}
 :::::::{.center}
 <br>
-<span style='font-size: 80px; color: blue'> ➡ </span>
+<span style='font-size: 80px; color: SteelBlue'> ➡ </span>
 :::::::
 ::::
 ::::{.column width=33.3%}
@@ -263,11 +263,11 @@ import math
         - Primeira letra é maiúscula.
 ::::
 ::::{.column width=40%}
-<br><br><br><br><br><br><br>
+<br><br><br><br>
 
 ~~~{#id .python}
 '''Texto com
-quebra de linha'''```
+quebra de linha'''
 ~~~
 ::::
 
@@ -275,10 +275,12 @@ quebra de linha'''```
 
 # O Comando Type
 
-- Já vimos que não há declaração.
-    - Antes de usar, deve-se apenas inicializar a variável.
-    - *Duck typing*!
-- Exemplo:
+- Retorna uma string com o nome do tipo de uma variável.
+    - Útil para consulta.
+    - Pois não há declarações de tipo em Python!
+        - Antes de usar, deve-se apenas inicializar a variável.
+        - *Duck typing*!
+- Exemplo de definição de variável:
     - `x = 3.2`
     - O tipo de x será *float*.
 - Experimente no console:
@@ -329,6 +331,7 @@ print("Olá mundo")
 
 - Alguns operadores parecidos com os da matemática.
 
+::::{.center style="line-height: 85%;"}
 Operação |	Operador | Exemplo  | Resultado
 ---------|-----------|----------|----------
 adição 	 | +         |5+2     | 7
@@ -338,6 +341,7 @@ divisão  |	/    |5/2     | 2.5
 exponenciação |**    |5**2    | 25
 divisão inteira |//  |5//2    | 2
 módulo (resto)| %    |5%2     | 1
+::::
 
 # Precedências dos Operadores
 
@@ -349,13 +353,13 @@ módulo (resto)| %    |5%2     | 1
 
 # Exercício II
 
-## Testar no console as expressões:
-- `5 + 2`
-- `39/6`
-- `39//6`
-- `3**3`
-- `(5+2) % 3`
-- `(5-1)/2**2-4/2*(5-1)+1`
+- Testar no console as expressões:
+    a. `5 + 2`
+    b. `39/6`
+    c. `39//6`
+    d. `3**3`
+    e. `(5+2) % 3`
+    f. `(5-1)/2**2-4/2*(5-1)+1`
 
 No PyCharm: View > Tools Windows > Python Console
 
