@@ -13,15 +13,15 @@ logo: ../atlantica_logo2.svg
 # Condicional de Um Ramo em Python
 
 - Sintaxe:
-~~~{#cond1 .python}
+~~~{#cond1 .python style="font-size: 80%"}
 if (condicao):
     # Bloco que será executado se condição for verdadeira.
 ~~~
 
-- Note que o afastamento da margem esquerda determina o bloco.
+- Note que o **afastamento** da margem esquerda **determina o bloco**.
 - Exemplo de dois comandos dentro do bloco `if`:
 
-~~~{#condEx1 .python}
+~~~{#condEx1 .python style="font-size: 80%"}
     a = 0
     x = int(input("Entre com um número: "))
     if (x > 0):
@@ -53,7 +53,7 @@ Definição de Indentação:
 
 - Sintaxe:
 
-~~~{#cond2 .python style="font-size: 80%"}
+~~~{#cond2 .python style="font-size: 70%"}
 if (condicao):
     # Bloco que será executado se condição for verdadeira.
 else:
@@ -62,7 +62,7 @@ else:
 
 - Exemplo:
 
-~~~{#condEx2 .python style="font-size: 80%"}
+~~~{#condEx2 .python style="font-size: 60%"}
 a = 0
 x = int(input("Entre com um número: "))
 if (x > 0):
@@ -79,6 +79,7 @@ print(a)
 
 - Operadores são similares aos da matemática:
 
+::::{.center style="line-height: 90%; font-size: 80%;"}
 Operador | Significado
 :-------:|:-----------:
     ==   | igualdade
@@ -87,16 +88,15 @@ Operador | Significado
     <    | menor
     >=   | maior ou igual
     <=   | menor ou igual
+::::
 
 # Expressões Lógicas em Python
 
 - São usadas nas condições de um **if**, por exemplo.
-- Constantes lógicas: `True`, `False`.
-- Expressões relacionais.
-- Operadores lógicos:
-    - `not` (não)
-    - `or` (ou)
-    - `and` (e)
+- Expressões lógicas são formadas por:
+    - Constantes lógicas: `True`, `False`.
+    - Expressões relacionais.
+    - Operadores lógicos: `not` (não), `or` (ou), `and` (e)
 - Prioridade:
     - Maior: Parênteses
     - Depois: expressões relacionais
@@ -148,16 +148,15 @@ else:
                     print(num, "é maior que 100.")
 ~~~
 
-# Módulo de Matemática
+# Módulo/Pacote de Matemática (Math)
 
-- Através do módulo `math`.
+- Nome do módulo é `math`.
 	- Funções matemáticas definidas pelo C Standard.
-	- Deve ser incluído no início do código (import).
+	- Deve ser incluído no início do código (`import`).
 - Algumas funções:
 	- `sqrt(x)`: retorna a raiz quadrada do parâmetro x;
 	- `log2(x)`: retorna o logaritmo de x na base 2;
 	- `log10(x)`: retorna o logaritmo de x na base 10;
-	- `log(x)`: retorna o o logaritmo neperiano (base e) de x;
 	- `log(x, b)`: retorna o o logaritmo de x na base b;
 	- `ceil(x)`: retorna o teto do parâmetro x;
 	- `floor(x)`: retorna o piso do parâmetro x.
@@ -170,9 +169,9 @@ else:
 ## Faça programas em Python para:
 
 1. Obter um número inteiro e indicar se ele é par ou ímpar.
-1. Obter um número inteiro e indicar se ele é múltiplo de 3 ou 7.
-1. Obter um número inteiro e indicar se ele é múltiplo de 3 e não múltiplo de 2.
-1. Obter dois números reais e indicar se a raiz quadrada da soma das potências de 2 deles é maior que 100. Isto é, se $\sqrt{x^2 + y^2} > 100$. Use `math.sqrt(z)` para calcular a raiz quadrada de um número z. Use `import math` no início de seu programa para importar o módulo.
+1. Obter um número inteiro e indicar se ele é múltiplo de 3 ou de 7.
+1. Obter um número inteiro e indicar se ele é múltiplo de 3 e não é múltiplo de 2.
+1. Obter dois números reais e indicar se a raiz quadrada da soma das potências de 2 deles é maior que 100. Isto é, se $\sqrt{x^2 + y^2} > 100$. Use `math.sqrt(z)` para calcular a raiz quadrada de um número z.
 
 
 # Módulo de Números Aleatórios (I)
@@ -206,22 +205,20 @@ numAleatorio = random.randint(1, 10) # Retorna número aleatório entre 1 e 10.
 
 :::::{.columns}
 ::::{.column style="width: 60%; font-size: 16px;"}
-1. Obter um número inteiro do usuário e indicar se ele acertou o número sorteado pelo programa entre 1 e 10. Caso o usuário erre, indique também se o número digitado é maior ou menor que o número sorteado.
-2. Ler as duas notas parciais obtidas por um aluno numa disciplina, calcular sua média e atribuir conceitos conforme a tabela ao lado. O programa deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem "APROVADO" se o conceito for A, B ou C ou "REPROVADO" se o conceito for D ou E. 
+1. Obter um número inteiro do utilizador e indicar se ele acertou o número sorteado pelo programa entre 1 e 10. Caso o utilizador erre, indique também se o número digitado é maior ou menor que o número sorteado e peça-o para tentar novamente.
+2. Obter duas notas parciais obtidas por um aluno numa disciplina, calcular sua média e atribuir conceitos conforme a tabela ao lado. O programa deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem "APROVADO" se o conceito for A, B ou C ou "REPROVADO" se o conceito for D ou E. 
 
 ::::
 ::::{.column width=40%}
 
 :::{style="line-height: 100%; font-size: 20px;"}
-
 Média $x$ de Aproveitamento |  Conceito
 -----------------------:|:---------
-$9{,}0 \le x < 10{,}0$        | A
-$7{,}5 \le x < 9{,}0$         | B
-$6{,}0 \le x < 7{,}5$         | C
-$4{,}0 \le x < 6{,}0$         | D
-$0{,}0 \le x < 4{,}0$        | E
-
+$9,0 \le x < 10,0$      | A
+$7,5 \le x < 9,0$       | B
+$6,0 \le x < 7,5$       | C
+$4,0 \le x < 6,0$       | D
+$0,0 \le x < 4,0$       | E
 :::
 
 ::::
@@ -245,14 +242,14 @@ for i in sequência:
 
 # Sequência de Repetição
 
-- Repetição é feita em .**sequência de valores** explícita.
-- Sequência de qualquer valor, não necessariamente números.
+- Repetição é feita em **sequência de valores** explícita.
+    - Sequência de qualquer valor, não necessariamente números.
 - Algumas formas de se especificar uma sequência:
     - (1, 4, 5)
     - ("a", "e", "i", "o", "u")
     - (1, "dois", 7.9, -1)
-- Exemplo:
-~~~{#idforEx1 .python}
+
+~~~{#idforEx1 .python style="font-size=80%;"}
 for k in (1, "dois", 7.9, -1):
     print(k)
 ~~~
@@ -317,7 +314,7 @@ for i in range(m, n):
         print(i)
 ~~~
 
-# Imprimindo Séries
+# Imprimir Séries
 
 - No exemplo do slide anterior, o print imprime linha por linha.
 - Em Python, podemos imprimir a série em uma mesma linha de diversas maneiras.
@@ -325,13 +322,12 @@ for i in range(m, n):
     - Concatenando strings e imprimindo o resultado no final.
     - Suprimindo quebra de linha do comando print.
 
-# Concatenando Strings
+# Concatenar Strings
 
 - Para juntar (concatenar) strings, basta usar o sinal `+` entre strings.
 - Para converter um número em string, usar:
     - `str(número)`
-
-~~~{#idforEx4 .python}
+~~~{#idforEx4 .python style="font-size: 80%; width: 90%;"}
 m = int(input("Entre com o primeiro valor do intervalo: "))
 n = int(input("Entre com o segundo valor do intervalo: "))
 texto = ''
@@ -345,16 +341,14 @@ print(texto)
 - Saída para m = 1 e n = 10: `2 4 6 8 `
 
 
-# Suprimindo Quebra de Linha
+# Suprimir Quebra de Linha
 
-- O comando print permite especificar parâmetros opcionais.
-- Um deles é o `end=`.
+- Pode-se especificar um parâmetro adicional ao `print`:  `end=`
     - Uso: `print('texto', end='')`
     - Indica qual(is) caractere(s) de finalização da string.
-    - Por padrão, é a quebra de linha (cujo código é '\n').
+    - Por padrão, o caractere é a quebra de linha (cujo código é `'\n'`).
 - Se `end` é igualado a `' '` (espaço), a quebra de linha é substituída por um espaço.
-
-~~~{#idforEx5 .python}
+~~~{#idforEx5 .python style="font-size: 70%; width: 90%;"}
 m = int(input("Entre com o primeiro valor do intervalo: "))
 n = int(input("Entre com o segundo valor do intervalo: "))
 for i in range(m, n):
@@ -367,10 +361,10 @@ print() # Para quebrar linha no final apenas
 
 # Exercício I
 
-#### Faça programas em Python para:
+### Faça programas em Python para:
 
-1. Escrever o resultado do produtório de 10 números obtidos do usuário.
-1. Faça um programa para calcular a série de Fibonacci para um número informado pelo usuário, sendo Fib(n) = Fib(n-1) + Fib(n-2). Como base tem-se que Fib(0) = 0 e Fib(1) = 1. Por exemplo, caso o usuário informe o número 9, o resultado seria: 0, 1, 1, 2, 3, 5,  8, 13, 21, 34.
+1. Escrever o resultado do produtório de 10 números obtidos do utilizador.
+1. Faça um programa para calcular a série de Fibonacci para um número informado pelo utilizador, sendo Fib(n) = Fib(n-1) + Fib(n-2). Como base tem-se que Fib(0) = 0 e Fib(1) = 1. Por exemplo, caso o utilizador informe o número 9, o resultado deve ser: 0, 1, 1, 2, 3, 5,  8, 13, 21, 34.
 1. Indicar se um dado n é primo (divisível apenas por 1 e ele mesmo).
 
 # Solução
@@ -404,32 +398,32 @@ print("Fim!")
 
 # Exercício II
 
-## Faça programas em Python para:
+### Faça programas em Python para:
 
-1. Pedir que o usuário entre com um número inteiro positivo até que ele realmente seja. Depois, calcule o fatorial deste número e apresente o resultado.
-1. Repetir o processo de obter um número inteiro do usuário até que ele acerte o número sorteado pelo programa, entre 1 e 10. Caso ele acerte, exiba uma mensagem parabenizando. Caso erre, como dica, indique se o número digitado é maior ou menor que o número sorteado.
-	- Adicionalmente, conte quantas vezes o usuário tentou acertar o número e exiba esta informação ao final.
+1. Pedir que o utilizador entre com um número inteiro positivo até que ele realmente seja. Depois, calcule o fatorial deste número e apresente o resultado.
+1. Repetir o processo de obter um número inteiro do utilizador até que ele acerte o número sorteado pelo programa, entre 1 e 10. Caso ele acerte, exiba uma mensagem parabenizando. Caso erre, como dica, indique se o número digitado é maior ou menor que o número sorteado.
+	- Adicionalmente, conte quantas vezes o utilizador tentou acertar o número e exiba esta informação ao final.
 
 # Exercícios III
 
-## Faça programas em Python para:
+#### Faça programas em Python para:
 
 1. Imprimir a tabuada de 1 a 10 da seguinte forma:
 
-```
+~~~{.txt style="font-size: 65%; width: 50%;"}
     1 x 1 = 1
     1 x 2 = 2
     ...
-```
+~~~
 
 2. Gerar a tabela de jogos de um campeonato de futebol que tem 4 times (times jogam em casa e na casa do adversário).
     - Os times são: Benfica, Sporting, Porto e Braga.
 
-```
+~~~{.txt style="font-size: 65%; width: 50%;"}
     Benfica  x Sporting
     Benfica  x Porto 
     ...
-```
+~~~
 
 # Alguns Desvios Incondicionais {.part}
 
@@ -438,7 +432,7 @@ print("Fim!")
 - O comando `break` serve para **sair de repetições abruptamente**.
 - Exemplo de uso:
 
-~~~{#idWhileEx1 .python}
+~~~{#idWhileEx1 .python style="font-size: 80%; width: 90%;"}
 for i in range(3, 100, 3):
   print(i, end=" ") # Imprime múltiplos de 3 a partir de 3.
   if i % 7 == 0: # Quando o índice também for divisível por 7, para.
@@ -454,7 +448,7 @@ print()
 
 - Exemplo: imprimir todos os 5 primeiros múltiplos naturais de 2 ou 3 usando um for.
 
-~~~{#idWhileEx2 .python}
+~~~{#idWhileEx2 .python style="font-size: 80%; width: 90%;"}
 cont = 0
 # Usar um range com um limite superestimado.
 for i in range(0, 100):
@@ -474,9 +468,9 @@ print()
   - Ao invés de parar o loop, ele continua.
   - O que ele faz é voltar para o laço inicial de repetição.
   - Ignora todos os comandos após ele.
-- Exemplo: indicar quantos números diferentes de 0 foram lidos do usuário.
+- Exemplo: indicar quantos números diferentes de 0 foram lidos do utilizador.
 
-~~~{#idWhileEx3 .python}
+~~~{#idWhileEx3 .python style="font-size: 80%; width: 90%;"}
 cont = 0
 for i in range(10):
   n = int(input("Entre com um número: "))

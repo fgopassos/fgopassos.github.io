@@ -18,6 +18,7 @@
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -49,7 +50,7 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span. { color: #1f1c1b; } /* Normal */
+    code span { color: #1f1c1b; } /* Normal */
     code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
     code span.an { color: #ca60ca; } /* Annotation */
     code span.at { color: #0057ae; } /* Attribute */
@@ -111,18 +112,18 @@ Fernanda Passos
 <ul>
 <li>Sintaxe:</li>
 </ul>
-<div class="sourceCode" id="cond1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cond1-1"><a href="#cond1-1"></a><span class="cf">if</span> (condicao):</span>
-<span id="cond1-2"><a href="#cond1-2"></a>    <span class="co"># Bloco que será executado se condição for verdadeira.</span></span></code></pre></div>
+<div class="sourceCode" id="cond1" style="font-size: 80%"><pre class="sourceCode python"><code class="sourceCode python"><span id="cond1-1"><a href="#cond1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condicao):</span>
+<span id="cond1-2"><a href="#cond1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloco que será executado se condição for verdadeira.</span></span></code></pre></div>
 <ul>
-<li>Note que o afastamento da margem esquerda determina o bloco.</li>
+<li>Note que o <strong>afastamento</strong> da margem esquerda <strong>determina o bloco</strong>.</li>
 <li>Exemplo de dois comandos dentro do bloco <code>if</code>:</li>
 </ul>
-<div class="sourceCode" id="condEx1"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx1-1"><a href="#condEx1-1"></a>    a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="condEx1-2"><a href="#condEx1-2"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="condEx1-3"><a href="#condEx1-3"></a>    <span class="cf">if</span> (x <span class="op">&gt;</span> <span class="dv">0</span>):</span>
-<span id="condEx1-4"><a href="#condEx1-4"></a>        <span class="bu">print</span>(<span class="st">&quot;Número é positivo.&quot;</span>)</span>
-<span id="condEx1-5"><a href="#condEx1-5"></a>        a <span class="op">=</span> a <span class="op">+</span> <span class="dv">1</span></span>
-<span id="condEx1-6"><a href="#condEx1-6"></a>    <span class="bu">print</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="condEx1" style="font-size: 80%"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx1-1"><a href="#condEx1-1" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="condEx1-2"><a href="#condEx1-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
+<span id="condEx1-3"><a href="#condEx1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (x <span class="op">&gt;</span> <span class="dv">0</span>):</span>
+<span id="condEx1-4"><a href="#condEx1-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Número é positivo.&quot;</span>)</span>
+<span id="condEx1-5"><a href="#condEx1-5" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> a <span class="op">+</span> <span class="dv">1</span></span>
+<span id="condEx1-6"><a href="#condEx1-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a)</span></code></pre></div>
 </div>
 <div id="indentação-em-python" class="slide section level1">
 <h1>Indentação em Python</h1>
@@ -153,28 +154,29 @@ Fernanda Passos
 <ul>
 <li>Sintaxe:</li>
 </ul>
-<div class="sourceCode" id="cond2" style="font-size: 80%"><pre class="sourceCode python"><code class="sourceCode python"><span id="cond2-1"><a href="#cond2-1"></a><span class="cf">if</span> (condicao):</span>
-<span id="cond2-2"><a href="#cond2-2"></a>    <span class="co"># Bloco que será executado se condição for verdadeira.</span></span>
-<span id="cond2-3"><a href="#cond2-3"></a><span class="cf">else</span>:</span>
-<span id="cond2-4"><a href="#cond2-4"></a>    <span class="co"># Bloco que será executado se condição for falsa.</span></span></code></pre></div>
+<div class="sourceCode" id="cond2" style="font-size: 70%"><pre class="sourceCode python"><code class="sourceCode python"><span id="cond2-1"><a href="#cond2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condicao):</span>
+<span id="cond2-2"><a href="#cond2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloco que será executado se condição for verdadeira.</span></span>
+<span id="cond2-3"><a href="#cond2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cond2-4"><a href="#cond2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloco que será executado se condição for falsa.</span></span></code></pre></div>
 <ul>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="condEx2" style="font-size: 80%"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx2-1"><a href="#condEx2-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="condEx2-2"><a href="#condEx2-2"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="condEx2-3"><a href="#condEx2-3"></a><span class="cf">if</span> (x <span class="op">&gt;</span> <span class="dv">0</span>):</span>
-<span id="condEx2-4"><a href="#condEx2-4"></a>    <span class="bu">print</span>(<span class="st">&quot;Número é positivo.&quot;</span>)</span>
-<span id="condEx2-5"><a href="#condEx2-5"></a>    a <span class="op">=</span> a <span class="op">+</span> <span class="dv">1</span></span>
-<span id="condEx2-6"><a href="#condEx2-6"></a><span class="cf">else</span>:</span>
-<span id="condEx2-7"><a href="#condEx2-7"></a>    <span class="bu">print</span>(<span class="st">&quot;Número é zero ou negativo.&quot;</span>)</span>
-<span id="condEx2-8"><a href="#condEx2-8"></a>    a <span class="op">=</span> a <span class="op">-</span> <span class="dv">1</span></span>
-<span id="condEx2-9"><a href="#condEx2-9"></a><span class="bu">print</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="condEx2" style="font-size: 60%"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx2-1"><a href="#condEx2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="condEx2-2"><a href="#condEx2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
+<span id="condEx2-3"><a href="#condEx2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="op">&gt;</span> <span class="dv">0</span>):</span>
+<span id="condEx2-4"><a href="#condEx2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Número é positivo.&quot;</span>)</span>
+<span id="condEx2-5"><a href="#condEx2-5" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">+</span> <span class="dv">1</span></span>
+<span id="condEx2-6"><a href="#condEx2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="condEx2-7"><a href="#condEx2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Número é zero ou negativo.&quot;</span>)</span>
+<span id="condEx2-8"><a href="#condEx2-8" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">-</span> <span class="dv">1</span></span>
+<span id="condEx2-9"><a href="#condEx2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div>
 </div>
 <div id="expressões-relacionais-em-python" class="slide section level1">
 <h1>Expressões Relacionais em Python</h1>
 <ul>
 <li>Operadores são similares aos da matemática:</li>
 </ul>
+<div class="center" style="line-height: 90%; font-size: 80%;">
 <table>
 <thead>
 <tr class="header">
@@ -210,17 +212,16 @@ Fernanda Passos
 </tbody>
 </table>
 </div>
+</div>
 <div id="expressões-lógicas-em-python" class="slide section level1">
 <h1>Expressões Lógicas em Python</h1>
 <ul>
 <li>São usadas nas condições de um <strong>if</strong>, por exemplo.</li>
+<li>Expressões lógicas são formadas por:
+<ul>
 <li>Constantes lógicas: <code>True</code>, <code>False</code>.</li>
 <li>Expressões relacionais.</li>
-<li>Operadores lógicos:
-<ul>
-<li><code>not</code> (não)</li>
-<li><code>or</code> (ou)</li>
-<li><code>and</code> (e)</li>
+<li>Operadores lógicos: <code>not</code> (não), <code>or</code> (ou), <code>and</code> (e)</li>
 </ul></li>
 <li>Prioridade:
 <ul>
@@ -237,19 +238,19 @@ Fernanda Passos
 <li>Comando: <code>elif</code></li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="condEx3" style="font-size: 70%; width: 90%"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx3-1"><a href="#condEx3-1"></a>num <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="condEx3-2"><a href="#condEx3-2"></a><span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">0</span>):</span>
-<span id="condEx3-3"><a href="#condEx3-3"></a>    <span class="bu">print</span>(num, <span class="st">&quot;é negativo!&quot;</span>)</span>
-<span id="condEx3-4"><a href="#condEx3-4"></a><span class="cf">elif</span> (num <span class="op">&lt;</span> <span class="dv">25</span>):</span>
-<span id="condEx3-5"><a href="#condEx3-5"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [0, 25[.&quot;</span>)</span>
-<span id="condEx3-6"><a href="#condEx3-6"></a><span class="cf">elif</span> (num <span class="op">&lt;</span> <span class="dv">50</span>):</span>
-<span id="condEx3-7"><a href="#condEx3-7"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [25, 50[.&quot;</span>)</span>
-<span id="condEx3-8"><a href="#condEx3-8"></a><span class="cf">elif</span> (num <span class="op">&lt;</span> <span class="dv">75</span>):</span>
-<span id="condEx3-9"><a href="#condEx3-9"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [50, 75[.&quot;</span>)</span>
-<span id="condEx3-10"><a href="#condEx3-10"></a><span class="cf">elif</span> (num <span class="op">&lt;=</span> <span class="dv">100</span>):</span>
-<span id="condEx3-11"><a href="#condEx3-11"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [75, 100].&quot;</span>)</span>
-<span id="condEx3-12"><a href="#condEx3-12"></a><span class="cf">else</span>:</span>
-<span id="condEx3-13"><a href="#condEx3-13"></a>    <span class="bu">print</span>(num, <span class="st">&quot;é maior que 100.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="condEx3" style="font-size: 70%; width: 90%"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx3-1"><a href="#condEx3-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
+<span id="condEx3-2"><a href="#condEx3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">0</span>):</span>
+<span id="condEx3-3"><a href="#condEx3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">&quot;é negativo!&quot;</span>)</span>
+<span id="condEx3-4"><a href="#condEx3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (num <span class="op">&lt;</span> <span class="dv">25</span>):</span>
+<span id="condEx3-5"><a href="#condEx3-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [0, 25[.&quot;</span>)</span>
+<span id="condEx3-6"><a href="#condEx3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (num <span class="op">&lt;</span> <span class="dv">50</span>):</span>
+<span id="condEx3-7"><a href="#condEx3-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [25, 50[.&quot;</span>)</span>
+<span id="condEx3-8"><a href="#condEx3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (num <span class="op">&lt;</span> <span class="dv">75</span>):</span>
+<span id="condEx3-9"><a href="#condEx3-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [50, 75[.&quot;</span>)</span>
+<span id="condEx3-10"><a href="#condEx3-10" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (num <span class="op">&lt;=</span> <span class="dv">100</span>):</span>
+<span id="condEx3-11"><a href="#condEx3-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [75, 100].&quot;</span>)</span>
+<span id="condEx3-12"><a href="#condEx3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="condEx3-13"><a href="#condEx3-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">&quot;é maior que 100.&quot;</span>)</span></code></pre></div>
 </div>
 <div id="aninhamento-de-if-ii" class="slide section level1">
 <h1>Aninhamento de if (II)</h1>
@@ -259,38 +260,37 @@ Fernanda Passos
 <li>Fica em forma de escada.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="condEx4" style="font-size: 70%"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx4-1"><a href="#condEx4-1"></a>num <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="condEx4-2"><a href="#condEx4-2"></a><span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">0</span>):</span>
-<span id="condEx4-3"><a href="#condEx4-3"></a>    <span class="bu">print</span>(num, <span class="st">&quot;é negativo!&quot;</span>)</span>
-<span id="condEx4-4"><a href="#condEx4-4"></a><span class="cf">else</span>:</span>
-<span id="condEx4-5"><a href="#condEx4-5"></a>    <span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">25</span>):</span>
-<span id="condEx4-6"><a href="#condEx4-6"></a>        <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [0, 25[.&quot;</span>)</span>
-<span id="condEx4-7"><a href="#condEx4-7"></a>    <span class="cf">else</span>:</span>
-<span id="condEx4-8"><a href="#condEx4-8"></a>        <span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">50</span>):</span>
-<span id="condEx4-9"><a href="#condEx4-9"></a>            <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [25, 50[.&quot;</span>)</span>
-<span id="condEx4-10"><a href="#condEx4-10"></a>        <span class="cf">else</span>:</span>
-<span id="condEx4-11"><a href="#condEx4-11"></a>            <span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">75</span>):</span>
-<span id="condEx4-12"><a href="#condEx4-12"></a>                <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [50, 75[.&quot;</span>)</span>
-<span id="condEx4-13"><a href="#condEx4-13"></a>            <span class="cf">else</span>:</span>
-<span id="condEx4-14"><a href="#condEx4-14"></a>                <span class="cf">if</span> (num <span class="op">&lt;=</span> <span class="dv">100</span>):</span>
-<span id="condEx4-15"><a href="#condEx4-15"></a>                    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [75, 100].&quot;</span>)</span>
-<span id="condEx4-16"><a href="#condEx4-16"></a>                <span class="cf">else</span>:</span>
-<span id="condEx4-17"><a href="#condEx4-17"></a>                    <span class="bu">print</span>(num, <span class="st">&quot;é maior que 100.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="condEx4" style="font-size: 70%"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx4-1"><a href="#condEx4-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
+<span id="condEx4-2"><a href="#condEx4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">0</span>):</span>
+<span id="condEx4-3"><a href="#condEx4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, <span class="st">&quot;é negativo!&quot;</span>)</span>
+<span id="condEx4-4"><a href="#condEx4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="condEx4-5"><a href="#condEx4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">25</span>):</span>
+<span id="condEx4-6"><a href="#condEx4-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [0, 25[.&quot;</span>)</span>
+<span id="condEx4-7"><a href="#condEx4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="condEx4-8"><a href="#condEx4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">50</span>):</span>
+<span id="condEx4-9"><a href="#condEx4-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [25, 50[.&quot;</span>)</span>
+<span id="condEx4-10"><a href="#condEx4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="condEx4-11"><a href="#condEx4-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (num <span class="op">&lt;</span> <span class="dv">75</span>):</span>
+<span id="condEx4-12"><a href="#condEx4-12" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [50, 75[.&quot;</span>)</span>
+<span id="condEx4-13"><a href="#condEx4-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="condEx4-14"><a href="#condEx4-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> (num <span class="op">&lt;=</span> <span class="dv">100</span>):</span>
+<span id="condEx4-15"><a href="#condEx4-15" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(num, <span class="st">&quot;está no intervalo [75, 100].&quot;</span>)</span>
+<span id="condEx4-16"><a href="#condEx4-16" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="condEx4-17"><a href="#condEx4-17" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(num, <span class="st">&quot;é maior que 100.&quot;</span>)</span></code></pre></div>
 </div>
-<div id="módulo-de-matemática" class="slide section level1">
-<h1>Módulo de Matemática</h1>
+<div id="módulopacote-de-matemática-math" class="slide section level1">
+<h1>Módulo/Pacote de Matemática (Math)</h1>
 <ul>
-<li>Através do módulo <code>math</code>.
+<li>Nome do módulo é <code>math</code>.
 <ul>
 <li>Funções matemáticas definidas pelo C Standard.</li>
-<li>Deve ser incluído no início do código (import).</li>
+<li>Deve ser incluído no início do código (<code>import</code>).</li>
 </ul></li>
 <li>Algumas funções:
 <ul>
 <li><code>sqrt(x)</code>: retorna a raiz quadrada do parâmetro x;</li>
 <li><code>log2(x)</code>: retorna o logaritmo de x na base 2;</li>
 <li><code>log10(x)</code>: retorna o logaritmo de x na base 10;</li>
-<li><code>log(x)</code>: retorna o o logaritmo neperiano (base e) de x;</li>
 <li><code>log(x, b)</code>: retorna o o logaritmo de x na base b;</li>
 <li><code>ceil(x)</code>: retorna o teto do parâmetro x;</li>
 <li><code>floor(x)</code>: retorna o piso do parâmetro x.</li>
@@ -306,9 +306,9 @@ Fernanda Passos
 <h2 id="faça-programas-em-python-para">Faça programas em Python para:</h2>
 <ol style="list-style-type: decimal">
 <li>Obter um número inteiro e indicar se ele é par ou ímpar.</li>
-<li>Obter um número inteiro e indicar se ele é múltiplo de 3 ou 7.</li>
-<li>Obter um número inteiro e indicar se ele é múltiplo de 3 e não múltiplo de 2.</li>
-<li>Obter dois números reais e indicar se a raiz quadrada da soma das potências de 2 deles é maior que 100. Isto é, se <span class="math inline">\(\sqrt{x^2 + y^2} &gt; 100\)</span>. Use <code>math.sqrt(z)</code> para calcular a raiz quadrada de um número z. Use <code>import math</code> no início de seu programa para importar o módulo.</li>
+<li>Obter um número inteiro e indicar se ele é múltiplo de 3 ou de 7.</li>
+<li>Obter um número inteiro e indicar se ele é múltiplo de 3 e não é múltiplo de 2.</li>
+<li>Obter dois números reais e indicar se a raiz quadrada da soma das potências de 2 deles é maior que 100. Isto é, se <span class="math inline">\(\sqrt{x^2 + y^2} &gt; 100\)</span>. Use <code>math.sqrt(z)</code> para calcular a raiz quadrada de um número z.</li>
 </ol>
 </div>
 <div id="módulo-de-números-aleatórios-i" class="slide section level1">
@@ -325,9 +325,9 @@ Fernanda Passos
 </ul></li>
 <li>Exemplo: gerar um número aleatório inteiro de 1 a 10.</li>
 </ul>
-<div class="sourceCode" id="condEx5"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx5-1"><a href="#condEx5-1"></a><span class="im">import</span> random</span>
-<span id="condEx5-2"><a href="#condEx5-2"></a></span>
-<span id="condEx5-3"><a href="#condEx5-3"></a>numAleatorio <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>) <span class="co"># Retorna número aleatório entre 1 e 10.</span></span></code></pre></div>
+<div class="sourceCode" id="condEx5"><pre class="sourceCode python"><code class="sourceCode python"><span id="condEx5-1"><a href="#condEx5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="condEx5-2"><a href="#condEx5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="condEx5-3"><a href="#condEx5-3" aria-hidden="true" tabindex="-1"></a>numAleatorio <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>) <span class="co"># Retorna número aleatório entre 1 e 10.</span></span></code></pre></div>
 </div>
 <div id="módulo-de-números-aleatórios-ii" class="slide section level1">
 <h1>Módulo de Números Aleatórios (II)</h1>
@@ -350,8 +350,8 @@ Fernanda Passos
 <div class="columns">
 <div class="column" style="width: 60%; font-size: 16px;">
 <ol style="list-style-type: decimal">
-<li>Obter um número inteiro do usuário e indicar se ele acertou o número sorteado pelo programa entre 1 e 10. Caso o usuário erre, indique também se o número digitado é maior ou menor que o número sorteado.</li>
-<li>Ler as duas notas parciais obtidas por um aluno numa disciplina, calcular sua média e atribuir conceitos conforme a tabela ao lado. O programa deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem “APROVADO” se o conceito for A, B ou C ou “REPROVADO” se o conceito for D ou E.</li>
+<li>Obter um número inteiro do utilizador e indicar se ele acertou o número sorteado pelo programa entre 1 e 10. Caso o utilizador erre, indique também se o número digitado é maior ou menor que o número sorteado e peça-o para tentar novamente.</li>
+<li>Obter duas notas parciais obtidas por um aluno numa disciplina, calcular sua média e atribuir conceitos conforme a tabela ao lado. O programa deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem “APROVADO” se o conceito for A, B ou C ou “REPROVADO” se o conceito for D ou E.</li>
 </ol>
 </div><div class="column" style="width:40%;">
 <div style="line-height: 100%; font-size: 20px;">
@@ -364,23 +364,23 @@ Fernanda Passos
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right"><span class="math inline">\(9{,}0 \le x &lt; 10{,}0\)</span></td>
+<td align="right"><span class="math inline">\(9,0 \le x &lt; 10,0\)</span></td>
 <td align="left">A</td>
 </tr>
 <tr class="even">
-<td align="right"><span class="math inline">\(7{,}5 \le x &lt; 9{,}0\)</span></td>
+<td align="right"><span class="math inline">\(7,5 \le x &lt; 9,0\)</span></td>
 <td align="left">B</td>
 </tr>
 <tr class="odd">
-<td align="right"><span class="math inline">\(6{,}0 \le x &lt; 7{,}5\)</span></td>
+<td align="right"><span class="math inline">\(6,0 \le x &lt; 7,5\)</span></td>
 <td align="left">C</td>
 </tr>
 <tr class="even">
-<td align="right"><span class="math inline">\(4{,}0 \le x &lt; 6{,}0\)</span></td>
+<td align="right"><span class="math inline">\(4,0 \le x &lt; 6,0\)</span></td>
 <td align="left">D</td>
 </tr>
 <tr class="odd">
-<td align="right"><span class="math inline">\(0{,}0 \le x &lt; 4{,}0\)</span></td>
+<td align="right"><span class="math inline">\(0,0 \le x &lt; 4,0\)</span></td>
 <td align="left">E</td>
 </tr>
 </tbody>
@@ -398,8 +398,8 @@ Fernanda Passos
 <li>Comando <code>for</code>.</li>
 <li>Sintaxe:</li>
 </ul>
-<div class="sourceCode" id="idfor"><pre class="sourceCode python"><code class="sourceCode python"><span id="idfor-1"><a href="#idfor-1"></a><span class="cf">for</span> i <span class="kw">in</span> sequência:</span>
-<span id="idfor-2"><a href="#idfor-2"></a>    <span class="co"># Bloco que será repetido com valor i.</span></span></code></pre></div>
+<div class="sourceCode" id="idfor"><pre class="sourceCode python"><code class="sourceCode python"><span id="idfor-1"><a href="#idfor-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> sequência:</span>
+<span id="idfor-2"><a href="#idfor-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloco que será repetido com valor i.</span></span></code></pre></div>
 <ul>
 <li>Note que o afastamento da margem esquerda determina o bloco.</li>
 </ul>
@@ -407,18 +407,19 @@ Fernanda Passos
 <div id="sequência-de-repetição" class="slide section level1">
 <h1>Sequência de Repetição</h1>
 <ul>
-<li>Repetição é feita em .<strong>sequência de valores</strong> explícita.</li>
+<li>Repetição é feita em <strong>sequência de valores</strong> explícita.
+<ul>
 <li>Sequência de qualquer valor, não necessariamente números.</li>
+</ul></li>
 <li>Algumas formas de se especificar uma sequência:
 <ul>
 <li>(1, 4, 5)</li>
 <li>(“a”, “e”, “i”, “o”, “u”)</li>
 <li>(1, “dois”, 7.9, -1)</li>
 </ul></li>
-<li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="idforEx1"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx1-1"><a href="#idforEx1-1"></a><span class="cf">for</span> k <span class="kw">in</span> (<span class="dv">1</span>, <span class="st">&quot;dois&quot;</span>, <span class="fl">7.9</span>, <span class="op">-</span><span class="dv">1</span>):</span>
-<span id="idforEx1-2"><a href="#idforEx1-2"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
+<div class="sourceCode" id="idforEx1" style="font-size=80%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx1-1"><a href="#idforEx1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> (<span class="dv">1</span>, <span class="st">&quot;dois&quot;</span>, <span class="fl">7.9</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="idforEx1-2"><a href="#idforEx1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
 <ul>
 <li>São 4 repetições e em cada uma delas k terá o valor da sequência.
 <ul>
@@ -438,8 +439,8 @@ Fernanda Passos
 </ul></li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="idforEx1"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx1-1"><a href="#idforEx1-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="idforEx1-2"><a href="#idforEx1-2"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
+<div class="sourceCode" id="idforEx1"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx1-1"><a href="#idforEx1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="idforEx1-2"><a href="#idforEx1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
 <ul>
 <li>k varia em {0, 1, 2, 3, 4} em cada repetição.</li>
 </ul>
@@ -449,8 +450,8 @@ Fernanda Passos
 <div class="columns">
 <div class="column" style="width:45%;">
 <h2 id="exemplo-com-início-especificado">Exemplo com início especificado:</h2>
-<div class="sourceCode" id="idforEx2"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx2-1"><a href="#idforEx2-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>, <span class="dv">10</span>):</span>
-<span id="idforEx2-2"><a href="#idforEx2-2"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
+<div class="sourceCode" id="idforEx2"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx2-1"><a href="#idforEx2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>, <span class="dv">10</span>):</span>
+<span id="idforEx2-2"><a href="#idforEx2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
 <ul>
 <li>k varia em {4, 5, 6, 7, 8, 9} em cada repetição.</li>
 </ul>
@@ -458,8 +459,8 @@ Fernanda Passos
 
 </div><div class="column" style="width:50%;">
 <h2 id="exemplo-com-início-e-incremento-especificados">Exemplo com início e incremento especificados:</h2>
-<div class="sourceCode" id="idforEx3"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx3-1"><a href="#idforEx3-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">2</span>):</span>
-<span id="idforEx3-2"><a href="#idforEx3-2"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
+<div class="sourceCode" id="idforEx3"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx3-1"><a href="#idforEx3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">2</span>):</span>
+<span id="idforEx3-2"><a href="#idforEx3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k)</span></code></pre></div>
 <ul>
 <li>k varia em {4, 6, 8} em cada repetição.</li>
 </ul>
@@ -471,14 +472,14 @@ Fernanda Passos
 <ul>
 <li>Programa que imprime os números pares entre m e n.</li>
 </ul>
-<div class="sourceCode" id="idforEx4"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx4-1"><a href="#idforEx4-1"></a>m <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o primeiro valor do intervalo: &quot;</span>))</span>
-<span id="idforEx4-2"><a href="#idforEx4-2"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o segundo valor do intervalo: &quot;</span>))</span>
-<span id="idforEx4-3"><a href="#idforEx4-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m, n):</span>
-<span id="idforEx4-4"><a href="#idforEx4-4"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="idforEx4-5"><a href="#idforEx4-5"></a>        <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="idforEx4"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx4-1"><a href="#idforEx4-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o primeiro valor do intervalo: &quot;</span>))</span>
+<span id="idforEx4-2"><a href="#idforEx4-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o segundo valor do intervalo: &quot;</span>))</span>
+<span id="idforEx4-3"><a href="#idforEx4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m, n):</span>
+<span id="idforEx4-4"><a href="#idforEx4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="idforEx4-5"><a href="#idforEx4-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div>
 </div>
-<div id="imprimindo-séries" class="slide section level1">
-<h1>Imprimindo Séries</h1>
+<div id="imprimir-séries" class="slide section level1">
+<h1>Imprimir Séries</h1>
 <ul>
 <li>No exemplo do slide anterior, o print imprime linha por linha.</li>
 <li>Em Python, podemos imprimir a série em uma mesma linha de diversas maneiras.</li>
@@ -489,55 +490,52 @@ Fernanda Passos
 </ul></li>
 </ul>
 </div>
-<div id="concatenando-strings" class="slide section level1">
-<h1>Concatenando Strings</h1>
+<div id="concatenar-strings" class="slide section level1">
+<h1>Concatenar Strings</h1>
 <ul>
 <li>Para juntar (concatenar) strings, basta usar o sinal <code>+</code> entre strings.</li>
 <li>Para converter um número em string, usar:
 <ul>
 <li><code>str(número)</code></li>
-</ul></li>
 </ul>
-<div class="sourceCode" id="idforEx4"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx4-1"><a href="#idforEx4-1"></a>m <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o primeiro valor do intervalo: &quot;</span>))</span>
-<span id="idforEx4-2"><a href="#idforEx4-2"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o segundo valor do intervalo: &quot;</span>))</span>
-<span id="idforEx4-3"><a href="#idforEx4-3"></a>texto <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
-<span id="idforEx4-4"><a href="#idforEx4-4"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m, n):</span>
-<span id="idforEx4-5"><a href="#idforEx4-5"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="idforEx4-6"><a href="#idforEx4-6"></a>        texto <span class="op">=</span> texto <span class="op">+</span> <span class="st">&#39; &#39;</span> <span class="op">+</span> <span class="bu">str</span>(i)</span>
-<span id="idforEx4-7"><a href="#idforEx4-7"></a><span class="bu">print</span>(texto)</span></code></pre></div>
-<ul>
+<div class="sourceCode" id="idforEx4" style="font-size: 80%; width: 90%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx4-1"><a href="#idforEx4-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o primeiro valor do intervalo: &quot;</span>))</span>
+<span id="idforEx4-2"><a href="#idforEx4-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o segundo valor do intervalo: &quot;</span>))</span>
+<span id="idforEx4-3"><a href="#idforEx4-3" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="idforEx4-4"><a href="#idforEx4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m, n):</span>
+<span id="idforEx4-5"><a href="#idforEx4-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="idforEx4-6"><a href="#idforEx4-6" aria-hidden="true" tabindex="-1"></a>      texto <span class="op">=</span> texto <span class="op">+</span> <span class="st">&#39; &#39;</span> <span class="op">+</span> <span class="bu">str</span>(i)</span>
+<span id="idforEx4-7"><a href="#idforEx4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texto)</span></code></pre></div></li>
 <li>Note que deve haver um espaço entre o texto anterior e o valor de i.</li>
 <li>Saída para m = 1 e n = 10: <code>2 4 6 8</code></li>
 </ul>
 </div>
-<div id="suprimindo-quebra-de-linha" class="slide section level1">
-<h1>Suprimindo Quebra de Linha</h1>
+<div id="suprimir-quebra-de-linha" class="slide section level1">
+<h1>Suprimir Quebra de Linha</h1>
 <ul>
-<li>O comando print permite especificar parâmetros opcionais.</li>
-<li>Um deles é o <code>end=</code>.
+<li>Pode-se especificar um parâmetro adicional ao <code>print</code>: <code>end=</code>
 <ul>
 <li>Uso: <code>print('texto', end='')</code></li>
 <li>Indica qual(is) caractere(s) de finalização da string.</li>
-<li>Por padrão, é a quebra de linha (cujo código é ‘’).</li>
+<li>Por padrão, o caractere é a quebra de linha (cujo código é <code>'\n'</code>).</li>
 </ul></li>
 <li>Se <code>end</code> é igualado a <code>' '</code> (espaço), a quebra de linha é substituída por um espaço.</li>
 </ul>
-<div class="sourceCode" id="idforEx5"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx5-1"><a href="#idforEx5-1"></a>m <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o primeiro valor do intervalo: &quot;</span>))</span>
-<span id="idforEx5-2"><a href="#idforEx5-2"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o segundo valor do intervalo: &quot;</span>))</span>
-<span id="idforEx5-3"><a href="#idforEx5-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m, n):</span>
-<span id="idforEx5-4"><a href="#idforEx5-4"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="idforEx5-5"><a href="#idforEx5-5"></a>        <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span>
-<span id="idforEx5-6"><a href="#idforEx5-6"></a><span class="bu">print</span>() <span class="co"># Para quebrar linha no final apenas</span></span></code></pre></div>
+<div class="sourceCode" id="idforEx5" style="font-size: 70%; width: 90%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="idforEx5-1"><a href="#idforEx5-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o primeiro valor do intervalo: &quot;</span>))</span>
+<span id="idforEx5-2"><a href="#idforEx5-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com o segundo valor do intervalo: &quot;</span>))</span>
+<span id="idforEx5-3"><a href="#idforEx5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m, n):</span>
+<span id="idforEx5-4"><a href="#idforEx5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="idforEx5-5"><a href="#idforEx5-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span>
+<span id="idforEx5-6"><a href="#idforEx5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>() <span class="co"># Para quebrar linha no final apenas</span></span></code></pre></div>
 <ul>
 <li>Saída para m = 1 e n = 10: <code>2 4 6 8</code></li>
 </ul>
 </div>
 <div id="exercício-i" class="slide section level1">
 <h1>Exercício I</h1>
-<h4 id="faça-programas-em-python-para-2">Faça programas em Python para:</h4>
+<h3 id="faça-programas-em-python-para-2">Faça programas em Python para:</h3>
 <ol style="list-style-type: decimal">
-<li>Escrever o resultado do produtório de 10 números obtidos do usuário.</li>
-<li>Faça um programa para calcular a série de Fibonacci para um número informado pelo usuário, sendo Fib(n) = Fib(n-1) + Fib(n-2). Como base tem-se que Fib(0) = 0 e Fib(1) = 1. Por exemplo, caso o usuário informe o número 9, o resultado seria: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.</li>
+<li>Escrever o resultado do produtório de 10 números obtidos do utilizador.</li>
+<li>Faça um programa para calcular a série de Fibonacci para um número informado pelo utilizador, sendo Fib(n) = Fib(n-1) + Fib(n-2). Como base tem-se que Fib(0) = 0 e Fib(1) = 1. Por exemplo, caso o utilizador informe o número 9, o resultado deve ser: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.</li>
 <li>Indicar se um dado n é primo (divisível apenas por 1 e ele mesmo).</li>
 </ol>
 </div>
@@ -553,8 +551,8 @@ Fernanda Passos
 <li>Similar ao uso em pseudocódigo.</li>
 <li>Sintaxe:</li>
 </ul>
-<div class="sourceCode" id="idWhile"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhile-1"><a href="#idWhile-1"></a><span class="cf">while</span> condição:</span>
-<span id="idWhile-2"><a href="#idWhile-2"></a>    <span class="co"># Bloco que será repetido enquanto condição é verdadeira.</span></span></code></pre></div>
+<div class="sourceCode" id="idWhile"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhile-1"><a href="#idWhile-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> condição:</span>
+<span id="idWhile-2"><a href="#idWhile-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bloco que será repetido enquanto condição é verdadeira.</span></span></code></pre></div>
 <ul>
 <li>Note que o afastamento da margem esquerda determina o bloco.</li>
 </ul>
@@ -564,41 +562,41 @@ Fernanda Passos
 <ul>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="idWhile"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhile-1"><a href="#idWhile-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="idWhile-2"><a href="#idWhile-2"></a><span class="cf">while</span> x <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
-<span id="idWhile-3"><a href="#idWhile-3"></a>    <span class="bu">print</span>(x)</span>
-<span id="idWhile-4"><a href="#idWhile-4"></a>    x <span class="op">=</span> x <span class="op">-</span> <span class="dv">1</span></span>
-<span id="idWhile-5"><a href="#idWhile-5"></a><span class="bu">print</span>(<span class="st">&quot;Fim!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="idWhile"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhile-1"><a href="#idWhile-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
+<span id="idWhile-2"><a href="#idWhile-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> x <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="idWhile-3"><a href="#idWhile-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span>
+<span id="idWhile-4"><a href="#idWhile-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">-</span> <span class="dv">1</span></span>
+<span id="idWhile-5"><a href="#idWhile-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Fim!&quot;</span>)</span></code></pre></div>
 </div>
 <div id="exercício-ii" class="slide section level1">
 <h1>Exercício II</h1>
-<h2 id="faça-programas-em-python-para-3">Faça programas em Python para:</h2>
+<h3 id="faça-programas-em-python-para-3">Faça programas em Python para:</h3>
 <ol style="list-style-type: decimal">
-<li>Pedir que o usuário entre com um número inteiro positivo até que ele realmente seja. Depois, calcule o fatorial deste número e apresente o resultado.</li>
-<li>Repetir o processo de obter um número inteiro do usuário até que ele acerte o número sorteado pelo programa, entre 1 e 10. Caso ele acerte, exiba uma mensagem parabenizando. Caso erre, como dica, indique se o número digitado é maior ou menor que o número sorteado.
+<li>Pedir que o utilizador entre com um número inteiro positivo até que ele realmente seja. Depois, calcule o fatorial deste número e apresente o resultado.</li>
+<li>Repetir o processo de obter um número inteiro do utilizador até que ele acerte o número sorteado pelo programa, entre 1 e 10. Caso ele acerte, exiba uma mensagem parabenizando. Caso erre, como dica, indique se o número digitado é maior ou menor que o número sorteado.
 <ul>
-<li>Adicionalmente, conte quantas vezes o usuário tentou acertar o número e exiba esta informação ao final.</li>
+<li>Adicionalmente, conte quantas vezes o utilizador tentou acertar o número e exiba esta informação ao final.</li>
 </ul></li>
 </ol>
 </div>
 <div id="exercícios-iii" class="slide section level1">
 <h1>Exercícios III</h1>
-<h2 id="faça-programas-em-python-para-4">Faça programas em Python para:</h2>
+<h4 id="faça-programas-em-python-para-4">Faça programas em Python para:</h4>
 <ol style="list-style-type: decimal">
 <li>Imprimir a tabuada de 1 a 10 da seguinte forma:</li>
 </ol>
-<pre><code>    1 x 1 = 1
-    1 x 2 = 2
-    ...</code></pre>
+<div class="sourceCode" id="cb1" style="font-size: 65%; width: 50%;"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    1 x 1 = 1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    1 x 2 = 2</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Gerar a tabela de jogos de um campeonato de futebol que tem 4 times (times jogam em casa e na casa do adversário).
 <ul>
 <li>Os times são: Benfica, Sporting, Porto e Braga.</li>
 </ul></li>
 </ol>
-<pre><code>    Benfica  x Sporting
-    Benfica  x Porto 
-    ...</code></pre>
+<div class="sourceCode" id="cb2" style="font-size: 65%; width: 50%;"><pre class="sourceCode txt"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    Benfica  x Sporting</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    Benfica  x Porto </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div>
 </div>
 <div id="alguns-desvios-incondicionais" class="slide section level1 part">
 <h1 class="part">Alguns Desvios Incondicionais</h1>
@@ -609,11 +607,11 @@ Fernanda Passos
 <li>O comando <code>break</code> serve para <strong>sair de repetições abruptamente</strong>.</li>
 <li>Exemplo de uso:</li>
 </ul>
-<div class="sourceCode" id="idWhileEx1"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhileEx1-1"><a href="#idWhileEx1-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">100</span>, <span class="dv">3</span>):</span>
-<span id="idWhileEx1-2"><a href="#idWhileEx1-2"></a>  <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">&quot; &quot;</span>) <span class="co"># Imprime múltiplos de 3 a partir de 3.</span></span>
-<span id="idWhileEx1-3"><a href="#idWhileEx1-3"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>: <span class="co"># Quando o índice também for divisível por 7, para.</span></span>
-<span id="idWhileEx1-4"><a href="#idWhileEx1-4"></a>    <span class="cf">break</span></span>
-<span id="idWhileEx1-5"><a href="#idWhileEx1-5"></a><span class="bu">print</span>()</span></code></pre></div>
+<div class="sourceCode" id="idWhileEx1" style="font-size: 80%; width: 90%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhileEx1-1"><a href="#idWhileEx1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">100</span>, <span class="dv">3</span>):</span>
+<span id="idWhileEx1-2"><a href="#idWhileEx1-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">&quot; &quot;</span>) <span class="co"># Imprime múltiplos de 3 a partir de 3.</span></span>
+<span id="idWhileEx1-3"><a href="#idWhileEx1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>: <span class="co"># Quando o índice também for divisível por 7, para.</span></span>
+<span id="idWhileEx1-4"><a href="#idWhileEx1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="idWhileEx1-5"><a href="#idWhileEx1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre></div>
 <ul>
 <li>Embora o melhor seja estruturar o código apenas com condições (no while), pode ser útil as vezes.
 <ul>
@@ -627,15 +625,15 @@ Fernanda Passos
 <ul>
 <li>Exemplo: imprimir todos os 5 primeiros múltiplos naturais de 2 ou 3 usando um for.</li>
 </ul>
-<div class="sourceCode" id="idWhileEx2"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhileEx2-1"><a href="#idWhileEx2-1"></a>cont <span class="op">=</span> <span class="dv">0</span></span>
-<span id="idWhileEx2-2"><a href="#idWhileEx2-2"></a><span class="co"># Usar um range com um limite superestimado.</span></span>
-<span id="idWhileEx2-3"><a href="#idWhileEx2-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>):</span>
-<span id="idWhileEx2-4"><a href="#idWhileEx2-4"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="idWhileEx2-5"><a href="#idWhileEx2-5"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
-<span id="idWhileEx2-6"><a href="#idWhileEx2-6"></a>    cont <span class="op">=</span> cont <span class="op">+</span> <span class="dv">1</span></span>
-<span id="idWhileEx2-7"><a href="#idWhileEx2-7"></a>  <span class="cf">if</span> cont <span class="op">==</span> <span class="dv">5</span>:</span>
-<span id="idWhileEx2-8"><a href="#idWhileEx2-8"></a>    <span class="cf">break</span></span>
-<span id="idWhileEx2-9"><a href="#idWhileEx2-9"></a><span class="bu">print</span>()</span></code></pre></div>
+<div class="sourceCode" id="idWhileEx2" style="font-size: 80%; width: 90%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhileEx2-1"><a href="#idWhileEx2-1" aria-hidden="true" tabindex="-1"></a>cont <span class="op">=</span> <span class="dv">0</span></span>
+<span id="idWhileEx2-2"><a href="#idWhileEx2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Usar um range com um limite superestimado.</span></span>
+<span id="idWhileEx2-3"><a href="#idWhileEx2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>):</span>
+<span id="idWhileEx2-4"><a href="#idWhileEx2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="idWhileEx2-5"><a href="#idWhileEx2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
+<span id="idWhileEx2-6"><a href="#idWhileEx2-6" aria-hidden="true" tabindex="-1"></a>    cont <span class="op">=</span> cont <span class="op">+</span> <span class="dv">1</span></span>
+<span id="idWhileEx2-7"><a href="#idWhileEx2-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> cont <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="idWhileEx2-8"><a href="#idWhileEx2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="idWhileEx2-9"><a href="#idWhileEx2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre></div>
 <ul>
 <li><strong>Exercício:</strong> modificar nosso algoritmo para indicar se um número é primo ou não, usando um break assim que encontrar um número divisível.</li>
 </ul>
@@ -649,15 +647,15 @@ Fernanda Passos
 <li>O que ele faz é voltar para o laço inicial de repetição.</li>
 <li>Ignora todos os comandos após ele.</li>
 </ul></li>
-<li>Exemplo: indicar quantos números diferentes de 0 foram lidos do usuário.</li>
+<li>Exemplo: indicar quantos números diferentes de 0 foram lidos do utilizador.</li>
 </ul>
-<div class="sourceCode" id="idWhileEx3"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhileEx3-1"><a href="#idWhileEx3-1"></a>cont <span class="op">=</span> <span class="dv">0</span></span>
-<span id="idWhileEx3-2"><a href="#idWhileEx3-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="idWhileEx3-3"><a href="#idWhileEx3-3"></a>  n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
-<span id="idWhileEx3-4"><a href="#idWhileEx3-4"></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="idWhileEx3-5"><a href="#idWhileEx3-5"></a>    <span class="cf">continue</span></span>
-<span id="idWhileEx3-6"><a href="#idWhileEx3-6"></a>  cont <span class="op">=</span> cont <span class="op">+</span> <span class="dv">1</span></span>
-<span id="idWhileEx3-7"><a href="#idWhileEx3-7"></a><span class="bu">print</span>(<span class="st">&quot;Foram lidos&quot;</span>, cont, <span class="st">&quot;numeros diferentes de 0.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="idWhileEx3" style="font-size: 80%; width: 90%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="idWhileEx3-1"><a href="#idWhileEx3-1" aria-hidden="true" tabindex="-1"></a>cont <span class="op">=</span> <span class="dv">0</span></span>
+<span id="idWhileEx3-2"><a href="#idWhileEx3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="idWhileEx3-3"><a href="#idWhileEx3-3" aria-hidden="true" tabindex="-1"></a>  n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com um número: &quot;</span>))</span>
+<span id="idWhileEx3-4"><a href="#idWhileEx3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="idWhileEx3-5"><a href="#idWhileEx3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="idWhileEx3-6"><a href="#idWhileEx3-6" aria-hidden="true" tabindex="-1"></a>  cont <span class="op">=</span> cont <span class="op">+</span> <span class="dv">1</span></span>
+<span id="idWhileEx3-7"><a href="#idWhileEx3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Foram lidos&quot;</span>, cont, <span class="st">&quot;numeros diferentes de 0.&quot;</span>)</span></code></pre></div>
 </div>
 <div id="desvio-incondicional" class="slide section level1">
 <h1>Desvio Incondicional</h1>
