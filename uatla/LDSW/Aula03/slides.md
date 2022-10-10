@@ -485,9 +485,9 @@ logo: ../atlantica_logo2.svg
 	</head>
 	<body>
         <form>
-            <label for="fname">Nome:</label>
+            <label for="nome">Nome:</label>
             <input type="text" id="nome"><br><br>
-            <label for="lname">Apelido:</label>
+            <label for="apelido">Apelido:</label>
             <input type="text" id="apelido"><br><br>            
             <input type="checkbox" id="pais1" value="Angola">
             <label for="pais1">Nasci em Angola</label><br>
@@ -548,8 +548,8 @@ logo: ../atlantica_logo2.svg
 
 
 :::
-:::{.column width=45%}
-<br> <br>
+:::{.column style="width: 45%; display: flexbox;"}
+<!--<br> <br>-->
 <iframe src="iframes/Exemplo6.html" style="width: 90%; height: 220px;">
 
 </iframe>
