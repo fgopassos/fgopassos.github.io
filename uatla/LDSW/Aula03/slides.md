@@ -1,6 +1,6 @@
 ---
 author: Fernanda Passos
-subtitle: GSC - Laboratório de Desenvolvimento de Sistemas Web
+subtitle: GSC - Programação de Sistemas Web
 title: Aplicações Web, HTML e CSS
 institute: Atlântica - Instituto Universitário
 logo: ../atlantica_logo2.svg
@@ -120,7 +120,7 @@ logo: ../atlantica_logo2.svg
 ![](imagens/RequisicaoSimples.mp4){#requisicaoSimples}
 :::
 :::
-:::{.column style="width: 30%; padding-top: 10%;"}
+:::{.column style="width: 30%; font-size: 90%;"}
 - Detalhes:
 	- Servidor: `www.midiacom.uff.br`.
 	- Requisição do tipo `GET`.
