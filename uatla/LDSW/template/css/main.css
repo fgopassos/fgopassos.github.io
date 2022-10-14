@@ -275,6 +275,7 @@ div.slide > * {
 
 div.block {
 
+    font-size: 80%;
 	background-color: var(--blockBackgroundColor);
 	padding: 0 !important;
 	padding-bottom: 1px !important;

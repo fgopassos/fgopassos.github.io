@@ -44,7 +44,7 @@ Node.js
 
 # Javascript: _Hello World_
 
-```{.html .numberLines style="font-size: 16px;"}
+```{.html .numberLines style="font-size: 20px;"}
 <html>
 	<head>
         <script type="text/javascript">
@@ -76,7 +76,7 @@ Node.js
 	- Com `let`: variável que pode ser lida ou escrita declarada no escopo do bloco atual.
 - Nos três casos, a declaração é similar:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 18px;"}
 var a, b = 3;
 const c = 50;
 let d;
@@ -108,13 +108,8 @@ let d;
 | `**`     | Exponenciação            |
 ::::
 
-
-
 :::::::
-
-
 :::
-
 :::{.column width=33%}
 
 :::::::{.center}
@@ -123,12 +118,11 @@ let d;
 ::::{.center style="font-size: 15px; line-height: 80%;"}
 | Operador | Descrição |
 | -------- | --------- |
-| `&&`     | `and`     |
-| `||`     |  `or`     |
-| `!`      | `not`     |
+| `&&`     | `and` lógico    |
+| `||`     |  `or` lógico    |
+| `!`      | `not` lógico    |
 ::::
 :::::::
-
 
 :::
 
@@ -161,7 +155,7 @@ let d;
 	- Nem sempre têm o mesmo efeito dos operadores `==` e `!=`.
 - Exemplo:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 20px;"}
 var a = 0;
 var b = "";
 alert("a == b? " + (a == b));
@@ -172,17 +166,16 @@ alert("a === b? " + (a === b));
 
 </iframe>
 
-# Javascript: Atribuição
+# Javascript: Afetação
 
-- Variáveis podem ter seus valores alterados através da operação de atribuição.
+- Variáveis podem ter seus valores alterados através da operação de afetação.
 	- Exceto pelas declaradas com `const`!
 	- Resulta em exceção/erro de execução.
-- Operador de atribuição é o caractere `=`, comando de atribuição sempre terminado em `;`.
-- O valor atrubuído pode ser uma outra variável, uma constante literal, ou qualquer expressão (_e.g._, lógica, aritimética).
-- Atribuição pode ser combinada com operadores aritméticos.
-- Exemplos:
+- Operador de afetação é o caractere `=`, comando de afetação sempre terminado em `;`.
+- O valor apetado pode ser uma outra variável, uma constante literal, ou qualquer expressão (_e.g._, lógica, aritimética).
+- Afetação pode ser combinada com operadores aritméticos.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 20px;"}
 var a, b = 3;
 var c;
 
@@ -193,6 +186,9 @@ a /= 3;
 
 # Javascript: Strings
 
+:::::{.columns}
+:::{.column width=60%}
+
 - Permitem armazenar informações textuais.
 - Denotadas por sequências de caracteres entre aspas.
 	- Duplas ou simples:
@@ -201,30 +197,41 @@ a /= 3;
 - Podem ser concatenadas com o operador `+`: 
 	- `"string" + " concatenada"`.
 - Comprimento de uma string pode ser verificado com a propriedade `length`.
+:::
 
-```{.javascript .numberLines style="font-size: 16px;"}
-var a = "Teste"
+:::{.column width=2%}
+:::
+
+:::{.column width=38%}
+
+- Exemplo:
+
+```{.javascript .numberLines style="font-size: 20px;"}
+var a = "Teste "
 var b = "Javascript";
 var mensagemCompleta = a + b;
 var l = mensagemCompleta.length;
+console.log("Tamanho: " + l)
 ```
+:::
+:::::
 
 # Javascript: Estruturas de Seleção
 
-::::{}
+:::::{.columns}
+:::{.column width=60%}
 - Testes de condições podem ser feitos com:
 	- Estruturas do tipo `if/else`.
 	- Estruturas do tipo `switch/case`.
 	- O operador ternário `?`.
 - Em todos os casos, sintaxe idêntica a de linguagens como C e Java.
+:::
+
+:::{.column width=40%}
+
 - Exemplos:
 
-::::
-
-:::::{.columns}
-:::{.column width=33%}
-
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 18px;"}
 if (a > 0) b = 3;
 if (c == 4 && b <= 1) {
 	a += 10;
@@ -232,11 +239,7 @@ if (c == 4 && b <= 1) {
 else a -= 10;
 ```
 
-:::
-
-:::{.column width=34%}
-
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 18px;"}
 switch(a) {
 	case 1:
 		b = 10;
@@ -249,11 +252,7 @@ switch(a) {
 }
 ```
 
-:::
-
-:::{.column width=33%}
-
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 18px;"}
 b = (a < 0) ? -a : a; 
 ```
 
@@ -261,6 +260,7 @@ b = (a < 0) ? -a : a;
 
 :::::
 
+<!--
 # Javascript: Pontos de Atenção com Estruturas de Seleção 
 
 :::::{.columns}
@@ -271,9 +271,9 @@ b = (a < 0) ? -a : a;
 :::::::
 
 - Uso do `else` é opcional.
-- Tanto no `if` quanto no `else` pode-se usar **chaves**.
+- Tanto no `if` quanto no `else` pode-se usar **chavetas**.
 	- Definem **bloco** de comandos a ser executados em cada caso.
-	- Se for um único comando, chaves são opcionais.
+	- Se for um único comando, chavetas são opcionais.
 
 :::
 :::{.column width=50%}
@@ -301,6 +301,7 @@ switch(a) {
 
 :::
 :::::
+-->
 
 # Javascript: Estruturas de Repetição
 
@@ -317,7 +318,7 @@ switch(a) {
 
 :::{.column width=50%}
 
-- Ao contrário de C, Javascript têm três variantes do `for`.
+- Ao contrário de C, Javascript tem três variantes do `for`.
 	- O `for` "básico".
 	- O `for in`.
 	- O `for of`.
@@ -331,16 +332,19 @@ switch(a) {
 ### Sintaxe Geral
 :::::::
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 18px;"}
 for (cmd1 ; cond ; cmd2) {
 	// Bloco de código a ser executado.
 }
 ```	
 
+::::::{style="font-size: 20px;"}
 - `cmd1` é executado **antes da primeira iteração**.
 - `cond` é uma condição testada **antes de cada iteração**.
 - `cmd2` é executado **após cada iteração**.
 	- Mas **antes do teste** da condição.
+::::::
+
 :::
 
 :::::
@@ -348,28 +352,32 @@ for (cmd1 ; cond ; cmd2) {
 # Javascript: Exemplo de Repetição com `for`
 
 - Calcular $\displaystyle\sum_{a=0}^{9}{a^2}$:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 22px;"}
 var a, b = 0;
 for (a = 0; a < 10; a++) {
 	b += a**2;
 }
 ```	
 
-- Note: assim como no `if`, chaves são opcionais se corpo da repetição tem apenas um comando.
+<!--
+- Nota: chavetas são opcionais se corpo da repetição tem apenas um comando.
+-->
 
 # Javascript: Repetição com `while`
 
 - Sintaxe geral:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 22px;"}
 while(cond) {
 	// Comandos
 }
 ```	
 
-- Note: assim como no `if` e no `for`, chaves são opcionais se corpo da repetição tem apenas um comando.
-- Exemplo
-```{.javascript .numberLines style="font-size: 16px;"}
+<!--
+- Nota: chavetas são opcionais se corpo da repetição tem apenas um comando.
+-->
+- Exemplo:
+```{.javascript .numberLines style="font-size: 20px;"}
 var a = 0, b = 0;
 while (a < 10) {
 	b += a**2;
@@ -383,15 +391,17 @@ while (a < 10) {
 	- Garante que **ao menos uma iteração** é executada.
 - Sintaxe geral:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 22px;"}
 do {
 	// Comandos
 } while(cond);
 ```	
 
+<!--
 - Note: assim como no `if` e no `for`, chaves são opcionais se corpo da repetição tem apenas um comando.
-- Exemplo
-```{.javascript .numberLines style="font-size: 16px;"}
+-->
+- Exemplo:
+```{.javascript .numberLines style="font-size: 20px;"}
 var a = 0, b = 0;
 do {
 	b += a**2;
@@ -401,8 +411,8 @@ do {
 
 # Javascript: Funções
 
-- A sintaxe para definição de funções é um pouco diferente em Javascript em relação a C, Java:
-```{.javascript .numberLines style="font-size: 16px;"}
+- A sintaxe para definição de funções é um pouco diferente em relação a C, Java:
+```{.javascript .numberLines style="font-size: 22px;"}
 function nome([arg1 [, arg2 [, ...]]]) {
 
 	// Corpo da função
@@ -413,7 +423,7 @@ function nome([arg1 [, arg2 [, ...]]]) {
 
 ::::::{.block .centered}
 :::{.blocktitle}
-Observações
+Observações:
 :::
 - Funções podem ou não ter argumentos.
 	- Ainda que tenham, tipos dos argumentos **não** são declarados.
@@ -424,7 +434,7 @@ Observações
 # Javascript: Chamada de Funções
 
 - A sintaxe para chamada de funções é idêntica a C, Java:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 22px;"}
 nome([arg1 [, arg2 [, ...]]]);
 ```	
 
@@ -432,13 +442,13 @@ nome([arg1 [, arg2 [, ...]]]);
 :::{.blocktitle}
 Observações
 :::
-- Se a função retorna algo, valor pode ser atribuído a variável.
-	- Ou testada como parte de condição de `if`.
+- Se a função retorna algo, valor pode ser atribuído a uma variável.
+	- Ou testada como parte de condição de `if` ou `while`.
 ::::::
 
 # Javascript: Exemplo de Uso de Funções
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 22px;"}
 function maior(a, b) {
 
 	if (a > b) return(a);
@@ -452,30 +462,6 @@ b = 5;
 c = maior(a, b);
 ```	
 
-# Javascript: Mais sobre Funções
-
-- Em Javascript, funções são **valores de primeira classe**.
-	- Funções podem:
-		- Ser passadas como parâmetros de outras funções.
-		- Ser retornadas como valores de retorno de outras funções.
-		- Ser atribuídas e armazenadas em variáveis.
-- Exemplo:
-
-```{.javascript .numberLines style="font-size: 16px;"}
-function sub(a, b) {
-	return(a - b);
-}
-function soma(a, b) {
-	return(a + b);
-}
-function sel(f1, f2, s) {
-	return(s == 0 ? f1 : f2);
-}
-var f = sel(sub, soma, 1); // retorna função soma.
-f(10, 4); // executa a função soma.
-```	
-
-- Javascript também suporta **recursão**.
 
 # Javascript: Algumas Funções Nativas Úteis
 
@@ -527,6 +513,55 @@ alert('Olá ' + nome + '!')
 
 </iframe>
 
+
+# Javascript: Mais sobre Funções
+
+- Em Javascript, funções são **valores de primeira classe**.
+	- Funções podem:
+		- Ser passadas como parâmetros de outras funções.
+		- Ser retornadas como valores de retorno de outras funções.
+		- Ser atribuídas e armazenadas em variáveis.
+- Exemplo:
+
+```{.javascript .numberLines style="font-size: 20px;"}
+function sub(a, b) {
+	return(a - b);
+}
+function soma(a, b) {
+	return(a + b);
+}
+function sel(f1, f2, s) {
+	return(s == 0 ? f1 : f2);
+}
+var f = sel(sub, soma, 1); // retorna função soma.
+f(10, 4); // executa a função soma.
+```	
+
+# Javascript: Recursão
+
+- Javascript também suporta **recursão**.
+	- Função chama a própria função.
+	- Gera-se uma repetição de chamadas de funções.
+		- São necessários critérios de paragem para o término da recursão.
+- Exemplo: calcular o Fibonacci de um dado n:
+```{.javascript .numberLines style="font-size: 20px;"}
+function fib(n) {
+	if (n == 0) return 0;
+	if (n == 1) return 1;
+	return(fib(n-1) + fib(n-2));
+}
+var n = prompt("Fibonacci - Entre com n: ");
+if (n >= 0)
+	alert("Fib(" + n + ") = " + fib(n));
+else
+	alert("Não é possível calcular o fib(" + n + ")!");
+```	
+
+<iframe src="iframes/fib.html" style="width: 100%; height: 50px; border: 0;">
+
+</iframe>
+
+
 <!--
 # Exercícios
 
@@ -536,12 +571,13 @@ alert('Olá ' + nome + '!')
 
 # Exercícios (I)
 
-1. Crie uma página web que contenha um código Javascript que calcule os N=10 primeiros números múltiplos de 5 e 7 simultaneamente.
-	- Imprima o resultado no console do _browser_.
-2. Altere o item 1 para que a entrada de N seja através do `prompt`.
-3. Crie uma página web que contenha um código Javascript que calcule o fatorial de um número.
-	- Use recursão.
+1. Crie uma página web simples que contenha um código Javascript que mostre a tabuada de 1 a 10.
+	- Imprima o resultado no console do _browser_ ou use a função `alert()`.
+3. Crie uma página web que contenha um código Javascript que calcule o fatorial de um número n.
+	- Obtenha n com o comando `prompt()`.
+	- Use repetição (`while` ou `for`) para calcuar o fatorial.
 	- Mostre o resultado com a função `alert()`.
+3. Altere o item anterior para usar recursão ao invés da repetição.
 
 <!--
 # Javascript e HTML
@@ -593,7 +629,7 @@ var carro = {
 
 # Javascript: Vetores
 
-- Vetores permitem armazenar sequeências ou conjuntos de valores relacionados.
+- Vetores permitem armazenar sequências ou conjuntos de valores relacionados.
 - Para incializar um vetor vazio, há várias formas:
 ```{.javascript .numberLines style="font-size: 16px;"}
 var vetorA = [];
@@ -631,7 +667,7 @@ Importante
 
 ```{.javascript .numberLines style="font-size: 16px;"}
 var carros = ["Fiat", "BMW", "Volvo"];
-carros[3] = "57";
+carros[3] = 57;
 ```	
 
 ::::::
@@ -716,9 +752,9 @@ f2();
 # Javascript: Escopo de Bloco
 
 - Atualmente, Javascript conta também com os **escopos de blocos**
-	- **Chaves** definiem um novo bloco.
+	- **Chavetas** definem um novo bloco.
 		- Inclusive em estruturas de **seleção** e **repetição**.
-	- Variáveis declaradas com `let` percentem apenas ao escopo do bloco.
+	- Variáveis declaradas com `let` pertencem apenas ao escopo do bloco.
 
 ```{.javascript .numberLines style="font-size: 16px;"}
 var a = 1;

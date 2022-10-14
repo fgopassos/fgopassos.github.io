@@ -1,0 +1,25 @@
+<html>
+	<head>
+        <script type="text/javascript">
+            function fib(n) {
+                if (n == 0) return 0;
+                if (n == 1) return 1;
+                return(fib(n-1) + fib(n-2));
+            }
+            function cb(){
+                var n = prompt("Fibonacci - Entre com n: ");
+                if (n >= 0){
+                    n = Math.round(n);
+                    alert("Fib(" + n + ") = " + fib(n));
+                }
+                else
+                    alert("Não é possível calcular o fib(" + n + ")!");
+            }
+        </script>
+	</head>
+	<body>
+		<div style="text-align: center;">
+			<input type="button" value="Executar" onclick="cb();"></input>
+        </div>
+	</body>
+</html>

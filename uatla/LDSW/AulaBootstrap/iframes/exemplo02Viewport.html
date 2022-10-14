@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+        The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+        The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf8">
+    <title> Exemplo de página </title>
+    <style>
+        /* Indica que as dimenções de todos os elementos da página
+        * serão aplicadas considerando border e padding.  */
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-container {
+            display: table; /* Make the container element behave like a table */
+            width: 100%; /* Set full-width to expand the whole page */
+        }
+
+
+        .col-left, .col-right {
+            float: left;
+            background-color: rgb(150, 150, 150);
+            padding: 2%;
+            width: 20%;
+            display: table-cell; /* Make elements inside the container behave like table cells */
+        }
+
+        .col-main {
+            float: left;
+            padding: 2%;
+            background-color:rgb(200, 200, 200);
+            width: 60%;
+            display: table-cell; /* Make elements inside the container behave like table cells */
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Teste </h1>
+
+    <div class="col-container">
+        <div class="col-left">
+            Exemplo de texto à esquerda
+        </div>
+        <div class="col-main">
+            <div class="center">
+                Exemplo de texto na área principal
+                <img src="colorful-umbrella.jpg" alt="Colorful umbrella" style="max-width:100%;">
+                </div>
+                </div>
+        <div class="col-right">
+            Exemplo de texto à direita
+        </div>
+    </div>
+</body>
+</html>

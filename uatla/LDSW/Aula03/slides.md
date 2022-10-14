@@ -644,7 +644,7 @@ seletor [, seletor2, ...][:pseudo-classe] {
 
 - Mas qual é o formato de um seletor?
 	- _i.e._, como especificar os elementos selecionados?
-- De forma simplificada, elementos pode ser selecionados através:
+- De forma simplificada, elementos podem ser selecionados através:
 	1. De seu **id** (**elemento específico**); ou
 	2. De seu **tipo** (**todos os elementos daquele tipo**); ou
 	3. De sua class (**todos os elementos de uma class**).

@@ -134,7 +134,7 @@ print(L[0] + L[4])
 
 :::::{.columns}
 ::::{.column width=50%}
-~~~{#ListaAcesso3 .python}
+~~~{#ListaAcesso3 .python style="font-size: 24px;"}
 l = [10, 20, 30, 40, 50] # criação da lista l.
 l[1] = 15 # alteração do segundo elemento.
 print(l) # impressão da lista l.
@@ -205,6 +205,9 @@ print(lista)
 [1, 22, 5, 9, -6, 14, 17]
 ```
 
+# Remover uma Lista
+
+
 - `del` serve para apagar uma lista também.
 
 ~~~{#ListaRemocao2 .python}
@@ -213,12 +216,12 @@ del lista
 
 # Exercícios (I)
 
-## Responda:
+### Responda:
 
 1. Suponha que tenhas uma lista que varia de tamanho.
     - Qual comando deve ser usado para imprimir o seu último elemento?
 
-## Escreva um programa em Python que:
+### Escreva um programa em Python que:
 
 1. Crie uma lista contendo todas as vogais;
 1. Troque a primeira vogal com a última e a a segunda com a penúltima. Use `len` para acessar o último e o penúltimo elemento.
@@ -227,7 +230,6 @@ del lista
 # Pertinência em Lista
 
 - O comando `in` pode ser usando para verificar se um elemento está em uma lista.
-- Uso:
 
 ~~~{#ListaIn .python}
 >>> elemento in lista
@@ -524,7 +526,7 @@ print(lista)
 [4, 3, 7, 4, 1]
 ```
 
-# Alguns Métodos de Lista: Sort
+# Alguns Métodos de Lista: Sort (I)
 
 - Método `sort`: ordena crescentemente uma lista (modifica a lista).
 
@@ -537,6 +539,8 @@ print(lista)
 ```
 [1, 3, 4, 4, 7]
 ```
+
+# Alguns Métodos de Lista: Sort (II)
 
 - Para ordenar decrescentemente, usar argumento `reverse=True`:
 
@@ -602,7 +606,7 @@ l1: [1, 4, 7, 3, 4] e l2: [1, 4, 7, 9, 4]
 :::::{.columns}
 ::::{.column width=50%}
 
-~~~{#Exercico3 .python}
+~~~{#Exercico3 .python style="font-size: 22px;"}
 lista = [1, -4, 10, 13, 6]
 for i in range(3, 7):
     lista.append(i)
