@@ -1,6 +1,6 @@
 ---
 author: Fernanda Passos
-subtitle: GSC - Laboratório de Desenvolvimento de Sistemas Web
+subtitle: GSC - Programação de Sistemas Web
 title: Javascript
 institute: Atlântica - Instituto Universitário
 logo: ../atlantica_logo2.svg
