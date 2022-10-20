@@ -96,7 +96,7 @@
     <p class="institute">Atlântica - Instituto Universitário</p>
     <img class="logo" src="../atlantica_logo2.svg"></img>
     <h1 class="title">Javascript, <em>Document Object Model</em> e jQuery</h1>
-    <p class="subtitle">GSC - Laboratório de Desenvolvimento de Sistemas Web</p>
+    <p class="subtitle">GSC - Programação de Sistemas Web</p>
     <p class="author">
 Fernanda Passos
     </p>
@@ -125,8 +125,8 @@ Fernanda Passos
 <p>Utilidades</p>
 </div>
 <ul>
-<li>Código Javascript pode alterar conteúdo e estilo da página mostrada ao usuário.</li>
-<li>Código Javascript pode ler valores introduzidos pelo usuário em campos de formulário.</li>
+<li>Código Javascript pode alterar conteúdo e estilo da página mostrada ao utilizador.</li>
+<li>Código Javascript pode ler valores introduzidos pelo utilizador em campos de formulário.</li>
 </ul>
 </div>
 </div>
@@ -189,8 +189,8 @@ Fernanda Passos
 </iframe>
 </div>
 </div>
-<div id="javascript-e-dom-a-família-de-métodos-getelementby" class="slide section level1">
-<h1>Javascript e DOM: A Família de Métodos <code>getElementBy*</code></h1>
+<div id="js-e-dom-a-família-de-métodos-getelementby-i" class="slide section level1">
+<h1>JS e DOM: A Família de Métodos <code>getElementBy*</code> (I)</h1>
 <ul>
 <li>Podemos encontrar um elemento no DOM fazendo implementando uma busca na árvore.</li>
 <li>Mas há métodos (do objeto <code>document</code>) já disponíveis para isso:</li>
@@ -223,13 +223,16 @@ Fernanda Passos
 </tbody>
 </table>
 </div>
+</div>
+<div id="js-e-dom-a-família-de-métodos-getelementby-ii" class="slide section level1">
+<h1>JS e DOM: A Família de Métodos <code>getElementBy*</code> (II)</h1>
 <ul>
 <li>Note: para o <code>getElementByClassName()</code>, múltiplas classes podem ser especificadas separadas por espaço.
 <ul>
 <li>Retorno: elementos que pertencem a ambas <strong>simultaneamente</strong>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb2" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">var</span> el1 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;meuDiv&#39;</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb2" style="font-size: 24px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">var</span> el1 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;meuDiv&#39;</span>)<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw">var</span> el2 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementByTagName</span>(<span class="st">&#39;div&#39;</span>)<span class="op">;</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="kw">var</span> el3 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementByClass</span>(<span class="st">&#39;minhaClasse1 minhaClasse2&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </div>
@@ -504,7 +507,6 @@ Fernanda Passos
 <ul>
 <li>Boa parte dos elementos HTML suporta vários eventos.</li>
 <li>Propriedades <code>on*</code> associam eventos a códigos Javascript.</li>
-<li>Eventos comuns:</li>
 </ul>
 <div class="center" style="font-size: 15px; line-height: 80%;">
 <table>
@@ -518,7 +520,7 @@ Fernanda Passos
 <tbody>
 <tr class="odd">
 <td><code>onclick</code></td>
-<td>Usuário carrega no elemento</td>
+<td>Utilizador carrega no elemento</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -528,7 +530,7 @@ Fernanda Passos
 </tr>
 <tr class="odd">
 <td><code>onunload</code></td>
-<td>Usuário deixa a página</td>
+<td>Utilizador deixa a página</td>
 <td>Usado com elemento <code>body</code></td>
 </tr>
 <tr class="even">
@@ -1122,21 +1124,26 @@ Fernanda Passos
 </div>
 <div id="exercício" class="slide section level1">
 <h1>Exercício</h1>
-<ul>
+<ol style="list-style-type: decimal">
 <li>Gere uma tabela dinâmica com jQuery.
 <ul>
 <li>Permita que utilizador adicione e remova linhas.</li>
-</ul></li>
 <li>Cada célula da tabela (exceto o título) deve ser editável.
 <ul>
 <li>Use: <code>&lt;td contenteditable="true"&gt;</code></li>
 </ul></li>
-<li>Inclua um botão que “salva” a tabela.</li>
-<li>Salvar significa guardar seu conteúdo em um objeto Javascript.
+</ul></li>
+<li>Inclua um botão que “grava” a tabela.
 <ul>
+<li>Gravar significa guardar seu conteúdo em um objeto Javascript.</li>
 <li>Futuramente pode ser usado para enviar dados da tabela para o servidor.</li>
 </ul></li>
-</ul>
+<li>Crie uma aplicação de chat que tenha uma caixa de entrada de texto e outra de histórico.
+<ul>
+<li>A caixa de entrada recebe o texto de entrada do chat de um cliente.</li>
+<li>A caixa de histórico não é editável e deve ser atualizada com o conteúdo da caixa de entrada.</li>
+</ul></li>
+</ol>
 </div>
 <div id="percorrer-árvore-do-dom-com-jquery" class="slide section level1">
 <h1>Percorrer Árvore do DOM com jQuery</h1>

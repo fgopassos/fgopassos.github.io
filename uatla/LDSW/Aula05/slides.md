@@ -1,6 +1,6 @@
 ---
 author: Fernanda Passos
-subtitle: GSC - Laboratório de Desenvolvimento de Sistemas Web
+subtitle: GSC - Programação de Sistemas Web
 title: Javascript, *Document Object Model* e jQuery
 institute: Atlântica - Instituto Universitário
 logo: ../atlantica_logo2.svg
@@ -22,8 +22,8 @@ logo: ../atlantica_logo2.svg
 :::{.blocktitle}
 Utilidades
 :::
-- Código Javascript pode alterar conteúdo e estilo da página mostrada ao usuário.
-- Código Javascript pode ler valores introduzidos pelo usuário em campos de formulário.
+- Código Javascript pode alterar conteúdo e estilo da página mostrada ao utilizador.
+- Código Javascript pode ler valores introduzidos pelo utilizador em campos de formulário.
 ::::::
 
 # Javascript e DOM: O Objeto `document`
@@ -82,7 +82,7 @@ Utilidades
 
 ::::
 
-# Javascript e DOM: A Família de Métodos `getElementBy*`
+# JS e DOM: A Família de Métodos `getElementBy*` (I)
 
 - Podemos encontrar um elemento no DOM fazendo implementando uma busca na árvore.
 - Mas há métodos (do objeto `document`) já disponíveis para isso:
@@ -96,10 +96,12 @@ Utilidades
 | `getElementByClassName()` | Todos os elementos pertencentes aquela classe  |
 ::::
 
+# JS e DOM: A Família de Métodos `getElementBy*` (II)
+
 - Note: para o `getElementByClassName()`, múltiplas classes podem ser especificadas separadas por espaço.
 	- Retorno: elementos que pertencem a ambas **simultaneamente**.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 24px;"}
 var el1 = document.getElementById('meuDiv');
 var el2 = document.getElementByTagName('div');
 var el3 = document.getElementByClass('minhaClasse1 minhaClasse2');
@@ -327,14 +329,13 @@ _Callback_
 
 - Boa parte dos elementos HTML suporta vários eventos.
 - Propriedades `on*` associam eventos a códigos Javascript.
-- Eventos comuns:
 
 ::::{.center style="font-size: 15px; line-height: 80%;"}
 | Propriedade   | Evento                                     | Observações                 |
 | ------------- | ------------------------------------------ | --------------------------- |
-| `onclick`     | Usuário carrega no elemento                |                             |
+| `onclick`     | Utilizador carrega no elemento             |                             |
 | `onload`      | Página é carregada                         | Usado com elemento `body`   |
-| `onunload`    | Usuário deixa a página                     | Usado com elemento `body`   |
+| `onunload`    | Utilizador deixa a página                  | Usado com elemento `body`   |
 | `onchange`    | Campo de formulário tem valor alterado     | Usado com elementos `input` |
 | `onmouseover` | Cursor está sobre elemento                 |                             |
 | `onmouseout`  | Cursor deixa área do elemento              |                             |
@@ -819,13 +820,16 @@ _Callback_
 
 # Exercício
 
-- Gere uma tabela dinâmica com jQuery.
+1. Gere uma tabela dinâmica com jQuery.
 	- Permita que utilizador adicione e remova linhas.
-- Cada célula da tabela (exceto o título) deve ser editável.
-	- Use: `<td contenteditable="true">`
-- Inclua um botão que "salva" a tabela.
-- Salvar significa guardar seu conteúdo em um objeto Javascript.
+	- Cada célula da tabela (exceto o título) deve ser editável.
+		- Use: `<td contenteditable="true">`
+2. Inclua um botão que "grava" a tabela.
+	- Gravar significa guardar seu conteúdo em um objeto Javascript.
 	- Futuramente pode ser usado para enviar dados da tabela para o servidor.
+3. Crie uma aplicação de chat que tenha uma caixa de entrada de texto e outra de histórico.
+	- A caixa de entrada recebe o texto de entrada do chat de um cliente.
+	- A caixa de histórico não é editável e deve ser atualizada com o conteúdo da caixa de entrada.
 
 # Percorrer Árvore do DOM com jQuery
 
