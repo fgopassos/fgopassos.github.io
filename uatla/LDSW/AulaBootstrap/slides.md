@@ -49,7 +49,7 @@ logo: ../atlantica_logo2.svg
 	- uso de dimensões percentuais dos elementos (*e.g.*, width: 50%);
 	- uso de *media queries* para mudar arranjo dos elementos;
 	- imagens redimensionáveis;
-	- textos redimensionáiveis;
+	- textos redimensionáveis;
 	- ...
 
 # HTML Responsivo
@@ -57,8 +57,8 @@ logo: ../atlantica_logo2.svg
 :::::{.columns}
 ::::{.column width=50%}
 - Alguns modos:
-	- Definir diretamente no CSS.
-	- Uso de *frameworks*: CSS previamente definido.
+	- Definir **diretamente no CSS**.
+	- Uso de *frameworks*: CSS definido por terceiros.
 		- Deve-se conhecer os nomes das classes e seus estilos.
 		- Alguns usam Javascript além do CSS (para animações).
 		- *e.g.*, Bootstrap, W3.CSS (apenas HTML e CSS).
@@ -73,7 +73,20 @@ logo: ../atlantica_logo2.svg
 ::::
 :::::
 
-# Definir CSS Responsivo
+# Definir CSS Responsivo: Imagens
+
+- Propriedade `width` definida em percentual (*e.g.*, 100%).
+	- Largura da imagem varia de acordo com a largura da janela.
+	- Pode aumentar a largura para valor maior que a largura original da imagem.
+- Propriedade `max-width` definida em percentual (*e.g.*, 100%).
+	- Largura da imagem varia de acordo com a largura da janela.
+	- Mas a imagem aumenta até o seu tamanho máximo.
+- Veja exemplo do w3schools:
+	- https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_image_maxwidth
+
+# Definir CSS Responsivo: Texto
+
+- Texto pode ser redimensionado de acordo com as
 
 # Bootstrap{.part}
 
