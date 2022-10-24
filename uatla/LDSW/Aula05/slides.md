@@ -1043,4 +1043,4 @@ _Callback_
 	- Verificar se password tem boa regra criação.
 2. Inclua efeitos para evidenciar o problema para o utilizador nos casos verificados.
 
-Nota: Nenhuma iteração com servidor é necessário nesse exercício. Faça apenas as verificações que façam sentido no lado cliente.
+**Nota**: Nenhuma iteração com servidor é necessário nesse exercício. Faça apenas as verificações que fazem sentido no lado cliente.
