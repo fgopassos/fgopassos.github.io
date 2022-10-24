@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".caixa").hide();
+    $("#c1").fadeIn();
+    $("#c2").fadeIn("slow");
+    $("#c3").fadeIn(3000);
+  });
+});
+</script>
+<style>
+    .caixa {
+        width: 50px;
+        height: 50px;
+        display: table-cell;
+    }
+    #c1 { background-color: red;}
+    #c2 { background-color: blue;}
+    #c3 { background-color: green;}
+</style>
+</head>
+<body>
+    <button>Carregar aqui para <i>fade</i>.</button><br><br>
+    <div class="caixa" id="c1"> </div>
+    <div class="caixa" id="c2"> </div>
+    <div class="caixa" id="c3"> </div>
+</body>
+</html>

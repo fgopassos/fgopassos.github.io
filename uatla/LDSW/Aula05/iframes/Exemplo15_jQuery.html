@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready( function () {
+                $("#esconder").click( function () {
+                    $("p").hide();
+                });
+                $("#mostrar").click( function () {
+                    $("p").show(1000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Texto que irá ser escondido ou mostrado,
+            de acordo com os botões.</p>
+        <button id="esconder">Hide</button>
+        <button id="mostrar">Show</button>
+    </body>
+</html>

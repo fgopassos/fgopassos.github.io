@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#caixaAzul").animate({height: '100px', width: '200px', 'font-size': '60px'});
+    //$("#caixaAzul").animate({'font-size': '60px'}); // Aumenta texto depois
+  });
+});
+</script>
+<style>
+    #caixaAzul {
+      width: 100px;
+      height: 50px;
+      font-size: 30px;
+      text-align: center;
+      background-color: skyblue;
+    }
+</style>
+</head>
+<body>
+    <button>Carregar aqui para animar</button><br><br>
+    <div id="caixaAzul"> Texto </p> </div>
+</body>
+</html>

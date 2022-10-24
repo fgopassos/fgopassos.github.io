@@ -86,7 +86,11 @@ logo: ../atlantica_logo2.svg
 
 # Definir CSS Responsivo: Texto
 
-- Texto pode ser redimensionado de acordo com as
+- Texto pode ser redimensionado de acordo com as dimensões da janela.
+	- Uso da propriedade `wd`
+- Em relação à largura:
+
+
 
 # Bootstrap{.part}
 

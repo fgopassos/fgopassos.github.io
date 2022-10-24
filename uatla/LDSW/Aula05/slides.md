@@ -448,8 +448,8 @@ _Callback_
 	- Seleciona um elemento na forma de objeto.
 - acao() é um método disponível ao elemento.
 - Exemplos:
-	- `$("p").text("Texto do parágrafo")` - altera o texto dos parágrafos.
-	- `$(".teste").text("Texto de teste.")` - altera o texto dos elementos que tem `class="teste"`.
+	- `$("p").text("Texto do parágrafo")` - altera o texto dos parágrafos `<p>`.
+	- `$(".teste").text("Novo texto.")` - altera o texto dos elementos que tem `class="teste"`.
 	- `$(this).hide()` - esconde o elemento corrente.
 
 # Executar Comandos jQuery
@@ -460,7 +460,7 @@ _Callback_
 	- O argumento do método *ready()* é uma função (geralmente anónima).
 
 
-```{.html .numberLines style="font-size: 18px;"}
+```{.html .numberLines style="font-size: 20px;"}
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -477,7 +477,7 @@ _Callback_
 
 # Executar Comandos jQuery: Exemplo
 
-```{.html .numberLines style="font-size: 18px;"}
+```{.html .numberLines style="font-size: 22px;"}
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -530,7 +530,7 @@ _Callback_
 
 - Exemplo:
 
-```{.js .numberLines style="font-size: 18px;"}
+```{.js .numberLines style="font-size: 22px;"}
         $(document).ready(function(){
 			$("h1").dblclick(function(){
 				$(this).hide();
@@ -540,7 +540,7 @@ _Callback_
 
 # Exemplos com Botões
 
-```{.html .numberLines style="font-size: 17px;"}
+```{.html .numberLines style="font-size: 20px;"}
 <html>
 	<head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -563,7 +563,7 @@ _Callback_
 </html>
 ```
 
-::::{style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;"}
+::::{style="position: absolute; width: 35%; bottom: 100px; right: 0px; padding-right: 0px;"}
 <iframe src="iframes/Exemplo8_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
 
 </iframe>
@@ -595,7 +595,7 @@ _Callback_
 
 # Exemplo: Contar Vezes de Botão Carregado
 
-```{.html .numberLines style="font-size: 17px;"}
+```{.html .numberLines style="font-size: 20px;"}
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -619,7 +619,7 @@ _Callback_
 </html>
 ```
 
-::::{style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;"}
+::::{style="position: absolute; width: 40%; bottom: 8%; right: 0px; padding-right: 0px;"}
 <iframe src="iframes/Exemplo10_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
 
 </iframe>
@@ -627,7 +627,7 @@ _Callback_
 
 # Exemplo (versão 2): Contar Vezes de Botão Carregado
 
-```{.html .numberLines style="font-size: 17px;"}
+```{.html .numberLines style="font-size: 20px;"}
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -651,7 +651,7 @@ _Callback_
 </html>
 ```
 
-::::{style="position: absolute; width: 45%; bottom: 220px; right: 0px; padding-right: 0px;"}
+::::{style="position: absolute; width: 40%; bottom: 25%; right: 0px; padding-right: 0px;"}
 <iframe src="iframes/Exemplo10_jQuery_v2.html" style="width: 90%; height: 190px; background-color: white;">
 
 </iframe>
@@ -659,7 +659,7 @@ _Callback_
 
 # Exemplo: Alterar Cor de Texto
 
-```{.html .numberLines style="font-size: 17px;"}
+```{.html .numberLines style="font-size: 20px;"}
 <html>
 	<head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -682,7 +682,7 @@ _Callback_
 </html>
 ```
 
-::::{style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;"}
+::::{style="position: absolute; width: 40%; bottom: 10%; right: 0px; padding-right: 0px;"}
 <iframe src="iframes/Exemplo11_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
 
 </iframe>
@@ -702,35 +702,33 @@ _Callback_
 - Para substituir:
 	- **replaceWith()** - substitui elementos selecionados por outro (em argumento).
 
+
 # Exemplo: Tabela Dinâmica
 
-```{.html .numberLines style="font-size: 16px;"}
-<html>
-	<head>
+```{.html .numberLines style="font-size: 17px;"}
+<html>	<head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript">
-		// Exemplo de tabela estática em JSON:
-		const tabDados = {"Título 1": [
-			 {"Col 1" : "Dado 1", "Col 2": "Dado 2", "Col 3" : "Dado 3"},
-			 {"Col 1" : "Dado 4", "Col 2": "Dado 5", "Col 3" : "Dado 6"}]};	
-		$(document).ready(function(){
-			$("input[type=button]").click(function(){
-				var tabela = $("<table>");
-				// Incluir cabeçalho
-				var cab = $("<tr>");
-				for (let j in tabDados["Título 1"][0])
-					cab.append($("<th>").append(j));
-				tabela.append(cab);
-				// Incluir outras linhas
-				for (let i of tabDados["Título 1"]){
-					var lin = $("<tr>");
-					for (let j in i)
-						lin.append($("<td>").append(i[j]));
-					tabela.append(lin);
-				}
-				$("#meuDiv").append(tabela);
+			const tabDados = {"Título 1": [ {"Col 1" : "Dado 1", "Col 2": "Dado 2", "Col 3" : "Dado 3"},
+				{"Col 1" : "Dado 4", "Col 2": "Dado 5", "Col 3" : "Dado 6"}]};	// Exemplo de tabela estática em JSON:
+			$(document).ready( function () {
+				$("input[type=button]").click( function () {
+					var tabela = $("<table>");
+					// Incluir cabeçalho
+					var cab = $("<tr>");
+					for (let j in tabDados["Título 1"][0])
+						cab.append($("<th>").append(j));
+					tabela.append(cab);
+					// Incluir outras linhas
+					for (let i of tabDados["Título 1"]){
+						var lin = $("<tr>");
+						for (let j in i)
+							lin.append($("<td>").append(i[j]));
+						tabela.append(lin);
+					}
+					$("#meuDiv").append(tabela);
+				});
 			});
-        });
         </script>
 	</head>
 	<body>
@@ -741,7 +739,7 @@ _Callback_
 </html>
 ```
 
-::::{style="position: absolute; width: 45%; bottom: 110px; right: 0px; padding-right: 0px;"}
+::::{style="position: absolute; width: 45%; bottom: 5%; right: 0px; padding-right: 0px;"}
 <iframe src="iframes/Exemplo12_jQuery.html" style="width: 90%; height: 300px; background-color: white;">
 
 </iframe>
@@ -749,7 +747,7 @@ _Callback_
 
 # Exemplo: Tabela Dinâmica (II)
 
-```{.html .numberLines style="font-size: 17px;"}
+```{.html .numberLines style="font-size: 20px;"}
 <html>
 	<head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -775,7 +773,7 @@ _Callback_
 </html>
 ```
 
-::::{style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;"}
+::::{style="position: absolute; width: 45%; bottom: 10%; right: 0px; padding-right: 0px;"}
 <iframe src="iframes/Exemplo13_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
 
 </iframe>
@@ -783,7 +781,7 @@ _Callback_
 
 # Exemplo: Remoção e Substituição de Elementos
 
-```{.html .numberLines style="font-size: 17px;"}
+```{.html .numberLines style="font-size: 19px;"}
 <html>
 	<head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -812,8 +810,8 @@ _Callback_
 </html>
 ```
 
-::::{style="position: absolute; width: 45%; bottom: 100px; right: 0px; padding-right: 0px;"}
-<iframe src="iframes/Exemplo14_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+::::{style="position: absolute; width: 40%; bottom: 100px; right: 0px; padding-right: 0px;"}
+<iframe src="iframes/Exemplo14_jQuery.html" style="width: 95%; height: 200px; background-color: white;">
 
 </iframe>
 ::::
@@ -827,9 +825,9 @@ _Callback_
 2. Inclua um botão que "grava" a tabela.
 	- Gravar significa guardar seu conteúdo em um objeto Javascript.
 	- Futuramente pode ser usado para enviar dados da tabela para o servidor.
-3. Crie uma aplicação de chat que tenha uma caixa de entrada de texto e outra de histórico.
+3. Crie a interface de uma aplicação do tipo chat que tenha uma caixa de entrada de texto, outra de histórico e um botão de enviar.
 	- A caixa de entrada recebe o texto de entrada do chat de um cliente.
-	- A caixa de histórico não é editável e deve ser atualizada com o conteúdo da caixa de entrada.
+	- A caixa de histórico não é editável e deve ser atualizada com o conteúdo da caixa de entrada sempre que o botão enviar é premido.
 
 # Percorrer Árvore do DOM com jQuery
 
@@ -876,9 +874,79 @@ _Callback_
 		- **slideUp()**: deslizar para cima.
 		- **slideToggle()**: alterna/comuta entre slideUp() e slideDown().
 
+# Exemplo: Hide/Show
+
+```{.html .numberLines style="font-size: 20px;"}
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			$("#esconder").click(function(){
+				$("p").hide();
+			});
+			$("#mostrar").click(function(){
+				$("p").show(1000);
+			});
+			});
+		</script>
+	</head>
+	<body>
+		<p>Texto que irá ser escondido ou mostrado, 
+		de acordo com os botões.</p>
+		<button id="esconder">Hide</button>
+		<button id="mostrar">Show</button>
+	</body>
+</html>
+
+```
+
+::::{style="position: absolute; width: 45%; bottom: 10%; right: 0px; padding-right: 0px;"}
+<iframe src="iframes/Exemplo15_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+
+</iframe>
+::::
+
+# Exemplo: Sliding
+
+```{.html .numberLines style="font-size: 18px;"}
+<html> <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+            $("#virar").click(function(){
+                $("#painelBoasVindas").slideToggle("slow");
+            });
+        });
+    </script>
+    <style> 
+        #painelBoasVindas, #virar {
+            padding: 0.25%;
+            background-color: lightblue;
+            border: solid 1px cornflowerblue;
+        }
+        #painelBoasVindas { 
+            padding: 2%; 
+            display: none; /* Começar sem mostrar */
+        }
+    </style> </head>
+    <body>    
+        <div id="virar">Carrega para descer mensagem</div>
+        <div id="painelBoasVindas">Bem vindo!</div>
+    </body>
+</html>
+```
+
+::::{style="position: absolute; width: 45%; bottom: 10%; right: 0px; padding-right: 0px;"}
+<iframe src="iframes/Exemplo19_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+
+</iframe>
+::::
+
+
 # Mais Efeitos jQuery
 
-- Fade (aparecer e desaparecer):
+- Fade (aparecer e desaparecer gradualmente - trabalha com opacidade):
 	- **fadeIn()**: aparecer um elemento escondido.
 	- **fadeOut()**: desaparecer.
 	- **fadeToggle()**: alterna/comuta entre fadeIn() e fadeOut().
@@ -890,3 +958,80 @@ _Callback_
 	- propriedades (obrigatório): atributo e valor CSS entre { }.
 	- Apenas propriedades numéricas podem ser animadas.
 		- width/height, left/right, fontSize, opacity, ...
+
+# Efeitos jQuery: Fade
+
+```{.html .numberLines style="font-size: 18px;"}
+<html> <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+	$(document).ready( function () {
+		$("button").click( function ()) {
+			$(".caixa").hide(); // Esconder as caixas
+			$("#c1").fadeIn(); // Fade normal
+			$("#c2").fadeIn("slow"); // Fade slow
+			$("#c3").fadeIn(3000); // Fale de 3 segundos
+		});
+	});
+	</script>
+	<style>
+		.caixa {
+			width: 50px;
+			height: 50px;
+			display: table-cell; }
+		#c1 { background-color: red;}
+		#c2 { background-color: blue;}
+		#c3 { background-color: magenta;}
+	</style>
+</head>
+<body>
+    <button>Carregar aqui para <i>fade</i> </button><br><br>
+    <div class="caixa" id="c1"> </div>
+    <div class="caixa" id="c2"> </div>
+    <div class="caixa" id="c3"> </div>
+</body>
+</html>
+```
+
+::::{style="position: absolute; width: 45%; bottom: 10%; right: 0px; padding-right: 0px;"}
+<iframe src="iframes/Exemplo20_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+
+</iframe>
+::::
+
+
+# Efeitos jQuery: Animate
+
+```{.html .numberLines style="font-size: 18px;"}
+<html> <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("#caixaAzul").animate({height: '100px', width: '200px', 'font-size': '60px'});
+				//$("#caixaAzul").animate({'font-size': '60px'}); // Aumenta texto depois
+			});
+		});
+	</script>
+	<style>
+		#caixaAzul {
+		width: 100px;
+		height: 50px;
+		font-size: 30px;
+		text-align: center;
+		background-color: skyblue;
+		}
+	</style>
+</head>
+<body>
+    <button>Carregar aqui para <i>fade</i>.</button><br><br>
+    <div id="caixaAzul"> Texto </p> </div>
+</body>
+</html>
+```
+
+::::{style="position: absolute; width: 45%; bottom: 10%; right: 0px; padding-right: 0px;"}
+<iframe src="iframes/Exemplo21_jQuery.html" style="width: 90%; height: 200px; background-color: white;">
+
+</iframe>
+::::
