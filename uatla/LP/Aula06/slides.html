@@ -18,6 +18,7 @@
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -49,7 +50,7 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span. { color: #1f1c1b; } /* Normal */
+    code span { color: #1f1c1b; } /* Normal */
     code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
     code span.an { color: #ca60ca; } /* Annotation */
     code span.at { color: #0057ae; } /* Attribute */
@@ -127,11 +128,11 @@ Fernanda Passos
 <ul>
 <li>Declaramos tuplas entre parênteses:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a>vet2 <span class="op">=</span> (<span class="fl">1.0</span>, <span class="fl">3.1</span>, <span class="fl">7.6</span>, <span class="fl">8.9</span>, <span class="fl">9.0</span>)</span>
-<span id="ex-3"><a href="#ex-3"></a>vet3 <span class="op">=</span> (<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>)</span>
-<span id="ex-4"><a href="#ex-4"></a>vet4 <span class="op">=</span> (<span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span>)</span>
-<span id="ex-5"><a href="#ex-5"></a>t <span class="op">=</span> (<span class="st">&#39;A&#39;</span>, <span class="dv">1</span>, <span class="fl">2.3</span>, <span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>vet2 <span class="op">=</span> (<span class="fl">1.0</span>, <span class="fl">3.1</span>, <span class="fl">7.6</span>, <span class="fl">8.9</span>, <span class="fl">9.0</span>)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>vet3 <span class="op">=</span> (<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>)</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>vet4 <span class="op">=</span> (<span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span>)</span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="st">&#39;A&#39;</span>, <span class="dv">1</span>, <span class="fl">2.3</span>, <span class="va">True</span>)</span></code></pre></div>
 <ul>
 <li>Os valores sempre serão aqueles definidos na declaração.
 <ul>
@@ -139,19 +140,19 @@ Fernanda Passos
 <li>Se a tupla possuir apenas 1 elemento, deve-se <strong>usar a vírgula ao fim</strong>:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet5 <span class="op">=</span> (<span class="dv">1</span>, )</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet5 <span class="op">=</span> (<span class="dv">1</span>, )</span></code></pre></div>
 </div>
 <div id="declaração-de-tuplas-ii" class="slide section level1">
 <h1>Declaração de Tuplas (II)</h1>
 <ul>
 <li>Os parênteses podem ser omitidos:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet1 <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span></span>
-<span id="ex-2"><a href="#ex-2"></a>vet2 <span class="op">=</span> <span class="fl">1.0</span>, <span class="fl">3.1</span>, <span class="fl">7.6</span>, <span class="fl">8.9</span>, <span class="fl">9.0</span></span>
-<span id="ex-3"><a href="#ex-3"></a>vet3 <span class="op">=</span> <span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span></span>
-<span id="ex-4"><a href="#ex-4"></a>vet4 <span class="op">=</span> <span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span></span>
-<span id="ex-5"><a href="#ex-5"></a>t <span class="op">=</span> <span class="st">&#39;A&#39;</span>, <span class="dv">1</span>, <span class="fl">2.3</span>, <span class="va">True</span></span>
-<span id="ex-6"><a href="#ex-6"></a>vet5 <span class="op">=</span> <span class="dv">1</span>,</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span></span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>vet2 <span class="op">=</span> <span class="fl">1.0</span>, <span class="fl">3.1</span>, <span class="fl">7.6</span>, <span class="fl">8.9</span>, <span class="fl">9.0</span></span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>vet3 <span class="op">=</span> <span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span></span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>vet4 <span class="op">=</span> <span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span></span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="st">&#39;A&#39;</span>, <span class="dv">1</span>, <span class="fl">2.3</span>, <span class="va">True</span></span>
+<span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a>vet5 <span class="op">=</span> <span class="dv">1</span>,</span></code></pre></div>
 <ul>
 <li>Experimente imprimir o tipo de cada vetor usando o comando <code>type</code>.
 <ul>
@@ -164,40 +165,40 @@ Fernanda Passos
 <ul>
 <li>Basta usar o comando <code>print</code> sobre ela.</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet4 <span class="op">=</span> (<span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(vet4)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>((<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet4 <span class="op">=</span> (<span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vet4)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span></code></pre></div>
 <ul>
 <li>Os valores impressos também estão entre parênteses:</li>
 </ul>
 <pre id="ex" class="text"><code>(&#39;A&#39;, &#39;casa&#39;, &#39;é&#39;, &#39;pequena&#39;)
 (3, 2, 1, 0)</code></pre>
 </div>
-<div id="acessar-elementos-de-uma-tupla" class="slide section level1">
-<h1>Acessar Elementos de uma Tupla</h1>
+<div id="acessar-elementos-de-uma-tupla-i" class="slide section level1">
+<h1>Acessar Elementos de uma Tupla (I)</h1>
 <ul>
-<li>Da mesma forma que em listas, usando colchetes.
+<li>Da mesma forma que em listas, usando parênteses retos.
 <ul>
 <li>Mas apenas para obter os valores (leitura).</li>
 <li>Nunca para alterar os valores (escrita).</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(vet1[<span class="dv">0</span>])</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(vet1[<span class="dv">2</span>])</span>
-<span id="ex-4"><a href="#ex-4"></a><span class="bu">print</span>(vet1[<span class="dv">4</span>])</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vet1[<span class="dv">0</span>])</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vet1[<span class="dv">2</span>])</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vet1[<span class="dv">4</span>])</span></code></pre></div>
 <ul>
 <li>Índices variam de 0 a tamanho menos 1.</li>
 </ul>
 </div>
-<div id="acessar-elementos-de-uma-tupla-1" class="slide section level1">
-<h1>Acessar Elementos de uma Tupla</h1>
+<div id="acessar-elementos-de-uma-tupla-ii" class="slide section level1">
+<h1>Acessar Elementos de uma Tupla (II)</h1>
 <ul>
 <li>Acesso não permitido:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a>vet1[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">7</span> <span class="co"># Esta linha ocasionará erro!</span></span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(vet1)</span></code></pre></div>
+<div class="sourceCode" id="ex" style="font-size:22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>vet1[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">7</span> <span class="co"># Esta linha ocasionará erro!</span></span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vet1)</span></code></pre></div>
 <pre style="font-size:18px; color:red;">
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -206,9 +207,9 @@ TypeError: 'tuple' object does not support item assignment
 <ul>
 <li>Embora seja possível redefinir uma tupla:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">3</span>)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(vet1)</span></code></pre></div>
+<div class="sourceCode" id="ex" style="font-size:22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">3</span>)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vet1)</span></code></pre></div>
 </div>
 <div id="funções-sobre-tuplas" class="slide section level1">
 <h1>Funções sobre Tuplas</h1>
@@ -221,8 +222,8 @@ TypeError: 'tuple' object does not support item assignment
 <li><code>sum</code>: retorna a soma dos valores de uma tupla numérica.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(<span class="bu">len</span>(vet1), <span class="bu">min</span>(vet1), <span class="bu">max</span>(vet1), <span class="bu">sum</span>(vet1))</span></code></pre></div>
+<div class="sourceCode" id="ex" style="font-size:22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(vet1), <span class="bu">min</span>(vet1), <span class="bu">max</span>(vet1), <span class="bu">sum</span>(vet1))</span></code></pre></div>
 <ul>
 <li>Saída:</li>
 </ul>
@@ -238,9 +239,9 @@ TypeError: 'tuple' object does not support item assignment
 </ul></li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="cf">if</span> <span class="dv">5</span> <span class="kw">in</span> tupla:</span>
-<span id="ex-3"><a href="#ex-3"></a>    <span class="bu">print</span>(<span class="st">&#39;O valor&#39;</span>, <span class="dv">5</span>, <span class="st">&#39;está na tupla.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">5</span> <span class="kw">in</span> tupla:</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;O valor&#39;</span>, <span class="dv">5</span>, <span class="st">&#39;está na tupla.&#39;</span>)</span></code></pre></div>
 <pre id="ex" class="text"><code>O valor 5 está na tupla.</code></pre>
 </div>
 <div id="operações-sobre-tuplas" class="slide section level1">
@@ -248,66 +249,80 @@ TypeError: 'tuple' object does not support item assignment
 <ul>
 <li>Soma de tuplas com operador +:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla1 <span class="op">=</span> (<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a>tupla2 <span class="op">=</span> (<span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(tupla1 <span class="op">+</span> tupla2)</span></code></pre></div>
-<pre id="ex" class="text"><code>(4, 5, 2, 1, 3, -1, 0)</code></pre>
+<div class="sourceCode" id="ex" style="font-size:22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla1 <span class="op">=</span> (<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>tupla2 <span class="op">=</span> (<span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla1 <span class="op">+</span> tupla2)</span></code></pre></div>
+<pre id="ex" class="text" style="font-size:22px;"><code>(4, 5, 2, 1, 3, -1, 0)</code></pre>
 <ul>
 <li>Multiplicação de tuplas com operador <span class="math inline">\(*\)</span>:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(tupla)</span></code></pre></div>
-<pre id="ex" class="text"><code>(0, 1, 0, 1, 0, 1)</code></pre>
+<div class="sourceCode" id="ex" style="font-size:22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla)</span></code></pre></div>
+<pre id="ex" class="text" style="font-size:22px;"><code>(0, 1, 0, 1, 0, 1)</code></pre>
 </div>
-<div id="métodos-de-tuplas" class="slide section level1">
-<h1>Métodos de Tuplas</h1>
-<ul>
-<li>Existem apenas dois métodos:
+<div id="métodos-de-tuplas-index" class="slide section level1">
+<h1>Métodos de Tuplas: Index</h1>
 <ul>
 <li><code>index</code>: retorna o índice da primeira ocorrência de um dado valor (parâmetro) na tupla.</li>
-</ul></li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(tupla.index(<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla.index(<span class="dv">2</span>))</span></code></pre></div>
 <pre id="ex" class="text"><code>5</code></pre>
+</div>
+<div id="métodos-de-tuplas-count" class="slide section level1">
+<h1>Métodos de Tuplas: Count</h1>
 <ul>
 <li><code>count</code>: retorna a quantidade de um dado valor (parâmetro) na tupla.</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(tupla.count(<span class="dv">5</span>))</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla.count(<span class="dv">5</span>))</span></code></pre></div>
 <pre id="ex" class="text"><code>3</code></pre>
 </div>
 <div id="conversão-em-tuplas" class="slide section level1">
 <h1>Conversão em Tuplas</h1>
+<div class="columns">
+<div class="column" style="width:47%;">
 <ul>
 <li>Conversão de lista em tupla:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>]</span>
-<span id="ex-2"><a href="#ex-2"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(lista)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(tupla)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>]</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(lista)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla)</span></code></pre></div>
 <pre id="ex" class="text"><code>(1, 4, 2)</code></pre>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:47%;">
 <ul>
-<li>Conversão de tupla em em lista:</li>
+<li>Conversão de tupla em lista:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a>lista <span class="op">=</span> <span class="bu">list</span>(tupla)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(tupla)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista)</span></code></pre></div>
 <pre id="ex" class="text"><code>[1, 4, 2]</code></pre>
+</div>
+</div>
 </div>
 <div id="conversão-de-range" class="slide section level1">
 <h1>Conversão de Range</h1>
+<div class="columns">
+<div class="column" style="width:47%;">
 <ul>
 <li>Conversão de range em tupla:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(tupla)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> <span class="bu">tuple</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupla)</span></code></pre></div>
 <pre id="ex" class="text"><code>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</code></pre>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:47%;">
 <ul>
 <li>Conversão de range em lista:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista)</span></code></pre></div>
 <pre id="ex" class="text"><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+</div>
+</div>
 </div>
 <div id="iterar-sobre-tuplas" class="slide section level1">
 <h1>Iterar sobre Tuplas</h1>
@@ -315,15 +330,15 @@ TypeError: 'tuple' object does not support item assignment
 <li>Da mesma forma que em listas.</li>
 <li>Usando índices:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> (<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span> , <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(tupla)):</span>
-<span id="ex-3"><a href="#ex-3"></a>  <span class="bu">print</span>(tupla[i])</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span> , <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(tupla)):</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(tupla[i])</span></code></pre></div>
 <ul>
 <li>Nos elementos:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> (<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span> , <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="cf">for</span> elem <span class="kw">in</span> tupla:</span>
-<span id="ex-3"><a href="#ex-3"></a>  <span class="bu">print</span>(elem)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span> , <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> elem <span class="kw">in</span> tupla:</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(elem)</span></code></pre></div>
 </div>
 <div id="matrizes-e-tuplas" class="slide section level1">
 <h1>Matrizes e Tuplas</h1>
@@ -335,10 +350,10 @@ TypeError: 'tuple' object does not support item assignment
 </ul></li>
 <li>Exemplo de definição de matriz <span class="math inline">\(3\times4\)</span> usando tupla:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="co"># Declaração:</span></span>
-<span id="ex-2"><a href="#ex-2"></a>matriz <span class="op">=</span> ((<span class="dv">1</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">1</span>))</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="co"># Exemplo de acesso a um elemento:</span></span>
-<span id="ex-4"><a href="#ex-4"></a><span class="bu">print</span>(matriz[<span class="dv">2</span>][<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Declaração:</span></span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>matriz <span class="op">=</span> ((<span class="dv">1</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">1</span>))</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo de acesso a um elemento:</span></span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matriz[<span class="dv">2</span>][<span class="dv">1</span>])</span></code></pre></div>
 </div>
 <div id="exercícios-i" class="slide section level1">
 <h1>Exercícios (I)</h1>
@@ -353,6 +368,8 @@ TypeError: 'tuple' object does not support item assignment
 </div>
 <div id="definição-de-dicionário" class="slide section level1">
 <h1>Definição de Dicionário</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
 <li><strong>Dicionário</strong> é uma estrutura especial de Python.</li>
 <li>Ele representa um mapeamento chave/valor (<em>key/value</em>).
@@ -360,10 +377,15 @@ TypeError: 'tuple' object does not support item assignment
 <li>A chave funciona como um <strong>índice</strong>.</li>
 <li>O valor é acessado pela chave.</li>
 </ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
 <li>Exemplo de representação:</li>
 </ul>
 <div class="center">
-<p><img src="imagens/dict.png" id="dictEx1" /></p>
+<p><img src="imagens/dict.png" id="dictEx1" style="width:90.0%" /></p>
+</div>
+</div>
 </div>
 </div>
 <div id="uso-de-dicionário-exemplo-da-agenda" class="slide section level1">
@@ -373,36 +395,36 @@ TypeError: 'tuple' object does not support item assignment
 <ul>
 <li>O que deve ser feito é associar um nome a um (ou mais) telefone.</li>
 </ul></li>
-<li>Uma forma de fazer isso usando duas listas:
+<li>Uma forma de fazer isso usando <strong>duas listas</strong>:
 <ul>
 <li>Uma para guardar os nomes.</li>
 <li>Outra para guardar os telefones.</li>
 </ul></li>
 </ul>
 <div class="center">
-<p><img src="imagens/agenda.svg" id="dictEx1" style="width:40.0%" /></p>
+<p><img src="imagens/agenda.svg" id="dictEx2" style="width:40.0%" /></p>
 </div>
 </div>
 <div id="obtendo-a-agenda-do-usuário-usando-listas" class="slide section level1">
 <h1>Obtendo a agenda do usuário (Usando Listas)</h1>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>nomes <span class="op">=</span> []</span>
-<span id="ex-2"><a href="#ex-2"></a>telefones <span class="op">=</span> []</span>
-<span id="ex-3"><a href="#ex-3"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span>
-<span id="ex-4"><a href="#ex-4"></a><span class="cf">while</span> (nome <span class="op">!=</span> <span class="st">&#39;sair&#39;</span>):</span>
-<span id="ex-5"><a href="#ex-5"></a>  nomes.append(nome)</span>
-<span id="ex-6"><a href="#ex-6"></a>  tel <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com o telefone: &#39;</span>)</span>
-<span id="ex-7"><a href="#ex-7"></a>  telefones.apeend(tel)</span>
-<span id="ex-8"><a href="#ex-8"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>nomes <span class="op">=</span> []</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>telefones <span class="op">=</span> []</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (nome <span class="op">!=</span> <span class="st">&#39;sair&#39;</span>):</span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>  nomes.append(nome)</span>
+<span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a>  tel <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com o telefone: &#39;</span>)</span>
+<span id="ex-7"><a href="#ex-7" aria-hidden="true" tabindex="-1"></a>  telefones.apeend(tel)</span>
+<span id="ex-8"><a href="#ex-8" aria-hidden="true" tabindex="-1"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span></code></pre></div>
 </div>
 <div id="consultando-telefone-pelo-nome-usando-listas" class="slide section level1">
 <h1>Consultando telefone pelo nome (Usando Listas)</h1>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="bu">print</span>(<span class="st">&#39;Consulta de telefone:&#39;</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="cf">while</span> nome <span class="op">!=</span> <span class="st">&#39;sair&#39;</span>:</span>
-<span id="ex-4"><a href="#ex-4"></a>  <span class="cf">if</span> nome <span class="kw">in</span> nomes:</span>
-<span id="ex-5"><a href="#ex-5"></a>    indice <span class="op">=</span> nomes.index(nome)</span>
-<span id="ex-6"><a href="#ex-6"></a>    <span class="bu">print</span>(<span class="st">&#39;Nome:&#39;</span>, nome, <span class="st">&#39;Tel:&#39;</span>, telefones[indice])</span>
-<span id="ex-7"><a href="#ex-7"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com outro nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Consulta de telefone:&#39;</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> nome <span class="op">!=</span> <span class="st">&#39;sair&#39;</span>:</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> nome <span class="kw">in</span> nomes:</span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>    indice <span class="op">=</span> nomes.index(nome)</span>
+<span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Nome:&#39;</span>, nome, <span class="st">&#39;Tel:&#39;</span>, telefones[indice])</span>
+<span id="ex-7"><a href="#ex-7" aria-hidden="true" tabindex="-1"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com outro nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span></code></pre></div>
 </div>
 <div id="dicionário-em-python-i" class="slide section level1">
 <h1>Dicionário em Python (I)</h1>
@@ -418,7 +440,7 @@ TypeError: 'tuple' object does not support item assignment
 <li>Deve ser um única.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>meu_dicionario <span class="op">=</span> {chave1: valor1, chave2: valor2}</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>meu_dicionario <span class="op">=</span> {chave1: valor1, chave2: valor2}</span></code></pre></div>
 </div>
 <div id="dicionário-em-python-ii" class="slide section level1">
 <h1>Dicionário em Python (II)</h1>
@@ -434,8 +456,8 @@ TypeError: 'tuple' object does not support item assignment
 <ul>
 <li>Em Python:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>agenda <span class="op">=</span> {<span class="st">&#39;Maria&#39;</span>: <span class="st">&#39;999887755&#39;</span>,</span>
-<span id="ex-2"><a href="#ex-2"></a> <span class="st">&#39;João&#39;</span>: <span class="st">&#39;988775599&#39;</span>, <span class="st">&#39;Carlos&#39;</span>: <span class="st">&#39;977558899&#39;</span>}</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>agenda <span class="op">=</span> {<span class="st">&#39;Maria&#39;</span>: <span class="st">&#39;999887755&#39;</span>,</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;João&#39;</span>: <span class="st">&#39;988775599&#39;</span>, <span class="st">&#39;Carlos&#39;</span>: <span class="st">&#39;977558899&#39;</span>}</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -444,22 +466,22 @@ TypeError: 'tuple' object does not support item assignment
 <ul>
 <li>Vazio:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic1 <span class="op">=</span> {}</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic1 <span class="op">=</span> {}</span></code></pre></div>
 <ul>
 <li>Com chaves sendo strings e valores sendo números:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span></code></pre></div>
 </div>
 <div id="criando-dicionários-em-python-ii" class="slide section level1">
 <h1>Criando Dicionários em Python (II)</h1>
 <ul>
 <li>Com chaves sendo números:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic3 <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">65.4</span>, <span class="dv">2</span>: <span class="fl">88.7</span>, <span class="dv">5</span>: <span class="fl">25.0</span>}</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic3 <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">65.4</span>, <span class="dv">2</span>: <span class="fl">88.7</span>, <span class="dv">5</span>: <span class="fl">25.0</span>}</span></code></pre></div>
 <ul>
 <li>Misturado:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic4 <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">65.4</span>, <span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="fl">5.83</span>: <span class="va">False</span>}</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic4 <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">65.4</span>, <span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="fl">5.83</span>: <span class="va">False</span>}</span></code></pre></div>
 <ul>
 <li>Entre outras formas…</li>
 </ul>
@@ -474,32 +496,32 @@ TypeError: 'tuple' object does not support item assignment
 <li>O valor pode ser qualquer coisa: tipos primitivo, tupla, lista, dicionário…</li>
 <li>Exemplos:</li>
 </ul>
-<div class="sourceCode" id="exDic1"><pre class="sourceCode python"><code class="sourceCode python"><span id="exDic1-1"><a href="#exDic1-1"></a>p1 <span class="op">=</span> {<span class="st">&quot;nome&quot;</span>: <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;idade&quot;</span>: <span class="dv">25</span>, <span class="st">&quot;altura&quot;</span>: <span class="fl">1.62</span>, </span>
-<span id="exDic1-2"><a href="#exDic1-2"></a>      <span class="st">&quot;telefone&quot;</span>: [<span class="st">&quot;99999999&quot;</span>, <span class="st">&quot;22222222&quot;</span>]}</span>
-<span id="exDic1-3"><a href="#exDic1-3"></a>p2 <span class="op">=</span> {<span class="st">&quot;nome&quot;</span>: <span class="st">&quot;João&quot;</span>, <span class="st">&quot;idade&quot;</span>: <span class="dv">22</span>, <span class="st">&quot;altura&quot;</span>: <span class="fl">1.68</span>, </span>
-<span id="exDic1-4"><a href="#exDic1-4"></a>      <span class="st">&quot;telefone&quot;</span>: [<span class="st">&quot;91111111&quot;</span>, <span class="st">&quot;21111111&quot;</span>]}</span>
-<span id="exDic1-5"><a href="#exDic1-5"></a>pessoas <span class="op">=</span> {<span class="st">&quot;12345&quot;</span>: p1, <span class="st">&quot;56789&quot;</span>: p2}</span></code></pre></div>
+<div class="sourceCode" id="exDic1"><pre class="sourceCode python"><code class="sourceCode python"><span id="exDic1-1"><a href="#exDic1-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> {<span class="st">&quot;nome&quot;</span>: <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;idade&quot;</span>: <span class="dv">25</span>, <span class="st">&quot;altura&quot;</span>: <span class="fl">1.62</span>, </span>
+<span id="exDic1-2"><a href="#exDic1-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;telefone&quot;</span>: [<span class="st">&quot;99999999&quot;</span>, <span class="st">&quot;22222222&quot;</span>]}</span>
+<span id="exDic1-3"><a href="#exDic1-3" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> {<span class="st">&quot;nome&quot;</span>: <span class="st">&quot;João&quot;</span>, <span class="st">&quot;idade&quot;</span>: <span class="dv">22</span>, <span class="st">&quot;altura&quot;</span>: <span class="fl">1.68</span>, </span>
+<span id="exDic1-4"><a href="#exDic1-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;telefone&quot;</span>: [<span class="st">&quot;91111111&quot;</span>, <span class="st">&quot;21111111&quot;</span>]}</span>
+<span id="exDic1-5"><a href="#exDic1-5" aria-hidden="true" tabindex="-1"></a>pessoas <span class="op">=</span> {<span class="st">&quot;12345&quot;</span>: p1, <span class="st">&quot;56789&quot;</span>: p2}</span></code></pre></div>
 </div>
 <div id="imprimindo-um-dicionário" class="slide section level1">
 <h1>Imprimindo um Dicionário</h1>
 <ul>
 <li>O comando <code>print</code> sobre um dicionário irá imprimi-lo na forma de dicionário:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(dic2)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dic2)</span></code></pre></div>
 <pre id="ex" class="text"><code>{&#39;Ana&#39;: 1.75, &#39;Marcos&#39;: 1.71, &#39;Rita&#39;: 1.62, &#39;Paulo&#39;: 1.90}</code></pre>
 </div>
 <div id="acessar-valores-de-um-dicionário-i" class="slide section level1">
 <h1>Acessar Valores de um Dicionário (I)</h1>
 <ul>
-<li>O acesso é feito utilizando os colchetes ([ ]), assim como nas listas.
+<li>O acesso é feito utilizando os parênteses retos ([ ]), assim como nas listas.
 <ul>
 <li>O índice deve ser uma chave válida.</li>
 </ul></li>
 <li>Exemplo de acesso:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(dic2[<span class="st">&#39;Ana&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dic2[<span class="st">&#39;Ana&#39;</span>])</span></code></pre></div>
 <pre id="ex" class="text"><code>1.75</code></pre>
 </div>
 <div id="acessar-valores-de-um-dicionário-ii" class="slide section level1">
@@ -507,8 +529,8 @@ TypeError: 'tuple' object does not support item assignment
 <ul>
 <li>Acesso a uma chave inexistente ocasiona erro:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(dic2[<span class="st">&#39;rita&#39;</span>]) <span class="co"># Deveria ser Rita e não rita</span></span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.62</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dic2[<span class="st">&#39;rita&#39;</span>]) <span class="co"># Deveria ser Rita e não rita</span></span></code></pre></div>
 <pre style="font-size:18px; color:red;">
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -520,9 +542,9 @@ KeyError: 'rita'
 <ul>
 <li>Exemplo de modificação de valores.</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.42</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a>dic2[<span class="st">&#39;Rita&#39;</span>] <span class="op">=</span> <span class="fl">1.61</span></span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(dic2)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic2 <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.42</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>dic2[<span class="st">&#39;Rita&#39;</span>] <span class="op">=</span> <span class="fl">1.61</span></span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dic2)</span></code></pre></div>
 <pre id="ex" class="text"><code>{&#39;Ana&#39;: 1.75, &#39;Marcos&#39;: 1.71, &#39;Rita&#39;: 1.61, &#39;Paulo&#39;: 1.9}</code></pre>
 </div>
 <div id="inserir-par-em-um-dicionário-i" class="slide section level1">
@@ -530,9 +552,9 @@ KeyError: 'rita'
 <ul>
 <li>Basta existir o dicionário e realizar uma atribuição com o novo par.</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.42</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a>dic[<span class="st">&#39;Maria&#39;</span>] <span class="op">=</span> <span class="fl">1.56</span></span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(dic)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic <span class="op">=</span> {<span class="st">&#39;Ana&#39;</span>: <span class="fl">1.75</span>, <span class="st">&#39;Marcos&#39;</span>: <span class="fl">1.71</span>, <span class="st">&#39;Rita&#39;</span>: <span class="fl">1.42</span>, <span class="st">&#39;Paulo&#39;</span>: <span class="fl">1.90</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>dic[<span class="st">&#39;Maria&#39;</span>] <span class="op">=</span> <span class="fl">1.56</span></span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dic)</span></code></pre></div>
 <pre id="ex" class="text"><code>{&#39;Ana&#39;: 1.75, &#39;Marcos&#39;: 1.71, &#39;Rita&#39;: 1.42, &#39;Paulo&#39;: 1.9, &#39;Maria&#39;: 1.56}</code></pre>
 </div>
 <div id="inserir-par-em-um-dicionário-ii" class="slide section level1">
@@ -554,30 +576,30 @@ print(dic)</code></pre>
 </div>
 </div><div class="column" style="width:45%;">
 <p>Com lista:</p>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>lista <span class="op">=</span> []</span>
-<span id="ex-2"><a href="#ex-2"></a>lista[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">190</span></span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> []</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">190</span></span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista)</span></code></pre></div>
 <p><span style="color:red">Ocorre erro!</span></p>
 </div>
 </div>
 </div>
 <div id="obtendo-dados-do-usuário-usando-dicionário" class="slide section level1">
 <h1>Obtendo Dados do Usuário (Usando Dicionário)</h1>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>agenda <span class="op">=</span> {}</span>
-<span id="ex-2"><a href="#ex-2"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;fim&quot; para terminar): &#39;</span>)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="cf">while</span> (nome <span class="op">!=</span> <span class="st">&#39;fim&#39;</span>):</span>
-<span id="ex-4"><a href="#ex-4"></a>  tel <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com o telefone: &#39;</span>)</span>
-<span id="ex-5"><a href="#ex-5"></a>  agenda[nome] <span class="op">=</span> tel</span>
-<span id="ex-6"><a href="#ex-6"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;fim&quot; para terminar): &#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>agenda <span class="op">=</span> {}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;fim&quot; para terminar): &#39;</span>)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (nome <span class="op">!=</span> <span class="st">&#39;fim&#39;</span>):</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>  tel <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com o telefone: &#39;</span>)</span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>  agenda[nome] <span class="op">=</span> tel</span>
+<span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;fim&quot; para terminar): &#39;</span>)</span></code></pre></div>
 </div>
 <div id="consultando-telefone-pelo-nome-usando-dicionário" class="slide section level1">
 <h1>Consultando Telefone pelo Nome (Usando Dicionário)</h1>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="bu">print</span>(<span class="st">&#39;Consulta de telefone:&#39;</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="cf">while</span> nome <span class="op">!=</span> <span class="st">&#39;sair&#39;</span>:</span>
-<span id="ex-4"><a href="#ex-4"></a>  <span class="cf">if</span> nome <span class="kw">in</span> agenda:</span>
-<span id="ex-5"><a href="#ex-5"></a>    <span class="bu">print</span>(<span class="st">&#39;Nome:&#39;</span>, nome, <span class="st">&#39;Tel:&#39;</span>, agenda[nome])</span>
-<span id="ex-6"><a href="#ex-6"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com outro nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Consulta de telefone:&#39;</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com um nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> nome <span class="op">!=</span> <span class="st">&#39;sair&#39;</span>:</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> nome <span class="kw">in</span> agenda:</span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Nome:&#39;</span>, nome, <span class="st">&#39;Tel:&#39;</span>, agenda[nome])</span>
+<span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a>  nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com outro nome (Digite &quot;sair&quot; para sair): &#39;</span>)</span></code></pre></div>
 </div>
 <div id="exercícios-ii" class="slide section level1">
 <h1>Exercícios (II)</h1>
@@ -594,8 +616,8 @@ print(dic)</code></pre>
 <li>Muitas vezes, criamos um dicionário e quando o imprimimos, está em uma ordem diferente.</li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a><span class="op">&gt;&gt;&gt;</span> dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(dic)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(dic)</span></code></pre></div>
 <pre id="ex" class="text"><code>{8: 11.0, 1: 39.2, 3: 48.4, 4: 23.0}</code></pre>
 </div>
 <div id="funções-sobre-dicionários" class="slide section level1">
@@ -634,8 +656,8 @@ print(dic)</code></pre>
 </div>
 <div id="funções-sobre-dicionários-exemplos" class="slide section level1">
 <h1>Funções sobre Dicionários: Exemplos</h1>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(<span class="bu">len</span>(dic), <span class="bu">min</span>(dic), <span class="bu">max</span>(dic), <span class="bu">sum</span>(dic))</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(dic), <span class="bu">min</span>(dic), <span class="bu">max</span>(dic), <span class="bu">sum</span>(dic))</span></code></pre></div>
 <pre id="ex" class="text"><code>4 1 8 16</code></pre>
 </div>
 <div id="remover-elementos-de-um-dicionário" class="slide section level1">
@@ -648,9 +670,9 @@ print(dic)</code></pre>
 <li>Sintaxe: <code>del dicionario[chave]</code></li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="kw">del</span> dic[<span class="dv">4</span>]</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(dic)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> dic[<span class="dv">4</span>]</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dic)</span></code></pre></div>
 <pre id="ex" class="text"><code>{1: 39.2, 3: 48.4, 8: 11.0}</code></pre>
 </div>
 <div id="deletar-um-dicionário" class="slide section level1">
@@ -658,8 +680,8 @@ print(dic)</code></pre>
 <ul>
 <li>Também apaga uma lista (perde a referência):</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="kw">del</span> dic</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>dic <span class="op">=</span> {<span class="dv">1</span>: <span class="fl">39.2</span>, <span class="dv">4</span>: <span class="fl">23.0</span>, <span class="dv">3</span>: <span class="fl">48.4</span>, <span class="dv">8</span>: <span class="fl">11.0</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> dic</span></code></pre></div>
 </div>
 <div id="pertinência-em-dicionários-i" class="slide section level1">
 <h1>Pertinência em Dicionários (I)</h1>
@@ -669,23 +691,23 @@ print(dic)</code></pre>
 <li>Retorna <code>True</code> ou <code>False</code> (igual a listas).</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="cf">if</span> <span class="st">&#39;laranja&#39;</span> <span class="kw">in</span> frutas:</span>
-<span id="ex-3"><a href="#ex-3"></a>    <span class="bu">print</span>(<span class="st">&#39;laranja está no dic frutas&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&#39;laranja&#39;</span> <span class="kw">in</span> frutas:</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;laranja está no dic frutas&#39;</span>)</span></code></pre></div>
 </div>
 <div id="pertinência-em-dicionários-ii" class="slide section level1">
 <h1>Pertinência em Dicionários (II)</h1>
 <ul>
 <li>Pode ser útil para remover ou alterar um par, por ex.:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(<span class="st">&#39;Antes da tentativa de remoção:&#39;</span>, frutas)</span>
-<span id="ex-3"><a href="#ex-3"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com o nome da fruta para remover: &#39;</span>)</span>
-<span id="ex-4"><a href="#ex-4"></a><span class="cf">if</span> nome <span class="kw">in</span> frutas:</span>
-<span id="ex-5"><a href="#ex-5"></a>    <span class="kw">del</span> frutas[nome]</span>
-<span id="ex-6"><a href="#ex-6"></a><span class="cf">else</span>:</span>
-<span id="ex-7"><a href="#ex-7"></a>    <span class="bu">print</span>(nome, <span class="st">&#39;não está no dicionário frutas!&#39;</span>)</span>
-<span id="ex-8"><a href="#ex-8"></a><span class="bu">print</span>(<span class="st">&#39;Depois da tentativa de remoção:&#39;</span>, frutas)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Antes da tentativa de remoção:&#39;</span>, frutas)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Entre com o nome da fruta para remover: &#39;</span>)</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nome <span class="kw">in</span> frutas:</span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">del</span> frutas[nome]</span>
+<span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="ex-7"><a href="#ex-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(nome, <span class="st">&#39;não está no dicionário frutas!&#39;</span>)</span>
+<span id="ex-8"><a href="#ex-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Depois da tentativa de remoção:&#39;</span>, frutas)</span></code></pre></div>
 </div>
 <div id="iterar-em-dicionários" class="slide section level1">
 <h1>Iterar em Dicionários</h1>
@@ -694,9 +716,9 @@ print(dic)</code></pre>
 <li>O índice varia nas <strong>chaves</strong>.</li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="cf">for</span> i <span class="kw">in</span> frutas:</span>
-<span id="ex-3"><a href="#ex-3"></a>    <span class="bu">print</span>(i, frutas[i])</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> frutas:</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, frutas[i])</span></code></pre></div>
 <pre id="ex" class="text"><code>banana 34
 laranja 102
 uva 50</code></pre>
@@ -711,21 +733,21 @@ uva 50</code></pre>
 </ul></li>
 <li>Exemplo com tupla:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>tupla <span class="op">=</span> ((<span class="st">&#39;laranja&#39;</span>, <span class="dv">102</span>), (<span class="st">&#39;uva&#39;</span>, <span class="dv">50</span>), (<span class="st">&#39;banana&#39;</span>, <span class="dv">34</span>))</span>
-<span id="ex-2"><a href="#ex-2"></a>dic <span class="op">=</span> <span class="bu">dict</span>(tupla)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(<span class="bu">type</span>(dic), dic)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> ((<span class="st">&#39;laranja&#39;</span>, <span class="dv">102</span>), (<span class="st">&#39;uva&#39;</span>, <span class="dv">50</span>), (<span class="st">&#39;banana&#39;</span>, <span class="dv">34</span>))</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>dic <span class="op">=</span> <span class="bu">dict</span>(tupla)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(dic), dic)</span></code></pre></div>
 <pre id="ex" class="text"><code>&lt;class &#39;dict&#39;&gt; {&#39;laranja&#39;: 102, &#39;uva&#39;: 50, &#39;banana&#39;: 34}</code></pre>
 </div>
 <div id="converter-lista-para-dicionário" class="slide section level1">
 <h1>Converter Lista para Dicionário</h1>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>numeros <span class="op">=</span> [[<span class="st">&#39;um&#39;</span>, <span class="st">&#39;one&#39;</span>], [<span class="st">&#39;dois&#39;</span>, <span class="st">&#39;two&#39;</span>], [<span class="st">&#39;três&#39;</span>, <span class="st">&#39;three&#39;</span>]]</span>
-<span id="ex-2"><a href="#ex-2"></a>dic <span class="op">=</span> <span class="bu">dict</span>(l)</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(<span class="bu">type</span>(dic), dic)</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="op">=</span> [[<span class="st">&#39;um&#39;</span>, <span class="st">&#39;one&#39;</span>], [<span class="st">&#39;dois&#39;</span>, <span class="st">&#39;two&#39;</span>], [<span class="st">&#39;três&#39;</span>, <span class="st">&#39;three&#39;</span>]]</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>dic <span class="op">=</span> <span class="bu">dict</span>(l)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(dic), dic)</span></code></pre></div>
 <pre id="ex" class="text"><code>&lt;class &#39;dict&#39;&gt; {&#39;um&#39;: &#39;one&#39;, &#39;dois&#39;: &#39;two&#39;, &#39;três&#39;: &#39;three&#39;}</code></pre>
 </div>
 <div id="alguns-métodos-de-dicionários-i" class="slide section level1">
 <h1>Alguns Métodos de Dicionários (I)</h1>
-<div>
+<div class="center" style="font-size: 22px; width: 95%; line-weight: 70%;">
 <table>
 <colgroup>
 <col width="20%" />
@@ -777,17 +799,17 @@ uva 50</code></pre>
 <ul>
 <li>Exemplo de uso:</li>
 </ul>
-<div class="sourceCode" id="ex" style="font-size: 11 pt;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(frutas.keys())</span>
-<span id="ex-3"><a href="#ex-3"></a><span class="bu">print</span>(frutas.values())</span>
-<span id="ex-4"><a href="#ex-4"></a><span class="bu">print</span>(frutas.items())</span>
-<span id="ex-5"><a href="#ex-5"></a><span class="bu">print</span>(frutas.get(<span class="st">&#39;laranja&#39;</span>))</span>
-<span id="ex-6"><a href="#ex-6"></a><span class="bu">print</span>(frutas.get(<span class="st">&#39;caqui&#39;</span>))</span>
-<span id="ex-7"><a href="#ex-7"></a><span class="bu">print</span>(frutas.get(<span class="st">&#39;caqui&#39;</span>, <span class="st">&#39;Não existe!&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="ex" style="font-size: 22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(frutas.keys())</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(frutas.values())</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(frutas.items())</span>
+<span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(frutas.get(<span class="st">&#39;laranja&#39;</span>))</span>
+<span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(frutas.get(<span class="st">&#39;caqui&#39;</span>))</span>
+<span id="ex-7"><a href="#ex-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(frutas.get(<span class="st">&#39;caqui&#39;</span>, <span class="st">&#39;Não existe!&#39;</span>))</span></code></pre></div>
 <ul>
 <li>Saída:</li>
 </ul>
-<pre id="ex" class="text" style="font-size: 11 pt;"><code>dict_keys([&#39;laranja&#39;, &#39;banana&#39;, &#39;uva&#39;])
+<pre id="ex" class="text" style="font-size: 18px;"><code>dict_keys([&#39;laranja&#39;, &#39;banana&#39;, &#39;uva&#39;])
 dict_values([102, 34, 50])
 dict_items([(&#39;laranja&#39;, 102), (&#39;banana&#39;, 34), (&#39;uva&#39;, 50)])
 102
@@ -805,8 +827,8 @@ Não existe!</code></pre>
 <li>Ela recebe como parâmetro a sequência e retorna uma lista ordenada.</li>
 <li>Exemplo de uso com tuplas:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>t <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">0</span>)</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(<span class="bu">sorted</span>(t))</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">0</span>)</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(t))</span></code></pre></div>
 <pre id="ex" class="text"><code>[0, 2, 4, 5, 7, 9]</code></pre>
 </div>
 <div id="a-função-sorted-com-dicionários" class="slide section level1">
@@ -814,8 +836,8 @@ Não existe!</code></pre>
 <ul>
 <li>Exemplo de uso com dicionários:</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
-<span id="ex-2"><a href="#ex-2"></a><span class="bu">print</span>(<span class="bu">sorted</span>(frutas))</span></code></pre></div>
+<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> {<span class="st">&#39;laranja&#39;</span>: <span class="dv">102</span>, <span class="st">&#39;uva&#39;</span>: <span class="dv">50</span>, <span class="st">&#39;banana&#39;</span>: <span class="dv">34</span>}</span>
+<span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(frutas))</span></code></pre></div>
 <pre id="ex" class="text"><code>[&#39;banana&#39;, &#39;laranja&#39;, &#39;uva&#39;]</code></pre>
 </div>
 <div id="exercícios-iii" class="slide section level1">

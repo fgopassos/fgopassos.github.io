@@ -73,9 +73,9 @@ print((3, 2, 1, 0))
 (3, 2, 1, 0)
 ~~~
 
-# Acessar Elementos de uma Tupla
+# Acessar Elementos de uma Tupla (I)
 
-- Da mesma forma que em listas, usando colchetes.
+- Da mesma forma que em listas, usando parênteses retos.
   - Mas apenas para obter os valores (leitura).
   - Nunca para alterar os valores (escrita).
 
@@ -88,11 +88,11 @@ print(vet1[4])
 
 - Índices variam de 0 a tamanho menos 1.
 
-# Acessar Elementos de uma Tupla
+# Acessar Elementos de uma Tupla (II)
 
 - Acesso não permitido:
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size:22px;"}
 vet1 = (1, 2, 5, 3, 6)
 vet1[2] = 7 # Esta linha ocasionará erro!
 print(vet1)
@@ -106,7 +106,7 @@ TypeError: 'tuple' object does not support item assignment
 
 - Embora seja possível redefinir uma tupla:
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size:22px;"}
 vet1 = (1, 2, 5, 3, 6)
 vet1 = (1, 2, 7, 3)
 print(vet1)
@@ -120,7 +120,7 @@ print(vet1)
   - `max`: retorna o maior valor de uma tupla numérica.
   - `sum`: retorna a soma dos valores de uma tupla numérica.
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size:22px;"}
 vet1 = (1, 2, 5, 3, 6)
 print(len(vet1), min(vet1), max(vet1), sum(vet1))
 ~~~
@@ -152,31 +152,30 @@ O valor 5 está na tupla.
 
 - Soma de tuplas com operador +:
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size:22px;"}
 tupla1 = (4, 5, 2, 1)
 tupla2 = (3, -1, 0)
 print(tupla1 + tupla2)
 ~~~
 
-~~~{#ex .text}
+~~~{#ex .text style="font-size:22px;"}
 (4, 5, 2, 1, 3, -1, 0)
 ~~~
 
 - Multiplicação de tuplas com operador $*$:
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size:22px;"}
 tupla = 3*(0, 1)
 print(tupla)
 ~~~
 
-~~~{#ex .text}
+~~~{#ex .text style="font-size:22px;"}
 (0, 1, 0, 1, 0, 1)
 ~~~
 
-# Métodos de Tuplas
+# Métodos de Tuplas: Index
 
-- Existem apenas dois métodos:
-  - `index`: retorna o índice da primeira ocorrência de um dado valor (parâmetro) na tupla.
+- `index`: retorna o índice da primeira ocorrência de um dado valor (parâmetro) na tupla.
 
 ~~~{#ex .python}
 tupla = (5, 5, -1, 3, 0, 2, 1, 2, 5)
@@ -187,7 +186,9 @@ print(tupla.index(2))
 5
 ~~~
 
-  - `count`: retorna a quantidade de um dado valor (parâmetro) na tupla.
+# Métodos de Tuplas: Count
+
+- `count`: retorna a quantidade de um dado valor (parâmetro) na tupla.
 
 ~~~{#ex .python}
 tupla = (5, 5, -1, 3, 0, 2, 1, 2, 5)
@@ -200,6 +201,8 @@ print(tupla.count(5))
 
 # Conversão em Tuplas
 
+:::::{.columns}
+::::{.column width=47%}
 - Conversão de lista em tupla:
 
 ~~~{#ex .python}
@@ -212,7 +215,13 @@ print(tupla)
 (1, 4, 2)
 ~~~
 
-- Conversão de tupla em em lista:
+::::
+
+::::{.column width=5%}
+::::
+
+::::{.column width=47%}
+- Conversão de tupla em lista:
 
 ~~~{#ex .python}
 tupla = (1, 4, 2)
@@ -223,9 +232,13 @@ print(lista)
 ~~~{#ex .text}
 [1, 4, 2]
 ~~~
+::::
+:::::
 
 # Conversão de Range
 
+:::::{.columns}
+::::{.column width=47%}
 - Conversão de range em tupla:
 
 ~~~{#ex .python}
@@ -237,6 +250,12 @@ print(tupla)
 (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 ~~~
 
+::::
+
+::::{.column width=5%}
+::::
+
+::::{.column width=47%}
 - Conversão de range em lista:
 
 ~~~{#ex .python}
@@ -247,6 +266,8 @@ print(lista)
 ~~~{#ex .text}
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ~~~
+::::
+:::::
 
 # Iterar sobre Tuplas
 
@@ -294,26 +315,34 @@ $$\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 
 # Definição de Dicionário
 
+:::::{.columns}
+::::{.column width=50%}
 - **Dicionário** é uma estrutura especial de Python.
 - Ele representa um mapeamento chave/valor (*key/value*).
     - A chave funciona como um **índice**.
     - O valor é acessado pela chave.
+
+::::
+::::{.column width=50%}
 - Exemplo de representação:
 
 :::::::{.center}
-![](imagens/dict.png){#dictEx1}
+![](imagens/dict.png){#dictEx1  width=90%}
 :::::::
+
+::::
+:::::
 
 # Uso de Dicionário: Exemplo da Agenda
 
 - **Exemplo de problema:** Suponha que você queira escrever um programa em Python para guardar uma agenda telefônica e depois consultar.
   - O que deve ser feito é associar um nome a um (ou mais) telefone.
-- Uma forma de fazer isso usando duas listas:
+- Uma forma de fazer isso usando **duas listas**:
   - Uma para guardar os nomes.
   - Outra para guardar os telefones.
 
 :::::::{.center}
-![](imagens/agenda.svg){#dictEx1 width=40%}
+![](imagens/agenda.svg){#dictEx2 width=40%}
 :::::::
 
 # Obtendo a agenda do usuário (Usando Listas)
@@ -439,7 +468,7 @@ print(dic2)
 
 # Acessar Valores de um Dicionário (I)
 
-- O acesso é feito utilizando os colchetes ([ ]), assim como nas listas.
+- O acesso é feito utilizando os parênteses retos ([ ]), assim como nas listas.
   - O índice deve ser uma chave válida.
 - Exemplo de acesso:
 
@@ -703,7 +732,7 @@ print(type(dic), dic)
 
 # Alguns Métodos de Dicionários (I)
 
-:::{width="50%"}
+:::{.center style="font-size: 22px; width: 95%; line-weight: 70%;"}
 Método 	| Parâmetros 	| Descrição
 --------|-------------|-------------------
 `keys` 	| nenhum 	    | Retorna uma estrutura com as chaves do dicionário
@@ -717,9 +746,9 @@ Método 	| Parâmetros 	| Descrição
 
 # Alguns Métodos de Dicionários (II)
 
-- Exemplo de uso:
+- Exemplos de uso:
 
-~~~{#ex .python style="font-size: 11 pt;"}
+~~~{#ex .python style="font-size: 22px;"}
 frutas = {'laranja': 102, 'uva': 50, 'banana': 34}
 print(frutas.keys())
 print(frutas.values())
@@ -731,7 +760,7 @@ print(frutas.get('caqui', 'Não existe!'))
 
 - Saída:
 
-~~~{#ex .text style="font-size: 11 pt;"}
+~~~{#ex .text style="font-size: 18px;"}
 dict_keys(['laranja', 'banana', 'uva'])
 dict_values([102, 34, 50])
 dict_items([('laranja', 102), ('banana', 34), ('uva', 50)])

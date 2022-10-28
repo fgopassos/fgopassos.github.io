@@ -25,12 +25,12 @@ logo: ../atlantica_logo2.svg
 
 - Em Python, podemos usar listas para representar.
 
-```Python
+~~~{.python }
 vet1 = [1, 2, 3, 6]
 vet2 = [1.0, 3.1, 7.6, 8.9, 9.0]
 vet3 = [True, False, True]
 vet4 = ['A', 'casa', 'é', 'pequena']
-```
+~~~
 - Embora listas em Python permite criar conjuntos de quaisquer valores.
 
 # Uso de Vetores/Listas
@@ -43,14 +43,14 @@ vet4 = ['A', 'casa', 'é', 'pequena']
 
 #### Tentativa 1:
 
-```Python
+~~~{.python }
 soma = 0
 for i in range(10):
     n = int(input("Entre com a nota " + str(i) + ": "))
     soma = soma + n
 media = soma/10
 # contar quantos alunos estão acima da média.
-```
+~~~
 
 - Repare que antes de contar, precisamos calcular a média.
     - Mas então, como indicar quantos alunos estão acima da média se não temos mais os valores das notas?
@@ -60,7 +60,7 @@ media = soma/10
 - Precisamos **guardar** as notas para isso!
     - Usar vetor/lista!
 
-```Python
+~~~{.python style="font-size: 22px;"}
 notas = 10*[0] # Cria vetor de 10 posições
 soma = 0
 for i in range(10):
@@ -72,7 +72,7 @@ for i in range(10):
     if notas[i] > media:
         cont = cont + 1
 print("Existem", cont, "alunos acima da média", media)
-```
+~~~
 
 - <a  href="https://repl.it/@fgopassos/media" target="_blank">Solução no Repl.it</a>
 
@@ -95,7 +95,7 @@ print("Existem", cont, "alunos acima da média", media)
 ![](imagens/matriz1.svg){#matriz1}
 :::::::
 
-- Em Python, é possível representar matrizes através de .alert[lista de listas].
+- Em Python, é possível representar matrizes através de **lista de listas**.
 
 # Lista como Elemento de uma Lista
 
@@ -103,15 +103,14 @@ print("Existem", cont, "alunos acima da média", media)
 - Exemplo 1:
 
 ~~~{#id1 .python }
-code
 lista1 = [0, 1]
 lista2 = [False, True, lista1]
 print(lista2)
 ~~~
 
-```
+~~~{.text}
 [False, True, [0, 1]]
-```
+~~~
 
 # Lista como Elemento de uma Lista (II)
 
@@ -124,9 +123,9 @@ lista = [[1, 3], -1, [3, 2, 6]]
 print(lista)
 ~~~
 
-```
+~~~{.text}
 [[1, 3], -1, [3, 2, 6]]
-```
+~~~
 
 # Definindo uma Matriz
 
@@ -137,37 +136,37 @@ print(lista)
 ![](imagens/matriz2.svg){#matriz2}
 :::::::
 
-```Python
+~~~{.python }
 M = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
-```
+~~~
 
 # Definindo uma Matriz (II)
 
 - Ou, para ficar mais fácil de ler, podemos escrever a matriz desta forma:
     - No entanto, não há nenhuma diferença no resultado em relação ao slide anterior.
 
-```Python
+~~~{.python }
 M = [[7,  8, 4,  3],
      [2,  1, 6, 12],
      [9, 11, 5, 10]]
-```
+~~~
 
 # Imprimindo Matriz sem Formato
 
 - Basta usar o `print` da matriz:
 
-~~~{#id3 .python }
+~~~{#id3 .python style="font-size: 22px;"}
 M = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 print(M)
 ~~~
 
-~~~{#idText1 .text }
+~~~{#idText1 .text style="font-size: 22px;"}
 [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 ~~~
 
 - A saída é sempre sem formato, mesmo se for declarada assim:
 
-~~~{#id4 .python }
+~~~{#id4 .python style="font-size: 22px;"}
 M = [[7,  8, 4,  3],
      [2,  1, 6, 12],
      [9, 11, 5, 10]]
@@ -182,20 +181,20 @@ print(M)
 
 :::::{.columns}
 ::::{.column width=45%}
-```Python
+~~~{.python }
 M = 3*[None]
 for i in range(3):
   M[i] = 5*[0]
-```
+~~~
 ::::
 ::::{.column width=10%}
 ::::
 ::::{.column width=45%}
-```Python
+~~~{.python }
 M = 3*[None]
 for i in range(3):
   M[i] = 5*[None]
-```
+~~~
 ::::
 :::::
 
@@ -227,7 +226,7 @@ for i in range(3):
       - `M[2][1] = M[2][1] + 1`
   - multiplicar por 3 o elemento $M_{0,3}$:
       - `M[0][3] = M[0][3] * 3`
-  - fazer $M\_{0,2} \leftarrow M\_{0,0} + M\_{0,1}$:
+  - fazer $M_{0,2} \leftarrow M_{0,0} + M_{0,1}$:
       - `M[0][2] = M[0][0] + M[0][1]`
 
 # Acessar Linha da Matriz
@@ -236,13 +235,13 @@ for i in range(3):
     - Afinal, em Python, uma matriz é uma lista de listas.
 - Exemplo: imprimir a primeira linha:
 
-```Python
+```{.python }
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 print(mat[0])
 ```
 - Redefinir uma linha:
 
-```Python
+```{.python }
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 mat[1] = [-2, -1, -6, -12]
 ```
@@ -271,7 +270,7 @@ mat[1] = [-2, -1, -6, -12]
 
 - Exemplo 1: somar todos os elementos da primeira linha da matriz:
 
-```Python
+```{.python style="font-size: 22px;"}
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 soma = 0
 # Devemos variar a coluna.
@@ -282,7 +281,7 @@ print(soma)
 
 - Exemplo 2: somar todos os elementos da primeira coluna da matriz:
 
-```Python
+```{.python style="font-size: 22px;"}
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 soma = 0
 for i in range(3): # poderia substituir 3 por len(mat)
@@ -297,7 +296,7 @@ print(soma)
     - Isto é, para cada linha, variar a coluna.
     - Sendo assim, devemos usar um `for` dentro de outro!
 
-```Python
+```{.python style="font-size: 24px;"}
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 soma = 0
 # Varia linha:
@@ -314,7 +313,7 @@ print(soma)
     - Assim como podemos fazer com vetores/listas.
 - Exemplo:
 
-```Python
+```{.python style="font-size: 24px;"}
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 soma = 0
 # Varia linha:
@@ -327,7 +326,7 @@ print(soma)
 
 # Exercícios (II)
 
-1. Crie a matriz $A = \left(\begin{array}{rrrr} 1 & 2 & 3 & 4\\\\ 5 & 6 & 7 & 8\\\\ 9 & 10 & 11 & 12 \end{array}\right)$ e apenas a imprima sem formato.
+1. Crie a matriz $A = \left(\begin{array}{rrrr} 1 & 2 & 3 & 4\\ 5 & 6 & 7 & 8\\ 9 & 10 & 11 & 12 \end{array}\right)$ e apenas a imprima sem formato.
 2. Cria uma matriz $3\times3$ e obtenha seus valores do usuário.
     - Apresente o resultado da soma da segunda linha.
     - Modifique os valores da coluna 0 para os valores da última coluna, elemento por elemento.
@@ -337,7 +336,7 @@ print(soma)
 
 - Para melhorar a visualização da matriz, podemos imprimir a matriz linha a linha.
 
-```Python
+```{.python}
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 for lin in mat:
     print(lin)
@@ -354,7 +353,7 @@ for lin in mat:
 - Ou ainda, elemento por elemento, linha a linha:
     - Neste caso, remove colchetes e vírgulas.
 
-```Python
+```{.python}
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 for lin in mat:
     for c in lin:
@@ -460,7 +459,7 @@ d = 6.67
         - Saída: `⌷⌷⌷⌷⌷⌷casa`
     - `'{:^10}'.format('casa')` : centralização com 10 caracteres.
         - Saída: `⌷⌷⌷casa⌷⌷⌷`
-- Consulte: https://docs.python.org/pt-br/3/tutorial/inputoutput.html
+- Consultar: https://docs.python.org/pt-br/3/tutorial/inputoutput.html
 
 # Formatação de String: Alinhamento (II)
 
@@ -493,13 +492,13 @@ d = 6.67
 
 - Usando o `format` para imprimir matrizes:
 
-```Python
+~~~{.python}
 mat = [[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]
 for lin in mat:
     for c in lin:
         print('{:>3}'.format(c), end=" ")
     print()
-```
+~~~
 - Resultado da impressão:
 ```
   7   8   4   3
@@ -510,5 +509,6 @@ for lin in mat:
 # Exercícios (III)
 
 1. Obtenha do usuário as dimensões de uma matriz e leia também cada elemento. Imprima a matriz no final.
-2. Leia duas matrizes A e B e calcule C como sendo a soma delas. Imprima a matriz resultante C.
+    - Considere números reais.
+2. [Em casa] Leia duas matrizes A e B e calcule C como sendo a soma delas. Imprima a matriz resultante C.
 

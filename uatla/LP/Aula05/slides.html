@@ -18,6 +18,7 @@
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -49,7 +50,7 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span. { color: #1f1c1b; } /* Normal */
+    code span { color: #1f1c1b; } /* Normal */
     code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
     code span.an { color: #ca60ca; } /* Annotation */
     code span.at { color: #0057ae; } /* Attribute */
@@ -128,10 +129,10 @@ Fernanda Passos
 <ul>
 <li>Em Python, podemos usar listas para representar.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>vet1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>]</span>
-<span id="cb1-2"><a href="#cb1-2"></a>vet2 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">3.1</span>, <span class="fl">7.6</span>, <span class="fl">8.9</span>, <span class="fl">9.0</span>]</span>
-<span id="cb1-3"><a href="#cb1-3"></a>vet3 <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>]</span>
-<span id="cb1-4"><a href="#cb1-4"></a>vet4 <span class="op">=</span> [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vet1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>vet2 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">3.1</span>, <span class="fl">7.6</span>, <span class="fl">8.9</span>, <span class="fl">9.0</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>vet3 <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vet4 <span class="op">=</span> [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;casa&#39;</span>, <span class="st">&#39;é&#39;</span>, <span class="st">&#39;pequena&#39;</span>]</span></code></pre></div>
 <ul>
 <li>Embora listas em Python permite criar conjuntos de quaisquer valores.</li>
 </ul>
@@ -149,12 +150,12 @@ Fernanda Passos
 <div id="uso-de-vetoreslistas-ii" class="slide section level1">
 <h1>Uso de Vetores/Listas (II)</h1>
 <h4 id="tentativa-1">Tentativa 1:</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb2-3"><a href="#cb2-3"></a>    n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com a nota &quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&quot;: &quot;</span>))</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    soma <span class="op">=</span> soma <span class="op">+</span> n</span>
-<span id="cb2-5"><a href="#cb2-5"></a>media <span class="op">=</span> soma<span class="op">/</span><span class="dv">10</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># contar quantos alunos estão acima da média.</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com a nota &quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&quot;: &quot;</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    soma <span class="op">=</span> soma <span class="op">+</span> n</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> soma<span class="op">/</span><span class="dv">10</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># contar quantos alunos estão acima da média.</span></span></code></pre></div>
 <ul>
 <li>Repare que antes de contar, precisamos calcular a média.
 <ul>
@@ -170,17 +171,17 @@ Fernanda Passos
 <li>Usar vetor/lista!</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>notas <span class="op">=</span> <span class="dv">10</span><span class="op">*</span>[<span class="dv">0</span>] <span class="co"># Cria vetor de 10 posições</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb3-4"><a href="#cb3-4"></a>    notas[i] <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com a nota &quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&quot;: &quot;</span>))</span>
-<span id="cb3-5"><a href="#cb3-5"></a>    soma <span class="op">=</span> soma <span class="op">+</span> notas[i]</span>
-<span id="cb3-6"><a href="#cb3-6"></a>media <span class="op">=</span> soma<span class="op">/</span><span class="dv">10</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>cont <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb3-9"><a href="#cb3-9"></a>    <span class="cf">if</span> notas[i] <span class="op">&gt;</span> media:</span>
-<span id="cb3-10"><a href="#cb3-10"></a>        cont <span class="op">=</span> cont <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="bu">print</span>(<span class="st">&quot;Existem&quot;</span>, cont, <span class="st">&quot;alunos acima da média&quot;</span>, media)</span></code></pre></div>
+<div class="sourceCode" id="cb3" style="font-size: 22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>notas <span class="op">=</span> <span class="dv">10</span><span class="op">*</span>[<span class="dv">0</span>] <span class="co"># Cria vetor de 10 posições</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    notas[i] <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Entre com a nota &quot;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&quot;: &quot;</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    soma <span class="op">=</span> soma <span class="op">+</span> notas[i]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> soma<span class="op">/</span><span class="dv">10</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>cont <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> notas[i] <span class="op">&gt;</span> media:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        cont <span class="op">=</span> cont <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Existem&quot;</span>, cont, <span class="st">&quot;alunos acima da média&quot;</span>, media)</span></code></pre></div>
 <ul>
 <li><a  href="https://repl.it/@fgopassos/media" target="_blank">Solução no Repl.it</a></li>
 </ul>
@@ -209,7 +210,7 @@ Fernanda Passos
 <p><img src="imagens/matriz1.svg" id="matriz1" /></p>
 </div>
 <ul>
-<li>Em Python, é possível representar matrizes através de .alert[lista de listas].</li>
+<li>Em Python, é possível representar matrizes através de <strong>lista de listas</strong>.</li>
 </ul>
 </div>
 <div id="lista-como-elemento-de-uma-lista" class="slide section level1">
@@ -218,11 +219,10 @@ Fernanda Passos
 <li>Uma lista também pode ser um elemento de uma lista.</li>
 <li>Exemplo 1:</li>
 </ul>
-<div class="sourceCode" id="id1"><pre class="sourceCode python"><code class="sourceCode python"><span id="id1-1"><a href="#id1-1"></a>code</span>
-<span id="id1-2"><a href="#id1-2"></a>lista1 <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
-<span id="id1-3"><a href="#id1-3"></a>lista2 <span class="op">=</span> [<span class="va">False</span>, <span class="va">True</span>, lista1]</span>
-<span id="id1-4"><a href="#id1-4"></a><span class="bu">print</span>(lista2)</span></code></pre></div>
-<pre><code>[False, True, [0, 1]]</code></pre>
+<div class="sourceCode" id="id1"><pre class="sourceCode python"><code class="sourceCode python"><span id="id1-1"><a href="#id1-1" aria-hidden="true" tabindex="-1"></a>lista1 <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="id1-2"><a href="#id1-2" aria-hidden="true" tabindex="-1"></a>lista2 <span class="op">=</span> [<span class="va">False</span>, <span class="va">True</span>, lista1]</span>
+<span id="id1-3"><a href="#id1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista2)</span></code></pre></div>
+<pre class="text"><code>[False, True, [0, 1]]</code></pre>
 </div>
 <div id="lista-como-elemento-de-uma-lista-ii" class="slide section level1">
 <h1>Lista como Elemento de uma Lista (II)</h1>
@@ -233,9 +233,9 @@ Fernanda Passos
 </ul></li>
 <li>Exemplo 2:</li>
 </ul>
-<div class="sourceCode" id="id2"><pre class="sourceCode python"><code class="sourceCode python"><span id="id2-1"><a href="#id2-1"></a>lista <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">3</span>], <span class="op">-</span><span class="dv">1</span>, [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">6</span>]]</span>
-<span id="id2-2"><a href="#id2-2"></a><span class="bu">print</span>(lista)</span></code></pre></div>
-<pre><code>[[1, 3], -1, [3, 2, 6]]</code></pre>
+<div class="sourceCode" id="id2"><pre class="sourceCode python"><code class="sourceCode python"><span id="id2-1"><a href="#id2-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">3</span>], <span class="op">-</span><span class="dv">1</span>, [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">6</span>]]</span>
+<span id="id2-2"><a href="#id2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lista)</span></code></pre></div>
+<pre class="text"><code>[[1, 3], -1, [3, 2, 6]]</code></pre>
 </div>
 <div id="definindo-uma-matriz" class="slide section level1">
 <h1>Definindo uma Matriz</h1>
@@ -246,7 +246,7 @@ Fernanda Passos
 <div class="center">
 <p><img src="imagens/matriz2.svg" id="matriz2" /></p>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span></code></pre></div>
 </div>
 <div id="definindo-uma-matriz-ii" class="slide section level1">
 <h1>Definindo uma Matriz (II)</h1>
@@ -256,25 +256,25 @@ Fernanda Passos
 <li>No entanto, não há nenhuma diferença no resultado em relação ao slide anterior.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>,  <span class="dv">8</span>, <span class="dv">4</span>,  <span class="dv">3</span>],</span>
-<span id="cb7-2"><a href="#cb7-2"></a>     [<span class="dv">2</span>,  <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>],</span>
-<span id="cb7-3"><a href="#cb7-3"></a>     [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>,  <span class="dv">8</span>, <span class="dv">4</span>,  <span class="dv">3</span>],</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">2</span>,  <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>],</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span></code></pre></div>
 </div>
 <div id="imprimindo-matriz-sem-formato" class="slide section level1">
 <h1>Imprimindo Matriz sem Formato</h1>
 <ul>
 <li>Basta usar o <code>print</code> da matriz:</li>
 </ul>
-<div class="sourceCode" id="id3"><pre class="sourceCode python"><code class="sourceCode python"><span id="id3-1"><a href="#id3-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="id3-2"><a href="#id3-2"></a><span class="bu">print</span>(M)</span></code></pre></div>
-<pre id="idText1" class="text"><code>[[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]</code></pre>
+<div class="sourceCode" id="id3" style="font-size: 22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="id3-1"><a href="#id3-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="id3-2"><a href="#id3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(M)</span></code></pre></div>
+<pre id="idText1" class="text" style="font-size: 22px;"><code>[[7, 8, 4, 3], [2, 1, 6, 12], [9, 11, 5, 10]]</code></pre>
 <ul>
 <li>A saída é sempre sem formato, mesmo se for declarada assim:</li>
 </ul>
-<div class="sourceCode" id="id4"><pre class="sourceCode python"><code class="sourceCode python"><span id="id4-1"><a href="#id4-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>,  <span class="dv">8</span>, <span class="dv">4</span>,  <span class="dv">3</span>],</span>
-<span id="id4-2"><a href="#id4-2"></a>     [<span class="dv">2</span>,  <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>],</span>
-<span id="id4-3"><a href="#id4-3"></a>     [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="id4-4"><a href="#id4-4"></a><span class="bu">print</span>(M)</span></code></pre></div>
+<div class="sourceCode" id="id4" style="font-size: 22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="id4-1"><a href="#id4-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> [[<span class="dv">7</span>,  <span class="dv">8</span>, <span class="dv">4</span>,  <span class="dv">3</span>],</span>
+<span id="id4-2"><a href="#id4-2" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">2</span>,  <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>],</span>
+<span id="id4-3"><a href="#id4-3" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="id4-4"><a href="#id4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(M)</span></code></pre></div>
 </div>
 <div id="definindo-uma-matriz-vazia" class="slide section level1">
 <h1>Definindo uma Matriz Vazia</h1>
@@ -287,15 +287,15 @@ Fernanda Passos
 </ul>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>M <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>[<span class="va">None</span>]</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb8-3"><a href="#cb8-3"></a>  M[i] <span class="op">=</span> <span class="dv">5</span><span class="op">*</span>[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>[<span class="va">None</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  M[i] <span class="op">=</span> <span class="dv">5</span><span class="op">*</span>[<span class="dv">0</span>]</span></code></pre></div>
 </div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:45%;">
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>M <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>[<span class="va">None</span>]</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb9-3"><a href="#cb9-3"></a>  M[i] <span class="op">=</span> <span class="dv">5</span><span class="op">*</span>[<span class="va">None</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>[<span class="va">None</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  M[i] <span class="op">=</span> <span class="dv">5</span><span class="op">*</span>[<span class="va">None</span>]</span></code></pre></div>
 </div>
 </div>
 <ul>
@@ -347,7 +347,7 @@ Fernanda Passos
 <ul>
 <li><code>M[0][3] = M[0][3] * 3</code></li>
 </ul></li>
-<li>fazer <span class="math inline">\(M\_{0,2} \leftarrow M\_{0,0} + M\_{0,1}\)</span>:
+<li>fazer <span class="math inline">\(M_{0,2} \leftarrow M_{0,0} + M_{0,1}\)</span>:
 <ul>
 <li><code>M[0][2] = M[0][0] + M[0][1]</code></li>
 </ul></li>
@@ -363,13 +363,13 @@ Fernanda Passos
 </ul></li>
 <li>Exemplo: imprimir a primeira linha:</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">print</span>(mat[<span class="dv">0</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mat[<span class="dv">0</span>])</span></code></pre></div>
 <ul>
 <li>Redefinir uma linha:</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb11-2"><a href="#cb11-2"></a>mat[<span class="dv">1</span>] <span class="op">=</span> [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">6</span>, <span class="op">-</span><span class="dv">12</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mat[<span class="dv">1</span>] <span class="op">=</span> [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">6</span>, <span class="op">-</span><span class="dv">12</span>]</span></code></pre></div>
 </div>
 <div id="dimensões-da-matriz" class="slide section level1">
 <h1>Dimensões da Matriz</h1>
@@ -407,20 +407,20 @@ Fernanda Passos
 <ul>
 <li>Exemplo 1: somar todos os elementos da primeira linha da matriz:</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb12-2"><a href="#cb12-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="co"># Devemos variar a coluna.</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>): <span class="co"># poderia substituir 4 por len(mat[0])</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>    soma <span class="op">=</span> soma <span class="op">+</span> mat[<span class="dv">0</span>][j]</span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="bu">print</span>(soma)</span></code></pre></div>
+<div class="sourceCode" id="cb12" style="font-size: 22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Devemos variar a coluna.</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>): <span class="co"># poderia substituir 4 por len(mat[0])</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    soma <span class="op">=</span> soma <span class="op">+</span> mat[<span class="dv">0</span>][j]</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soma)</span></code></pre></div>
 <ul>
 <li>Exemplo 2: somar todos os elementos da primeira coluna da matriz:</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb13-2"><a href="#cb13-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>): <span class="co"># poderia substituir 3 por len(mat)</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a>    soma <span class="op">=</span> soma <span class="op">+</span> mat[i][<span class="dv">0</span>]</span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="bu">print</span>(soma)</span></code></pre></div>
+<div class="sourceCode" id="cb13" style="font-size: 22px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>): <span class="co"># poderia substituir 3 por len(mat)</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    soma <span class="op">=</span> soma <span class="op">+</span> mat[i][<span class="dv">0</span>]</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soma)</span></code></pre></div>
 </div>
 <div id="iterando-sobre-elementos-de-uma-matriz-2" class="slide section level1">
 <h1>Iterando sobre Elementos de uma Matriz</h1>
@@ -432,14 +432,14 @@ Fernanda Passos
 <li>Sendo assim, devemos usar um <code>for</code> dentro de outro!</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb14-2"><a href="#cb14-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># Varia linha:</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>): <span class="co"># poderia substituir 3 por len(mat)</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>    <span class="co"># Varia coluna para cada linha:</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>): <span class="co"># poderia substituir 4 por len(mat[0])</span></span>
-<span id="cb14-7"><a href="#cb14-7"></a>        soma <span class="op">=</span> soma <span class="op">+</span> mat[i][j]</span>
-<span id="cb14-8"><a href="#cb14-8"></a><span class="bu">print</span>(soma)</span></code></pre></div>
+<div class="sourceCode" id="cb14" style="font-size: 24px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Varia linha:</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>): <span class="co"># poderia substituir 3 por len(mat)</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Varia coluna para cada linha:</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>): <span class="co"># poderia substituir 4 por len(mat[0])</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        soma <span class="op">=</span> soma <span class="op">+</span> mat[i][j]</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soma)</span></code></pre></div>
 </div>
 <div id="outra-forma-de-iterar" class="slide section level1">
 <h1>Outra Forma de Iterar</h1>
@@ -450,19 +450,19 @@ Fernanda Passos
 </ul></li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb15-2"><a href="#cb15-2"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># Varia linha:</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="cf">for</span> linha <span class="kw">in</span> mat:</span>
-<span id="cb15-5"><a href="#cb15-5"></a>    <span class="co"># Varia coluna para cada linha:</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a>    <span class="cf">for</span> c <span class="kw">in</span> linha:</span>
-<span id="cb15-7"><a href="#cb15-7"></a>        soma <span class="op">=</span> soma <span class="op">+</span> c</span>
-<span id="cb15-8"><a href="#cb15-8"></a><span class="bu">print</span>(soma)</span></code></pre></div>
+<div class="sourceCode" id="cb15" style="font-size: 24px;"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>soma <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Varia linha:</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> linha <span class="kw">in</span> mat:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Varia coluna para cada linha:</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> linha:</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        soma <span class="op">=</span> soma <span class="op">+</span> c</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soma)</span></code></pre></div>
 </div>
 <div id="exercícios-ii" class="slide section level1">
 <h1>Exercícios (II)</h1>
 <ol style="list-style-type: decimal">
-<li>Crie a matriz <span class="math inline">\(A = \left(\begin{array}{rrrr} 1 &amp; 2 &amp; 3 &amp; 4\\\\ 5 &amp; 6 &amp; 7 &amp; 8\\\\ 9 &amp; 10 &amp; 11 &amp; 12 \end{array}\right)\)</span> e apenas a imprima sem formato.</li>
+<li>Crie a matriz <span class="math inline">\(A = \left(\begin{array}{rrrr} 1 &amp; 2 &amp; 3 &amp; 4\\ 5 &amp; 6 &amp; 7 &amp; 8\\ 9 &amp; 10 &amp; 11 &amp; 12 \end{array}\right)\)</span> e apenas a imprima sem formato.</li>
 <li>Cria uma matriz <span class="math inline">\(3\times3\)</span> e obtenha seus valores do usuário.
 <ul>
 <li>Apresente o resultado da soma da segunda linha.</li>
@@ -476,9 +476,9 @@ Fernanda Passos
 <ul>
 <li>Para melhorar a visualização da matriz, podemos imprimir a matriz linha a linha.</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
-<span id="cb16-3"><a href="#cb16-3"></a>    <span class="bu">print</span>(lin)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(lin)</span></code></pre></div>
 <pre><code>[7, 8, 4, 3]
 [2, 1, 6, 12]
 [9, 11, 5, 10]</code></pre>
@@ -491,11 +491,11 @@ Fernanda Passos
 <li>Neste caso, remove colchetes e vírgulas.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
-<span id="cb18-3"><a href="#cb18-3"></a>    <span class="cf">for</span> c <span class="kw">in</span> lin:</span>
-<span id="cb18-4"><a href="#cb18-4"></a>        <span class="bu">print</span>(c, end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
-<span id="cb18-5"><a href="#cb18-5"></a>    <span class="bu">print</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> lin:</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(c, end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div>
 <pre><code>7 8 4 3
 2 1 6 12
 9 11 5 10</code></pre>
@@ -525,8 +525,8 @@ Fernanda Passos
 <ul>
 <li><em>C-like</em>:</li>
 </ul>
-<div class="sourceCode" id="format1"><pre class="sourceCode python"><code class="sourceCode python"><span id="format1-1"><a href="#format1-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
-<span id="format1-2"><a href="#format1-2"></a><span class="bu">print</span>(<span class="st">&quot;d = </span><span class="sc">%0.2f</span><span class="st">&quot;</span> <span class="op">%</span> d)</span></code></pre></div>
+<div class="sourceCode" id="format1"><pre class="sourceCode python"><code class="sourceCode python"><span id="format1-1"><a href="#format1-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format1-2"><a href="#format1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;d = </span><span class="sc">%0.2f</span><span class="st">&quot;</span> <span class="op">%</span> d)</span></code></pre></div>
 <pre id="saidaFormat1" class="text"><code>d = 6.67</code></pre>
 </div><div class="column" style="width:10%;">
 
@@ -534,8 +534,8 @@ Fernanda Passos
 <ul>
 <li>Método <code>format</code>:</li>
 </ul>
-<div class="sourceCode" id="format2"><pre class="sourceCode python"><code class="sourceCode python"><span id="format2-1"><a href="#format2-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
-<span id="format2-2"><a href="#format2-2"></a><span class="bu">print</span>(<span class="st">&quot;d = </span><span class="sc">{:0.2f}</span><span class="st">&quot;</span>.<span class="bu">format</span>(d))</span></code></pre></div>
+<div class="sourceCode" id="format2"><pre class="sourceCode python"><code class="sourceCode python"><span id="format2-1"><a href="#format2-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format2-2"><a href="#format2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;d = </span><span class="sc">{:0.2f}</span><span class="st">&quot;</span>.<span class="bu">format</span>(d))</span></code></pre></div>
 <pre id="saidaFormat2" class="text"><code>d = 6.67</code></pre>
 </div>
 </div>
@@ -544,8 +544,8 @@ Fernanda Passos
 <ul>
 <li>f-string:</li>
 </ul>
-<div class="sourceCode" id="format3"><pre class="sourceCode python"><code class="sourceCode python"><span id="format3-1"><a href="#format3-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
-<span id="format3-2"><a href="#format3-2"></a><span class="bu">print</span>(<span class="ss">f&quot;d = </span><span class="sc">{d:0.2f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="format3"><pre class="sourceCode python"><code class="sourceCode python"><span id="format3-1"><a href="#format3-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format3-2"><a href="#format3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;d = </span><span class="sc">{d:0.2f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
 <pre id="saidaFormat3" class="text"><code>d = 6.67</code></pre>
 </div><div class="column" style="width:10%;">
 
@@ -553,8 +553,8 @@ Fernanda Passos
 <ul>
 <li>Usando <code>round</code>:</li>
 </ul>
-<div class="sourceCode" id="format4"><pre class="sourceCode python"><code class="sourceCode python"><span id="format4-1"><a href="#format4-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
-<span id="format4-2"><a href="#format4-2"></a><span class="bu">print</span>(<span class="st">&quot;d =&quot;</span>, <span class="bu">round</span>(d, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="format4"><pre class="sourceCode python"><code class="sourceCode python"><span id="format4-1"><a href="#format4-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">20</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="format4-2"><a href="#format4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;d =&quot;</span>, <span class="bu">round</span>(d, <span class="dv">2</span>))</span></code></pre></div>
 <pre id="saidaFormat4" class="text"><code>d = 6.67</code></pre>
 </div>
 </div>
@@ -586,7 +586,7 @@ Fernanda Passos
 <li>Saída: <code>⌷⌷⌷casa⌷⌷⌷</code></li>
 </ul></li>
 </ul></li>
-<li>Consulte: https://docs.python.org/pt-br/3/tutorial/inputoutput.html</li>
+<li>Consultar: https://docs.python.org/pt-br/3/tutorial/inputoutput.html</li>
 </ul>
 </div>
 <div id="formatação-de-string-alinhamento-ii" class="slide section level1">
@@ -645,11 +645,11 @@ Fernanda Passos
 <ul>
 <li>Usando o <code>format</code> para imprimir matrizes:</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
-<span id="cb20-3"><a href="#cb20-3"></a>    <span class="cf">for</span> c <span class="kw">in</span> lin:</span>
-<span id="cb20-4"><a href="#cb20-4"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{:&gt;3}</span><span class="st">&#39;</span>.<span class="bu">format</span>(c), end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
-<span id="cb20-5"><a href="#cb20-5"></a>    <span class="bu">print</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> [[<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>], [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">12</span>], [<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">10</span>]]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lin <span class="kw">in</span> mat:</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> lin:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{:&gt;3}</span><span class="st">&#39;</span>.<span class="bu">format</span>(c), end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div>
 <ul>
 <li>Resultado da impressão:</li>
 </ul>
@@ -660,8 +660,11 @@ Fernanda Passos
 <div id="exercícios-iii" class="slide section level1">
 <h1>Exercícios (III)</h1>
 <ol style="list-style-type: decimal">
-<li>Obtenha do usuário as dimensões de uma matriz e leia também cada elemento. Imprima a matriz no final.</li>
-<li>Leia duas matrizes A e B e calcule C como sendo a soma delas. Imprima a matriz resultante C.</li>
+<li>Obtenha do usuário as dimensões de uma matriz e leia também cada elemento. Imprima a matriz no final.
+<ul>
+<li>Considere números reais.</li>
+</ul></li>
+<li>[Em casa] Leia duas matrizes A e B e calcule C como sendo a soma delas. Imprima a matriz resultante C.</li>
 </ol>
 </div>
 </body>

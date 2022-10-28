@@ -87,10 +87,127 @@ logo: ../atlantica_logo2.svg
 # Definir CSS Responsivo: Texto
 
 - Texto pode ser redimensionado de acordo com as dimensões da janela.
-	- Uso da propriedade `wd`
-- Em relação à largura:
+	- Uso da propriedade `vw`.
+	- Significa *viewport width*.
+	- 1vw = 1% da largura do *viewport*.
+		- Se o *viewport* tem 600px de largura, então 1vw é 6px.
+		- Se o *viewport* tem 1920px de largura, então 1vw é 19,2px.
 
+```{.html .numberLines style="font-size: 18px;"}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 style="font-size:10vw;">Título Responsivo</h1>
+        <p style="font-size:5vw;">Texto responsivo: redimensione a janela para ver.</p>
+        <p>Este texto terá um tamanho fixo.</p>
+    </body>
+</html>
+```
 
+:::{.center}
+<button onclick="window.open('iframes/exemplo01.html','_blank')">Ir para exemplo</button>
+:::
+
+# Definir CSS Responsivo: Media Query
+
+- Recurso de estilo (CSS) para manter página web adequada para uma media.
+- Dá suporte a diversos **tipos de media** diferentes:
+	- `All`: Para todos os dispositivos.
+	- `Screen`: Para monitores ou dispositivos com ecrãs coloridos e alta resolução.
+	- `Print`: Para impressão em papel.
+	- `Braille`: Para dispositivos táteis.
+	- `Projection`: Para apresentações como PPS.
+	- `Tv`: Para dispositivos como televisores, ou seja, com baixa resolução, quantidade de cores e scroll limitados.
+- Atualmente, uso mais comum é para web responsiva.
+	- Isto é, adaptar página automaticamente para ecrãs de tamanhos diferentes.
+
+# Definir CSS Responsivo: Sintaxe do Media Query
+
+- Sintaxe dentro do CSS:
+
+```{.css style="font-size: 22px;"}
+@media [tipo_de_media] and ([media_feature]){
+	/*código CSS*/;
+}
+```
+
+- Outra forma de uso (no *head* do HTML):
+
+```{.html style="font-size: 22px;"}
+<link rel="stylesheet" media="[tipo_de_media] and ([media_feature])" href="meuCSS.css">
+```
+
+- *Media queries* são definidas por *media features* que retornam verdadeiro ou falso.
+	- Se a *media features* é verdadeira no contexto, então o CSS especificado é aplicado.
+- `tipo_de_media` é opcional e tipo `all` é usado por omissão.
+
+# Definir CSS Responsivo: Exemplos de Media Query (I)
+
+- O exemplo a seguir altera a cor da fonte de um h1 para vermelho se o tipo da media for `Screen`.
+
+```{.css style="font-size: 22px;"}
+@media Screen {
+	h1 {
+		font-color: red;
+	}
+}
+```
+
+# Definir CSS Responsivo: Exemplos de Media Query (II)
+
+- O exemplo a seguir altera a cor da fonte de um h1 para vermelho para qualquer tipo de media que tem a largura mínima do *viewport* de 900px.
+	- Aplica estilo sempre que largura  mínima for 900px.
+	- Em outras palavras, aplica estilo para larguras maiores ou iguais a 900px.
+
+```{.css style="font-size: 22px;"}
+@media (min-width: 900px){
+	h1 {
+		color: red;
+	}
+}
+```
+
+# Definir CSS Responsivo: Features Media Query
+
+::::{.center style="font-size: 60%; width: 95%; line-height: 90%;"}
+Feature | Descrição | Valores | Exemplo |
+--------|-----------|---------|---------|
+`width` | largura exata do *viewport* | Numéricos, geralmente em px | `width: 900px`
+`max-width` | largura máxima do *viewport* | Numéricos, geralmente em px | `max-width: 600px`
+`min-width` | largura mínima do *viewport* | Numéricos, geralmente em px | `min-width: 900px`
+`height` | largura exata do *viewport* | Numéricos, geralmente em px | `height: 400px`
+`max-height` | altura máxima do *viewport* | Numéricos, geralmente em px | `max-height: 400px`
+`min-height` | altura mínima do *viewport* | Numéricos, geralmente em px | `min-height: 900px`
+`orientation` | orientação do *viewport*  | `portrait` ou `landscape` | `orientation: landscape`
+`resolution` | densidade do pixel exata do dispositivo | Numéricos, geralmente em dpi | `resolution: 150dpi`
+`max-resolution` | densidade do pixel máxima do dispositivo | Numéricos, geralmente em dpi | `max-resolution: 150dpi`
+`min-resolution` | densidade do pixel mínima do dispositivo | Numéricos, geralmente em dpi | `min-resolution: 150dpi`
+::::
+
+# Definir CSS Responsivo: Operadores Lógicos Media Query
+
+- Podem ser usados os operadores lógicos:
+	- `and`
+	- `or`
+	- `not`
+
+- Exemplo que aplica o CSS para os seguintes casos:
+	- orientação em paisagem (*landscape*) ou
+	- a largura do viewport estiver valor mínimo de 900px e valor máximo de 1200px (*i.e.*, entre 900px e 1200px). 
+
+```{.css style="font-size: 22px;"}
+@media (orientation: 'landscape') or (min-width: 900px) and (max-width: 1200px) {
+	h1 {
+		color: red;
+	}
+}
+```
+# Definir CSS Responsivo: Mais Exemplos com Media Query
+
+- Incluir exemplo de tamanho de janela
+- Incluir exemplo de tamanho de imagem?
 
 # Bootstrap{.part}
 
@@ -111,12 +228,4 @@ logo: ../atlantica_logo2.svg
 
 # Exercício
 
-1. Criar uma página HTML simples de registo.
-	- Campos: e-mail, nome do utilizador e palavra-passe.
-	- Botão para cancelar e outro para enviar (ainda sem ação associada).
-2. Criar uma página HTML simples de login.
-	- Campos: e-mail e palavra-passe.
-	- Checkbox "Lembrar-me" (ainda sem ação associada).
-	- Botão para cancelar e outro para enviar (ainda sem ação associada).
-3. Criar um ficheiro de estilo para cada página (um para cada ou apenas um para os dois).
-4. Crie uma página Web em HTML simples para conversação via texto (chat).
+1. 

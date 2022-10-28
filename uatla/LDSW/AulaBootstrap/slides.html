@@ -153,7 +153,7 @@ Fernanda Passos
 <li>uso de dimensões percentuais dos elementos (<em>e.g.</em>, width: 50%);</li>
 <li>uso de <em>media queries</em> para mudar arranjo dos elementos;</li>
 <li>imagens redimensionáveis;</li>
-<li>textos redimensionáiveis;</li>
+<li>textos redimensionáveis;</li>
 <li>…</li>
 </ul></li>
 </ul>
@@ -165,8 +165,8 @@ Fernanda Passos
 <ul>
 <li>Alguns modos:
 <ul>
-<li>Definir diretamente no CSS.</li>
-<li>Uso de <em>frameworks</em>: CSS previamente definido.
+<li>Definir <strong>diretamente no CSS</strong>.</li>
+<li>Uso de <em>frameworks</em>: CSS definido por terceiros.
 <ul>
 <li>Deve-se conhecer os nomes das classes e seus estilos.</li>
 <li>Alguns usam Javascript além do CSS (para animações).</li>
@@ -184,8 +184,230 @@ Fernanda Passos
 </div>
 </div>
 </div>
-<div id="definir-css-responsivo" class="slide section level1">
-<h1>Definir CSS Responsivo</h1>
+<div id="definir-css-responsivo-imagens" class="slide section level1">
+<h1>Definir CSS Responsivo: Imagens</h1>
+<ul>
+<li>Propriedade <code>width</code> definida em percentual (<em>e.g.</em>, 100%).
+<ul>
+<li>Largura da imagem varia de acordo com a largura da janela.</li>
+<li>Pode aumentar a largura para valor maior que a largura original da imagem.</li>
+</ul></li>
+<li>Propriedade <code>max-width</code> definida em percentual (<em>e.g.</em>, 100%).
+<ul>
+<li>Largura da imagem varia de acordo com a largura da janela.</li>
+<li>Mas a imagem aumenta até o seu tamanho máximo.</li>
+</ul></li>
+<li>Veja exemplo do w3schools:
+<ul>
+<li>https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_image_maxwidth</li>
+</ul></li>
+</ul>
+</div>
+<div id="definir-css-responsivo-texto" class="slide section level1">
+<h1>Definir CSS Responsivo: Texto</h1>
+<ul>
+<li>Texto pode ser redimensionado de acordo com as dimensões da janela.
+<ul>
+<li>Uso da propriedade <code>vw</code>.</li>
+<li>Significa <em>viewport width</em>.</li>
+<li>1vw = 1% da largura do <em>viewport</em>.
+<ul>
+<li>Se o <em>viewport</em> tem 600px de largura, então 1vw é 6px.</li>
+<li>Se o <em>viewport</em> tem 1920px de largura, então 1vw é 19,2px.</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2" style="font-size: 18px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>        <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>        <span class="kw">&lt;h1</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;font-size:10vw;&quot;</span><span class="kw">&gt;</span>Título Responsivo<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>        <span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;font-size:5vw;&quot;</span><span class="kw">&gt;</span>Texto responsivo: redimensione a janela para ver.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>        <span class="kw">&lt;p&gt;</span>Este texto terá um tamanho fixo.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div class="center">
+<button onclick="window.open(&#39;iframes/exemplo01.html&#39;,&#39;_blank&#39;)">
+Ir para exemplo
+</button>
+</div>
+</div>
+<div id="definir-css-responsivo-media-query" class="slide section level1">
+<h1>Definir CSS Responsivo: Media Query</h1>
+<ul>
+<li>Recurso de estilo (CSS) para manter página web adequada para uma media.</li>
+<li>Dá suporte a diversos <strong>tipos de media</strong> diferentes:
+<ul>
+<li><code>All</code>: Para todos os dispositivos.</li>
+<li><code>Screen</code>: Para monitores ou dispositivos com ecrãs coloridos e alta resolução.</li>
+<li><code>Print</code>: Para impressão em papel.</li>
+<li><code>Braille</code>: Para dispositivos táteis.</li>
+<li><code>Projection</code>: Para apresentações como PPS.</li>
+<li><code>Tv</code>: Para dispositivos como televisores, ou seja, com baixa resolução, quantidade de cores e scroll limitados.</li>
+</ul></li>
+<li>Atualmente, uso mais comum é para web responsiva.
+<ul>
+<li>Isto é, adaptar página automaticamente para ecrãs de tamanhos diferentes.</li>
+</ul></li>
+</ul>
+</div>
+<div id="definir-css-responsivo-sintaxe-do-media-query" class="slide section level1">
+<h1>Definir CSS Responsivo: Sintaxe do Media Query</h1>
+<ul>
+<li>Sintaxe dentro do CSS:</li>
+</ul>
+<div class="sourceCode" id="cb3" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> [tipo_de_media] <span class="kw">and</span> ([media_feature]){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*código CSS*/</span>;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>Outra forma de uso (no <em>head</em> do HTML):</li>
+</ul>
+<div class="sourceCode" id="cb4" style="font-size: 22px;"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;stylesheet&quot;</span> <span class="er">media</span><span class="ot">=</span><span class="st">&quot;[tipo_de_media] and ([media_feature])&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;meuCSS.css&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<ul>
+<li><em>Media queries</em> são definidas por <em>media features</em> que retornam verdadeiro ou falso.
+<ul>
+<li>Se a <em>media features</em> é verdadeira no contexto, então o CSS especificado é aplicado.</li>
+</ul></li>
+<li><code>tipo_de_media</code> é opcional e tipo <code>all</code> é usado por omissão.</li>
+</ul>
+</div>
+<div id="definir-css-responsivo-exemplos-de-media-query-i" class="slide section level1">
+<h1>Definir CSS Responsivo: Exemplos de Media Query (I)</h1>
+<ul>
+<li>O exemplo a seguir altera a cor da fonte de um h1 para vermelho se o tipo da media for <code>Screen</code>.</li>
+</ul>
+<div class="sourceCode" id="cb5" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="dv">Screen</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    h1 {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        font-color: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="definir-css-responsivo-exemplos-de-media-query-ii" class="slide section level1">
+<h1>Definir CSS Responsivo: Exemplos de Media Query (II)</h1>
+<ul>
+<li>O exemplo a seguir altera a cor da fonte de um h1 para vermelho para qualquer tipo de media que tem a largura mínima do <em>viewport</em> de 900px.
+<ul>
+<li>Aplica estilo sempre que largura mínima for 900px.</li>
+<li>Em outras palavras, aplica estilo para larguras maiores ou iguais a 900px.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb6" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> (<span class="kw">min-width</span>: <span class="dv">900</span><span class="dt">px</span>){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    h1 {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="definir-css-responsivo-features-media-query" class="slide section level1">
+<h1>Definir CSS Responsivo: Features Media Query</h1>
+<div class="center" style="font-size: 60%; width: 95%; line-height: 90%;">
+<table>
+<colgroup>
+<col width="21%" />
+<col width="29%" />
+<col width="24%" />
+<col width="24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Descrição</th>
+<th>Valores</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>width</code></td>
+<td>largura exata do <em>viewport</em></td>
+<td>Numéricos, geralmente em px</td>
+<td><code>width: 900px</code></td>
+</tr>
+<tr class="even">
+<td><code>max-width</code></td>
+<td>largura máxima do <em>viewport</em></td>
+<td>Numéricos, geralmente em px</td>
+<td><code>max-width: 600px</code></td>
+</tr>
+<tr class="odd">
+<td><code>min-width</code></td>
+<td>largura mínima do <em>viewport</em></td>
+<td>Numéricos, geralmente em px</td>
+<td><code>min-width: 900px</code></td>
+</tr>
+<tr class="even">
+<td><code>height</code></td>
+<td>largura exata do <em>viewport</em></td>
+<td>Numéricos, geralmente em px</td>
+<td><code>height: 400px</code></td>
+</tr>
+<tr class="odd">
+<td><code>max-height</code></td>
+<td>altura máxima do <em>viewport</em></td>
+<td>Numéricos, geralmente em px</td>
+<td><code>max-height: 400px</code></td>
+</tr>
+<tr class="even">
+<td><code>min-height</code></td>
+<td>altura mínima do <em>viewport</em></td>
+<td>Numéricos, geralmente em px</td>
+<td><code>min-height: 900px</code></td>
+</tr>
+<tr class="odd">
+<td><code>orientation</code></td>
+<td>orientação do <em>viewport</em></td>
+<td><code>portrait</code> ou <code>landscape</code></td>
+<td><code>orientation: landscape</code></td>
+</tr>
+<tr class="even">
+<td><code>resolution</code></td>
+<td>densidade do pixel exata do dispositivo</td>
+<td>Numéricos, geralmente em dpi</td>
+<td><code>resolution: 150dpi</code></td>
+</tr>
+<tr class="odd">
+<td><code>max-resolution</code></td>
+<td>densidade do pixel máxima do dispositivo</td>
+<td>Numéricos, geralmente em dpi</td>
+<td><code>max-resolution: 150dpi</code></td>
+</tr>
+<tr class="even">
+<td><code>min-resolution</code></td>
+<td>densidade do pixel mínima do dispositivo</td>
+<td>Numéricos, geralmente em dpi</td>
+<td><code>min-resolution: 150dpi</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="definir-css-responsivo-operadores-lógicos-media-query" class="slide section level1">
+<h1>Definir CSS Responsivo: Operadores Lógicos Media Query</h1>
+<ul>
+<li>Podem ser usados os operadores lógicos:
+<ul>
+<li><code>and</code></li>
+<li><code>or</code></li>
+<li><code>not</code></li>
+</ul></li>
+<li>Exemplo que aplica o CSS para os seguintes casos:
+<ul>
+<li>orientação em paisagem (<em>landscape</em>) ou</li>
+<li>a largura do viewport estiver valor mínimo de 900px e valor máximo de 1200px (<em>i.e.</em>, entre 900px e 1200px).</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb7" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> (<span class="kw">orientation</span>: <span class="st">&#39;landscape&#39;</span>) or (<span class="kw">min-width</span>: <span class="dv">900</span><span class="dt">px</span>) <span class="kw">and</span> (<span class="kw">max-width</span>: <span class="dv">1200</span><span class="dt">px</span>) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    h1 {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="definir-css-responsivo-mais-exemplos-com-media-query" class="slide section level1">
+<h1>Definir CSS Responsivo: Mais Exemplos com Media Query</h1>
+<ul>
+<li>Incluir exemplo de tamanho de janela</li>
+<li>Incluir exemplo de tamanho de imagem?</li>
+</ul>
 </div>
 <div id="bootstrap" class="slide section level1 part">
 <h1 class="part">Bootstrap</h1>
@@ -213,19 +435,7 @@ Fernanda Passos
 <div id="exercício" class="slide section level1">
 <h1>Exercício</h1>
 <ol style="list-style-type: decimal">
-<li>Criar uma página HTML simples de registo.
-<ul>
-<li>Campos: e-mail, nome do utilizador e palavra-passe.</li>
-<li>Botão para cancelar e outro para enviar (ainda sem ação associada).</li>
-</ul></li>
-<li>Criar uma página HTML simples de login.
-<ul>
-<li>Campos: e-mail e palavra-passe.</li>
-<li>Checkbox “Lembrar-me” (ainda sem ação associada).</li>
-<li>Botão para cancelar e outro para enviar (ainda sem ação associada).</li>
-</ul></li>
-<li>Criar um ficheiro de estilo para cada página (um para cada ou apenas um para os dois).</li>
-<li>Crie uma página Web em HTML simples para conversação via texto (chat).</li>
+<li></li>
 </ol>
 </div>
 </body>

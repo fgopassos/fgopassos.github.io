@@ -1040,7 +1040,7 @@ _Callback_
 
 1. Faça verificações de campos que achar relevante do sistema de um registo.
 	- Verificar se é um e-mail;
-	- Verificar se password tem boa regra criação.
+	- Verificar se password tem boa regra de criação.
 2. Inclua efeitos para evidenciar o problema para o utilizador nos casos verificados.
 
 **Nota**: Nenhuma iteração com servidor é necessário nesse exercício. Faça apenas as verificações que fazem sentido no lado cliente.
