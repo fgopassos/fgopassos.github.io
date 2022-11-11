@@ -214,18 +214,31 @@ Feature | Descrição | Valores | Exemplo |
 # Bootstrap
 
 - *Framework* mais popular para criar *websites* **responsivos**.
-
-# Versões do Bootstrap
-
-- Versão 3 
-- Versão 4
-- Versão 5
-	- Mais atual (2022).
+- Versões: 3, 4, 5.
+- Versão 5:
+	- Mais atual (*release* de 2021).
+- Tutorial no W3Schools: https://www.w3schools.com/bootstrap5/index.php
+- Exemplo de uso do bootstrap:
+	- https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_default&stacked=h
 
 # Instalação
 
+- Incluir ao menos dois ficheiros:
+	- O CSS do Bootstrap: para aplicar os estilos pré-definidos;
+	- O Javascript do Bootstrap: para efeitos visuais de alguns elementos.
+- Incluir no head da página HTML (uso de CDN):
 
+```{.html}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+```
+
+# 
 
 # Exercício
 
-1. 
+1. Verifique se sua página de login/registo já desenvolvida é responsiva.
+1. Inclua o bootstrap nestas páginas e altere-as se conforme for necessário.

@@ -125,7 +125,7 @@ cabecalho("Olá mundo!", "Fernanda")
 
 :::::{.columns}
 ::::{.column width=45%}
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 75%;"}
 def f2():
     x = 10
 
@@ -136,9 +136,7 @@ print(x)
 ::::{.column width=5%}
 ::::
 ::::{.column width=50%}
-<br>
-<span style="color:red">Erro!</span>
-<br>
+<span style="color:red">Erro!</span> <br>
 `x` está no escopo local de `f2` e é acessível apenas em `f2`.
 ::::
 :::::
@@ -148,7 +146,7 @@ print(x)
 
 :::::{.columns}
 ::::{.column width=45%}
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 75%;"}
 def f3():
     x = y + 10
     print(x)
@@ -160,18 +158,18 @@ f3()
 ::::{.column width=5%}
 ::::
 ::::{.column width=50%}
-<br>
-Ok!<br> `y` está em escopo global, acessível pelo escopo de `f3`!
+<span style="color:green">Ok!</span> <br>
+`y` está em escopo global, acessível pelo escopo de `f3`!
 ::::
 :::::
 
 # Exercício (II)
 
-## Para cada código abaixo, indique o que será impresso:
+### Para cada código abaixo, indique o que será impresso:
 
 :::::{.columns}
 ::::{.column width=47%}
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 90%;"}
 # Programa 1:
 def f1():
     x = y + 10
@@ -187,7 +185,7 @@ print(y)
 ::::{.column width=6%}
 ::::
 ::::{.column width=47%}
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 90%;"}
 # Programa 2:
 def f2():
     x = y + 10
@@ -220,7 +218,7 @@ print(x, y)
 
 :::::{.columns}
 ::::{.column width=45%}
-~~~{#ex .python style="font-size: 18pt;"}
+~~~{#ex .python style="font-size: 80%;"}
 def f(y):
     y = "laranja"
     print("Dentro de f:", y)
@@ -236,7 +234,7 @@ print("Depois de chamar f:", y)
 
 ::::
 ::::{.column width=45%}
-~~~{#exSaida .csv style="font-size: 18pt;"}
+~~~{#exSaida .csv style="font-size: 80%;"}
 Antes de chamar f: uva
 Dentro de f: laranja
 Depois de chamar f: uva
@@ -250,7 +248,7 @@ Depois de chamar f: uva
 - Podem também ser listas, tuplas e dicionários.
 - Agora, é importante fazer distinção entre **referência** e **valor**.
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 l = [1, 2, 3]
 ~~~
 
@@ -258,7 +256,7 @@ l = [1, 2, 3]
     - Os elementos são os **valores**.
 - Em Python, apenas a referência de `l` é copiada para a variável local do parâmetro da função.
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 def func(v):
     print(v)
 
@@ -270,7 +268,7 @@ func(l)
 
 - Alterar a referência **não modifica** lista externamente:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 80%;"}
 def func(v):
     v = [10, 20, 30]
     print("Dentro da função:", v)
@@ -281,7 +279,7 @@ func(l)
 print("Depois de chamar a função:", l)
 ~~~
 
-~~~{#ex1 .text style="font-size: 18pt;"}
+~~~{#ex1 .text style="font-size: 70%;"}
 Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 30]
 Depois de chamar a função: [1, 2, 3]
@@ -291,7 +289,7 @@ Depois de chamar a função: [1, 2, 3]
 
 - Alterar valor **modifica** a lista externamente:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 80%;"}
 def func(v):
     v[0] = 10
     v[1] = 20
@@ -303,7 +301,7 @@ func(l)
 print("Depois de chamar a função:", l)
 ~~~
 
-~~~{#ex1 .text style="font-size: 18pt;"}
+~~~{#ex1 .text style="font-size: 70%;"}
 Antes de chamar a função: [1, 2, 3]
 Dentro da função: [10, 20, 3]
 *Depois de chamar a função: [10, 20, 3]
@@ -317,7 +315,7 @@ Dentro da função: [10, 20, 3]
 - Exemplo retornando lista:
 
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 def pares(x, y):
     lista = []
     for i in range(x, y+1):
@@ -328,7 +326,7 @@ def pares(x, y):
 print(pares(3, 10))
 ~~~
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 [4, 6, 8, 10]
 ~~~
 
@@ -336,7 +334,7 @@ print(pares(3, 10))
 
 - Exemplo retornando tupla:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 # Função que retorna o menor elemento e sua posição no vetor.
 def menor(vet):
     if len(vet) <= 0:
@@ -360,7 +358,7 @@ if r != None:
 
 - Exemplo retornando dicionário:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 # Obtem do usuário dados de uma agenda telefônica.
 def obtem_agenda():
     agenda = {}
@@ -380,11 +378,11 @@ print(agenda)
 
 # Exercícios (III)
 
-## Para cada código abaixo, indique o que será impresso:
+### Para cada código abaixo, indique o que será impresso:
 
 :::::{.columns}
-::::{.column width=45%}
-~~~{#ex1 .python}
+::::{.column width=45% }
+~~~{#ex1 .python style="font-size: 90%;"}
 # Programa 3:
 def f3(x, y):
     y = y - x
@@ -401,7 +399,7 @@ print(x, y)
 
 ::::
 ::::{.column width=45%}
-~~~{#ex1 .python}
+~~~{#ex1 .python style="font-size: 90%;"}
 # Programa 4:
 def f4(y):
     y = y + 10
@@ -417,7 +415,7 @@ print(x, y)
 
 # Exercícios (IV)
 
-## Para cada item, escreva um programa em Python que:
+### Para cada item, escreva um programa em Python que:
 
 1. Escreva uma função que calcule o fatorial de um dado $n$.
     - Exemplo: para $n = 5$, $fat(n) = 5 \times 4 \times 3 \times 2 \times 1$.
@@ -495,19 +493,123 @@ $$fib(n) = \left\{ \begin{array}{ll}
 
 # Exercício (VI)
 
-1. Escreva uma função recursiva que calcule o exponencial de um $x$ elevado a $n$.
-    - Isto é, $exponencial(x, n)$
+1. Escreva uma função recursiva que calcule a potência de um $x$ elevado a $n$.
+    - Isto é, $potencia(x, n)$
+    - Isto é, o mesmo que `x**n`
 
 # Solução
 
 ~~~{#id .python }
-def exponencial(x, n):
+def potencia(x, n):
     if n == 0:
         return 1
     else:
-        return(x * exponencial(x, n-1))
+        return(x * potencia(x, n-1))
 ~~~
 
+# Função anónima: lambda
+
+- Python permite criar função *sem nome*.
+- Sintaxe: **`lambda argumentos: expressão`**
+- Exemplo:
+~~~{#id .python }
+print((lambda x: x**2 - x + 2)(10))
+~~~
+- Exemplo com atribuição de nome:
+~~~{#id .python }
+nome_func = lambda x: x**2 - x + 2
+print("y = ", nome_func(10))
+~~~
+
+
+# Função anónima: lambda *vs.* definição de função
+
+:::::{.columns}
+::::{.column width=45%}
+
+- Função lambda:
+
+~~~{#id .python }
+nome_func = lambda x: x**2 - x + 2
+
+print("y = ", nome_func(4))
+~~~
+::::
+::::{.column width=10%}
+
+::::
+::::{.column width=45%}
+
+- Definição de função:
+
+~~~{#id .python }
+def nome_func(x):
+    return(x**2 - x + 2)
+
+print("y = ", nome_func(4))
+~~~
+::::
+:::::
+
+# Uso do lambda
+
+- Bom para realizar operações curtas.
+- Quando deseja-se aplicar uma função simples a uma série de elementos.
+    - Por exemplo, elevar ao quadrado todos os elementos de uma lista.
+- Usado em diversos módulos de Python para análise de dados.
+    - Por exemplo, módulo *pandas*.
+
+# Exemplo com Argumento *key* de função *sorted*
+
+- Objetivo: mostrar ordenação de dicionário por valor.
+    - Uso do argumento `key` da função `sorted` do Python.
+    - `key` (opcional) aceita função para decidir a ordem.
+    
+~~~{#id .python style="font-size: 90%;"}
+frutas={'laranja':30, 'maçã': 25, 'morango': 40, 'uva': 25}
+
+for e in sorted(frutas, key=lambda f: frutas[f]):
+    print(e, frutas[e])
+~~~
+
+~~~{#id .csv style="font-size: 70%;"}
+maçã 25
+uva 28
+laranja 30
+morango 40
+~~~
+
+# Uso do lambda: filter
+
+- Função *built-in* `filter`.
+- Aplica um filtro (função que retorna verdadeiro ou falso) a cada elemento de uma lista/tupla.
+    - Retorna um objeto *filter* que pode ser convertido para lista ou tupla.
+- Exemplo: filtrar todos os elementos pares de uma tupla:
+
+~~~{#id .python style="font-size: 90%;"}
+tupla = (1, 5, 8, 9, 2, 3, 15, 18)
+print(list(filter(lambda arg: arg % 2 == 0, tupla)))
+~~~
+
+~~~{#id .csv style="font-size: 70%;"}
+[8, 2, 18]
+~~~
+
+# Uso do lambda: map
+
+- Função *built-in* `map`.
+- Aplica um mapa (resultado de uma função) a cada elemento de uma lista/tupla.
+    - Retorna um objeto *map* que pode ser convertido para lista ou tupla.
+- Exemplo: elevar ao cubo todos os elementos de uma lista:
+
+~~~{#id .python style="font-size: 90%;"}
+lista = [1, 5, -8, 9, 2, 3, -15, 18]
+print(list(filter(lambda x: x**3, lista)))
+~~~
+
+~~~{#id .csv style="font-size: 70%;"}
+[1, 125, -512, 729, 8, 27, -3375, 5832]
+~~~
 
 # Manipulação de Strings em Python {.part}
 
@@ -531,21 +633,21 @@ def exponencial(x, n):
 
 - Acesso à letra:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 palavra = 'banana'
 print(palavra[2])
 ~~~
 
 - Tamanho de string:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 palavra = 'banana'
 print(len(palavra))
 ~~~
 
 - Pertinência de letra:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 palavra = 'banana'
 if 'ana' in palavra:
     print(palavra, "contém 'ana'.")
@@ -569,19 +671,19 @@ else:
 ::::{.column width=40%}
 Saída:
 
-~~~{#exSaida .text style="font-size: 18pt;"}
+~~~{#exSaida .text style="font-size: 75%;"}
 n
 ~~~
 
 Saída:
 
-~~~{#exSaida .text style="font-size: 18pt;"}
+~~~{#exSaida .text style="font-size: 75%;"}
 6
 ~~~
 
 Saída:
 
-~~~{#exSaida .text style="font-size: 18pt;"}
+~~~{#exSaida .text style="font-size: 75%;"}
 banana contém 'ana'.
 ~~~
 ::::
@@ -593,21 +695,21 @@ banana contém 'ana'.
 ::::{.column width=50%}
 - Concatenar strings:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 palavra = 'ban' + 'ana'
 print(palavra)
 ~~~
 
 - Multiplicar string:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 palavra = 3*'blá '
 print(palavra)
 ~~~
 
 - Iterar em uma string:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 palavra = 'banana'
 cont_a = 0
 for letra in palavra:
@@ -633,19 +735,19 @@ palavra)
 ::::{.column width=40%}
 Saída:
 
-~~~{#exSaida .text style="font-size: 18pt;"}
+~~~{#exSaida .text style="font-size: 75%;"}
 banana
 ~~~
 
 Saída:
 
-~~~{#exSaida .text style="font-size: 18pt;"}
+~~~{#exSaida .text style="font-size: 75%;"}
 blá blá blá
 ~~~
 
 Saída:
 
-~~~{#exSaida .text style="font-size: 18pt;"}
+~~~{#exSaida .text style="font-size: 75%;"}
 Existem 3 letras 'a'
 em banana
 ~~~
@@ -720,9 +822,7 @@ rjust   | d, c (opcional)     | Retorna string alinhada à direita em d quantida
 ljust   | d, c (opcional)     | Retorna string alinhada à esquerda em d quantidade de caracteres, complementando com c (caractere).
 :::
 
-- Para ver mais, acesse:
-
-https://wiki.python.org.br/ManipulandoStringsComPython
+- Para ver mais, aceder: https://wiki.python.org.br/ManipulandoStringsComPython
 
 # Exercício (VII)
 
@@ -739,7 +839,7 @@ https://wiki.python.org.br/ManipulandoStringsComPython
     - Usar comando `try-except`
 - Como usar para este fim:
 
-~~~{#ex1 .python style="font-size: 18pt;"}
+~~~{#ex1 .python style="font-size: 75%;"}
 try:
     n = int(input("Entre com um número: "))
 except ValueError:

@@ -169,9 +169,8 @@ if __name__ == "__main__":
 
 - Suponha uma aplicação de _webmail_.
 	- Queremos disponibilizar a caixa de entrada e a caixa de _spam_ ao utilizador.
-	- Considere o seguinte trecho de código Flask:
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 20px;"}
 from markupsafe import escape
 
 @app.route("/<name>/inbox")
@@ -185,15 +184,15 @@ def spam(name):
     return f"Conteudo da caixa de spam do usuario {escape(name)}: ..."
 ```	
 
-- No decorador `route()`, definimos _templates_ de caminhos contendo o modificador `<name>`.
+- Decorador `route()`: define _templates_ de caminhos contendo o modificador `<name>`.
 	- Caminhos como `/fernanda/spam` e `/fernanda/inbox` são automaticamente mapeados para as funções certas.
 	- E `fernanda` é mapeado para o parâmetro `name` das funções.
 
-::::::{.block .centered style="position: absolute; right: 10px; bottom: 30%; width: 30%;"}
+::::::{.block .centered style="position: absolute; right: 2%; bottom: 30%; width: 35%;"}
 :::{.blocktitle}
 Importante!
 :::
-- Repare no uso da função `escape()` da biblioteca _markupsafe_.
+- Note o uso da função `escape()` da biblioteca _markupsafe_.
 	- Sanitiza a string (passada pelo utilizador) contra possíveis ataques de injeção de código.
 ::::::
 
@@ -204,7 +203,7 @@ Importante!
 
 :::::{.columns}
 :::{.column width=50%}
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 20px;"}
 @app.route("/login/<int:id>")
 def login(id):
     return f"ID recebido foi: {id}"
@@ -215,7 +214,7 @@ def login(id):
 :::
 :::{.column width=50%}
 
-::::{.center style="line-height: 90%; font-size: 16px;"}
+::::{.center style="line-height: 90%; font-size: 60%;"}
 | Modificador | Significado                     |
 | ----------- | ------------------------------- |
 | `int`       | Números inteiros positivos      |
@@ -240,7 +239,7 @@ def login(id):
 
 - Considere o seguinte trecho de código:
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 70%;"}
 @app.route("/teste/minhaFuncao/")
 def f():
     return "Qualquer coisa"
@@ -249,7 +248,7 @@ def f():
 - Claramente, função é acessível pelo caminho `/teste/minhaFuncao/`.
 - Mas **também** é acessível pelo caminho `/teste/minhaFuncao`
 - Por outro lado:
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 70%;"}
 @app.route("/teste/minhaFuncao2")
 def f2():
     return "Qualquer coisa"
@@ -262,7 +261,7 @@ def f2():
 - É possível associar mais que um caminho para uma mesma função.
 - Exemplo:
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 80%;"}
 @app.route("/teste/minhaFuncao2")
 @app.route("/teste/outroNome")
 def f():
@@ -286,7 +285,7 @@ def f():
 
 - Usaremos `redirect` e `url_for` neste exemplo (devem ser importados!).
 
-```{.Python .numberLines style="font-size: 17px;"}
+```{.Python .numberLines style="font-size: 70%;"}
 from flask import Flask, redirect, url_for
 
 appFlask = Flask(__name__)
@@ -318,7 +317,7 @@ if __name__ == '__main__':
 - Entretanto, podemos solicitar que outros tipos de requisição sejam direcionados às nossas funções.
 - Exemplo:
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 70%;"}
 from flask import request
 
 @app.route('/alunos', methods=['GET', 'POST'])
@@ -335,7 +334,7 @@ def alunos():
 	- Desde que associado a **tipos de requisição diferentes**.
 - Exemplo:
 
-```{.Python .numberLines style="font-size: 18px;"}
+```{.Python .numberLines style="font-size: 80%;"}
 @app.route('/alunos2', methods=['GET'])
 def alunosGET():
     return listaAlunos()
@@ -378,7 +377,7 @@ def alunosPOST():
 
 :::::{.columns}
 :::{.column width=50%}
-```{.HTML .numberLines style="font-size: 16px;"}
+```{.HTML .numberLines style="font-size: 60%;"}
 <html>
     <head></head>
     <body>
@@ -407,7 +406,7 @@ def alunosPOST():
 :::
 :::{.column width=50%}
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 60%;"}
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -443,8 +442,8 @@ if __name__ == "__main__":
 - Nova versão da calculadora:
 
 :::::{.columns}
-:::{.column width=50%}
-```{.HTML .numberLines style="font-size: 16px;"}
+:::{.column width=48%}
+```{.HTML .numberLines style="font-size: 60%;"}
 <html>
     <head></head>
     <body>
@@ -473,9 +472,9 @@ if __name__ == "__main__":
 </html>
 ```
 :::
-:::{.column width=50%}
+:::{.column width=52%}
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 60%;"}
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -507,7 +506,7 @@ if __name__ == "__main__":
 
 :::::{.columns}
 :::{.column width=50%}
-```{.HTML .numberLines style="font-size: 16px;"}
+```{.HTML .numberLines style="font-size: 60%;"}
 <html>
     <head></head>
     <body>
@@ -526,7 +525,7 @@ if __name__ == "__main__":
 :::
 :::{.column width=50%}
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 60%;"}
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -555,7 +554,7 @@ if __name__ == "__main__":
 - Suponha que desejemos melhorar um pouco a visualização dos resultados da calculadora.
 - Em particular, queremos colocar bordas na tabela/células.
 - Para isso, crimos um pequeno ficheiro CSS chamado `calculadora.css`:
-```{.CSS .numberLines style="font-size: 20px;"}
+```{.CSS .numberLines style="font-size: 80%;"}
 table, td, th {
     border: 1px solid;
     border-collapse: collapse;
@@ -570,18 +569,20 @@ table, td, th {
 	1. Colocar `calculadora.css` no diretório `static`.
 	2. Ao carregar o CSS no template, usar a função `url_for()`.
 
-```{.HTML .numberLines style="font-size: 20px;"}
+```{.HTML .numberLines style="font-size: 80%;"}
 <link rel="stylesheet" type="text/css"
 	href={{url_for('static', filename='calculadora.css')}} />
 ```
 
-::::::{.block .centered style="position: absolute; bottom: 5%; right: 15px; width: 40%;"}
+
+::::::{.block .centered style="position: absolute; bottom: 10%; right: 2%; width: 33%;"}
 :::{.blocktitle}
 Nota
 :::
 - `url_for` não é estritamente necessário.
 - `/static/calculadora.css` funcionaria na maioria dos casos.
 - Mas certos cenários podem necessitar de caminhos diferentes.
+- Uso é recomendável.
 ::::::
 
 # Atividade II
@@ -628,7 +629,7 @@ Nota
 :::
 :::{.column width=40%}
 
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 60%;"}
 from flask import Flask, request
 app = Flask(__name__)
 
@@ -673,33 +674,33 @@ if __name__ == "__main__":
 
 :::::{.columns}
 :::{.column width=50%}
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python style="font-size: 60%;"}
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
 def verificaLogin(username, password):
 
-    if username == "pedro" and password == "123456":
-        return True
-    return False
+   if username == "pedro" and password == "123456":
+      return True
+   return False
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
 
-    if request.method == 'POST':
-        if verificaLogin(request.form['username'], 
-                request.form['password']):
-            return 'Login bem sucedido!'
-        else:
-            return 'Nome do utilizador ou palavra-passe inválidos!'
-    return render_template('login.html')
+   if request.method == 'POST':
+      if verificaLogin(request.form['username'], 
+         request.form['password']):
+         return 'Login bem sucedido!'
+      else:
+         return 'Nome do utilizador ou palavra-passe inválidos!'
+   return render_template('login.html')
 
 if __name__ == "__main__":
-    app.run(debug=False)
+   app.run(debug=False)
 ```
 :::
 :::{.column width=50%}
-```{.html .numberLines style="font-size: 16px;"}
+```{.html style="font-size: 60%;"}
 <html>
     <head></head>
     <body>
@@ -707,7 +708,8 @@ if __name__ == "__main__":
 
         Por favor, forneça suas credenciais:<br>
         <form action="/login" method="post">
-            <label for="username">Nome do utilizador:</label><br>
+            <label for="username">Nome do utilizador:</label>
+			<br>
             <input type="text" 
 				id="username" 
 				name="username" value=""><br>
@@ -786,8 +788,8 @@ Note
 # Flask: Exemplo de Cookies
 
 :::::{.columns}
-:::{.column width=55%}
-```{.Python .numberLines style="font-size: 16px;"}
+:::{.column width=50%}
+```{.Python style="font-size: 60%;"}
 from flask import Flask, request, make_response
 app = Flask(__name__)
 
@@ -798,7 +800,7 @@ def adicionaAoCesto():
     prodID = request.args.get('prodID')
     userID = request.cookies.get('userID')
     cestos[userID].append(prodID)
-    return f"Produto adicionado! Cesto agora tem:<br> {cestos[userID]}"
+    return f"Produto adicionado! Cesto contém:<br> {cestos[userID]}"
 
 @app.route("/atribuiID")
 def atribuiID():
@@ -814,11 +816,12 @@ if __name__ == "__main__":
 ```
 
 :::
-:::{.column width=45%}
+:::{.column width=50%}
 - Protótipo de _backend_ de comércio eletrônico.
 - No primeiro acesso ao sistema, utilizador acessa `/atribuiID`
 	- Gera um ID.
-		- Por simplicidade, estático. Na prática, único para cada utilizador.
+		- Por simplicidade, estático. 
+		- Na prática, único para cada utilizador.
 - Ao carregar em botões "Adicionar ao Cesto" no _frontend_, requisições são feitas para `/adicionaAoCesto`
 	- ID do produto passado como argumento na forma de _query string_.
 	- ID do utilizador extraído a partir do _cookie_.
@@ -841,7 +844,7 @@ if __name__ == "__main__":
 # Flask: Sessões
 
 - Além do suporte de baixo nível a _cookies_, Flask disponibiliza um mecanismo de alto nível de **sessões**.
-	- Construído sobre _cookies_, mas mais prático e seguro.
+	- Construído sobre _cookies_, porém mais prático e seguro.
 - Um objeto `session` é disponibilizado para todos os métodos, identificando a sessão correspondente à requisição.
 	- **Sessão**: sequência de requisições de um mesmo utilizador/navegador.
 - Aplicação pode gravar dados no objeto `session` e lê-los em outras requisições da mesma sessão.
@@ -853,8 +856,8 @@ if __name__ == "__main__":
 # Flask: Cesto de Compras com Sessões
 
 :::::{.columns}
-:::{.column width=55%}
-```{.Python .numberLines style="font-size: 16px;"}
+:::{.column width=56%}
+```{.Python .numberLines style="font-size: 60%;"}
 from flask import Flask, request, session
 app = Flask(__name__)
 app.secret_key = b'((s23e__#i54e/*!'
@@ -865,7 +868,7 @@ def adicionaAoCesto():
     prodID = request.args.get('prodID')
     userID = session['userID']
     cestos[userID].append(prodID)
-    return f"Produto adicionado! Cesto agora tem:<br> {cestos[userID]}"
+    return f"Produto adicionado! Cesto contém:<br> {cestos[userID]}"
 
 @app.route("/atribuiID")
 def atribuiID():
@@ -880,7 +883,7 @@ if __name__ == "__main__":
 ```
 
 :::
-:::{.column width=45%}
+:::{.column width=44%}
 - Mesma lógica anterior, mas sem uso explícito de _cookies_.
 - Para usar o `session` é **obrigatório definir uma chave secreta**.
 	- _String_ em `app.secret_key`.
@@ -900,7 +903,7 @@ if __name__ == "__main__":
 :::
 :::::
 
-- **Repare**: valor armazenado no _cookie_ (ID do utilizador) é **criptografado**.
+- **Note**: valor armazenado no _cookie_ (ID do utilizador) é **criptografado**.
 
 # Flask: Redirecionamentos
 
@@ -912,8 +915,10 @@ if __name__ == "__main__":
 	- Redirecionar utilizador não autenticado para página de _login_.
 	- Após login bem sucedido, redirecionar para página principal.
 :::
-:::{.column width=60%}
-```{.Python .numberLines style="font-size: 16px;"}
+:::{.column width=3%}
+:::
+:::{.column width=57%}
+```{.Python .numberLines style="font-size: 55%;"}
 from flask import Flask, request, render_template, session, redirect, url_for
 app = Flask(__name__)
 app.secret_key = b'((s23e__#i54e/*!'
@@ -977,7 +982,7 @@ if __name__ == "__main__":
 
 :::::{.columns}
 :::{.column width=50%}
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 70%;"}
 from flask import Flask
 app = Flask(__name__)
 
@@ -995,7 +1000,7 @@ if __name__ == "__main__":
 ```
 :::
 :::{.column width=50%}
-```{.Python .numberLines style="font-size: 16px;"}
+```{.Python .numberLines style="font-size: 70%;"}
 from flask import Flask, jsonify
 app = Flask(__name__)
 
