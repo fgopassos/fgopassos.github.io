@@ -189,7 +189,7 @@ Node.js
 
 # Javascript: _Hello World_
 
-```{.html .numberLines style="font-size: 16px;"}
+```{.html .numberLines style="font-size: 80%;"}
 <html>
 	<head>
         <script type="text/javascript">
@@ -221,7 +221,7 @@ Node.js
 	- Com `let`: variável que pode ser lida ou escrita declarada no escopo do bloco atual.
 - Nos três casos, a declaração é similar:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a, b = 3;
 const c = 50;
 let d;
@@ -306,7 +306,7 @@ let d;
 	- Nem sempre têm o mesmo efeito dos operadores `==` e `!=`.
 - Exemplo:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a = 0;
 var b = "";
 alert("a == b? " + (a == b));
@@ -317,17 +317,20 @@ alert("a === b? " + (a === b));
 
 </iframe>
 
-# Javascript: Atribuição
+# Javascript: Afetação (I)
 
-- Variáveis podem ter seus valores alterados através da operação de atribuição.
+- Variáveis podem ter seus valores alterados através da operação de afetação.
 	- Exceto pelas declaradas com `const`!
 	- Resulta em exceção/erro de execução.
-- Operador de atribuição é o caractere `=`, comando de atribuição sempre terminado em `;`.
+- Operador de afetação é o caractere `=`, comando de afetação sempre terminado em `;`
 - O valor atrubuído pode ser uma outra variável, uma constante literal, ou qualquer expressão (_e.g._, lógica, aritimética).
-- Atribuição pode ser combinada com operadores aritméticos.
+- Afetação pode ser combinada com operadores aritméticos.
+
+# Javascript: Afetação (II)
+
 - Exemplos:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a, b = 3;
 var c;
 
@@ -347,7 +350,7 @@ a /= 3;
 	- `"string" + " concatenada"`.
 - Comprimento de uma string pode ser verificado com a propriedade `length`.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 var a = "Teste"
 var b = "Javascript";
 var mensagemCompleta = a + b;
@@ -362,14 +365,13 @@ var l = mensagemCompleta.length;
 	- Estruturas do tipo `switch/case`.
 	- O operador ternário `?`.
 - Em todos os casos, sintaxe idêntica a de linguagens como C e Java.
-- Exemplos:
 
 ::::
 
 :::::{.columns}
 :::{.column width=33%}
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 75%;"}
 if (a > 0) b = 3;
 if (c == 4 && b <= 1) {
 	a += 10;
@@ -381,7 +383,7 @@ else a -= 10;
 
 :::{.column width=34%}
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 75%;"}
 switch(a) {
 	case 1:
 		b = 10;
@@ -398,7 +400,7 @@ switch(a) {
 
 :::{.column width=33%}
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 75%;"}
 b = (a < 0) ? -a : a; 
 ```
 
@@ -432,7 +434,7 @@ b = (a < 0) ? -a : a;
 	- Sai imediatamente do `switch/case`.
 	- Sem `break`, **execução continua** para as linhas abaixo, **mesmo associadas a outras condições**:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 60%;"}
 switch(a) {
 	case 1:
 		b = 10; // b recebe 10 aqui, mas execução continua.
@@ -476,7 +478,7 @@ switch(a) {
 ### Sintaxe Geral
 :::::::
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript style="font-size: 70%;"}
 for (cmd1 ; cond ; cmd2) {
 	// Bloco de código a ser executado.
 }
@@ -493,7 +495,7 @@ for (cmd1 ; cond ; cmd2) {
 # Javascript: Exemplo de Repetição com `for`
 
 - Calcular $\displaystyle\sum_{a=0}^{9}{a^2}$:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a, b = 0;
 for (a = 0; a < 10; a++) {
 	b += a**2;
@@ -506,15 +508,15 @@ for (a = 0; a < 10; a++) {
 
 - Sintaxe geral:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript style="font-size: 80%;"}
 while(cond) {
 	// Comandos
 }
 ```	
 
-- Note: assim como no `if` e no `for`, chaves são opcionais se corpo da repetição tem apenas um comando.
-- Exemplo
-```{.javascript .numberLines style="font-size: 16px;"}
+- Note: chaves também são opcionais se corpo da repetição tem apenas um comando.
+- Exemplo:
+```{.javascript .numberLines style="font-size: 80%;"}
 var a = 0, b = 0;
 while (a < 10) {
 	b += a**2;
@@ -522,21 +524,25 @@ while (a < 10) {
 }
 ```	
 
-# Javascript: Repetição com `do/while`
+# Javascript: Repetição com `do/while` (I)
 
 - Similar à repetição com `do`, mas teste é realizado **após** cada iteração.
 	- Garante que **ao menos uma iteração** é executada.
 - Sintaxe geral:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 do {
 	// Comandos
 } while(cond);
 ```	
 
-- Note: assim como no `if` e no `for`, chaves são opcionais se corpo da repetição tem apenas um comando.
-- Exemplo
-```{.javascript .numberLines style="font-size: 16px;"}
+- Note: chaves também são opcionais se corpo da repetição tem apenas um comando.
+
+# Javascript: Repetição com `do/while` (II)
+
+- Exemplo:
+
+```{.javascript .numberLines style="font-size: 70;"}
 var a = 0, b = 0;
 do {
 	b += a**2;
