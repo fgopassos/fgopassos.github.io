@@ -1,6 +1,5 @@
 ---
 author: Fernanda Passos
-date: 30 de Novembro de 2021
 subtitle: Linguagem de Programação
 title: Aplicações Web e Javascript
 institute: Universidade Atlântica
@@ -12,7 +11,8 @@ logo: ../atlantica_logo2.svg
 # Aplicação Web: Definição
 
 :::::{.columns}
-::::{.column style="width:45%; padding-top: 100px;"}
+::::{.column style="width:45%; padding-top: 15%;"}
+
 - Aplicação computacional **distribuída**.
 	- **Partes** executadas em **dispositivos diferentes**.
 - Nomeadamente:
@@ -20,11 +20,12 @@ logo: ../atlantica_logo2.svg
 	- Servidor.
 - Comunicação utilizando HTTP.
 	- Requisições e respostas.
+
 ::::
-::::{.column width=55%}
+::::{.column style="width:55%; padding-top: 10%;"}
 
 :::::::{.center}
-![](imagens/appWeb.png){#appWeb width="50%"}
+![](imagens/appWeb.png){#appWeb width="45%"}
 :::::::
 
 ::::
