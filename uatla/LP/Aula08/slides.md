@@ -20,7 +20,7 @@ Definição de ficheiro:
 ::::::
 
 :::::::{.center}
-![](imagens/ficheiros.jpg){#ficheiro width=40%}
+![](imagens/ficheiros.jpg){#ficheiro width=30%}
 :::::::
 
 # Tipos de Ficheiros
@@ -33,7 +33,7 @@ Definição de ficheiro:
     - Extensão `.txt`
 
 :::::::{.center}
-![](imagens/ficheiro_texto.png){#ficheiroTexto width=12%}
+![](imagens/ficheiro_texto.png){#ficheiroTexto width=8%}
 :::::::
 
 # Armazenamento de Ficheiros
@@ -47,7 +47,7 @@ Definição de ficheiro:
     - Exceto quando o ficheiro está no mesmo diretório (pasta) do programa, não é necessário o caminho.
 
 :::::::{.center}
-![](imagens/local.png){#ficheiroLocal width=75%}
+![](imagens/local.png){#ficheiroLocal width=60%}
 :::::::
 
 # Leitura e Escrita em Ficheiros Texto em Python {.part}
@@ -83,16 +83,23 @@ ficheiro = open("exemplo.txt", "r")
 
 # Obter Dados de Ficheiro em Python
 
-- O `open` só prepara para a leitura de um ficheiro.
+:::::{.columns}
+::::{.column width=50%}
+
+- A função `open()` apenas prepara para a leitura de um ficheiro.
 - Para ler dados do ficheiro, Python disponibiliza alguns métodos:
     - `read`: lê todo o ficheiro e retorna uma string com seu conteúdo texto.
     - `readline`: lê apenas a primeira linha e a retorna em forma de string.
     - `readlines`: lê todo o ficheiro e retorna uma lista de linhas (string).
 - Para os exemplos a seguir, considere o seguinte conteúdo de ficheiro:
+::::
+::::{.column width=50%}
 
 :::::::{.center}
-![](imagens/ex_ficheiro.png){#exFicheiro width=30%}
+![](imagens/ex_ficheiro.png){#exFicheiro width=90%}
 :::::::
+::::
+:::::
 
 # Obter Dados de um Ficheiro em Python (II)
 
@@ -159,33 +166,33 @@ for linha in ficheiro:
 # Fechar um ficheiro em Python
 
 - Se o ficheiro foi aberto (`open`), ele deve ser fechado depois de usado.
-- O método é o `close`.
+- O método é o `close()`.
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size: 80%;"}
 ficheiro = open("exemplo.txt", "r")
 linha1 = ficheiro.readline()
 print(linha1)
 ficheiro.close()
 ~~~
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size: 80%;"}
 ficheiro = open("exemplo.txt", "r")
 for linha in ficheiro:
     print(linha, end="")
 ficheiro.close()
 ~~~
 
-- Sempre que tiver um *open*, deve ter um *close* associado ao ficheiro.
+- Sempre que houver um *open*, deve haver um *close* associado ao ficheiro.
 
 # Exercício (I)
 
-1. Baixe o ficheiro texto <a href="ficheiros/numeros.txt" target="_blank">numeros.txt</a>.
+1. Descarregue o ficheiro texto <a href="ficheiros/numeros.txt" target="_blank">numeros.txt</a>.
 2. Escreva um programa que imprima todos os números primos existentes neste ficheiro.
-3. Baixe o ficheiro texto <a href="ficheiros/lista_frutas.txt" target="_blank">lista_frutas.txt</a>.
+3. Descarregue o ficheiro texto <a href="ficheiros/lista_frutas.txt" target="_blank">lista_frutas.txt</a>.
 4. Escreva um programa que leia os elementos nesta lista e a apresente de forma ordenada.
     - Use o método `sort` de lista ou a função `sorted`.
     - Consulte: https://docs.python.org/3/howto/sorting.html
-5. Baixe o ficheiro texto <a href="ficheiros/matriz.txt" target="_blank">matriz.txt</a>.
+5. Descarregue o ficheiro texto <a href="ficheiros/matriz.txt" target="_blank">matriz.txt</a>.
 6. Calcule a soma dos elementos da diagonal principal.
 
 # Abrir Ficheiros para Escrita em Python
@@ -211,7 +218,7 @@ ficheiro = open("exemplo2.txt", "w")
 ficheiro = open("exemplo2.txt", "w")
 lista = ["Primeira linha.", "Segunda linha."]
 for i in lista:
-*    ficheiro.write(i+"\n")
+    ficheiro.write(i+"\n")
 ficheiro.close()
 ~~~
 
@@ -222,7 +229,7 @@ ficheiro.close()
 ~~~{#ex .python}
 ficheiro = open("exemplo3.txt", "w")
 lista = ["Primeira linha.\n", "Segunda linha.\n"]
-*ficheiro.writelines(lista)
+ficheiro.writelines(lista)
 ficheiro.close()
 ~~~
 
@@ -244,11 +251,13 @@ for i in lista:
 ficheiro.close()
 ~~~
 
-# Tratar Exceções ao Abrir Ficheiros Python
+# Tratar Exceções ao Usar Ficheiros Python
 
-- É correto sempre usar o try-except ao abrir um ficheiro.
+- É correto sempre usar o try-except ao abrir um ficheiro bem como ao ler e escrever conteúdo.
+    - Isto é, em todos os casos que exceções podem ser lançadas.
+    - Ficheiro é algo externo ao programa!
 
-~~~{#ex .python}
+~~~{#ex .python style="font-size: 90%;"}
 try:
     ficheiro = open("exemplo.txt", "r")
     linha1 = ficheiro.readline()
@@ -258,21 +267,41 @@ except Exception as mensagem:
     print(str(mensagem))
 ~~~
 
-- Neste exemplo, usamos `except Exception as mensagem`
-    - Isto quer dizer: capturar qualquer erro em `mensagem`.
-    - Fazendo `str(mensagem)`, obtemos a mensagem de erro que apareceria.
-        - Mas não aborta o programa, pois você está controlando isso.
+# Tratar Exceções: Tipos
+
+:::::{.columns}
+::::{.column width=40%}
+
+- Tipos de exceções *built-in* de Python:
+    - Segue hierarquia de exceções.
+    - Todas herdam de `BaseException`.
+    - Exceções de *runtime* herdam de `Exception`.
+    - Documentação:
+        - [https://docs.python.org/3/library/exceptions.html](https://docs.python.org/3/library/exceptions.html)
+::::
+::::{.column width=60%}
+
+:::::::{.center}
+![](imagens/pythonExceptionHierarchy.svg){#hierarquiaExcecoes width=100%}
+:::::::
+
+::::
+:::::
 
 # Exercício (II)
 
-1. Escreva um programa que guarde em um ficheiro a sequência Fibonacci até um dado índice $n$ (inclusive) e o valor de $n$.
+1. Escreva um programa que guarde em um ficheiro, linha a linha, o valor de $x$ e $y$, onde:
+    - $y = x^2 -2x +\frac{1}{3}$
+    - $x$ varia no intervalo de $[-10, 10]$ em passos de 0,1.
+
+<!-- 1. Escreva um programa que guarde em um ficheiro a sequência Fibonacci até um dado índice $n$ (inclusive) e o valor de $n$.
     - O ficheiro deve ser conforme o exemplo abaixo, para $n=10$:
 
 ~~~{#exSaida .text}
 10
 0 1 1 2 3 5 8 13 21 34
-~~~
+~~~ -->
 
-2. Escreva um programa que obtenha textos do usuário até que ele digite "sair" apenas. Salve tudo em um ficheiro chamado "texto.txt".
-    - Faça com que o o conteúdo antigo não seja apagado caso o usuário execute o programa novamente.
-3. Modifique o programa 1 do Exercício (I) para gerar um ficheiro com os nomes das frutas ordenado.
+2. Escreva um programa que obtenha textos do utilizador até que ele digite "sair" apenas. Guarde tudo em um ficheiro chamado "texto.txt".
+    - Faça com que o conteúdo antigo não seja apagado caso o utilizador execute o programa novamente.
+3. Modifique o programa 1 do Exercício (I) para gerar um ficheiro com os nomes das frutas ordenados.

@@ -116,7 +116,7 @@ Fernanda Passos
 <p>É um recurso para armazenamento de informação, que está disponível a um programa de computador.</p>
 </div>
 <div class="center">
-<p><img src="imagens/ficheiros.jpg" id="ficheiro" style="width:40.0%" /></p>
+<p><img src="imagens/ficheiros.jpg" id="ficheiro" style="width:30.0%" /></p>
 </div>
 </div>
 <div id="tipos-de-ficheiros" class="slide section level1">
@@ -134,7 +134,7 @@ Fernanda Passos
 </ul></li>
 </ul>
 <div class="center">
-<p><img src="imagens/ficheiro_texto.png" id="ficheiroTexto" style="width:12.0%" /></p>
+<p><img src="imagens/ficheiro_texto.png" id="ficheiroTexto" style="width:8.0%" /></p>
 </div>
 </div>
 <div id="armazenamento-de-ficheiros" class="slide section level1">
@@ -155,7 +155,7 @@ Fernanda Passos
 </ul></li>
 </ul>
 <div class="center">
-<p><img src="imagens/local.png" id="ficheiroLocal" style="width:75.0%" /></p>
+<p><img src="imagens/local.png" id="ficheiroLocal" style="width:60.0%" /></p>
 </div>
 </div>
 <div id="leitura-e-escrita-em-ficheiros-texto-em-python" class="slide section level1 part">
@@ -199,8 +199,10 @@ Fernanda Passos
 </div>
 <div id="obter-dados-de-ficheiro-em-python" class="slide section level1">
 <h1>Obter Dados de Ficheiro em Python</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>O <code>open</code> só prepara para a leitura de um ficheiro.</li>
+<li>A função <code>open()</code> apenas prepara para a leitura de um ficheiro.</li>
 <li>Para ler dados do ficheiro, Python disponibiliza alguns métodos:
 <ul>
 <li><code>read</code>: lê todo o ficheiro e retorna uma string com seu conteúdo texto.</li>
@@ -209,8 +211,11 @@ Fernanda Passos
 </ul></li>
 <li>Para os exemplos a seguir, considere o seguinte conteúdo de ficheiro:</li>
 </ul>
+</div><div class="column" style="width:50%;">
 <div class="center">
-<p><img src="imagens/ex_ficheiro.png" id="exFicheiro" style="width:30.0%" /></p>
+<p><img src="imagens/ex_ficheiro.png" id="exFicheiro" style="width:90.0%" /></p>
+</div>
+</div>
 </div>
 </div>
 <div id="obter-dados-de-um-ficheiro-em-python-ii" class="slide section level1">
@@ -272,32 +277,32 @@ Este ficheiro tem 2 linhas.
 <h1>Fechar um ficheiro em Python</h1>
 <ul>
 <li>Se o ficheiro foi aberto (<code>open</code>), ele deve ser fechado depois de usado.</li>
-<li>O método é o <code>close</code>.</li>
+<li>O método é o <code>close()</code>.</li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>ficheiro <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemplo.txt&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
+<div class="sourceCode" id="ex" style="font-size: 80%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>ficheiro <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemplo.txt&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
 <span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>linha1 <span class="op">=</span> ficheiro.readline()</span>
 <span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(linha1)</span>
 <span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>ficheiro.close()</span></code></pre></div>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>ficheiro <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemplo.txt&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
+<div class="sourceCode" id="ex" style="font-size: 80%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>ficheiro <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemplo.txt&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
 <span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> linha <span class="kw">in</span> ficheiro:</span>
 <span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(linha, end<span class="op">=</span><span class="st">&quot;&quot;</span>)</span>
 <span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>ficheiro.close()</span></code></pre></div>
 <ul>
-<li>Sempre que tiver um <em>open</em>, deve ter um <em>close</em> associado ao ficheiro.</li>
+<li>Sempre que houver um <em>open</em>, deve haver um <em>close</em> associado ao ficheiro.</li>
 </ul>
 </div>
 <div id="exercício-i" class="slide section level1">
 <h1>Exercício (I)</h1>
 <ol style="list-style-type: decimal">
-<li>Baixe o ficheiro texto <a href="ficheiros/numeros.txt" target="_blank">numeros.txt</a>.</li>
+<li>Descarregue o ficheiro texto <a href="ficheiros/numeros.txt" target="_blank">numeros.txt</a>.</li>
 <li>Escreva um programa que imprima todos os números primos existentes neste ficheiro.</li>
-<li>Baixe o ficheiro texto <a href="ficheiros/lista_frutas.txt" target="_blank">lista_frutas.txt</a>.</li>
+<li>Descarregue o ficheiro texto <a href="ficheiros/lista_frutas.txt" target="_blank">lista_frutas.txt</a>.</li>
 <li>Escreva um programa que leia os elementos nesta lista e a apresente de forma ordenada.
 <ul>
 <li>Use o método <code>sort</code> de lista ou a função <code>sorted</code>.</li>
 <li>Consulte: https://docs.python.org/3/howto/sorting.html</li>
 </ul></li>
-<li>Baixe o ficheiro texto <a href="ficheiros/matriz.txt" target="_blank">matriz.txt</a>.</li>
+<li>Descarregue o ficheiro texto <a href="ficheiros/matriz.txt" target="_blank">matriz.txt</a>.</li>
 <li>Calcule a soma dos elementos da diagonal principal.</li>
 </ol>
 </div>
@@ -328,7 +333,7 @@ Este ficheiro tem 2 linhas.
 <div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>ficheiro <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemplo2.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)</span>
 <span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">&quot;Primeira linha.&quot;</span>, <span class="st">&quot;Segunda linha.&quot;</span>]</span>
 <span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> lista:</span>
-<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a><span class="op">*</span>    ficheiro.write(i<span class="op">+</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>    ficheiro.write(i<span class="op">+</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
 <span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>ficheiro.close()</span></code></pre></div>
 </div>
 <div id="escrever-em-um-ficheiro-em-python-ii" class="slide section level1">
@@ -338,7 +343,7 @@ Este ficheiro tem 2 linhas.
 </ul>
 <div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a>ficheiro <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemplo3.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)</span>
 <span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">&quot;Primeira linha.</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="st">&quot;Segunda linha.</span><span class="ch">\n</span><span class="st">&quot;</span>]</span>
-<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a><span class="op">*</span>ficheiro.writelines(lista)</span>
+<span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>ficheiro.writelines(lista)</span>
 <span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>ficheiro.close()</span></code></pre></div>
 <ul>
 <li>Para adicionar quebra de linha, usar “”.</li>
@@ -363,45 +368,68 @@ Este ficheiro tem 2 linhas.
 <span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>    ficheiro.write(i<span class="op">+</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
 <span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>ficheiro.close()</span></code></pre></div>
 </div>
-<div id="tratar-exceções-ao-abrir-ficheiros-python" class="slide section level1">
-<h1>Tratar Exceções ao Abrir Ficheiros Python</h1>
+<div id="tratar-exceções-ao-usar-ficheiros-python" class="slide section level1">
+<h1>Tratar Exceções ao Usar Ficheiros Python</h1>
 <ul>
-<li>É correto sempre usar o try-except ao abrir um ficheiro.</li>
+<li>É correto sempre usar o try-except ao abrir um ficheiro bem como ao ler e escrever conteúdo.
+<ul>
+<li>Isto é, em todos os casos que exceções podem ser lançadas.</li>
+<li>Ficheiro é algo externo ao programa!</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="ex"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<div class="sourceCode" id="ex" style="font-size: 90%;"><pre class="sourceCode python"><code class="sourceCode python"><span id="ex-1"><a href="#ex-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="ex-2"><a href="#ex-2" aria-hidden="true" tabindex="-1"></a>    ficheiro <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;exemplo.txt&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
 <span id="ex-3"><a href="#ex-3" aria-hidden="true" tabindex="-1"></a>    linha1 <span class="op">=</span> ficheiro.readline()</span>
 <span id="ex-4"><a href="#ex-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(linha1)</span>
 <span id="ex-5"><a href="#ex-5" aria-hidden="true" tabindex="-1"></a>    ficheiro.close()</span>
 <span id="ex-6"><a href="#ex-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> mensagem:</span>
 <span id="ex-7"><a href="#ex-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(mensagem))</span></code></pre></div>
+</div>
+<div id="tratar-exceções-tipos" class="slide section level1">
+<h1>Tratar Exceções: Tipos</h1>
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
-<li>Neste exemplo, usamos <code>except Exception as mensagem</code>
+<li>Tipos de exceções <em>built-in</em> de Python:
 <ul>
-<li>Isto quer dizer: capturar qualquer erro em <code>mensagem</code>.</li>
-<li>Fazendo <code>str(mensagem)</code>, obtemos a mensagem de erro que apareceria.
+<li>Segue hierarquia de exceções.</li>
+<li>Todas herdam de <code>BaseException</code>.</li>
+<li>Exceções de <em>runtime</em> herdam de <code>Exception</code>.</li>
+<li>Documentação:
 <ul>
-<li>Mas não aborta o programa, pois você está controlando isso.</li>
+<li><a href="https://docs.python.org/3/library/exceptions.html">https://docs.python.org/3/library/exceptions.html</a></li>
 </ul></li>
 </ul></li>
 </ul>
+</div><div class="column" style="width:60%;">
+<div class="center">
+<p><img src="imagens/pythonExceptionHierarchy.svg" id="hierarquiaExcecoes" style="width:100.0%" /></p>
+</div>
+</div>
+</div>
 </div>
 <div id="exercício-ii" class="slide section level1">
 <h1>Exercício (II)</h1>
 <ol style="list-style-type: decimal">
-<li>Escreva um programa que guarde em um ficheiro a sequência Fibonacci até um dado índice <span class="math inline">\(n\)</span> (inclusive) e o valor de <span class="math inline">\(n\)</span>.
+<li>Escreva um programa que guarde em um ficheiro, linha a linha, o valor de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, onde:
 <ul>
-<li>O ficheiro deve ser conforme o exemplo abaixo, para <span class="math inline">\(n=10\)</span>:</li>
+<li><span class="math inline">\(y = x^2 -2x +\frac{1}{3}\)</span></li>
+<li><span class="math inline">\(x\)</span> varia no intervalo de <span class="math inline">\([-10, 10]\)</span> em passos de 0,1.</li>
 </ul></li>
 </ol>
-<pre id="exSaida" class="text"><code>10
-0 1 1 2 3 5 8 13 21 34</code></pre>
+<!-- 1. Escreva um programa que guarde em um ficheiro a sequência Fibonacci até um dado índice $n$ (inclusive) e o valor de $n$.
+    - O ficheiro deve ser conforme o exemplo abaixo, para $n=10$:
+
+~~~{#exSaida .text}
+10
+0 1 1 2 3 5 8 13 21 34
+~~~ -->
 <ol start="2" style="list-style-type: decimal">
-<li>Escreva um programa que obtenha textos do usuário até que ele digite “sair” apenas. Salve tudo em um ficheiro chamado “texto.txt”.
+<li>Escreva um programa que obtenha textos do utilizador até que ele digite “sair” apenas. Guarde tudo em um ficheiro chamado “texto.txt”.
 <ul>
-<li>Faça com que o o conteúdo antigo não seja apagado caso o usuário execute o programa novamente.</li>
+<li>Faça com que o conteúdo antigo não seja apagado caso o utilizador execute o programa novamente.</li>
 </ul></li>
-<li>Modifique o programa 1 do Exercício (I) para gerar um ficheiro com os nomes das frutas ordenado.</li>
+<li>Modifique o programa 1 do Exercício (I) para gerar um ficheiro com os nomes das frutas ordenados.</li>
 </ol>
 </div>
 </body>
