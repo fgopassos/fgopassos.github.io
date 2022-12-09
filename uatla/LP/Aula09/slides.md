@@ -542,7 +542,7 @@ do {
 
 - Exemplo:
 
-```{.javascript .numberLines style="font-size: 70;"}
+```{.javascript .numberLines style="font-size: 100%;"}
 var a = 0, b = 0;
 do {
 	b += a**2;
@@ -553,9 +553,8 @@ do {
 # Javascript: Funções
 
 - A sintaxe para definição de funções é um pouco diferente em Javascript em relação a C, Java:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 function nome([arg1 [, arg2 [, ...]]]) {
-
 	// Corpo da função
 	// Opcionalmente, função pode retornar algo:
 	return valor;
@@ -575,7 +574,7 @@ Observações
 # Javascript: Chamada de Funções
 
 - A sintaxe para chamada de funções é idêntica a C, Java:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 nome([arg1 [, arg2 [, ...]]]);
 ```	
 
@@ -589,7 +588,7 @@ Observações
 
 # Javascript: Exemplo de Uso de Funções
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 90%;"}
 function maior(a, b) {
 
 	if (a > b) return(a);
@@ -605,14 +604,21 @@ c = maior(a, b);
 
 # Javascript: Mais sobre Funções
 
+:::::{.columns}
+:::{.column width=50%}
+
 - Em Javascript, funções são **valores de primeira classe**.
 	- Funções podem:
 		- Ser passadas como parâmetros de outras funções.
 		- Ser retornadas como valores de retorno de outras funções.
 		- Ser atribuídas e armazenadas em variáveis.
-- Exemplo:
+- Javascript também suporta **recursão**.
+:::
 
-```{.javascript .numberLines style="font-size: 16px;"}
+:::{.column width=50%}
+- Exemplo de função como valor de primeira classe:
+
+```{.javascript .numberLines style="font-size: 80%;"}
 function sub(a, b) {
 	return(a - b);
 }
@@ -622,11 +628,13 @@ function soma(a, b) {
 function sel(f1, f2, s) {
 	return(s == 0 ? f1 : f2);
 }
-var f = sel(sub, soma, 1); // retorna função soma.
-f(10, 4); // executa a função soma.
+// Retorna função soma:
+var f = sel(sub, soma, 1);
+// Executa a função soma:
+f(10, 4);
 ```	
-
-- Javascript também suporta **recursão**.
+:::
+:::::
 
 # Javascript: Algumas Funções Nativas Úteis
 
@@ -650,7 +658,7 @@ f(10, 4); // executa a função soma.
 	- `console.log()`: imprime a mensagem especificada como argumento no _console_ do _browser_
 - Exemplo da `console.log()`:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 var a = 1;
 console.log("O valor de a é: ");
 console.log(a);
@@ -668,7 +676,7 @@ console.log(a);
 	- Texto inserido entre parênteses aparece na janela.
 - Exemplo:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var nome;
 nome = prompt("Digite seu nome:");
 alert('Olá ' + nome + '!')
@@ -707,7 +715,7 @@ alert('Olá ' + nome + '!')
 - Frequentemente, variáveis em Javascript armazenam **objetos**.
 - Objetos podem armazenar **múltiplos valores** na forma de **propriedades**:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 var carro = {
 	fabricante: "Fiat",
 	modelo: "Punto",
@@ -727,7 +735,7 @@ var carro = {
 	- Nesse caso, chamadas de **métodos**.
 - Dentro do **escopo** de um método, palavra-chave `this` referencia o objeto que o contém.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 var carro = {
 	fabricante: "Fiat",
 	modelo: "Punto",
@@ -746,12 +754,12 @@ var carro = {
 
 - Vetores permitem armazenar sequeências ou conjuntos de valores relacionados.
 - Para incializar um vetor vazio, há várias formas:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var vetorA = [];
 var vetorB = Array();
 ```	
 - Pode-se também criar um vetor já preenchido:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var carros = ["Fiat", "BMW", "Volvo"];
 var outrosCarros = Array("Fiat", "BMW", "Volvo");
 ```	
@@ -759,12 +767,12 @@ var outrosCarros = Array("Fiat", "BMW", "Volvo");
 # Javascript: Acesso a Elementos de Vetores
 
 - Elementos de um vetor são referenciados por seu índice usando parênteses retos:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 console.log(carros[1]);
 ```	
 - Note que os índices são contados **a partir do 0**.
 - Elementos também podem ser adicionados livremente com essa notação:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var carros = ["Fiat", "BMW", "Volvo"];
 carros[3] = "Opel";
 carros[10] = "Jeep";
@@ -777,12 +785,12 @@ carros[10] = "Jeep";
 Importante
 :::
 - Assim como variáveis, vetores em Javascript não tem um tipo explícito.
-- Logo, um mesmo vetor pode armazenar, em dado momento, elementos de vários tipos!
+- Logo, um mesmo vetor pode armazenar elementos de vários tipos!
 - Exemplo:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 var carros = ["Fiat", "BMW", "Volvo"];
-carros[3] = "57";
+carros[3] = 57; // tipo inteiro
 ```	
 
 ::::::
@@ -796,14 +804,14 @@ carros[3] = "57";
 - A estrutura `for ... of` varre elementos de um objeto **iterável**.
 	- _e.g._, um vetor.
 - Sintaxe geral:
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 for (variavel of vetor) {
   // Faça algo com 'variavel'
 }
 ```	
 - Exemplo:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 var carros = ["Fiat", "BMW", "Volvo"];
 var carro;
 for (carro of carros) alert(carro);
@@ -816,9 +824,8 @@ for (carro of carros) alert(carro);
 # Javascript: Repetições com `for...in`
 
 - Similar ao `for...of`, mas itera por **propriedades de um objeto**.
-- Exemplo:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 var carro = {
 	fabricante: "Fiat",
 	modelo: "Punto",
@@ -847,7 +854,7 @@ Importante
 	- Função.
 	- _i.e._, variáveis declaradas dentro de uma função são diferentes das globais.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a = 3;
 function f1() {
 	var a = 5;
@@ -864,14 +871,14 @@ f2();
 
 </iframe>
 
-# Javascript: Escopo de Bloco
+# Javascript: Escopo de Bloco (I)
 
-- Atualmente, Javascript conta também com os **escopos de blocos**
+- Atualmente, Javascript conta também com os **escopos de blocos**.
 	- **Chaves** definiem um novo bloco.
 		- Inclusive em estruturas de **seleção** e **repetição**.
 	- Variáveis declaradas com `let` percentem apenas ao escopo do bloco.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a = 1;
 {
 	let a = 5;
@@ -884,9 +891,11 @@ alert("Fora do bloco, a = " + String(a));
 
 </iframe>
 
+# Javascript: Escopo de Bloco (II)
+
 - Uso típico em repetições:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var i = 5;
 ...
 for (let i = 0; i < 10; i++){
@@ -896,12 +905,12 @@ for (let i = 0; i < 10; i++){
 
 # Javascript: `const`
 
-- Como `var` e `let`, a palavra-chave `const` permite declarar variáveis.
+- Como `var` e `let`, a palavra-chave `const` permite declarar "variáveis".
 - Como `let`, variáveis declaradas com `const` são de escopo de bloco.
 - Diferente das outras duas, `const` torna a variável **somente-leitura**.
 	- _i.e._, não pode ser atribuída após a inicialização.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 const a = 4;
 a = 1;	// Resulta em erro!
 ```	
@@ -910,17 +919,17 @@ a = 1;	// Resulta em erro!
 
 </iframe>
 
+# Javascript: Alterando Variável Declarada com `const`
+
 ::::::{.block .centered}
 :::{.blocktitle}
 Importante
 :::
-- `const` torna a variável somente-leitura, mas não necessariamente imutável!
+- `const` torna a variável somente-leitura, mas **não** necessariamente imutável!
 ::::::
 
-# Javascript: Alterando Variável Declarada com `const`
 
-
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 90%;"}
 const a = ["Fiat", "Jaguar"];
 const b = {prop1 : 10, prop2 : 20};
 a[0] = "Honda";	// Sem em erro!
@@ -945,10 +954,11 @@ a = []; // Erro!
 
 # Javascript: Exemplo de Temporizador
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var timer;
 var vezes = 0;
 timer = setTimeout(timerCallback, 1000);
+
 function timerCallback() {
 	alert("Vezes = " + String(++vezes));
 	if (vezes == 3)
@@ -962,10 +972,10 @@ function timerCallback() {
 
 </iframe>
 
-# Javascript: Parâmetros por Valor e Referência
+# Javascript: Parâmetros por Valor e Referência (I)
 
 - Via de regra, parâmetros são passados por **valor**:
-```{.javascript .numberLines style="font-size: 15px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a = 1;
 function f(arg) {
 	arg *= 3;
@@ -979,9 +989,11 @@ alert("Após a função, a = " + String(a));
 
 </iframe>
 
+# Javascript: Parâmetros por Valor e Referência (II)
+
 - Entretanto, **objetos**  e **vetores** são passados por **referência**:
 
-```{.javascript .numberLines style="font-size: 15px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a = ["Fiat", "Jaguar"];
 var b = {prop1 : 10, prop2 : 20};
 function f(arg1, arg2) {
@@ -1019,7 +1031,7 @@ alert("Após a  função, b.prop1 = " + String(b.prop1));
 
 #### Antes do ECMAScript 2015
 
-```{.javascript .numberLines style="font-size: 15px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 function f(a, b) {
 
 	if (b === undefined) {
@@ -1034,7 +1046,7 @@ function f(a, b) {
 
 #### Depois do ECMAScript 2015
 
-```{.javascript .numberLines style="font-size: 15px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 function f(a, b = 3) {
 
 	...
@@ -1049,7 +1061,7 @@ function f(a, b = 3) {
 - Javascript também permite a definição de funções que podem ser chamadas com um número arbitrário de parâmetros.
 	- Parâmetros acessados pelo vetor `arguments`.
 
-```{.javascript .numberLines style="font-size: 15px;"}
+```{.javascript .numberLines style="font-size: 90%;"}
 function somaArgs() {
 	var s = 0;
 	for (let i = 0; i < arguments.length; i++) s += arguments[i];
@@ -1078,7 +1090,7 @@ alert(somaArgs(1, 5, 2, 7));
 	- Definimos cada atributo do objeto, um a um.
 	- Ou na inicialização, ou posteriormente.
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var carro = {
 	fabricante: "Fiat",
 	modelo: "Punto",
@@ -1095,7 +1107,7 @@ var carro = {
 - Uma vez definida a classe, podemos facilmente **instanciar** múltiplos objetos similares.
 - Sintaxe geral:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 70%;"}
 class NomeDaClasse {
   constructor() { ... }
   metodo_1() { ... }
@@ -1106,7 +1118,7 @@ class NomeDaClasse {
 
 - Uma classe pode ser **instanciada** com o auxílio da palavra-chave `new`:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 var a = new NomeDaClasse();
 ```	
 
@@ -1127,7 +1139,7 @@ Construtor
 
 # Javascript: Exemplo de uma Classe Carro
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 class Carro {
 	constructor(fabricante, modelo, ano, portas) { 
 		this.fabricante = fabricante;
@@ -1152,7 +1164,7 @@ carro1.log();
 	- Mas podem estender/alterar certas características.
 - Feito com a palavra-chave `extends`:
 
-```{.javascript .numberLines style="font-size: 16px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 class Carrinha extends Carro {
 	constructor(fabricante, modelo, ano, portas, lugares) { 
 		super(fabricante, modelo, ano, portas);	// Chama construtor da classe original
@@ -1168,7 +1180,7 @@ class Carrinha extends Carro {
 
 - Métodos associados a uma **classe**, mas não a uma instância.
 
-```{.javascript .numberLines style="font-size: 18px;"}
+```{.javascript .numberLines style="font-size: 80%;"}
 class Carro {
 	constructor(fabricante, modelo, ano, portas) { 
 		this.fabricante = fabricante;

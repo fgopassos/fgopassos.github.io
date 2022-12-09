@@ -21,7 +21,7 @@ logo: ../atlantica_logo2.svg
 		- O conteúdo textual propriamente dito.
 
 
-```{.html .numberLines style="width: 40%; position: absolute; right: 60px; bottom: 80px; font-size: 18px;"}
+```{.html .numberLines style="width: 40%; position: absolute; right: 60px; bottom: 80px; font-size: 80%;"}
 <html>
 	<head>
 		...
@@ -43,7 +43,7 @@ logo: ../atlantica_logo2.svg
 	- Exemplo: `<nomeDaTag> filhos </nomeDaTag>`.
 - _Tags_ são aninhadas, criando a hierarquia.
 
-```{.html .numberLines style="font-size: 18px;"} 
+```{.html .numberLines style="font-size: 70%;"} 
 <html>
 	<head>
 	</head>
@@ -75,11 +75,11 @@ logo: ../atlantica_logo2.svg
 | `meta`        | Define metadados sobre a página                      |
 | `link`        | Carrega algum recurso externo à página (_e.g._, CSS) |
 
-# HTML: _Tags_ Típicas de Formatação
+# HTML: _Tags_ Típicas de Formatação (I)
 
-:::::{.columns}
-:::{.column width=47%}
-::::{style="font-size: 16px; line-height: 90%; padding-top: 2%;"}
+<!--:::::{.columns}
+:::{.column width=40%}-->
+::::{.center style="font-size: 50%; line-height: 90%; padding-top: 2%;"}
 | Nome da _Tag_         | Propósito                                                    |
 | --------------------- | ------------------------------------------------------------ |
 | `h1`, `h2`, ..., `h6` | Definir cabeçalhos (_e.g._, de seções)                       |
@@ -96,10 +96,14 @@ logo: ../atlantica_logo2.svg
 | `li`                  | Cria um item em uma lista.                                   |
 
 ::::
-:::
-:::{.column width=53%}
 
-```{.html .numberLines style="font-size: 14px;"}
+<!--
+:::
+:::{.column width=60%}-->
+
+# HTML: _Tags_ Típicas de Formatação (II)
+
+```{.html .numberLines style="font-size: 60%;"}
 <html>
 	<head>
 	</head>
@@ -117,12 +121,15 @@ logo: ../atlantica_logo2.svg
 </html>
 ```
 
-<iframe src="iframes/Exemplo1.html" style="width: 90%; height: 280px;">
+::::{style="position: absolute; width: 35%; bottom: 130px; right: 20px;"}
+<iframe src="iframes/Exemplo1.html" style="width: 100%; height: 280px;">
 
 </iframe>
+::::
 
+<!--
 :::
-:::::
+::::: -->
 
 # Exercício (I)
 
@@ -504,7 +511,7 @@ var el2 = document.getElementByTagName('div');
 var el3 = document.getElementByClass('minhaClasse1 minhaClasse2');
 ```
 
-# Javascript e DOM: Modificando Conteúdo de Elementos
+# Javascript e DOM: Modificar Conteúdo de Elementos
 
 - Pode ser feito com a propriedade `innerHTML`:
 
@@ -537,7 +544,7 @@ var el3 = document.getElementByClass('minhaClasse1 minhaClasse2');
 </iframe>
 ::::
 
-# Javascript e DOM: Modificando Estilo de Elementos
+# Javascript e DOM: Modificar Estilo de Elementos
 
 - Pode ser feito com a propriedade `style`:
 
@@ -804,7 +811,7 @@ _Callback_
 
 # Exercício (V)
 
-1. Crie um ficheiro em HTML + JS que mostre imagens diferentes a cada 10~s.
+1. Crie um ficheiro em HTML + JS que mostre imagens diferentes a cada 10 s.
 	- Baseie-se no slide anterior para isso e inclua botões para iniciar e parar.
 	- No JS, crie um vetor ou objeto para armazenar os caminhos das imagens.
 	- Use o campo _value_ da caixa de texto do formulário para obter o seu conteúdo.

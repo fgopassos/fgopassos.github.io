@@ -746,7 +746,7 @@ Fernanda Passos
 <ul>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="cb17" style="font-size: 70;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb17" style="font-size: 100%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="cf">do</span> {</span>
 <span id="cb17-3"><a href="#cb17-3"></a>    b <span class="op">+=</span> a<span class="op">**</span><span class="dv">2</span><span class="op">;</span></span>
 <span id="cb17-4"><a href="#cb17-4"></a>    a<span class="op">++;</span></span>
@@ -757,12 +757,11 @@ Fernanda Passos
 <ul>
 <li>A sintaxe para definição de funções é um pouco diferente em Javascript em relação a C, Java:</li>
 </ul>
-<div class="sourceCode" id="cb18" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">function</span> <span class="fu">nome</span>([arg1 [<span class="op">,</span> arg2 [<span class="op">,</span> <span class="op">...</span>]]]) {</span>
-<span id="cb18-2"><a href="#cb18-2"></a></span>
-<span id="cb18-3"><a href="#cb18-3"></a>    <span class="co">// Corpo da função</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>    <span class="co">// Opcionalmente, função pode retornar algo:</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a>    <span class="cf">return</span> valor<span class="op">;</span></span>
-<span id="cb18-6"><a href="#cb18-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb18" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">function</span> <span class="fu">nome</span>([arg1 [<span class="op">,</span> arg2 [<span class="op">,</span> <span class="op">...</span>]]]) {</span>
+<span id="cb18-2"><a href="#cb18-2"></a>    <span class="co">// Corpo da função</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="co">// Opcionalmente, função pode retornar algo:</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>    <span class="cf">return</span> valor<span class="op">;</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>}</span></code></pre></div>
 <div class="block centered">
 <div class="blocktitle">
 <p>Observações</p>
@@ -784,7 +783,7 @@ Fernanda Passos
 <ul>
 <li>A sintaxe para chamada de funções é idêntica a C, Java:</li>
 </ul>
-<div class="sourceCode" id="cb19" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">nome</span>([arg1 [<span class="op">,</span> arg2 [<span class="op">,</span> <span class="op">...</span>]]])<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb19" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">nome</span>([arg1 [<span class="op">,</span> arg2 [<span class="op">,</span> <span class="op">...</span>]]])<span class="op">;</span></span></code></pre></div>
 <div class="block centered">
 <div class="blocktitle">
 <p>Observações</p>
@@ -799,7 +798,7 @@ Fernanda Passos
 </div>
 <div id="javascript-exemplo-de-uso-de-funções" class="slide section level1">
 <h1>Javascript: Exemplo de Uso de Funções</h1>
-<div class="sourceCode" id="cb20" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">function</span> <span class="fu">maior</span>(a<span class="op">,</span> b) {</span>
+<div class="sourceCode" id="cb20" style="font-size: 90%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">function</span> <span class="fu">maior</span>(a<span class="op">,</span> b) {</span>
 <span id="cb20-2"><a href="#cb20-2"></a></span>
 <span id="cb20-3"><a href="#cb20-3"></a>    <span class="cf">if</span> (a <span class="op">&gt;</span> b) <span class="cf">return</span>(a)<span class="op">;</span></span>
 <span id="cb20-4"><a href="#cb20-4"></a>    <span class="cf">else</span> <span class="cf">return</span>(b)<span class="op">;</span></span>
@@ -813,6 +812,8 @@ Fernanda Passos
 </div>
 <div id="javascript-mais-sobre-funções" class="slide section level1">
 <h1>Javascript: Mais sobre Funções</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
 <li>Em Javascript, funções são <strong>valores de primeira classe</strong>.
 <ul>
@@ -823,9 +824,13 @@ Fernanda Passos
 <li>Ser atribuídas e armazenadas em variáveis.</li>
 </ul></li>
 </ul></li>
-<li>Exemplo:</li>
+<li>Javascript também suporta <strong>recursão</strong>.</li>
 </ul>
-<div class="sourceCode" id="cb21" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">function</span> <span class="fu">sub</span>(a<span class="op">,</span> b) {</span>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Exemplo de função como valor de primeira classe:</li>
+</ul>
+<div class="sourceCode" id="cb21" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">function</span> <span class="fu">sub</span>(a<span class="op">,</span> b) {</span>
 <span id="cb21-2"><a href="#cb21-2"></a>    <span class="cf">return</span>(a <span class="op">-</span> b)<span class="op">;</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a>}</span>
 <span id="cb21-4"><a href="#cb21-4"></a><span class="kw">function</span> <span class="fu">soma</span>(a<span class="op">,</span> b) {</span>
@@ -834,11 +839,12 @@ Fernanda Passos
 <span id="cb21-7"><a href="#cb21-7"></a><span class="kw">function</span> <span class="fu">sel</span>(f1<span class="op">,</span> f2<span class="op">,</span> s) {</span>
 <span id="cb21-8"><a href="#cb21-8"></a>    <span class="cf">return</span>(s <span class="op">==</span> <span class="dv">0</span> <span class="op">?</span> f1 <span class="op">:</span> f2)<span class="op">;</span></span>
 <span id="cb21-9"><a href="#cb21-9"></a>}</span>
-<span id="cb21-10"><a href="#cb21-10"></a><span class="kw">var</span> f <span class="op">=</span> <span class="fu">sel</span>(sub<span class="op">,</span> soma<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span> <span class="co">// retorna função soma.</span></span>
-<span id="cb21-11"><a href="#cb21-11"></a><span class="fu">f</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span> <span class="co">// executa a função soma.</span></span></code></pre></div>
-<ul>
-<li>Javascript também suporta <strong>recursão</strong>.</li>
-</ul>
+<span id="cb21-10"><a href="#cb21-10"></a><span class="co">// Retorna função soma:</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a><span class="kw">var</span> f <span class="op">=</span> <span class="fu">sel</span>(sub<span class="op">,</span> soma<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb21-12"><a href="#cb21-12"></a><span class="co">// Executa a função soma:</span></span>
+<span id="cb21-13"><a href="#cb21-13"></a><span class="fu">f</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span></code></pre></div>
+</div>
+</div>
 </div>
 <div id="javascript-algumas-funções-nativas-úteis" class="slide section level1">
 <h1>Javascript: Algumas Funções Nativas Úteis</h1>
@@ -894,7 +900,7 @@ Fernanda Passos
 </ul></li>
 <li>Exemplo da <code>console.log()</code>:</li>
 </ul>
-<div class="sourceCode" id="cb22" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb22" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;O valor de a é: &quot;</span>)<span class="op">;</span></span>
 <span id="cb22-3"><a href="#cb22-3"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span></code></pre></div>
 <iframe src="iframes/consoleLog.html" style="width: 100%; height: 50px; border: 0;">
@@ -911,7 +917,7 @@ Fernanda Passos
 </ul></li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="cb23" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">var</span> nome<span class="op">;</span></span>
+<div class="sourceCode" id="cb23" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">var</span> nome<span class="op">;</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>nome <span class="op">=</span> <span class="fu">prompt</span>(<span class="st">&quot;Digite seu nome:&quot;</span>)<span class="op">;</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a><span class="fu">alert</span>(<span class="st">&#39;Olá &#39;</span> <span class="op">+</span> nome <span class="op">+</span> <span class="st">&#39;!&#39;</span>)</span></code></pre></div>
 <iframe src="iframes/prompt.html" style="width: 100%; height: 50px; border: 0;">
@@ -951,7 +957,7 @@ Fernanda Passos
 <li>Frequentemente, variáveis em Javascript armazenam <strong>objetos</strong>.</li>
 <li>Objetos podem armazenar <strong>múltiplos valores</strong> na forma de <strong>propriedades</strong>:</li>
 </ul>
-<div class="sourceCode" id="cb24" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb24" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
 <span id="cb24-2"><a href="#cb24-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
 <span id="cb24-3"><a href="#cb24-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
 <span id="cb24-4"><a href="#cb24-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
@@ -977,7 +983,7 @@ Fernanda Passos
 </ul></li>
 <li>Dentro do <strong>escopo</strong> de um método, palavra-chave <code>this</code> referencia o objeto que o contém.</li>
 </ul>
-<div class="sourceCode" id="cb25" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb25" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
 <span id="cb25-2"><a href="#cb25-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
 <span id="cb25-3"><a href="#cb25-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
 <span id="cb25-4"><a href="#cb25-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
@@ -999,12 +1005,12 @@ Fernanda Passos
 <li>Vetores permitem armazenar sequeências ou conjuntos de valores relacionados.</li>
 <li>Para incializar um vetor vazio, há várias formas:</li>
 </ul>
-<div class="sourceCode" id="cb26" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">var</span> vetorA <span class="op">=</span> []<span class="op">;</span></span>
+<div class="sourceCode" id="cb26" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">var</span> vetorA <span class="op">=</span> []<span class="op">;</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a><span class="kw">var</span> vetorB <span class="op">=</span> <span class="bu">Array</span>()<span class="op">;</span></span></code></pre></div>
 <ul>
 <li>Pode-se também criar um vetor já preenchido:</li>
 </ul>
-<div class="sourceCode" id="cb27" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<div class="sourceCode" id="cb27" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="kw">var</span> outrosCarros <span class="op">=</span> <span class="bu">Array</span>(<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>)<span class="op">;</span></span></code></pre></div>
 </div>
 <div id="javascript-acesso-a-elementos-de-vetores" class="slide section level1">
@@ -1012,12 +1018,12 @@ Fernanda Passos
 <ul>
 <li>Elementos de um vetor são referenciados por seu índice usando parênteses retos:</li>
 </ul>
-<div class="sourceCode" id="cb28" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(carros[<span class="dv">1</span>])<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb28" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(carros[<span class="dv">1</span>])<span class="op">;</span></span></code></pre></div>
 <ul>
 <li>Note que os índices são contados <strong>a partir do 0</strong>.</li>
 <li>Elementos também podem ser adicionados livremente com essa notação:</li>
 </ul>
-<div class="sourceCode" id="cb29" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<div class="sourceCode" id="cb29" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>carros[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&quot;Opel&quot;</span><span class="op">;</span></span>
 <span id="cb29-3"><a href="#cb29-3"></a>carros[<span class="dv">10</span>] <span class="op">=</span> <span class="st">&quot;Jeep&quot;</span><span class="op">;</span></span></code></pre></div>
 </div>
@@ -1029,11 +1035,11 @@ Fernanda Passos
 </div>
 <ul>
 <li>Assim como variáveis, vetores em Javascript não tem um tipo explícito.</li>
-<li>Logo, um mesmo vetor pode armazenar, em dado momento, elementos de vários tipos!</li>
+<li>Logo, um mesmo vetor pode armazenar elementos de vários tipos!</li>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="cb30" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>carros[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&quot;57&quot;</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb30" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>carros[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">57</span><span class="op">;</span> <span class="co">// tipo inteiro</span></span></code></pre></div>
 </div>
 <ul>
 <li>Internamente, vetores são armazenados como objetos.</li>
@@ -1052,13 +1058,13 @@ Fernanda Passos
 </ul></li>
 <li>Sintaxe geral:</li>
 </ul>
-<div class="sourceCode" id="cb31" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a><span class="cf">for</span> (variavel <span class="kw">of</span> vetor) {</span>
+<div class="sourceCode" id="cb31" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a><span class="cf">for</span> (variavel <span class="kw">of</span> vetor) {</span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="co">// Faça algo com &#39;variavel&#39;</span></span>
 <span id="cb31-3"><a href="#cb31-3"></a>}</span></code></pre></div>
 <ul>
 <li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="cb32" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
+<div class="sourceCode" id="cb32" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">var</span> carros <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;BMW&quot;</span><span class="op">,</span> <span class="st">&quot;Volvo&quot;</span>]<span class="op">;</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a><span class="kw">var</span> carro<span class="op">;</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a><span class="cf">for</span> (carro <span class="kw">of</span> carros) <span class="fu">alert</span>(carro)<span class="op">;</span></span></code></pre></div>
 <iframe src="iframes/forOf.html" style="width: 100%; height: 50px; border: 0;">
@@ -1068,9 +1074,8 @@ Fernanda Passos
 <h1>Javascript: Repetições com <code>for...in</code></h1>
 <ul>
 <li>Similar ao <code>for...of</code>, mas itera por <strong>propriedades de um objeto</strong>.</li>
-<li>Exemplo:</li>
 </ul>
-<div class="sourceCode" id="cb33" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb33" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
 <span id="cb33-2"><a href="#cb33-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
 <span id="cb33-4"><a href="#cb33-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
@@ -1099,7 +1104,7 @@ Fernanda Passos
 <li><em>i.e.</em>, variáveis declaradas dentro de uma função são diferentes das globais.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb34" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb34" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a><span class="kw">function</span> <span class="fu">f1</span>() {</span>
 <span id="cb34-3"><a href="#cb34-3"></a>    <span class="kw">var</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb34-4"><a href="#cb34-4"></a>    <span class="fu">alert</span>(<span class="st">&quot;Em f1, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span>
@@ -1112,10 +1117,10 @@ Fernanda Passos
 <iframe src="iframes/escopoFuncao.html" style="width: 100%; height: 50px; border: 0;">
 </iframe>
 </div>
-<div id="javascript-escopo-de-bloco" class="slide section level1">
-<h1>Javascript: Escopo de Bloco</h1>
+<div id="javascript-escopo-de-bloco-i" class="slide section level1">
+<h1>Javascript: Escopo de Bloco (I)</h1>
 <ul>
-<li>Atualmente, Javascript conta também com os <strong>escopos de blocos</strong>
+<li>Atualmente, Javascript conta também com os <strong>escopos de blocos</strong>.
 <ul>
 <li><strong>Chaves</strong> definiem um novo bloco.
 <ul>
@@ -1124,7 +1129,7 @@ Fernanda Passos
 <li>Variáveis declaradas com <code>let</code> percentem apenas ao escopo do bloco.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb35" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb35" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>{</span>
 <span id="cb35-3"><a href="#cb35-3"></a>    <span class="kw">let</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb35-4"><a href="#cb35-4"></a>    <span class="fu">alert</span>(<span class="st">&quot;Dentro do bloco, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span>
@@ -1132,10 +1137,13 @@ Fernanda Passos
 <span id="cb35-6"><a href="#cb35-6"></a><span class="fu">alert</span>(<span class="st">&quot;Fora do bloco, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span></code></pre></div>
 <iframe src="iframes/escopoBloco.html" style="width: 100%; height: 50px; border: 0;">
 </iframe>
+</div>
+<div id="javascript-escopo-de-bloco-ii" class="slide section level1">
+<h1>Javascript: Escopo de Bloco (II)</h1>
 <ul>
 <li>Uso típico em repetições:</li>
 </ul>
-<div class="sourceCode" id="cb36" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">var</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb36" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">var</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a><span class="op">...</span></span>
 <span id="cb36-3"><a href="#cb36-3"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>){</span>
 <span id="cb36-4"><a href="#cb36-4"></a>    <span class="op">...</span></span>
@@ -1144,29 +1152,29 @@ Fernanda Passos
 <div id="javascript-const" class="slide section level1">
 <h1>Javascript: <code>const</code></h1>
 <ul>
-<li>Como <code>var</code> e <code>let</code>, a palavra-chave <code>const</code> permite declarar variáveis.</li>
+<li>Como <code>var</code> e <code>let</code>, a palavra-chave <code>const</code> permite declarar “variáveis”.</li>
 <li>Como <code>let</code>, variáveis declaradas com <code>const</code> são de escopo de bloco.</li>
 <li>Diferente das outras duas, <code>const</code> torna a variável <strong>somente-leitura</strong>.
 <ul>
 <li><em>i.e.</em>, não pode ser atribuída após a inicialização.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb37" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">const</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb37" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">const</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span>  <span class="co">// Resulta em erro!</span></span></code></pre></div>
 <iframe src="iframes/constErro.html" style="width: 100%; height: 50px; border: 0;">
 </iframe>
+</div>
+<div id="javascript-alterando-variável-declarada-com-const" class="slide section level1">
+<h1>Javascript: Alterando Variável Declarada com <code>const</code></h1>
 <div class="block centered">
 <div class="blocktitle">
 <p>Importante</p>
 </div>
 <ul>
-<li><code>const</code> torna a variável somente-leitura, mas não necessariamente imutável!</li>
+<li><code>const</code> torna a variável somente-leitura, mas <strong>não</strong> necessariamente imutável!</li>
 </ul>
 </div>
-</div>
-<div id="javascript-alterando-variável-declarada-com-const" class="slide section level1">
-<h1>Javascript: Alterando Variável Declarada com <code>const</code></h1>
-<div class="sourceCode" id="cb38" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">const</span> a <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Jaguar&quot;</span>]<span class="op">;</span></span>
+<div class="sourceCode" id="cb38" style="font-size: 90%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">const</span> a <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Jaguar&quot;</span>]<span class="op">;</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="kw">const</span> b <span class="op">=</span> {<span class="dt">prop1</span> <span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">prop2</span> <span class="op">:</span> <span class="dv">20</span>}<span class="op">;</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&quot;Honda&quot;</span><span class="op">;</span> <span class="co">// Sem em erro!</span></span>
 <span id="cb38-4"><a href="#cb38-4"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span>
@@ -1191,25 +1199,26 @@ Fernanda Passos
 </div>
 <div id="javascript-exemplo-de-temporizador" class="slide section level1">
 <h1>Javascript: Exemplo de Temporizador</h1>
-<div class="sourceCode" id="cb39" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw">var</span> timer<span class="op">;</span></span>
+<div class="sourceCode" id="cb39" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw">var</span> timer<span class="op">;</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="kw">var</span> vezes <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb39-3"><a href="#cb39-3"></a>timer <span class="op">=</span> <span class="pp">setTimeout</span>(timerCallback<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="kw">function</span> <span class="fu">timerCallback</span>() {</span>
-<span id="cb39-5"><a href="#cb39-5"></a>    <span class="fu">alert</span>(<span class="st">&quot;Vezes = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(<span class="op">++</span>vezes))<span class="op">;</span></span>
-<span id="cb39-6"><a href="#cb39-6"></a>    <span class="cf">if</span> (vezes <span class="op">==</span> <span class="dv">3</span>)</span>
-<span id="cb39-7"><a href="#cb39-7"></a>        <span class="pp">clearTimeout</span>(timer)<span class="op">;</span></span>
-<span id="cb39-8"><a href="#cb39-8"></a>    <span class="cf">else</span></span>
-<span id="cb39-9"><a href="#cb39-9"></a>        timer <span class="op">=</span> <span class="pp">setTimeout</span>(timerCallback<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
-<span id="cb39-10"><a href="#cb39-10"></a>}</span></code></pre></div>
+<span id="cb39-4"><a href="#cb39-4"></a></span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="kw">function</span> <span class="fu">timerCallback</span>() {</span>
+<span id="cb39-6"><a href="#cb39-6"></a>    <span class="fu">alert</span>(<span class="st">&quot;Vezes = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(<span class="op">++</span>vezes))<span class="op">;</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>    <span class="cf">if</span> (vezes <span class="op">==</span> <span class="dv">3</span>)</span>
+<span id="cb39-8"><a href="#cb39-8"></a>        <span class="pp">clearTimeout</span>(timer)<span class="op">;</span></span>
+<span id="cb39-9"><a href="#cb39-9"></a>    <span class="cf">else</span></span>
+<span id="cb39-10"><a href="#cb39-10"></a>        timer <span class="op">=</span> <span class="pp">setTimeout</span>(timerCallback<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
+<span id="cb39-11"><a href="#cb39-11"></a>}</span></code></pre></div>
 <iframe src="iframes/Temporizador.html" style="width: 100%; height: 50px; border: 0;">
 </iframe>
 </div>
-<div id="javascript-parâmetros-por-valor-e-referência" class="slide section level1">
-<h1>Javascript: Parâmetros por Valor e Referência</h1>
+<div id="javascript-parâmetros-por-valor-e-referência-i" class="slide section level1">
+<h1>Javascript: Parâmetros por Valor e Referência (I)</h1>
 <ul>
 <li>Via de regra, parâmetros são passados por <strong>valor</strong>:</li>
 </ul>
-<div class="sourceCode" id="cb40" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb40" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a><span class="kw">function</span> <span class="fu">f</span>(arg) {</span>
 <span id="cb40-3"><a href="#cb40-3"></a>    arg <span class="op">*=</span> <span class="dv">3</span><span class="op">;</span></span>
 <span id="cb40-4"><a href="#cb40-4"></a>    <span class="fu">alert</span>(<span class="st">&quot;Na função, arg = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(arg))<span class="op">;</span></span>
@@ -1218,10 +1227,13 @@ Fernanda Passos
 <span id="cb40-7"><a href="#cb40-7"></a><span class="fu">alert</span>(<span class="st">&quot;Após a função, a = &quot;</span> <span class="op">+</span> <span class="bu">String</span>(a))<span class="op">;</span></span></code></pre></div>
 <iframe src="iframes/PassagemParametro.html" style="width: 100%; height: 35px; border: 0;">
 </iframe>
+</div>
+<div id="javascript-parâmetros-por-valor-e-referência-ii" class="slide section level1">
+<h1>Javascript: Parâmetros por Valor e Referência (II)</h1>
 <ul>
 <li>Entretanto, <strong>objetos</strong> e <strong>vetores</strong> são passados por <strong>referência</strong>:</li>
 </ul>
-<div class="sourceCode" id="cb41" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">var</span> a <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Jaguar&quot;</span>]<span class="op">;</span></span>
+<div class="sourceCode" id="cb41" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">var</span> a <span class="op">=</span> [<span class="st">&quot;Fiat&quot;</span><span class="op">,</span> <span class="st">&quot;Jaguar&quot;</span>]<span class="op">;</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a><span class="kw">var</span> b <span class="op">=</span> {<span class="dt">prop1</span> <span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">prop2</span> <span class="op">:</span> <span class="dv">20</span>}<span class="op">;</span></span>
 <span id="cb41-3"><a href="#cb41-3"></a><span class="kw">function</span> <span class="fu">f</span>(arg1<span class="op">,</span> arg2) {</span>
 <span id="cb41-4"><a href="#cb41-4"></a>    arg1[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&quot;Opel&quot;</span><span class="op">;</span></span>
@@ -1260,7 +1272,7 @@ Fernanda Passos
 <div class="columns">
 <div class="column" style="width:50%;">
 <h4 id="antes-do-ecmascript-2015">Antes do ECMAScript 2015</h4>
-<div class="sourceCode" id="cb42" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">function</span> <span class="fu">f</span>(a<span class="op">,</span> b) {</span>
+<div class="sourceCode" id="cb42" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">function</span> <span class="fu">f</span>(a<span class="op">,</span> b) {</span>
 <span id="cb42-2"><a href="#cb42-2"></a></span>
 <span id="cb42-3"><a href="#cb42-3"></a>    <span class="cf">if</span> (b <span class="op">===</span> <span class="kw">undefined</span>) {</span>
 <span id="cb42-4"><a href="#cb42-4"></a>        b <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
@@ -1269,7 +1281,7 @@ Fernanda Passos
 <span id="cb42-7"><a href="#cb42-7"></a>}</span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <h4 id="depois-do-ecmascript-2015">Depois do ECMAScript 2015</h4>
-<div class="sourceCode" id="cb43" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1"></a><span class="kw">function</span> <span class="fu">f</span>(a<span class="op">,</span> b <span class="op">=</span> <span class="dv">3</span>) {</span>
+<div class="sourceCode" id="cb43" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1"></a><span class="kw">function</span> <span class="fu">f</span>(a<span class="op">,</span> b <span class="op">=</span> <span class="dv">3</span>) {</span>
 <span id="cb43-2"><a href="#cb43-2"></a></span>
 <span id="cb43-3"><a href="#cb43-3"></a>    <span class="op">...</span></span>
 <span id="cb43-4"><a href="#cb43-4"></a>}</span></code></pre></div>
@@ -1284,7 +1296,7 @@ Fernanda Passos
 <li>Parâmetros acessados pelo vetor <code>arguments</code>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb44" style="font-size: 15px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1"></a><span class="kw">function</span> <span class="fu">somaArgs</span>() {</span>
+<div class="sourceCode" id="cb44" style="font-size: 90%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1"></a><span class="kw">function</span> <span class="fu">somaArgs</span>() {</span>
 <span id="cb44-2"><a href="#cb44-2"></a>    <span class="kw">var</span> s <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb44-3"><a href="#cb44-3"></a>    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">arguments</span><span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) s <span class="op">+=</span> <span class="kw">arguments</span>[i]<span class="op">;</span></span>
 <span id="cb44-4"><a href="#cb44-4"></a>    <span class="cf">return</span> s<span class="op">;</span></span>
@@ -1318,7 +1330,7 @@ Fernanda Passos
 <li>Ou na inicialização, ou posteriormente.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb45" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb45" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">var</span> carro <span class="op">=</span> {</span>
 <span id="cb45-2"><a href="#cb45-2"></a>    <span class="dt">fabricante</span><span class="op">:</span> <span class="st">&quot;Fiat&quot;</span><span class="op">,</span></span>
 <span id="cb45-3"><a href="#cb45-3"></a>    <span class="dt">modelo</span><span class="op">:</span> <span class="st">&quot;Punto&quot;</span><span class="op">,</span></span>
 <span id="cb45-4"><a href="#cb45-4"></a>    <span class="dt">ano</span><span class="op">:</span> <span class="dv">2015</span><span class="op">,</span></span>
@@ -1335,7 +1347,7 @@ Fernanda Passos
 <li>Uma vez definida a classe, podemos facilmente <strong>instanciar</strong> múltiplos objetos similares.</li>
 <li>Sintaxe geral:</li>
 </ul>
-<div class="sourceCode" id="cb46" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">class</span> NomeDaClasse {</span>
+<div class="sourceCode" id="cb46" style="font-size: 70%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">class</span> NomeDaClasse {</span>
 <span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">constructor</span>() { <span class="op">...</span> }</span>
 <span id="cb46-3"><a href="#cb46-3"></a>  <span class="fu">metodo_1</span>() { <span class="op">...</span> }</span>
 <span id="cb46-4"><a href="#cb46-4"></a>  <span class="fu">metodo_2</span>() { <span class="op">...</span> }</span>
@@ -1344,7 +1356,7 @@ Fernanda Passos
 <ul>
 <li>Uma classe pode ser <strong>instanciada</strong> com o auxílio da palavra-chave <code>new</code>:</li>
 </ul>
-<div class="sourceCode" id="cb47" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="kw">new</span> <span class="fu">NomeDaClasse</span>()<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb47" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">var</span> a <span class="op">=</span> <span class="kw">new</span> <span class="fu">NomeDaClasse</span>()<span class="op">;</span></span></code></pre></div>
 </div>
 <div id="javascript-construtores" class="slide section level1">
 <h1>Javascript: Construtores</h1>
@@ -1368,7 +1380,7 @@ Fernanda Passos
 </div>
 <div id="javascript-exemplo-de-uma-classe-carro" class="slide section level1">
 <h1>Javascript: Exemplo de uma Classe Carro</h1>
-<div class="sourceCode" id="cb48" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">class</span> Carro {</span>
+<div class="sourceCode" id="cb48" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">class</span> Carro {</span>
 <span id="cb48-2"><a href="#cb48-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas) { </span>
 <span id="cb48-3"><a href="#cb48-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">=</span> fabricante<span class="op">;</span></span>
 <span id="cb48-4"><a href="#cb48-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
@@ -1394,7 +1406,7 @@ Fernanda Passos
 </ul></li>
 <li>Feito com a palavra-chave <code>extends</code>:</li>
 </ul>
-<div class="sourceCode" id="cb49" style="font-size: 16px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">class</span> Carrinha <span class="kw">extends</span> Carro {</span>
+<div class="sourceCode" id="cb49" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">class</span> Carrinha <span class="kw">extends</span> Carro {</span>
 <span id="cb49-2"><a href="#cb49-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas<span class="op">,</span> lugares) { </span>
 <span id="cb49-3"><a href="#cb49-3"></a>        <span class="kw">super</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas)<span class="op">;</span> <span class="co">// Chama construtor da classe original</span></span>
 <span id="cb49-4"><a href="#cb49-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">lugares</span> <span class="op">=</span> lugares<span class="op">;</span> <span class="co">// Complementa com uma nova propriedade</span></span>
@@ -1409,7 +1421,7 @@ Fernanda Passos
 <ul>
 <li>Métodos associados a uma <strong>classe</strong>, mas não a uma instância.</li>
 </ul>
-<div class="sourceCode" id="cb50" style="font-size: 18px;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">class</span> Carro {</span>
+<div class="sourceCode" id="cb50" style="font-size: 80%;"><pre class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">class</span> Carro {</span>
 <span id="cb50-2"><a href="#cb50-2"></a>    <span class="fu">constructor</span>(fabricante<span class="op">,</span> modelo<span class="op">,</span> ano<span class="op">,</span> portas) { </span>
 <span id="cb50-3"><a href="#cb50-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">fabricante</span> <span class="op">=</span> fabricante<span class="op">;</span></span>
 <span id="cb50-4"><a href="#cb50-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
