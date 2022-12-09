@@ -398,7 +398,7 @@ x        | Permissão de execução (*execute*)
 
 # HTML: Criando um Simples Botão
 
-- Botão é útil para criar interação com o usuário e disparar eventos.
+- Botão é útil para criar interação com o utilizador e disparar eventos.
 - Existe input com o type="button".
 
 ```{.html .numberLines style="font-size: 18px;"}
@@ -490,7 +490,7 @@ Utilidades
 
 # Javascript e DOM: A Família de Métodos `getElementBy*`
 
-- Podemos encontrar um elemento no DOM fazendo implementando uma busca na árvore.
+- Podemos encontrar um elemento no DOM fazendo uma busca na árvore.
 - Mas há métodos (do objeto `document`) já disponíveis para isso:
 
 ::::{.center style="font-size: 15px; line-height: 80%;"}
