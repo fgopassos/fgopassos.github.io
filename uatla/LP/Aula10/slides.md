@@ -170,7 +170,7 @@ x        | Permissão de execução (*execute*)
 :::
 :::{.column width=50%}
 
-```{.html .numberLines style="font-size: 14px;"}
+```{.html .numberLines style="font-size: 80%;"}
 <html>
 	<head>
 	</head>
@@ -180,7 +180,7 @@ x        | Permissão de execução (*execute*)
 </html>
 ```
 
-<iframe src="iframes/Exemplo2.html" style="width: 90%; height: 220px;">
+<iframe src="iframes/Exemplo2.html" style="width: 90%; height: 30%;">
 
 </iframe>
 
@@ -194,7 +194,6 @@ x        | Permissão de execução (*execute*)
 	- Exemplo: `<img src="teste.svg">`
 	- Campo `src` define o caminho da imagem a ser exibida.
 - Cada _tag_ tem seus campos possíveis padronizados.
-	- Alguns exemplos típicos:
 
 ::::{.center style="font-size: 15px; line-height: 80%;"}
 | Nome do campo | Propósito                                    | Algumas _tags_ às quais se aplica |
@@ -210,9 +209,9 @@ x        | Permissão de execução (*execute*)
 # HTML: Campos das _Tags_ (Exemplo)
 
 :::::{.columns}
-:::{.column width=50%}
+:::{.column width=55%}
 
-```{.html .numberLine style="font-size: 16px;"}
+```{.html .numberLine style="font-size: 70%;"}
 <html>
 	<head>
 	</head>
@@ -234,9 +233,9 @@ x        | Permissão de execução (*execute*)
 ```
 
 :::
-:::{.column width=50%}
+:::{.column width=45%}
 
-<iframe src="iframes/Exemplo3.html" style="width: 90%; height: 220px;">
+<iframe src="iframes/Exemplo3.html" style="width: 90%; height: 300px;">
 
 </iframe>
 
@@ -253,19 +252,16 @@ x        | Permissão de execução (*execute*)
 # HTML: A _Tag_ `div`
 
 
-::::{}
 - Um `div` é um elemento que agrega outros elementos.
 	- Cria uma **divisão** no documento contendo uma parte do conteúdo.
 - São muito úteis para organizar logicamente o documento.
-- Em certas situações, permitem também aplicar regras de estilo a vários elementos de uma só vez.
+- Em certas situações, permitem aplicar regras de estilo a vários elementos de uma só vez.
 	- Os elementos filhos do `div`.
-
-::::
 
 :::::{.columns}
 :::{.column width=50%}
 
-```{.html .numberLine style="font-size: 16px;"}
+```{.html .numberLine style="font-size: 70%;"}
 <html>
 	<head>
 	</head>
@@ -282,7 +278,7 @@ x        | Permissão de execução (*execute*)
 :::
 :::{.column width=50%}
 
-<iframe src="iframes/Exemplo4.html" style="width: 90%; height: 220px;">
+<iframe src="iframes/Exemplo4.html" style="width: 90%; height: 200px;">
 
 </iframe>
 
@@ -312,23 +308,21 @@ x        | Permissão de execução (*execute*)
 ::::{}
 - Na maioria dos casos, um `input` pode/deve ter um `label` associado.
 	- Associa um texto ao `input`.
-- Exemplo:
 
 ::::
 
 :::::{.columns}
-:::{.column width=50%}
+:::{.column width=55%}
 
-```{.html .numberLines style="font-size: 16px;"}
-
+```{.html .numberLines style="font-size: 60%;"}
 <html>
 	<head>
 	</head>
 	<body>
         <form>
-            <label for="fname">Nome:</label>
+            <label for="nome">Nome:</label>
             <input type="text" id="nome"><br><br>
-            <label for="lname">Apelido:</label>
+            <label for="apelido">Apelido:</label>
             <input type="text" id="apelido"><br><br>            
             <input type="checkbox" id="pais1" value="Angola">
             <label for="pais1">Nasci em Angola</label><br>
@@ -343,7 +337,7 @@ x        | Permissão de execução (*execute*)
 ```
 
 :::
-:::{.column width=50%}
+:::{.column style="width: 45%; padding-top: 5%;"}
 
 <iframe src="iframes/Exemplo5.html" style="width: 90%; height: 220px;">
 
@@ -365,7 +359,7 @@ x        | Permissão de execução (*execute*)
 :::::{.columns}
 :::{.column width=50%}
 
-```{.html .numberLines style="font-size: 16px;"}
+```{.html .numberLines style="font-size: 14px;"}
 <html>
 	<head>
 	</head>
@@ -389,7 +383,7 @@ x        | Permissão de execução (*execute*)
 
 
 :::
-:::{.column width=50%}
+:::{.column  style="width: 50%; padding-top: 3%;"}
 <iframe src="iframes/Exemplo6.html" style="width: 90%; height: 220px;">
 
 </iframe>
@@ -771,7 +765,7 @@ _Callback_
 
 # Javascript: Exemplo de Temporizador
 
-```{.html .numberLines style="font-size: 16px;"}
+```{.html .numberLines style="font-size: 70%;"}
 <html>
 	<head>
         <script type="text/javascript">
@@ -811,7 +805,12 @@ _Callback_
 
 # Exercício (V)
 
-1. Crie um ficheiro em HTML + JS que mostre imagens diferentes a cada 10 s.
-	- Baseie-se no slide anterior para isso e inclua botões para iniciar e parar.
+1. Crie um ficheiro em HTML + JS que mostre imagens diferentes sempre que o utilizador premir um botão.
+	- São dois botões: uma para frente e outro para trás.
+		- O botão para frente passa as imagens para frente.
+		- O botão para trás passa as imagens para trás.
 	- No JS, crie um vetor ou objeto para armazenar os caminhos das imagens.
-	- Use o campo _value_ da caixa de texto do formulário para obter o seu conteúdo.
+		- Use-o para navegar sobre as imagens.
+2. Adicione um botão de "play" para passar as imagens a cada 10 s.
+	- Baseie-se no _slide_ anterior para isso.
+	- Inclua também um botão para parar.
