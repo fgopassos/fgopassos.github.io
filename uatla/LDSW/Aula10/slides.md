@@ -364,6 +364,7 @@ Feature | Descrição | Valores | Exemplo |
 	- Linha 2: Usar um nav.
 	- Linha 3: parte do conteúdo em 4 colunas iguais.
 	- Linha 4: rodapé com 3 colunas: contatos, copyrights e ícones de parceiros.
+	- Consulte em: https://getbootstrap.com/docs/5.0/layout/grid/
 
 # Exercício (II)
 
