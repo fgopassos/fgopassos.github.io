@@ -1,4 +1,3 @@
-
 /* Indica que as dimenções de todos os elementos da página serão
  aplicadas considerando border e padding como parte do elemento.  */
 * {
@@ -57,11 +56,12 @@
 }
 
 /* Para telemóveis: */
-[class*="col-"] {
+[class*="col-"] { /* Todas as classes que começam com 'col-' */
   width: 100%;
+  float: left;
 }
 
-@media only screen and (min-width: 768px) {
+@media only Screen and (min-width: 600px) {
   /* Para desktops/portáveis: */
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
@@ -75,7 +75,4 @@
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
-  [class*="col-"] {
-    float: left;
-  }
 }

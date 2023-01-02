@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-        A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
-        The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
-        The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
-    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf8">
     <title> Exemplo de página </title>
     <style>
         /* Indica que as dimenções de todos os elementos da página
-        * serão aplicadas considerando border e padding.  */
+        * serão aplicadas incluindo border e padding (o que não é o normal).  */
         * {
             box-sizing: border-box;
         }
@@ -27,6 +22,7 @@
             background-color: rgb(150, 150, 150);
             padding: 2%;
             width: 20%;
+            height: 100%;
             display: table-cell; /* Make elements inside the container behave like table cells */
         }
 
@@ -55,8 +51,8 @@
             <div class="center">
                 Exemplo de texto na área principal
                 <img src="colorful-umbrella.jpg" alt="Colorful umbrella" style="max-width:100%;">
-                </div>
-                </div>
+            </div>
+        </div>
         <div class="col-right">
             Exemplo de texto à direita
         </div>

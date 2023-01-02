@@ -17,7 +17,7 @@ logo: ../atlantica_logo2.svg
 	- Através de simplesmente **aumentar** ou **encolher** elementos;
 	- Ou **mudar arranjo** dos elementos conforme o tamanho da janela/ecrã.
 - Adapta o tamanho dos elementos ao tamanho do ecrã do dispositivo.
-	- Útil para smartphones, portáteis, tablets ...
+	- Especialmente útil para smartphones, portáteis, tablets ...
 ::::
 ::::{.column width=50%}
 :::::::{.center}
@@ -37,17 +37,17 @@ logo: ../atlantica_logo2.svg
 # HTML é responsivo?
 
 - Sim!
-- É necessário definir o *viewport* no *header* do HTML:
+- É importante definir o *viewport* no *header* do HTML:
 
 :::{.center style="width: 70%;"}
-```{.html style="font-size: 24px;"}
+```{.html style="font-size: 80%;"}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 :::
 
-- Através de definição de estilos:
+- Responsividade é implementada através de definição de estilos:
 	- uso de dimensões percentuais dos elementos (*e.g.*, width: 50%);
-	- uso de *media queries* para mudar arranjo dos elementos;
+	- uso de *media queries* para mudar estilo e arranjo dos elementos;
 	- imagens redimensionáveis;
 	- textos redimensionáveis;
 	- ...
@@ -93,7 +93,7 @@ logo: ../atlantica_logo2.svg
 		- Se o *viewport* tem 600px de largura, então 1vw é 6px.
 		- Se o *viewport* tem 1920px de largura, então 1vw é 19,2px.
 
-```{.html .numberLines style="font-size: 18px;"}
+```{.html .numberLines style="font-size: 70%;"}
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,7 +127,7 @@ logo: ../atlantica_logo2.svg
 
 - Sintaxe dentro do CSS:
 
-```{.css style="font-size: 22px;"}
+```{.css style="font-size: 75%;"}
 @media [tipo_de_media] and ([media_feature]){
 	/*código CSS*/;
 }
@@ -135,7 +135,7 @@ logo: ../atlantica_logo2.svg
 
 - Outra forma de uso (no *head* do HTML):
 
-```{.html style="font-size: 22px;"}
+```{.html style="font-size: 75%;"}
 <link rel="stylesheet" media="[tipo_de_media] and ([media_feature])" href="meuCSS.css">
 ```
 
@@ -147,7 +147,7 @@ logo: ../atlantica_logo2.svg
 
 - O exemplo a seguir altera a cor da fonte de um h1 para vermelho se o tipo da media for `Screen`.
 
-```{.css style="font-size: 22px;"}
+```{.css style="font-size: 80%;"}
 @media Screen {
 	h1 {
 		font-color: red;
@@ -161,7 +161,7 @@ logo: ../atlantica_logo2.svg
 	- Aplica estilo sempre que largura  mínima for 900px.
 	- Em outras palavras, aplica estilo para larguras maiores ou iguais a 900px.
 
-```{.css style="font-size: 22px;"}
+```{.css style="font-size: 80%;"}
 @media (min-width: 900px){
 	h1 {
 		color: red;
@@ -169,7 +169,7 @@ logo: ../atlantica_logo2.svg
 }
 ```
 
-# Definir CSS Responsivo: Features Media Query
+# Definir CSS Responsivo: Algumas *Features Media Query*
 
 ::::{.center style="font-size: 60%; width: 95%; line-height: 90%;"}
 Feature | Descrição | Valores | Exemplo |
@@ -188,26 +188,88 @@ Feature | Descrição | Valores | Exemplo |
 
 # Definir CSS Responsivo: Operadores Lógicos Media Query
 
-- Podem ser usados os operadores lógicos:
+- Os seguintes operadores lógicos podem ser usados na construção do *media query*:
 	- `and`
 	- `or`
 	- `not`
 
 - Exemplo que aplica o CSS para os seguintes casos:
-	- orientação em paisagem (*landscape*) ou
-	- a largura do viewport estiver valor mínimo de 900px e valor máximo de 1200px (*i.e.*, entre 900px e 1200px). 
+	- se a orientação está em paisagem (*landscape*) ou
+	- se a largura do viewport tiver valor mínimo de 900px e valor máximo de 1200px (*i.e.*, entre 900px e 1200px). 
 
-```{.css style="font-size: 22px;"}
+```{.css style="font-size: 75%;"}
 @media (orientation: 'landscape') or (min-width: 900px) and (max-width: 1200px) {
 	h1 {
 		color: red;
 	}
 }
 ```
-# Definir CSS Responsivo: Mais Exemplos com Media Query
 
-- Incluir exemplo de tamanho de janela
-- Incluir exemplo de tamanho de imagem?
+# Definir CSS Responsivo: Operador *only*
+
+- Objetivo de esconder *media queries* de navegadores antigos.
+- Uso comum: '`only Screen`'.
+
+```{.css style="font-size: 80%;"}
+@media only Screen and (min-width: 900px){
+	h1 {
+		color: red;
+	}
+}
+```
+
+# *Mobile First Design*
+
+- Sempre fazer o *design* da página para o telemóvel primeiro.
+	- Prioridade para ecrãs menores.
+- O estilo principal é para telemóvel e modificações são feitas para ecrãs maiores (desktops, portáteis, ...).
+
+```{.css style="font-size: 75%;"}
+/* Geral: para telemóveis: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only Screen and (min-width: 768px) {
+  /* Para desktops e portáteis: */
+  .col-3 {width: 25%;}
+  .col-6 {width: 50%;}
+  .col-9 {width: 75%;}
+  .col-12 {width: 100%;}
+}
+}
+```
+
+# Definir CSS Responsivo: Exemplo
+
+```{.css .numberLines style="font-size: 70%;"}
+/* Para telemóveis: */
+[class*="col-"] { /* Todas as classes que começam com 'col-' */
+  width: 100%;
+  float: left;
+}
+
+@media only Screen and (min-width: 600px) {
+  /* Para desktops/portáveis: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+```
+
+:::{.center}
+<button onclick="window.open('iframes/exemploWDR.html','_blank')">Ir para página HTML</button>
+<button onclick="window.open('iframes/styles.css','_blank')">Ir para CSS</button>
+:::
 
 # Bootstrap{.part}
 
@@ -217,7 +279,9 @@ Feature | Descrição | Valores | Exemplo |
 - Versões: 3, 4, 5.
 - Versão 5:
 	- Mais atual (*release* de 2021).
-- Tutorial no W3Schools: https://www.w3schools.com/bootstrap5/index.php
+- Documentação: 
+	- Oficial: https://getbootstrap.com/docs/5.0
+	- Tutorial no W3Schools: https://www.w3schools.com/bootstrap5/index.php
 - Exemplo de uso do bootstrap:
 	- https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_default&stacked=h
 
@@ -228,7 +292,7 @@ Feature | Descrição | Valores | Exemplo |
 	- O Javascript do Bootstrap: para efeitos visuais de alguns elementos.
 - Incluir no head da página HTML (uso de CDN):
 
-```{.html}
+```{.html style="font-size: 80%;"}
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -236,9 +300,72 @@ Feature | Descrição | Valores | Exemplo |
 </head>
 ```
 
-# 
+# Classes do Bootstrap
 
-# Exercício
+- A ideia do Bootstrap é disponibilizar classes com estilos previamente definidos.
+- As classes são muitas vezes usadas com as *tags* **div** e **span**.
+- Existem vários tipos:
+	- Contêineres;
+	- Grelha básica;
+	- Tipografia: títulos de texto;
+	- Tabelas com estilos específicos;
+	- Imagens;
+	- Botões;
+	- Menus de navegação;
+	- Modais: imita uma janela sobre a página;
+	- Mensagens de alerta; 
+	- ...
+
+# Bootstrap: Breakpoints
+
+- São larguras customizadas que determinam laiaute da página.
+	- Usam *media queries* e *mobile first responsive design*.
+	- Representados por prefixos utilizados com outros elementos.
+
+:::{.center style="font-size: 70%; line-height: 80%;"}
+| Breakpoint        | Prefixo da classe | Dimensões |
+|-------------------|-------------|------------|
+| X-Small           | Não há      | <576px     |
+| Small             | `sm`          | ≥576px     |
+| Medium            | `md`          | ≥768px     |
+| Large             | `lg`          | ≥992px     |
+| Extra large       | `xl`          | ≥1200px    |
+| Extra extra large | `xxl`         | ≥1400px    |
+:::
+
+# Bootstrap: Contêineres (I)
+
+- Blocos base de conteúdo do Bootstrap.
+	- São necessários para usar o sistema de grelhas.
+- Três tipos:
+	- `.container`: aplica uma margem no *breakpoint* (exceto para x-small).
+	- `.container-fluid`: ocupa 100% (`width=100%`) do ecrã, para todos os *breakpoints*.
+	- `.container-{breakpoint}`: ocupa 100% (`width=100%`) até a dimensão do *breakpoint*.
+		- `{breakpoint}` é substituído por `sm|md|lg|xl|xxl`.
+
+# Bootstrap: Contêineres (II)
+
+:::{.center style="font-size: 70%; line-height: 130%;"}
+|                  | Extra small <576px | Small ≥576px | Medium ≥768px | Large ≥992px | X-Large ≥1200px | XX-Large ≥1400px |
+|------------------|--------------------|--------------|---------------|--------------|-----------------|------------------|
+| .container       | 100%               | 540px        | 720px         | 960px        | 1140px          | 1320px           |
+| .container-sm    | 100%               | 540px        | 720px         | 960px        | 1140px          | 1320px           |
+| .container-md    | 100%               | 100%         | 720px         | 960px        | 1140px          | 1320px           |
+| .container-lg    | 100%               | 100%         | 100%          | 960px        | 1140px          | 1320px           |
+| .container-xl    | 100%               | 100%         | 100%          | 100%         | 1140px          | 1320px           |
+| .container-xxl   | 100%               | 100%         | 100%          | 100%         | 100%            | 1320px           |
+| .container-fluid | 100%               | 100%         | 100%          | 100%         | 100%            | 100%             |
+:::
+
+# Exercício (I)
+
+1. Crie uma página com Bootstrap com 4 linhas.
+	- Linha 1: Título e imagem circulada (ver documentação do BS5).
+	- Linha 2: Usar um nav.
+	- Linha 3: parte do conteúdo em 4 colunas iguais.
+	- Linha 4: rodapé com 3 colunas: contatos, copyrights e ícones de parceiros.
+
+# Exercício (II)
 
 1. Verifique se sua página de login/registo já desenvolvida é responsiva.
-1. Inclua o bootstrap nestas páginas e altere-as se conforme for necessário.
+1. Inclua o bootstrap nestas páginas e altere-as conforme for necessário.

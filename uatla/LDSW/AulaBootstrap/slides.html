@@ -117,7 +117,7 @@ Fernanda Passos
 </ul></li>
 <li>Adapta o tamanho dos elementos ao tamanho do ecrã do dispositivo.
 <ul>
-<li>Útil para smartphones, portáteis, tablets …</li>
+<li>Especialmente útil para smartphones, portáteis, tablets …</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -142,16 +142,16 @@ Fernanda Passos
 <h1>HTML é responsivo?</h1>
 <ul>
 <li>Sim!</li>
-<li>É necessário definir o <em>viewport</em> no <em>header</em> do HTML:</li>
+<li>É importante definir o <em>viewport</em> no <em>header</em> do HTML:</li>
 </ul>
 <div class="center" style="width: 70%;">
-<div class="sourceCode" id="cb1" style="font-size: 24px;"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1" style="font-size: 80%;"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 </div>
 <ul>
-<li>Através de definição de estilos:
+<li>Responsividade é implementada através de definição de estilos:
 <ul>
 <li>uso de dimensões percentuais dos elementos (<em>e.g.</em>, width: 50%);</li>
-<li>uso de <em>media queries</em> para mudar arranjo dos elementos;</li>
+<li>uso de <em>media queries</em> para mudar estilo e arranjo dos elementos;</li>
 <li>imagens redimensionáveis;</li>
 <li>textos redimensionáveis;</li>
 <li>…</li>
@@ -217,7 +217,7 @@ Fernanda Passos
 </ul></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb2" style="font-size: 18px;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;html&gt;</span></span>
+<div class="sourceCode" id="cb2" style="font-size: 70%;"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="kw">&lt;head&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>        <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a>    <span class="kw">&lt;/head&gt;</span></span>
@@ -257,13 +257,13 @@ Ir para exemplo
 <ul>
 <li>Sintaxe dentro do CSS:</li>
 </ul>
-<div class="sourceCode" id="cb3" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> [tipo_de_media] <span class="kw">and</span> ([media_feature]){</span>
+<div class="sourceCode" id="cb3" style="font-size: 75%;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> [tipo_de_media] <span class="kw">and</span> ([media_feature]){</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*código CSS*/</span>;</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li>Outra forma de uso (no <em>head</em> do HTML):</li>
 </ul>
-<div class="sourceCode" id="cb4" style="font-size: 22px;"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;stylesheet&quot;</span> <span class="er">media</span><span class="ot">=</span><span class="st">&quot;[tipo_de_media] and ([media_feature])&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;meuCSS.css&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4" style="font-size: 75%;"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;stylesheet&quot;</span> <span class="er">media</span><span class="ot">=</span><span class="st">&quot;[tipo_de_media] and ([media_feature])&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;meuCSS.css&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 <ul>
 <li><em>Media queries</em> são definidas por <em>media features</em> que retornam verdadeiro ou falso.
 <ul>
@@ -277,7 +277,7 @@ Ir para exemplo
 <ul>
 <li>O exemplo a seguir altera a cor da fonte de um h1 para vermelho se o tipo da media for <code>Screen</code>.</li>
 </ul>
-<div class="sourceCode" id="cb5" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="dv">Screen</span> {</span>
+<div class="sourceCode" id="cb5" style="font-size: 80%;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="dv">Screen</span> {</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    h1 {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        font-color: <span class="cn">red</span><span class="op">;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    }</span>
@@ -292,14 +292,14 @@ Ir para exemplo
 <li>Em outras palavras, aplica estilo para larguras maiores ou iguais a 900px.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb6" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> (<span class="kw">min-width</span>: <span class="dv">900</span><span class="dt">px</span>){</span>
+<div class="sourceCode" id="cb6" style="font-size: 80%;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> (<span class="kw">min-width</span>: <span class="dv">900</span><span class="dt">px</span>){</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    h1 {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="definir-css-responsivo-features-media-query" class="slide section level1">
-<h1>Definir CSS Responsivo: Features Media Query</h1>
+<div id="definir-css-responsivo-algumas-features-media-query" class="slide section level1">
+<h1>Definir CSS Responsivo: Algumas <em>Features Media Query</em></h1>
 <div class="center" style="font-size: 60%; width: 95%; line-height: 90%;">
 <table>
 <colgroup>
@@ -384,7 +384,7 @@ Ir para exemplo
 <div id="definir-css-responsivo-operadores-lógicos-media-query" class="slide section level1">
 <h1>Definir CSS Responsivo: Operadores Lógicos Media Query</h1>
 <ul>
-<li>Podem ser usados os operadores lógicos:
+<li>Os seguintes operadores lógicos podem ser usados na construção do <em>media query</em>:
 <ul>
 <li><code>and</code></li>
 <li><code>or</code></li>
@@ -392,22 +392,82 @@ Ir para exemplo
 </ul></li>
 <li>Exemplo que aplica o CSS para os seguintes casos:
 <ul>
-<li>orientação em paisagem (<em>landscape</em>) ou</li>
-<li>a largura do viewport estiver valor mínimo de 900px e valor máximo de 1200px (<em>i.e.</em>, entre 900px e 1200px).</li>
+<li>se a orientação está em paisagem (<em>landscape</em>) ou</li>
+<li>se a largura do viewport tiver valor mínimo de 900px e valor máximo de 1200px (<em>i.e.</em>, entre 900px e 1200px).</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb7" style="font-size: 22px;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> (<span class="kw">orientation</span>: <span class="st">&#39;landscape&#39;</span>) or (<span class="kw">min-width</span>: <span class="dv">900</span><span class="dt">px</span>) <span class="kw">and</span> (<span class="kw">max-width</span>: <span class="dv">1200</span><span class="dt">px</span>) {</span>
+<div class="sourceCode" id="cb7" style="font-size: 75%;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> (<span class="kw">orientation</span>: <span class="st">&#39;landscape&#39;</span>) or (<span class="kw">min-width</span>: <span class="dv">900</span><span class="dt">px</span>) <span class="kw">and</span> (<span class="kw">max-width</span>: <span class="dv">1200</span><span class="dt">px</span>) {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    h1 {</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="definir-css-responsivo-mais-exemplos-com-media-query" class="slide section level1">
-<h1>Definir CSS Responsivo: Mais Exemplos com Media Query</h1>
+<div id="definir-css-responsivo-operador-only" class="slide section level1">
+<h1>Definir CSS Responsivo: Operador <em>only</em></h1>
 <ul>
-<li>Incluir exemplo de tamanho de janela</li>
-<li>Incluir exemplo de tamanho de imagem?</li>
+<li>Objetivo de esconder <em>media queries</em> de navegadores antigos.</li>
+<li>Uso comum: ‘<code>only Screen</code>’.</li>
 </ul>
+<div class="sourceCode" id="cb8" style="font-size: 80%;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="kw">only</span> <span class="dv">Screen</span> <span class="kw">and</span> (<span class="kw">min-width</span>: <span class="dv">900</span><span class="dt">px</span>){</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    h1 {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="mobile-first-design" class="slide section level1">
+<h1><em>Mobile First Design</em></h1>
+<ul>
+<li>Sempre fazer o <em>design</em> da página para o telemóvel primeiro.
+<ul>
+<li>Prioridade para ecrãs menores.</li>
+</ul></li>
+<li>O estilo principal é para telemóvel e modificações são feitas para ecrãs maiores (desktops, portáteis, …).</li>
+</ul>
+<div class="sourceCode" id="cb9" style="font-size: 75%;"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Geral: para telemóveis: */</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[class</span><span class="op">*=</span><span class="st">&quot;col-&quot;</span><span class="ex">]</span> {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="kw">only</span> <span class="dv">Screen</span> <span class="kw">and</span> (<span class="kw">min-width</span>: <span class="dv">768</span><span class="dt">px</span>) {</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Para desktops e portáteis: */</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.col-3</span> {<span class="kw">width</span>: <span class="dv">25</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.col-6</span> {<span class="kw">width</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.col-9</span> {<span class="kw">width</span>: <span class="dv">75</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.col-12</span> {<span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="definir-css-responsivo-exemplo" class="slide section level1">
+<h1>Definir CSS Responsivo: Exemplo</h1>
+<div class="sourceCode" id="cb10" style="font-size: 70%;"><pre class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">/* Para telemóveis: */</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="ex">[class</span><span class="op">*=</span><span class="st">&quot;col-&quot;</span><span class="ex">]</span> { <span class="co">/* Todas as classes que começam com &#39;col-&#39; */</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>}</span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="im">@media</span> <span class="kw">only</span> <span class="dv">Screen</span> <span class="kw">and</span> (<span class="kw">min-width</span>: <span class="dv">600</span><span class="dt">px</span>) {</span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="co">/* Para desktops/portáveis: */</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="fu">.col-1</span> {<span class="kw">width</span>: <span class="dv">8.33</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-10"><a href="#cb10-10"></a>  <span class="fu">.col-2</span> {<span class="kw">width</span>: <span class="dv">16.66</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-11"><a href="#cb10-11"></a>  <span class="fu">.col-3</span> {<span class="kw">width</span>: <span class="dv">25</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="fu">.col-4</span> {<span class="kw">width</span>: <span class="dv">33.33</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-13"><a href="#cb10-13"></a>  <span class="fu">.col-5</span> {<span class="kw">width</span>: <span class="dv">41.66</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-14"><a href="#cb10-14"></a>  <span class="fu">.col-6</span> {<span class="kw">width</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-15"><a href="#cb10-15"></a>  <span class="fu">.col-7</span> {<span class="kw">width</span>: <span class="dv">58.33</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-16"><a href="#cb10-16"></a>  <span class="fu">.col-8</span> {<span class="kw">width</span>: <span class="dv">66.66</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-17"><a href="#cb10-17"></a>  <span class="fu">.col-9</span> {<span class="kw">width</span>: <span class="dv">75</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-18"><a href="#cb10-18"></a>  <span class="fu">.col-10</span> {<span class="kw">width</span>: <span class="dv">83.33</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-19"><a href="#cb10-19"></a>  <span class="fu">.col-11</span> {<span class="kw">width</span>: <span class="dv">91.66</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-20"><a href="#cb10-20"></a>  <span class="fu">.col-12</span> {<span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span>}</span>
+<span id="cb10-21"><a href="#cb10-21"></a>}</span></code></pre></div>
+<div class="center">
+<button onclick="window.open(&#39;iframes/exemploWDR.html&#39;,&#39;_blank&#39;)">
+Ir para página HTML
+</button>
+<button onclick="window.open(&#39;iframes/styles.css&#39;,&#39;_blank&#39;)">
+Ir para CSS
+</button>
+</div>
 </div>
 <div id="bootstrap" class="slide section level1 part">
 <h1 class="part">Bootstrap</h1>
@@ -416,26 +476,238 @@ Ir para exemplo
 <h1>Bootstrap</h1>
 <ul>
 <li><em>Framework</em> mais popular para criar <em>websites</em> <strong>responsivos</strong>.</li>
-</ul>
-</div>
-<div id="versões-do-bootstrap" class="slide section level1">
-<h1>Versões do Bootstrap</h1>
+<li>Versões: 3, 4, 5.</li>
+<li>Versão 5:
 <ul>
-<li>Versão 3</li>
-<li>Versão 4</li>
-<li>Versão 5
+<li>Mais atual (<em>release</em> de 2021).</li>
+</ul></li>
+<li>Documentação:
 <ul>
-<li>Mais atual (2022).</li>
+<li>Oficial: https://getbootstrap.com/docs/5.0</li>
+<li>Tutorial no W3Schools: https://www.w3schools.com/bootstrap5/index.php</li>
+</ul></li>
+<li>Exemplo de uso do bootstrap:
+<ul>
+<li>https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_default&amp;stacked=h</li>
 </ul></li>
 </ul>
 </div>
 <div id="instalação" class="slide section level1">
 <h1>Instalação</h1>
+<ul>
+<li>Incluir ao menos dois ficheiros:
+<ul>
+<li>O CSS do Bootstrap: para aplicar os estilos pré-definidos;</li>
+<li>O Javascript do Bootstrap: para efeitos visuais de alguns elementos.</li>
+</ul></li>
+<li>Incluir no head da página HTML (uso de CDN):</li>
+</ul>
+<div class="sourceCode" id="cb11" style="font-size: 80%;"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;link</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css&quot;</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
 </div>
-<div id="exercício" class="slide section level1">
-<h1>Exercício</h1>
+<div id="classes-do-bootstrap" class="slide section level1">
+<h1>Classes do Bootstrap</h1>
+<ul>
+<li>A ideia do Bootstrap é disponibilizar classes com estilos previamente definidos.</li>
+<li>As classes são muitas vezes usadas com as <em>tags</em> <strong>div</strong> e <strong>span</strong>.</li>
+<li>Existem vários tipos:
+<ul>
+<li>Contêineres;</li>
+<li>Grelha básica;</li>
+<li>Tipografia: títulos de texto;</li>
+<li>Tabelas com estilos específicos;</li>
+<li>Imagens;</li>
+<li>Botões;</li>
+<li>Menus de navegação;</li>
+<li>Modais: imita uma janela sobre a página;</li>
+<li>Mensagens de alerta;</li>
+<li>…</li>
+</ul></li>
+</ul>
+</div>
+<div id="bootstrap-breakpoints" class="slide section level1">
+<h1>Bootstrap: Breakpoints</h1>
+<ul>
+<li>São larguras customizadas que determinam laiaute da página.
+<ul>
+<li>Usam <em>media queries</em> e <em>mobile first responsive design</em>.</li>
+<li>Representados por prefixos utilizados com outros elementos.</li>
+</ul></li>
+</ul>
+<div class="center" style="font-size: 70%; line-height: 80%;">
+<table>
+<thead>
+<tr class="header">
+<th>Breakpoint</th>
+<th>Prefixo da classe</th>
+<th>Dimensões</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>X-Small</td>
+<td>Não há</td>
+<td>&lt;576px</td>
+</tr>
+<tr class="even">
+<td>Small</td>
+<td><code>sm</code></td>
+<td>≥576px</td>
+</tr>
+<tr class="odd">
+<td>Medium</td>
+<td><code>md</code></td>
+<td>≥768px</td>
+</tr>
+<tr class="even">
+<td>Large</td>
+<td><code>lg</code></td>
+<td>≥992px</td>
+</tr>
+<tr class="odd">
+<td>Extra large</td>
+<td><code>xl</code></td>
+<td>≥1200px</td>
+</tr>
+<tr class="even">
+<td>Extra extra large</td>
+<td><code>xxl</code></td>
+<td>≥1400px</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="bootstrap-contêineres-i" class="slide section level1">
+<h1>Bootstrap: Contêineres (I)</h1>
+<ul>
+<li>Blocos base de conteúdo do Bootstrap.
+<ul>
+<li>São necessários para usar o sistema de grelhas.</li>
+</ul></li>
+<li>Três tipos:
+<ul>
+<li><code>.container</code>: aplica uma margem no <em>breakpoint</em> (exceto para x-small).</li>
+<li><code>.container-fluid</code>: ocupa 100% (<code>width=100%</code>) do ecrã, para todos os <em>breakpoints</em>.</li>
+<li><code>.container-{breakpoint}</code>: ocupa 100% (<code>width=100%</code>) até a dimensão do <em>breakpoint</em>.
+<ul>
+<li><code>{breakpoint}</code> é substituído por <code>sm|md|lg|xl|xxl</code>.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="bootstrap-contêineres-ii" class="slide section level1">
+<h1>Bootstrap: Contêineres (II)</h1>
+<div class="center" style="font-size: 70%; line-height: 130%;">
+<table>
+<colgroup>
+<col width="15%" />
+<col width="17%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="14%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Extra small &lt;576px</th>
+<th>Small ≥576px</th>
+<th>Medium ≥768px</th>
+<th>Large ≥992px</th>
+<th>X-Large ≥1200px</th>
+<th>XX-Large ≥1400px</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.container</td>
+<td>100%</td>
+<td>540px</td>
+<td>720px</td>
+<td>960px</td>
+<td>1140px</td>
+<td>1320px</td>
+</tr>
+<tr class="even">
+<td>.container-sm</td>
+<td>100%</td>
+<td>540px</td>
+<td>720px</td>
+<td>960px</td>
+<td>1140px</td>
+<td>1320px</td>
+</tr>
+<tr class="odd">
+<td>.container-md</td>
+<td>100%</td>
+<td>100%</td>
+<td>720px</td>
+<td>960px</td>
+<td>1140px</td>
+<td>1320px</td>
+</tr>
+<tr class="even">
+<td>.container-lg</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>960px</td>
+<td>1140px</td>
+<td>1320px</td>
+</tr>
+<tr class="odd">
+<td>.container-xl</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>1140px</td>
+<td>1320px</td>
+</tr>
+<tr class="even">
+<td>.container-xxl</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>1320px</td>
+</tr>
+<tr class="odd">
+<td>.container-fluid</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="exercício-i" class="slide section level1">
+<h1>Exercício (I)</h1>
 <ol style="list-style-type: decimal">
-<li></li>
+<li>Crie uma página com Bootstrap com 4 linhas.
+<ul>
+<li>Linha 1: Título e imagem circulada (ver documentação do BS5).</li>
+<li>Linha 2: Usar um nav.</li>
+<li>Linha 3: parte do conteúdo em 4 colunas iguais.</li>
+<li>Linha 4: rodapé com 3 colunas: contatos, copyrights e ícones de parceiros.</li>
+</ul></li>
+</ol>
+</div>
+<div id="exercício-ii" class="slide section level1">
+<h1>Exercício (II)</h1>
+<ol style="list-style-type: decimal">
+<li>Verifique se sua página de login/registo já desenvolvida é responsiva.</li>
+<li>Inclua o bootstrap nestas páginas e altere-as conforme for necessário.</li>
 </ol>
 </div>
 </body>
