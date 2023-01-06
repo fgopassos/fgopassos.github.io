@@ -103,11 +103,33 @@ Fernanda Passos
     <p class="note">Linguagem de Programação</p>
   </div>
 </div>
-<div id="threads" class="slide section level1">
-<h1>Threads</h1>
+<div id="paradigma-concorrente" class="slide section level1">
+<h1>Paradigma Concorrente</h1>
+<ul>
+<li>Estruturar o programa em um conjunto de unidades concorrente.
+<ul>
+<li>Partes do programa concorrem por recursos de processamento (memória, CPU, …).</li>
+</ul></li>
+<li>Concorrente <em>versus</em> Paralelo:
+<ul>
+<li>Concorrente: partes do programa executam concorrendo por recursos;
+<ul>
+<li>Quando não há recursos disponíveis simultaneamente.</li>
+<li>Sistema operativo executa as partes com a técnica de preempção temporal.</li>
+</ul></li>
+<li>Paralelo: partes do programa executam ao mesmo tempo.
+<ul>
+<li>Neste caso, há recursos disponíveis para isso.</li>
+<li>Por exemplo, através de multiprocessamento (<em>e.g.</em>, múltiplos núcleos de CPU).</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="programação-concorrente-threads-e-processos" class="slide section level1">
+<h1>Programação Concorrente: Threads e Processos</h1>
 <div class="block centered">
 <div class="blocktitle">
-<p>Definação:</p>
+<p>Definações:</p>
 </div>
 <ul>
 <li>Uma thread é um fluxo de controle sequencial dentro de um programa em execução (processo).
@@ -131,16 +153,41 @@ Fernanda Passos
 <div id="multithreading" class="slide section level1">
 <h1>Multithreading</h1>
 <ul>
-<li>Um sistema que usa múltiplas threads é chamado de <strong>multithreading</strong>.</li>
+<li>Uma aplicação que usa múltiplas threads é chamada de <strong>multithreading</strong>.</li>
 <li>Um sistema de threads mantém a <strong>mínima informação</strong> para que permita que a CPU possa ser compartilhada por vários threads.
 <ul>
 <li>Contexto de thread.</li>
 </ul></li>
 <li>No conceito de <em>multithreading</em>, um processo pode possuir vários fluxos de controle (threads).</li>
-<li>Threads de um processo compartilham o mesmo espaço de endereçamento.</li>
+<li>Threads de um processo partilham o mesmo espaço de endereçamento.
+<ul>
+<li><strong>Memória partilhada</strong>.</li>
+</ul></li>
 <li>Trocas de contexto de threads de um mesmo processo são mais rápidas.
 <ul>
 <li>Comparado ao processo.</li>
+</ul></li>
+</ul>
+</div>
+<div id="multiprocessamento" class="slide section level1">
+<h1>Multiprocessamento</h1>
+<ul>
+<li>Aplicação que usa múltiplos processos.</li>
+<li>Processos são partes de um programa <em>isolados</em>.
+<ul>
+<li>Por definição, <strong>não partilham memória</strong> entre si.</li>
+<li>Embora existam chamadas de sistema para tal propósito.</li>
+<li>S.O. demora mais para criar um processo, comparado a threads.</li>
+<li>Contexto de processos é maior e troca é mais cara.</li>
+</ul></li>
+<li>Uma aplicação multiprocessada pode explorar múltiplos computadores.
+<ul>
+<li>Necessária a <strong>comunicação</strong> entre computadores (redes).</li>
+<li>Necessário escalonamento nas múltiplas máquinas.</li>
+<li>Possibilidade de <strong>aumentar a escala</strong>!
+<ul>
+<li>Apenas com threads, isto não é possível pois elas dependem de existir um processo.</li>
+</ul></li>
 </ul></li>
 </ul>
 </div>

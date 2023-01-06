@@ -8,11 +8,22 @@ institute: Universidade Atlântica
 logo: ../atlantica_logo2.svg
 ---
 
+# Paradigma Concorrente
 
-# Threads
+- Estruturar o programa em um conjunto de unidades concorrente.
+    - Partes do programa concorrem por recursos de processamento (memória, CPU, ...).
+- Concorrente *versus* Paralelo:
+    - Concorrente: partes do programa executam concorrendo por recursos;
+        - Quando não há recursos disponíveis simultaneamente.
+        - Sistema operativo executa as partes com a técnica de preempção temporal.
+    - Paralelo: partes do programa executam ao mesmo tempo.
+        - Neste caso, há recursos disponíveis para isso.
+        - Por exemplo, através de multiprocessamento (*e.g.*, múltiplos núcleos de CPU).
+
+# Programação Concorrente: Threads e Processos
 ::::::{.block .centered}
 :::{.blocktitle}
-Definação:
+Definações:
 :::
 - Uma thread é um fluxo de controle sequencial dentro de um programa em execução (processo).
     - Um processo é formado por uma ou mais threads.
@@ -34,14 +45,28 @@ Definação:
 
 # Multithreading
 
-- Um sistema que usa múltiplas threads é chamado de **multithreading**.
+- Uma aplicação que usa múltiplas threads é chamada de **multithreading**.
 - Um sistema de threads mantém a **mínima informação** para que permita que a CPU possa ser compartilhada por vários threads.
     - Contexto de thread.
 - No conceito de *multithreading*, um processo pode possuir vários fluxos de controle (threads).
-- Threads de um processo compartilham o mesmo espaço de endereçamento.
+- Threads de um processo partilham o mesmo espaço de endereçamento.
+    - **Memória partilhada**.
 - Trocas de contexto de threads de um mesmo processo são mais rápidas.
     - Comparado ao processo.
 
+# Multiprocessamento
+
+- Aplicação que usa múltiplos processos.
+- Processos são partes de um programa *isolados*.
+    - Por definição, **não partilham memória** entre si.
+    - Embora existam chamadas de sistema para tal propósito.
+    - S.O. demora mais para criar um processo, comparado a threads.
+    - Contexto de processos é maior e troca é mais cara.
+- Uma aplicação multiprocessada pode explorar múltiplos computadores.
+    - Necessária a **comunicação** entre computadores (redes).
+    - Necessário escalonamento nas múltiplas máquinas.
+    - Possibilidade de **aumentar a escala**!
+        - Apenas com threads, isto não é possível pois elas dependem de existir um processo.
 
 # Multithreading vs. Multiprocessamento
 
